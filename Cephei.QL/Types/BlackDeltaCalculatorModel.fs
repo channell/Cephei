@@ -54,7 +54,8 @@ type BlackDeltaCalculatorModel
 (*
     Functions
 *)
-    let _BlackDeltaCalculator                      = cell (fun () -> new BlackDeltaCalculator (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value))
+    let mutable
+        _BlackDeltaCalculator                      = cell (fun () -> new BlackDeltaCalculator (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value))
     let _atmStrike                                 (atmT : ICell<DeltaVolQuote.AtmType>)   
                                                    = triv (fun () -> _BlackDeltaCalculator.Value.atmStrike(atmT.Value))
     let _cumD1                                     (strike : ICell<double>)   
@@ -80,13 +81,14 @@ type BlackDeltaCalculatorModel
     casting 
 *)
     internal new () = new BlackDeltaCalculatorModel(null,null,null,null,null,null)
-    member internal this.Inject v = _BlackDeltaCalculator.Value <- v
+    member internal this.Inject v = _BlackDeltaCalculator <- v
     static member Cast (p : ICell<BlackDeltaCalculator>) = 
         if p :? BlackDeltaCalculatorModel then 
             p :?> BlackDeltaCalculatorModel
         else
             let o = new BlackDeltaCalculatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

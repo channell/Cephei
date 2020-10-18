@@ -44,7 +44,8 @@ type FittingCostModel
 (*
     Functions
 *)
-    let _FittingCost                               = cell (fun () -> new FittingCost (fittingMethod.Value))
+    let mutable
+        _FittingCost                               = cell (fun () -> new FittingCost (fittingMethod.Value))
     let _value                                     (x : ICell<Vector>)   
                                                    = cell (fun () -> _FittingCost.Value.value(x.Value))
     let _values                                    (x : ICell<Vector>)   
@@ -65,13 +66,14 @@ type FittingCostModel
     casting 
 *)
     internal new () = FittingCostModel(null)
-    member internal this.Inject v = _FittingCost.Value <- v
+    member internal this.Inject v = _FittingCost <- v
     static member Cast (p : ICell<FittingCost>) = 
         if p :? FittingCostModel then 
             p :?> FittingCostModel
         else
             let o = new FittingCostModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

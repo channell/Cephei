@@ -46,7 +46,8 @@ type ForwardTypePayoffModel
 (*
     Functions
 *)
-    let _ForwardTypePayoff                         = cell (fun () -> new ForwardTypePayoff (Type.Value, strike.Value))
+    let mutable
+        _ForwardTypePayoff                         = cell (fun () -> new ForwardTypePayoff (Type.Value, strike.Value))
     let _description                               = triv (fun () -> _ForwardTypePayoff.Value.description())
     let _forwardType                               = triv (fun () -> _ForwardTypePayoff.Value.forwardType())
     let _name                                      = triv (fun () -> _ForwardTypePayoff.Value.name())
@@ -61,13 +62,14 @@ type ForwardTypePayoffModel
     casting 
 *)
     internal new () = new ForwardTypePayoffModel(null,null)
-    member internal this.Inject v = _ForwardTypePayoff.Value <- v
+    member internal this.Inject v = _ForwardTypePayoff <- v
     static member Cast (p : ICell<ForwardTypePayoff>) = 
         if p :? ForwardTypePayoffModel then 
             p :?> ForwardTypePayoffModel
         else
             let o = new ForwardTypePayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

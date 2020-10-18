@@ -39,9 +39,9 @@ module MixedLinearCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubic_global", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearCubic",Description = "Reference to MixedLinearCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearCubic",Description = "MixedLinearCubic")>] 
          mixedlinearcubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module MixedLinearCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubic_interpolate", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearCubic",Description = "Reference to MixedLinearCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearCubic",Description = "MixedLinearCubic")>] 
          mixedlinearcubic : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xEnd",Description = "Reference to xEnd")>] 
+        ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,23 +129,23 @@ module MixedLinearCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubic", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MixedLinearCubic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="behavior",Description = "Reference to behavior")>] 
+        ([<ExcelArgument(Name="behavior",Description = "Behavior")>] 
          behavior : obj)
-        ([<ExcelArgument(Name="da",Description = "Reference to da")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
          da : obj)
-        ([<ExcelArgument(Name="monotonic",Description = "Reference to monotonic")>] 
+        ([<ExcelArgument(Name="monotonic",Description = "MixedLinearCubic")>] 
          monotonic : obj)
-        ([<ExcelArgument(Name="leftCondition",Description = "Reference to leftCondition")>] 
+        ([<ExcelArgument(Name="leftCondition",Description = "MixedLinearCubic")>] 
          leftCondition : obj)
-        ([<ExcelArgument(Name="leftConditionValue",Description = "Reference to leftConditionValue")>] 
+        ([<ExcelArgument(Name="leftConditionValue",Description = "MixedLinearCubic")>] 
          leftConditionValue : obj)
-        ([<ExcelArgument(Name="rightCondition",Description = "Reference to rightCondition")>] 
+        ([<ExcelArgument(Name="rightCondition",Description = "MixedLinearCubic")>] 
          rightCondition : obj)
-        ([<ExcelArgument(Name="rightConditionValue",Description = "Reference to rightConditionValue")>] 
+        ([<ExcelArgument(Name="rightConditionValue",Description = "MixedLinearCubic")>] 
          rightConditionValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,9 +208,9 @@ module MixedLinearCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubic_requiredPoints", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearCubic",Description = "Reference to MixedLinearCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearCubic",Description = "MixedLinearCubic")>] 
          mixedlinearcubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -241,9 +241,9 @@ module MixedLinearCubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MixedLinearCubic_Range", Description="Create a range of MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MixedLinearCubic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

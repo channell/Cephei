@@ -48,7 +48,8 @@ type JointCalendarModel
 (*
     Functions
 *)
-    let _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, r.Value))
+    let mutable
+        _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, r.Value))
     let _addedHolidays                             = triv (fun () -> _JointCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _JointCalendar.Value.addHoliday(d.Value)
@@ -85,13 +86,14 @@ type JointCalendarModel
     casting 
 *)
     internal new () = new JointCalendarModel(null,null,null)
-    member internal this.Inject v = _JointCalendar.Value <- v
+    member internal this.Inject v = _JointCalendar <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel then 
             p :?> JointCalendarModel
         else
             let o = new JointCalendarModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -151,7 +153,8 @@ type JointCalendarModel1
 (*
     Functions
 *)
-    let _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value))
+    let mutable
+        _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value))
     let _addedHolidays                             = triv (fun () -> _JointCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _JointCalendar.Value.addHoliday(d.Value)
@@ -188,13 +191,14 @@ type JointCalendarModel1
     casting 
 *)
     internal new () = new JointCalendarModel1(null,null,null)
-    member internal this.Inject v = _JointCalendar.Value <- v
+    member internal this.Inject v = _JointCalendar <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel1 then 
             p :?> JointCalendarModel1
         else
             let o = new JointCalendarModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -256,7 +260,8 @@ type JointCalendarModel2
 (*
     Functions
 *)
-    let _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value, r.Value))
+    let mutable
+        _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value, r.Value))
     let _addedHolidays                             = triv (fun () -> _JointCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _JointCalendar.Value.addHoliday(d.Value)
@@ -293,13 +298,14 @@ type JointCalendarModel2
     casting 
 *)
     internal new () = new JointCalendarModel2(null,null,null,null)
-    member internal this.Inject v = _JointCalendar.Value <- v
+    member internal this.Inject v = _JointCalendar <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel2 then 
             p :?> JointCalendarModel2
         else
             let o = new JointCalendarModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -364,7 +370,8 @@ type JointCalendarModel3
 (*
     Functions
 *)
-    let _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value, c4.Value, r.Value))
+    let mutable
+        _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value, c4.Value, r.Value))
     let _addedHolidays                             = triv (fun () -> _JointCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _JointCalendar.Value.addHoliday(d.Value)
@@ -401,13 +408,14 @@ type JointCalendarModel3
     casting 
 *)
     internal new () = new JointCalendarModel3(null,null,null,null,null)
-    member internal this.Inject v = _JointCalendar.Value <- v
+    member internal this.Inject v = _JointCalendar <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel3 then 
             p :?> JointCalendarModel3
         else
             let o = new JointCalendarModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -471,7 +479,8 @@ type JointCalendarModel4
 (*
     Functions
 *)
-    let _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value, c4.Value))
+    let mutable
+        _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value, c3.Value, c4.Value))
     let _addedHolidays                             = triv (fun () -> _JointCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _JointCalendar.Value.addHoliday(d.Value)
@@ -508,13 +517,14 @@ type JointCalendarModel4
     casting 
 *)
     internal new () = new JointCalendarModel4(null,null,null,null)
-    member internal this.Inject v = _JointCalendar.Value <- v
+    member internal this.Inject v = _JointCalendar <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel4 then 
             p :?> JointCalendarModel4
         else
             let o = new JointCalendarModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -573,7 +583,8 @@ type JointCalendarModel5
 (*
     Functions
 *)
-    let _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value))
+    let mutable
+        _JointCalendar                             = cell (fun () -> new JointCalendar (c1.Value, c2.Value))
     let _addedHolidays                             = triv (fun () -> _JointCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _JointCalendar.Value.addHoliday(d.Value)
@@ -610,13 +621,14 @@ type JointCalendarModel5
     casting 
 *)
     internal new () = new JointCalendarModel5(null,null)
-    member internal this.Inject v = _JointCalendar.Value <- v
+    member internal this.Inject v = _JointCalendar <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel5 then 
             p :?> JointCalendarModel5
         else
             let o = new JointCalendarModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

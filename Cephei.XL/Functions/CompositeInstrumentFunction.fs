@@ -39,13 +39,13 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_add", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
-        ([<ExcelArgument(Name="instrument",Description = "Reference to instrument")>] 
+        ([<ExcelArgument(Name="instrument",Description = "Instrument")>] 
          instrument : obj)
-        ([<ExcelArgument(Name="multiplier",Description = "Reference to multiplier")>] 
+        ([<ExcelArgument(Name="multiplier",Description = "Helper.Range.fromModelList")>] 
          multiplier : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_isExpired", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,13 +124,13 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_subtract", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
-        ([<ExcelArgument(Name="instrument",Description = "Reference to instrument")>] 
+        ([<ExcelArgument(Name="instrument",Description = "Instrument")>] 
          instrument : obj)
-        ([<ExcelArgument(Name="multiplier",Description = "Reference to multiplier")>] 
+        ([<ExcelArgument(Name="multiplier",Description = "Helper.Range.fromModelList")>] 
          multiplier : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_CASH", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,9 +208,9 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_errorEstimate", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_NPV", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,11 +280,11 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_result", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_setPricingEngine", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module CompositeInstrumentFunction =
     *)
     [<ExcelFunction(Name="_CompositeInstrument_valuationDate", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeInstrument",Description = "Reference to CompositeInstrument")>] 
+        ([<ExcelArgument(Name="CompositeInstrument",Description = "CompositeInstrument")>] 
          compositeinstrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -397,9 +397,9 @@ module CompositeInstrumentFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CompositeInstrument_Range", Description="Create a range of CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CompositeInstrument")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

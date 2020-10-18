@@ -46,7 +46,8 @@ type DailyTenorCHFLiborModel
 (*
     Functions
 *)
-    let _DailyTenorCHFLibor                        = cell (fun () -> new DailyTenorCHFLibor (settlementDays.Value, h.Value))
+    let mutable
+        _DailyTenorCHFLibor                        = cell (fun () -> new DailyTenorCHFLibor (settlementDays.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _DailyTenorCHFLibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _DailyTenorCHFLibor.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type DailyTenorCHFLiborModel
     casting 
 *)
     internal new () = new DailyTenorCHFLiborModel(null,null)
-    member internal this.Inject v = _DailyTenorCHFLibor.Value <- v
+    member internal this.Inject v = _DailyTenorCHFLibor <- v
     static member Cast (p : ICell<DailyTenorCHFLibor>) = 
         if p :? DailyTenorCHFLiborModel then 
             p :?> DailyTenorCHFLiborModel
         else
             let o = new DailyTenorCHFLiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

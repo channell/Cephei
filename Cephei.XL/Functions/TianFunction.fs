@@ -39,17 +39,17 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_factory", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tian",Description = "Reference to Tian")>] 
+        ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,15 +99,15 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_probability", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tian",Description = "Reference to Tian")>] 
+        ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,7 +153,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian1", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,15 +184,15 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_underlying", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tian",Description = "Reference to Tian")>] 
+        ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,15 +287,15 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_descendant", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tian",Description = "Reference to Tian")>] 
+        ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_size", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tian",Description = "Reference to Tian")>] 
+        ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_columns", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tian",Description = "Reference to Tian")>] 
+        ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,9 +416,9 @@ module TianFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Tian_Range", Description="Create a range of Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Tian")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

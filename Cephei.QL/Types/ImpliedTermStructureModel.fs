@@ -46,7 +46,8 @@ type ImpliedTermStructureModel
 (*
     Functions
 *)
-    let _ImpliedTermStructure                      = cell (fun () -> new ImpliedTermStructure (h.Value, referenceDate.Value))
+    let mutable
+        _ImpliedTermStructure                      = cell (fun () -> new ImpliedTermStructure (h.Value, referenceDate.Value))
     let _calendar                                  = triv (fun () -> _ImpliedTermStructure.Value.calendar())
     let _dayCounter                                = triv (fun () -> _ImpliedTermStructure.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _ImpliedTermStructure.Value.maxDate())
@@ -86,13 +87,14 @@ type ImpliedTermStructureModel
     casting 
 *)
     internal new () = new ImpliedTermStructureModel(null,null)
-    member internal this.Inject v = _ImpliedTermStructure.Value <- v
+    member internal this.Inject v = _ImpliedTermStructure <- v
     static member Cast (p : ICell<ImpliedTermStructure>) = 
         if p :? ImpliedTermStructureModel then 
             p :?> ImpliedTermStructureModel
         else
             let o = new ImpliedTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

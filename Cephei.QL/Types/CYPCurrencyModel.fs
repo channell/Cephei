@@ -41,7 +41,8 @@ type CYPCurrencyModel
 (*
     Functions
 *)
-    let _CYPCurrency                               = cell (fun () -> new CYPCurrency ())
+    let mutable
+        _CYPCurrency                               = cell (fun () -> new CYPCurrency ())
     let _code                                      = triv (fun () -> _CYPCurrency.Value.code)
     let _empty                                     = triv (fun () -> _CYPCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CYPCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _CYPCurrency.Value <- v
+    member internal this.Inject v = _CYPCurrency <- v
     static member Cast (p : ICell<CYPCurrency>) = 
         if p :? CYPCurrencyModel then 
             p :?> CYPCurrencyModel
         else
             let o = new CYPCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

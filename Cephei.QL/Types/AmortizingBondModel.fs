@@ -68,7 +68,8 @@ type AmortizingBondModel
 (*
     Functions
 *)
-    let _AmortizingBond                            = cell (fun () -> withEngine pricingEngine (new AmortizingBond (FaceValue.Value, MarketValue.Value, CouponRate.Value, IssueDate.Value, MaturityDate.Value, TradeDate.Value, payFrequency.Value, dCounter.Value, Method.Value, calendar.Value, gYield.Value)))
+    let mutable
+        _AmortizingBond                            = cell (fun () -> withEngine pricingEngine (new AmortizingBond (FaceValue.Value, MarketValue.Value, CouponRate.Value, IssueDate.Value, MaturityDate.Value, TradeDate.Value, payFrequency.Value, dCounter.Value, Method.Value, calendar.Value, gYield.Value)))
     let _AmortizationValue                         (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingBond).AmortizationValue(d.Value))
     let _isPremium                                 = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingBond).isPremium())
@@ -126,13 +127,14 @@ type AmortizingBondModel
     casting 
 *)
     internal new () = new AmortizingBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AmortizingBond.Value <- v
+    member internal this.Inject v = _AmortizingBond <- v
     static member Cast (p : ICell<AmortizingBond>) = 
         if p :? AmortizingBondModel then 
             p :?> AmortizingBondModel
         else
             let o = new AmortizingBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

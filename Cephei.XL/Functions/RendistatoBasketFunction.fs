@@ -39,9 +39,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_btps", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_btps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_cleanPriceQuotes", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_cleanPriceQuotes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_outstanding", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_outstanding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_outstandings", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_outstandings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_registerWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,13 +225,13 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="btps",Description = "Reference to btps")>] 
+        ([<ExcelArgument(Name="btps",Description = "BTP")>] 
          btps : obj)
-        ([<ExcelArgument(Name="outstandings",Description = "Reference to outstandings")>] 
+        ([<ExcelArgument(Name="outstandings",Description = "double")>] 
          outstandings : obj)
-        ([<ExcelArgument(Name="cleanPriceQuotes",Description = "Reference to cleanPriceQuotes")>] 
+        ([<ExcelArgument(Name="cleanPriceQuotes",Description = "Quote")>] 
          cleanPriceQuotes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_size", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,11 +310,11 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_unregisterWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,9 +352,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_update", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,9 +388,9 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_weights", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoBasket",Description = "Reference to RendistatoBasket")>] 
+        ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -421,9 +421,9 @@ module RendistatoBasketFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RendistatoBasket_Range", Description="Create a range of RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RendistatoBasket")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

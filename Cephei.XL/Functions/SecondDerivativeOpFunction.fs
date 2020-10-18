@@ -39,11 +39,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SecondDerivativeOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp1", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SecondDerivativeOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "SecondDerivativeOp")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -120,13 +120,13 @@ module SecondDerivativeOpFunction =
     (*!! duplicate Add function
     [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -169,11 +169,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -212,11 +212,11 @@ module SecondDerivativeOpFunction =
     (*!! duplicate ad functions 
     [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "TripleBandLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,11 +255,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_apply", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -297,11 +297,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_applyTo", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -339,17 +339,17 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_axpyb", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_axpyb
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "TripleBandLinearOp")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "TripleBandLinearOp")>] 
          y : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,9 +399,9 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_Clone", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,11 +435,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_identity", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -477,9 +477,9 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_isTimeDependent", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -513,11 +513,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_mult", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_mult
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -555,13 +555,13 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_multiply", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="D",Description = "Reference to D")>] 
+        ([<ExcelArgument(Name="D",Description = "IOperator")>] 
          D : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -603,11 +603,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_multR", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_multR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -645,11 +645,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_setTime", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -687,9 +687,9 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_size", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -723,15 +723,15 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_solve_splitting", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_solve_splitting
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -777,11 +777,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_solveFor", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,13 +819,13 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_subtract", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -867,11 +867,11 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_swap", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "TripleBandLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -909,9 +909,9 @@ module SecondDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondDerivativeOp_toMatrix", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "Reference to SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondDerivativeOp",Description = "SecondDerivativeOp")>] 
          secondderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -942,9 +942,9 @@ module SecondDerivativeOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SecondDerivativeOp_Range", Description="Create a range of SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SecondDerivativeOp")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

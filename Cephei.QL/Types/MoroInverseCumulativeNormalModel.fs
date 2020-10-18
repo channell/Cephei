@@ -46,7 +46,8 @@ type MoroInverseCumulativeNormalModel
 (*
     Functions
 *)
-    let _MoroInverseCumulativeNormal               = cell (fun () -> new MoroInverseCumulativeNormal (average.Value, sigma.Value))
+    let mutable
+        _MoroInverseCumulativeNormal               = cell (fun () -> new MoroInverseCumulativeNormal (average.Value, sigma.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _MoroInverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_MoroInverseCumulativeNormal)
@@ -54,13 +55,14 @@ type MoroInverseCumulativeNormalModel
     casting 
 *)
     internal new () = new MoroInverseCumulativeNormalModel(null,null)
-    member internal this.Inject v = _MoroInverseCumulativeNormal.Value <- v
+    member internal this.Inject v = _MoroInverseCumulativeNormal <- v
     static member Cast (p : ICell<MoroInverseCumulativeNormal>) = 
         if p :? MoroInverseCumulativeNormalModel then 
             p :?> MoroInverseCumulativeNormalModel
         else
             let o = new MoroInverseCumulativeNormalModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module pair_doubleFunction =
     *)
     [<ExcelFunction(Name="_pair_double_CompareTo", Description="Create a pair_double",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let pair_double_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "pair_double")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="pair_double",Description = "Reference to pair_double")>] 
+        ([<ExcelArgument(Name="pair_double",Description = "pair_double")>] 
          pair_double : obj)
-        ([<ExcelArgument(Name="other",Description = "Reference to other")>] 
+        ([<ExcelArgument(Name="other",Description = "double,double")>] 
          other : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module pair_doubleFunction =
     *)
     [<ExcelFunction(Name="_pair_double", Description="Create a pair_double",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let pair_double_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "pair_double")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "double")>] 
          first : obj)
-        ([<ExcelArgument(Name="second",Description = "Reference to second")>] 
+        ([<ExcelArgument(Name="second",Description = "double")>] 
          second : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module pair_doubleFunction =
     *)
     [<ExcelFunction(Name="_pair_double_first", Description="Create a pair_double",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let pair_double_first
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="pair_double",Description = "Reference to pair_double")>] 
+        ([<ExcelArgument(Name="pair_double",Description = "pair_double")>] 
          pair_double : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module pair_doubleFunction =
     *)
     [<ExcelFunction(Name="_pair_double_second", Description="Create a pair_double",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let pair_double_second
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="pair_double",Description = "Reference to pair_double")>] 
+        ([<ExcelArgument(Name="pair_double",Description = "pair_double")>] 
          pair_double : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,13 +196,13 @@ module pair_doubleFunction =
     *)
     [<ExcelFunction(Name="_pair_double_set", Description="Create a pair_double",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let pair_double_set
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="pair_double",Description = "Reference to pair_double")>] 
+        ([<ExcelArgument(Name="pair_double",Description = "pair_double")>] 
          pair_double : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "double")>] 
          first : obj)
-        ([<ExcelArgument(Name="second",Description = "Reference to second")>] 
+        ([<ExcelArgument(Name="second",Description = "double")>] 
          second : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -241,9 +241,9 @@ module pair_doubleFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_pair_double_Range", Description="Create a range of pair_double",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let pair_double_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the pair_double")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

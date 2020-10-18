@@ -39,11 +39,11 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_include", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_include
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="projectedParameters",Description = "Reference to projectedParameters")>] 
+        ([<ExcelArgument(Name="projectedParameters",Description = "Vector")>] 
          projectedParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_project", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_project
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,13 +123,13 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ProjectedCostFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="costFunction",Description = "Reference to costFunction")>] 
+        ([<ExcelArgument(Name="costFunction",Description = "CostFunction")>] 
          costFunction : obj)
-        ([<ExcelArgument(Name="parametersValues",Description = "Reference to parametersValues")>] 
+        ([<ExcelArgument(Name="parametersValues",Description = "Vector")>] 
          parametersValues : obj)
-        ([<ExcelArgument(Name="parametersFreedoms",Description = "Reference to parametersFreedoms")>] 
+        ([<ExcelArgument(Name="parametersFreedoms",Description = "bool")>] 
          parametersFreedoms : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,11 +172,11 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_value", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="freeParameters",Description = "Reference to freeParameters")>] 
+        ([<ExcelArgument(Name="freeParameters",Description = "Vector")>] 
          freeParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,11 +214,11 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_values", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="freeParameters",Description = "Reference to freeParameters")>] 
+        ([<ExcelArgument(Name="freeParameters",Description = "Vector")>] 
          freeParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_finiteDifferenceEpsilon", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_finiteDifferenceEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,13 +292,13 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_gradient", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_gradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="grad",Description = "Reference to grad")>] 
+        ([<ExcelArgument(Name="grad",Description = "Vector")>] 
          grad : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,13 +340,13 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_jacobian", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_jacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="jac",Description = "Reference to jac")>] 
+        ([<ExcelArgument(Name="jac",Description = "Matrix")>] 
          jac : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,13 +388,13 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_valueAndGradient", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_valueAndGradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="grad",Description = "Reference to grad")>] 
+        ([<ExcelArgument(Name="grad",Description = "Vector")>] 
          grad : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,13 +436,13 @@ module ProjectedCostFunctionFunction =
     *)
     [<ExcelFunction(Name="_ProjectedCostFunction_valuesAndJacobian", Description="Create a ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_valuesAndJacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "Reference to ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="ProjectedCostFunction",Description = "ProjectedCostFunction")>] 
          projectedcostfunction : obj)
-        ([<ExcelArgument(Name="jac",Description = "Reference to jac")>] 
+        ([<ExcelArgument(Name="jac",Description = "Matrix")>] 
          jac : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -481,9 +481,9 @@ module ProjectedCostFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ProjectedCostFunction_Range", Description="Create a range of ProjectedCostFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedCostFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ProjectedCostFunction")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

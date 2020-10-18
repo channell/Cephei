@@ -46,7 +46,8 @@ type NonhomogeneousBoundaryConstraintModel
 (*
     Functions
 *)
-    let _NonhomogeneousBoundaryConstraint          = cell (fun () -> new NonhomogeneousBoundaryConstraint (low.Value, high.Value))
+    let mutable
+        _NonhomogeneousBoundaryConstraint          = cell (fun () -> new NonhomogeneousBoundaryConstraint (low.Value, high.Value))
     let _empty                                     = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.lowerBound(parameters.Value))
@@ -61,13 +62,14 @@ type NonhomogeneousBoundaryConstraintModel
     casting 
 *)
     internal new () = new NonhomogeneousBoundaryConstraintModel(null,null)
-    member internal this.Inject v = _NonhomogeneousBoundaryConstraint.Value <- v
+    member internal this.Inject v = _NonhomogeneousBoundaryConstraint <- v
     static member Cast (p : ICell<NonhomogeneousBoundaryConstraint>) = 
         if p :? NonhomogeneousBoundaryConstraintModel then 
             p :?> NonhomogeneousBoundaryConstraintModel
         else
             let o = new NonhomogeneousBoundaryConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

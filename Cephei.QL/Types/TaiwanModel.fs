@@ -55,7 +55,8 @@ type TaiwanModel
 (*
     Functions
 *)
-    let _Taiwan                                    = cell (fun () -> new Taiwan ())
+    let mutable
+        _Taiwan                                    = cell (fun () -> new Taiwan ())
     let _addedHolidays                             = triv (fun () -> _Taiwan.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Taiwan.Value.addHoliday(d.Value)
@@ -92,13 +93,14 @@ type TaiwanModel
     casting 
 *)
     
-    member internal this.Inject v = _Taiwan.Value <- v
+    member internal this.Inject v = _Taiwan <- v
     static member Cast (p : ICell<Taiwan>) = 
         if p :? TaiwanModel then 
             p :?> TaiwanModel
         else
             let o = new TaiwanModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -46,7 +46,8 @@ type FdmMesherIntegralModel
 (*
     Functions
 *)
-    let _FdmMesherIntegral                         = cell (fun () -> new FdmMesherIntegral (mesher.Value, integrator1d.Value))
+    let mutable
+        _FdmMesherIntegral                         = cell (fun () -> new FdmMesherIntegral (mesher.Value, integrator1d.Value))
     let _integrate                                 (f : ICell<Vector>)   
                                                    = triv (fun () -> _FdmMesherIntegral.Value.integrate(f.Value))
     do this.Bind(_FdmMesherIntegral)
@@ -54,13 +55,14 @@ type FdmMesherIntegralModel
     casting 
 *)
     internal new () = new FdmMesherIntegralModel(null,null)
-    member internal this.Inject v = _FdmMesherIntegral.Value <- v
+    member internal this.Inject v = _FdmMesherIntegral <- v
     static member Cast (p : ICell<FdmMesherIntegral>) = 
         if p :? FdmMesherIntegralModel then 
             p :?> FdmMesherIntegralModel
         else
             let o = new FdmMesherIntegralModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

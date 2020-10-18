@@ -39,23 +39,23 @@ module BarrierPathPricerFunction =
     *)
     [<ExcelFunction(Name="_BarrierPathPricer", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BarrierPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="barrierType",Description = "Reference to barrierType")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="barrier",Description = "Reference to barrier")>] 
+        ([<ExcelArgument(Name="barrier",Description = "double")>] 
          barrier : obj)
-        ([<ExcelArgument(Name="rebate",Description = "Reference to rebate")>] 
+        ([<ExcelArgument(Name="rebate",Description = "double")>] 
          rebate : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discounts",Description = "Reference to discounts")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double")>] 
          discounts : obj)
-        ([<ExcelArgument(Name="diffProcess",Description = "Reference to diffProcess")>] 
+        ([<ExcelArgument(Name="diffProcess",Description = "StochasticProcess1D")>] 
          diffProcess : obj)
-        ([<ExcelArgument(Name="sequenceGen",Description = "Reference to sequenceGen")>] 
+        ([<ExcelArgument(Name="sequenceGen",Description = "IRNG")>] 
          sequenceGen : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module BarrierPathPricerFunction =
     *)
     [<ExcelFunction(Name="_BarrierPathPricer_value", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierPathPricer",Description = "Reference to BarrierPathPricer")>] 
+        ([<ExcelArgument(Name="BarrierPathPricer",Description = "BarrierPathPricer")>] 
          barrierpathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -157,9 +157,9 @@ module BarrierPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BarrierPathPricer_Range", Description="Create a range of BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BarrierPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

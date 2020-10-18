@@ -39,11 +39,11 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,13 +82,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator1", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="residualTime",Description = "Reference to residualTime")>] 
+        ([<ExcelArgument(Name="residualTime",Description = "double")>] 
          residualTime : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,13 +131,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_add", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,11 +179,11 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_applyTo", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,9 +221,9 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_Clone", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,9 +257,9 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_diagonal", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,11 +293,11 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_identity", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -335,9 +335,9 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_isTimeDependent", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -371,9 +371,9 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_lowerDiagonal", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,13 +407,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_multiply", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -455,13 +455,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setFirstRow", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -503,13 +503,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setLastRow", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,17 +551,17 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setMidRow", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -611,15 +611,15 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setMidRows", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,11 +665,11 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setTime", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -707,9 +707,9 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_size", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -743,11 +743,11 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_solveFor", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -785,13 +785,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_SOR", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
-        ([<ExcelArgument(Name="tol",Description = "Reference to tol")>] 
+        ([<ExcelArgument(Name="tol",Description = "double")>] 
          tol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,13 +833,13 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_subtract", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -881,9 +881,9 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_upperDiagonal", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeOperator",Description = "Reference to PdeOperator")>] 
+        ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -914,9 +914,9 @@ module PdeOperatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeOperator_Range", Description="Create a range of PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PdeOperator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

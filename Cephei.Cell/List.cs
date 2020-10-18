@@ -67,9 +67,12 @@ namespace Cephei.Cell
             {
                 return null;
             }
+            set
+            {
+            }
         }
 
-        public void Clone(ICell source)
+        public void Merge(ICell source, Model model)
         {
         }
 
@@ -127,7 +130,7 @@ namespace Cephei.Cell
                         foreach (var c in dependants)
                             value.Change += c.OnChange;
                         foreach (var c in dependants)
-                            value.OnChange(CellEvent.Link, this, DateTime.Now, null);
+                            value.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
                     }
                 }
                 value.Parent = this;
@@ -139,21 +142,23 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            RaiseChange(CellEvent.Delete, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Delete, this, this, DateTime.Now, null);
+
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void RaiseChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             if (Change != null)
-                Change(eventType, root, epoch, session);
+                Change(eventType, root, this, epoch, session);
             if (Parent != null)
-                Parent.OnChange(eventType, root, epoch, session);
+                Parent.OnChange(eventType, root,  this, epoch, session);
         }
 
-        public void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        public void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
-            RaiseChange(eventType, this, DateTime.Now, null);
+            RaiseChange(eventType, this, this, DateTime.Now, null);
+
         }
 
         public IDisposable Subscribe(IObserver<T> observer)
@@ -221,7 +226,8 @@ namespace Cephei.Cell
         {
             item.Parent = this;
             _list.Insert(index, item);
-            RaiseChange(CellEvent.Calculate, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
         }
 
         public void RemoveAt(int index)
@@ -230,7 +236,8 @@ namespace Cephei.Cell
             {
                 var i = _list[index];
                 if (i.Parent == this) i.Parent = null;
-                RaiseChange(CellEvent.Calculate, this, DateTime.Now, null);
+                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
             }
         }
 
@@ -238,13 +245,15 @@ namespace Cephei.Cell
         {
             item.Parent = this;
             _list.Add(item);
-            RaiseChange(CellEvent.Calculate, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
         }
 
         public void Clear()
         {
             _list.Clear();
-            RaiseChange(CellEvent.Calculate, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
         }
 
         public bool Contains(Generic.ICell<T> item)
@@ -261,7 +270,8 @@ namespace Cephei.Cell
         {
             var r = _list.Remove(item);
             if (r)
-                RaiseChange(CellEvent.Calculate, this, DateTime.Now, null);
+                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
             return r;
         }
 

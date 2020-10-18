@@ -50,7 +50,8 @@ type CubicBSplinesFittingModel
 (*
     Functions
 *)
-    let _CubicBSplinesFitting                      = cell (fun () -> new CubicBSplinesFitting (knots.Value, constrainAtZero.Value, weights.Value, optimizationMethod.Value))
+    let mutable
+        _CubicBSplinesFitting                      = cell (fun () -> new CubicBSplinesFitting (knots.Value, constrainAtZero.Value, weights.Value, optimizationMethod.Value))
     let _basisFunction                             (i : ICell<int>) (t : ICell<double>)   
                                                    = triv (fun () -> _CubicBSplinesFitting.Value.basisFunction(i.Value, t.Value))
     let _clone                                     = triv (fun () -> _CubicBSplinesFitting.Value.clone())
@@ -68,13 +69,14 @@ type CubicBSplinesFittingModel
     casting 
 *)
     internal new () = new CubicBSplinesFittingModel(null,null,null,null)
-    member internal this.Inject v = _CubicBSplinesFitting.Value <- v
+    member internal this.Inject v = _CubicBSplinesFitting <- v
     static member Cast (p : ICell<CubicBSplinesFitting>) = 
         if p :? CubicBSplinesFittingModel then 
             p :?> CubicBSplinesFittingModel
         else
             let o = new CubicBSplinesFittingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

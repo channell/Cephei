@@ -44,7 +44,8 @@ type InstrumentModel
 (*
     Functions
 *)
-    let _Instrument                                = cell (fun () -> withEngine pricingEngine (new Instrument ()))
+    let mutable
+        _Instrument                                = cell (fun () -> withEngine pricingEngine (new Instrument ()))
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).CASH())
     let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).errorEstimate())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).isExpired())
@@ -60,13 +61,14 @@ type InstrumentModel
     casting 
 *)
     internal new () = new InstrumentModel(null,null)
-    member internal this.Inject v = _Instrument.Value <- v
+    member internal this.Inject v = _Instrument <- v
     static member Cast (p : ICell<Instrument>) = 
         if p :? InstrumentModel then 
             p :?> InstrumentModel
         else
             let o = new InstrumentModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

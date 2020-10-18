@@ -46,7 +46,8 @@ type SimpsonIntegralModel
 (*
     Functions
 *)
-    let _SimpsonIntegral                           = cell (fun () -> new SimpsonIntegral (accuracy.Value, maxIterations.Value))
+    let mutable
+        _SimpsonIntegral                           = cell (fun () -> new SimpsonIntegral (accuracy.Value, maxIterations.Value))
     let _absoluteAccuracy                          = triv (fun () -> _SimpsonIntegral.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _SimpsonIntegral.Value.absoluteError())
     let _integrationSuccess                        = triv (fun () -> _SimpsonIntegral.Value.integrationSuccess())
@@ -65,13 +66,14 @@ type SimpsonIntegralModel
     casting 
 *)
     internal new () = new SimpsonIntegralModel(null,null)
-    member internal this.Inject v = _SimpsonIntegral.Value <- v
+    member internal this.Inject v = _SimpsonIntegral <- v
     static member Cast (p : ICell<SimpsonIntegral>) = 
         if p :? SimpsonIntegralModel then 
             p :?> SimpsonIntegralModel
         else
             let o = new SimpsonIntegralModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

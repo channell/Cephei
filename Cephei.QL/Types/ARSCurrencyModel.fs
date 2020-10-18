@@ -41,7 +41,8 @@ type ARSCurrencyModel
 (*
     Functions
 *)
-    let _ARSCurrency                               = cell (fun () -> new ARSCurrency ())
+    let mutable
+        _ARSCurrency                               = cell (fun () -> new ARSCurrency ())
     let _code                                      = triv (fun () -> _ARSCurrency.Value.code)
     let _empty                                     = triv (fun () -> _ARSCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type ARSCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _ARSCurrency.Value <- v
+    member internal this.Inject v = _ARSCurrency <- v
     static member Cast (p : ICell<ARSCurrency>) = 
         if p :? ARSCurrencyModel then 
             p :?> ARSCurrencyModel
         else
             let o = new ARSCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

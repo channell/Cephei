@@ -40,13 +40,13 @@ module KirkSpreadOptionEngineFunction =
     *)
     [<ExcelFunction(Name="_KirkSpreadOptionEngine", Description="Create a KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkSpreadOptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "KirkSpreadOptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="process1",Description = "Reference to process1")>] 
+        ([<ExcelArgument(Name="process1",Description = "BlackProcess")>] 
          process1 : obj)
-        ([<ExcelArgument(Name="process2",Description = "Reference to process2")>] 
+        ([<ExcelArgument(Name="process2",Description = "BlackProcess")>] 
          process2 : obj)
-        ([<ExcelArgument(Name="correlation",Description = "Reference to correlation")>] 
+        ([<ExcelArgument(Name="correlation",Description = "Quote")>] 
          correlation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -86,9 +86,9 @@ module KirkSpreadOptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KirkSpreadOptionEngine_Range", Description="Create a range of KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkSpreadOptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the KirkSpreadOptionEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,19 +41,21 @@ type NullEffectiveDateExceptionModel
 (*
     Functions
 *)
-    let _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException ())
+    let mutable
+        _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException ())
     do this.Bind(_NullEffectiveDateException)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _NullEffectiveDateException.Value <- v
+    member internal this.Inject v = _NullEffectiveDateException <- v
     static member Cast (p : ICell<NullEffectiveDateException>) = 
         if p :? NullEffectiveDateExceptionModel then 
             p :?> NullEffectiveDateExceptionModel
         else
             let o = new NullEffectiveDateExceptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -77,19 +79,21 @@ type NullEffectiveDateExceptionModel1
 (*
     Functions
 *)
-    let _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value))
+    let mutable
+        _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value))
     do this.Bind(_NullEffectiveDateException)
 (* 
     casting 
 *)
     internal new () = new NullEffectiveDateExceptionModel1(null)
-    member internal this.Inject v = _NullEffectiveDateException.Value <- v
+    member internal this.Inject v = _NullEffectiveDateException <- v
     static member Cast (p : ICell<NullEffectiveDateException>) = 
         if p :? NullEffectiveDateExceptionModel1 then 
             p :?> NullEffectiveDateExceptionModel1
         else
             let o = new NullEffectiveDateExceptionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -116,19 +120,21 @@ type NullEffectiveDateExceptionModel2
 (*
     Functions
 *)
-    let _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value, inner.Value))
+    let mutable
+        _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value, inner.Value))
     do this.Bind(_NullEffectiveDateException)
 (* 
     casting 
 *)
     internal new () = new NullEffectiveDateExceptionModel2(null,null)
-    member internal this.Inject v = _NullEffectiveDateException.Value <- v
+    member internal this.Inject v = _NullEffectiveDateException <- v
     static member Cast (p : ICell<NullEffectiveDateException>) = 
         if p :? NullEffectiveDateExceptionModel2 then 
             p :?> NullEffectiveDateExceptionModel2
         else
             let o = new NullEffectiveDateExceptionModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

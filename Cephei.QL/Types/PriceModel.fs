@@ -46,7 +46,8 @@ type PriceModel
 (*
     Functions
 *)
-    let _Price                                     = cell (fun () -> new Price (amount.Value, Type.Value))
+    let mutable
+        _Price                                     = cell (fun () -> new Price (amount.Value, Type.Value))
     let _amount                                    = cell (fun () -> _Price.Value.amount())
     let _type                                      = cell (fun () -> _Price.Value.TYPE())
     do this.Bind(_Price)
@@ -54,13 +55,14 @@ type PriceModel
     casting 
 *)
     internal new () = PriceModel(null,null)
-    member internal this.Inject v = _Price.Value <- v
+    member internal this.Inject v = _Price <- v
     static member Cast (p : ICell<Price>) = 
         if p :? PriceModel then 
             p :?> PriceModel
         else
             let o = new PriceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 
@@ -97,7 +99,8 @@ type PriceModel1
 (*
     Functions
 *)
-    let _Price                                     = cell (fun () -> new Price ())
+    let mutable
+        _Price                                     = cell (fun () -> new Price ())
     let _amount                                    = cell (fun () -> _Price.Value.amount())
     let _type                                      = cell (fun () -> _Price.Value.TYPE())
     do this.Bind(_Price)
@@ -105,13 +108,14 @@ type PriceModel1
     casting 
 *)
     
-    member internal this.Inject v = _Price.Value <- v
+    member internal this.Inject v = _Price <- v
     static member Cast (p : ICell<Price>) = 
         if p :? PriceModel1 then 
             p :?> PriceModel1
         else
             let o = new PriceModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

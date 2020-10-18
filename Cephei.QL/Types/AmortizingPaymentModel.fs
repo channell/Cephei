@@ -46,7 +46,8 @@ type AmortizingPaymentModel
 (*
     Functions
 *)
-    let _AmortizingPayment                         = cell (fun () -> new AmortizingPayment (amount.Value, date.Value))
+    let mutable
+        _AmortizingPayment                         = cell (fun () -> new AmortizingPayment (amount.Value, date.Value))
     let _amount                                    = triv (fun () -> _AmortizingPayment.Value.amount())
     let _date                                      = triv (fun () -> _AmortizingPayment.Value.date())
     let _CompareTo                                 (cf : ICell<CashFlow>)   
@@ -72,13 +73,14 @@ type AmortizingPaymentModel
     casting 
 *)
     internal new () = new AmortizingPaymentModel(null,null)
-    member internal this.Inject v = _AmortizingPayment.Value <- v
+    member internal this.Inject v = _AmortizingPayment <- v
     static member Cast (p : ICell<AmortizingPayment>) = 
         if p :? AmortizingPaymentModel then 
             p :?> AmortizingPaymentModel
         else
             let o = new AmortizingPaymentModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

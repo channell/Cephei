@@ -52,19 +52,21 @@ type IntegralCdsEngineModel
 (*
     Functions
 *)
-    let _IntegralCdsEngine                         = cell (fun () -> new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
+    let mutable
+        _IntegralCdsEngine                         = cell (fun () -> new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
     do this.Bind(_IntegralCdsEngine)
 (* 
     casting 
 *)
     internal new () = new IntegralCdsEngineModel(null,null,null,null,null)
-    member internal this.Inject v = _IntegralCdsEngine.Value <- v
+    member internal this.Inject v = _IntegralCdsEngine <- v
     static member Cast (p : ICell<IntegralCdsEngine>) = 
         if p :? IntegralCdsEngineModel then 
             p :?> IntegralCdsEngineModel
         else
             let o = new IntegralCdsEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

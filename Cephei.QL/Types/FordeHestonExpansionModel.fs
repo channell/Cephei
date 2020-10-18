@@ -54,7 +54,8 @@ type FordeHestonExpansionModel
 (*
     Functions
 *)
-    let _FordeHestonExpansion                      = cell (fun () -> new FordeHestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
+    let mutable
+        _FordeHestonExpansion                      = cell (fun () -> new FordeHestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
     let _impliedVolatility                         (strike : ICell<double>) (forward : ICell<double>)   
                                                    = triv (fun () -> _FordeHestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
     do this.Bind(_FordeHestonExpansion)
@@ -62,13 +63,14 @@ type FordeHestonExpansionModel
     casting 
 *)
     internal new () = new FordeHestonExpansionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _FordeHestonExpansion.Value <- v
+    member internal this.Inject v = _FordeHestonExpansion <- v
     static member Cast (p : ICell<FordeHestonExpansion>) = 
         if p :? FordeHestonExpansionModel then 
             p :?> FordeHestonExpansionModel
         else
             let o = new FordeHestonExpansionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

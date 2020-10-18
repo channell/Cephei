@@ -46,7 +46,8 @@ type PercentageStrikePayoffModel
 (*
     Functions
 *)
-    let _PercentageStrikePayoff                    = cell (fun () -> new PercentageStrikePayoff (Type.Value, moneyness.Value))
+    let mutable
+        _PercentageStrikePayoff                    = cell (fun () -> new PercentageStrikePayoff (Type.Value, moneyness.Value))
     let _name                                      = triv (fun () -> _PercentageStrikePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
                                                    = triv (fun () -> _PercentageStrikePayoff.Value.value(price.Value))
@@ -61,13 +62,14 @@ type PercentageStrikePayoffModel
     casting 
 *)
     internal new () = new PercentageStrikePayoffModel(null,null)
-    member internal this.Inject v = _PercentageStrikePayoff.Value <- v
+    member internal this.Inject v = _PercentageStrikePayoff <- v
     static member Cast (p : ICell<PercentageStrikePayoff>) = 
         if p :? PercentageStrikePayoffModel then 
             p :?> PercentageStrikePayoffModel
         else
             let o = new PercentageStrikePayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

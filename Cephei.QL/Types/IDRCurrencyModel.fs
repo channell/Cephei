@@ -41,7 +41,8 @@ type IDRCurrencyModel
 (*
     Functions
 *)
-    let _IDRCurrency                               = cell (fun () -> new IDRCurrency ())
+    let mutable
+        _IDRCurrency                               = cell (fun () -> new IDRCurrency ())
     let _code                                      = triv (fun () -> _IDRCurrency.Value.code)
     let _empty                                     = triv (fun () -> _IDRCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type IDRCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _IDRCurrency.Value <- v
+    member internal this.Inject v = _IDRCurrency <- v
     static member Cast (p : ICell<IDRCurrency>) = 
         if p :? IDRCurrencyModel then 
             p :?> IDRCurrencyModel
         else
             let o = new IDRCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

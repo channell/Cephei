@@ -39,9 +39,9 @@ module AnalyticDigitalAmericanKOEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDigitalAmericanKOEngine", Description="Create a AnalyticDigitalAmericanKOEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanKOEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDigitalAmericanKOEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="engine",Description = "Reference to engine")>] 
+        ([<ExcelArgument(Name="engine",Description = "GeneralizedBlackScholesProcess")>] 
          engine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module AnalyticDigitalAmericanKOEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDigitalAmericanKOEngine_knock_in", Description="Create a AnalyticDigitalAmericanKOEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanKOEngine_knock_in
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticDigitalAmericanKOEngine",Description = "Reference to AnalyticDigitalAmericanKOEngine")>] 
+        ([<ExcelArgument(Name="AnalyticDigitalAmericanKOEngine",Description = "AnalyticDigitalAmericanKOEngine")>] 
          analyticdigitalamericankoengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,9 +113,9 @@ module AnalyticDigitalAmericanKOEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticDigitalAmericanKOEngine_Range", Description="Create a range of AnalyticDigitalAmericanKOEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanKOEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AnalyticDigitalAmericanKOEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

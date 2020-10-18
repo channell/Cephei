@@ -111,15 +111,17 @@ module public  Model =
                     t.ToCell ()
                 else
                     c
+            _state.Value.Rtd.TryRemove (s) |> ignore
             cell.Mnemonic <- sub.mnemonic
             if (not (current = null)) && cell.GetType() = current.GetType() then
-                current.Clone (cell)
+                current.Merge(cell, _state.Value.Model)
 
             elif not (current = cell) then 
                 _state.Value.Model.[sub.mnemonic] <- cell
                 _state.Value.Source.[sub.mnemonic] <- sub.source()
                 _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber
-            _state.Value.Rtd.TryRemove (s) |> ignore
+                if not (current = null) then current.Dispose() 
+
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
@@ -127,7 +129,7 @@ module public  Model =
         _state.Value.Rtd.[spec.mnemonic] <- spec
         let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString())
         if xlv = null then 
-            add spec.mnemonic
+            add spec.mnemonic |> ignore
             spec.mnemonic :> obj
         else
             xlv
@@ -135,7 +137,7 @@ module public  Model =
     let value (mnemonic : string) : obj =
         let xlv = xlInterface.ValueRTD mnemonic ""
         if xlv = null then 
-            add mnemonic
+            add mnemonic |> ignore
             mnemonic :> obj
         elif xlv :? string && not ((xlv :?> string) = mnemonic) then
             try
@@ -160,7 +162,7 @@ module public  Model =
             let mutable cell2 = cell
             if _state.Value.Model.TryRemove (s, ref cell2) then
                 if not (cell = null) then
-                    cell.Dependants|> Seq.iter (fun d -> if not (d = null) then d.OnChange (CellEvent.Link, cell, DateTime.Now, null ))
+                    cell.Dependants|> Seq.iter (fun d -> if not (d = null) then d.OnChange (CellEvent.Link, cell, cell, DateTime.Now, null ))
                     cell.Dispose ()
                 _state.Value.Source.TryRemove s |> ignore
                 _state.Value.Subscriber.TryRemove s |> ignore
@@ -231,6 +233,24 @@ module public  Model =
             else    
                 s
 
+        let typeString (o : obj)  =
+            let t = o.GetType().ToString()
+            if t.Contains("`") then
+                let parse (s,f) y = 
+                    if y = '`' then 
+                        (s,false) 
+                    elif y = '[' then 
+                        (s + "<", true) 
+                    elif y = ']' then 
+                        (s + ">", true) 
+                    elif f then 
+                        (s + (string y),true) 
+                    else 
+                        (s,false)
+                fst (t.ToCharArray() |> Array.fold parse ("",true))
+            else
+                t
+
         let cells = 
             tiers |>
             Array.filter (fun (c,d) -> _state.Value.Source.ContainsKey c.Mnemonic) |>
@@ -240,7 +260,7 @@ module public  Model =
             fst (
                 cells |>
                 Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-                Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (c.Box.GetType().ToString())) |>
+                Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (typeString c.Box)) |>
                 Array.fold (fun (s,d) y -> (s + "    " + d + y,",")) ("", "(") 
                 )
 
@@ -264,7 +284,7 @@ module public  Model =
         let excelCasts = 
             cells |>
             Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-            Array.map (fun (c,s) -> sprintf "                let _%s = Helper.toCell<%s> %s \"%s\"\n" (strip c.Mnemonic) (c.Box.GetType().ToString()) (strip c.Mnemonic) (strip c.Mnemonic)) |>
+            Array.map (fun (c,s) -> sprintf "                let _%s = Helper.toCell<%s> %s \"%s\"\n" (strip c.Mnemonic) (typeString c.Box) (strip c.Mnemonic) (strip c.Mnemonic)) |>
             Array.fold (fun a y -> a + y) ""
 
         let excelBuilder = 

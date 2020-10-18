@@ -48,7 +48,8 @@ type YYAUCPIModel
 (*
     Functions
 *)
-    let _YYAUCPI                                   = cell (fun () -> new YYAUCPI (frequency.Value, revised.Value, interpolated.Value))
+    let mutable
+        _YYAUCPI                                   = cell (fun () -> new YYAUCPI (frequency.Value, revised.Value, interpolated.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYAUCPI.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -92,13 +93,14 @@ type YYAUCPIModel
     casting 
 *)
     internal new () = new YYAUCPIModel(null,null,null)
-    member internal this.Inject v = _YYAUCPI.Value <- v
+    member internal this.Inject v = _YYAUCPI <- v
     static member Cast (p : ICell<YYAUCPI>) = 
         if p :? YYAUCPIModel then 
             p :?> YYAUCPIModel
         else
             let o = new YYAUCPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -162,7 +164,8 @@ type YYAUCPIModel1
 (*
     Functions
 *)
-    let _YYAUCPI                                   = cell (fun () -> new YYAUCPI (frequency.Value, revised.Value, interpolated.Value, ts.Value))
+    let mutable
+        _YYAUCPI                                   = cell (fun () -> new YYAUCPI (frequency.Value, revised.Value, interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYAUCPI.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -206,13 +209,14 @@ type YYAUCPIModel1
     casting 
 *)
     internal new () = new YYAUCPIModel1(null,null,null,null)
-    member internal this.Inject v = _YYAUCPI.Value <- v
+    member internal this.Inject v = _YYAUCPI <- v
     static member Cast (p : ICell<YYAUCPI>) = 
         if p :? YYAUCPIModel1 then 
             p :?> YYAUCPIModel1
         else
             let o = new YYAUCPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

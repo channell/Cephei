@@ -39,13 +39,13 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess1", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="blackVolTS",Description = "Reference to blackVolTS")>] 
+        ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,15 +88,15 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="blackVolTS",Description = "Reference to blackVolTS")>] 
+        ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "IDiscretization1D")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,13 +143,13 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_apply", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,9 +191,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_blackVolatility", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_blackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,13 +227,13 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_diffusion", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,9 +275,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_dividendYield", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -311,13 +311,13 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_drift", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,17 +359,17 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_evolve", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "double")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -419,15 +419,15 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_expectation", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -473,9 +473,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_localVolatility", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_localVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -509,9 +509,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_riskFreeRate", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -545,9 +545,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_stateVariable", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_stateVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -581,15 +581,15 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_stdDeviation", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,11 +635,11 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_time", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,9 +677,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_update", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -713,15 +713,15 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_variance", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -767,9 +767,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_x0", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -803,9 +803,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_initialValues", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -839,9 +839,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_size", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -875,15 +875,15 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_covariance", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -929,9 +929,9 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_factors", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,11 +965,11 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_registerWith", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1007,11 +1007,11 @@ module BlackProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackProcess_unregisterWith", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackProcess",Description = "Reference to BlackProcess")>] 
+        ([<ExcelArgument(Name="BlackProcess",Description = "BlackProcess")>] 
          blackprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1046,9 +1046,9 @@ module BlackProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackProcess_Range", Description="Create a range of BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

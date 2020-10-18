@@ -46,7 +46,8 @@ type LinearRegressionModel
 (*
     Functions
 *)
-    let _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
+    let mutable
+        _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
     let _coefficients                              = triv (fun () -> _LinearRegression.Value.coefficients())
     let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
     let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
@@ -55,13 +56,14 @@ type LinearRegressionModel
     casting 
 *)
     internal new () = new LinearRegressionModel(null,null)
-    member internal this.Inject v = _LinearRegression.Value <- v
+    member internal this.Inject v = _LinearRegression <- v
     static member Cast (p : ICell<LinearRegression>) = 
         if p :? LinearRegressionModel then 
             p :?> LinearRegressionModel
         else
             let o = new LinearRegressionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -92,7 +94,8 @@ type LinearRegressionModel1
 (*
     Functions
 *)
-    let _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
+    let mutable
+        _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
     let _coefficients                              = triv (fun () -> _LinearRegression.Value.coefficients())
     let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
     let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
@@ -101,13 +104,14 @@ type LinearRegressionModel1
     casting 
 *)
     internal new () = new LinearRegressionModel1(null,null)
-    member internal this.Inject v = _LinearRegression.Value <- v
+    member internal this.Inject v = _LinearRegression <- v
     static member Cast (p : ICell<LinearRegression>) = 
         if p :? LinearRegressionModel1 then 
             p :?> LinearRegressionModel1
         else
             let o = new LinearRegressionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

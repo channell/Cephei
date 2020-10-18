@@ -46,7 +46,8 @@ type CmsLegModel
 (*
     Functions
 *)
-    let _CmsLeg                                    = cell (fun () -> new CmsLeg (schedule.Value, swapIndex.Value))
+    let mutable
+        _CmsLeg                                    = cell (fun () -> new CmsLeg (schedule.Value, swapIndex.Value))
     let _value                                     = triv (fun () -> _CmsLeg.Value.value())
     let _inArrears                                 = triv (fun () -> _CmsLeg.Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
@@ -87,13 +88,14 @@ type CmsLegModel
     casting 
 *)
     internal new () = new CmsLegModel(null,null)
-    member internal this.Inject v = _CmsLeg.Value <- v
+    member internal this.Inject v = _CmsLeg <- v
     static member Cast (p : ICell<CmsLeg>) = 
         if p :? CmsLegModel then 
             p :?> CmsLegModel
         else
             let o = new CmsLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

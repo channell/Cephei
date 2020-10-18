@@ -39,15 +39,15 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_correctYoYRate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_correctYoYRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiplicativePriceSeasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,15 +93,15 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_correctZeroRate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_correctZeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiplicativePriceSeasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_frequency", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiplicativePriceSeasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_isConsistent", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_isConsistent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiplicativePriceSeasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,7 +225,7 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality1", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiplicativePriceSeasonality")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,13 +256,13 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiplicativePriceSeasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Reference to seasonalityBaseDate")>] 
+        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Date")>] 
          seasonalityBaseDate : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="seasonalityFactors",Description = "Reference to seasonalityFactors")>] 
+        ([<ExcelArgument(Name="seasonalityFactors",Description = "double")>] 
          seasonalityFactors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,9 +305,9 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityBaseDate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_seasonalityBaseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityFactor", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_seasonalityFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityFactors", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_seasonalityFactors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -419,15 +419,15 @@ module MultiplicativePriceSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_set", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_set
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "Reference to MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="MultiplicativePriceSeasonality",Description = "MultiplicativePriceSeasonality")>] 
          multiplicativepriceseasonality : obj)
-        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Reference to seasonalityBaseDate")>] 
+        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Date")>] 
          seasonalityBaseDate : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="seasonalityFactors",Description = "Reference to seasonalityFactors")>] 
+        ([<ExcelArgument(Name="seasonalityFactors",Description = "double")>] 
          seasonalityFactors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -470,9 +470,9 @@ module MultiplicativePriceSeasonalityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MultiplicativePriceSeasonality_Range", Description="Create a range of MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MultiplicativePriceSeasonality")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

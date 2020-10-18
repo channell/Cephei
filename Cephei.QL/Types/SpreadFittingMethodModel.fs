@@ -46,7 +46,8 @@ type SpreadFittingMethodModel
 (*
     Functions
 *)
-    let _SpreadFittingMethod                       = cell (fun () -> new SpreadFittingMethod (Method.Value, discountCurve.Value))
+    let mutable
+        _SpreadFittingMethod                       = cell (fun () -> new SpreadFittingMethod (Method.Value, discountCurve.Value))
     let _clone                                     = triv (fun () -> _SpreadFittingMethod.Value.clone())
     let _size                                      = triv (fun () -> _SpreadFittingMethod.Value.size())
     let _constrainAtZero                           = triv (fun () -> _SpreadFittingMethod.Value.constrainAtZero())
@@ -62,13 +63,14 @@ type SpreadFittingMethodModel
     casting 
 *)
     internal new () = new SpreadFittingMethodModel(null,null)
-    member internal this.Inject v = _SpreadFittingMethod.Value <- v
+    member internal this.Inject v = _SpreadFittingMethod <- v
     static member Cast (p : ICell<SpreadFittingMethod>) = 
         if p :? SpreadFittingMethodModel then 
             p :?> SpreadFittingMethodModel
         else
             let o = new SpreadFittingMethodModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

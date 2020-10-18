@@ -48,7 +48,8 @@ type AnalyticDoubleBarrierBinaryEngineHelperModel
 (*
     Functions
 *)
-    let _AnalyticDoubleBarrierBinaryEngineHelper   = cell (fun () -> new AnalyticDoubleBarrierBinaryEngineHelper (Process.Value, payoff.Value, arguments.Value))
+    let mutable
+        _AnalyticDoubleBarrierBinaryEngineHelper   = cell (fun () -> new AnalyticDoubleBarrierBinaryEngineHelper (Process.Value, payoff.Value, arguments.Value))
     let _payoffAtExpiry                            (spot : ICell<double>) (variance : ICell<double>) (barrierType : ICell<DoubleBarrier.Type>) (maxIteration : ICell<int>) (requiredConvergence : ICell<double>)   
                                                    = triv (fun () -> _AnalyticDoubleBarrierBinaryEngineHelper.Value.payoffAtExpiry(spot.Value, variance.Value, barrierType.Value, maxIteration.Value, requiredConvergence.Value))
     let _payoffKIKO                                (spot : ICell<double>) (variance : ICell<double>) (barrierType : ICell<DoubleBarrier.Type>) (maxIteration : ICell<int>) (requiredConvergence : ICell<double>)   
@@ -58,13 +59,14 @@ type AnalyticDoubleBarrierBinaryEngineHelperModel
     casting 
 *)
     internal new () = new AnalyticDoubleBarrierBinaryEngineHelperModel(null,null,null)
-    member internal this.Inject v = _AnalyticDoubleBarrierBinaryEngineHelper.Value <- v
+    member internal this.Inject v = _AnalyticDoubleBarrierBinaryEngineHelper <- v
     static member Cast (p : ICell<AnalyticDoubleBarrierBinaryEngineHelper>) = 
         if p :? AnalyticDoubleBarrierBinaryEngineHelperModel then 
             p :?> AnalyticDoubleBarrierBinaryEngineHelperModel
         else
             let o = new AnalyticDoubleBarrierBinaryEngineHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

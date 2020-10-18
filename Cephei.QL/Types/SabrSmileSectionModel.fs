@@ -54,7 +54,8 @@ type SabrSmileSectionModel
 (*
     Functions
 *)
-    let _SabrSmileSection                          = cell (fun () -> new SabrSmileSection (d.Value, forward.Value, sabrParams.Value, dc.Value, volatilityType.Value, shift.Value))
+    let mutable
+        _SabrSmileSection                          = cell (fun () -> new SabrSmileSection (d.Value, forward.Value, sabrParams.Value, dc.Value, volatilityType.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _SabrSmileSection.Value.atmLevel())
     let _maxStrike                                 = triv (fun () -> _SabrSmileSection.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _SabrSmileSection.Value.minStrike())
@@ -85,13 +86,14 @@ type SabrSmileSectionModel
     casting 
 *)
     internal new () = new SabrSmileSectionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _SabrSmileSection.Value <- v
+    member internal this.Inject v = _SabrSmileSection <- v
     static member Cast (p : ICell<SabrSmileSection>) = 
         if p :? SabrSmileSectionModel then 
             p :?> SabrSmileSectionModel
         else
             let o = new SabrSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -153,7 +155,8 @@ type SabrSmileSectionModel1
 (*
     Functions
 *)
-    let _SabrSmileSection                          = cell (fun () -> new SabrSmileSection (timeToExpiry.Value, forward.Value, sabrParams.Value, volatilityType.Value, shift.Value))
+    let mutable
+        _SabrSmileSection                          = cell (fun () -> new SabrSmileSection (timeToExpiry.Value, forward.Value, sabrParams.Value, volatilityType.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _SabrSmileSection.Value.atmLevel())
     let _maxStrike                                 = triv (fun () -> _SabrSmileSection.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _SabrSmileSection.Value.minStrike())
@@ -184,13 +187,14 @@ type SabrSmileSectionModel1
     casting 
 *)
     internal new () = new SabrSmileSectionModel1(null,null,null,null,null)
-    member internal this.Inject v = _SabrSmileSection.Value <- v
+    member internal this.Inject v = _SabrSmileSection <- v
     static member Cast (p : ICell<SabrSmileSection>) = 
         if p :? SabrSmileSectionModel1 then 
             p :?> SabrSmileSectionModel1
         else
             let o = new SabrSmileSectionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

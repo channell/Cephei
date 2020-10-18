@@ -50,7 +50,8 @@ type FDEuropeanEngineModel
 (*
     Functions
 *)
-    let _FDEuropeanEngine                          = cell (fun () -> new FDEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDEuropeanEngine                          = cell (fun () -> new FDEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _FDEuropeanEngine.Value.registerWith(handler.Value)
                                                                      _FDEuropeanEngine.Value)
@@ -73,13 +74,14 @@ type FDEuropeanEngineModel
     casting 
 *)
     internal new () = new FDEuropeanEngineModel(null,null,null,null)
-    member internal this.Inject v = _FDEuropeanEngine.Value <- v
+    member internal this.Inject v = _FDEuropeanEngine <- v
     static member Cast (p : ICell<FDEuropeanEngine>) = 
         if p :? FDEuropeanEngineModel then 
             p :?> FDEuropeanEngineModel
         else
             let o = new FDEuropeanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -123,7 +125,8 @@ type FDEuropeanEngineModel1
 (*
     Functions
 *)
-    let _FDEuropeanEngine                          = cell (fun () -> new FDEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value))
+    let mutable
+        _FDEuropeanEngine                          = cell (fun () -> new FDEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _FDEuropeanEngine.Value.registerWith(handler.Value)
                                                                      _FDEuropeanEngine.Value)
@@ -146,13 +149,14 @@ type FDEuropeanEngineModel1
     casting 
 *)
     internal new () = new FDEuropeanEngineModel1(null,null,null)
-    member internal this.Inject v = _FDEuropeanEngine.Value <- v
+    member internal this.Inject v = _FDEuropeanEngine <- v
     static member Cast (p : ICell<FDEuropeanEngine>) = 
         if p :? FDEuropeanEngineModel1 then 
             p :?> FDEuropeanEngineModel1
         else
             let o = new FDEuropeanEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

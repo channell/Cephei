@@ -70,7 +70,8 @@ type CappedFlooredCmsSpreadCouponModel
 (*
     Functions
 *)
-    let _CappedFlooredCmsSpreadCoupon              = cell (fun () -> new CappedFlooredCmsSpreadCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let mutable
+        _CappedFlooredCmsSpreadCoupon              = cell (fun () -> new CappedFlooredCmsSpreadCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _cap                                       = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.cap())
     let _convexityAdjustment                       = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.convexityAdjustment())
     let _effectiveCap                              = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.effectiveCap())
@@ -136,13 +137,14 @@ type CappedFlooredCmsSpreadCouponModel
     casting 
 *)
     internal new () = new CappedFlooredCmsSpreadCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CappedFlooredCmsSpreadCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredCmsSpreadCoupon <- v
     static member Cast (p : ICell<CappedFlooredCmsSpreadCoupon>) = 
         if p :? CappedFlooredCmsSpreadCouponModel then 
             p :?> CappedFlooredCmsSpreadCouponModel
         else
             let o = new CappedFlooredCmsSpreadCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -232,7 +234,8 @@ type CappedFlooredCmsSpreadCouponModel1
 (*
     Functions
 *)
-    let _CappedFlooredCmsSpreadCoupon              = cell (fun () -> new CappedFlooredCmsSpreadCoupon ())
+    let mutable
+        _CappedFlooredCmsSpreadCoupon              = cell (fun () -> new CappedFlooredCmsSpreadCoupon ())
     let _cap                                       = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.cap())
     let _convexityAdjustment                       = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.convexityAdjustment())
     let _effectiveCap                              = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.effectiveCap())
@@ -298,13 +301,14 @@ type CappedFlooredCmsSpreadCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _CappedFlooredCmsSpreadCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredCmsSpreadCoupon <- v
     static member Cast (p : ICell<CappedFlooredCmsSpreadCoupon>) = 
         if p :? CappedFlooredCmsSpreadCouponModel1 then 
             p :?> CappedFlooredCmsSpreadCouponModel1
         else
             let o = new CappedFlooredCmsSpreadCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

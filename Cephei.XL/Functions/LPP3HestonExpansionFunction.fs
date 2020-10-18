@@ -39,13 +39,13 @@ module LPP3HestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_LPP3HestonExpansion_impliedVolatility", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LPP3HestonExpansion")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LPP3HestonExpansion",Description = "Reference to LPP3HestonExpansion")>] 
+        ([<ExcelArgument(Name="LPP3HestonExpansion",Description = "LPP3HestonExpansion")>] 
          lpp3hestonexpansion : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,19 +87,19 @@ module LPP3HestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_LPP3HestonExpansion", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LPP3HestonExpansion")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="kappa",Description = "Reference to kappa")>] 
+        ([<ExcelArgument(Name="kappa",Description = "double")>] 
          kappa : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "double")>] 
          theta : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="v0",Description = "Reference to v0")>] 
+        ([<ExcelArgument(Name="v0",Description = "double")>] 
          v0 : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="term",Description = "Reference to term")>] 
+        ([<ExcelArgument(Name="term",Description = "double")>] 
          term : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -151,9 +151,9 @@ module LPP3HestonExpansionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LPP3HestonExpansion_Range", Description="Create a range of LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LPP3HestonExpansion")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

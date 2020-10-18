@@ -48,7 +48,8 @@ type GaussKronrodNonAdaptiveModel
 (*
     Functions
 *)
-    let _GaussKronrodNonAdaptive                   = cell (fun () -> new GaussKronrodNonAdaptive (absoluteAccuracy.Value, maxEvaluations.Value, relativeAccuracy.Value))
+    let mutable
+        _GaussKronrodNonAdaptive                   = cell (fun () -> new GaussKronrodNonAdaptive (absoluteAccuracy.Value, maxEvaluations.Value, relativeAccuracy.Value))
     let _relativeAccuracy                          = triv (fun () -> _GaussKronrodNonAdaptive.Value.relativeAccuracy())
     let _absoluteAccuracy                          = triv (fun () -> _GaussKronrodNonAdaptive.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _GaussKronrodNonAdaptive.Value.absoluteError())
@@ -68,13 +69,14 @@ type GaussKronrodNonAdaptiveModel
     casting 
 *)
     internal new () = new GaussKronrodNonAdaptiveModel(null,null,null)
-    member internal this.Inject v = _GaussKronrodNonAdaptive.Value <- v
+    member internal this.Inject v = _GaussKronrodNonAdaptive <- v
     static member Cast (p : ICell<GaussKronrodNonAdaptive>) = 
         if p :? GaussKronrodNonAdaptiveModel then 
             p :?> GaussKronrodNonAdaptiveModel
         else
             let o = new GaussKronrodNonAdaptiveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

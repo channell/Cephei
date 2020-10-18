@@ -39,23 +39,23 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscreteAveragingAsianOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="averageType",Description = "Reference to averageType")>] 
+        ([<ExcelArgument(Name="averageType",Description = "Average.Type")>] 
          averageType : obj)
-        ([<ExcelArgument(Name="runningAccumulator",Description = "Reference to runningAccumulator")>] 
+        ([<ExcelArgument(Name="runningAccumulator",Description = "double")>] 
          runningAccumulator : obj)
-        ([<ExcelArgument(Name="pastFixings",Description = "Reference to pastFixings")>] 
+        ([<ExcelArgument(Name="pastFixings",Description = "int")>] 
          pastFixings : obj)
-        ([<ExcelArgument(Name="fixingDates",Description = "Reference to fixingDates")>] 
+        ([<ExcelArgument(Name="fixingDates",Description = "Date")>] 
          fixingDates : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_delta", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_deltaForward", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_dividendRho", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,9 +226,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_elasticity", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,9 +262,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_gamma", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,9 +298,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_isExpired", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_itmCashProbability", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_rho", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_strikeSensitivity", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_theta", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_thetaPerDay", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_vega", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_exercise", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_payoff", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,9 +622,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_CASH", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -658,9 +658,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_errorEstimate", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_NPV", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -730,11 +730,11 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_result", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -772,11 +772,11 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_setPricingEngine", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -814,9 +814,9 @@ module DiscreteAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_valuationDate", Description="Create a DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "Reference to DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="DiscreteAveragingAsianOption",Description = "DiscreteAveragingAsianOption")>] 
          discreteaveragingasianoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -847,9 +847,9 @@ module DiscreteAveragingAsianOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteAveragingAsianOption_Range", Description="Create a range of DiscreteAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteAveragingAsianOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscreteAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

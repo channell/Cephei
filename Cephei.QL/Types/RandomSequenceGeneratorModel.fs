@@ -46,7 +46,8 @@ type RandomSequenceGeneratorModel<'RNG when 'RNG :> IRNGTraits and 'RNG : (new :
 (*
     Functions
 *)
-    let _RandomSequenceGenerator                   = cell (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, seed.Value))
+    let mutable
+        _RandomSequenceGenerator                   = cell (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, seed.Value))
     let _dimension                                 = triv (fun () -> _RandomSequenceGenerator.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _RandomSequenceGenerator.Value.factory(dimensionality.Value, seed.Value))
@@ -85,7 +86,8 @@ type RandomSequenceGeneratorModel1<'RNG when 'RNG :> IRNGTraits and 'RNG : (new 
 (*
     Functions
 *)
-    let _RandomSequenceGenerator                   = cell (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, rng.Value))
+    let mutable
+        _RandomSequenceGenerator                   = cell (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, rng.Value))
     let _dimension                                 = triv (fun () -> _RandomSequenceGenerator.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _RandomSequenceGenerator.Value.factory(dimensionality.Value, seed.Value))

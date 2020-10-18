@@ -39,11 +39,11 @@ module ImpliedVolHelper_Function =
     *)
     [<ExcelFunction(Name="_ImpliedVolHelper__derivative", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ImpliedVolHelper_")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolHelper_",Description = "Reference to ImpliedVolHelper_")>] 
+        ([<ExcelArgument(Name="ImpliedVolHelper_",Description = "ImpliedVolHelper_")>] 
          impliedvolhelper_ : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,17 +81,17 @@ module ImpliedVolHelper_Function =
     *)
     [<ExcelFunction(Name="_ImpliedVolHelper_", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ImpliedVolHelper_")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="swaption",Description = "Reference to swaption")>] 
+        ([<ExcelArgument(Name="swaption",Description = "Swaption")>] 
          swaption : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module ImpliedVolHelper_Function =
     *)
     [<ExcelFunction(Name="_ImpliedVolHelper__value", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolHelper_",Description = "Reference to ImpliedVolHelper_")>] 
+        ([<ExcelArgument(Name="ImpliedVolHelper_",Description = "ImpliedVolHelper_")>] 
          impliedvolhelper_ : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,9 +181,9 @@ module ImpliedVolHelper_Function =
             "<WIZ>"
     [<ExcelFunction(Name="_ImpliedVolHelper__Range", Description="Create a range of ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ImpliedVolHelper_")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

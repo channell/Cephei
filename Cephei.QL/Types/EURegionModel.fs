@@ -41,7 +41,8 @@ type EURegionModel
 (*
     Functions
 *)
-    let _EURegion                                  = cell (fun () -> new EURegion ())
+    let mutable
+        _EURegion                                  = cell (fun () -> new EURegion ())
     let _code                                      = triv (fun () -> _EURegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _EURegion.Value.Equals(o.Value))
@@ -51,13 +52,14 @@ type EURegionModel
     casting 
 *)
     
-    member internal this.Inject v = _EURegion.Value <- v
+    member internal this.Inject v = _EURegion <- v
     static member Cast (p : ICell<EURegion>) = 
         if p :? EURegionModel then 
             p :?> EURegionModel
         else
             let o = new EURegionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

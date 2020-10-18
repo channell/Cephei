@@ -41,20 +41,22 @@ type doubleValueModel
 (*
     Functions
 *)
-    let _doubleValue                               = cell (fun () -> new doubleValue ())
+    let mutable
+        _doubleValue                               = cell (fun () -> new doubleValue ())
     let _value                                     = cell (fun () -> _doubleValue.Value.value())
     do this.Bind(_doubleValue)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _doubleValue.Value <- v
+    member internal this.Inject v = _doubleValue <- v
     static member Cast (p : ICell<doubleValue>) = 
         if p :? doubleValueModel then 
             p :?> doubleValueModel
         else
             let o = new doubleValueModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

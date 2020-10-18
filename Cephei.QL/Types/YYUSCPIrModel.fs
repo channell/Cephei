@@ -44,7 +44,8 @@ type YYUSCPIrModel
 (*
     Functions
 *)
-    let _YYUSCPIr                                  = cell (fun () -> new YYUSCPIr (interpolated.Value))
+    let mutable
+        _YYUSCPIr                                  = cell (fun () -> new YYUSCPIr (interpolated.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYUSCPIr.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -88,13 +89,14 @@ type YYUSCPIrModel
     casting 
 *)
     internal new () = new YYUSCPIrModel(null)
-    member internal this.Inject v = _YYUSCPIr.Value <- v
+    member internal this.Inject v = _YYUSCPIr <- v
     static member Cast (p : ICell<YYUSCPIr>) = 
         if p :? YYUSCPIrModel then 
             p :?> YYUSCPIrModel
         else
             let o = new YYUSCPIrModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -152,7 +154,8 @@ type YYUSCPIrModel1
 (*
     Functions
 *)
-    let _YYUSCPIr                                  = cell (fun () -> new YYUSCPIr (interpolated.Value, ts.Value))
+    let mutable
+        _YYUSCPIr                                  = cell (fun () -> new YYUSCPIr (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYUSCPIr.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -196,13 +199,14 @@ type YYUSCPIrModel1
     casting 
 *)
     internal new () = new YYUSCPIrModel1(null,null)
-    member internal this.Inject v = _YYUSCPIr.Value <- v
+    member internal this.Inject v = _YYUSCPIr <- v
     static member Cast (p : ICell<YYUSCPIr>) = 
         if p :? YYUSCPIrModel1 then 
             p :?> YYUSCPIrModel1
         else
             let o = new YYUSCPIrModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

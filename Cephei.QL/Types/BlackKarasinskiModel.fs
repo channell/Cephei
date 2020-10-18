@@ -48,7 +48,8 @@ type BlackKarasinskiModel
 (*
     Functions
 *)
-    let _BlackKarasinski                           = cell (fun () -> new BlackKarasinski (termStructure.Value, a.Value, sigma.Value))
+    let mutable
+        _BlackKarasinski                           = cell (fun () -> new BlackKarasinski (termStructure.Value, a.Value, sigma.Value))
     let _dynamics                                  = triv (fun () -> _BlackKarasinski.Value.dynamics())
     let _termStructure                             = triv (fun () -> _BlackKarasinski.Value.termStructure())
     let _termStructure_                            = triv (fun () -> _BlackKarasinski.Value.termStructure_)
@@ -80,13 +81,14 @@ type BlackKarasinskiModel
     casting 
 *)
     internal new () = new BlackKarasinskiModel(null,null,null)
-    member internal this.Inject v = _BlackKarasinski.Value <- v
+    member internal this.Inject v = _BlackKarasinski <- v
     static member Cast (p : ICell<BlackKarasinski>) = 
         if p :? BlackKarasinskiModel then 
             p :?> BlackKarasinskiModel
         else
             let o = new BlackKarasinskiModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -133,7 +135,8 @@ type BlackKarasinskiModel1
 (*
     Functions
 *)
-    let _BlackKarasinski                           = cell (fun () -> new BlackKarasinski (termStructure.Value))
+    let mutable
+        _BlackKarasinski                           = cell (fun () -> new BlackKarasinski (termStructure.Value))
     let _dynamics                                  = triv (fun () -> _BlackKarasinski.Value.dynamics())
     let _termStructure                             = triv (fun () -> _BlackKarasinski.Value.termStructure())
     let _termStructure_                            = triv (fun () -> _BlackKarasinski.Value.termStructure_)
@@ -165,13 +168,14 @@ type BlackKarasinskiModel1
     casting 
 *)
     internal new () = new BlackKarasinskiModel1(null)
-    member internal this.Inject v = _BlackKarasinski.Value <- v
+    member internal this.Inject v = _BlackKarasinski <- v
     static member Cast (p : ICell<BlackKarasinski>) = 
         if p :? BlackKarasinskiModel1 then 
             p :?> BlackKarasinskiModel1
         else
             let o = new BlackKarasinskiModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

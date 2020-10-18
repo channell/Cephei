@@ -66,7 +66,8 @@ type VanillaSwapModel
 (*
     Functions
 *)
-    let _VanillaSwap                               = cell (fun () -> withEngine pricingEngine (new VanillaSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, floatSchedule.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, paymentConvention.Value)))
+    let mutable
+        _VanillaSwap                               = cell (fun () -> withEngine pricingEngine (new VanillaSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, floatSchedule.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, paymentConvention.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).fixedDayCount())
@@ -115,13 +116,14 @@ type VanillaSwapModel
     casting 
 *)
     internal new () = new VanillaSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _VanillaSwap.Value <- v
+    member internal this.Inject v = _VanillaSwap <- v
     static member Cast (p : ICell<VanillaSwap>) = 
         if p :? VanillaSwapModel then 
             p :?> VanillaSwapModel
         else
             let o = new VanillaSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

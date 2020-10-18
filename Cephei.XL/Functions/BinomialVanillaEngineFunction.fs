@@ -39,11 +39,11 @@ module BinomialVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_BinomialVanillaEngine", Description="Create a BinomialVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -80,9 +80,9 @@ module BinomialVanillaEngineFunction =
 
     [<ExcelFunction(Name="_BinomialVanillaEngine_Range", Description="Create a range of BinomialVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BinomialVanillaEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "KerkhofSeasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Reference to seasonalityBaseDate")>] 
+        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Date")>] 
          seasonalityBaseDate : obj)
-        ([<ExcelArgument(Name="seasonalityFactors",Description = "Reference to seasonalityFactors")>] 
+        ([<ExcelArgument(Name="seasonalityFactors",Description = "double")>] 
          seasonalityFactors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,11 +82,11 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityFactor", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_seasonalityFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,15 +124,15 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_correctYoYRate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_correctYoYRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,15 +178,15 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_correctZeroRate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_correctZeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_frequency", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,11 +268,11 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_isConsistent", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_isConsistent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityBaseDate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_seasonalityBaseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityFactors", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_seasonalityFactors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,15 +382,15 @@ module KerkhofSeasonalityFunction =
     *)
     [<ExcelFunction(Name="_KerkhofSeasonality_set", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_set
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "Reference to KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="KerkhofSeasonality",Description = "KerkhofSeasonality")>] 
          kerkhofseasonality : obj)
-        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Reference to seasonalityBaseDate")>] 
+        ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Date")>] 
          seasonalityBaseDate : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="seasonalityFactors",Description = "Reference to seasonalityFactors")>] 
+        ([<ExcelArgument(Name="seasonalityFactors",Description = "double")>] 
          seasonalityFactors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -433,9 +433,9 @@ module KerkhofSeasonalityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KerkhofSeasonality_Range", Description="Create a range of KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the KerkhofSeasonality")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

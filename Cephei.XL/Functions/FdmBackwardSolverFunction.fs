@@ -39,15 +39,15 @@ module FdmBackwardSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBackwardSolver", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBackwardSolver")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="map",Description = "Reference to map")>] 
+        ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "Reference to bcSet")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "FdmBoundaryConditionSet")>] 
          bcSet : obj)
-        ([<ExcelArgument(Name="condition",Description = "Reference to condition")>] 
+        ([<ExcelArgument(Name="condition",Description = "FdmStepConditionComposite")>] 
          condition : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "Reference to schemeDesc")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc")>] 
          schemeDesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,19 +94,19 @@ module FdmBackwardSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBackwardSolver_rollback", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBackwardSolver",Description = "Reference to FdmBackwardSolver")>] 
+        ([<ExcelArgument(Name="FdmBackwardSolver",Description = "FdmBackwardSolver")>] 
          fdmbackwardsolver : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "double")>] 
          from : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "Reference to dampingSteps")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "int")>] 
          dampingSteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -157,9 +157,9 @@ module FdmBackwardSolverFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBackwardSolver_Range", Description="Create a range of FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmBackwardSolver")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

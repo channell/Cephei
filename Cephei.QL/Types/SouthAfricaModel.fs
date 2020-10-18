@@ -57,7 +57,8 @@ type SouthAfricaModel
 (*
     Functions
 *)
-    let _SouthAfrica                               = cell (fun () -> new SouthAfrica ())
+    let mutable
+        _SouthAfrica                               = cell (fun () -> new SouthAfrica ())
     let _addedHolidays                             = triv (fun () -> _SouthAfrica.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _SouthAfrica.Value.addHoliday(d.Value)
@@ -94,13 +95,14 @@ type SouthAfricaModel
     casting 
 *)
     
-    member internal this.Inject v = _SouthAfrica.Value <- v
+    member internal this.Inject v = _SouthAfrica <- v
     static member Cast (p : ICell<SouthAfrica>) = 
         if p :? SouthAfricaModel then 
             p :?> SouthAfricaModel
         else
             let o = new SouthAfricaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

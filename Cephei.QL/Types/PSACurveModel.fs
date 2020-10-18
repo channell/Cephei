@@ -46,7 +46,8 @@ type PSACurveModel
 (*
     Functions
 *)
-    let _PSACurve                                  = cell (fun () -> new PSACurve (startdate.Value, multiplier.Value))
+    let mutable
+        _PSACurve                                  = cell (fun () -> new PSACurve (startdate.Value, multiplier.Value))
     let _getCPR                                    (valDate : ICell<Date>)   
                                                    = triv (fun () -> _PSACurve.Value.getCPR(valDate.Value))
     let _getSMM                                    (valDate : ICell<Date>)   
@@ -56,13 +57,14 @@ type PSACurveModel
     casting 
 *)
     internal new () = new PSACurveModel(null,null)
-    member internal this.Inject v = _PSACurve.Value <- v
+    member internal this.Inject v = _PSACurve <- v
     static member Cast (p : ICell<PSACurve>) = 
         if p :? PSACurveModel then 
             p :?> PSACurveModel
         else
             let o = new PSACurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -92,7 +94,8 @@ type PSACurveModel1
 (*
     Functions
 *)
-    let _PSACurve                                  = cell (fun () -> new PSACurve (startdate.Value))
+    let mutable
+        _PSACurve                                  = cell (fun () -> new PSACurve (startdate.Value))
     let _getCPR                                    (valDate : ICell<Date>)   
                                                    = triv (fun () -> _PSACurve.Value.getCPR(valDate.Value))
     let _getSMM                                    (valDate : ICell<Date>)   
@@ -102,13 +105,14 @@ type PSACurveModel1
     casting 
 *)
     internal new () = new PSACurveModel1(null)
-    member internal this.Inject v = _PSACurve.Value <- v
+    member internal this.Inject v = _PSACurve <- v
     static member Cast (p : ICell<PSACurve>) = 
         if p :? PSACurveModel1 then 
             p :?> PSACurveModel1
         else
             let o = new PSACurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

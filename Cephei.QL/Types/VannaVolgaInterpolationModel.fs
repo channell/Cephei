@@ -56,7 +56,8 @@ type VannaVolgaInterpolationModel
 (*
     Functions
 *)
-    let _VannaVolgaInterpolation                   = cell (fun () -> new VannaVolgaInterpolation (xBegin.Value, size.Value, yBegin.Value, spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
+    let mutable
+        _VannaVolgaInterpolation                   = cell (fun () -> new VannaVolgaInterpolation (xBegin.Value, size.Value, yBegin.Value, spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _VannaVolgaInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _VannaVolgaInterpolation.Value.empty())
@@ -85,13 +86,14 @@ type VannaVolgaInterpolationModel
     casting 
 *)
     internal new () = new VannaVolgaInterpolationModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _VannaVolgaInterpolation.Value <- v
+    member internal this.Inject v = _VannaVolgaInterpolation <- v
     static member Cast (p : ICell<VannaVolgaInterpolation>) = 
         if p :? VannaVolgaInterpolationModel then 
             p :?> VannaVolgaInterpolationModel
         else
             let o = new VannaVolgaInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

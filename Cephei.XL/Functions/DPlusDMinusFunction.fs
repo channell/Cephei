@@ -39,11 +39,11 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DPlusDMinus")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "double")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -83,13 +83,13 @@ module DPlusDMinusFunction =
     (* duplicate add function
     [<ExcelFunction(Name="_DPlusDMinus_add", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -132,11 +132,11 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_applyTo", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -174,9 +174,9 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_Clone", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -210,9 +210,9 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_diagonal", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,11 +246,11 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_identity", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -288,9 +288,9 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_isTimeDependent", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -324,9 +324,9 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_lowerDiagonal", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -360,13 +360,13 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_multiply", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,13 +408,13 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setFirstRow", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -456,13 +456,13 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setLastRow", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -504,17 +504,17 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setMidRow", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -564,15 +564,15 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setMidRows", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -618,11 +618,11 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setTime", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -660,9 +660,9 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_size", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -696,11 +696,11 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_solveFor", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -738,13 +738,13 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_SOR", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
-        ([<ExcelArgument(Name="tol",Description = "Reference to tol")>] 
+        ([<ExcelArgument(Name="tol",Description = "double")>] 
          tol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -786,13 +786,13 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_subtract", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -834,9 +834,9 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_upperDiagonal", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DPlusDMinus",Description = "Reference to DPlusDMinus")>] 
+        ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -867,9 +867,9 @@ module DPlusDMinusFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DPlusDMinus_Range", Description="Create a range of DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DPlusDMinus")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

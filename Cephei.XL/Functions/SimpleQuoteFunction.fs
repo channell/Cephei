@@ -39,9 +39,9 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_isValid", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleQuote",Description = "Reference to SimpleQuote")>] 
+        ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_reset", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleQuote",Description = "Reference to SimpleQuote")>] 
+        ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,11 +111,11 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_setValue", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_setValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleQuote",Description = "Reference to SimpleQuote")>] 
+        ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,9 +153,9 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote1", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,7 +190,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,9 +221,9 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_value", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleQuote",Description = "Reference to SimpleQuote")>] 
+        ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,11 +257,11 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_registerWith", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleQuote",Description = "Reference to SimpleQuote")>] 
+        ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -299,11 +299,11 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_unregisterWith", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleQuote",Description = "Reference to SimpleQuote")>] 
+        ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -338,9 +338,9 @@ module SimpleQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimpleQuote_Range", Description="Create a range of SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SimpleQuote")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

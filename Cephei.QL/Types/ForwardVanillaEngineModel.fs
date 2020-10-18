@@ -50,7 +50,8 @@ type ForwardVanillaEngineModel
 (*
     Functions
 *)
-    let _ForwardVanillaEngine                      = cell (fun () -> new ForwardVanillaEngine (Process.Value, getEngine.Value))
+    let mutable
+        _ForwardVanillaEngine                      = cell (fun () -> new ForwardVanillaEngine (Process.Value, getEngine.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _ForwardVanillaEngine.Value.registerWith(handler.Value)
                                                                      _ForwardVanillaEngine.Value)
@@ -66,13 +67,14 @@ type ForwardVanillaEngineModel
     casting 
 *)
     internal new () = new ForwardVanillaEngineModel(null,null,null,null)
-    member internal this.Inject v = _ForwardVanillaEngine.Value <- v
+    member internal this.Inject v = _ForwardVanillaEngine <- v
     static member Cast (p : ICell<ForwardVanillaEngine>) = 
         if p :? ForwardVanillaEngineModel then 
             p :?> ForwardVanillaEngineModel
         else
             let o = new ForwardVanillaEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,7 +39,7 @@ module BachelierSpecFunction =
     *)
     [<ExcelFunction(Name="_BachelierSpec", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BachelierSpec")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module BachelierSpecFunction =
     *)
     [<ExcelFunction(Name="_BachelierSpec_type", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BachelierSpec",Description = "Reference to BachelierSpec")>] 
+        ([<ExcelArgument(Name="BachelierSpec",Description = "BachelierSpec")>] 
          bachelierspec : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,21 +106,21 @@ module BachelierSpecFunction =
     *)
     [<ExcelFunction(Name="_BachelierSpec_value", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BachelierSpec",Description = "Reference to BachelierSpec")>] 
+        ([<ExcelArgument(Name="BachelierSpec",Description = "BachelierSpec")>] 
          bachelierspec : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="atmForward",Description = "Reference to atmForward")>] 
+        ([<ExcelArgument(Name="atmForward",Description = "double")>] 
          atmForward : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="annuity",Description = "Reference to annuity")>] 
+        ([<ExcelArgument(Name="annuity",Description = "double")>] 
          annuity : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "Helper.Range.fromModelList")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,21 +178,21 @@ module BachelierSpecFunction =
     *)
     [<ExcelFunction(Name="_BachelierSpec_vega", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BachelierSpec",Description = "Reference to BachelierSpec")>] 
+        ([<ExcelArgument(Name="BachelierSpec",Description = "BachelierSpec")>] 
          bachelierspec : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="atmForward",Description = "Reference to atmForward")>] 
+        ([<ExcelArgument(Name="atmForward",Description = "double")>] 
          atmForward : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="exerciseTime",Description = "Reference to exerciseTime")>] 
+        ([<ExcelArgument(Name="exerciseTime",Description = "double")>] 
          exerciseTime : obj)
-        ([<ExcelArgument(Name="annuity",Description = "Reference to annuity")>] 
+        ([<ExcelArgument(Name="annuity",Description = "double")>] 
          annuity : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "Helper.Range.fromModelList")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -247,9 +247,9 @@ module BachelierSpecFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BachelierSpec_Range", Description="Create a range of BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BachelierSpec")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

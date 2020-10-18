@@ -39,13 +39,13 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Uniform1dMesher")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="start",Description = "Reference to start")>] 
+        ([<ExcelArgument(Name="start",Description = "double")>] 
          start : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_dminus", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Reference to Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,11 +130,11 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_dplus", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Reference to Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,11 +172,11 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_location", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Reference to Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_locations", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Reference to Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_size", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Reference to Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module Uniform1dMesherFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Uniform1dMesher_Range", Description="Create a range of Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

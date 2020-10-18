@@ -48,7 +48,8 @@ type DiscretizedCapFloorModel
 (*
     Functions
 *)
-    let _DiscretizedCapFloor                       = cell (fun () -> new DiscretizedCapFloor (args.Value, referenceDate.Value, dayCounter.Value))
+    let mutable
+        _DiscretizedCapFloor                       = cell (fun () -> new DiscretizedCapFloor (args.Value, referenceDate.Value, dayCounter.Value))
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedCapFloor.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedCapFloor.Value.reset(size.Value)
@@ -83,13 +84,14 @@ type DiscretizedCapFloorModel
     casting 
 *)
     internal new () = new DiscretizedCapFloorModel(null,null,null)
-    member internal this.Inject v = _DiscretizedCapFloor.Value <- v
+    member internal this.Inject v = _DiscretizedCapFloor <- v
     static member Cast (p : ICell<DiscretizedCapFloor>) = 
         if p :? DiscretizedCapFloorModel then 
             p :?> DiscretizedCapFloorModel
         else
             let o = new DiscretizedCapFloorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

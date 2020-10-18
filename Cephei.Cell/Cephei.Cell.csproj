@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net48;netstandard2.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>3.0.3</Version>
     <UserSecretsId>6cae7644-0aae-4e42-b92c-f948aa487a5c</UserSecretsId>
@@ -24,6 +24,7 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     <PackageLicenseFile>Licence.txt</PackageLicenseFile>
     <AssemblyVersion>3.0.0.3</AssemblyVersion>
     <FileVersion>3.0.0.3</FileVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

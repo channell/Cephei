@@ -48,7 +48,8 @@ type CompositeQuoteModel
 (*
     Functions
 *)
-    let _CompositeQuote                            = cell (fun () -> new CompositeQuote (element1.Value, element2.Value, f.Value))
+    let mutable
+        _CompositeQuote                            = cell (fun () -> new CompositeQuote (element1.Value, element2.Value, f.Value))
     let _isValid                                   = triv (fun () -> _CompositeQuote.Value.isValid())
     let _update                                    = triv (fun () -> _CompositeQuote.Value.update()
                                                                      _CompositeQuote.Value)
@@ -66,13 +67,14 @@ type CompositeQuoteModel
     casting 
 *)
     internal new () = new CompositeQuoteModel(null,null,null)
-    member internal this.Inject v = _CompositeQuote.Value <- v
+    member internal this.Inject v = _CompositeQuote <- v
     static member Cast (p : ICell<CompositeQuote>) = 
         if p :? CompositeQuoteModel then 
             p :?> CompositeQuoteModel
         else
             let o = new CompositeQuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type SITCurrencyModel
 (*
     Functions
 *)
-    let _SITCurrency                               = cell (fun () -> new SITCurrency ())
+    let mutable
+        _SITCurrency                               = cell (fun () -> new SITCurrency ())
     let _code                                      = triv (fun () -> _SITCurrency.Value.code)
     let _empty                                     = triv (fun () -> _SITCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type SITCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _SITCurrency.Value <- v
+    member internal this.Inject v = _SITCurrency <- v
     static member Cast (p : ICell<SITCurrency>) = 
         if p :? SITCurrencyModel then 
             p :?> SITCurrencyModel
         else
             let o = new SITCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

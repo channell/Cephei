@@ -56,19 +56,21 @@ type FdBlackScholesRebateEngineModel
 (*
     Functions
 *)
-    let _FdBlackScholesRebateEngine                = cell (fun () -> new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
+    let mutable
+        _FdBlackScholesRebateEngine                = cell (fun () -> new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
     do this.Bind(_FdBlackScholesRebateEngine)
 (* 
     casting 
 *)
     internal new () = new FdBlackScholesRebateEngineModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdBlackScholesRebateEngine.Value <- v
+    member internal this.Inject v = _FdBlackScholesRebateEngine <- v
     static member Cast (p : ICell<FdBlackScholesRebateEngine>) = 
         if p :? FdBlackScholesRebateEngineModel then 
             p :?> FdBlackScholesRebateEngineModel
         else
             let o = new FdBlackScholesRebateEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

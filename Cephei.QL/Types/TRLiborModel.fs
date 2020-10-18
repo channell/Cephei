@@ -44,7 +44,8 @@ type TRLiborModel
 (*
     Functions
 *)
-    let _TRLibor                                   = cell (fun () -> new TRLibor (tenor.Value))
+    let mutable
+        _TRLibor                                   = cell (fun () -> new TRLibor (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _TRLibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _TRLibor.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type TRLiborModel
     casting 
 *)
     internal new () = new TRLiborModel(null)
-    member internal this.Inject v = _TRLibor.Value <- v
+    member internal this.Inject v = _TRLibor <- v
     static member Cast (p : ICell<TRLibor>) = 
         if p :? TRLiborModel then 
             p :?> TRLiborModel
         else
             let o = new TRLiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -174,7 +176,8 @@ type TRLiborModel1
 (*
     Functions
 *)
-    let _TRLibor                                   = cell (fun () -> new TRLibor (tenor.Value, h.Value))
+    let mutable
+        _TRLibor                                   = cell (fun () -> new TRLibor (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _TRLibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _TRLibor.Value.clone(forwarding.Value))
@@ -229,13 +232,14 @@ type TRLiborModel1
     casting 
 *)
     internal new () = new TRLiborModel1(null,null)
-    member internal this.Inject v = _TRLibor.Value <- v
+    member internal this.Inject v = _TRLibor <- v
     static member Cast (p : ICell<TRLibor>) = 
         if p :? TRLiborModel1 then 
             p :?> TRLiborModel1
         else
             let o = new TRLiborModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type BYRCurrencyModel
 (*
     Functions
 *)
-    let _BYRCurrency                               = cell (fun () -> new BYRCurrency ())
+    let mutable
+        _BYRCurrency                               = cell (fun () -> new BYRCurrency ())
     let _code                                      = triv (fun () -> _BYRCurrency.Value.code)
     let _empty                                     = triv (fun () -> _BYRCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type BYRCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _BYRCurrency.Value <- v
+    member internal this.Inject v = _BYRCurrency <- v
     static member Cast (p : ICell<BYRCurrency>) = 
         if p :? BYRCurrencyModel then 
             p :?> BYRCurrencyModel
         else
             let o = new BYRCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,7 +50,8 @@ type FloorModel
 (*
     Functions
 *)
-    let _Floor                                     = cell (fun () -> withEngine pricingEngine (new Floor (floatingLeg.Value, exerciseRates.Value)))
+    let mutable
+        _Floor                                     = cell (fun () -> withEngine pricingEngine (new Floor (floatingLeg.Value, exerciseRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Floor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Floor).capRates())
@@ -81,13 +82,14 @@ type FloorModel
     casting 
 *)
     internal new () = new FloorModel(null,null,null,null)
-    member internal this.Inject v = _Floor.Value <- v
+    member internal this.Inject v = _Floor <- v
     static member Cast (p : ICell<Floor>) = 
         if p :? FloorModel then 
             p :?> FloorModel
         else
             let o = new FloorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

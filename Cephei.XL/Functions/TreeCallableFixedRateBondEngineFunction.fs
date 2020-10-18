@@ -40,13 +40,13 @@ module TreeCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TreeCallableFixedRateBondEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,13 +89,13 @@ module TreeCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine1", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TreeCallableFixedRateBondEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -138,9 +138,9 @@ module TreeCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine_update", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "Reference to TreeCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "TreeCallableFixedRateBondEngine")>] 
          treecallablefixedratebondengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -175,11 +175,11 @@ module TreeCallableFixedRateBondEngineFunction =
     (*!!
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine_setModel", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "Reference to TreeCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "TreeCallableFixedRateBondEngine")>] 
          treecallablefixedratebondengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -218,11 +218,11 @@ module TreeCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine_registerWith", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "Reference to TreeCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "TreeCallableFixedRateBondEngine")>] 
          treecallablefixedratebondengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module TreeCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine_reset", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "Reference to TreeCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "TreeCallableFixedRateBondEngine")>] 
          treecallablefixedratebondengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -296,11 +296,11 @@ module TreeCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine_unregisterWith", Description="Create a TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "Reference to TreeCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="TreeCallableFixedRateBondEngine",Description = "TreeCallableFixedRateBondEngine")>] 
          treecallablefixedratebondengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -335,9 +335,9 @@ module TreeCallableFixedRateBondEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TreeCallableFixedRateBondEngine_Range", Description="Create a range of TreeCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeCallableFixedRateBondEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TreeCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

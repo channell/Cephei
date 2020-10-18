@@ -46,7 +46,8 @@ type AssetOrNothingPayoffModel
 (*
     Functions
 *)
-    let _AssetOrNothingPayoff                      = cell (fun () -> new AssetOrNothingPayoff (Type.Value, strike.Value))
+    let mutable
+        _AssetOrNothingPayoff                      = cell (fun () -> new AssetOrNothingPayoff (Type.Value, strike.Value))
     let _name                                      = triv (fun () -> _AssetOrNothingPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
                                                    = triv (fun () -> _AssetOrNothingPayoff.Value.value(price.Value))
@@ -61,13 +62,14 @@ type AssetOrNothingPayoffModel
     casting 
 *)
     internal new () = new AssetOrNothingPayoffModel(null,null)
-    member internal this.Inject v = _AssetOrNothingPayoff.Value <- v
+    member internal this.Inject v = _AssetOrNothingPayoff <- v
     static member Cast (p : ICell<AssetOrNothingPayoff>) = 
         if p :? AssetOrNothingPayoffModel then 
             p :?> AssetOrNothingPayoffModel
         else
             let o = new AssetOrNothingPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

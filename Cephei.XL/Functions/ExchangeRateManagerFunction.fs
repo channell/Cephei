@@ -40,13 +40,13 @@ module ExchangeRateManagerFunction =
     (*!! duplicate add function 
     [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExchangeRateManager",Description = "Reference to ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "ExchangeRate")>] 
          rate : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -90,11 +90,11 @@ module ExchangeRateManagerFunction =
     (*!! duplicate add function
     [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExchangeRateManager",Description = "Reference to ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "ExchangeRate")>] 
          rate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_clear", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_clear
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExchangeRateManager",Description = "Reference to ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -169,17 +169,17 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExchangeRateManager",Description = "Reference to ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "Currency")>] 
          source : obj)
-        ([<ExcelArgument(Name="target",Description = "Reference to target")>] 
+        ([<ExcelArgument(Name="target",Description = "Currency")>] 
          target : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "ExchangeRate.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,15 +229,15 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExchangeRateManager",Description = "Reference to ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "Currency")>] 
          source : obj)
-        ([<ExcelArgument(Name="target",Description = "Reference to target")>] 
+        ([<ExcelArgument(Name="target",Description = "Currency")>] 
          target : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,13 +283,13 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExchangeRateManager",Description = "Reference to ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "Currency")>] 
          source : obj)
-        ([<ExcelArgument(Name="target",Description = "Reference to target")>] 
+        ([<ExcelArgument(Name="target",Description = "Currency")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module ExchangeRateManagerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ExchangeRateManager_Range", Description="Create a range of ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ExchangeRateManager")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

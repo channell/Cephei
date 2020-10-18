@@ -39,11 +39,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_capletPrice", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_capletRate", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,11 +123,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_floorletPrice", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,11 +165,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_floorletRate", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,11 +207,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_initialize", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="coupon",Description = "Reference to coupon")>] 
+        ([<ExcelArgument(Name="coupon",Description = "FloatingRateCoupon")>] 
          coupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -249,9 +249,9 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_swapletPrice", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -285,9 +285,9 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_swapletRate", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -321,11 +321,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_registerWith", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,11 +363,11 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_unregisterWith", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -405,9 +405,9 @@ module OvernightIndexedCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_update", Description="Create a OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "Reference to OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="OvernightIndexedCouponPricer",Description = "OvernightIndexedCouponPricer")>] 
          overnightindexedcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -438,9 +438,9 @@ module OvernightIndexedCouponPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OvernightIndexedCouponPricer_Range", Description="Create a range of OvernightIndexedCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCouponPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the OvernightIndexedCouponPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

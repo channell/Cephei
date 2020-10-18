@@ -44,7 +44,8 @@ type RelinkableHandleModel<'T when 'T :> IObservable>
 (*
     Functions
 *)
-    let _RelinkableHandle                          = cell (fun () -> new RelinkableHandle<'T> (h.Value))
+    let mutable
+        _RelinkableHandle                          = cell (fun () -> new RelinkableHandle<'T> (h.Value))
     let _linkTo                                    (h : ICell<'T>) (registerAsObserver : ICell<bool>)   
                                                    = triv (fun () -> _RelinkableHandle.Value.linkTo(h.Value, registerAsObserver.Value)
                                                                      _RelinkableHandle.Value)
@@ -95,7 +96,8 @@ type RelinkableHandleModel1<'T when 'T :> IObservable>
 (*
     Functions
 *)
-    let _RelinkableHandle                          = cell (fun () -> new RelinkableHandle<'T> ())
+    let mutable
+        _RelinkableHandle                          = cell (fun () -> new RelinkableHandle<'T> ())
     let _linkTo                                    (h : ICell<'T>) (registerAsObserver : ICell<bool>)   
                                                    = triv (fun () -> _RelinkableHandle.Value.linkTo(h.Value, registerAsObserver.Value)
                                                                      _RelinkableHandle.Value)
@@ -150,7 +152,8 @@ type RelinkableHandleModel2<'T when 'T :> IObservable>
 (*
     Functions
 *)
-    let _RelinkableHandle                          = cell (fun () -> new RelinkableHandle<'T> (h.Value, registerAsObserver.Value))
+    let mutable
+        _RelinkableHandle                          = cell (fun () -> new RelinkableHandle<'T> (h.Value, registerAsObserver.Value))
     let _linkTo                                    (h : ICell<'T>) (registerAsObserver : ICell<bool>)   
                                                    = triv (fun () -> _RelinkableHandle.Value.linkTo(h.Value, registerAsObserver.Value)
                                                                      _RelinkableHandle.Value)

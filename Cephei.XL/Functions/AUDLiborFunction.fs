@@ -39,11 +39,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor1", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AUDLibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AUDLibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_clone", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,11 +161,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_maturityDate", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,11 +203,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_valueDate", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_businessDayConvention", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_endOfMonth", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,15 +317,15 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_forecastFixing1", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,11 +372,11 @@ module AUDLiborFunction =
     
     [<ExcelFunction(Name="_AUDLibor_forecastFixing", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -415,9 +415,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_forwardingTermStructure", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -451,9 +451,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_currency", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -487,9 +487,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_dayCounter", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -523,9 +523,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_familyName", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -559,13 +559,13 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_fixing", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -607,9 +607,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_fixingCalendar", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -643,11 +643,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_fixingDate", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -685,9 +685,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_fixingDays", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -721,11 +721,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_isValidFixingDate", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -763,9 +763,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_name", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -799,11 +799,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_pastFixing", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -841,9 +841,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_tenor", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -877,9 +877,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_update", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -913,15 +913,15 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_addFixing", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -967,15 +967,15 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_addFixings", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1021,13 +1021,13 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_addFixings1", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1069,9 +1069,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_allowsNativeFixings", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1105,9 +1105,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_clearFixings", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1141,11 +1141,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_registerWith", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1183,9 +1183,9 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_timeSeries", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1219,11 +1219,11 @@ module AUDLiborFunction =
     *)
     [<ExcelFunction(Name="_AUDLibor_unregisterWith", Description="Create a AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AUDLibor",Description = "Reference to AUDLibor")>] 
+        ([<ExcelArgument(Name="AUDLibor",Description = "AUDLibor")>] 
          audlibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1258,9 +1258,9 @@ module AUDLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AUDLibor_Range", Description="Create a range of AUDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AUDLibor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

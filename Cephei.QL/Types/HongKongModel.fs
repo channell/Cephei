@@ -62,7 +62,8 @@ type HongKongModel
 (*
     Functions
 *)
-    let _HongKong                                  = cell (fun () -> new HongKong ())
+    let mutable
+        _HongKong                                  = cell (fun () -> new HongKong ())
     let _addedHolidays                             = triv (fun () -> _HongKong.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _HongKong.Value.addHoliday(d.Value)
@@ -99,13 +100,14 @@ type HongKongModel
     casting 
 *)
     
-    member internal this.Inject v = _HongKong.Value <- v
+    member internal this.Inject v = _HongKong <- v
     static member Cast (p : ICell<HongKong>) = 
         if p :? HongKongModel then 
             p :?> HongKongModel
         else
             let o = new HongKongModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

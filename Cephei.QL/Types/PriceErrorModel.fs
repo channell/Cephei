@@ -48,7 +48,8 @@ type PriceErrorModel
 (*
     Functions
 *)
-    let _PriceError                                = cell (fun () -> new PriceError (engine.Value, vol.Value, targetValue.Value))
+    let mutable
+        _PriceError                                = cell (fun () -> new PriceError (engine.Value, vol.Value, targetValue.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _PriceError.Value.value(x.Value))
     let _derivative                                (x : ICell<double>)   
@@ -58,13 +59,14 @@ type PriceErrorModel
     casting 
 *)
     internal new () = new PriceErrorModel(null,null,null)
-    member internal this.Inject v = _PriceError.Value <- v
+    member internal this.Inject v = _PriceError <- v
     static member Cast (p : ICell<PriceError>) = 
         if p :? PriceErrorModel then 
             p :?> PriceErrorModel
         else
             let o = new PriceErrorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

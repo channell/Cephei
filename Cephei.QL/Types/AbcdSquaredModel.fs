@@ -54,7 +54,8 @@ type AbcdSquaredModel
 (*
     Functions
 *)
-    let _AbcdSquared                               = cell (fun () -> new AbcdSquared (a.Value, b.Value, c.Value, d.Value, T.Value, S.Value))
+    let mutable
+        _AbcdSquared                               = cell (fun () -> new AbcdSquared (a.Value, b.Value, c.Value, d.Value, T.Value, S.Value))
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _AbcdSquared.Value.value(t.Value))
     do this.Bind(_AbcdSquared)
@@ -62,13 +63,14 @@ type AbcdSquaredModel
     casting 
 *)
     internal new () = new AbcdSquaredModel(null,null,null,null,null,null)
-    member internal this.Inject v = _AbcdSquared.Value <- v
+    member internal this.Inject v = _AbcdSquared <- v
     static member Cast (p : ICell<AbcdSquared>) = 
         if p :? AbcdSquaredModel then 
             p :?> AbcdSquaredModel
         else
             let o = new AbcdSquaredModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

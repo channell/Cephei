@@ -39,13 +39,13 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LinearInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,13 +88,13 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_derivative", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_empty", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,13 +172,13 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_primitive", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,13 +220,13 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_secondDerivative", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_update", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,13 +304,13 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_value1", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,11 +352,11 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_value", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_xMax", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_xMin", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_allowsExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,11 +502,11 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_disableExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,11 +544,11 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_enableExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module LinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LinearInterpolation_extrapolate", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearInterpolation",Description = "Reference to LinearInterpolation")>] 
+        ([<ExcelArgument(Name="LinearInterpolation",Description = "LinearInterpolation")>] 
          linearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -619,9 +619,9 @@ module LinearInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LinearInterpolation_Range", Description="Create a range of LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LinearInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

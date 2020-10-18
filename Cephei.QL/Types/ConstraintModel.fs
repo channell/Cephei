@@ -44,7 +44,8 @@ type ConstraintModel
 (*
     Functions
 *)
-    let _Constraint                                = cell (fun () -> new Constraint (impl.Value))
+    let mutable
+        _Constraint                                = cell (fun () -> new Constraint (impl.Value))
     let _empty                                     = triv (fun () -> _Constraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _Constraint.Value.lowerBound(parameters.Value))
@@ -59,13 +60,14 @@ type ConstraintModel
     casting 
 *)
     internal new () = new ConstraintModel(null)
-    member internal this.Inject v = _Constraint.Value <- v
+    member internal this.Inject v = _Constraint <- v
     static member Cast (p : ICell<Constraint>) = 
         if p :? ConstraintModel then 
             p :?> ConstraintModel
         else
             let o = new ConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -96,7 +98,8 @@ type ConstraintModel1
 (*
     Functions
 *)
-    let _Constraint                                = cell (fun () -> new Constraint ())
+    let mutable
+        _Constraint                                = cell (fun () -> new Constraint ())
     let _empty                                     = triv (fun () -> _Constraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _Constraint.Value.lowerBound(parameters.Value))
@@ -111,13 +114,14 @@ type ConstraintModel1
     casting 
 *)
     
-    member internal this.Inject v = _Constraint.Value <- v
+    member internal this.Inject v = _Constraint <- v
     static member Cast (p : ICell<Constraint>) = 
         if p :? ConstraintModel1 then 
             p :?> ConstraintModel1
         else
             let o = new ConstraintModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type doubleUnweightedModel
 (*
     Functions
 *)
-    let _doubleUnweighted                          = cell (fun () -> new doubleUnweighted ())
+    let mutable
+        _doubleUnweighted                          = cell (fun () -> new doubleUnweighted ())
     let _weight1LargeX                             (x : ICell<double>)   
                                                    = cell (fun () -> _doubleUnweighted.Value.weight1LargeX(x.Value))
     let _weight2LargeX                             (x : ICell<double>)   
@@ -53,13 +54,14 @@ type doubleUnweightedModel
     casting 
 *)
     
-    member internal this.Inject v = _doubleUnweighted.Value <- v
+    member internal this.Inject v = _doubleUnweighted <- v
     static member Cast (p : ICell<doubleUnweighted>) = 
         if p :? doubleUnweightedModel then 
             p :?> doubleUnweightedModel
         else
             let o = new doubleUnweightedModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

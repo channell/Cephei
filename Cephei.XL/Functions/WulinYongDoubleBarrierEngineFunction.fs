@@ -40,11 +40,11 @@ module WulinYongDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_WulinYongDoubleBarrierEngine", Description="Create a WulinYongDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WulinYongDoubleBarrierEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "WulinYongDoubleBarrierEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="series",Description = "Reference to series")>] 
+        ([<ExcelArgument(Name="series",Description = "WulinYongDoubleBarrierEngine")>] 
          series : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -80,9 +80,9 @@ module WulinYongDoubleBarrierEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_WulinYongDoubleBarrierEngine_Range", Description="Create a range of WulinYongDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WulinYongDoubleBarrierEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the WulinYongDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

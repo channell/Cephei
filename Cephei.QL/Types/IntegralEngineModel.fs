@@ -44,19 +44,21 @@ type IntegralEngineModel
 (*
     Functions
 *)
-    let _IntegralEngine                            = cell (fun () -> new IntegralEngine (Process.Value))
+    let mutable
+        _IntegralEngine                            = cell (fun () -> new IntegralEngine (Process.Value))
     do this.Bind(_IntegralEngine)
 (* 
     casting 
 *)
     internal new () = new IntegralEngineModel(null)
-    member internal this.Inject v = _IntegralEngine.Value <- v
+    member internal this.Inject v = _IntegralEngine <- v
     static member Cast (p : ICell<IntegralEngine>) = 
         if p :? IntegralEngineModel then 
             p :?> IntegralEngineModel
         else
             let o = new IntegralEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

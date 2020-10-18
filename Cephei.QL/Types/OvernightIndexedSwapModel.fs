@@ -64,7 +64,8 @@ type OvernightIndexedSwapModel
 (*
     Functions
 *)
-    let _OvernightIndexedSwap                      = cell (fun () -> withEngine pricingEngine (new OvernightIndexedSwap (Type.Value, fixedNominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDC.Value, overnightNominal.Value, overnightSchedule.Value, overnightIndex.Value, spread.Value)))
+    let mutable
+        _OvernightIndexedSwap                      = cell (fun () -> withEngine pricingEngine (new OvernightIndexedSwap (Type.Value, fixedNominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDC.Value, overnightNominal.Value, overnightSchedule.Value, overnightIndex.Value, spread.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fixedDayCount())
@@ -112,13 +113,14 @@ type OvernightIndexedSwapModel
     casting 
 *)
     internal new () = new OvernightIndexedSwapModel(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _OvernightIndexedSwap.Value <- v
+    member internal this.Inject v = _OvernightIndexedSwap <- v
     static member Cast (p : ICell<OvernightIndexedSwap>) = 
         if p :? OvernightIndexedSwapModel then 
             p :?> OvernightIndexedSwapModel
         else
             let o = new OvernightIndexedSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -210,7 +212,8 @@ type OvernightIndexedSwapModel1
 (*
     Functions
 *)
-    let _OvernightIndexedSwap                      = cell (fun () -> withEngine pricingEngine (new OvernightIndexedSwap (Type.Value, nominal.Value, schedule.Value, fixedRate.Value, fixedDC.Value, overnightIndex.Value, spread.Value)))
+    let mutable
+        _OvernightIndexedSwap                      = cell (fun () -> withEngine pricingEngine (new OvernightIndexedSwap (Type.Value, nominal.Value, schedule.Value, fixedRate.Value, fixedDC.Value, overnightIndex.Value, spread.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fixedDayCount())
@@ -258,13 +261,14 @@ type OvernightIndexedSwapModel1
     casting 
 *)
     internal new () = new OvernightIndexedSwapModel1(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _OvernightIndexedSwap.Value <- v
+    member internal this.Inject v = _OvernightIndexedSwap <- v
     static member Cast (p : ICell<OvernightIndexedSwap>) = 
         if p :? OvernightIndexedSwapModel1 then 
             p :?> OvernightIndexedSwapModel1
         else
             let o = new OvernightIndexedSwapModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

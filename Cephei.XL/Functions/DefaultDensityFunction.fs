@@ -39,13 +39,13 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_discountImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_forwardImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,17 +135,17 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_guess", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,11 +195,11 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_initialDate", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "DefaultProbabilityTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_initialValue", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "DefaultProbabilityTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_maxIterations", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,17 +315,17 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_maxValueAfter", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,17 +375,17 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_minValueAfter", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,15 +435,15 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_updateGuess", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="density",Description = "Reference to density")>] 
+        ([<ExcelArgument(Name="density",Description = "double")>] 
          density : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,13 +489,13 @@ module DefaultDensityFunction =
     *)
     [<ExcelFunction(Name="_DefaultDensity_zeroYieldImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DefaultDensity",Description = "Reference to DefaultDensity")>] 
+        ([<ExcelArgument(Name="DefaultDensity",Description = "DefaultDensity")>] 
          defaultdensity : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -534,9 +534,9 @@ module DefaultDensityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DefaultDensity_Range", Description="Create a range of DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DefaultDensity")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

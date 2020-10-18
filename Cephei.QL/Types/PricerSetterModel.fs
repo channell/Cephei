@@ -44,7 +44,8 @@ type PricerSetterModel
 (*
     Functions
 *)
-    let _PricerSetter                              = cell (fun () -> new PricerSetter (pricer.Value))
+    let mutable
+        _PricerSetter                              = cell (fun () -> new PricerSetter (pricer.Value))
     let _visit                                     (c : ICell<RangeAccrualFloatersCoupon>)   
                                                    = triv (fun () -> _PricerSetter.Value.visit(c.Value)
                                                                      _PricerSetter.Value)
@@ -86,13 +87,14 @@ type PricerSetterModel
     casting 
 *)
     internal new () = new PricerSetterModel(null)
-    member internal this.Inject v = _PricerSetter.Value <- v
+    member internal this.Inject v = _PricerSetter <- v
     static member Cast (p : ICell<PricerSetter>) = 
         if p :? PricerSetterModel then 
             p :?> PricerSetterModel
         else
             let o = new PricerSetterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussKronrodNonAdaptive")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="absoluteAccuracy",Description = "Reference to absoluteAccuracy")>] 
+        ([<ExcelArgument(Name="absoluteAccuracy",Description = "double")>] 
          absoluteAccuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="relativeAccuracy",Description = "Reference to relativeAccuracy")>] 
+        ([<ExcelArgument(Name="relativeAccuracy",Description = "double")>] 
          relativeAccuracy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_relativeAccuracy", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_relativeAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_absoluteAccuracy", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_absoluteError", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_integrationSuccess", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_maxEvaluations", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_numberOfEvaluations", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,11 +304,11 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_setAbsoluteAccuracy", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,11 +346,11 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_setMaxEvaluations", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,15 +388,15 @@ module GaussKronrodNonAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_value", Description="Create a GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "Reference to GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="GaussKronrodNonAdaptive",Description = "GaussKronrodNonAdaptive")>] 
          gausskronrodnonadaptive : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -439,9 +439,9 @@ module GaussKronrodNonAdaptiveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussKronrodNonAdaptive_Range", Description="Create a range of GaussKronrodNonAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodNonAdaptive_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussKronrodNonAdaptive")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

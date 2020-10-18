@@ -39,13 +39,13 @@ module FdmDividendHandlerFunction =
     *)
     [<ExcelFunction(Name="_FdmDividendHandler_applyTo", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDividendHandler",Description = "Reference to FdmDividendHandler")>] 
+        ([<ExcelArgument(Name="FdmDividendHandler",Description = "FdmDividendHandler")>] 
          fdmdividendhandler : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module FdmDividendHandlerFunction =
     *)
     [<ExcelFunction(Name="_FdmDividendHandler_dividendDates", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_dividendDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDividendHandler",Description = "Reference to FdmDividendHandler")>] 
+        ([<ExcelArgument(Name="FdmDividendHandler",Description = "FdmDividendHandler")>] 
          fdmdividendhandler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,9 +123,9 @@ module FdmDividendHandlerFunction =
     *)
     [<ExcelFunction(Name="_FdmDividendHandler_dividends", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_dividends
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDividendHandler")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDividendHandler",Description = "Reference to FdmDividendHandler")>] 
+        ([<ExcelArgument(Name="FdmDividendHandler",Description = "FdmDividendHandler")>] 
          fdmdividendhandler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,9 +159,9 @@ module FdmDividendHandlerFunction =
     *)
     [<ExcelFunction(Name="_FdmDividendHandler_dividendTimes", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_dividendTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDividendHandler")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDividendHandler",Description = "Reference to FdmDividendHandler")>] 
+        ([<ExcelArgument(Name="FdmDividendHandler",Description = "FdmDividendHandler")>] 
          fdmdividendhandler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,17 +195,17 @@ module FdmDividendHandlerFunction =
     *)
     [<ExcelFunction(Name="_FdmDividendHandler", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDividendHandler")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "DividendSchedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="equityDirection",Description = "Reference to equityDirection")>] 
+        ([<ExcelArgument(Name="equityDirection",Description = "int")>] 
          equityDirection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -253,9 +253,9 @@ module FdmDividendHandlerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmDividendHandler_Range", Description="Create a range of FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmDividendHandler")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type CLPCurrencyModel
 (*
     Functions
 *)
-    let _CLPCurrency                               = cell (fun () -> new CLPCurrency ())
+    let mutable
+        _CLPCurrency                               = cell (fun () -> new CLPCurrency ())
     let _code                                      = triv (fun () -> _CLPCurrency.Value.code)
     let _empty                                     = triv (fun () -> _CLPCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CLPCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _CLPCurrency.Value <- v
+    member internal this.Inject v = _CLPCurrency <- v
     static member Cast (p : ICell<CLPCurrency>) = 
         if p :? CLPCurrencyModel then 
             p :?> CLPCurrencyModel
         else
             let o = new CLPCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

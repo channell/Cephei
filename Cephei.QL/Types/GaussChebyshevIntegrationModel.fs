@@ -44,7 +44,8 @@ type GaussChebyshevIntegrationModel
 (*
     Functions
 *)
-    let _GaussChebyshevIntegration                 = cell (fun () -> new GaussChebyshevIntegration (n.Value))
+    let mutable
+        _GaussChebyshevIntegration                 = cell (fun () -> new GaussChebyshevIntegration (n.Value))
     let _order                                     = triv (fun () -> _GaussChebyshevIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussChebyshevIntegration.Value.value(f.Value))
@@ -55,13 +56,14 @@ type GaussChebyshevIntegrationModel
     casting 
 *)
     internal new () = new GaussChebyshevIntegrationModel(null)
-    member internal this.Inject v = _GaussChebyshevIntegration.Value <- v
+    member internal this.Inject v = _GaussChebyshevIntegration <- v
     static member Cast (p : ICell<GaussChebyshevIntegration>) = 
         if p :? GaussChebyshevIntegrationModel then 
             p :?> GaussChebyshevIntegrationModel
         else
             let o = new GaussChebyshevIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

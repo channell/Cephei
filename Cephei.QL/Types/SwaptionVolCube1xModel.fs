@@ -80,7 +80,8 @@ type SwaptionVolCube1xModel
 (*
     Functions
 *)
-    let _SwaptionVolCube1x                         = cell (fun () -> new SwaptionVolCube1x (atmVolStructure.Value, optionTenors.Value, swapTenors.Value, strikeSpreads.Value, volSpreads.Value, swapIndexBase.Value, shortSwapIndexBase.Value, vegaWeightedSmileFit.Value, parametersGuess.Value, isParameterFixed.Value, isAtmCalibrated.Value, endCriteria.Value, maxErrorTolerance.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, backwardFlat.Value, cutoffStrike.Value))
+    let mutable
+        _SwaptionVolCube1x                         = cell (fun () -> new SwaptionVolCube1x (atmVolStructure.Value, optionTenors.Value, swapTenors.Value, strikeSpreads.Value, volSpreads.Value, swapIndexBase.Value, shortSwapIndexBase.Value, vegaWeightedSmileFit.Value, parametersGuess.Value, isParameterFixed.Value, isAtmCalibrated.Value, endCriteria.Value, maxErrorTolerance.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, backwardFlat.Value, cutoffStrike.Value))
     let _denseSabrParameters                       = triv (fun () -> _SwaptionVolCube1x.Value.denseSabrParameters())
     let _marketVolCube                             = triv (fun () -> _SwaptionVolCube1x.Value.marketVolCube())
     let _marketVolCube1                            (i : ICell<int>)   
@@ -195,13 +196,14 @@ type SwaptionVolCube1xModel
     casting 
 *)
     internal new () = new SwaptionVolCube1xModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolCube1x.Value <- v
+    member internal this.Inject v = _SwaptionVolCube1x <- v
     static member Cast (p : ICell<SwaptionVolCube1x>) = 
         if p :? SwaptionVolCube1xModel then 
             p :?> SwaptionVolCube1xModel
         else
             let o = new SwaptionVolCube1xModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

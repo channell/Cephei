@@ -50,7 +50,8 @@ type HelperProcessModel
 (*
     Functions
 *)
-    let _HelperProcess                             = cell (fun () -> new HelperProcess (theta.Value, k.Value, sigma.Value, y0.Value))
+    let mutable
+        _HelperProcess                             = cell (fun () -> new HelperProcess (theta.Value, k.Value, sigma.Value, y0.Value))
     let _diffusion                                 (d1 : ICell<double>) (d2 : ICell<double>)   
                                                    = cell (fun () -> _HelperProcess.Value.diffusion(d1.Value, d2.Value))
     let _drift                                     (d : ICell<double>) (y : ICell<double>)   
@@ -96,13 +97,14 @@ type HelperProcessModel
     casting 
 *)
     internal new () = HelperProcessModel(null,null,null,null)
-    member internal this.Inject v = _HelperProcess.Value <- v
+    member internal this.Inject v = _HelperProcess <- v
     static member Cast (p : ICell<HelperProcess>) = 
         if p :? HelperProcessModel then 
             p :?> HelperProcessModel
         else
             let o = new HelperProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

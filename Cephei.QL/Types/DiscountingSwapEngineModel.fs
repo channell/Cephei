@@ -50,19 +50,21 @@ type DiscountingSwapEngineModel
 (*
     Functions
 *)
-    let _DiscountingSwapEngine                     = cell (fun () -> new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
+    let mutable
+        _DiscountingSwapEngine                     = cell (fun () -> new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
     do this.Bind(_DiscountingSwapEngine)
 (* 
     casting 
 *)
     internal new () = new DiscountingSwapEngineModel(null,null,null,null)
-    member internal this.Inject v = _DiscountingSwapEngine.Value <- v
+    member internal this.Inject v = _DiscountingSwapEngine <- v
     static member Cast (p : ICell<DiscountingSwapEngine>) = 
         if p :? DiscountingSwapEngineModel then 
             p :?> DiscountingSwapEngineModel
         else
             let o = new DiscountingSwapEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

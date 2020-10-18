@@ -56,7 +56,8 @@ type ConvexMonotone3HelperModel
 (*
     Functions
 *)
-    let _ConvexMonotone3Helper                     = cell (fun () -> new ConvexMonotone3Helper (xPrev.Value, xNext.Value, gPrev.Value, gNext.Value, fAverage.Value, eta3.Value, prevPrimitive.Value))
+    let mutable
+        _ConvexMonotone3Helper                     = cell (fun () -> new ConvexMonotone3Helper (xPrev.Value, xNext.Value, gPrev.Value, gNext.Value, fAverage.Value, eta3.Value, prevPrimitive.Value))
     let _fNext                                     = triv (fun () -> _ConvexMonotone3Helper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
                                                    = triv (fun () -> _ConvexMonotone3Helper.Value.primitive(x.Value))
@@ -67,13 +68,14 @@ type ConvexMonotone3HelperModel
     casting 
 *)
     internal new () = new ConvexMonotone3HelperModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConvexMonotone3Helper.Value <- v
+    member internal this.Inject v = _ConvexMonotone3Helper <- v
     static member Cast (p : ICell<ConvexMonotone3Helper>) = 
         if p :? ConvexMonotone3HelperModel then 
             p :?> ConvexMonotone3HelperModel
         else
             let o = new ConvexMonotone3HelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

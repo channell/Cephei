@@ -50,7 +50,8 @@ type SaudiArabiaModel
 (*
     Functions
 *)
-    let _SaudiArabia                               = cell (fun () -> new SaudiArabia ())
+    let mutable
+        _SaudiArabia                               = cell (fun () -> new SaudiArabia ())
     let _addedHolidays                             = triv (fun () -> _SaudiArabia.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _SaudiArabia.Value.addHoliday(d.Value)
@@ -87,13 +88,14 @@ type SaudiArabiaModel
     casting 
 *)
     
-    member internal this.Inject v = _SaudiArabia.Value <- v
+    member internal this.Inject v = _SaudiArabia <- v
     static member Cast (p : ICell<SaudiArabia>) = 
         if p :? SaudiArabiaModel then 
             p :?> SaudiArabiaModel
         else
             let o = new SaudiArabiaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

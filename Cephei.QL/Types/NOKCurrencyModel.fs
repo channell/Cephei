@@ -41,7 +41,8 @@ type NOKCurrencyModel
 (*
     Functions
 *)
-    let _NOKCurrency                               = cell (fun () -> new NOKCurrency ())
+    let mutable
+        _NOKCurrency                               = cell (fun () -> new NOKCurrency ())
     let _code                                      = triv (fun () -> _NOKCurrency.Value.code)
     let _empty                                     = triv (fun () -> _NOKCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type NOKCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _NOKCurrency.Value <- v
+    member internal this.Inject v = _NOKCurrency <- v
     static member Cast (p : ICell<NOKCurrency>) = 
         if p :? NOKCurrencyModel then 
             p :?> NOKCurrencyModel
         else
             let o = new NOKCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

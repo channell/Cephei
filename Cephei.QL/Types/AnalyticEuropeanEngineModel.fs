@@ -44,19 +44,21 @@ type AnalyticEuropeanEngineModel
 (*
     Functions
 *)
-    let _AnalyticEuropeanEngine                    = cell (fun () -> new AnalyticEuropeanEngine (Process.Value))
+    let mutable
+        _AnalyticEuropeanEngine                    = cell (fun () -> new AnalyticEuropeanEngine (Process.Value))
     do this.Bind(_AnalyticEuropeanEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticEuropeanEngineModel(null)
-    member internal this.Inject v = _AnalyticEuropeanEngine.Value <- v
+    member internal this.Inject v = _AnalyticEuropeanEngine <- v
     static member Cast (p : ICell<AnalyticEuropeanEngine>) = 
         if p :? AnalyticEuropeanEngineModel then 
             p :?> AnalyticEuropeanEngineModel
         else
             let o = new AnalyticEuropeanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

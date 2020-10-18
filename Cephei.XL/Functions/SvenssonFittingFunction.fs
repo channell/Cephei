@@ -39,9 +39,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_clone", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_size", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SvenssonFitting")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,11 +111,11 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SvenssonFitting")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="weights",Description = "Reference to weights")>] 
+        ([<ExcelArgument(Name="weights",Description = "SvenssonFitting")>] 
          weights : obj)
-        ([<ExcelArgument(Name="optimizationMethod",Description = "Reference to optimizationMethod")>] 
+        ([<ExcelArgument(Name="optimizationMethod",Description = "SvenssonFitting")>] 
          optimizationMethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_constrainAtZero", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_constrainAtZero
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,13 +190,13 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_discount", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_minimumCostValue", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_minimumCostValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_numberOfIterations", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_optimizationMethod", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_optimizationMethod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_solution", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_solution
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module SvenssonFittingFunction =
     *)
     [<ExcelFunction(Name="_SvenssonFitting_weights", Description="Create a SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SvenssonFitting",Description = "Reference to SvenssonFitting")>] 
+        ([<ExcelArgument(Name="SvenssonFitting",Description = "SvenssonFitting")>] 
          svenssonfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -415,9 +415,9 @@ module SvenssonFittingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SvenssonFitting_Range", Description="Create a range of SvenssonFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SvenssonFitting_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SvenssonFitting")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

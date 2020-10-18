@@ -39,19 +39,19 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Reference to spreads")>] 
+        ([<ExcelArgument(Name="spreads",Description = "Quote")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_calendar", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "Reference to PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,9 +142,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_dayCounter", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "Reference to PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_maxDate", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "Reference to PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_referenceDate", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "Reference to PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_settlementDays", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "Reference to PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_Range", Description="Create a range of PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

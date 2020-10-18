@@ -39,15 +39,15 @@ module SABRFunction =
     *)
     [<ExcelFunction(Name="_SABR_interpolate", Description="Create a SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SABR",Description = "Reference to SABR")>] 
+        ([<ExcelArgument(Name="SABR",Description = "SABR")>] 
          sabr : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xEnd",Description = "Reference to xEnd")>] 
+        ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,45 +93,45 @@ module SABRFunction =
     *)
     [<ExcelFunction(Name="_SABR", Description="Create a SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SABR")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
-        ([<ExcelArgument(Name="nu",Description = "Reference to nu")>] 
+        ([<ExcelArgument(Name="nu",Description = "double")>] 
          nu : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="alphaIsFixed",Description = "Reference to alphaIsFixed")>] 
+        ([<ExcelArgument(Name="alphaIsFixed",Description = "bool")>] 
          alphaIsFixed : obj)
-        ([<ExcelArgument(Name="betaIsFixed",Description = "Reference to betaIsFixed")>] 
+        ([<ExcelArgument(Name="betaIsFixed",Description = "bool")>] 
          betaIsFixed : obj)
-        ([<ExcelArgument(Name="nuIsFixed",Description = "Reference to nuIsFixed")>] 
+        ([<ExcelArgument(Name="nuIsFixed",Description = "bool")>] 
          nuIsFixed : obj)
-        ([<ExcelArgument(Name="rhoIsFixed",Description = "Reference to rhoIsFixed")>] 
+        ([<ExcelArgument(Name="rhoIsFixed",Description = "bool")>] 
          rhoIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Reference to vegaWeighted")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "SABR")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "SABR")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "Reference to optMethod")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "SABR")>] 
          optMethod : obj)
-        ([<ExcelArgument(Name="errorAccept",Description = "Reference to errorAccept")>] 
+        ([<ExcelArgument(Name="errorAccept",Description = "SABR")>] 
          errorAccept : obj)
-        ([<ExcelArgument(Name="useMaxError",Description = "Reference to useMaxError")>] 
+        ([<ExcelArgument(Name="useMaxError",Description = "SABR")>] 
          useMaxError : obj)
-        ([<ExcelArgument(Name="maxGuesses",Description = "Reference to maxGuesses")>] 
+        ([<ExcelArgument(Name="maxGuesses",Description = "SABR")>] 
          maxGuesses : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "SABR")>] 
          shift : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "Reference to volatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "SABR")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="approximationModel",Description = "Reference to approximationModel")>] 
+        ([<ExcelArgument(Name="approximationModel",Description = "SABR")>] 
          approximationModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,9 +235,9 @@ module SABRFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SABR_Range", Description="Create a range of SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SABR")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

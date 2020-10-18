@@ -44,7 +44,8 @@ type CandidateModel
 (*
     Functions
 *)
-    let _Candidate                                 = cell (fun () -> new Candidate (size.Value))
+    let mutable
+        _Candidate                                 = cell (fun () -> new Candidate (size.Value))
     let _Clone                                     = cell (fun () -> _Candidate.Value.Clone())
     let _cost                                      = cell (fun () -> _Candidate.Value.cost)
     let _values                                    = cell (fun () -> _Candidate.Value.values)
@@ -53,13 +54,14 @@ type CandidateModel
     casting 
 *)
     internal new () = CandidateModel(null)
-    member internal this.Inject v = _Candidate.Value <- v
+    member internal this.Inject v = _Candidate <- v
     static member Cast (p : ICell<Candidate>) = 
         if p :? CandidateModel then 
             p :?> CandidateModel
         else
             let o = new CandidateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 
@@ -96,7 +98,8 @@ type CandidateModel1
 (*
     Functions
 *)
-    let _Candidate                                 = cell (fun () -> new Candidate ())
+    let mutable
+        _Candidate                                 = cell (fun () -> new Candidate ())
     let _Clone                                     = cell (fun () -> _Candidate.Value.Clone())
     let _cost                                      = cell (fun () -> _Candidate.Value.cost)
     let _values                                    = cell (fun () -> _Candidate.Value.values)
@@ -105,13 +108,14 @@ type CandidateModel1
     casting 
 *)
     
-    member internal this.Inject v = _Candidate.Value <- v
+    member internal this.Inject v = _Candidate <- v
     static member Cast (p : ICell<Candidate>) = 
         if p :? CandidateModel1 then 
             p :?> CandidateModel1
         else
             let o = new CandidateModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

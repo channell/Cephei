@@ -41,7 +41,8 @@ type FDDividendEuropeanEngineModel
 (*
     Functions
 *)
-    let _FDDividendEuropeanEngine                  = cell (fun () -> new FDDividendEuropeanEngine ())
+    let mutable
+        _FDDividendEuropeanEngine                  = cell (fun () -> new FDDividendEuropeanEngine ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDDividendEuropeanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -64,13 +65,14 @@ type FDDividendEuropeanEngineModel
     casting 
 *)
     
-    member internal this.Inject v = _FDDividendEuropeanEngine.Value <- v
+    member internal this.Inject v = _FDDividendEuropeanEngine <- v
     static member Cast (p : ICell<FDDividendEuropeanEngine>) = 
         if p :? FDDividendEuropeanEngineModel then 
             p :?> FDDividendEuropeanEngineModel
         else
             let o = new FDDividendEuropeanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type FDDividendEuropeanEngineModel1
 (*
     Functions
 *)
-    let _FDDividendEuropeanEngine                  = cell (fun () -> new FDDividendEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDDividendEuropeanEngine                  = cell (fun () -> new FDDividendEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDDividendEuropeanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -135,13 +138,14 @@ type FDDividendEuropeanEngineModel1
     casting 
 *)
     internal new () = new FDDividendEuropeanEngineModel1(null,null,null,null)
-    member internal this.Inject v = _FDDividendEuropeanEngine.Value <- v
+    member internal this.Inject v = _FDDividendEuropeanEngine <- v
     static member Cast (p : ICell<FDDividendEuropeanEngine>) = 
         if p :? FDDividendEuropeanEngineModel1 then 
             p :?> FDDividendEuropeanEngineModel1
         else
             let o = new FDDividendEuropeanEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Shibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor1", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Shibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_businessDayConvention", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,11 +155,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_clone", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_endOfMonth", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,15 +233,15 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_forecastFixing1", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,11 +287,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_forecastFixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,9 +329,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_forwardingTermStructure", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,11 +365,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_maturityDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_currency", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,9 +443,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_dayCounter", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,9 +479,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_familyName", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,13 +515,13 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixingCalendar", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,11 +599,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixingDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,9 +641,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixingDays", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,11 +677,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_isValidFixingDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_name", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,11 +755,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_pastFixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_tenor", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_update", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,11 +869,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_valueDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,15 +911,15 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_addFixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,15 +965,15 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_addFixings", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,13 +1019,13 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_addFixings1", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1067,9 +1067,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_allowsNativeFixings", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1103,9 +1103,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_clearFixings", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,11 +1139,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_registerWith", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1181,9 +1181,9 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_timeSeries", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1217,11 +1217,11 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_unregisterWith", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Shibor",Description = "Reference to Shibor")>] 
+        ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1256,9 +1256,9 @@ module ShiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Shibor_Range", Description="Create a range of Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Shibor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

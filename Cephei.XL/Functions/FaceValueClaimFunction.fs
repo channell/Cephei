@@ -39,15 +39,15 @@ module FaceValueClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueClaim_amount", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FaceValueClaim",Description = "Reference to FaceValueClaim")>] 
+        ([<ExcelArgument(Name="FaceValueClaim",Description = "FaceValueClaim")>] 
          facevalueclaim : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
-        ([<ExcelArgument(Name="recoveryRate",Description = "Reference to recoveryRate")>] 
+        ([<ExcelArgument(Name="recoveryRate",Description = "double")>] 
          recoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,11 +93,11 @@ module FaceValueClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueClaim_registerWith", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FaceValueClaim",Description = "Reference to FaceValueClaim")>] 
+        ([<ExcelArgument(Name="FaceValueClaim",Description = "FaceValueClaim")>] 
          facevalueclaim : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,11 +135,11 @@ module FaceValueClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueClaim_unregisterWith", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FaceValueClaim",Description = "Reference to FaceValueClaim")>] 
+        ([<ExcelArgument(Name="FaceValueClaim",Description = "FaceValueClaim")>] 
          facevalueclaim : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -177,9 +177,9 @@ module FaceValueClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueClaim_update", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FaceValueClaim",Description = "Reference to FaceValueClaim")>] 
+        ([<ExcelArgument(Name="FaceValueClaim",Description = "FaceValueClaim")>] 
          facevalueclaim : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -210,9 +210,9 @@ module FaceValueClaimFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FaceValueClaim_Range", Description="Create a range of FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FaceValueClaim")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

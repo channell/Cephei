@@ -44,7 +44,8 @@ type SoniaModel
 (*
     Functions
 *)
-    let _Sonia                                     = cell (fun () -> new Sonia (h.Value))
+    let mutable
+        _Sonia                                     = cell (fun () -> new Sonia (h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Sonia.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _Sonia.Value.businessDayConvention())
@@ -99,13 +100,14 @@ type SoniaModel
     casting 
 *)
     internal new () = new SoniaModel(null)
-    member internal this.Inject v = _Sonia.Value <- v
+    member internal this.Inject v = _Sonia <- v
     static member Cast (p : ICell<Sonia>) = 
         if p :? SoniaModel then 
             p :?> SoniaModel
         else
             let o = new SoniaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

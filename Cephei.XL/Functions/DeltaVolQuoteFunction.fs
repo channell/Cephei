@@ -39,9 +39,9 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_atmType", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_atmType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DeltaVolQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_delta", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DeltaVolQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module DeltaVolQuoteFunction =
     (*!!
     [<ExcelFunction(Name="_DeltaVolQuote_deltaType", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_deltaType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DeltaVolQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,15 +149,15 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DeltaVolQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="deltaType",Description = "Reference to deltaType")>] 
+        ([<ExcelArgument(Name="deltaType",Description = "DeltaVolQuote.DeltaType")>] 
          deltaType : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="atmType",Description = "Reference to atmType")>] 
+        ([<ExcelArgument(Name="atmType",Description = "DeltaVolQuote.AtmType")>] 
          atmType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,15 +204,15 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote1", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DeltaVolQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="delta",Description = "Reference to delta")>] 
+        ([<ExcelArgument(Name="delta",Description = "double")>] 
          delta : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="deltaType",Description = "Reference to deltaType")>] 
+        ([<ExcelArgument(Name="deltaType",Description = "DeltaVolQuote.DeltaType")>] 
          deltaType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,9 +259,9 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_isValid", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_maturity", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_maturity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -331,9 +331,9 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_update", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -367,9 +367,9 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_value", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -403,11 +403,11 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_registerWith", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -445,11 +445,11 @@ module DeltaVolQuoteFunction =
     *)
     [<ExcelFunction(Name="_DeltaVolQuote_unregisterWith", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DeltaVolQuote",Description = "Reference to DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="DeltaVolQuote",Description = "DeltaVolQuote")>] 
          deltavolquote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,9 +484,9 @@ module DeltaVolQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DeltaVolQuote_Range", Description="Create a range of DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DeltaVolQuote")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

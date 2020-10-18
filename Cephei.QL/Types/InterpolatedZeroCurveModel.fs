@@ -50,7 +50,8 @@ type InterpolatedZeroCurveModel<'Interpolator when 'Interpolator : not struct an
 (*
     Functions
 *)
-    let _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedZeroCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedZeroCurve.Value.data_)
@@ -118,7 +119,8 @@ type InterpolatedZeroCurveModel1<'Interpolator when 'Interpolator : not struct a
 (*
     Functions
 *)
-    let _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dates.Value, yields.Value, dayCounter.Value, interpolator.Value, compounding.Value, frequency.Value, refDate.Value))
+    let mutable
+        _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dates.Value, yields.Value, dayCounter.Value, interpolator.Value, compounding.Value, frequency.Value, refDate.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedZeroCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedZeroCurve.Value.data_)
@@ -189,7 +191,8 @@ type InterpolatedZeroCurveModel2<'Interpolator when 'Interpolator : not struct a
 (*
     Functions
 *)
-    let _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dates.Value, yields.Value, dayCounter.Value, calendar.Value, interpolator.Value, compounding.Value, frequency.Value))
+    let mutable
+        _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dates.Value, yields.Value, dayCounter.Value, calendar.Value, interpolator.Value, compounding.Value, frequency.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedZeroCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedZeroCurve.Value.data_)
@@ -264,7 +267,8 @@ type InterpolatedZeroCurveModel3<'Interpolator when 'Interpolator : not struct a
 (*
     Functions
 *)
-    let _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dates.Value, yields.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value, compounding.Value, frequency.Value))
+    let mutable
+        _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (dates.Value, yields.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value, compounding.Value, frequency.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedZeroCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedZeroCurve.Value.data_)
@@ -335,7 +339,8 @@ type InterpolatedZeroCurveModel4<'Interpolator when 'Interpolator : not struct a
 (*
     Functions
 *)
-    let _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (settlementDays.Value, calendar.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (settlementDays.Value, calendar.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedZeroCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedZeroCurve.Value.data_)
@@ -401,7 +406,8 @@ type InterpolatedZeroCurveModel5<'Interpolator when 'Interpolator : not struct a
 (*
     Functions
 *)
-    let _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (referenceDate.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedZeroCurve                     = cell (fun () -> new InterpolatedZeroCurve<'Interpolator> (referenceDate.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedZeroCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedZeroCurve.Value.data_)

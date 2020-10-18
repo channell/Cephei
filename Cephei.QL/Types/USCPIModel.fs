@@ -44,7 +44,8 @@ type USCPIModel
 (*
     Functions
 *)
-    let _USCPI                                     = cell (fun () -> new USCPI (interpolated.Value))
+    let mutable
+        _USCPI                                     = cell (fun () -> new USCPI (interpolated.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _USCPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -87,13 +88,14 @@ type USCPIModel
     casting 
 *)
     internal new () = new USCPIModel(null)
-    member internal this.Inject v = _USCPI.Value <- v
+    member internal this.Inject v = _USCPI <- v
     static member Cast (p : ICell<USCPI>) = 
         if p :? USCPIModel then 
             p :?> USCPIModel
         else
             let o = new USCPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -150,7 +152,8 @@ type USCPIModel1
 (*
     Functions
 *)
-    let _USCPI                                     = cell (fun () -> new USCPI (interpolated.Value, ts.Value))
+    let mutable
+        _USCPI                                     = cell (fun () -> new USCPI (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _USCPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -193,13 +196,14 @@ type USCPIModel1
     casting 
 *)
     internal new () = new USCPIModel1(null,null)
-    member internal this.Inject v = _USCPI.Value <- v
+    member internal this.Inject v = _USCPI <- v
     static member Cast (p : ICell<USCPI>) = 
         if p :? USCPIModel1 then 
             p :?> USCPIModel1
         else
             let o = new USCPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

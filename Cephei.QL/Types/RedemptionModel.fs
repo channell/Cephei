@@ -46,7 +46,8 @@ type RedemptionModel
 (*
     Functions
 *)
-    let _Redemption                                = cell (fun () -> new Redemption (amount.Value, date.Value))
+    let mutable
+        _Redemption                                = cell (fun () -> new Redemption (amount.Value, date.Value))
     let _amount                                    = triv (fun () -> _Redemption.Value.amount())
     let _date                                      = triv (fun () -> _Redemption.Value.date())
     let _CompareTo                                 (cf : ICell<CashFlow>)   
@@ -72,13 +73,14 @@ type RedemptionModel
     casting 
 *)
     internal new () = new RedemptionModel(null,null)
-    member internal this.Inject v = _Redemption.Value <- v
+    member internal this.Inject v = _Redemption <- v
     static member Cast (p : ICell<Redemption>) = 
         if p :? RedemptionModel then 
             p :?> RedemptionModel
         else
             let o = new RedemptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

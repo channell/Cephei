@@ -41,7 +41,8 @@ type NLGCurrencyModel
 (*
     Functions
 *)
-    let _NLGCurrency                               = cell (fun () -> new NLGCurrency ())
+    let mutable
+        _NLGCurrency                               = cell (fun () -> new NLGCurrency ())
     let _code                                      = triv (fun () -> _NLGCurrency.Value.code)
     let _empty                                     = triv (fun () -> _NLGCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type NLGCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _NLGCurrency.Value <- v
+    member internal this.Inject v = _NLGCurrency <- v
     static member Cast (p : ICell<NLGCurrency>) = 
         if p :? NLGCurrencyModel then 
             p :?> NLGCurrencyModel
         else
             let o = new NLGCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

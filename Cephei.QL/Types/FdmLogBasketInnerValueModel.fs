@@ -46,7 +46,8 @@ type FdmLogBasketInnerValueModel
 (*
     Functions
 *)
-    let _FdmLogBasketInnerValue                    = cell (fun () -> new FdmLogBasketInnerValue (payoff.Value, mesher.Value))
+    let mutable
+        _FdmLogBasketInnerValue                    = cell (fun () -> new FdmLogBasketInnerValue (payoff.Value, mesher.Value))
     let _avgInnerValue                             (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmLogBasketInnerValue.Value.avgInnerValue(iter.Value, t.Value))
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
@@ -56,13 +57,14 @@ type FdmLogBasketInnerValueModel
     casting 
 *)
     internal new () = new FdmLogBasketInnerValueModel(null,null)
-    member internal this.Inject v = _FdmLogBasketInnerValue.Value <- v
+    member internal this.Inject v = _FdmLogBasketInnerValue <- v
     static member Cast (p : ICell<FdmLogBasketInnerValue>) = 
         if p :? FdmLogBasketInnerValueModel then 
             p :?> FdmLogBasketInnerValueModel
         else
             let o = new FdmLogBasketInnerValueModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

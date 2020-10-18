@@ -50,7 +50,8 @@ type TianModel
 (*
     Functions
 *)
-    let _Tian                                      = cell (fun () -> new Tian (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _Tian                                      = cell (fun () -> new Tian (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _Tian.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
@@ -67,13 +68,14 @@ type TianModel
     casting 
 *)
     internal new () = new TianModel(null,null,null,null)
-    member internal this.Inject v = _Tian.Value <- v
+    member internal this.Inject v = _Tian <- v
     static member Cast (p : ICell<Tian>) = 
         if p :? TianModel then 
             p :?> TianModel
         else
             let o = new TianModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -109,7 +111,8 @@ type TianModel1
 (*
     Functions
 *)
-    let _Tian                                      = cell (fun () -> new Tian ())
+    let mutable
+        _Tian                                      = cell (fun () -> new Tian ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _Tian.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
@@ -126,13 +129,14 @@ type TianModel1
     casting 
 *)
     
-    member internal this.Inject v = _Tian.Value <- v
+    member internal this.Inject v = _Tian <- v
     static member Cast (p : ICell<Tian>) = 
         if p :? TianModel1 then 
             p :?> TianModel1
         else
             let o = new TianModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

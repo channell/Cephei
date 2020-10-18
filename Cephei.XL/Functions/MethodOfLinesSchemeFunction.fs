@@ -39,15 +39,15 @@ module MethodOfLinesSchemeFunction =
     *)
     [<ExcelFunction(Name="_MethodOfLinesScheme_factory", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MethodOfLinesScheme",Description = "Reference to MethodOfLinesScheme")>] 
+        ([<ExcelArgument(Name="MethodOfLinesScheme",Description = "MethodOfLinesScheme")>] 
          methodoflinesscheme : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "Object")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalInputs",Description = "Reference to additionalInputs")>] 
+        ([<ExcelArgument(Name="additionalInputs",Description = "IMixedScheme")>] 
          additionalInputs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,15 +93,15 @@ module MethodOfLinesSchemeFunction =
     *)
     [<ExcelFunction(Name="_MethodOfLinesScheme", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MethodOfLinesScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="eps",Description = "Reference to eps")>] 
+        ([<ExcelArgument(Name="eps",Description = "double")>] 
          eps : obj)
-        ([<ExcelArgument(Name="relInitStepSize",Description = "Reference to relInitStepSize")>] 
+        ([<ExcelArgument(Name="relInitStepSize",Description = "double")>] 
          relInitStepSize : obj)
-        ([<ExcelArgument(Name="map",Description = "Reference to map")>] 
+        ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "Reference to bcSet")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "MethodOfLinesScheme")>] 
          bcSet : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,7 +148,7 @@ module MethodOfLinesSchemeFunction =
     *)
     [<ExcelFunction(Name="_MethodOfLinesScheme1", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MethodOfLinesScheme")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,11 +179,11 @@ module MethodOfLinesSchemeFunction =
     *)
     [<ExcelFunction(Name="_MethodOfLinesScheme_setStep", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MethodOfLinesScheme",Description = "Reference to MethodOfLinesScheme")>] 
+        ([<ExcelArgument(Name="MethodOfLinesScheme",Description = "MethodOfLinesScheme")>] 
          methodoflinesscheme : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,15 +221,15 @@ module MethodOfLinesSchemeFunction =
     *)
     [<ExcelFunction(Name="_MethodOfLinesScheme_step", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MethodOfLinesScheme",Description = "Reference to MethodOfLinesScheme")>] 
+        ([<ExcelArgument(Name="MethodOfLinesScheme",Description = "MethodOfLinesScheme")>] 
          methodoflinesscheme : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -272,9 +272,9 @@ module MethodOfLinesSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MethodOfLinesScheme_Range", Description="Create a range of MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MethodOfLinesScheme")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type AnalyticHestonEngineModel
 (*
     Functions
 *)
-    let _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
+    let mutable
+        _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
                                                    = triv (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
@@ -68,13 +69,14 @@ type AnalyticHestonEngineModel
     casting 
 *)
     internal new () = new AnalyticHestonEngineModel(null,null,null)
-    member internal this.Inject v = _AnalyticHestonEngine.Value <- v
+    member internal this.Inject v = _AnalyticHestonEngine <- v
     static member Cast (p : ICell<AnalyticHestonEngine>) = 
         if p :? AnalyticHestonEngineModel then 
             p :?> AnalyticHestonEngineModel
         else
             let o = new AnalyticHestonEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type AnalyticHestonEngineModel1
 (*
     Functions
 *)
-    let _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, integrationOrder.Value))
+    let mutable
+        _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, integrationOrder.Value))
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
                                                    = triv (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
@@ -132,13 +135,14 @@ type AnalyticHestonEngineModel1
     casting 
 *)
     internal new () = new AnalyticHestonEngineModel1(null,null)
-    member internal this.Inject v = _AnalyticHestonEngine.Value <- v
+    member internal this.Inject v = _AnalyticHestonEngine <- v
     static member Cast (p : ICell<AnalyticHestonEngine>) = 
         if p :? AnalyticHestonEngineModel1 then 
             p :?> AnalyticHestonEngineModel1
         else
             let o = new AnalyticHestonEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -177,7 +181,8 @@ type AnalyticHestonEngineModel2
 (*
     Functions
 *)
-    let _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, cpxLog.Value, integration.Value))
+    let mutable
+        _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, cpxLog.Value, integration.Value))
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
                                                    = triv (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
@@ -197,13 +202,14 @@ type AnalyticHestonEngineModel2
     casting 
 *)
     internal new () = new AnalyticHestonEngineModel2(null,null,null)
-    member internal this.Inject v = _AnalyticHestonEngine.Value <- v
+    member internal this.Inject v = _AnalyticHestonEngine <- v
     static member Cast (p : ICell<AnalyticHestonEngine>) = 
         if p :? AnalyticHestonEngineModel2 then 
             p :?> AnalyticHestonEngineModel2
         else
             let o = new AnalyticHestonEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

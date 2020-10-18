@@ -39,19 +39,19 @@ module BiasedBarrierPathPricerFunction =
     *)
     [<ExcelFunction(Name="_BiasedBarrierPathPricer", Description="Create a BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiasedBarrierPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BiasedBarrierPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="barrierType",Description = "Reference to barrierType")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="barrier",Description = "Reference to barrier")>] 
+        ([<ExcelArgument(Name="barrier",Description = "double")>] 
          barrier : obj)
-        ([<ExcelArgument(Name="rebate",Description = "Reference to rebate")>] 
+        ([<ExcelArgument(Name="rebate",Description = "double")>] 
          rebate : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discounts",Description = "Reference to discounts")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double")>] 
          discounts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,11 +106,11 @@ module BiasedBarrierPathPricerFunction =
     *)
     [<ExcelFunction(Name="_BiasedBarrierPathPricer_value", Description="Create a BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiasedBarrierPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BiasedBarrierPathPricer",Description = "Reference to BiasedBarrierPathPricer")>] 
+        ([<ExcelArgument(Name="BiasedBarrierPathPricer",Description = "BiasedBarrierPathPricer")>] 
          biasedbarrierpathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -145,9 +145,9 @@ module BiasedBarrierPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BiasedBarrierPathPricer_Range", Description="Create a range of BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiasedBarrierPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BiasedBarrierPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

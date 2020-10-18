@@ -41,7 +41,8 @@ type NoXABRConstraintModel
 (*
     Functions
 *)
-    let _NoXABRConstraint                          = cell (fun () -> new NoXABRConstraint ())
+    let mutable
+        _NoXABRConstraint                          = cell (fun () -> new NoXABRConstraint ())
     let _config                                    (costFunction : ICell<ProjectedCostFunction>) (coeff : ICell<XABRCoeffHolder<'Model>>) (forward : ICell<double>)   
                                                    = triv (fun () -> _NoXABRConstraint.Value.config(costFunction.Value, coeff.Value, forward.Value)
                                                                      _NoXABRConstraint.Value)
@@ -59,13 +60,14 @@ type NoXABRConstraintModel
     casting 
 *)
     
-    member internal this.Inject v = _NoXABRConstraint.Value <- v
+    member internal this.Inject v = _NoXABRConstraint <- v
     static member Cast (p : ICell<NoXABRConstraint>) = 
         if p :? NoXABRConstraintModel then 
             p :?> NoXABRConstraintModel
         else
             let o = new NoXABRConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

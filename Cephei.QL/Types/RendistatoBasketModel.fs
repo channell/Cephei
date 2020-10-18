@@ -48,7 +48,8 @@ type RendistatoBasketModel
 (*
     Functions
 *)
-    let _RendistatoBasket                          = cell (fun () -> new RendistatoBasket (btps.Value, outstandings.Value, cleanPriceQuotes.Value))
+    let mutable
+        _RendistatoBasket                          = cell (fun () -> new RendistatoBasket (btps.Value, outstandings.Value, cleanPriceQuotes.Value))
     let _btps                                      = triv (fun () -> _RendistatoBasket.Value.btps())
     let _cleanPriceQuotes                          = cell (fun () -> _RendistatoBasket.Value.cleanPriceQuotes())
     let _outstanding                               = triv (fun () -> _RendistatoBasket.Value.outstanding())
@@ -68,13 +69,14 @@ type RendistatoBasketModel
     casting 
 *)
     internal new () = new RendistatoBasketModel(null,null,null)
-    member internal this.Inject v = _RendistatoBasket.Value <- v
+    member internal this.Inject v = _RendistatoBasket <- v
     static member Cast (p : ICell<RendistatoBasket>) = 
         if p :? RendistatoBasketModel then 
             p :?> RendistatoBasketModel
         else
             let o = new RendistatoBasketModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

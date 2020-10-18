@@ -39,11 +39,11 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI1", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZACPI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "ZeroInflationTermStructure")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZACPI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_clone", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "ZeroInflationTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,13 +161,13 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_fixing", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="aFixingDate",Description = "Reference to aFixingDate")>] 
+        ([<ExcelArgument(Name="aFixingDate",Description = "Date")>] 
          aFixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,9 +209,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_zeroInflationTermStructure", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,15 +245,15 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_addFixing", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="fixing",Description = "Reference to fixing")>] 
+        ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_availabilityLag", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,9 +336,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_currency", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,9 +372,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_familyName", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,9 +408,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_fixingCalendar", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -444,9 +444,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_frequency", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -480,9 +480,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_interpolated", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -516,11 +516,11 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_isValidFixingDate", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,9 +558,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_name", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_region", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,9 +630,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_revised", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -666,9 +666,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_update", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -702,15 +702,15 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_addFixings", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -756,13 +756,13 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_addFixings1", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -804,9 +804,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_allowsNativeFixings", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -840,9 +840,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_clearFixings", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -876,11 +876,11 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_registerWith", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -918,9 +918,9 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_timeSeries", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -954,11 +954,11 @@ module ZACPIFunction =
     *)
     [<ExcelFunction(Name="_ZACPI_unregisterWith", Description="Create a ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZACPI",Description = "Reference to ZACPI")>] 
+        ([<ExcelArgument(Name="ZACPI",Description = "ZACPI")>] 
          zacpi : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -993,9 +993,9 @@ module ZACPIFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZACPI_Range", Description="Create a range of ZACPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZACPI_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ZACPI")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

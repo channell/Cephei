@@ -41,7 +41,8 @@ type NoOffsetModel
 (*
     Functions
 *)
-    let _NoOffset                                  = cell (fun () -> new NoOffset ())
+    let mutable
+        _NoOffset                                  = cell (fun () -> new NoOffset ())
     let _paymentDate                               (eventDate : ICell<Date>)   
                                                    = triv (fun () -> _NoOffset.Value.paymentDate(eventDate.Value))
     do this.Bind(_NoOffset)
@@ -49,13 +50,14 @@ type NoOffsetModel
     casting 
 *)
     
-    member internal this.Inject v = _NoOffset.Value <- v
+    member internal this.Inject v = _NoOffset <- v
     static member Cast (p : ICell<NoOffset>) = 
         if p :? NoOffsetModel then 
             p :?> NoOffsetModel
         else
             let o = new NoOffsetModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

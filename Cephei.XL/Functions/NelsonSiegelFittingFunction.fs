@@ -39,9 +39,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_clone", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NelsonSiegelFitting")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="weights",Description = "Reference to weights")>] 
+        ([<ExcelArgument(Name="weights",Description = "NelsonSiegelFitting")>] 
          weights : obj)
-        ([<ExcelArgument(Name="optimizationMethod",Description = "Reference to optimizationMethod")>] 
+        ([<ExcelArgument(Name="optimizationMethod",Description = "NelsonSiegelFitting")>] 
          optimizationMethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_size", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_constrainAtZero", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_constrainAtZero
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,13 +190,13 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_discount", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_minimumCostValue", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_minimumCostValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_numberOfIterations", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_optimizationMethod", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_optimizationMethod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_solution", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_solution
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module NelsonSiegelFittingFunction =
     *)
     [<ExcelFunction(Name="_NelsonSiegelFitting_weights", Description="Create a NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "Reference to NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="NelsonSiegelFitting",Description = "NelsonSiegelFitting")>] 
          nelsonsiegelfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -415,9 +415,9 @@ module NelsonSiegelFittingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NelsonSiegelFitting_Range", Description="Create a range of NelsonSiegelFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NelsonSiegelFitting_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NelsonSiegelFitting")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

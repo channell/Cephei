@@ -41,7 +41,8 @@ type THBCurrencyModel
 (*
     Functions
 *)
-    let _THBCurrency                               = cell (fun () -> new THBCurrency ())
+    let mutable
+        _THBCurrency                               = cell (fun () -> new THBCurrency ())
     let _code                                      = triv (fun () -> _THBCurrency.Value.code)
     let _empty                                     = triv (fun () -> _THBCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type THBCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _THBCurrency.Value <- v
+    member internal this.Inject v = _THBCurrency <- v
     static member Cast (p : ICell<THBCurrency>) = 
         if p :? THBCurrencyModel then 
             p :?> THBCurrencyModel
         else
             let o = new THBCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

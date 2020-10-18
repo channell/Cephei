@@ -41,7 +41,8 @@ type BachelierSpecModel
 (*
     Functions
 *)
-    let _BachelierSpec                             = cell (fun () -> new BachelierSpec ())
+    let mutable
+        _BachelierSpec                             = cell (fun () -> new BachelierSpec ())
     let _type                                      = triv (fun () -> _BachelierSpec.Value.TYPE())
     let _value                                     (Type : ICell<Option.Type>) (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
                                                    = triv (fun () -> _BachelierSpec.Value.value(Type.Value, strike.Value, atmForward.Value, stdDev.Value, annuity.Value, displacement.Value))
@@ -52,13 +53,14 @@ type BachelierSpecModel
     casting 
 *)
     
-    member internal this.Inject v = _BachelierSpec.Value <- v
+    member internal this.Inject v = _BachelierSpec <- v
     static member Cast (p : ICell<BachelierSpec>) = 
         if p :? BachelierSpecModel then 
             p :?> BachelierSpecModel
         else
             let o = new BachelierSpecModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

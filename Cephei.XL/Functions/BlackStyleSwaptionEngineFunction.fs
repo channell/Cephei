@@ -39,15 +39,15 @@ module BlackStyleSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackStyleSwaptionEngine", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackStyleSwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "SwaptionVolatilityStructure")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "BlackStyleSwaptionEngine")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,17 +94,17 @@ module BlackStyleSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackStyleSwaptionEngine1", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackStyleSwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "BlackStyleSwaptionEngine")>] 
          dc : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "BlackStyleSwaptionEngine")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,17 +155,17 @@ module BlackStyleSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackStyleSwaptionEngine2", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackStyleSwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "BlackStyleSwaptionEngine")>] 
          dc : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "BlackStyleSwaptionEngine")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,9 +217,9 @@ module BlackStyleSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackStyleSwaptionEngine_termStructure", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackStyleSwaptionEngine",Description = "Reference to BlackStyleSwaptionEngine")>] 
+        ([<ExcelArgument(Name="BlackStyleSwaptionEngine",Description = "BlackStyleSwaptionEngine")>] 
          blackstyleswaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -253,9 +253,9 @@ module BlackStyleSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackStyleSwaptionEngine_volatility", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackStyleSwaptionEngine",Description = "Reference to BlackStyleSwaptionEngine")>] 
+        ([<ExcelArgument(Name="BlackStyleSwaptionEngine",Description = "BlackStyleSwaptionEngine")>] 
          blackstyleswaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module BlackStyleSwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackStyleSwaptionEngine_Range", Description="Create a range of BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackStyleSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

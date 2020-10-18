@@ -62,7 +62,8 @@ type InterpolatedZeroInflationCurveModel<'Interpolator when 'Interpolator : not 
 (*
     Functions
 *)
-    let _InterpolatedZeroInflationCurve            = cell (fun () -> new InterpolatedZeroInflationCurve<'Interpolator> (referenceDate.Value, calendar.Value, dayCounter.Value, lag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value, dates.Value, rates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedZeroInflationCurve            = cell (fun () -> new InterpolatedZeroInflationCurve<'Interpolator> (referenceDate.Value, calendar.Value, dayCounter.Value, lag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value, dates.Value, rates.Value, interpolator.Value))
     let _baseDate                                  = triv (fun () -> _InterpolatedZeroInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _InterpolatedZeroInflationCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedZeroInflationCurve.Value.data())

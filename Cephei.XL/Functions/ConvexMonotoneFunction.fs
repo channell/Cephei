@@ -39,13 +39,13 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConvexMonotone")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="quadraticity",Description = "Reference to quadraticity")>] 
+        ([<ExcelArgument(Name="quadraticity",Description = "double")>] 
          quadraticity : obj)
-        ([<ExcelArgument(Name="monotonicity",Description = "Reference to monotonicity")>] 
+        ([<ExcelArgument(Name="monotonicity",Description = "double")>] 
          monotonicity : obj)
-        ([<ExcelArgument(Name="forcePositive",Description = "Reference to forcePositive")>] 
+        ([<ExcelArgument(Name="forcePositive",Description = "bool")>] 
          forcePositive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone1", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConvexMonotone")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone_dataSizeAdjustment", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_dataSizeAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone",Description = "Reference to ConvexMonotone")>] 
+        ([<ExcelArgument(Name="ConvexMonotone",Description = "ConvexMonotone")>] 
          convexmonotone : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,9 +155,9 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone_global", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone",Description = "Reference to ConvexMonotone")>] 
+        ([<ExcelArgument(Name="ConvexMonotone",Description = "ConvexMonotone")>] 
          convexmonotone : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,15 +191,15 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone_interpolate", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone",Description = "Reference to ConvexMonotone")>] 
+        ([<ExcelArgument(Name="ConvexMonotone",Description = "ConvexMonotone")>] 
          convexmonotone : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,21 +245,21 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone_localInterpolate", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_localInterpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone",Description = "Reference to ConvexMonotone")>] 
+        ([<ExcelArgument(Name="ConvexMonotone",Description = "ConvexMonotone")>] 
          convexmonotone : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="localisation",Description = "Reference to localisation")>] 
+        ([<ExcelArgument(Name="localisation",Description = "int")>] 
          localisation : obj)
-        ([<ExcelArgument(Name="prevInterpolation",Description = "Reference to prevInterpolation")>] 
+        ([<ExcelArgument(Name="prevInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          prevInterpolation : obj)
-        ([<ExcelArgument(Name="finalSize",Description = "Reference to finalSize")>] 
+        ([<ExcelArgument(Name="finalSize",Description = "int")>] 
          finalSize : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module ConvexMonotoneFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone_requiredPoints", Description="Create a ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone",Description = "Reference to ConvexMonotone")>] 
+        ([<ExcelArgument(Name="ConvexMonotone",Description = "ConvexMonotone")>] 
          convexmonotone : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -350,9 +350,9 @@ module ConvexMonotoneFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvexMonotone_Range", Description="Create a range of ConvexMonotone",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConvexMonotone")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

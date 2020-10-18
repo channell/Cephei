@@ -39,9 +39,9 @@ module MultiPathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_MultiPathGenerator_antithetic", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_antithetic
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPathGenerator",Description = "Reference to MultiPathGenerator")>] 
+        ([<ExcelArgument(Name="MultiPathGenerator",Description = "MultiPathGenerator")>] 
          multipathgenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module MultiPathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_MultiPathGenerator", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPathGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "TimeGrid")>] 
          times : obj)
-        ([<ExcelArgument(Name="generator",Description = "Reference to generator")>] 
+        ([<ExcelArgument(Name="generator",Description = "'GSG")>] 
          generator : obj)
-        ([<ExcelArgument(Name="brownianBridge",Description = "Reference to brownianBridge")>] 
+        ([<ExcelArgument(Name="brownianBridge",Description = "bool")>] 
          brownianBridge : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,9 +130,9 @@ module MultiPathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_MultiPathGenerator_next", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPathGenerator",Description = "Reference to MultiPathGenerator")>] 
+        ([<ExcelArgument(Name="MultiPathGenerator",Description = "MultiPathGenerator")>] 
          multipathgenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -163,9 +163,9 @@ module MultiPathGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MultiPathGenerator_Range", Description="Create a range of MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MultiPathGenerator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -56,7 +56,8 @@ type CCTEUModel
 (*
     Functions
 *)
-    let _CCTEU                                     = cell (fun () -> withEngine pricingEngine (new CCTEU (maturityDate.Value, spread.Value, fwdCurve.Value, startDate.Value, issueDate.Value)))
+    let mutable
+        _CCTEU                                     = cell (fun () -> withEngine pricingEngine (new CCTEU (maturityDate.Value, spread.Value, fwdCurve.Value, startDate.Value, issueDate.Value)))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CCTEU).accruedAmount(d.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CCTEU).calendar())
@@ -110,13 +111,14 @@ type CCTEUModel
     casting 
 *)
     internal new () = new CCTEUModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _CCTEU.Value <- v
+    member internal this.Inject v = _CCTEU <- v
     static member Cast (p : ICell<CCTEU>) = 
         if p :? CCTEUModel then 
             p :?> CCTEUModel
         else
             let o = new CCTEUModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -64,7 +64,8 @@ type MixedLinearCubicInterpolationModel
 (*
     Functions
 *)
-    let _MixedLinearCubicInterpolation             = cell (fun () -> new MixedLinearCubicInterpolation (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value, da.Value, monotonic.Value, leftC.Value, leftConditionValue.Value, rightC.Value, rightConditionValue.Value))
+    let mutable
+        _MixedLinearCubicInterpolation             = cell (fun () -> new MixedLinearCubicInterpolation (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value, da.Value, monotonic.Value, leftC.Value, leftConditionValue.Value, rightC.Value, rightConditionValue.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _MixedLinearCubicInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _MixedLinearCubicInterpolation.Value.empty())
@@ -93,13 +94,14 @@ type MixedLinearCubicInterpolationModel
     casting 
 *)
     internal new () = new MixedLinearCubicInterpolationModel(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _MixedLinearCubicInterpolation.Value <- v
+    member internal this.Inject v = _MixedLinearCubicInterpolation <- v
     static member Cast (p : ICell<MixedLinearCubicInterpolation>) = 
         if p :? MixedLinearCubicInterpolationModel then 
             p :?> MixedLinearCubicInterpolationModel
         else
             let o = new MixedLinearCubicInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

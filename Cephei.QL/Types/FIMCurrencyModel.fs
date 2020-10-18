@@ -41,7 +41,8 @@ type FIMCurrencyModel
 (*
     Functions
 *)
-    let _FIMCurrency                               = cell (fun () -> new FIMCurrency ())
+    let mutable
+        _FIMCurrency                               = cell (fun () -> new FIMCurrency ())
     let _code                                      = triv (fun () -> _FIMCurrency.Value.code)
     let _empty                                     = triv (fun () -> _FIMCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type FIMCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _FIMCurrency.Value <- v
+    member internal this.Inject v = _FIMCurrency <- v
     static member Cast (p : ICell<FIMCurrency>) = 
         if p :? FIMCurrencyModel then 
             p :?> FIMCurrencyModel
         else
             let o = new FIMCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

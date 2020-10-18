@@ -52,7 +52,8 @@ type SwapSpreadIndexModel
 (*
     Functions
 *)
-    let _SwapSpreadIndex                           = cell (fun () -> new SwapSpreadIndex (familyName.Value, swapIndex1.Value, swapIndex2.Value, gearing1.Value, gearing2.Value))
+    let mutable
+        _SwapSpreadIndex                           = cell (fun () -> new SwapSpreadIndex (familyName.Value, swapIndex1.Value, swapIndex2.Value, gearing1.Value, gearing2.Value))
     let _allowsNativeFixings                       = triv (fun () -> _SwapSpreadIndex.Value.allowsNativeFixings())
     let _forecastFixing                            (fixingDate : ICell<Date>)   
                                                    = triv (fun () -> _SwapSpreadIndex.Value.forecastFixing(fixingDate.Value))
@@ -104,13 +105,14 @@ type SwapSpreadIndexModel
     casting 
 *)
     internal new () = new SwapSpreadIndexModel(null,null,null,null,null)
-    member internal this.Inject v = _SwapSpreadIndex.Value <- v
+    member internal this.Inject v = _SwapSpreadIndex <- v
     static member Cast (p : ICell<SwapSpreadIndex>) = 
         if p :? SwapSpreadIndexModel then 
             p :?> SwapSpreadIndexModel
         else
             let o = new SwapSpreadIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -175,7 +177,8 @@ type SwapSpreadIndexModel1
 (*
     Functions
 *)
-    let _SwapSpreadIndex                           = cell (fun () -> new SwapSpreadIndex ())
+    let mutable
+        _SwapSpreadIndex                           = cell (fun () -> new SwapSpreadIndex ())
     let _allowsNativeFixings                       = triv (fun () -> _SwapSpreadIndex.Value.allowsNativeFixings())
     let _forecastFixing                            (fixingDate : ICell<Date>)   
                                                    = triv (fun () -> _SwapSpreadIndex.Value.forecastFixing(fixingDate.Value))
@@ -227,13 +230,14 @@ type SwapSpreadIndexModel1
     casting 
 *)
     
-    member internal this.Inject v = _SwapSpreadIndex.Value <- v
+    member internal this.Inject v = _SwapSpreadIndex <- v
     static member Cast (p : ICell<SwapSpreadIndex>) = 
         if p :? SwapSpreadIndexModel1 then 
             p :?> SwapSpreadIndexModel1
         else
             let o = new SwapSpreadIndexModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

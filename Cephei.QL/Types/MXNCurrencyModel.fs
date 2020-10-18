@@ -41,7 +41,8 @@ type MXNCurrencyModel
 (*
     Functions
 *)
-    let _MXNCurrency                               = cell (fun () -> new MXNCurrency ())
+    let mutable
+        _MXNCurrency                               = cell (fun () -> new MXNCurrency ())
     let _code                                      = triv (fun () -> _MXNCurrency.Value.code)
     let _empty                                     = triv (fun () -> _MXNCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type MXNCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _MXNCurrency.Value <- v
+    member internal this.Inject v = _MXNCurrency <- v
     static member Cast (p : ICell<MXNCurrency>) = 
         if p :? MXNCurrencyModel then 
             p :?> MXNCurrencyModel
         else
             let o = new MXNCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

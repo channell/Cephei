@@ -39,13 +39,13 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Add", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="key",Description = "Reference to key")>] 
+        ([<ExcelArgument(Name="key",Description = "Date")>] 
          key : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "'T")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,11 +87,11 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Add", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="item",Description = "Reference to item")>] 
+        ([<ExcelArgument(Name="item",Description = "Date,T")>] 
          item : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,9 +129,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Clear", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Clear
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,11 +165,11 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Contains", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Contains
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="item",Description = "Reference to item")>] 
+        ([<ExcelArgument(Name="item",Description = "Date,T")>] 
          item : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,11 +207,11 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_ContainsKey", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_ContainsKey
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="key",Description = "Reference to key")>] 
+        ([<ExcelArgument(Name="key",Description = "Date")>] 
          key : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -249,13 +249,13 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_CopyTo", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_CopyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="array",Description = "Reference to array")>] 
+        ([<ExcelArgument(Name="array",Description = "[]")>] 
          array : obj)
-        ([<ExcelArgument(Name="arrayIndex",Description = "Reference to arrayIndex")>] 
+        ([<ExcelArgument(Name="arrayIndex",Description = "int")>] 
          arrayIndex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -297,9 +297,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Count", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Count
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,9 +333,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_GetEnumerator", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_GetEnumerator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -369,9 +369,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_IsReadOnly", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_IsReadOnly
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -405,9 +405,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Keys", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Keys
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -441,11 +441,11 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Remove", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Remove
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeSeries")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="item",Description = "Reference to item")>] 
+        ([<ExcelArgument(Name="item",Description = "Date,T")>] 
          item : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -483,11 +483,11 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Remove", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Remove
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeSeries")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="key",Description = "Reference to key")>] 
+        ([<ExcelArgument(Name="key",Description = "Date")>] 
          key : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -525,11 +525,11 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_this", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_this
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeSeries")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="key",Description = "Reference to key")>] 
+        ([<ExcelArgument(Name="key",Description = "Date")>] 
          key : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -567,9 +567,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeSeries")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,7 +604,7 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries1", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeSeries")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,13 +635,13 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_TryGetValue", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_TryGetValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
-        ([<ExcelArgument(Name="key",Description = "Reference to key")>] 
+        ([<ExcelArgument(Name="key",Description = "Date")>] 
          key : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "'T")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,9 +683,9 @@ module TimeSeriesFunction =
     *)
     [<ExcelFunction(Name="_TimeSeries_Values", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeSeries",Description = "Reference to TimeSeries")>] 
+        ([<ExcelArgument(Name="TimeSeries",Description = "TimeSeries")>] 
          timeseries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -716,9 +716,9 @@ module TimeSeriesFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TimeSeries_Range", Description="Create a range of TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TimeSeries")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

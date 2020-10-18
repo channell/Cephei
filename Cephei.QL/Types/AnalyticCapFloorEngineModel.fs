@@ -44,7 +44,8 @@ type AnalyticCapFloorEngineModel
 (*
     Functions
 *)
-    let _AnalyticCapFloorEngine                    = cell (fun () -> new AnalyticCapFloorEngine (model.Value))
+    let mutable
+        _AnalyticCapFloorEngine                    = cell (fun () -> new AnalyticCapFloorEngine (model.Value))
     let _setModel                                  (model : ICell<Handle<IAffineModel>>)   
                                                    = triv (fun () -> _AnalyticCapFloorEngine.Value.setModel(model.Value)
                                                                      _AnalyticCapFloorEngine.Value)
@@ -63,13 +64,14 @@ type AnalyticCapFloorEngineModel
     casting 
 *)
     internal new () = new AnalyticCapFloorEngineModel(null)
-    member internal this.Inject v = _AnalyticCapFloorEngine.Value <- v
+    member internal this.Inject v = _AnalyticCapFloorEngine <- v
     static member Cast (p : ICell<AnalyticCapFloorEngine>) = 
         if p :? AnalyticCapFloorEngineModel then 
             p :?> AnalyticCapFloorEngineModel
         else
             let o = new AnalyticCapFloorEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -104,7 +106,8 @@ type AnalyticCapFloorEngineModel1
 (*
     Functions
 *)
-    let _AnalyticCapFloorEngine                    = cell (fun () -> new AnalyticCapFloorEngine (model.Value, termStructure.Value))
+    let mutable
+        _AnalyticCapFloorEngine                    = cell (fun () -> new AnalyticCapFloorEngine (model.Value, termStructure.Value))
     let _setModel                                  (model : ICell<Handle<IAffineModel>>)   
                                                    = triv (fun () -> _AnalyticCapFloorEngine.Value.setModel(model.Value)
                                                                      _AnalyticCapFloorEngine.Value)
@@ -123,13 +126,14 @@ type AnalyticCapFloorEngineModel1
     casting 
 *)
     internal new () = new AnalyticCapFloorEngineModel1(null,null)
-    member internal this.Inject v = _AnalyticCapFloorEngine.Value <- v
+    member internal this.Inject v = _AnalyticCapFloorEngine <- v
     static member Cast (p : ICell<AnalyticCapFloorEngine>) = 
         if p :? AnalyticCapFloorEngineModel1 then 
             p :?> AnalyticCapFloorEngineModel1
         else
             let o = new AnalyticCapFloorEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

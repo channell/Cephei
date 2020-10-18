@@ -46,7 +46,8 @@ type BachelierCapFloorEngineModel
 (*
     Functions
 *)
-    let _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value))
+    let mutable
+        _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value))
     let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
@@ -54,13 +55,14 @@ type BachelierCapFloorEngineModel
     casting 
 *)
     internal new () = new BachelierCapFloorEngineModel(null,null)
-    member internal this.Inject v = _BachelierCapFloorEngine.Value <- v
+    member internal this.Inject v = _BachelierCapFloorEngine <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel then 
             p :?> BachelierCapFloorEngineModel
         else
             let o = new BachelierCapFloorEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -92,7 +94,8 @@ type BachelierCapFloorEngineModel1
 (*
     Functions
 *)
-    let _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
+    let mutable
+        _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
     let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
@@ -100,13 +103,14 @@ type BachelierCapFloorEngineModel1
     casting 
 *)
     internal new () = new BachelierCapFloorEngineModel1(null,null,null)
-    member internal this.Inject v = _BachelierCapFloorEngine.Value <- v
+    member internal this.Inject v = _BachelierCapFloorEngine <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel1 then 
             p :?> BachelierCapFloorEngineModel1
         else
             let o = new BachelierCapFloorEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -139,7 +143,8 @@ type BachelierCapFloorEngineModel2
 (*
     Functions
 *)
-    let _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
+    let mutable
+        _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
     let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
@@ -147,13 +152,14 @@ type BachelierCapFloorEngineModel2
     casting 
 *)
     internal new () = new BachelierCapFloorEngineModel2(null,null,null)
-    member internal this.Inject v = _BachelierCapFloorEngine.Value <- v
+    member internal this.Inject v = _BachelierCapFloorEngine <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel2 then 
             p :?> BachelierCapFloorEngineModel2
         else
             let o = new BachelierCapFloorEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

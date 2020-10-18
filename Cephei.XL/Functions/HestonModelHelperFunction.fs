@@ -39,11 +39,11 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_addTimesTo", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_addTimesTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_blackPrice", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_blackPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,27 +123,27 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper1", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Period")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="s0",Description = "Reference to s0")>] 
+        ([<ExcelArgument(Name="s0",Description = "double")>] 
          s0 : obj)
-        ([<ExcelArgument(Name="strikePrice",Description = "Reference to strikePrice")>] 
+        ([<ExcelArgument(Name="strikePrice",Description = "double")>] 
          strikePrice : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="riskFreeRate",Description = "Reference to riskFreeRate")>] 
+        ([<ExcelArgument(Name="riskFreeRate",Description = "YieldTermStructure")>] 
          riskFreeRate : obj)
-        ([<ExcelArgument(Name="dividendYield",Description = "Reference to dividendYield")>] 
+        ([<ExcelArgument(Name="dividendYield",Description = "YieldTermStructure")>] 
          dividendYield : obj)
-        ([<ExcelArgument(Name="errorType",Description = "Reference to errorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "HestonModelHelper")>] 
          errorType : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,27 +214,27 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Period")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="s0",Description = "Reference to s0")>] 
+        ([<ExcelArgument(Name="s0",Description = "Quote")>] 
          s0 : obj)
-        ([<ExcelArgument(Name="strikePrice",Description = "Reference to strikePrice")>] 
+        ([<ExcelArgument(Name="strikePrice",Description = "double")>] 
          strikePrice : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="riskFreeRate",Description = "Reference to riskFreeRate")>] 
+        ([<ExcelArgument(Name="riskFreeRate",Description = "YieldTermStructure")>] 
          riskFreeRate : obj)
-        ([<ExcelArgument(Name="dividendYield",Description = "Reference to dividendYield")>] 
+        ([<ExcelArgument(Name="dividendYield",Description = "YieldTermStructure")>] 
          dividendYield : obj)
-        ([<ExcelArgument(Name="errorType",Description = "Reference to errorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "HestonModelHelper")>] 
          errorType : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,9 +305,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_maturity", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_maturity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,9 +341,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_modelValue", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_modelValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,9 +377,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_optionType", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -413,9 +413,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_strike", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,9 +449,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_calibrationError", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_calibrationError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,19 +485,19 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_impliedVolatility", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,9 +551,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_marketValue", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_marketValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -587,11 +587,11 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_setPricingEngine", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
-        ([<ExcelArgument(Name="engine",Description = "Reference to engine")>] 
+        ([<ExcelArgument(Name="engine",Description = "IPricingEngine")>] 
          engine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -629,9 +629,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_volatility", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,9 +665,9 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_volatilityType", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonModelHelper",Description = "Reference to HestonModelHelper")>] 
+        ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -698,9 +698,9 @@ module HestonModelHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonModelHelper_Range", Description="Create a range of HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HestonModelHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

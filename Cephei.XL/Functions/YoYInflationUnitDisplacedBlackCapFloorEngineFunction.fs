@@ -39,11 +39,11 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationUnitDisplacedBlackCapFloorEngine", Description="Create a YoYInflationUnitDisplacedBlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationUnitDisplacedBlackCapFloorEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "YoYInflationIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "YoYOptionletVolatilitySurface")>] 
          vol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -83,9 +83,9 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationUnitDisplacedBlackCapFloorEngine_index", Description="Create a YoYInflationUnitDisplacedBlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationUnitDisplacedBlackCapFloorEngine_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationUnitDisplacedBlackCapFloorEngine",Description = "Reference to YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="YoYInflationUnitDisplacedBlackCapFloorEngine",Description = "YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
          yoyinflationunitdisplacedblackcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationUnitDisplacedBlackCapFloorEngine_setVolatility", Description="Create a YoYInflationUnitDisplacedBlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationUnitDisplacedBlackCapFloorEngine_setVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationUnitDisplacedBlackCapFloorEngine",Description = "Reference to YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="YoYInflationUnitDisplacedBlackCapFloorEngine",Description = "YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
          yoyinflationunitdisplacedblackcapfloorengine : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "YoYOptionletVolatilitySurface")>] 
          vol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,9 +161,9 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationUnitDisplacedBlackCapFloorEngine_volatility", Description="Create a YoYInflationUnitDisplacedBlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationUnitDisplacedBlackCapFloorEngine_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationUnitDisplacedBlackCapFloorEngine",Description = "Reference to YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="YoYInflationUnitDisplacedBlackCapFloorEngine",Description = "YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
          yoyinflationunitdisplacedblackcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -194,9 +194,9 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YoYInflationUnitDisplacedBlackCapFloorEngine_Range", Description="Create a range of YoYInflationUnitDisplacedBlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationUnitDisplacedBlackCapFloorEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the YoYInflationUnitDisplacedBlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

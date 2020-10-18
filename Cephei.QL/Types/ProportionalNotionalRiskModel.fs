@@ -48,7 +48,8 @@ type ProportionalNotionalRiskModel
 (*
     Functions
 *)
-    let _ProportionalNotionalRisk                  = cell (fun () -> new ProportionalNotionalRisk (paymentOffset.Value, attachement.Value, exhaustion.Value))
+    let mutable
+        _ProportionalNotionalRisk                  = cell (fun () -> new ProportionalNotionalRisk (paymentOffset.Value, attachement.Value, exhaustion.Value))
     let _updatePath                                (events : ICell<Generic.List<KeyValuePair<Date,double>>>) (path : ICell<NotionalPath>)   
                                                    = triv (fun () -> _ProportionalNotionalRisk.Value.updatePath(events.Value, path.Value)
                                                                      _ProportionalNotionalRisk.Value)
@@ -57,13 +58,14 @@ type ProportionalNotionalRiskModel
     casting 
 *)
     internal new () = new ProportionalNotionalRiskModel(null,null,null)
-    member internal this.Inject v = _ProportionalNotionalRisk.Value <- v
+    member internal this.Inject v = _ProportionalNotionalRisk <- v
     static member Cast (p : ICell<ProportionalNotionalRisk>) = 
         if p :? ProportionalNotionalRiskModel then 
             p :?> ProportionalNotionalRiskModel
         else
             let o = new ProportionalNotionalRiskModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

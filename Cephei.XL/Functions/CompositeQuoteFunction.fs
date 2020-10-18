@@ -39,13 +39,13 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CompositeQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="element1",Description = "Reference to element1")>] 
+        ([<ExcelArgument(Name="element1",Description = "Quote")>] 
          element1 : obj)
-        ([<ExcelArgument(Name="element2",Description = "Reference to element2")>] 
+        ([<ExcelArgument(Name="element2",Description = "Quote")>] 
          element2 : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_isValid", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_update", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_value", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_value1", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_value2", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_value2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,11 +268,11 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_registerWith", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,11 +310,11 @@ module CompositeQuoteFunction =
     *)
     [<ExcelFunction(Name="_CompositeQuote_unregisterWith", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeQuote",Description = "Reference to CompositeQuote")>] 
+        ([<ExcelArgument(Name="CompositeQuote",Description = "CompositeQuote")>] 
          compositequote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module CompositeQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CompositeQuote_Range", Description="Create a range of CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CompositeQuote")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

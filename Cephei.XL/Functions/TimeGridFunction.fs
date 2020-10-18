@@ -39,11 +39,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_closestIndex", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_closestIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_closestTime", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_closestTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,11 +123,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_dt", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_dt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,9 +165,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_empty", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,9 +201,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_First", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_First
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_index", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_Last", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_Last
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,9 +315,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_mandatoryTimes", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -351,9 +351,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_size", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,11 +387,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_this", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_this
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -429,13 +429,13 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid3", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
-        ([<ExcelArgument(Name="offset",Description = "Reference to offset")>] 
+        ([<ExcelArgument(Name="offset",Description = "int")>] 
          offset : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid2", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid1", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,11 +558,11 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -601,9 +601,9 @@ module TimeGridFunction =
     *)
     [<ExcelFunction(Name="_TimeGrid_Times", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_Times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TimeGrid",Description = "Reference to TimeGrid")>] 
+        ([<ExcelArgument(Name="TimeGrid",Description = "TimeGrid")>] 
          timegrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,9 +634,9 @@ module TimeGridFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TimeGrid_Range", Description="Create a range of TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TimeGrid")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

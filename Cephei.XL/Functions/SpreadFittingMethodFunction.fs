@@ -39,9 +39,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_clone", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_size", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadFittingMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,11 +111,11 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadFittingMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_constrainAtZero", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_constrainAtZero
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,13 +190,13 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_discount", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_minimumCostValue", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_minimumCostValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_numberOfIterations", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_optimizationMethod", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_optimizationMethod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_solution", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_solution
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module SpreadFittingMethodFunction =
     *)
     [<ExcelFunction(Name="_SpreadFittingMethod_weights", Description="Create a SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "Reference to SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="SpreadFittingMethod",Description = "SpreadFittingMethod")>] 
          spreadfittingmethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -415,9 +415,9 @@ module SpreadFittingMethodFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SpreadFittingMethod_Range", Description="Create a range of SpreadFittingMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadFittingMethod_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SpreadFittingMethod")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

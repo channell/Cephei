@@ -41,7 +41,8 @@ type ITLCurrencyModel
 (*
     Functions
 *)
-    let _ITLCurrency                               = cell (fun () -> new ITLCurrency ())
+    let mutable
+        _ITLCurrency                               = cell (fun () -> new ITLCurrency ())
     let _code                                      = triv (fun () -> _ITLCurrency.Value.code)
     let _empty                                     = triv (fun () -> _ITLCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type ITLCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _ITLCurrency.Value <- v
+    member internal this.Inject v = _ITLCurrency <- v
     static member Cast (p : ICell<ITLCurrency>) = 
         if p :? ITLCurrencyModel then 
             p :?> ITLCurrencyModel
         else
             let o = new ITLCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

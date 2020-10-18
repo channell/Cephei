@@ -54,7 +54,8 @@ type ForwardVanillaOptionModel
 (*
     Functions
 *)
-    let _ForwardVanillaOption                      = cell (fun () -> withEngine pricingEngine (new ForwardVanillaOption (moneyness.Value, resetDate.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _ForwardVanillaOption                      = cell (fun () -> withEngine pricingEngine (new ForwardVanillaOption (moneyness.Value, resetDate.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).dividendRho())
@@ -83,13 +84,14 @@ type ForwardVanillaOptionModel
     casting 
 *)
     internal new () = new ForwardVanillaOptionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _ForwardVanillaOption.Value <- v
+    member internal this.Inject v = _ForwardVanillaOption <- v
     static member Cast (p : ICell<ForwardVanillaOption>) = 
         if p :? ForwardVanillaOptionModel then 
             p :?> ForwardVanillaOptionModel
         else
             let o = new ForwardVanillaOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

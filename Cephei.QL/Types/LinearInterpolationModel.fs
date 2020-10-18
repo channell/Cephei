@@ -48,7 +48,8 @@ type LinearInterpolationModel
 (*
     Functions
 *)
-    let _LinearInterpolation                       = cell (fun () -> new LinearInterpolation (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _LinearInterpolation                       = cell (fun () -> new LinearInterpolation (xBegin.Value, size.Value, yBegin.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _LinearInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _LinearInterpolation.Value.empty())
@@ -77,13 +78,14 @@ type LinearInterpolationModel
     casting 
 *)
     internal new () = new LinearInterpolationModel(null,null,null)
-    member internal this.Inject v = _LinearInterpolation.Value <- v
+    member internal this.Inject v = _LinearInterpolation <- v
     static member Cast (p : ICell<LinearInterpolation>) = 
         if p :? LinearInterpolationModel then 
             p :?> LinearInterpolationModel
         else
             let o = new LinearInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

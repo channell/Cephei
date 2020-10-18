@@ -41,7 +41,8 @@ type sort_by_costModel
 (*
     Functions
 *)
-    let _sort_by_cost                              = cell (fun () -> new sort_by_cost ())
+    let mutable
+        _sort_by_cost                              = cell (fun () -> new sort_by_cost ())
     let _Compare                                   (left : ICell<Candidate.Candidate>) (right : ICell<Candidate.Candidate>)   
                                                    = cell (fun () -> _sort_by_cost.Value.Compare(left.Value, right.Value))
     do this.Bind(_sort_by_cost)
@@ -49,13 +50,14 @@ type sort_by_costModel
     casting 
 *)
     
-    member internal this.Inject v = _sort_by_cost.Value <- v
+    member internal this.Inject v = _sort_by_cost <- v
     static member Cast (p : ICell<sort_by_cost>) = 
         if p :? sort_by_costModel then 
             p :?> sort_by_costModel
         else
             let o = new sort_by_costModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

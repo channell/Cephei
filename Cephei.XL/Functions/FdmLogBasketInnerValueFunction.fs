@@ -39,13 +39,13 @@ module FdmLogBasketInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmLogBasketInnerValue_avgInnerValue", Description="Create a FdmLogBasketInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogBasketInnerValue_avgInnerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLogBasketInnerValue")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLogBasketInnerValue",Description = "Reference to FdmLogBasketInnerValue")>] 
+        ([<ExcelArgument(Name="FdmLogBasketInnerValue",Description = "FdmLogBasketInnerValue")>] 
          fdmlogbasketinnervalue : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,11 +87,11 @@ module FdmLogBasketInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmLogBasketInnerValue", Description="Create a FdmLogBasketInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogBasketInnerValue_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLogBasketInnerValue")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "BasketPayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,13 +130,13 @@ module FdmLogBasketInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmLogBasketInnerValue_innerValue", Description="Create a FdmLogBasketInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogBasketInnerValue_innerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLogBasketInnerValue",Description = "Reference to FdmLogBasketInnerValue")>] 
+        ([<ExcelArgument(Name="FdmLogBasketInnerValue",Description = "FdmLogBasketInnerValue")>] 
          fdmlogbasketinnervalue : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -175,9 +175,9 @@ module FdmLogBasketInnerValueFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmLogBasketInnerValue_Range", Description="Create a range of FdmLogBasketInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogBasketInnerValue_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmLogBasketInnerValue")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type GenericPseudoRandomModel<'URNG, 'IC when 'URNG :> IRNGTraits and 'URNG : (n
 (*
     Functions
 *)
-    let _GenericPseudoRandom                       = cell (fun () -> new GenericPseudoRandom<'URNG,'IC> ())
+    let mutable
+        _GenericPseudoRandom                       = cell (fun () -> new GenericPseudoRandom<'URNG,'IC> ())
     let _allowsErrorEstimate                       = triv (fun () -> _GenericPseudoRandom.Value.allowsErrorEstimate)
     let _make_sequence_generator                   (dimension : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _GenericPseudoRandom.Value.make_sequence_generator(dimension.Value, seed.Value))

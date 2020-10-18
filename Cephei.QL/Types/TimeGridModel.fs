@@ -46,7 +46,8 @@ type TimeGridModel
 (*
     Functions
 *)
-    let _TimeGrid                                  = cell (fun () -> new TimeGrid (End.Value, steps.Value))
+    let mutable
+        _TimeGrid                                  = cell (fun () -> new TimeGrid (End.Value, steps.Value))
     let _closestIndex                              (t : ICell<double>)   
                                                    = triv (fun () -> _TimeGrid.Value.closestIndex(t.Value))
     let _closestTime                               (t : ICell<double>)   
@@ -68,13 +69,14 @@ type TimeGridModel
     casting 
 *)
     internal new () = new TimeGridModel(null,null)
-    member internal this.Inject v = _TimeGrid.Value <- v
+    member internal this.Inject v = _TimeGrid <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel then 
             p :?> TimeGridModel
         else
             let o = new TimeGridModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -116,7 +118,8 @@ type TimeGridModel1
 (*
     Functions
 *)
-    let _TimeGrid                                  = cell (fun () -> new TimeGrid (times.Value))
+    let mutable
+        _TimeGrid                                  = cell (fun () -> new TimeGrid (times.Value))
     let _closestIndex                              (t : ICell<double>)   
                                                    = triv (fun () -> _TimeGrid.Value.closestIndex(t.Value))
     let _closestTime                               (t : ICell<double>)   
@@ -138,13 +141,14 @@ type TimeGridModel1
     casting 
 *)
     internal new () = new TimeGridModel1(null)
-    member internal this.Inject v = _TimeGrid.Value <- v
+    member internal this.Inject v = _TimeGrid <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel1 then 
             p :?> TimeGridModel1
         else
             let o = new TimeGridModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -187,7 +191,8 @@ type TimeGridModel2
 (*
     Functions
 *)
-    let _TimeGrid                                  = cell (fun () -> new TimeGrid (times.Value, steps.Value))
+    let mutable
+        _TimeGrid                                  = cell (fun () -> new TimeGrid (times.Value, steps.Value))
     let _closestIndex                              (t : ICell<double>)   
                                                    = triv (fun () -> _TimeGrid.Value.closestIndex(t.Value))
     let _closestTime                               (t : ICell<double>)   
@@ -209,13 +214,14 @@ type TimeGridModel2
     casting 
 *)
     internal new () = new TimeGridModel2(null,null)
-    member internal this.Inject v = _TimeGrid.Value <- v
+    member internal this.Inject v = _TimeGrid <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel2 then 
             p :?> TimeGridModel2
         else
             let o = new TimeGridModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -261,7 +267,8 @@ type TimeGridModel3
 (*
     Functions
 *)
-    let _TimeGrid                                  = cell (fun () -> new TimeGrid (times.Value, offset.Value, steps.Value))
+    let mutable
+        _TimeGrid                                  = cell (fun () -> new TimeGrid (times.Value, offset.Value, steps.Value))
     let _closestIndex                              (t : ICell<double>)   
                                                    = triv (fun () -> _TimeGrid.Value.closestIndex(t.Value))
     let _closestTime                               (t : ICell<double>)   
@@ -283,13 +290,14 @@ type TimeGridModel3
     casting 
 *)
     internal new () = new TimeGridModel3(null,null,null)
-    member internal this.Inject v = _TimeGrid.Value <- v
+    member internal this.Inject v = _TimeGrid <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel3 then 
             p :?> TimeGridModel3
         else
             let o = new TimeGridModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -62,7 +62,8 @@ type FloatingLoanModel
 (*
     Functions
 *)
-    let _FloatingLoan                              = cell (fun () -> withEngine pricingEngine (new FloatingLoan (Type.Value, nominal.Value, floatingSchedule.Value, floatingSpread.Value, floatingDayCount.Value, principalSchedule.Value, paymentConvention.Value, index.Value)))
+    let mutable
+        _FloatingLoan                              = cell (fun () -> withEngine pricingEngine (new FloatingLoan (Type.Value, nominal.Value, floatingSchedule.Value, floatingSpread.Value, floatingDayCount.Value, principalSchedule.Value, paymentConvention.Value, index.Value)))
     let _floatingLeg                               = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingLoan).floatingLeg())
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingLoan).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingLoan).isExpired())
@@ -80,13 +81,14 @@ type FloatingLoanModel
     casting 
 *)
     internal new () = new FloatingLoanModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingLoan.Value <- v
+    member internal this.Inject v = _FloatingLoan <- v
     static member Cast (p : ICell<FloatingLoan>) = 
         if p :? FloatingLoanModel then 
             p :?> FloatingLoanModel
         else
             let o = new FloatingLoanModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

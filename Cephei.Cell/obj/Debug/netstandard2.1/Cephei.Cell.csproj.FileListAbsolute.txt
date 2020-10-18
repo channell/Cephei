@@ -1,0 +1,9 @@
+C:\Users\steve\source\repos\Cephei2\bin\Debug\netstandard2.1\Cephei.Cell.deps.json
+C:\Users\steve\source\repos\Cephei2\bin\Debug\netstandard2.1\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\bin\Debug\netstandard2.1\Cephei.Cell.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.AssemblyInfoInputs.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.AssemblyInfo.cs
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.csproj.CoreCompileInputs.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.csprojAssemblyReference.cache

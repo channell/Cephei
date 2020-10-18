@@ -41,7 +41,8 @@ type PEHCurrencyModel
 (*
     Functions
 *)
-    let _PEHCurrency                               = cell (fun () -> new PEHCurrency ())
+    let mutable
+        _PEHCurrency                               = cell (fun () -> new PEHCurrency ())
     let _code                                      = triv (fun () -> _PEHCurrency.Value.code)
     let _empty                                     = triv (fun () -> _PEHCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type PEHCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _PEHCurrency.Value <- v
+    member internal this.Inject v = _PEHCurrency <- v
     static member Cast (p : ICell<PEHCurrency>) = 
         if p :? PEHCurrencyModel then 
             p :?> PEHCurrencyModel
         else
             let o = new PEHCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

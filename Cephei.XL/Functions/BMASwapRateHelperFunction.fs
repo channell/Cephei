@@ -39,25 +39,25 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BMASwapRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="liborFraction",Description = "Reference to liborFraction")>] 
+        ([<ExcelArgument(Name="liborFraction",Description = "Quote")>] 
          liborFraction : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bmaPeriod",Description = "Reference to bmaPeriod")>] 
+        ([<ExcelArgument(Name="bmaPeriod",Description = "Period")>] 
          bmaPeriod : obj)
-        ([<ExcelArgument(Name="bmaConvention",Description = "Reference to bmaConvention")>] 
+        ([<ExcelArgument(Name="bmaConvention",Description = "BusinessDayConvention")>] 
          bmaConvention : obj)
-        ([<ExcelArgument(Name="bmaDayCount",Description = "Reference to bmaDayCount")>] 
+        ([<ExcelArgument(Name="bmaDayCount",Description = "DayCounter")>] 
          bmaDayCount : obj)
-        ([<ExcelArgument(Name="bmaIndex",Description = "Reference to bmaIndex")>] 
+        ([<ExcelArgument(Name="bmaIndex",Description = "BMAIndex")>] 
          bmaIndex : obj)
-        ([<ExcelArgument(Name="iborIndex",Description = "Reference to iborIndex")>] 
+        ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_impliedQuote", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_setTermStructure", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "YieldTermStructure")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,9 +202,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_update", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_earliestDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_latestDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_latestRelevantDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_maturityDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_pillarDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quote", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quoteError", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quoteIsValid", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quoteValue", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,11 +562,11 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_registerWith", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,11 +604,11 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_unregisterWith", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "Reference to BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -643,9 +643,9 @@ module BMASwapRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BMASwapRateHelper_Range", Description="Create a range of BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

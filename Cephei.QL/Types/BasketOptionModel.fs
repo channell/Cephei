@@ -50,7 +50,8 @@ type BasketOptionModel
 (*
     Functions
 *)
-    let _BasketOption                              = cell (fun () -> withEngine pricingEngine (new BasketOption (payoff.Value, exercise.Value)))
+    let mutable
+        _BasketOption                              = cell (fun () -> withEngine pricingEngine (new BasketOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).delta())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).dividendRho())
     let _gamma                                     = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).gamma())
@@ -74,13 +75,14 @@ type BasketOptionModel
     casting 
 *)
     internal new () = new BasketOptionModel(null,null,null,null)
-    member internal this.Inject v = _BasketOption.Value <- v
+    member internal this.Inject v = _BasketOption <- v
     static member Cast (p : ICell<BasketOption>) = 
         if p :? BasketOptionModel then 
             p :?> BasketOptionModel
         else
             let o = new BasketOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

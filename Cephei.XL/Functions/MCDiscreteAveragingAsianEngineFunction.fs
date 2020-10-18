@@ -40,25 +40,25 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MCDiscreteAveragingAsianEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="maxTimeStepsPerYear",Description = "Reference to maxTimeStepsPerYear")>] 
+        ([<ExcelArgument(Name="maxTimeStepsPerYear",Description = "int")>] 
          maxTimeStepsPerYear : obj)
-        ([<ExcelArgument(Name="brownianBridge",Description = "Reference to brownianBridge")>] 
+        ([<ExcelArgument(Name="brownianBridge",Description = "bool")>] 
          brownianBridge : obj)
-        ([<ExcelArgument(Name="antitheticVariate",Description = "Reference to antitheticVariate")>] 
+        ([<ExcelArgument(Name="antitheticVariate",Description = "bool")>] 
          antitheticVariate : obj)
-        ([<ExcelArgument(Name="controlVariate",Description = "Reference to controlVariate")>] 
+        ([<ExcelArgument(Name="controlVariate",Description = "bool")>] 
          controlVariate : obj)
-        ([<ExcelArgument(Name="requiredSamples",Description = "Reference to requiredSamples")>] 
+        ([<ExcelArgument(Name="requiredSamples",Description = "int")>] 
          requiredSamples : obj)
-        ([<ExcelArgument(Name="requiredTolerance",Description = "Reference to requiredTolerance")>] 
+        ([<ExcelArgument(Name="requiredTolerance",Description = "double")>] 
          requiredTolerance : obj)
-        ([<ExcelArgument(Name="maxSamples",Description = "Reference to maxSamples")>] 
+        ([<ExcelArgument(Name="maxSamples",Description = "int")>] 
          maxSamples : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,11 +125,11 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_registerWith", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,9 +167,9 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_reset", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,11 +203,11 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_unregisterWith", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_update", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_errorEstimate", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_sampleAccumulator", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_sampleAccumulator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -353,15 +353,15 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_value", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
-        ([<ExcelArgument(Name="tolerance",Description = "Reference to tolerance")>] 
+        ([<ExcelArgument(Name="tolerance",Description = "double")>] 
          tolerance : obj)
-        ([<ExcelArgument(Name="maxSamples",Description = "Reference to maxSamples")>] 
+        ([<ExcelArgument(Name="maxSamples",Description = "int")>] 
          maxSamples : obj)
-        ([<ExcelArgument(Name="minSamples",Description = "Reference to minSamples")>] 
+        ([<ExcelArgument(Name="minSamples",Description = "int")>] 
          minSamples : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,11 +407,11 @@ module MCDiscreteAveragingAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_valueWithSamples", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_valueWithSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "Reference to MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="MCDiscreteAveragingAsianEngine",Description = "MCDiscreteAveragingAsianEngine")>] 
          mcdiscreteaveragingasianengine : obj)
-        ([<ExcelArgument(Name="samples",Description = "Reference to samples")>] 
+        ([<ExcelArgument(Name="samples",Description = "int")>] 
          samples : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -446,9 +446,9 @@ module MCDiscreteAveragingAsianEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_Range", Description="Create a range of MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MCDiscreteAveragingAsianEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

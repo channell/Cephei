@@ -41,7 +41,8 @@ type IQDCurrencyModel
 (*
     Functions
 *)
-    let _IQDCurrency                               = cell (fun () -> new IQDCurrency ())
+    let mutable
+        _IQDCurrency                               = cell (fun () -> new IQDCurrency ())
     let _code                                      = triv (fun () -> _IQDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _IQDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type IQDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _IQDCurrency.Value <- v
+    member internal this.Inject v = _IQDCurrency <- v
     static member Cast (p : ICell<IQDCurrency>) = 
         if p :? IQDCurrencyModel then 
             p :?> IQDCurrencyModel
         else
             let o = new IQDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

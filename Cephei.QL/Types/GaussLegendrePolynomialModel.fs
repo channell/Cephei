@@ -41,7 +41,8 @@ type GaussLegendrePolynomialModel
 (*
     Functions
 *)
-    let _GaussLegendrePolynomial                   = cell (fun () -> new GaussLegendrePolynomial ())
+    let mutable
+        _GaussLegendrePolynomial                   = cell (fun () -> new GaussLegendrePolynomial ())
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussLegendrePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -58,13 +59,14 @@ type GaussLegendrePolynomialModel
     casting 
 *)
     
-    member internal this.Inject v = _GaussLegendrePolynomial.Value <- v
+    member internal this.Inject v = _GaussLegendrePolynomial <- v
     static member Cast (p : ICell<GaussLegendrePolynomial>) = 
         if p :? GaussLegendrePolynomialModel then 
             p :?> GaussLegendrePolynomialModel
         else
             let o = new GaussLegendrePolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

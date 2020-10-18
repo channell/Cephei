@@ -41,7 +41,8 @@ type DEMCurrencyModel
 (*
     Functions
 *)
-    let _DEMCurrency                               = cell (fun () -> new DEMCurrency ())
+    let mutable
+        _DEMCurrency                               = cell (fun () -> new DEMCurrency ())
     let _code                                      = triv (fun () -> _DEMCurrency.Value.code)
     let _empty                                     = triv (fun () -> _DEMCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type DEMCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _DEMCurrency.Value <- v
+    member internal this.Inject v = _DEMCurrency <- v
     static member Cast (p : ICell<DEMCurrency>) = 
         if p :? DEMCurrencyModel then 
             p :?> DEMCurrencyModel
         else
             let o = new DEMCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

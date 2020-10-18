@@ -44,7 +44,8 @@ type FdmSnapshotConditionModel
 (*
     Functions
 *)
-    let _FdmSnapshotCondition                      = cell (fun () -> new FdmSnapshotCondition (t.Value))
+    let mutable
+        _FdmSnapshotCondition                      = cell (fun () -> new FdmSnapshotCondition (t.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmSnapshotCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmSnapshotCondition.Value)
@@ -55,13 +56,14 @@ type FdmSnapshotConditionModel
     casting 
 *)
     internal new () = new FdmSnapshotConditionModel(null)
-    member internal this.Inject v = _FdmSnapshotCondition.Value <- v
+    member internal this.Inject v = _FdmSnapshotCondition <- v
     static member Cast (p : ICell<FdmSnapshotCondition>) = 
         if p :? FdmSnapshotConditionModel then 
             p :?> FdmSnapshotConditionModel
         else
             let o = new FdmSnapshotConditionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

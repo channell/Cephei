@@ -39,11 +39,11 @@ module RootNotBracketExceptionFunction =
     *)
     [<ExcelFunction(Name="_RootNotBracketException", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RootNotBracketException")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="message",Description = "Reference to message")>] 
+        ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
-        ([<ExcelArgument(Name="inner",Description = "Reference to inner")>] 
+        ([<ExcelArgument(Name="inner",Description = "Exception")>] 
          inner : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,7 +82,7 @@ module RootNotBracketExceptionFunction =
     *)
     [<ExcelFunction(Name="_RootNotBracketException1", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RootNotBracketException")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,9 +113,9 @@ module RootNotBracketExceptionFunction =
     *)
     [<ExcelFunction(Name="_RootNotBracketException2", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RootNotBracketException")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="message",Description = "Reference to message")>] 
+        ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module RootNotBracketExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RootNotBracketException_Range", Description="Create a range of RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RootNotBracketException")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

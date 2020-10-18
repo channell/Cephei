@@ -41,7 +41,8 @@ type KRXModel
 (*
     Functions
 *)
-    let _KRX                                       = cell (fun () -> new KRX ())
+    let mutable
+        _KRX                                       = cell (fun () -> new KRX ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _KRX.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _KRX.Value.name())
@@ -50,13 +51,14 @@ type KRXModel
     casting 
 *)
     
-    member internal this.Inject v = _KRX.Value <- v
+    member internal this.Inject v = _KRX <- v
     static member Cast (p : ICell<KRX>) = 
         if p :? KRXModel then 
             p :?> KRXModel
         else
             let o = new KRXModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

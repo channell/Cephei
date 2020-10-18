@@ -50,7 +50,8 @@ type HybridHestonHullWhiteProcessModel
 (*
     Functions
 *)
-    let _HybridHestonHullWhiteProcess              = cell (fun () -> new HybridHestonHullWhiteProcess (hestonProcess.Value, hullWhiteProcess.Value, corrEquityShortRate.Value, discretization.Value))
+    let mutable
+        _HybridHestonHullWhiteProcess              = cell (fun () -> new HybridHestonHullWhiteProcess (hestonProcess.Value, hullWhiteProcess.Value, corrEquityShortRate.Value, discretization.Value))
     let _apply                                     (x0 : ICell<Vector>) (dx : ICell<Vector>)   
                                                    = triv (fun () -> _HybridHestonHullWhiteProcess.Value.apply(x0.Value, dx.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<Vector>)   
@@ -89,13 +90,14 @@ type HybridHestonHullWhiteProcessModel
     casting 
 *)
     internal new () = new HybridHestonHullWhiteProcessModel(null,null,null,null)
-    member internal this.Inject v = _HybridHestonHullWhiteProcess.Value <- v
+    member internal this.Inject v = _HybridHestonHullWhiteProcess <- v
     static member Cast (p : ICell<HybridHestonHullWhiteProcess>) = 
         if p :? HybridHestonHullWhiteProcessModel then 
             p :?> HybridHestonHullWhiteProcessModel
         else
             let o = new HybridHestonHullWhiteProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

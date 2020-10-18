@@ -39,9 +39,9 @@ module GenericLowDiscrepancyFunction =
     *)
     [<ExcelFunction(Name="_GenericLowDiscrepancy_allowsErrorEstimate", Description="Create a GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericLowDiscrepancy_allowsErrorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericLowDiscrepancy",Description = "Reference to GenericLowDiscrepancy")>] 
+        ([<ExcelArgument(Name="GenericLowDiscrepancy",Description = "GenericLowDiscrepancy")>] 
          genericlowdiscrepancy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module GenericLowDiscrepancyFunction =
     *)
     [<ExcelFunction(Name="_GenericLowDiscrepancy_make_sequence_generator", Description="Create a GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericLowDiscrepancy_make_sequence_generator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericLowDiscrepancy",Description = "Reference to GenericLowDiscrepancy")>] 
+        ([<ExcelArgument(Name="GenericLowDiscrepancy",Description = "GenericLowDiscrepancy")>] 
          genericlowdiscrepancy : obj)
-        ([<ExcelArgument(Name="dimension",Description = "Reference to dimension")>] 
+        ([<ExcelArgument(Name="dimension",Description = "int")>] 
          dimension : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -120,9 +120,9 @@ module GenericLowDiscrepancyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GenericLowDiscrepancy_Range", Description="Create a range of GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericLowDiscrepancy_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GenericLowDiscrepancy")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

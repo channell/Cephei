@@ -39,7 +39,7 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BDTCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_code", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_empty", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_Equals", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_format", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_fractionsPerUnit", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_fractionSymbol", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_name", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_numericCode", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_rounding", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_symbol", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_ToString", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module BDTCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BDTCurrency_triangulationCurrency", Description="Create a BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BDTCurrency",Description = "Reference to BDTCurrency")>] 
+        ([<ExcelArgument(Name="BDTCurrency",Description = "BDTCurrency")>] 
          bdtcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module BDTCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BDTCurrency_Range", Description="Create a range of BDTCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BDTCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BDTCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

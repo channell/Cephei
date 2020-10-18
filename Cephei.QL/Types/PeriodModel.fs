@@ -46,7 +46,8 @@ type PeriodModel
 (*
     Functions
 *)
-    let _Period                                    = cell (fun () -> new Period (n.Value, u.Value))
+    let mutable
+        _Period                                    = cell (fun () -> new Period (n.Value, u.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Period.Value.CompareTo(obj.Value))
     let _Equals                                    (o : ICell<Object>)   
@@ -63,13 +64,14 @@ type PeriodModel
     casting 
 *)
     internal new () = new PeriodModel(null,null)
-    member internal this.Inject v = _Period.Value <- v
+    member internal this.Inject v = _Period <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel then 
             p :?> PeriodModel
         else
             let o = new PeriodModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -102,7 +104,8 @@ type PeriodModel1
 (*
     Functions
 *)
-    let _Period                                    = cell (fun () -> new Period ())
+    let mutable
+        _Period                                    = cell (fun () -> new Period ())
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Period.Value.CompareTo(obj.Value))
     let _Equals                                    (o : ICell<Object>)   
@@ -119,13 +122,14 @@ type PeriodModel1
     casting 
 *)
     
-    member internal this.Inject v = _Period.Value <- v
+    member internal this.Inject v = _Period <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel1 then 
             p :?> PeriodModel1
         else
             let o = new PeriodModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -159,7 +163,8 @@ type PeriodModel2
 (*
     Functions
 *)
-    let _Period                                    = cell (fun () -> new Period (f.Value))
+    let mutable
+        _Period                                    = cell (fun () -> new Period (f.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Period.Value.CompareTo(obj.Value))
     let _Equals                                    (o : ICell<Object>)   
@@ -176,13 +181,14 @@ type PeriodModel2
     casting 
 *)
     internal new () = new PeriodModel2(null)
-    member internal this.Inject v = _Period.Value <- v
+    member internal this.Inject v = _Period <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel2 then 
             p :?> PeriodModel2
         else
             let o = new PeriodModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -217,7 +223,8 @@ type PeriodModel3
 (*
     Functions
 *)
-    let _Period                                    = cell (fun () -> new Period (periodString.Value))
+    let mutable
+        _Period                                    = cell (fun () -> new Period (periodString.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Period.Value.CompareTo(obj.Value))
     let _Equals                                    (o : ICell<Object>)   
@@ -234,13 +241,14 @@ type PeriodModel3
     casting 
 *)
     internal new () = new PeriodModel3(null)
-    member internal this.Inject v = _Period.Value <- v
+    member internal this.Inject v = _Period <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel3 then 
             p :?> PeriodModel3
         else
             let o = new PeriodModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

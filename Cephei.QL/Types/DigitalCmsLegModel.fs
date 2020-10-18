@@ -46,7 +46,8 @@ type DigitalCmsLegModel
 (*
     Functions
 *)
-    let _DigitalCmsLeg                             = cell (fun () -> new DigitalCmsLeg (schedule.Value, index.Value))
+    let mutable
+        _DigitalCmsLeg                             = cell (fun () -> new DigitalCmsLeg (schedule.Value, index.Value))
     let _inArrears                                 = triv (fun () -> _DigitalCmsLeg.Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
                                                    = triv (fun () -> _DigitalCmsLeg.Value.inArrears(flag.Value))
@@ -105,13 +106,14 @@ type DigitalCmsLegModel
     casting 
 *)
     internal new () = new DigitalCmsLegModel(null,null)
-    member internal this.Inject v = _DigitalCmsLeg.Value <- v
+    member internal this.Inject v = _DigitalCmsLeg <- v
     static member Cast (p : ICell<DigitalCmsLeg>) = 
         if p :? DigitalCmsLegModel then 
             p :?> DigitalCmsLegModel
         else
             let o = new DigitalCmsLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

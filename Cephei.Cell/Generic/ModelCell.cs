@@ -9,7 +9,7 @@ namespace Cephei.Cell.Generic
     /// Specialisation of Model for recipes models that add cell functions to an oject
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Model<T> : Model , ICell<T>
+    public class Model<T> : Model , ICell<T>, ICellModel
     {
         private ICell<T> _cell;
         
@@ -83,20 +83,45 @@ namespace Cephei.Cell.Generic
             {
                 return _cell.Function;
             }
+            set
+            {
+                _cell.Function = value;
+            }
         }
 
-        public override void Clone(ICell source)
+        public ICell Cell => _cell;
+
+        public override void Merge(ICell source, Model model)
         {
-            _cell.Clone(source);
+            if (source != this)
+            {
+                if (source is ICellModel sm)
+                    _cell.Merge(sm.Cell, model);
+                else
+                    _cell.Merge(source, model);
+            }
+                // handle update of current while this cell is being constructed
+            if (Parent is Model mod)
+            {
+                var cur = mod[this.Mnemonic];
+                if (cur != this && cur.GetType() == this.GetType())
+                    cur.Merge(this, model);
+            }
         }
         public override void Notify(ICell listener)
         {
-            _cell.Notify(listener);
+            // _cell is null if one of the members being profiled tries to link to it
+            if (_cell != null) _cell.Notify(listener);
         }
 
         public override void UnNotify(ICell listener)
         {
             _cell.UnNotify(listener);
+        }
+        public override void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
+        {
+            if (root != this)
+                _cell.OnChange(eventType, this,  this, epoch, session);
         }
     }
 }

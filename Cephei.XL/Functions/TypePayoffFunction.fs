@@ -39,9 +39,9 @@ module TypePayoffFunction =
     *)
     [<ExcelFunction(Name="_TypePayoff_description", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TypePayoff",Description = "Reference to TypePayoff")>] 
+        ([<ExcelArgument(Name="TypePayoff",Description = "TypePayoff")>] 
          typepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module TypePayoffFunction =
     *)
     [<ExcelFunction(Name="_TypePayoff_optionType", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TypePayoff",Description = "Reference to TypePayoff")>] 
+        ([<ExcelArgument(Name="TypePayoff",Description = "TypePayoff")>] 
          typepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module TypePayoffFunction =
     *)
     [<ExcelFunction(Name="_TypePayoff", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,11 +148,11 @@ module TypePayoffFunction =
     *)
     [<ExcelFunction(Name="_TypePayoff_accept", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TypePayoff",Description = "Reference to TypePayoff")>] 
+        ([<ExcelArgument(Name="TypePayoff",Description = "TypePayoff")>] 
          typepayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module TypePayoffFunction =
     *)
     [<ExcelFunction(Name="_TypePayoff_name", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TypePayoff",Description = "Reference to TypePayoff")>] 
+        ([<ExcelArgument(Name="TypePayoff",Description = "TypePayoff")>] 
          typepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,11 +226,11 @@ module TypePayoffFunction =
     *)
     [<ExcelFunction(Name="_TypePayoff_value", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TypePayoff",Description = "Reference to TypePayoff")>] 
+        ([<ExcelArgument(Name="TypePayoff",Description = "TypePayoff")>] 
          typepayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -265,9 +265,9 @@ module TypePayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TypePayoff_Range", Description="Create a range of TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TypePayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

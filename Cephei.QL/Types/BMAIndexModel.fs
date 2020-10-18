@@ -44,7 +44,8 @@ type BMAIndexModel
 (*
     Functions
 *)
-    let _BMAIndex                                  = cell (fun () -> new BMAIndex (h.Value))
+    let mutable
+        _BMAIndex                                  = cell (fun () -> new BMAIndex (h.Value))
     let _fixingSchedule                            (start : ICell<Date>) (End : ICell<Date>)   
                                                    = triv (fun () -> _BMAIndex.Value.fixingSchedule(start.Value, End.Value))
     let _forecastFixing                            (fixingDate : ICell<Date>)   
@@ -95,13 +96,14 @@ type BMAIndexModel
     casting 
 *)
     internal new () = new BMAIndexModel(null)
-    member internal this.Inject v = _BMAIndex.Value <- v
+    member internal this.Inject v = _BMAIndex <- v
     static member Cast (p : ICell<BMAIndex>) = 
         if p :? BMAIndexModel then 
             p :?> BMAIndexModel
         else
             let o = new BMAIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

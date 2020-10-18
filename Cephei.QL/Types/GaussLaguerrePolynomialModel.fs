@@ -41,7 +41,8 @@ type GaussLaguerrePolynomialModel
 (*
     Functions
 *)
-    let _GaussLaguerrePolynomial                   = cell (fun () -> new GaussLaguerrePolynomial ())
+    let mutable
+        _GaussLaguerrePolynomial                   = cell (fun () -> new GaussLaguerrePolynomial ())
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussLaguerrePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -58,13 +59,14 @@ type GaussLaguerrePolynomialModel
     casting 
 *)
     
-    member internal this.Inject v = _GaussLaguerrePolynomial.Value <- v
+    member internal this.Inject v = _GaussLaguerrePolynomial <- v
     static member Cast (p : ICell<GaussLaguerrePolynomial>) = 
         if p :? GaussLaguerrePolynomialModel then 
             p :?> GaussLaguerrePolynomialModel
         else
             let o = new GaussLaguerrePolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -99,7 +101,8 @@ type GaussLaguerrePolynomialModel1
 (*
     Functions
 *)
-    let _GaussLaguerrePolynomial                   = cell (fun () -> new GaussLaguerrePolynomial (s.Value))
+    let mutable
+        _GaussLaguerrePolynomial                   = cell (fun () -> new GaussLaguerrePolynomial (s.Value))
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussLaguerrePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -116,13 +119,14 @@ type GaussLaguerrePolynomialModel1
     casting 
 *)
     internal new () = new GaussLaguerrePolynomialModel1(null)
-    member internal this.Inject v = _GaussLaguerrePolynomial.Value <- v
+    member internal this.Inject v = _GaussLaguerrePolynomial <- v
     static member Cast (p : ICell<GaussLaguerrePolynomial>) = 
         if p :? GaussLaguerrePolynomialModel1 then 
             p :?> GaussLaguerrePolynomialModel1
         else
             let o = new GaussLaguerrePolynomialModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

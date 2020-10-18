@@ -39,9 +39,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GBPLiborON")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_businessDayConvention", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_clone", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_endOfMonth", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,15 +190,15 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_forecastFixing1", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_forecastFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_forwardingTermStructure", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_maturityDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_currency", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_dayCounter", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_familyName", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,13 +472,13 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_fixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,9 +520,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_fixingCalendar", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,11 +556,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_fixingDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_fixingDays", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,11 +634,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_isValidFixingDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -676,9 +676,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_name", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -712,11 +712,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_pastFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,9 +754,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_tenor", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,9 +790,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_update", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,11 +826,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_valueDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -868,15 +868,15 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_addFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -922,15 +922,15 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_addFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -976,13 +976,13 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_addFixings1", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1024,9 +1024,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_allowsNativeFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1060,9 +1060,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_clearFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1096,11 +1096,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_registerWith", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1138,9 +1138,9 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_timeSeries", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1174,11 +1174,11 @@ module GBPLiborONFunction =
     *)
     [<ExcelFunction(Name="_GBPLiborON_unregisterWith", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPLiborON",Description = "Reference to GBPLiborON")>] 
+        ([<ExcelArgument(Name="GBPLiborON",Description = "GBPLiborON")>] 
          gbpliboron : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1213,9 +1213,9 @@ module GBPLiborONFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GBPLiborON_Range", Description="Create a range of GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GBPLiborON")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

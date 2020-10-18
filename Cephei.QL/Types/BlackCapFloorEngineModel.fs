@@ -50,7 +50,8 @@ type BlackCapFloorEngineModel
 (*
     Functions
 *)
-    let _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
+    let mutable
+        _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
     let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
     let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
@@ -59,13 +60,14 @@ type BlackCapFloorEngineModel
     casting 
 *)
     internal new () = new BlackCapFloorEngineModel(null,null,null,null)
-    member internal this.Inject v = _BlackCapFloorEngine.Value <- v
+    member internal this.Inject v = _BlackCapFloorEngine <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel then 
             p :?> BlackCapFloorEngineModel
         else
             let o = new BlackCapFloorEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -100,7 +102,8 @@ type BlackCapFloorEngineModel1
 (*
     Functions
 *)
-    let _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))
+    let mutable
+        _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))
     let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
     let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
@@ -109,13 +112,14 @@ type BlackCapFloorEngineModel1
     casting 
 *)
     internal new () = new BlackCapFloorEngineModel1(null,null,null)
-    member internal this.Inject v = _BlackCapFloorEngine.Value <- v
+    member internal this.Inject v = _BlackCapFloorEngine <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel1 then 
             p :?> BlackCapFloorEngineModel1
         else
             let o = new BlackCapFloorEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -151,7 +155,8 @@ type BlackCapFloorEngineModel2
 (*
     Functions
 *)
-    let _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
+    let mutable
+        _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
     let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
     let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
@@ -160,13 +165,14 @@ type BlackCapFloorEngineModel2
     casting 
 *)
     internal new () = new BlackCapFloorEngineModel2(null,null,null,null)
-    member internal this.Inject v = _BlackCapFloorEngine.Value <- v
+    member internal this.Inject v = _BlackCapFloorEngine <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel2 then 
             p :?> BlackCapFloorEngineModel2
         else
             let o = new BlackCapFloorEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

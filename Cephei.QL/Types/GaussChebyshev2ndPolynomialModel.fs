@@ -41,7 +41,8 @@ type GaussChebyshev2ndPolynomialModel
 (*
     Functions
 *)
-    let _GaussChebyshev2ndPolynomial               = cell (fun () -> new GaussChebyshev2ndPolynomial ())
+    let mutable
+        _GaussChebyshev2ndPolynomial               = cell (fun () -> new GaussChebyshev2ndPolynomial ())
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussChebyshev2ndPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -58,13 +59,14 @@ type GaussChebyshev2ndPolynomialModel
     casting 
 *)
     
-    member internal this.Inject v = _GaussChebyshev2ndPolynomial.Value <- v
+    member internal this.Inject v = _GaussChebyshev2ndPolynomial <- v
     static member Cast (p : ICell<GaussChebyshev2ndPolynomial>) = 
         if p :? GaussChebyshev2ndPolynomialModel then 
             p :?> GaussChebyshev2ndPolynomialModel
         else
             let o = new GaussChebyshev2ndPolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

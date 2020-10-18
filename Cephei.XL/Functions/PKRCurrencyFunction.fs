@@ -39,7 +39,7 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PKRCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_code", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_empty", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_Equals", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_format", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_fractionsPerUnit", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_fractionSymbol", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_name", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_numericCode", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_rounding", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_symbol", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_ToString", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module PKRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PKRCurrency_triangulationCurrency", Description="Create a PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PKRCurrency",Description = "Reference to PKRCurrency")>] 
+        ([<ExcelArgument(Name="PKRCurrency",Description = "PKRCurrency")>] 
          pkrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module PKRCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PKRCurrency_Range", Description="Create a range of PKRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PKRCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PKRCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

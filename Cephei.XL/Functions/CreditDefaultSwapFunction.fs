@@ -39,9 +39,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_accrualRebateNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_accrualRebateNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,17 +75,17 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_conventionalSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_conventionalSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
-        ([<ExcelArgument(Name="conventionalRecovery",Description = "Reference to conventionalRecovery")>] 
+        ([<ExcelArgument(Name="conventionalRecovery",Description = "double")>] 
          conventionalRecovery : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "Helper.Range.fromModelList")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_couponLegBPS", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_couponLegBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,9 +171,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_couponLegNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_couponLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,9 +207,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_coupons", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_coupons
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -243,39 +243,39 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap1", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CreditDefaultSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="side",Description = "Reference to side")>] 
+        ([<ExcelArgument(Name="side",Description = "Protection.Side")>] 
          side : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
-        ([<ExcelArgument(Name="upfront",Description = "Reference to upfront")>] 
+        ([<ExcelArgument(Name="upfront",Description = "double")>] 
          upfront : obj)
-        ([<ExcelArgument(Name="runningSpread",Description = "Reference to runningSpread")>] 
+        ([<ExcelArgument(Name="runningSpread",Description = "double")>] 
          runningSpread : obj)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="settlesAccrual",Description = "Reference to settlesAccrual")>] 
+        ([<ExcelArgument(Name="settlesAccrual",Description = "CreditDefaultSwap")>] 
          settlesAccrual : obj)
-        ([<ExcelArgument(Name="paysAtDefaultTime",Description = "Reference to paysAtDefaultTime")>] 
+        ([<ExcelArgument(Name="paysAtDefaultTime",Description = "CreditDefaultSwap")>] 
          paysAtDefaultTime : obj)
-        ([<ExcelArgument(Name="protectionStart",Description = "Reference to protectionStart")>] 
+        ([<ExcelArgument(Name="protectionStart",Description = "CreditDefaultSwap")>] 
          protectionStart : obj)
-        ([<ExcelArgument(Name="upfrontDate",Description = "Reference to upfrontDate")>] 
+        ([<ExcelArgument(Name="upfrontDate",Description = "CreditDefaultSwap")>] 
          upfrontDate : obj)
-        ([<ExcelArgument(Name="claim",Description = "Reference to claim")>] 
+        ([<ExcelArgument(Name="claim",Description = "CreditDefaultSwap")>] 
          claim : obj)
-        ([<ExcelArgument(Name="lastPeriodDayCounter",Description = "Reference to lastPeriodDayCounter")>] 
+        ([<ExcelArgument(Name="lastPeriodDayCounter",Description = "CreditDefaultSwap")>] 
          lastPeriodDayCounter : obj)
-        ([<ExcelArgument(Name="rebatesAccrual",Description = "Reference to rebatesAccrual")>] 
+        ([<ExcelArgument(Name="rebatesAccrual",Description = "CreditDefaultSwap")>] 
          rebatesAccrual : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,35 +370,35 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CreditDefaultSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="side",Description = "Reference to side")>] 
+        ([<ExcelArgument(Name="side",Description = "Protection.Side")>] 
          side : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="settlesAccrual",Description = "Reference to settlesAccrual")>] 
+        ([<ExcelArgument(Name="settlesAccrual",Description = "CreditDefaultSwap")>] 
          settlesAccrual : obj)
-        ([<ExcelArgument(Name="paysAtDefaultTime",Description = "Reference to paysAtDefaultTime")>] 
+        ([<ExcelArgument(Name="paysAtDefaultTime",Description = "CreditDefaultSwap")>] 
          paysAtDefaultTime : obj)
-        ([<ExcelArgument(Name="protectionStart",Description = "Reference to protectionStart")>] 
+        ([<ExcelArgument(Name="protectionStart",Description = "CreditDefaultSwap")>] 
          protectionStart : obj)
-        ([<ExcelArgument(Name="claim",Description = "Reference to claim")>] 
+        ([<ExcelArgument(Name="claim",Description = "CreditDefaultSwap")>] 
          claim : obj)
-        ([<ExcelArgument(Name="lastPeriodDayCounter",Description = "Reference to lastPeriodDayCounter")>] 
+        ([<ExcelArgument(Name="lastPeriodDayCounter",Description = "CreditDefaultSwap")>] 
          lastPeriodDayCounter : obj)
-        ([<ExcelArgument(Name="rebatesAccrual",Description = "Reference to rebatesAccrual")>] 
+        ([<ExcelArgument(Name="rebatesAccrual",Description = "CreditDefaultSwap")>] 
          rebatesAccrual : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_defaultLegNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_defaultLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_fairSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_fairSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -559,9 +559,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_fairUpfront", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_fairUpfront
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -595,21 +595,21 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_impliedHazardRate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_impliedHazardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
-        ([<ExcelArgument(Name="targetNPV",Description = "Reference to targetNPV")>] 
+        ([<ExcelArgument(Name="targetNPV",Description = "double")>] 
          targetNPV : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="recoveryRate",Description = "Reference to recoveryRate")>] 
+        ([<ExcelArgument(Name="recoveryRate",Description = "Helper.Range.fromModelList")>] 
          recoveryRate : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "Helper.Range.fromModelList")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "Helper.Range.fromModelList")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -667,9 +667,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_isExpired", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -703,9 +703,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_notional", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -739,9 +739,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_paysAtDefaultTime", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_paysAtDefaultTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -775,9 +775,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_protectionEndDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_protectionEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -811,9 +811,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_protectionStartDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_protectionStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -847,9 +847,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_rebatesAccrual", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_rebatesAccrual
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -883,9 +883,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_runningSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_runningSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -919,9 +919,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_settlesAccrual", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_settlesAccrual
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -955,9 +955,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_side", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_side
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -991,9 +991,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_upfront", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_upfront
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1027,9 +1027,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_upfrontBPS", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_upfrontBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1063,9 +1063,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_upfrontNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_upfrontNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1099,9 +1099,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_CASH", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1135,9 +1135,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_errorEstimate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1171,9 +1171,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_NPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1207,11 +1207,11 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_result", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1249,11 +1249,11 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_setPricingEngine", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1291,9 +1291,9 @@ module CreditDefaultSwapFunction =
     *)
     [<ExcelFunction(Name="_CreditDefaultSwap_valuationDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "Reference to CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="CreditDefaultSwap",Description = "CreditDefaultSwap")>] 
          creditdefaultswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1324,9 +1324,9 @@ module CreditDefaultSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CreditDefaultSwap_Range", Description="Create a range of CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CreditDefaultSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

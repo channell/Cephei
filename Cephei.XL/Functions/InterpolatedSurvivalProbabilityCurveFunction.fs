@@ -39,9 +39,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_Clone", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_data", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_data_", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_dates", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_dates_", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_discounts", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_discounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,21 +255,21 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="probabilities",Description = "Reference to probabilities")>] 
+        ([<ExcelArgument(Name="probabilities",Description = "double")>] 
          probabilities : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_interpolation_", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_interpolator_", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_maxDate", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_maxDate_", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_nodes", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,9 +508,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_setupInterpolation", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_survivalProbabilities", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_survivalProbabilities
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,9 +580,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_times", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,9 +616,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_times_", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,13 +652,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_defaultDensity", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_defaultDensity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,13 +700,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_defaultDensity", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_defaultDensity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,15 +748,15 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_defaultProbability", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_defaultProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="extrapo",Description = "Reference to extrapo")>] 
+        ([<ExcelArgument(Name="extrapo",Description = "bool")>] 
          extrapo : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,15 +802,15 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_defaultProbability", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_defaultProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -856,13 +856,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_defaultProbability", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_defaultProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,13 +904,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_defaultProbability", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_defaultProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -952,13 +952,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_hazardRate", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_hazardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1000,13 +1000,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_hazardRate", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_hazardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1048,9 +1048,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_jumpDates", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1084,9 +1084,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_jumpTimes", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1120,13 +1120,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_survivalProbability", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_survivalProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1168,13 +1168,13 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_survivalProbability", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_survivalProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1216,9 +1216,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_update", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1252,9 +1252,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_calendar", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1288,9 +1288,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_dayCounter", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1324,9 +1324,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_maxTime", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1360,9 +1360,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_referenceDate", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1396,9 +1396,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_settlementDays", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1432,11 +1432,11 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_timeFromReference", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1474,9 +1474,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_allowsExtrapolation", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1510,11 +1510,11 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_disableExtrapolation", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1552,11 +1552,11 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_enableExtrapolation", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1594,9 +1594,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_extrapolate", Description="Create a InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "Reference to InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedSurvivalProbabilityCurve",Description = "InterpolatedSurvivalProbabilityCurve")>] 
          interpolatedsurvivalprobabilitycurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1627,9 +1627,9 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedSurvivalProbabilityCurve_Range", Description="Create a range of InterpolatedSurvivalProbabilityCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSurvivalProbabilityCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatedSurvivalProbabilityCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

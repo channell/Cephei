@@ -39,11 +39,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="swapIndex",Description = "Reference to swapIndex")>] 
+        ([<ExcelArgument(Name="swapIndex",Description = "SwapIndex")>] 
          swapIndex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_value", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_inArrears1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_inArrears1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_inArrears", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_inArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withCaps", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withCaps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "Reference to caps")>] 
+        ([<ExcelArgument(Name="caps",Description = "double")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,11 +238,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withCaps1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withCaps1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="cap",Description = "Reference to cap")>] 
+        ([<ExcelArgument(Name="cap",Description = "double")>] 
          cap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,11 +280,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withFixingDays1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withFixingDays", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,11 +364,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withFloors1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withFloors1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "Reference to floors")>] 
+        ([<ExcelArgument(Name="floors",Description = "double")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,11 +406,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withFloors", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withFloors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="floor",Description = "Reference to floor")>] 
+        ([<ExcelArgument(Name="floor",Description = "double")>] 
          floor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,11 +448,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withGearings", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double")>] 
          gearing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,11 +490,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withGearings1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "Reference to gearings")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,11 +532,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withPaymentDayCounter", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,11 +574,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withSpreads1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Reference to spreads")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,11 +616,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withSpreads", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -658,11 +658,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withZeroPayments1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withZeroPayments1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,9 +700,9 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withZeroPayments", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withZeroPayments
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -736,11 +736,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withNotionals1", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,11 +778,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withNotionals", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,11 +820,11 @@ module CmsLegFunction =
     *)
     [<ExcelFunction(Name="_CmsLeg_withPaymentAdjustment", Description="Create a CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsLeg",Description = "Reference to CmsLeg")>] 
+        ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -859,9 +859,9 @@ module CmsLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CmsLeg_Range", Description="Create a range of CmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CmsLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

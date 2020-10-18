@@ -46,7 +46,8 @@ type InverseNonCentralChiSquareDistributionModel
 (*
     Functions
 *)
-    let _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value))
+    let mutable
+        _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
@@ -54,13 +55,14 @@ type InverseNonCentralChiSquareDistributionModel
     casting 
 *)
     internal new () = new InverseNonCentralChiSquareDistributionModel(null,null)
-    member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
+    member internal this.Inject v = _InverseNonCentralChiSquareDistribution <- v
     static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
         if p :? InverseNonCentralChiSquareDistributionModel then 
             p :?> InverseNonCentralChiSquareDistributionModel
         else
             let o = new InverseNonCentralChiSquareDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -92,7 +94,8 @@ type InverseNonCentralChiSquareDistributionModel1
 (*
     Functions
 *)
-    let _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value))
+    let mutable
+        _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
@@ -100,13 +103,14 @@ type InverseNonCentralChiSquareDistributionModel1
     casting 
 *)
     internal new () = new InverseNonCentralChiSquareDistributionModel1(null,null,null)
-    member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
+    member internal this.Inject v = _InverseNonCentralChiSquareDistribution <- v
     static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
         if p :? InverseNonCentralChiSquareDistributionModel1 then 
             p :?> InverseNonCentralChiSquareDistributionModel1
         else
             let o = new InverseNonCentralChiSquareDistributionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -141,7 +145,8 @@ type InverseNonCentralChiSquareDistributionModel2
 (*
     Functions
 *)
-    let _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
+    let mutable
+        _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
@@ -149,13 +154,14 @@ type InverseNonCentralChiSquareDistributionModel2
     casting 
 *)
     internal new () = new InverseNonCentralChiSquareDistributionModel2(null,null,null,null)
-    member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
+    member internal this.Inject v = _InverseNonCentralChiSquareDistribution <- v
     static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
         if p :? InverseNonCentralChiSquareDistributionModel2 then 
             p :?> InverseNonCentralChiSquareDistributionModel2
         else
             let o = new InverseNonCentralChiSquareDistributionModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

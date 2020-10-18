@@ -39,9 +39,9 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_calendar", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuantoTermStructure",Description = "Reference to QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_dayCounter", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuantoTermStructure",Description = "Reference to QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_maxDate", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "QuantoTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuantoTermStructure",Description = "Reference to QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,23 +147,23 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "QuantoTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="underlyingDividendTS",Description = "Reference to underlyingDividendTS")>] 
+        ([<ExcelArgument(Name="underlyingDividendTS",Description = "YieldTermStructure")>] 
          underlyingDividendTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="foreignRiskFreeTS",Description = "Reference to foreignRiskFreeTS")>] 
+        ([<ExcelArgument(Name="foreignRiskFreeTS",Description = "YieldTermStructure")>] 
          foreignRiskFreeTS : obj)
-        ([<ExcelArgument(Name="underlyingBlackVolTS",Description = "Reference to underlyingBlackVolTS")>] 
+        ([<ExcelArgument(Name="underlyingBlackVolTS",Description = "BlackVolTermStructure")>] 
          underlyingBlackVolTS : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="exchRateBlackVolTS",Description = "Reference to exchRateBlackVolTS")>] 
+        ([<ExcelArgument(Name="exchRateBlackVolTS",Description = "BlackVolTermStructure")>] 
          exchRateBlackVolTS : obj)
-        ([<ExcelArgument(Name="exchRateATMlevel",Description = "Reference to exchRateATMlevel")>] 
+        ([<ExcelArgument(Name="exchRateATMlevel",Description = "double")>] 
          exchRateATMlevel : obj)
-        ([<ExcelArgument(Name="underlyingExchRateCorrelation",Description = "Reference to underlyingExchRateCorrelation")>] 
+        ([<ExcelArgument(Name="underlyingExchRateCorrelation",Description = "double")>] 
          underlyingExchRateCorrelation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,9 +226,9 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_referenceDate", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuantoTermStructure",Description = "Reference to QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,9 +262,9 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_settlementDays", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuantoTermStructure",Description = "Reference to QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module QuantoTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_QuantoTermStructure_Range", Description="Create a range of QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

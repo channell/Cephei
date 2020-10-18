@@ -39,9 +39,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_amount", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_baseDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_date", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_fixingDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_growthOnly", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_growthOnly
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_index", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,19 +255,19 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IndexedCashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "Index")>] 
          index : obj)
-        ([<ExcelArgument(Name="baseDate",Description = "Reference to baseDate")>] 
+        ([<ExcelArgument(Name="baseDate",Description = "Date")>] 
          baseDate : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="growthOnly",Description = "Reference to growthOnly")>] 
+        ([<ExcelArgument(Name="growthOnly",Description = "IndexedCashFlow")>] 
          growthOnly : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,9 +322,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_notional", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,11 +358,11 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_CompareTo", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,11 +400,11 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_Equals", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_exCouponDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,13 +478,13 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_hasOccurred", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,11 +526,11 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_tradingExCoupon", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,11 +568,11 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_accept", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_registerWith", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,11 +652,11 @@ module IndexedCashFlowFunction =
     *)
     [<ExcelFunction(Name="_IndexedCashFlow_unregisterWith", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexedCashFlow",Description = "Reference to IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="IndexedCashFlow",Description = "IndexedCashFlow")>] 
          indexedcashflow : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -691,9 +691,9 @@ module IndexedCashFlowFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IndexedCashFlow_Range", Description="Create a range of IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IndexedCashFlow")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

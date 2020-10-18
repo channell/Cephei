@@ -39,7 +39,7 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VEBCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_code", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_empty", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_Equals", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_format", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_fractionsPerUnit", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_fractionSymbol", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_name", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_numericCode", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_rounding", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_symbol", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_ToString", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module VEBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_VEBCurrency_triangulationCurrency", Description="Create a VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VEBCurrency",Description = "Reference to VEBCurrency")>] 
+        ([<ExcelArgument(Name="VEBCurrency",Description = "VEBCurrency")>] 
          vebcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module VEBCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VEBCurrency_Range", Description="Create a range of VEBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VEBCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the VEBCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

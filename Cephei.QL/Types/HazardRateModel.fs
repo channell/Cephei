@@ -41,7 +41,8 @@ type HazardRateModel
 (*
     Functions
 *)
-    let _HazardRate                                = cell (fun () -> new HazardRate ())
+    let mutable
+        _HazardRate                                = cell (fun () -> new HazardRate ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _HazardRate.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type HazardRateModel
     casting 
 *)
     
-    member internal this.Inject v = _HazardRate.Value <- v
+    member internal this.Inject v = _HazardRate <- v
     static member Cast (p : ICell<HazardRate>) = 
         if p :? HazardRateModel then 
             p :?> HazardRateModel
         else
             let o = new HazardRateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,21 +39,21 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ContinuousPartialFloatingLookbackOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="minmax",Description = "Reference to minmax")>] 
+        ([<ExcelArgument(Name="minmax",Description = "double")>] 
          minmax : obj)
-        ([<ExcelArgument(Name="lambda",Description = "Reference to lambda")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
-        ([<ExcelArgument(Name="lookbackPeriodEnd",Description = "Reference to lookbackPeriodEnd")>] 
+        ([<ExcelArgument(Name="lookbackPeriodEnd",Description = "Date")>] 
          lookbackPeriodEnd : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "TypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_delta", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_deltaForward", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_dividendRho", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_elasticity", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_gamma", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_isExpired", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_itmCashProbability", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_rho", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_strikeSensitivity", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_theta", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_thetaPerDay", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,9 +508,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_vega", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_exercise", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,9 +580,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_payoff", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,9 +616,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_CASH", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,9 +652,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_errorEstimate", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -688,9 +688,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_NPV", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,11 +724,11 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_result", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,11 +766,11 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_setPricingEngine", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -808,9 +808,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_valuationDate", Description="Create a ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "Reference to ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="ContinuousPartialFloatingLookbackOption",Description = "ContinuousPartialFloatingLookbackOption")>] 
          continuouspartialfloatinglookbackoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -841,9 +841,9 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ContinuousPartialFloatingLookbackOption_Range", Description="Create a range of ContinuousPartialFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFloatingLookbackOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ContinuousPartialFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

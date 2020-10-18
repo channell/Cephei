@@ -46,7 +46,8 @@ type EarlyExerciseModel
 (*
     Functions
 *)
-    let _EarlyExercise                             = cell (fun () -> new EarlyExercise (Type.Value, payoffAtExpiry.Value))
+    let mutable
+        _EarlyExercise                             = cell (fun () -> new EarlyExercise (Type.Value, payoffAtExpiry.Value))
     let _payoffAtExpiry                            = triv (fun () -> _EarlyExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _EarlyExercise.Value.date(index.Value))
@@ -58,13 +59,14 @@ type EarlyExerciseModel
     casting 
 *)
     internal new () = new EarlyExerciseModel(null,null)
-    member internal this.Inject v = _EarlyExercise.Value <- v
+    member internal this.Inject v = _EarlyExercise <- v
     static member Cast (p : ICell<EarlyExercise>) = 
         if p :? EarlyExerciseModel then 
             p :?> EarlyExerciseModel
         else
             let o = new EarlyExerciseModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

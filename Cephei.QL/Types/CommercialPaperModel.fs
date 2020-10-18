@@ -60,7 +60,8 @@ type CommercialPaperModel
 (*
     Functions
 *)
-    let _CommercialPaper                           = cell (fun () -> withEngine pricingEngine (new CommercialPaper (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
+    let mutable
+        _CommercialPaper                           = cell (fun () -> withEngine pricingEngine (new CommercialPaper (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
     let _fixedLeg                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).fixedLeg())
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).isExpired())
@@ -78,13 +79,14 @@ type CommercialPaperModel
     casting 
 *)
     internal new () = new CommercialPaperModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CommercialPaper.Value <- v
+    member internal this.Inject v = _CommercialPaper <- v
     static member Cast (p : ICell<CommercialPaper>) = 
         if p :? CommercialPaperModel then 
             p :?> CommercialPaperModel
         else
             let o = new CommercialPaperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

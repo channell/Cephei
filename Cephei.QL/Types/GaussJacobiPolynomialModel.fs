@@ -46,7 +46,8 @@ type GaussJacobiPolynomialModel
 (*
     Functions
 *)
-    let _GaussJacobiPolynomial                     = cell (fun () -> new GaussJacobiPolynomial (alpha.Value, beta.Value))
+    let mutable
+        _GaussJacobiPolynomial                     = cell (fun () -> new GaussJacobiPolynomial (alpha.Value, beta.Value))
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussJacobiPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -63,13 +64,14 @@ type GaussJacobiPolynomialModel
     casting 
 *)
     internal new () = new GaussJacobiPolynomialModel(null,null)
-    member internal this.Inject v = _GaussJacobiPolynomial.Value <- v
+    member internal this.Inject v = _GaussJacobiPolynomial <- v
     static member Cast (p : ICell<GaussJacobiPolynomial>) = 
         if p :? GaussJacobiPolynomialModel then 
             p :?> GaussJacobiPolynomialModel
         else
             let o = new GaussJacobiPolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

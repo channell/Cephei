@@ -41,7 +41,8 @@ type CmsCouponModel
 (*
     Functions
 *)
-    let _CmsCoupon                                 = cell (fun () -> new CmsCoupon ())
+    let mutable
+        _CmsCoupon                                 = cell (fun () -> new CmsCoupon ())
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
                                                    = triv (fun () -> _CmsCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _swapIndex                                 = triv (fun () -> _CmsCoupon.Value.swapIndex())
@@ -102,13 +103,14 @@ type CmsCouponModel
     casting 
 *)
     
-    member internal this.Inject v = _CmsCoupon.Value <- v
+    member internal this.Inject v = _CmsCoupon <- v
     static member Cast (p : ICell<CmsCoupon>) = 
         if p :? CmsCouponModel then 
             p :?> CmsCouponModel
         else
             let o = new CmsCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -204,7 +206,8 @@ type CmsCouponModel1
 (*
     Functions
 *)
-    let _CmsCoupon                                 = cell (fun () -> new CmsCoupon (nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, swapIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let mutable
+        _CmsCoupon                                 = cell (fun () -> new CmsCoupon (nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, swapIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
                                                    = triv (fun () -> _CmsCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _swapIndex                                 = triv (fun () -> _CmsCoupon.Value.swapIndex())
@@ -265,13 +268,14 @@ type CmsCouponModel1
     casting 
 *)
     internal new () = new CmsCouponModel1(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CmsCoupon.Value <- v
+    member internal this.Inject v = _CmsCoupon <- v
     static member Cast (p : ICell<CmsCoupon>) = 
         if p :? CmsCouponModel1 then 
             p :?> CmsCouponModel1
         else
             let o = new CmsCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

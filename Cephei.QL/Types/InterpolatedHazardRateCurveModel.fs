@@ -56,7 +56,8 @@ type InterpolatedHazardRateCurveModel<'Interpolator when 'Interpolator :> IInter
 (*
     Functions
 *)
-    let _InterpolatedHazardRateCurve               = cell (fun () -> new InterpolatedHazardRateCurve<'Interpolator> (dates.Value, hazardRates.Value, dayCounter.Value, cal.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedHazardRateCurve               = cell (fun () -> new InterpolatedHazardRateCurve<'Interpolator> (dates.Value, hazardRates.Value, dayCounter.Value, cal.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedHazardRateCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedHazardRateCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedHazardRateCurve.Value.data_)
@@ -125,7 +126,8 @@ type InterpolatedHazardRateCurveModel1<'Interpolator when 'Interpolator :> IInte
 (*
     Functions
 *)
-    let _InterpolatedHazardRateCurve               = cell (fun () -> new InterpolatedHazardRateCurve<'Interpolator> (dates.Value, hazardRates.Value, dayCounter.Value, calendar.Value, interpolator.Value))
+    let mutable
+        _InterpolatedHazardRateCurve               = cell (fun () -> new InterpolatedHazardRateCurve<'Interpolator> (dates.Value, hazardRates.Value, dayCounter.Value, calendar.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedHazardRateCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedHazardRateCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedHazardRateCurve.Value.data_)
@@ -190,7 +192,8 @@ type InterpolatedHazardRateCurveModel2<'Interpolator when 'Interpolator :> IInte
 (*
     Functions
 *)
-    let _InterpolatedHazardRateCurve               = cell (fun () -> new InterpolatedHazardRateCurve<'Interpolator> (dates.Value, hazardRates.Value, dayCounter.Value, interpolator.Value))
+    let mutable
+        _InterpolatedHazardRateCurve               = cell (fun () -> new InterpolatedHazardRateCurve<'Interpolator> (dates.Value, hazardRates.Value, dayCounter.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedHazardRateCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedHazardRateCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedHazardRateCurve.Value.data_)

@@ -39,17 +39,17 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NoExceptLocalVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="blackTS",Description = "Reference to blackTS")>] 
+        ([<ExcelArgument(Name="blackTS",Description = "BlackVolTermStructure")>] 
          blackTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="underlying",Description = "Reference to underlying")>] 
+        ([<ExcelArgument(Name="underlying",Description = "double")>] 
          underlying : obj)
-        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "Reference to illegalLocalVolOverwrite")>] 
+        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,17 +100,17 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface1", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NoExceptLocalVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="blackTS",Description = "Reference to blackTS")>] 
+        ([<ExcelArgument(Name="blackTS",Description = "BlackVolTermStructure")>] 
          blackTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="underlying",Description = "Reference to underlying")>] 
+        ([<ExcelArgument(Name="underlying",Description = "Quote")>] 
          underlying : obj)
-        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "Reference to illegalLocalVolOverwrite")>] 
+        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,9 +161,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_dayCounter", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxDate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,9 +233,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxStrike", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -269,9 +269,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_minStrike", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,9 +305,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_referenceDate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,15 +341,15 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_localVol", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_localVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,15 +395,15 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_localVol1", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_localVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,9 +449,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_businessDayConvention", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,11 +485,11 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_optionDateFromTenor", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -527,9 +527,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_calendar", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxTime", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,9 +599,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_settlementDays", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,11 +635,11 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_timeFromReference", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,9 +677,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_update", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -713,9 +713,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_allowsExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -749,11 +749,11 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_disableExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,11 +791,11 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_enableExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module NoExceptLocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_extrapolate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "Reference to NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="NoExceptLocalVolSurface",Description = "NoExceptLocalVolSurface")>] 
          noexceptlocalvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -866,9 +866,9 @@ module NoExceptLocalVolSurfaceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NoExceptLocalVolSurface_Range", Description="Create a range of NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NoExceptLocalVolSurface")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

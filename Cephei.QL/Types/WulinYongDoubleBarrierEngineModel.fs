@@ -46,19 +46,21 @@ type WulinYongDoubleBarrierEngineModel
 (*
     Functions
 *)
-    let _WulinYongDoubleBarrierEngine              = cell (fun () -> new WulinYongDoubleBarrierEngine (Process.Value, series.Value))
+    let mutable
+        _WulinYongDoubleBarrierEngine              = cell (fun () -> new WulinYongDoubleBarrierEngine (Process.Value, series.Value))
     do this.Bind(_WulinYongDoubleBarrierEngine)
 (* 
     casting 
 *)
     internal new () = new WulinYongDoubleBarrierEngineModel(null,null)
-    member internal this.Inject v = _WulinYongDoubleBarrierEngine.Value <- v
+    member internal this.Inject v = _WulinYongDoubleBarrierEngine <- v
     static member Cast (p : ICell<WulinYongDoubleBarrierEngine>) = 
         if p :? WulinYongDoubleBarrierEngineModel then 
             p :?> WulinYongDoubleBarrierEngineModel
         else
             let o = new WulinYongDoubleBarrierEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

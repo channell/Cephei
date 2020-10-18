@@ -39,9 +39,9 @@ module BackwardFlatFunction =
     *)
     [<ExcelFunction(Name="_BackwardFlat_global", Description="Create a BackwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlat_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BackwardFlat",Description = "Reference to BackwardFlat")>] 
+        ([<ExcelArgument(Name="BackwardFlat",Description = "BackwardFlat")>] 
          backwardflat : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module BackwardFlatFunction =
     *)
     [<ExcelFunction(Name="_BackwardFlat_interpolate", Description="Create a BackwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlat_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BackwardFlat",Description = "Reference to BackwardFlat")>] 
+        ([<ExcelArgument(Name="BackwardFlat",Description = "BackwardFlat")>] 
          backwardflat : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,9 +129,9 @@ module BackwardFlatFunction =
     *)
     [<ExcelFunction(Name="_BackwardFlat_requiredPoints", Description="Create a BackwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlat_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BackwardFlat",Description = "Reference to BackwardFlat")>] 
+        ([<ExcelArgument(Name="BackwardFlat",Description = "BackwardFlat")>] 
          backwardflat : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -162,9 +162,9 @@ module BackwardFlatFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BackwardFlat_Range", Description="Create a range of BackwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlat_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BackwardFlat")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

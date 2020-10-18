@@ -72,7 +72,8 @@ type FixedRateBondHelperModel
 (*
     Functions
 *)
-    let _FixedRateBondHelper                       = cell (fun () -> new FixedRateBondHelper (price.Value, settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, dayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value, useCleanPrice.Value))
+    let mutable
+        _FixedRateBondHelper                       = cell (fun () -> new FixedRateBondHelper (price.Value, settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, dayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value, useCleanPrice.Value))
     let _fixedRateBond                             = triv (fun () -> _FixedRateBondHelper.Value.fixedRateBond())
     let _bond                                      = triv (fun () -> _FixedRateBondHelper.Value.bond())
     let _impliedQuote                              = triv (fun () -> _FixedRateBondHelper.Value.impliedQuote())
@@ -102,13 +103,14 @@ type FixedRateBondHelperModel
     casting 
 *)
     internal new () = new FixedRateBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateBondHelper.Value <- v
+    member internal this.Inject v = _FixedRateBondHelper <- v
     static member Cast (p : ICell<FixedRateBondHelper>) = 
         if p :? FixedRateBondHelperModel then 
             p :?> FixedRateBondHelperModel
         else
             let o = new FixedRateBondHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

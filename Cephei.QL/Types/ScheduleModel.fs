@@ -62,7 +62,8 @@ type ScheduleModel
 (*
     Functions
 *)
-    let _Schedule                                  = cell (fun () -> new Schedule (effectiveDate.Value, terminationDate.Value, tenor.Value, calendar.Value, convention.Value, terminationDateConvention.Value, rule.Value, endOfMonth.Value, firstDate.Value, nextToLastDate.Value))
+    let mutable
+        _Schedule                                  = cell (fun () -> new Schedule (effectiveDate.Value, terminationDate.Value, tenor.Value, calendar.Value, convention.Value, terminationDateConvention.Value, rule.Value, endOfMonth.Value, firstDate.Value, nextToLastDate.Value))
     let _at                                        (i : ICell<int>)   
                                                    = triv (fun () -> _Schedule.Value.at(i.Value))
     let _businessDayConvention                     = triv (fun () -> _Schedule.Value.businessDayConvention())
@@ -95,13 +96,14 @@ type ScheduleModel
     casting 
 *)
     internal new () = new ScheduleModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _Schedule.Value <- v
+    member internal this.Inject v = _Schedule <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel then 
             p :?> ScheduleModel
         else
             let o = new ScheduleModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -176,7 +178,8 @@ type ScheduleModel1
 (*
     Functions
 *)
-    let _Schedule                                  = cell (fun () -> new Schedule (dates.Value, calendar.Value, convention.Value, terminationDateConvention.Value, tenor.Value, rule.Value, endOfMonth.Value, isRegular.Value))
+    let mutable
+        _Schedule                                  = cell (fun () -> new Schedule (dates.Value, calendar.Value, convention.Value, terminationDateConvention.Value, tenor.Value, rule.Value, endOfMonth.Value, isRegular.Value))
     let _at                                        (i : ICell<int>)   
                                                    = triv (fun () -> _Schedule.Value.at(i.Value))
     let _businessDayConvention                     = triv (fun () -> _Schedule.Value.businessDayConvention())
@@ -209,13 +212,14 @@ type ScheduleModel1
     casting 
 *)
     internal new () = new ScheduleModel1(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _Schedule.Value <- v
+    member internal this.Inject v = _Schedule <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel1 then 
             p :?> ScheduleModel1
         else
             let o = new ScheduleModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -271,7 +275,8 @@ type ScheduleModel2
 (*
     Functions
 *)
-    let _Schedule                                  = cell (fun () -> new Schedule ())
+    let mutable
+        _Schedule                                  = cell (fun () -> new Schedule ())
     let _at                                        (i : ICell<int>)   
                                                    = triv (fun () -> _Schedule.Value.at(i.Value))
     let _businessDayConvention                     = triv (fun () -> _Schedule.Value.businessDayConvention())
@@ -304,13 +309,14 @@ type ScheduleModel2
     casting 
 *)
     
-    member internal this.Inject v = _Schedule.Value <- v
+    member internal this.Inject v = _Schedule <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel2 then 
             p :?> ScheduleModel2
         else
             let o = new ScheduleModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

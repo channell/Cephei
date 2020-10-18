@@ -44,7 +44,8 @@ type YoYInflationCouponPricerModel
 (*
     Functions
 *)
-    let _YoYInflationCouponPricer                  = cell (fun () -> new YoYInflationCouponPricer (capletVol.Value))
+    let mutable
+        _YoYInflationCouponPricer                  = cell (fun () -> new YoYInflationCouponPricer (capletVol.Value))
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _YoYInflationCouponPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -75,13 +76,14 @@ type YoYInflationCouponPricerModel
     casting 
 *)
     internal new () = new YoYInflationCouponPricerModel(null)
-    member internal this.Inject v = _YoYInflationCouponPricer.Value <- v
+    member internal this.Inject v = _YoYInflationCouponPricer <- v
     static member Cast (p : ICell<YoYInflationCouponPricer>) = 
         if p :? YoYInflationCouponPricerModel then 
             p :?> YoYInflationCouponPricerModel
         else
             let o = new YoYInflationCouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

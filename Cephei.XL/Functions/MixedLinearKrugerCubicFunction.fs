@@ -39,17 +39,17 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MixedLinearKrugerCubic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xEnd",Description = "Reference to xEnd")>] 
+        ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="behavior",Description = "Reference to behavior")>] 
+        ([<ExcelArgument(Name="behavior",Description = "MixedLinearKrugerCubic")>] 
          behavior : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,13 +100,13 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_derivative", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_empty", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,13 +184,13 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_primitive", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,13 +232,13 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_secondDerivative", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,9 +280,9 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_update", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,13 +316,13 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_value1", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,11 +364,11 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_value", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_xMax", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_xMin", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_allowsExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,11 +514,11 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_disableExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,11 +556,11 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_enableExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module MixedLinearKrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_extrapolate", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "Reference to MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="MixedLinearKrugerCubic",Description = "MixedLinearKrugerCubic")>] 
          mixedlinearkrugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module MixedLinearKrugerCubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MixedLinearKrugerCubic_Range", Description="Create a range of MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MixedLinearKrugerCubic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

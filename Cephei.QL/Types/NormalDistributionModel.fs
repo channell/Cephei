@@ -41,7 +41,8 @@ type NormalDistributionModel
 (*
     Functions
 *)
-    let _NormalDistribution                        = cell (fun () -> new NormalDistribution ())
+    let mutable
+        _NormalDistribution                        = cell (fun () -> new NormalDistribution ())
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _NormalDistribution.Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
@@ -51,13 +52,14 @@ type NormalDistributionModel
     casting 
 *)
     
-    member internal this.Inject v = _NormalDistribution.Value <- v
+    member internal this.Inject v = _NormalDistribution <- v
     static member Cast (p : ICell<NormalDistribution>) = 
         if p :? NormalDistributionModel then 
             p :?> NormalDistributionModel
         else
             let o = new NormalDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -87,7 +89,8 @@ type NormalDistributionModel1
 (*
     Functions
 *)
-    let _NormalDistribution                        = cell (fun () -> new NormalDistribution (average.Value, sigma.Value))
+    let mutable
+        _NormalDistribution                        = cell (fun () -> new NormalDistribution (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _NormalDistribution.Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
@@ -97,13 +100,14 @@ type NormalDistributionModel1
     casting 
 *)
     internal new () = new NormalDistributionModel1(null,null)
-    member internal this.Inject v = _NormalDistribution.Value <- v
+    member internal this.Inject v = _NormalDistribution <- v
     static member Cast (p : ICell<NormalDistribution>) = 
         if p :? NormalDistributionModel1 then 
             p :?> NormalDistributionModel1
         else
             let o = new NormalDistributionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

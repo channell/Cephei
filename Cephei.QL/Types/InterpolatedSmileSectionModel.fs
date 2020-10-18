@@ -58,7 +58,8 @@ type InterpolatedSmileSectionModel<'Interpolator when 'Interpolator :> IInterpol
 (*
     Functions
 *)
-    let _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevs.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, shift.Value))
+    let mutable
+        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevs.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
     let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
@@ -183,7 +184,8 @@ type InterpolatedSmileSectionModel1<'Interpolator when 'Interpolator :> IInterpo
 (*
     Functions
 *)
-    let _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, Type.Value, shift.Value))
+    let mutable
+        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, Type.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
     let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
@@ -307,7 +309,8 @@ type InterpolatedSmileSectionModel2<'Interpolator when 'Interpolator :> IInterpo
 (*
     Functions
 *)
-    let _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevs.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))
+    let mutable
+        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevs.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
     let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
@@ -430,7 +433,8 @@ type InterpolatedSmileSectionModel3<'Interpolator when 'Interpolator :> IInterpo
 (*
     Functions
 *)
-    let _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))
+    let mutable
+        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
     let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())

@@ -44,7 +44,8 @@ type GammaDistributionModel
 (*
     Functions
 *)
-    let _GammaDistribution                         = cell (fun () -> new GammaDistribution (a.Value))
+    let mutable
+        _GammaDistribution                         = cell (fun () -> new GammaDistribution (a.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _GammaDistribution.Value.value(x.Value))
     do this.Bind(_GammaDistribution)
@@ -52,13 +53,14 @@ type GammaDistributionModel
     casting 
 *)
     internal new () = new GammaDistributionModel(null)
-    member internal this.Inject v = _GammaDistribution.Value <- v
+    member internal this.Inject v = _GammaDistribution <- v
     static member Cast (p : ICell<GammaDistribution>) = 
         if p :? GammaDistributionModel then 
             p :?> GammaDistributionModel
         else
             let o = new GammaDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -61,7 +61,8 @@ type ForwardRateAgreementModel
 (*
     Functions
 *)
-    let _ForwardRateAgreement                      = cell (fun () -> withEngine pricingEngine (new ForwardRateAgreement (valueDate.Value, maturityDate.Value, Type.Value, strikeForwardRate.Value, notionalAmount.Value, index.Value, discountCurve.Value)))
+    let mutable
+        _ForwardRateAgreement                      = cell (fun () -> withEngine pricingEngine (new ForwardRateAgreement (valueDate.Value, maturityDate.Value, Type.Value, strikeForwardRate.Value, notionalAmount.Value, index.Value, discountCurve.Value)))
     let _forwardRate                               = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).forwardRate())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).isExpired())
     let _settlementDate                            = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).settlementDate())
@@ -85,13 +86,14 @@ type ForwardRateAgreementModel
     casting 
 *)
     internal new () = new ForwardRateAgreementModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ForwardRateAgreement.Value <- v
+    member internal this.Inject v = _ForwardRateAgreement <- v
     static member Cast (p : ICell<ForwardRateAgreement>) = 
         if p :? ForwardRateAgreementModel then 
             p :?> ForwardRateAgreementModel
         else
             let o = new ForwardRateAgreementModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

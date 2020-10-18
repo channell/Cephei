@@ -46,7 +46,8 @@ type ImpliedVolTermStructureModel
 (*
     Functions
 *)
-    let _ImpliedVolTermStructure                   = cell (fun () -> new ImpliedVolTermStructure (originalTS.Value, referenceDate.Value))
+    let mutable
+        _ImpliedVolTermStructure                   = cell (fun () -> new ImpliedVolTermStructure (originalTS.Value, referenceDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
                                                    = triv (fun () -> _ImpliedVolTermStructure.Value.accept(v.Value)
                                                                      _ImpliedVolTermStructure.Value)
@@ -59,13 +60,14 @@ type ImpliedVolTermStructureModel
     casting 
 *)
     internal new () = new ImpliedVolTermStructureModel(null,null)
-    member internal this.Inject v = _ImpliedVolTermStructure.Value <- v
+    member internal this.Inject v = _ImpliedVolTermStructure <- v
     static member Cast (p : ICell<ImpliedVolTermStructure>) = 
         if p :? ImpliedVolTermStructureModel then 
             p :?> ImpliedVolTermStructureModel
         else
             let o = new ImpliedVolTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

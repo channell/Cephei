@@ -46,7 +46,8 @@ type AverageBMALegModel
 (*
     Functions
 *)
-    let _AverageBMALeg                             = cell (fun () -> new AverageBMALeg (schedule.Value, index.Value))
+    let mutable
+        _AverageBMALeg                             = cell (fun () -> new AverageBMALeg (schedule.Value, index.Value))
     let _value                                     = triv (fun () -> _AverageBMALeg.Value.value())
     let _withGearings                              (gearings : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _AverageBMALeg.Value.withGearings(gearings.Value))
@@ -69,13 +70,14 @@ type AverageBMALegModel
     casting 
 *)
     internal new () = new AverageBMALegModel(null,null)
-    member internal this.Inject v = _AverageBMALeg.Value <- v
+    member internal this.Inject v = _AverageBMALeg <- v
     static member Cast (p : ICell<AverageBMALeg>) = 
         if p :? AverageBMALegModel then 
             p :?> AverageBMALegModel
         else
             let o = new AverageBMALegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,17 +39,17 @@ module RichardsonEqnFunction =
     *)
     [<ExcelFunction(Name="_RichardsonEqn", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RichardsonEqn")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="fh",Description = "Reference to fh")>] 
+        ([<ExcelArgument(Name="fh",Description = "double")>] 
          fh : obj)
-        ([<ExcelArgument(Name="ft",Description = "Reference to ft")>] 
+        ([<ExcelArgument(Name="ft",Description = "double")>] 
          ft : obj)
-        ([<ExcelArgument(Name="fs",Description = "Reference to fs")>] 
+        ([<ExcelArgument(Name="fs",Description = "double")>] 
          fs : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,11 +100,11 @@ module RichardsonEqnFunction =
     *)
     [<ExcelFunction(Name="_RichardsonEqn_value", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RichardsonEqn",Description = "Reference to RichardsonEqn")>] 
+        ([<ExcelArgument(Name="RichardsonEqn",Description = "RichardsonEqn")>] 
          richardsoneqn : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "double")>] 
          k : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module RichardsonEqnFunction =
     *)
     [<ExcelFunction(Name="_RichardsonEqn_derivative", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RichardsonEqn",Description = "Reference to RichardsonEqn")>] 
+        ([<ExcelArgument(Name="RichardsonEqn",Description = "RichardsonEqn")>] 
          richardsoneqn : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,9 +181,9 @@ module RichardsonEqnFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RichardsonEqn_Range", Description="Create a range of RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RichardsonEqn")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

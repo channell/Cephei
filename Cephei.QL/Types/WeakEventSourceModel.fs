@@ -41,7 +41,8 @@ type WeakEventSourceModel
 (*
     Functions
 *)
-    let _WeakEventSource                           = cell (fun () -> new WeakEventSource ())
+    let mutable
+        _WeakEventSource                           = cell (fun () -> new WeakEventSource ())
     let _Clear                                     = triv (fun () -> _WeakEventSource.Value.Clear()
                                                                      _WeakEventSource.Value)
     let _Raise                                     = triv (fun () -> _WeakEventSource.Value.Raise()
@@ -57,13 +58,14 @@ type WeakEventSourceModel
     casting 
 *)
     
-    member internal this.Inject v = _WeakEventSource.Value <- v
+    member internal this.Inject v = _WeakEventSource <- v
     static member Cast (p : ICell<WeakEventSource>) = 
         if p :? WeakEventSourceModel then 
             p :?> WeakEventSourceModel
         else
             let o = new WeakEventSourceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

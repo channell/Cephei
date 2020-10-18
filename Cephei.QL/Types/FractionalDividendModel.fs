@@ -48,7 +48,8 @@ type FractionalDividendModel
 (*
     Functions
 *)
-    let _FractionalDividend                        = cell (fun () -> new FractionalDividend (rate.Value, nominal.Value, date.Value))
+    let mutable
+        _FractionalDividend                        = cell (fun () -> new FractionalDividend (rate.Value, nominal.Value, date.Value))
     let _amount                                    = triv (fun () -> _FractionalDividend.Value.amount())
     let _amount1                                   (underlying : ICell<double>)   
                                                    = triv (fun () -> _FractionalDividend.Value.amount(underlying.Value))
@@ -78,13 +79,14 @@ type FractionalDividendModel
     casting 
 *)
     internal new () = new FractionalDividendModel(null,null,null)
-    member internal this.Inject v = _FractionalDividend.Value <- v
+    member internal this.Inject v = _FractionalDividend <- v
     static member Cast (p : ICell<FractionalDividend>) = 
         if p :? FractionalDividendModel then 
             p :?> FractionalDividendModel
         else
             let o = new FractionalDividendModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -134,7 +136,8 @@ type FractionalDividendModel1
 (*
     Functions
 *)
-    let _FractionalDividend                        = cell (fun () -> new FractionalDividend (rate.Value, date.Value))
+    let mutable
+        _FractionalDividend                        = cell (fun () -> new FractionalDividend (rate.Value, date.Value))
     let _amount                                    = triv (fun () -> _FractionalDividend.Value.amount())
     let _amount1                                   (underlying : ICell<double>)   
                                                    = triv (fun () -> _FractionalDividend.Value.amount(underlying.Value))
@@ -164,13 +167,14 @@ type FractionalDividendModel1
     casting 
 *)
     internal new () = new FractionalDividendModel1(null,null)
-    member internal this.Inject v = _FractionalDividend.Value <- v
+    member internal this.Inject v = _FractionalDividend <- v
     static member Cast (p : ICell<FractionalDividend>) = 
         if p :? FractionalDividendModel1 then 
             p :?> FractionalDividendModel1
         else
             let o = new FractionalDividendModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

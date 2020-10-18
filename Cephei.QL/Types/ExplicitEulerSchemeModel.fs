@@ -46,7 +46,8 @@ type ExplicitEulerSchemeModel
 (*
     Functions
 *)
-    let _ExplicitEulerScheme                       = cell (fun () -> new ExplicitEulerScheme (map.Value, bcSet.Value))
+    let mutable
+        _ExplicitEulerScheme                       = cell (fun () -> new ExplicitEulerScheme (map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _ExplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -60,13 +61,14 @@ type ExplicitEulerSchemeModel
     casting 
 *)
     internal new () = new ExplicitEulerSchemeModel(null,null)
-    member internal this.Inject v = _ExplicitEulerScheme.Value <- v
+    member internal this.Inject v = _ExplicitEulerScheme <- v
     static member Cast (p : ICell<ExplicitEulerScheme>) = 
         if p :? ExplicitEulerSchemeModel then 
             p :?> ExplicitEulerSchemeModel
         else
             let o = new ExplicitEulerSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -95,7 +97,8 @@ type ExplicitEulerSchemeModel1
 (*
     Functions
 *)
-    let _ExplicitEulerScheme                       = cell (fun () -> new ExplicitEulerScheme ())
+    let mutable
+        _ExplicitEulerScheme                       = cell (fun () -> new ExplicitEulerScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _ExplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -109,13 +112,14 @@ type ExplicitEulerSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _ExplicitEulerScheme.Value <- v
+    member internal this.Inject v = _ExplicitEulerScheme <- v
     static member Cast (p : ICell<ExplicitEulerScheme>) = 
         if p :? ExplicitEulerSchemeModel1 then 
             p :?> ExplicitEulerSchemeModel1
         else
             let o = new ExplicitEulerSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

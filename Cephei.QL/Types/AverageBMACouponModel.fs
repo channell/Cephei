@@ -62,7 +62,8 @@ type AverageBMACouponModel
 (*
     Functions
 *)
-    let _AverageBMACoupon                          = cell (fun () -> new AverageBMACoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value))
+    let mutable
+        _AverageBMACoupon                          = cell (fun () -> new AverageBMACoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value))
     let _convexityAdjustment                       = triv (fun () -> _AverageBMACoupon.Value.convexityAdjustment())
     let _fixingDate                                = triv (fun () -> _AverageBMACoupon.Value.fixingDate())
     let _fixingDates                               = triv (fun () -> _AverageBMACoupon.Value.fixingDates())
@@ -124,13 +125,14 @@ type AverageBMACouponModel
     casting 
 *)
     internal new () = new AverageBMACouponModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AverageBMACoupon.Value <- v
+    member internal this.Inject v = _AverageBMACoupon <- v
     static member Cast (p : ICell<AverageBMACoupon>) = 
         if p :? AverageBMACouponModel then 
             p :?> AverageBMACouponModel
         else
             let o = new AverageBMACouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

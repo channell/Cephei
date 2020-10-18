@@ -39,17 +39,17 @@ module BinomialDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_BinomialDoubleBarrierEngine", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialDoubleBarrierEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="getTree",Description = "Reference to getTree")>] 
+        ([<ExcelArgument(Name="getTree",Description = "BinomialDoubleBarrierEngine.GetTree")>] 
          getTree : obj)
-        ([<ExcelArgument(Name="getAsset",Description = "Reference to getAsset")>] 
+        ([<ExcelArgument(Name="getAsset",Description = "BinomialDoubleBarrierEngine.GetAsset")>] 
          getAsset : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="maxTimeSteps",Description = "Reference to maxTimeSteps")>] 
+        ([<ExcelArgument(Name="maxTimeSteps",Description = "BinomialDoubleBarrierEngine")>] 
          maxTimeSteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -102,15 +102,15 @@ module BinomialDoubleBarrierEngineFunction =
     (*!!
     [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_getAsset", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_getAsset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedAsset")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BinomialDoubleBarrierEngine",Description = "Reference to BinomialDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="BinomialDoubleBarrierEngine",Description = "BinomialDoubleBarrierEngine")>] 
          binomialdoublebarrierengine : obj)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "DoubleBarrierOption.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "DiscretizedAsset")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -158,17 +158,17 @@ module BinomialDoubleBarrierEngineFunction =
     (*!!
     [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_GetTree", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_GetTree
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ITree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BinomialDoubleBarrierEngine",Description = "Reference to BinomialDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="BinomialDoubleBarrierEngine",Description = "BinomialDoubleBarrierEngine")>] 
          binomialdoublebarrierengine : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -216,9 +216,9 @@ module BinomialDoubleBarrierEngineFunction =
             *)
     [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_Range", Description="Create a range of BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BinomialDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

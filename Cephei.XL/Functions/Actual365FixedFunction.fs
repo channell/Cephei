@@ -39,7 +39,7 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Actual365Fixed")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,13 +70,13 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_dayCount", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_dayCounter", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_empty", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,11 +190,11 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_Equals", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_name", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_ToString", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,17 +304,17 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_yearFraction", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date")>] 
          refPeriodEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,13 +364,13 @@ module Actual365FixedFunction =
     *)
     [<ExcelFunction(Name="_Actual365Fixed_yearFraction1", Description="Create a Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_yearFraction1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Actual365Fixed",Description = "Reference to Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Actual365Fixed",Description = "Actual365Fixed")>] 
          actual365fixed : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -409,9 +409,9 @@ module Actual365FixedFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Actual365Fixed_Range", Description="Create a range of Actual365Fixed",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365Fixed_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Actual365Fixed")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

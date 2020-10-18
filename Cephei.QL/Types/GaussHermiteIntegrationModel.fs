@@ -46,7 +46,8 @@ type GaussHermiteIntegrationModel
 (*
     Functions
 *)
-    let _GaussHermiteIntegration                   = cell (fun () -> new GaussHermiteIntegration (n.Value, mu.Value))
+    let mutable
+        _GaussHermiteIntegration                   = cell (fun () -> new GaussHermiteIntegration (n.Value, mu.Value))
     let _order                                     = triv (fun () -> _GaussHermiteIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussHermiteIntegration.Value.value(f.Value))
@@ -57,13 +58,14 @@ type GaussHermiteIntegrationModel
     casting 
 *)
     internal new () = new GaussHermiteIntegrationModel(null,null)
-    member internal this.Inject v = _GaussHermiteIntegration.Value <- v
+    member internal this.Inject v = _GaussHermiteIntegration <- v
     static member Cast (p : ICell<GaussHermiteIntegration>) = 
         if p :? GaussHermiteIntegrationModel then 
             p :?> GaussHermiteIntegrationModel
         else
             let o = new GaussHermiteIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

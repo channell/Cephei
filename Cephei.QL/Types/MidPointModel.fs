@@ -41,7 +41,8 @@ type MidPointModel
 (*
     Functions
 *)
-    let _MidPoint                                  = cell (fun () -> new MidPoint ())
+    let mutable
+        _MidPoint                                  = cell (fun () -> new MidPoint ())
     let _integrate                                 (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>) (I : ICell<double>) (N : ICell<int>)   
                                                    = triv (fun () -> _MidPoint.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
     let _nbEvalutions                              = triv (fun () -> _MidPoint.Value.nbEvalutions())
@@ -50,13 +51,14 @@ type MidPointModel
     casting 
 *)
     
-    member internal this.Inject v = _MidPoint.Value <- v
+    member internal this.Inject v = _MidPoint <- v
     static member Cast (p : ICell<MidPoint>) = 
         if p :? MidPointModel then 
             p :?> MidPointModel
         else
             let o = new MidPointModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

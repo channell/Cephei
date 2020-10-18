@@ -39,19 +39,19 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Cash")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="principalSchedule",Description = "Reference to principalSchedule")>] 
+        ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_principalLeg", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,9 +142,9 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_isExpired", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_CASH", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_errorEstimate", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_NPV", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_result", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_setPricingEngine", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_valuationDate", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Cash",Description = "Reference to Cash")>] 
+        ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -403,9 +403,9 @@ module CashFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Cash_Range", Description="Create a range of Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Cash")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

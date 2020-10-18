@@ -20,6 +20,8 @@ type ModelRTD ()  =
         let mnemonic = topicInfo.[0]
         let hc = topicInfo.[1]
 
+        System.Diagnostics.Debug.Print ("ModelRTD ConnectData " + mnemonic + " " + hc);
+
         let dispatch () : unit = 
             _topics.[topic] <- mnemonic
             if _topicIndex.ContainsKey (mnemonic) then 
@@ -28,6 +30,8 @@ type ModelRTD ()  =
                 _topicIndex.[mnemonic] <- [topic]
 
             Model.add mnemonic 
+            topic.UpdateValue mnemonic
+
         Task.Run (dispatch) |> ignore
         mnemonic :> obj
   
@@ -36,6 +40,7 @@ type ModelRTD ()  =
 
         if _topics.ContainsKey(topic) then 
             let mnemonic = _topics.[topic]
+            System.Diagnostics.Debug.Print ("ModelRTD DisconnectData " + mnemonic );
             let dispatch () : unit = 
                 _topics.TryRemove (topic) |> ignore
                 if _topicIndex.ContainsKey(mnemonic) then 
@@ -62,6 +67,9 @@ type ValueRTD ()  =
 
         let mnemonic = topicInfo.[0]
         let layout = topicInfo.[1]
+
+        System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
+
         let dispatch () : unit = 
             let kv = new KeyValuePair<string,string>(mnemonic, layout);
             try
@@ -98,6 +106,7 @@ type ValueRTD ()  =
         
         let dispatch () : unit = 
             let kv = _topics.[topic]
+            System.Diagnostics.Debug.Print ("ValueRTD DisconnectData " + kv.Value);
 
             _topics.TryRemove (topic) |> ignore
             let nl = _topicIndex.[kv] |> List.filter (fun t -> not (t = topic))

@@ -39,9 +39,9 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SegmentIntegral")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="intervals",Description = "Reference to intervals")>] 
+        ([<ExcelArgument(Name="intervals",Description = "int")>] 
          intervals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_absoluteAccuracy", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_absoluteError", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_integrationSuccess", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_maxEvaluations", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_numberOfEvaluations", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,11 +256,11 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_setAbsoluteAccuracy", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,11 +298,11 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_setMaxEvaluations", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,15 +340,15 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_value", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SegmentIntegral",Description = "Reference to SegmentIntegral")>] 
+        ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -391,9 +391,9 @@ module SegmentIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SegmentIntegral_Range", Description="Create a range of SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SegmentIntegral")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

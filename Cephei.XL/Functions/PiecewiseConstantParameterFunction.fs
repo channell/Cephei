@@ -39,11 +39,11 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseConstantParameter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter_constraint", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module PiecewiseConstantParameterFunction =
     (*!! irnored 
     [<ExcelFunction(Name="_PiecewiseConstantParameter_implementation", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_implementation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -156,9 +156,9 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter_parameters", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,13 +192,13 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter_setParam", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_setParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -240,9 +240,9 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter_size", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -276,11 +276,11 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter_testParams", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_testParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -318,11 +318,11 @@ module PiecewiseConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseConstantParameter_value", Description="Create a PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "Reference to PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="PiecewiseConstantParameter",Description = "PiecewiseConstantParameter")>] 
          piecewiseconstantparameter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -357,9 +357,9 @@ module PiecewiseConstantParameterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PiecewiseConstantParameter_Range", Description="Create a range of PiecewiseConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseConstantParameter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PiecewiseConstantParameter")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

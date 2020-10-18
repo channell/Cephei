@@ -39,17 +39,17 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer_factory", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LeisenReimer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeisenReimer",Description = "Reference to LeisenReimer")>] 
+        ([<ExcelArgument(Name="LeisenReimer",Description = "LeisenReimer")>] 
          leisenreimer : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,15 +99,15 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LeisenReimer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer1", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LeisenReimer")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,15 +185,15 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer_probability", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeisenReimer",Description = "Reference to LeisenReimer")>] 
+        ([<ExcelArgument(Name="LeisenReimer",Description = "LeisenReimer")>] 
          leisenreimer : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer_underlying", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeisenReimer",Description = "Reference to LeisenReimer")>] 
+        ([<ExcelArgument(Name="LeisenReimer",Description = "LeisenReimer")>] 
          leisenreimer : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,15 +287,15 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer_descendant", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeisenReimer",Description = "Reference to LeisenReimer")>] 
+        ([<ExcelArgument(Name="LeisenReimer",Description = "LeisenReimer")>] 
          leisenreimer : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer_size", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeisenReimer",Description = "Reference to LeisenReimer")>] 
+        ([<ExcelArgument(Name="LeisenReimer",Description = "LeisenReimer")>] 
          leisenreimer : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module LeisenReimerFunction =
     *)
     [<ExcelFunction(Name="_LeisenReimer_columns", Description="Create a LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeisenReimer",Description = "Reference to LeisenReimer")>] 
+        ([<ExcelArgument(Name="LeisenReimer",Description = "LeisenReimer")>] 
          leisenreimer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,9 +416,9 @@ module LeisenReimerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LeisenReimer_Range", Description="Create a range of LeisenReimer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeisenReimer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LeisenReimer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

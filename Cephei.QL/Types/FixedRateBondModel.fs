@@ -72,7 +72,8 @@ type FixedRateBondModel
 (*
     Functions
 *)
-    let _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+    let mutable
+        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -128,13 +129,14 @@ type FixedRateBondModel
     casting 
 *)
     internal new () = new FixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateBond.Value <- v
+    member internal this.Inject v = _FixedRateBond <- v
     static member Cast (p : ICell<FixedRateBond>) = 
         if p :? FixedRateBondModel then 
             p :?> FixedRateBondModel
         else
             let o = new FixedRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -264,7 +266,8 @@ type FixedRateBondModel1
 (*
     Functions
 *)
-    let _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, maturityDate.Value, tenor.Value, coupons.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+    let mutable
+        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, maturityDate.Value, tenor.Value, coupons.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -320,13 +323,14 @@ type FixedRateBondModel1
     casting 
 *)
     internal new () = new FixedRateBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateBond.Value <- v
+    member internal this.Inject v = _FixedRateBond <- v
     static member Cast (p : ICell<FixedRateBond>) = 
         if p :? FixedRateBondModel1 then 
             p :?> FixedRateBondModel1
         else
             let o = new FixedRateBondModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -447,7 +451,8 @@ type FixedRateBondModel2
 (*
     Functions
 *)
-    let _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+    let mutable
+        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -503,13 +508,14 @@ type FixedRateBondModel2
     casting 
 *)
     internal new () = new FixedRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateBond.Value <- v
+    member internal this.Inject v = _FixedRateBond <- v
     static member Cast (p : ICell<FixedRateBond>) = 
         if p :? FixedRateBondModel2 then 
             p :?> FixedRateBondModel2
         else
             let o = new FixedRateBondModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

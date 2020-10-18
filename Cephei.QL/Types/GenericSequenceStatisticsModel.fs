@@ -44,7 +44,8 @@ type GenericSequenceStatisticsModel<'S when 'S :> IGeneralStatistics and 'S : (n
 (*
     Functions
 *)
-    let _GenericSequenceStatistics                 = cell (fun () -> new GenericSequenceStatistics<'S> (dimension.Value))
+    let mutable
+        _GenericSequenceStatistics                 = cell (fun () -> new GenericSequenceStatistics<'S> (dimension.Value))
     let _add                                       (Begin : ICell<Generic.List<double>>) (weight : ICell<double>)   
                                                    = triv (fun () -> _GenericSequenceStatistics.Value.add(Begin.Value, weight.Value)
                                                                      _GenericSequenceStatistics.Value)

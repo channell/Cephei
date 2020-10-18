@@ -50,7 +50,8 @@ type yoyInflationLegModel
 (*
     Functions
 *)
-    let _yoyInflationLeg                           = cell (fun () -> new yoyInflationLeg (schedule.Value, cal.Value, index.Value, observationLag.Value))
+    let mutable
+        _yoyInflationLeg                           = cell (fun () -> new yoyInflationLeg (schedule.Value, cal.Value, index.Value, observationLag.Value))
     let _value                                     = triv (fun () -> _yoyInflationLeg.Value.value())
     let _withCaps                                  (cap : ICell<double>)   
                                                    = triv (fun () -> _yoyInflationLeg.Value.withCaps(cap.Value))
@@ -85,13 +86,14 @@ type yoyInflationLegModel
     casting 
 *)
     internal new () = new yoyInflationLegModel(null,null,null,null)
-    member internal this.Inject v = _yoyInflationLeg.Value <- v
+    member internal this.Inject v = _yoyInflationLeg <- v
     static member Cast (p : ICell<yoyInflationLeg>) = 
         if p :? yoyInflationLegModel then 
             p :?> yoyInflationLegModel
         else
             let o = new yoyInflationLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

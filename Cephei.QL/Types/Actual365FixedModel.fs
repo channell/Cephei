@@ -41,7 +41,8 @@ type Actual365FixedModel
 (*
     Functions
 *)
-    let _Actual365Fixed                            = cell (fun () -> new Actual365Fixed ())
+    let mutable
+        _Actual365Fixed                            = cell (fun () -> new Actual365Fixed ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Actual365Fixed.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _Actual365Fixed.Value.dayCounter)
@@ -59,13 +60,14 @@ type Actual365FixedModel
     casting 
 *)
     
-    member internal this.Inject v = _Actual365Fixed.Value <- v
+    member internal this.Inject v = _Actual365Fixed <- v
     static member Cast (p : ICell<Actual365Fixed>) = 
         if p :? Actual365FixedModel then 
             p :?> Actual365FixedModel
         else
             let o = new Actual365FixedModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

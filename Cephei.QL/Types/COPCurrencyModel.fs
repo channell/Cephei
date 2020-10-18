@@ -41,7 +41,8 @@ type COPCurrencyModel
 (*
     Functions
 *)
-    let _COPCurrency                               = cell (fun () -> new COPCurrency ())
+    let mutable
+        _COPCurrency                               = cell (fun () -> new COPCurrency ())
     let _code                                      = triv (fun () -> _COPCurrency.Value.code)
     let _empty                                     = triv (fun () -> _COPCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type COPCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _COPCurrency.Value <- v
+    member internal this.Inject v = _COPCurrency <- v
     static member Cast (p : ICell<COPCurrency>) = 
         if p :? COPCurrencyModel then 
             p :?> COPCurrencyModel
         else
             let o = new COPCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

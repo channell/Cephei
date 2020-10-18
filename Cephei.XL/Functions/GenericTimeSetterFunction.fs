@@ -39,11 +39,11 @@ module GenericTimeSetterFunction =
     *)
     [<ExcelFunction(Name="_GenericTimeSetter", Description="Create a GenericTimeSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericTimeSetter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GenericTimeSetter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,13 +82,13 @@ module GenericTimeSetterFunction =
     *)
     [<ExcelFunction(Name="_GenericTimeSetter_setTime", Description="Create a GenericTimeSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericTimeSetter_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericTimeSetter",Description = "Reference to GenericTimeSetter")>] 
+        ([<ExcelArgument(Name="GenericTimeSetter",Description = "GenericTimeSetter")>] 
          generictimesetter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "IOperator")>] 
          L : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -127,9 +127,9 @@ module GenericTimeSetterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GenericTimeSetter_Range", Description="Create a range of GenericTimeSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericTimeSetter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GenericTimeSetter")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

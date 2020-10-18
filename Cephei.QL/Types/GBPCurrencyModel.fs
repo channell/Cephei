@@ -41,7 +41,8 @@ type GBPCurrencyModel
 (*
     Functions
 *)
-    let _GBPCurrency                               = cell (fun () -> new GBPCurrency ())
+    let mutable
+        _GBPCurrency                               = cell (fun () -> new GBPCurrency ())
     let _code                                      = triv (fun () -> _GBPCurrency.Value.code)
     let _empty                                     = triv (fun () -> _GBPCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type GBPCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _GBPCurrency.Value <- v
+    member internal this.Inject v = _GBPCurrency <- v
     static member Cast (p : ICell<GBPCurrency>) = 
         if p :? GBPCurrencyModel then 
             p :?> GBPCurrencyModel
         else
             let o = new GBPCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

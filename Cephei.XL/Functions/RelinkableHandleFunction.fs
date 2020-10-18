@@ -39,11 +39,11 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_linkTo", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_linkTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RelinkableHandle")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "'T")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,13 +81,13 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_linkTo", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_linkTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RelinkableHandle")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "'T")>] 
          h : obj)
-        ([<ExcelArgument(Name="registerAsObserver",Description = "Reference to registerAsObserver")>] 
+        ([<ExcelArgument(Name="registerAsObserver",Description = "bool")>] 
          registerAsObserver : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,7 +129,7 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RelinkableHandle")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle1", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RelinkableHandle")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "'T")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,11 +197,11 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle2", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RelinkableHandle")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "'T")>] 
          h : obj)
-        ([<ExcelArgument(Name="registerAsObserver",Description = "Reference to registerAsObserver")>] 
+        ([<ExcelArgument(Name="registerAsObserver",Description = "bool")>] 
          registerAsObserver : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -240,9 +240,9 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_currentLink", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_currentLink
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -276,9 +276,9 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_empty", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -312,11 +312,11 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_Equals", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -354,9 +354,9 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_link", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_link
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -390,11 +390,11 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_registerWith", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -432,11 +432,11 @@ module RelinkableHandleFunction =
     *)
     [<ExcelFunction(Name="_RelinkableHandle_unregisterWith", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RelinkableHandle",Description = "Reference to RelinkableHandle")>] 
+        ([<ExcelArgument(Name="RelinkableHandle",Description = "RelinkableHandle")>] 
          relinkablehandle : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -471,9 +471,9 @@ module RelinkableHandleFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RelinkableHandle_Range", Description="Create a range of RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RelinkableHandle")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

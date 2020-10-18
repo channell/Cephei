@@ -44,7 +44,8 @@ type DiscreteSimpsonIntegratorModel
 (*
     Functions
 *)
-    let _DiscreteSimpsonIntegrator                 = cell (fun () -> new DiscreteSimpsonIntegrator (evaluations.Value))
+    let mutable
+        _DiscreteSimpsonIntegrator                 = cell (fun () -> new DiscreteSimpsonIntegrator (evaluations.Value))
     let _absoluteAccuracy                          = triv (fun () -> _DiscreteSimpsonIntegrator.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _DiscreteSimpsonIntegrator.Value.absoluteError())
     let _integrationSuccess                        = triv (fun () -> _DiscreteSimpsonIntegrator.Value.integrationSuccess())
@@ -63,13 +64,14 @@ type DiscreteSimpsonIntegratorModel
     casting 
 *)
     internal new () = new DiscreteSimpsonIntegratorModel(null)
-    member internal this.Inject v = _DiscreteSimpsonIntegrator.Value <- v
+    member internal this.Inject v = _DiscreteSimpsonIntegrator <- v
     static member Cast (p : ICell<DiscreteSimpsonIntegrator>) = 
         if p :? DiscreteSimpsonIntegratorModel then 
             p :?> DiscreteSimpsonIntegratorModel
         else
             let o = new DiscreteSimpsonIntegratorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -54,7 +54,8 @@ type SwaptionModel
 (*
     Functions
 *)
-    let _Swaption                                  = cell (fun () -> withEngine pricingEngine (new Swaption (swap.Value, exercise.Value, delivery.Value, settlementMethod.Value)))
+    let mutable
+        _Swaption                                  = cell (fun () -> withEngine pricingEngine (new Swaption (swap.Value, exercise.Value, delivery.Value, settlementMethod.Value)))
     let _engine                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swaption).engine)
     let _impliedVolatility                         (targetValue : ICell<double>) (discountCurve : ICell<Handle<YieldTermStructure>>) (guess : ICell<double>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>) (Type : ICell<VolatilityType>) (displacement : ICell<Nullable<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swaption).impliedVolatility(targetValue.Value, discountCurve.Value, guess.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value, Type.Value, displacement.Value))
@@ -81,13 +82,14 @@ type SwaptionModel
     casting 
 *)
     internal new () = new SwaptionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _Swaption.Value <- v
+    member internal this.Inject v = _Swaption <- v
     static member Cast (p : ICell<Swaption>) = 
         if p :? SwaptionModel then 
             p :?> SwaptionModel
         else
             let o = new SwaptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

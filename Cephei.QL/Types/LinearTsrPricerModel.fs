@@ -52,7 +52,8 @@ type LinearTsrPricerModel
 (*
     Functions
 *)
-    let _LinearTsrPricer                           = cell (fun () -> new LinearTsrPricer (swaptionVol.Value, meanReversion.Value, couponDiscountCurve.Value, settings.Value, integrator.Value))
+    let mutable
+        _LinearTsrPricer                           = cell (fun () -> new LinearTsrPricer (swaptionVol.Value, meanReversion.Value, couponDiscountCurve.Value, settings.Value, integrator.Value))
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _LinearTsrPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -87,13 +88,14 @@ type LinearTsrPricerModel
     casting 
 *)
     internal new () = new LinearTsrPricerModel(null,null,null,null,null)
-    member internal this.Inject v = _LinearTsrPricer.Value <- v
+    member internal this.Inject v = _LinearTsrPricer <- v
     static member Cast (p : ICell<LinearTsrPricer>) = 
         if p :? LinearTsrPricerModel then 
             p :?> LinearTsrPricerModel
         else
             let o = new LinearTsrPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

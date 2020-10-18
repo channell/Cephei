@@ -44,7 +44,8 @@ type TermStructureConsistentModelModel
 (*
     Functions
 *)
-    let _TermStructureConsistentModel              = cell (fun () -> new TermStructureConsistentModel (termStructure.Value))
+    let mutable
+        _TermStructureConsistentModel              = cell (fun () -> new TermStructureConsistentModel (termStructure.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _TermStructureConsistentModel.Value.registerWith(handler.Value)
                                                                      _TermStructureConsistentModel.Value)
@@ -57,13 +58,14 @@ type TermStructureConsistentModelModel
     casting 
 *)
     internal new () = new TermStructureConsistentModelModel(null)
-    member internal this.Inject v = _TermStructureConsistentModel.Value <- v
+    member internal this.Inject v = _TermStructureConsistentModel <- v
     static member Cast (p : ICell<TermStructureConsistentModel>) = 
         if p :? TermStructureConsistentModelModel then 
             p :?> TermStructureConsistentModelModel
         else
             let o = new TermStructureConsistentModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

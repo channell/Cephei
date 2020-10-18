@@ -44,7 +44,8 @@ type Thirty360Model
 (*
     Functions
 *)
-    let _Thirty360                                 = cell (fun () -> new Thirty360 (c.Value))
+    let mutable
+        _Thirty360                                 = cell (fun () -> new Thirty360 (c.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Thirty360.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _Thirty360.Value.dayCounter)
@@ -62,13 +63,14 @@ type Thirty360Model
     casting 
 *)
     internal new () = new Thirty360Model(null)
-    member internal this.Inject v = _Thirty360.Value <- v
+    member internal this.Inject v = _Thirty360 <- v
     static member Cast (p : ICell<Thirty360>) = 
         if p :? Thirty360Model then 
             p :?> Thirty360Model
         else
             let o = new Thirty360Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -102,7 +104,8 @@ type Thirty360Model1
 (*
     Functions
 *)
-    let _Thirty360                                 = cell (fun () -> new Thirty360 ())
+    let mutable
+        _Thirty360                                 = cell (fun () -> new Thirty360 ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Thirty360.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _Thirty360.Value.dayCounter)
@@ -120,13 +123,14 @@ type Thirty360Model1
     casting 
 *)
     
-    member internal this.Inject v = _Thirty360.Value <- v
+    member internal this.Inject v = _Thirty360 <- v
     static member Cast (p : ICell<Thirty360>) = 
         if p :? Thirty360Model1 then 
             p :?> Thirty360Model1
         else
             let o = new Thirty360Model1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

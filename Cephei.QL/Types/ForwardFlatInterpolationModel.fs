@@ -48,7 +48,8 @@ type ForwardFlatInterpolationModel
 (*
     Functions
 *)
-    let _ForwardFlatInterpolation                  = cell (fun () -> new ForwardFlatInterpolation (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _ForwardFlatInterpolation                  = cell (fun () -> new ForwardFlatInterpolation (xBegin.Value, size.Value, yBegin.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _ForwardFlatInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _ForwardFlatInterpolation.Value.empty())
@@ -77,13 +78,14 @@ type ForwardFlatInterpolationModel
     casting 
 *)
     internal new () = new ForwardFlatInterpolationModel(null,null,null)
-    member internal this.Inject v = _ForwardFlatInterpolation.Value <- v
+    member internal this.Inject v = _ForwardFlatInterpolation <- v
     static member Cast (p : ICell<ForwardFlatInterpolation>) = 
         if p :? ForwardFlatInterpolationModel then 
             p :?> ForwardFlatInterpolationModel
         else
             let o = new ForwardFlatInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

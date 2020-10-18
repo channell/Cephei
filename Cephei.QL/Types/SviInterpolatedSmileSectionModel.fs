@@ -82,7 +82,8 @@ type SviInterpolatedSmileSectionModel
 (*
     Functions
 *)
-    let _SviInterpolatedSmileSection               = cell (fun () -> new SviInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, isAFixed.Value, isBFixed.Value, isSigmaFixed.Value, isRhoFixed.Value, isMFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value))
+    let mutable
+        _SviInterpolatedSmileSection               = cell (fun () -> new SviInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, isAFixed.Value, isBFixed.Value, isSigmaFixed.Value, isRhoFixed.Value, isMFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value))
     let _a                                         = triv (fun () -> _SviInterpolatedSmileSection.Value.a())
     let _atmLevel                                  = triv (fun () -> _SviInterpolatedSmileSection.Value.atmLevel())
     let _b                                         = triv (fun () -> _SviInterpolatedSmileSection.Value.b())
@@ -121,13 +122,14 @@ type SviInterpolatedSmileSectionModel
     casting 
 *)
     internal new () = new SviInterpolatedSmileSectionModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SviInterpolatedSmileSection.Value <- v
+    member internal this.Inject v = _SviInterpolatedSmileSection <- v
     static member Cast (p : ICell<SviInterpolatedSmileSection>) = 
         if p :? SviInterpolatedSmileSectionModel then 
             p :?> SviInterpolatedSmileSectionModel
         else
             let o = new SviInterpolatedSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -242,7 +244,8 @@ type SviInterpolatedSmileSectionModel1
 (*
     Functions
 *)
-    let _SviInterpolatedSmileSection               = cell (fun () -> new SviInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, isAFixed.Value, isBFixed.Value, isSigmaFixed.Value, isRhoFixed.Value, isMFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value))
+    let mutable
+        _SviInterpolatedSmileSection               = cell (fun () -> new SviInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, isAFixed.Value, isBFixed.Value, isSigmaFixed.Value, isRhoFixed.Value, isMFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value))
     let _a                                         = triv (fun () -> _SviInterpolatedSmileSection.Value.a())
     let _atmLevel                                  = triv (fun () -> _SviInterpolatedSmileSection.Value.atmLevel())
     let _b                                         = triv (fun () -> _SviInterpolatedSmileSection.Value.b())
@@ -281,13 +284,14 @@ type SviInterpolatedSmileSectionModel1
     casting 
 *)
     internal new () = new SviInterpolatedSmileSectionModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SviInterpolatedSmileSection.Value <- v
+    member internal this.Inject v = _SviInterpolatedSmileSection <- v
     static member Cast (p : ICell<SviInterpolatedSmileSection>) = 
         if p :? SviInterpolatedSmileSectionModel1 then 
             p :?> SviInterpolatedSmileSectionModel1
         else
             let o = new SviInterpolatedSmileSectionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine1", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticCapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "IAffineModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticCapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "IAffineModel")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -122,11 +122,11 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine_setModel", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "Reference to AnalyticCapFloorEngine")>] 
+        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "AnalyticCapFloorEngine")>] 
          analyticcapfloorengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "IAffineModel")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -164,11 +164,11 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine_registerWith", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "Reference to AnalyticCapFloorEngine")>] 
+        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "AnalyticCapFloorEngine")>] 
          analyticcapfloorengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -206,9 +206,9 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine_reset", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "Reference to AnalyticCapFloorEngine")>] 
+        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "AnalyticCapFloorEngine")>] 
          analyticcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -242,11 +242,11 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine_unregisterWith", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "Reference to AnalyticCapFloorEngine")>] 
+        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "AnalyticCapFloorEngine")>] 
          analyticcapfloorengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -284,9 +284,9 @@ module AnalyticCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCapFloorEngine_update", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "Reference to AnalyticCapFloorEngine")>] 
+        ([<ExcelArgument(Name="AnalyticCapFloorEngine",Description = "AnalyticCapFloorEngine")>] 
          analyticcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module AnalyticCapFloorEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticCapFloorEngine_Range", Description="Create a range of AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AnalyticCapFloorEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

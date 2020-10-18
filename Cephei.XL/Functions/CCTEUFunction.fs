@@ -39,11 +39,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_accruedAmount", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CCTEU")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "CCTEU")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,21 +81,21 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CCTEU")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="maturityDate",Description = "Reference to maturityDate")>] 
+        ([<ExcelArgument(Name="maturityDate",Description = "Date")>] 
          maturityDate : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
-        ([<ExcelArgument(Name="fwdCurve",Description = "Reference to fwdCurve")>] 
+        ([<ExcelArgument(Name="fwdCurve",Description = "YieldTermStructure")>] 
          fwdCurve : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "CCTEU")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "CCTEU")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_calendar", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_cashflows", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,9 +226,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_cleanPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,19 +262,19 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_cleanPrice1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,19 +328,19 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_dirtyPrice1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_dirtyPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_isExpired", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_issueDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,11 +502,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_isTradable", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "CashFlow")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_maturityDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,11 +580,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_nextCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,11 +622,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_nextCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,11 +664,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_notional", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "CashFlow")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,9 +706,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_notionals", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,11 +742,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_previousCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -784,11 +784,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_previousCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,9 +826,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_redemption", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,9 +862,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_redemptions", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -898,11 +898,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_settlementDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,9 +940,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_settlementDays", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -976,11 +976,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_settlementValue", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,9 +1018,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_settlementValue1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,9 +1054,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_startDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1090,23 +1090,23 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_yield1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1168,19 +1168,19 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_yield", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1234,9 +1234,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_CASH", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1270,9 +1270,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_errorEstimate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1306,9 +1306,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_NPV", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1342,11 +1342,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_result", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1384,11 +1384,11 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_setPricingEngine", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1426,9 +1426,9 @@ module CCTEUFunction =
     *)
     [<ExcelFunction(Name="_CCTEU_valuationDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+        ([<ExcelArgument(Name="CCTEU",Description = "CCTEU")>] 
          ccteu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1459,9 +1459,9 @@ module CCTEUFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CCTEU_Range", Description="Create a range of CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CCTEU")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

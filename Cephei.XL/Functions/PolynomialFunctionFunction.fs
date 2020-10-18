@@ -39,9 +39,9 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_coefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_coefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_definiteDerivativeCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_definiteDerivativeCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,13 +123,13 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_definiteIntegral", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_definiteIntegral
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,13 +171,13 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_definiteIntegralCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_definiteIntegralCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,11 +219,11 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_derivative", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -261,9 +261,9 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_derivativeCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_derivativeCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -297,9 +297,9 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_order", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,9 +333,9 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PolynomialFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="coeff",Description = "Reference to coeff")>] 
+        ([<ExcelArgument(Name="coeff",Description = "double")>] 
          coeff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,11 +370,11 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_primitive", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,9 +412,9 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_primitiveCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_primitiveCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,11 +448,11 @@ module PolynomialFunctionFunction =
     *)
     [<ExcelFunction(Name="_PolynomialFunction_value", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PolynomialFunction",Description = "Reference to PolynomialFunction")>] 
+        ([<ExcelArgument(Name="PolynomialFunction",Description = "PolynomialFunction")>] 
          polynomialfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -487,9 +487,9 @@ module PolynomialFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PolynomialFunction_Range", Description="Create a range of PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PolynomialFunction")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

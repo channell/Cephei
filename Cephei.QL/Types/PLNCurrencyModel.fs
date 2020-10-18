@@ -41,7 +41,8 @@ type PLNCurrencyModel
 (*
     Functions
 *)
-    let _PLNCurrency                               = cell (fun () -> new PLNCurrency ())
+    let mutable
+        _PLNCurrency                               = cell (fun () -> new PLNCurrency ())
     let _code                                      = triv (fun () -> _PLNCurrency.Value.code)
     let _empty                                     = triv (fun () -> _PLNCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type PLNCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _PLNCurrency.Value <- v
+    member internal this.Inject v = _PLNCurrency <- v
     static member Cast (p : ICell<PLNCurrency>) = 
         if p :? PLNCurrencyModel then 
             p :?> PLNCurrencyModel
         else
             let o = new PLNCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

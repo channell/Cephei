@@ -44,7 +44,8 @@ type SegmentIntegralModel
 (*
     Functions
 *)
-    let _SegmentIntegral                           = cell (fun () -> new SegmentIntegral (intervals.Value))
+    let mutable
+        _SegmentIntegral                           = cell (fun () -> new SegmentIntegral (intervals.Value))
     let _absoluteAccuracy                          = triv (fun () -> _SegmentIntegral.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _SegmentIntegral.Value.absoluteError())
     let _integrationSuccess                        = triv (fun () -> _SegmentIntegral.Value.integrationSuccess())
@@ -63,13 +64,14 @@ type SegmentIntegralModel
     casting 
 *)
     internal new () = new SegmentIntegralModel(null)
-    member internal this.Inject v = _SegmentIntegral.Value <- v
+    member internal this.Inject v = _SegmentIntegral <- v
     static member Cast (p : ICell<SegmentIntegral>) = 
         if p :? SegmentIntegralModel then 
             p :?> SegmentIntegralModel
         else
             let o = new SegmentIntegralModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

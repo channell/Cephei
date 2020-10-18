@@ -39,15 +39,15 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackScholesLattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tree",Description = "Reference to tree")>] 
+        ([<ExcelArgument(Name="tree",Description = "ITree")>] 
          tree : obj)
-        ([<ExcelArgument(Name="riskFreeRate",Description = "Reference to riskFreeRate")>] 
+        ([<ExcelArgument(Name="riskFreeRate",Description = "double")>] 
          riskFreeRate : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,15 +94,15 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_descendant", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,13 +148,13 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_discount", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_dt", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_dt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,15 +232,15 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_probability", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_riskFreeRate", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_size", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,15 +364,15 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_stepback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_stepback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="values",Description = "Reference to values")>] 
+        ([<ExcelArgument(Name="values",Description = "Vector")>] 
          values : obj)
-        ([<ExcelArgument(Name="newValues",Description = "Reference to newValues")>] 
+        ([<ExcelArgument(Name="newValues",Description = "Vector")>] 
          newValues : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,13 +418,13 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_underlying", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,11 +466,11 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_grid", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,13 +508,13 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_initialize", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,13 +556,13 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_partialRollback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,11 +604,11 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_presentValue", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,13 +646,13 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_rollback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,11 +694,11 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_statePrices", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_statePrices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -736,9 +736,9 @@ module BlackScholesLatticeFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesLattice_timeGrid", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_timeGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesLattice",Description = "Reference to BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="BlackScholesLattice",Description = "BlackScholesLattice")>] 
          blackscholeslattice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -769,9 +769,9 @@ module BlackScholesLatticeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackScholesLattice_Range", Description="Create a range of BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackScholesLattice")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

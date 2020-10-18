@@ -41,7 +41,8 @@ type FdmStepConditionCompositeModel
 (*
     Functions
 *)
-    let _FdmStepConditionComposite                 = cell (fun () -> new FdmStepConditionComposite ())
+    let mutable
+        _FdmStepConditionComposite                 = cell (fun () -> new FdmStepConditionComposite ())
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmStepConditionComposite.Value.applyTo(o.Value, t.Value)
                                                                      _FdmStepConditionComposite.Value)
@@ -52,13 +53,14 @@ type FdmStepConditionCompositeModel
     casting 
 *)
     
-    member internal this.Inject v = _FdmStepConditionComposite.Value <- v
+    member internal this.Inject v = _FdmStepConditionComposite <- v
     static member Cast (p : ICell<FdmStepConditionComposite>) = 
         if p :? FdmStepConditionCompositeModel then 
             p :?> FdmStepConditionCompositeModel
         else
             let o = new FdmStepConditionCompositeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -88,7 +90,8 @@ type FdmStepConditionCompositeModel1
 (*
     Functions
 *)
-    let _FdmStepConditionComposite                 = cell (fun () -> new FdmStepConditionComposite (stoppingTimes.Value, conditions.Value))
+    let mutable
+        _FdmStepConditionComposite                 = cell (fun () -> new FdmStepConditionComposite (stoppingTimes.Value, conditions.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmStepConditionComposite.Value.applyTo(o.Value, t.Value)
                                                                      _FdmStepConditionComposite.Value)
@@ -99,13 +102,14 @@ type FdmStepConditionCompositeModel1
     casting 
 *)
     internal new () = new FdmStepConditionCompositeModel1(null,null)
-    member internal this.Inject v = _FdmStepConditionComposite.Value <- v
+    member internal this.Inject v = _FdmStepConditionComposite <- v
     static member Cast (p : ICell<FdmStepConditionComposite>) = 
         if p :? FdmStepConditionCompositeModel1 then 
             p :?> FdmStepConditionCompositeModel1
         else
             let o = new FdmStepConditionCompositeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

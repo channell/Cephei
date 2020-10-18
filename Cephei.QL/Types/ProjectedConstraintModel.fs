@@ -46,7 +46,8 @@ type ProjectedConstraintModel
 (*
     Functions
 *)
-    let _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, projection.Value))
+    let mutable
+        _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, projection.Value))
     let _empty                                     = triv (fun () -> _ProjectedConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
@@ -61,13 +62,14 @@ type ProjectedConstraintModel
     casting 
 *)
     internal new () = new ProjectedConstraintModel(null,null)
-    member internal this.Inject v = _ProjectedConstraint.Value <- v
+    member internal this.Inject v = _ProjectedConstraint <- v
     static member Cast (p : ICell<ProjectedConstraint>) = 
         if p :? ProjectedConstraintModel then 
             p :?> ProjectedConstraintModel
         else
             let o = new ProjectedConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -106,7 +108,8 @@ type ProjectedConstraintModel1
 (*
     Functions
 *)
-    let _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, parameterValues.Value, fixParameters.Value))
+    let mutable
+        _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, parameterValues.Value, fixParameters.Value))
     let _empty                                     = triv (fun () -> _ProjectedConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
@@ -121,13 +124,14 @@ type ProjectedConstraintModel1
     casting 
 *)
     internal new () = new ProjectedConstraintModel1(null,null,null)
-    member internal this.Inject v = _ProjectedConstraint.Value <- v
+    member internal this.Inject v = _ProjectedConstraint <- v
     static member Cast (p : ICell<ProjectedConstraint>) = 
         if p :? ProjectedConstraintModel1 then 
             p :?> ProjectedConstraintModel1
         else
             let o = new ProjectedConstraintModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

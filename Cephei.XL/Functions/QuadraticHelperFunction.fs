@@ -39,9 +39,9 @@ module QuadraticHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticHelper_fNext", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "QuadraticHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuadraticHelper",Description = "Reference to QuadraticHelper")>] 
+        ([<ExcelArgument(Name="QuadraticHelper",Description = "QuadraticHelper")>] 
          quadratichelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module QuadraticHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticHelper_primitive", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "QuadraticHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuadraticHelper",Description = "Reference to QuadraticHelper")>] 
+        ([<ExcelArgument(Name="QuadraticHelper",Description = "QuadraticHelper")>] 
          quadratichelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,19 +117,19 @@ module QuadraticHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticHelper", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "QuadraticHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xPrev",Description = "Reference to xPrev")>] 
+        ([<ExcelArgument(Name="xPrev",Description = "double")>] 
          xPrev : obj)
-        ([<ExcelArgument(Name="xNext",Description = "Reference to xNext")>] 
+        ([<ExcelArgument(Name="xNext",Description = "double")>] 
          xNext : obj)
-        ([<ExcelArgument(Name="fPrev",Description = "Reference to fPrev")>] 
+        ([<ExcelArgument(Name="fPrev",Description = "double")>] 
          fPrev : obj)
-        ([<ExcelArgument(Name="fNext",Description = "Reference to fNext")>] 
+        ([<ExcelArgument(Name="fNext",Description = "double")>] 
          fNext : obj)
-        ([<ExcelArgument(Name="fAverage",Description = "Reference to fAverage")>] 
+        ([<ExcelArgument(Name="fAverage",Description = "double")>] 
          fAverage : obj)
-        ([<ExcelArgument(Name="prevPrimitive",Description = "Reference to prevPrimitive")>] 
+        ([<ExcelArgument(Name="prevPrimitive",Description = "double")>] 
          prevPrimitive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,11 +184,11 @@ module QuadraticHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticHelper_value", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="QuadraticHelper",Description = "Reference to QuadraticHelper")>] 
+        ([<ExcelArgument(Name="QuadraticHelper",Description = "QuadraticHelper")>] 
          quadratichelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module QuadraticHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_QuadraticHelper_Range", Description="Create a range of QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the QuadraticHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

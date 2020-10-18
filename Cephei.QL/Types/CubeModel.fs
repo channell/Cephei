@@ -44,7 +44,8 @@ type CubeModel
 (*
     Functions
 *)
-    let _Cube                                      = cell (fun () -> new Cube (o.Value))
+    let mutable
+        _Cube                                      = cell (fun () -> new Cube (o.Value))
     let _browse                                    = cell (fun () -> _Cube.Value.browse())
     let _clone                                     (o : ICell<Cube.Cube>)   
                                                    = cell (fun () -> _Cube.Value.clone(o.Value))
@@ -77,13 +78,14 @@ type CubeModel
     casting 
 *)
     internal new () = CubeModel(null)
-    member internal this.Inject v = _Cube.Value <- v
+    member internal this.Inject v = _Cube <- v
     static member Cast (p : ICell<Cube>) = 
         if p :? CubeModel then 
             p :?> CubeModel
         else
             let o = new CubeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 
@@ -153,7 +155,8 @@ type CubeModel1
 (*
     Functions
 *)
-    let _Cube                                      = cell (fun () -> new Cube (optionDates.Value, swapTenors.Value, optionTimes.Value, swapLengths.Value, nLayers.Value, extrapolation.Value, backwardFlat.Value))
+    let mutable
+        _Cube                                      = cell (fun () -> new Cube (optionDates.Value, swapTenors.Value, optionTimes.Value, swapLengths.Value, nLayers.Value, extrapolation.Value, backwardFlat.Value))
     let _browse                                    = cell (fun () -> _Cube.Value.browse())
     let _clone                                     (o : ICell<Cube.Cube>)   
                                                    = cell (fun () -> _Cube.Value.clone(o.Value))
@@ -186,13 +189,14 @@ type CubeModel1
     casting 
 *)
     internal new () = CubeModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _Cube.Value <- v
+    member internal this.Inject v = _Cube <- v
     static member Cast (p : ICell<Cube>) = 
         if p :? CubeModel1 then 
             p :?> CubeModel1
         else
             let o = new CubeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 
@@ -253,7 +257,8 @@ type CubeModel2
 (*
     Functions
 *)
-    let _Cube                                      = cell (fun () -> new Cube ())
+    let mutable
+        _Cube                                      = cell (fun () -> new Cube ())
     let _browse                                    = cell (fun () -> _Cube.Value.browse())
     let _clone                                     (o : ICell<Cube.Cube>)   
                                                    = cell (fun () -> _Cube.Value.clone(o.Value))
@@ -286,13 +291,14 @@ type CubeModel2
     casting 
 *)
     
-    member internal this.Inject v = _Cube.Value <- v
+    member internal this.Inject v = _Cube <- v
     static member Cast (p : ICell<Cube>) = 
         if p :? CubeModel2 then 
             p :?> CubeModel2
         else
             let o = new CubeModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

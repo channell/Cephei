@@ -39,13 +39,13 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedCapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "CapFloor.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_mandatoryTimes", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_reset", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_adjustValues", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_initialize", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_method", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_partialRollback", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_postAdjustValues", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_preAdjustValues", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_presentValue", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_rollback", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_setTime", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,11 +520,11 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_setValues", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_time", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module DiscretizedCapFloorFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedCapFloor_values", Description="Create a DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "Reference to DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="DiscretizedCapFloor",Description = "DiscretizedCapFloor")>] 
          discretizedcapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module DiscretizedCapFloorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedCapFloor_Range", Description="Create a range of DiscretizedCapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCapFloor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedCapFloor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type EqualJumpsBinomialTreeModel<'T>
 (*
     Functions
 *)
-    let _EqualJumpsBinomialTree                    = cell (fun () -> new EqualJumpsBinomialTree<'T> (Process.Value, End.Value, steps.Value))
+    let mutable
+        _EqualJumpsBinomialTree                    = cell (fun () -> new EqualJumpsBinomialTree<'T> (Process.Value, End.Value, steps.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
                                                    = triv (fun () -> _EqualJumpsBinomialTree.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
@@ -89,7 +90,8 @@ type EqualJumpsBinomialTreeModel1<'T>
 (*
     Functions
 *)
-    let _EqualJumpsBinomialTree                    = cell (fun () -> new EqualJumpsBinomialTree<'T> ())
+    let mutable
+        _EqualJumpsBinomialTree                    = cell (fun () -> new EqualJumpsBinomialTree<'T> ())
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
                                                    = triv (fun () -> _EqualJumpsBinomialTree.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   

@@ -39,11 +39,11 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_atmRate", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_atmRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,19 +81,19 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "CapFloorType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="floatingLeg",Description = "Reference to floatingLeg")>] 
+        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
          floatingLeg : obj)
-        ([<ExcelArgument(Name="capRates",Description = "Reference to capRates")>] 
+        ([<ExcelArgument(Name="capRates",Description = "double")>] 
          capRates : obj)
-        ([<ExcelArgument(Name="floorRates",Description = "Reference to floorRates")>] 
+        ([<ExcelArgument(Name="floorRates",Description = "double")>] 
          floorRates : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,17 +148,17 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor1", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "CapFloorType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="floatingLeg",Description = "Reference to floatingLeg")>] 
+        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
          floatingLeg : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,9 +209,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_capRates", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_capRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_floatingLeg", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_floorRates", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_floorRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_getType", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -353,27 +353,27 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_impliedVolatility", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "double")>] 
          guess : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,19 +443,19 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_impliedVolatility1", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_impliedVolatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "double")>] 
          guess : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -509,9 +509,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_isExpired", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -545,9 +545,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_lastFloatingRateCoupon", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_lastFloatingRateCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -581,9 +581,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_maturityDate", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -617,11 +617,11 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_optionlet", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_optionlet
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -659,9 +659,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_startDate", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -695,9 +695,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_CASH", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -731,9 +731,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_errorEstimate", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -767,9 +767,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_NPV", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -803,11 +803,11 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_result", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -845,11 +845,11 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_setPricingEngine", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -887,9 +887,9 @@ module CapFloorFunction =
     *)
     [<ExcelFunction(Name="_CapFloor_valuationDate", Description="Create a CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloor",Description = "Reference to CapFloor")>] 
+        ([<ExcelArgument(Name="CapFloor",Description = "CapFloor")>] 
          capfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -920,9 +920,9 @@ module CapFloorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CapFloor_Range", Description="Create a range of CapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CapFloor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

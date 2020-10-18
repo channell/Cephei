@@ -52,7 +52,8 @@ type TARGETModel
 (*
     Functions
 *)
-    let _TARGET                                    = cell (fun () -> new TARGET ())
+    let mutable
+        _TARGET                                    = cell (fun () -> new TARGET ())
     let _addedHolidays                             = triv (fun () -> _TARGET.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _TARGET.Value.addHoliday(d.Value)
@@ -89,13 +90,14 @@ type TARGETModel
     casting 
 *)
     
-    member internal this.Inject v = _TARGET.Value <- v
+    member internal this.Inject v = _TARGET <- v
     static member Cast (p : ICell<TARGET>) = 
         if p :? TARGETModel then 
             p :?> TARGETModel
         else
             let o = new TARGETModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

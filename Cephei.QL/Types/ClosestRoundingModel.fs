@@ -44,7 +44,8 @@ type ClosestRoundingModel
 (*
     Functions
 *)
-    let _ClosestRounding                           = cell (fun () -> new ClosestRounding (precision.Value))
+    let mutable
+        _ClosestRounding                           = cell (fun () -> new ClosestRounding (precision.Value))
     let _Digit                                     = triv (fun () -> _ClosestRounding.Value.Digit)
     let _getType                                   = triv (fun () -> _ClosestRounding.Value.getType)
     let _Precision                                 = triv (fun () -> _ClosestRounding.Value.Precision)
@@ -55,13 +56,14 @@ type ClosestRoundingModel
     casting 
 *)
     internal new () = new ClosestRoundingModel(null)
-    member internal this.Inject v = _ClosestRounding.Value <- v
+    member internal this.Inject v = _ClosestRounding <- v
     static member Cast (p : ICell<ClosestRounding>) = 
         if p :? ClosestRoundingModel then 
             p :?> ClosestRoundingModel
         else
             let o = new ClosestRoundingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -93,7 +95,8 @@ type ClosestRoundingModel1
 (*
     Functions
 *)
-    let _ClosestRounding                           = cell (fun () -> new ClosestRounding (precision.Value, digit.Value))
+    let mutable
+        _ClosestRounding                           = cell (fun () -> new ClosestRounding (precision.Value, digit.Value))
     let _Digit                                     = triv (fun () -> _ClosestRounding.Value.Digit)
     let _getType                                   = triv (fun () -> _ClosestRounding.Value.getType)
     let _Precision                                 = triv (fun () -> _ClosestRounding.Value.Precision)
@@ -104,13 +107,14 @@ type ClosestRoundingModel1
     casting 
 *)
     internal new () = new ClosestRoundingModel1(null,null)
-    member internal this.Inject v = _ClosestRounding.Value <- v
+    member internal this.Inject v = _ClosestRounding <- v
     static member Cast (p : ICell<ClosestRounding>) = 
         if p :? ClosestRoundingModel1 then 
             p :?> ClosestRoundingModel1
         else
             let o = new ClosestRoundingModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

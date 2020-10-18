@@ -58,19 +58,21 @@ type FdBlackScholesVanillaEngineModel
 (*
     Functions
 *)
-    let _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
+    let mutable
+        _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
     do this.Bind(_FdBlackScholesVanillaEngine)
 (* 
     casting 
 *)
     internal new () = new FdBlackScholesVanillaEngineModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdBlackScholesVanillaEngine.Value <- v
+    member internal this.Inject v = _FdBlackScholesVanillaEngine <- v
     static member Cast (p : ICell<FdBlackScholesVanillaEngine>) = 
         if p :? FdBlackScholesVanillaEngineModel then 
             p :?> FdBlackScholesVanillaEngineModel
         else
             let o = new FdBlackScholesVanillaEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -118,19 +120,21 @@ type FdBlackScholesVanillaEngineModel1
 (*
     Functions
 *)
-    let _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
+    let mutable
+        _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
     do this.Bind(_FdBlackScholesVanillaEngine)
 (* 
     casting 
 *)
     internal new () = new FdBlackScholesVanillaEngineModel1(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdBlackScholesVanillaEngine.Value <- v
+    member internal this.Inject v = _FdBlackScholesVanillaEngine <- v
     static member Cast (p : ICell<FdBlackScholesVanillaEngine>) = 
         if p :? FdBlackScholesVanillaEngineModel1 then 
             p :?> FdBlackScholesVanillaEngineModel1
         else
             let o = new FdBlackScholesVanillaEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type DateModel
 (*
     Functions
 *)
-    let _Date                                      = cell (fun () -> new Date ())
+    let mutable
+        _Date                                      = cell (fun () -> new Date ())
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Date.Value.CompareTo(obj.Value))
     let _Day                                       = triv (fun () -> _Date.Value.Day)
@@ -75,13 +76,14 @@ type DateModel
     casting 
 *)
     
-    member internal this.Inject v = _Date.Value <- v
+    member internal this.Inject v = _Date <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel then 
             p :?> DateModel
         else
             let o = new DateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -133,7 +135,8 @@ type DateModel1
 (*
     Functions
 *)
-    let _Date                                      = cell (fun () -> new Date (serialNumber.Value))
+    let mutable
+        _Date                                      = cell (fun () -> new Date (serialNumber.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Date.Value.CompareTo(obj.Value))
     let _Day                                       = triv (fun () -> _Date.Value.Day)
@@ -167,13 +170,14 @@ type DateModel1
     casting 
 *)
     internal new () = new DateModel1(null)
-    member internal this.Inject v = _Date.Value <- v
+    member internal this.Inject v = _Date <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel1 then 
             p :?> DateModel1
         else
             let o = new DateModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
 
 (* 
@@ -237,7 +241,8 @@ type DateModel2
 (*
     Functions
 *)
-    let _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value, h.Value, mi.Value, s.Value, ms.Value))
+    let mutable
+        _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value, h.Value, mi.Value, s.Value, ms.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Date.Value.CompareTo(obj.Value))
     let _Day                                       = triv (fun () -> _Date.Value.Day)
@@ -271,13 +276,14 @@ type DateModel2
     casting 
 *)
     internal new () = new DateModel2(null,null,null,null,null,null,null)
-    member internal this.Inject v = _Date.Value <- v
+    member internal this.Inject v = _Date <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel2 then 
             p :?> DateModel2
         else
             let o = new DateModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -340,7 +346,8 @@ type DateModel3
 (*
     Functions
 *)
-    let _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value))
+    let mutable
+        _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Date.Value.CompareTo(obj.Value))
     let _Day                                       = triv (fun () -> _Date.Value.Day)
@@ -374,13 +381,14 @@ type DateModel3
     casting 
 *)
     internal new () = new DateModel3(null,null,null)
-    member internal this.Inject v = _Date.Value <- v
+    member internal this.Inject v = _Date <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel3 then 
             p :?> DateModel3
         else
             let o = new DateModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -435,7 +443,8 @@ type DateModel4
 (*
     Functions
 *)
-    let _Date                                      = cell (fun () -> new Date (d.Value))
+    let mutable
+        _Date                                      = cell (fun () -> new Date (d.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Date.Value.CompareTo(obj.Value))
     let _Day                                       = triv (fun () -> _Date.Value.Day)
@@ -469,13 +478,14 @@ type DateModel4
     casting 
 *)
     internal new () = new DateModel4(null)
-    member internal this.Inject v = _Date.Value <- v
+    member internal this.Inject v = _Date <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel4 then 
             p :?> DateModel4
         else
             let o = new DateModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -540,7 +550,8 @@ type DateModel5
 (*
     Functions
 *)
-    let _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value, h.Value, mi.Value, s.Value, ms.Value))
+    let mutable
+        _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value, h.Value, mi.Value, s.Value, ms.Value))
     let _CompareTo                                 (obj : ICell<Object>)   
                                                    = triv (fun () -> _Date.Value.CompareTo(obj.Value))
     let _Day                                       = triv (fun () -> _Date.Value.Day)
@@ -574,13 +585,14 @@ type DateModel5
     casting 
 *)
     internal new () = new DateModel5(null,null,null,null,null,null,null)
-    member internal this.Inject v = _Date.Value <- v
+    member internal this.Inject v = _Date <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel5 then 
             p :?> DateModel5
         else
             let o = new DateModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

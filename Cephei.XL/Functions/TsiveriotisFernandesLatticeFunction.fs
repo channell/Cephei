@@ -39,13 +39,13 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_partialRollback", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "Reference to TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "TsiveriotisFernandesLattice")>] 
          tsiveriotisfernandeslattice : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_rollback", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "Reference to TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "TsiveriotisFernandesLattice")>] 
          tsiveriotisfernandeslattice : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,23 +135,23 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_stepback", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_stepback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "Reference to TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "TsiveriotisFernandesLattice")>] 
          tsiveriotisfernandeslattice : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="values",Description = "Reference to values")>] 
+        ([<ExcelArgument(Name="values",Description = "Vector")>] 
          values : obj)
-        ([<ExcelArgument(Name="conversionProbability",Description = "Reference to conversionProbability")>] 
+        ([<ExcelArgument(Name="conversionProbability",Description = "Vector")>] 
          conversionProbability : obj)
-        ([<ExcelArgument(Name="spreadAdjustedRate",Description = "Reference to spreadAdjustedRate")>] 
+        ([<ExcelArgument(Name="spreadAdjustedRate",Description = "Vector")>] 
          spreadAdjustedRate : obj)
-        ([<ExcelArgument(Name="newValues",Description = "Reference to newValues")>] 
+        ([<ExcelArgument(Name="newValues",Description = "Vector")>] 
          newValues : obj)
-        ([<ExcelArgument(Name="newConversionProbability",Description = "Reference to newConversionProbability")>] 
+        ([<ExcelArgument(Name="newConversionProbability",Description = "Vector")>] 
          newConversionProbability : obj)
-        ([<ExcelArgument(Name="newSpreadAdjustedRate",Description = "Reference to newSpreadAdjustedRate")>] 
+        ([<ExcelArgument(Name="newSpreadAdjustedRate",Description = "Vector")>] 
          newSpreadAdjustedRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,21 +213,21 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tree",Description = "Reference to tree")>] 
+        ([<ExcelArgument(Name="tree",Description = "'T")>] 
          tree : obj)
-        ([<ExcelArgument(Name="riskFreeRate",Description = "Reference to riskFreeRate")>] 
+        ([<ExcelArgument(Name="riskFreeRate",Description = "double")>] 
          riskFreeRate : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="creditSpread",Description = "Reference to creditSpread")>] 
+        ([<ExcelArgument(Name="creditSpread",Description = "double")>] 
          creditSpread : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="divYield",Description = "Reference to divYield")>] 
+        ([<ExcelArgument(Name="divYield",Description = "double")>] 
          divYield : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module TsiveriotisFernandesLatticeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_Range", Description="Create a range of TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

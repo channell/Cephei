@@ -39,7 +39,7 @@ module IterativeBootstrapFunction =
     *)
     [<ExcelFunction(Name="_IterativeBootstrap", Description="Create a IterativeBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IterativeBootstrap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IterativeBootstrap")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,11 +70,11 @@ module IterativeBootstrapFunction =
     *)
     [<ExcelFunction(Name="_IterativeBootstrap_setup", Description="Create a IterativeBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IterativeBootstrap_setup
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IterativeBootstrap",Description = "Reference to IterativeBootstrap")>] 
+        ([<ExcelArgument(Name="IterativeBootstrap",Description = "IterativeBootstrap")>] 
          iterativebootstrap : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "'T")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -109,9 +109,9 @@ module IterativeBootstrapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IterativeBootstrap_Range", Description="Create a range of IterativeBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IterativeBootstrap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IterativeBootstrap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

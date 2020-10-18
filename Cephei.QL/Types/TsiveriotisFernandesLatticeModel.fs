@@ -56,7 +56,8 @@ type TsiveriotisFernandesLatticeModel<'T when 'T :> ITree>
 (*
     Functions
 *)
-    let _TsiveriotisFernandesLattice               = cell (fun () -> new TsiveriotisFernandesLattice<'T> (tree.Value, riskFreeRate.Value, End.Value, steps.Value, creditSpread.Value, sigma.Value, divYield.Value))
+    let mutable
+        _TsiveriotisFernandesLattice               = cell (fun () -> new TsiveriotisFernandesLattice<'T> (tree.Value, riskFreeRate.Value, End.Value, steps.Value, creditSpread.Value, sigma.Value, divYield.Value))
     let _partialRollback                           (asset : ICell<DiscretizedAsset>) (To : ICell<double>)   
                                                    = triv (fun () -> _TsiveriotisFernandesLattice.Value.partialRollback(asset.Value, To.Value)
                                                                      _TsiveriotisFernandesLattice.Value)

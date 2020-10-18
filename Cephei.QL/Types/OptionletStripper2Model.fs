@@ -46,7 +46,8 @@ type OptionletStripper2Model
 (*
     Functions
 *)
-    let _OptionletStripper2                        = cell (fun () -> new OptionletStripper2 (optionletStripper1.Value, atmCapFloorTermVolCurve.Value))
+    let mutable
+        _OptionletStripper2                        = cell (fun () -> new OptionletStripper2 (optionletStripper1.Value, atmCapFloorTermVolCurve.Value))
     let _atmCapFloorPrices                         = triv (fun () -> _OptionletStripper2.Value.atmCapFloorPrices())
     let _atmCapFloorStrikes                        = triv (fun () -> _OptionletStripper2.Value.atmCapFloorStrikes())
     let _spreadsVol                                = triv (fun () -> _OptionletStripper2.Value.spreadsVol())
@@ -74,13 +75,14 @@ type OptionletStripper2Model
     casting 
 *)
     internal new () = new OptionletStripper2Model(null,null)
-    member internal this.Inject v = _OptionletStripper2.Value <- v
+    member internal this.Inject v = _OptionletStripper2 <- v
     static member Cast (p : ICell<OptionletStripper2>) = 
         if p :? OptionletStripper2Model then 
             p :?> OptionletStripper2Model
         else
             let o = new OptionletStripper2Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type SampledCurveModel
 (*
     Functions
 *)
-    let _SampledCurve                              = cell (fun () -> new SampledCurve (grid.Value))
+    let mutable
+        _SampledCurve                              = cell (fun () -> new SampledCurve (grid.Value))
     let _Clone                                     = triv (fun () -> _SampledCurve.Value.Clone())
     let _empty                                     = triv (fun () -> _SampledCurve.Value.empty())
     let _firstDerivativeAtCenter                   = triv (fun () -> _SampledCurve.Value.firstDerivativeAtCenter())
@@ -96,13 +97,14 @@ type SampledCurveModel
     casting 
 *)
     internal new () = new SampledCurveModel(null)
-    member internal this.Inject v = _SampledCurve.Value <- v
+    member internal this.Inject v = _SampledCurve <- v
     static member Cast (p : ICell<SampledCurve>) = 
         if p :? SampledCurveModel then 
             p :?> SampledCurveModel
         else
             let o = new SampledCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -163,7 +165,8 @@ type SampledCurveModel1
 (*
     Functions
 *)
-    let _SampledCurve                              = cell (fun () -> new SampledCurve (gridSize.Value))
+    let mutable
+        _SampledCurve                              = cell (fun () -> new SampledCurve (gridSize.Value))
     let _Clone                                     = triv (fun () -> _SampledCurve.Value.Clone())
     let _empty                                     = triv (fun () -> _SampledCurve.Value.empty())
     let _firstDerivativeAtCenter                   = triv (fun () -> _SampledCurve.Value.firstDerivativeAtCenter())
@@ -215,13 +218,14 @@ type SampledCurveModel1
     casting 
 *)
     internal new () = new SampledCurveModel1(null)
-    member internal this.Inject v = _SampledCurve.Value <- v
+    member internal this.Inject v = _SampledCurve <- v
     static member Cast (p : ICell<SampledCurve>) = 
         if p :? SampledCurveModel1 then 
             p :?> SampledCurveModel1
         else
             let o = new SampledCurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

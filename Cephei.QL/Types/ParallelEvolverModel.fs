@@ -41,7 +41,8 @@ type ParallelEvolverModel<'Evolver when 'Evolver :> IMixedScheme and 'Evolver :>
 (*
     Functions
 *)
-    let _ParallelEvolver                           = cell (fun () -> new ParallelEvolver<'Evolver> ())
+    let mutable
+        _ParallelEvolver                           = cell (fun () -> new ParallelEvolver<'Evolver> ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
                                                    = triv (fun () -> _ParallelEvolver.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -80,7 +81,8 @@ type ParallelEvolverModel1<'Evolver when 'Evolver :> IMixedScheme and 'Evolver :
 (*
     Functions
 *)
-    let _ParallelEvolver                           = cell (fun () -> new ParallelEvolver<'Evolver> (L.Value, bcs.Value))
+    let mutable
+        _ParallelEvolver                           = cell (fun () -> new ParallelEvolver<'Evolver> (L.Value, bcs.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
                                                    = triv (fun () -> _ParallelEvolver.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   

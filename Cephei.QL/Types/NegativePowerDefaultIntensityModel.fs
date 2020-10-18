@@ -46,7 +46,8 @@ type NegativePowerDefaultIntensityModel
 (*
     Functions
 *)
-    let _NegativePowerDefaultIntensity             = cell (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value))
+    let mutable
+        _NegativePowerDefaultIntensity             = cell (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _NegativePowerDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
@@ -56,13 +57,14 @@ type NegativePowerDefaultIntensityModel
     casting 
 *)
     internal new () = new NegativePowerDefaultIntensityModel(null,null)
-    member internal this.Inject v = _NegativePowerDefaultIntensity.Value <- v
+    member internal this.Inject v = _NegativePowerDefaultIntensity <- v
     static member Cast (p : ICell<NegativePowerDefaultIntensity>) = 
         if p :? NegativePowerDefaultIntensityModel then 
             p :?> NegativePowerDefaultIntensityModel
         else
             let o = new NegativePowerDefaultIntensityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -96,7 +98,8 @@ type NegativePowerDefaultIntensityModel1
 (*
     Functions
 *)
-    let _NegativePowerDefaultIntensity             = cell (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value, recovery.Value))
+    let mutable
+        _NegativePowerDefaultIntensity             = cell (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value, recovery.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _NegativePowerDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
@@ -106,13 +109,14 @@ type NegativePowerDefaultIntensityModel1
     casting 
 *)
     internal new () = new NegativePowerDefaultIntensityModel1(null,null,null)
-    member internal this.Inject v = _NegativePowerDefaultIntensity.Value <- v
+    member internal this.Inject v = _NegativePowerDefaultIntensity <- v
     static member Cast (p : ICell<NegativePowerDefaultIntensity>) = 
         if p :? NegativePowerDefaultIntensityModel1 then 
             p :?> NegativePowerDefaultIntensityModel1
         else
             let o = new NegativePowerDefaultIntensityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

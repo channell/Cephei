@@ -72,7 +72,8 @@ type SwaptionHelperModel
 (*
     Functions
 *)
-    let _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (maturity.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
+    let mutable
+        _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (maturity.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).addTimesTo(times.Value)
                                                                      _SwaptionHelper.Value)
@@ -95,13 +96,14 @@ type SwaptionHelperModel
     casting 
 *)
     internal new () = new SwaptionHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionHelper.Value <- v
+    member internal this.Inject v = _SwaptionHelper <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
         if p :? SwaptionHelperModel then 
             p :?> SwaptionHelperModel
         else
             let o = new SwaptionHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -183,7 +185,8 @@ type SwaptionHelperModel1
 (*
     Functions
 *)
-    let _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (exerciseDate.Value, endDate.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
+    let mutable
+        _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (exerciseDate.Value, endDate.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).addTimesTo(times.Value)
                                                                      _SwaptionHelper.Value)
@@ -206,13 +209,14 @@ type SwaptionHelperModel1
     casting 
 *)
     internal new () = new SwaptionHelperModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionHelper.Value <- v
+    member internal this.Inject v = _SwaptionHelper <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
         if p :? SwaptionHelperModel1 then 
             p :?> SwaptionHelperModel1
         else
             let o = new SwaptionHelperModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -294,7 +298,8 @@ type SwaptionHelperModel2
 (*
     Functions
 *)
-    let _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (exerciseDate.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
+    let mutable
+        _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (exerciseDate.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).addTimesTo(times.Value)
                                                                      _SwaptionHelper.Value)
@@ -317,13 +322,14 @@ type SwaptionHelperModel2
     casting 
 *)
     internal new () = new SwaptionHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionHelper.Value <- v
+    member internal this.Inject v = _SwaptionHelper <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
         if p :? SwaptionHelperModel2 then 
             p :?> SwaptionHelperModel2
         else
             let o = new SwaptionHelperModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

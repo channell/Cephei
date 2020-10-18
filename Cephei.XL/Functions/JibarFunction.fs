@@ -39,11 +39,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Jibar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Jibar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_businessDayConvention", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,11 +155,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_clone", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_endOfMonth", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,15 +233,15 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_forecastFixing1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,11 +287,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_forecastFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,9 +329,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_forwardingTermStructure", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,11 +365,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_maturityDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_currency", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,9 +443,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_dayCounter", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,9 +479,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_familyName", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,13 +515,13 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_fixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_fixingCalendar", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,11 +599,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_fixingDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,9 +641,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_fixingDays", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,11 +677,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_isValidFixingDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_name", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,11 +755,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_pastFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_tenor", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_update", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,11 +869,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_valueDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,15 +911,15 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_addFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,15 +965,15 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_addFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,13 +1019,13 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_addFixings1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1067,9 +1067,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_allowsNativeFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1103,9 +1103,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_clearFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,11 +1139,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_registerWith", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1181,9 +1181,9 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_timeSeries", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1217,11 +1217,11 @@ module JibarFunction =
     *)
     [<ExcelFunction(Name="_Jibar_unregisterWith", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Jibar",Description = "Reference to Jibar")>] 
+        ([<ExcelArgument(Name="Jibar",Description = "Jibar")>] 
          jibar : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1256,9 +1256,9 @@ module JibarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Jibar_Range", Description="Create a range of Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Jibar")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

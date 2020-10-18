@@ -39,11 +39,11 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_addTimesTo", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_addTimesTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_blackPrice", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_blackPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,27 +123,27 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="length",Description = "Reference to length")>] 
+        ([<ExcelArgument(Name="length",Description = "Period")>] 
          length : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="fixedLegFrequency",Description = "Reference to fixedLegFrequency")>] 
+        ([<ExcelArgument(Name="fixedLegFrequency",Description = "Frequency")>] 
          fixedLegFrequency : obj)
-        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "Reference to fixedLegDayCounter")>] 
+        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)
-        ([<ExcelArgument(Name="includeFirstSwaplet",Description = "Reference to includeFirstSwaplet")>] 
+        ([<ExcelArgument(Name="includeFirstSwaplet",Description = "bool")>] 
          includeFirstSwaplet : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "Reference to errorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CapHelper")>] 
          errorType : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_modelValue", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_modelValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_calibrationError", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_calibrationError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,19 +286,19 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_impliedVolatility", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,9 +352,9 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_marketValue", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_marketValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,11 +388,11 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_setPricingEngine", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
-        ([<ExcelArgument(Name="engine",Description = "Reference to engine")>] 
+        ([<ExcelArgument(Name="engine",Description = "IPricingEngine")>] 
          engine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_volatility", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module CapHelperFunction =
     *)
     [<ExcelFunction(Name="_CapHelper_volatilityType", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapHelper",Description = "Reference to CapHelper")>] 
+        ([<ExcelArgument(Name="CapHelper",Description = "CapHelper")>] 
          caphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -499,9 +499,9 @@ module CapHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CapHelper_Range", Description="Create a range of CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CapHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

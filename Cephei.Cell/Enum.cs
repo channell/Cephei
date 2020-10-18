@@ -2,13 +2,15 @@
  * Copyright Cepheis Ltd 2020 
  * All rights reserves
  */
+using System;
+
 namespace Cephei.Cell
 {
 	/// <summary>
 	/// Events sent from mutating cells to their dependants OnChange event handlers
 	/// </summary>
-    public enum CellEvent : int
-    {
+	public enum CellEvent : int
+	{
 
 
 		/// <summary>
@@ -55,42 +57,47 @@ namespace Cephei.Cell
 	/// <summary>
 	/// The State vector of the cell
 	/// </summary>
-    public enum CellState : int
-    {
+	public enum CellState : int
+	{
 
 
-        /// <summary>
-        /// Clean state is set whenever a value is assigned to the Cell, or a Calculation
-        /// has completed
-        /// </summary>
-        Clean = 0,
-        /// <summary>
-        /// Error state is entered whenever a calculation fails.
-        /// An Error event is raised to dependants
-        /// </summary>
-        Error = 1,
-        /// <summary>
-        /// Dirty is the state
-        /// <ul>
-        /// 	<li>On creation with a function
-        /// Calculate is called on a Task thread</li>
-        /// 	<li>Whenever an Invalidate Event is fired</li>
-        /// </ul>
-        /// </summary>
-        Dirty = 2,
-        /// <summary>
-        /// Calculating state is set when a thread starts calculating a value, either
-        /// triggered by Calculate Event or a value is require but the enqued task has not
-        /// yet been dispatched
-        /// </summary>
-        Calculating = 4 + 2,
-        /// <summary>
-        /// Blocking State is entered whenever a value is required, but another thread is
-        /// already in the process of calculating a value or a task needs to calculate a
-        /// value for a session
-        /// </summary>
-        Blocking = 8 + 4 + 2
+		/// <summary>
+		/// Clean state is set whenever a value is assigned to the Cell, or a Calculation
+		/// has completed
+		/// </summary>
+		Clean = 0,
+		/// <summary>
+		/// Error state is entered whenever a calculation fails.
+		/// An Error event is raised to dependants
+		/// </summary>
+		Error = 1,
+		/// <summary>
+		/// Dirty is the state
+		/// <ul>
+		/// 	<li>On creation with a function
+		/// Calculate is called on a Task thread</li>
+		/// 	<li>Whenever an Invalidate Event is fired</li>
+		/// </ul>
+		/// </summary>
+		Dirty = 2,
+		/// <summary>
+		/// Calculating state is set when a thread starts calculating a value, either
+		/// triggered by Calculate Event or a value is require but the enqued task has not
+		/// yet been dispatched
+		/// </summary>
+		Calculating = 4 + 2,
+		/// <summary>
+		/// Blocking State is entered whenever a value is required, but another thread is
+		/// already in the process of calculating a value or a task needs to calculate a
+		/// value for a session
+		/// </summary>
+		Blocking = 8 + 4 + 2
 
 
-    }
+	}
+
+	public class CyclicDependencyException : Exception
+	{
+		public CyclicDependencyException() : base() { }
+	}
 }

@@ -39,9 +39,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_calendar", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,17 +75,17 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CompositeZeroYieldStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h1",Description = "Reference to h1")>] 
+        ([<ExcelArgument(Name="h1",Description = "YieldTermStructure")>] 
          h1 : obj)
-        ([<ExcelArgument(Name="h2",Description = "Reference to h2")>] 
+        ([<ExcelArgument(Name="h2",Description = "YieldTermStructure")>] 
          h2 : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "CompositeZeroYieldStructure")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "CompositeZeroYieldStructure")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_dayCounter", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_maxDate", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,9 +208,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_maxTime", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_referenceDate", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,9 +280,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_settlementDays", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module CompositeZeroYieldStructureFunction =
     *)
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_update", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "Reference to CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="CompositeZeroYieldStructure",Description = "CompositeZeroYieldStructure")>] 
          compositezeroyieldstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module CompositeZeroYieldStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CompositeZeroYieldStructure_Range", Description="Create a range of CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CompositeZeroYieldStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

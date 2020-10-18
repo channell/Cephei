@@ -60,7 +60,8 @@ type CubicInterpolationModel
 (*
     Functions
 *)
-    let _CubicInterpolation                        = cell (fun () -> new CubicInterpolation (xBegin.Value, size.Value, yBegin.Value, da.Value, monotonic.Value, leftCond.Value, leftConditionValue.Value, rightCond.Value, rightConditionValue.Value))
+    let mutable
+        _CubicInterpolation                        = cell (fun () -> new CubicInterpolation (xBegin.Value, size.Value, yBegin.Value, da.Value, monotonic.Value, leftCond.Value, leftConditionValue.Value, rightCond.Value, rightConditionValue.Value))
     let _aCoefficients                             = triv (fun () -> _CubicInterpolation.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _CubicInterpolation.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _CubicInterpolation.Value.cCoefficients())
@@ -92,13 +93,14 @@ type CubicInterpolationModel
     casting 
 *)
     internal new () = new CubicInterpolationModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CubicInterpolation.Value <- v
+    member internal this.Inject v = _CubicInterpolation <- v
     static member Cast (p : ICell<CubicInterpolation>) = 
         if p :? CubicInterpolationModel then 
             p :?> CubicInterpolationModel
         else
             let o = new CubicInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

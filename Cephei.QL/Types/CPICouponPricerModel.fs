@@ -44,7 +44,8 @@ type CPICouponPricerModel
 (*
     Functions
 *)
-    let _CPICouponPricer                           = cell (fun () -> new CPICouponPricer (capletVol.Value))
+    let mutable
+        _CPICouponPricer                           = cell (fun () -> new CPICouponPricer (capletVol.Value))
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _CPICouponPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -75,13 +76,14 @@ type CPICouponPricerModel
     casting 
 *)
     internal new () = new CPICouponPricerModel(null)
-    member internal this.Inject v = _CPICouponPricer.Value <- v
+    member internal this.Inject v = _CPICouponPricer <- v
     static member Cast (p : ICell<CPICouponPricer>) = 
         if p :? CPICouponPricerModel then 
             p :?> CPICouponPricerModel
         else
             let o = new CPICouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

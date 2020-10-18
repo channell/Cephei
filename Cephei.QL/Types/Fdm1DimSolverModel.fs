@@ -48,7 +48,8 @@ type Fdm1DimSolverModel
 (*
     Functions
 *)
-    let _Fdm1DimSolver                             = cell (fun () -> new Fdm1DimSolver (solverDesc.Value, schemeDesc.Value, op.Value))
+    let mutable
+        _Fdm1DimSolver                             = cell (fun () -> new Fdm1DimSolver (solverDesc.Value, schemeDesc.Value, op.Value))
     let _derivativeX                               (x : ICell<double>)   
                                                    = triv (fun () -> _Fdm1DimSolver.Value.derivativeX(x.Value))
     let _derivativeXX                              (x : ICell<double>)   
@@ -62,13 +63,14 @@ type Fdm1DimSolverModel
     casting 
 *)
     internal new () = new Fdm1DimSolverModel(null,null,null)
-    member internal this.Inject v = _Fdm1DimSolver.Value <- v
+    member internal this.Inject v = _Fdm1DimSolver <- v
     static member Cast (p : ICell<Fdm1DimSolver>) = 
         if p :? Fdm1DimSolverModel then 
             p :?> Fdm1DimSolverModel
         else
             let o = new Fdm1DimSolverModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

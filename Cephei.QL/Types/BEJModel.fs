@@ -41,7 +41,8 @@ type BEJModel
 (*
     Functions
 *)
-    let _BEJ                                       = cell (fun () -> new BEJ ())
+    let mutable
+        _BEJ                                       = cell (fun () -> new BEJ ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _BEJ.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _BEJ.Value.name())
@@ -50,13 +51,14 @@ type BEJModel
     casting 
 *)
     
-    member internal this.Inject v = _BEJ.Value <- v
+    member internal this.Inject v = _BEJ <- v
     static member Cast (p : ICell<BEJ>) = 
         if p :? BEJModel then 
             p :?> BEJModel
         else
             let o = new BEJModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -50,7 +50,8 @@ type VanillaOptionModel
 (*
     Functions
 *)
-    let _VanillaOption                             = cell (fun () -> withEngine pricingEngine (new VanillaOption (payoff.Value, exercise.Value)))
+    let mutable
+        _VanillaOption                             = cell (fun () -> withEngine pricingEngine (new VanillaOption (payoff.Value, exercise.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaOption).delta())
@@ -81,13 +82,14 @@ type VanillaOptionModel
     casting 
 *)
     internal new () = new VanillaOptionModel(null,null,null,null)
-    member internal this.Inject v = _VanillaOption.Value <- v
+    member internal this.Inject v = _VanillaOption <- v
     static member Cast (p : ICell<VanillaOption>) = 
         if p :? VanillaOptionModel then 
             p :?> VanillaOptionModel
         else
             let o = new VanillaOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

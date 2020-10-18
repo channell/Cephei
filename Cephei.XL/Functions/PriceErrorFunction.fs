@@ -39,13 +39,13 @@ module PriceErrorFunction =
     *)
     [<ExcelFunction(Name="_PriceError", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PriceError")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="engine",Description = "Reference to engine")>] 
+        ([<ExcelArgument(Name="engine",Description = "IPricingEngine")>] 
          engine : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "SimpleQuote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module PriceErrorFunction =
     *)
     [<ExcelFunction(Name="_PriceError_value", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PriceError",Description = "Reference to PriceError")>] 
+        ([<ExcelArgument(Name="PriceError",Description = "PriceError")>] 
          priceerror : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,11 +130,11 @@ module PriceErrorFunction =
     *)
     [<ExcelFunction(Name="_PriceError_derivative", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PriceError",Description = "Reference to PriceError")>] 
+        ([<ExcelArgument(Name="PriceError",Description = "PriceError")>] 
          priceerror : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -169,9 +169,9 @@ module PriceErrorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PriceError_Range", Description="Create a range of PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PriceError")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

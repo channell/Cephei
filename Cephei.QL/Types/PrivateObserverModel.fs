@@ -44,7 +44,8 @@ type PrivateObserverModel
 (*
     Functions
 *)
-    let _PrivateObserver                           = cell (fun () -> new PrivateObserver (v.Value))
+    let mutable
+        _PrivateObserver                           = cell (fun () -> new PrivateObserver (v.Value))
     let _update                                    = cell (fun () -> _PrivateObserver.Value.update()
                                                                      _PrivateObserver.Value)
     do this.Bind(_PrivateObserver)
@@ -52,13 +53,14 @@ type PrivateObserverModel
     casting 
 *)
     internal new () = PrivateObserverModel(null)
-    member internal this.Inject v = _PrivateObserver.Value <- v
+    member internal this.Inject v = _PrivateObserver <- v
     static member Cast (p : ICell<PrivateObserver>) = 
         if p :? PrivateObserverModel then 
             p :?> PrivateObserverModel
         else
             let o = new PrivateObserverModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -39,9 +39,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_accrualEndTimes", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_accrualEndTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_accrualPeriod_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_accrualPeriod_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_accrualStartTimes", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_accrualStartTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_accrualStartTimes_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_accrualStartTimes_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,13 +183,13 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_apply", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -231,11 +231,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_cashFlows", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_cashFlows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="amount",Description = "Reference to amount")>] 
+        ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -273,9 +273,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_cashFlows1", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_cashFlows1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -309,15 +309,15 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_covariance", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,9 +363,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_covarParam", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_covarParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmCovarianceParameterization")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,13 +399,13 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_diffusion", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -447,11 +447,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_discountBond", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_discountBond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="rates",Description = "Reference to rates")>] 
+        ([<ExcelArgument(Name="rates",Description = "double")>] 
          rates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,13 +489,13 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_drift", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -537,17 +537,17 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_evolve", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -597,9 +597,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_factors", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -633,9 +633,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_fixingDates", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_fixingDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -669,9 +669,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_fixingDates_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_fixingDates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -705,9 +705,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_fixingTimes", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_fixingTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -741,9 +741,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_fixingTimes_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_fixingTimes_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -777,9 +777,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_index", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -813,9 +813,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_index_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_index_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -849,9 +849,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_initialValues", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -885,9 +885,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_initialValues_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_initialValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmCovarianceParameterization")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -921,9 +921,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_lfmParam_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_lfmParam_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmCovarianceParameterization")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -957,11 +957,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess1", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LiborForwardModelProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1000,13 +1000,13 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LiborForwardModelProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="disc",Description = "Reference to disc")>] 
+        ([<ExcelArgument(Name="disc",Description = "IDiscretization")>] 
          disc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1049,11 +1049,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_nextIndexReset", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_nextIndexReset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1091,11 +1091,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_setCovarParam", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_setCovarParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="param",Description = "Reference to param")>] 
+        ([<ExcelArgument(Name="param",Description = "LfmCovarianceParameterization")>] 
          param : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1133,9 +1133,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_size", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1169,9 +1169,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_size_", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_size_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1205,15 +1205,15 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_expectation", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1259,11 +1259,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_registerWith", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1301,15 +1301,15 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_stdDeviation", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1355,11 +1355,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_time", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1397,11 +1397,11 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_unregisterWith", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1439,9 +1439,9 @@ module LiborForwardModelProcessFunction =
     *)
     [<ExcelFunction(Name="_LiborForwardModelProcess_update", Description="Create a LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "Reference to LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="LiborForwardModelProcess",Description = "LiborForwardModelProcess")>] 
          liborforwardmodelprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1472,9 +1472,9 @@ module LiborForwardModelProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LiborForwardModelProcess_Range", Description="Create a range of LiborForwardModelProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModelProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LiborForwardModelProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

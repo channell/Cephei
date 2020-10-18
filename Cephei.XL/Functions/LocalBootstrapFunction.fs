@@ -40,11 +40,11 @@ module LocalBootstrapFunction =
     *)
     [<ExcelFunction(Name="_LocalBootstrap", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalBootstrap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="localisation",Description = "Reference to localisation")>] 
+        ([<ExcelArgument(Name="localisation",Description = "int")>] 
          localisation : obj)
-        ([<ExcelArgument(Name="forcePositive",Description = "Reference to forcePositive")>] 
+        ([<ExcelArgument(Name="forcePositive",Description = "bool")>] 
          forcePositive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -83,7 +83,7 @@ module LocalBootstrapFunction =
     *)
     [<ExcelFunction(Name="_LocalBootstrap1", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalBootstrap")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -114,11 +114,11 @@ module LocalBootstrapFunction =
     *)
     [<ExcelFunction(Name="_LocalBootstrap_setup", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_setup
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalBootstrap",Description = "Reference to LocalBootstrap")>] 
+        ([<ExcelArgument(Name="LocalBootstrap",Description = "LocalBootstrap")>] 
          localbootstrap : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "'T")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,9 +153,9 @@ module LocalBootstrapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LocalBootstrap_Range", Description="Create a range of LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LocalBootstrap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

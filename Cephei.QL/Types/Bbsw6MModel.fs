@@ -44,7 +44,8 @@ type Bbsw6MModel
 (*
     Functions
 *)
-    let _Bbsw6M                                    = cell (fun () -> new Bbsw6M (h.Value))
+    let mutable
+        _Bbsw6M                                    = cell (fun () -> new Bbsw6M (h.Value))
     let _businessDayConvention                     = triv (fun () -> _Bbsw6M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Bbsw6M.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type Bbsw6MModel
     casting 
 *)
     internal new () = new Bbsw6MModel(null)
-    member internal this.Inject v = _Bbsw6M.Value <- v
+    member internal this.Inject v = _Bbsw6M <- v
     static member Cast (p : ICell<Bbsw6M>) = 
         if p :? Bbsw6MModel then 
             p :?> Bbsw6MModel
         else
             let o = new Bbsw6MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

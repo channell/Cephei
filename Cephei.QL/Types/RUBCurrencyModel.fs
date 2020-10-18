@@ -41,7 +41,8 @@ type RUBCurrencyModel
 (*
     Functions
 *)
-    let _RUBCurrency                               = cell (fun () -> new RUBCurrency ())
+    let mutable
+        _RUBCurrency                               = cell (fun () -> new RUBCurrency ())
     let _code                                      = triv (fun () -> _RUBCurrency.Value.code)
     let _empty                                     = triv (fun () -> _RUBCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type RUBCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _RUBCurrency.Value <- v
+    member internal this.Inject v = _RUBCurrency <- v
     static member Cast (p : ICell<RUBCurrency>) = 
         if p :? RUBCurrencyModel then 
             p :?> RUBCurrencyModel
         else
             let o = new RUBCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

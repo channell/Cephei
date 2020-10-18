@@ -50,7 +50,8 @@ type OISRateHelperModel
 (*
     Functions
 *)
-    let _OISRateHelper                             = cell (fun () -> new OISRateHelper (settlementDays.Value, tenor.Value, fixedRate.Value, overnightIndex.Value))
+    let mutable
+        _OISRateHelper                             = cell (fun () -> new OISRateHelper (settlementDays.Value, tenor.Value, fixedRate.Value, overnightIndex.Value))
     let _impliedQuote                              = triv (fun () -> _OISRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _OISRateHelper.Value.setTermStructure(t.Value)
@@ -78,13 +79,14 @@ type OISRateHelperModel
     casting 
 *)
     internal new () = new OISRateHelperModel(null,null,null,null)
-    member internal this.Inject v = _OISRateHelper.Value <- v
+    member internal this.Inject v = _OISRateHelper <- v
     static member Cast (p : ICell<OISRateHelper>) = 
         if p :? OISRateHelperModel then 
             p :?> OISRateHelperModel
         else
             let o = new OISRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

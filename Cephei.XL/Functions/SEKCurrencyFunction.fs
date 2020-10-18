@@ -39,7 +39,7 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SEKCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_code", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_empty", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_Equals", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_format", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_fractionsPerUnit", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_fractionSymbol", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_name", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_numericCode", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_rounding", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_symbol", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_ToString", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module SEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SEKCurrency_triangulationCurrency", Description="Create a SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKCurrency",Description = "Reference to SEKCurrency")>] 
+        ([<ExcelArgument(Name="SEKCurrency",Description = "SEKCurrency")>] 
          sekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module SEKCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SEKCurrency_Range", Description="Create a range of SEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SEKCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

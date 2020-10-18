@@ -39,11 +39,11 @@ module NonhomogeneousBoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint", Description="Create a NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NonhomogeneousBoundaryConstraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="low",Description = "Reference to low")>] 
+        ([<ExcelArgument(Name="low",Description = "Vector")>] 
          low : obj)
-        ([<ExcelArgument(Name="high",Description = "Reference to high")>] 
+        ([<ExcelArgument(Name="high",Description = "Vector")>] 
          high : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module NonhomogeneousBoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint_empty", Description="Create a NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "Reference to NonhomogeneousBoundaryConstraint")>] 
+        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "NonhomogeneousBoundaryConstraint")>] 
          nonhomogeneousboundaryconstraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module NonhomogeneousBoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint_lowerBound", Description="Create a NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "Reference to NonhomogeneousBoundaryConstraint")>] 
+        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "NonhomogeneousBoundaryConstraint")>] 
          nonhomogeneousboundaryconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module NonhomogeneousBoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint_test", Description="Create a NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "Reference to NonhomogeneousBoundaryConstraint")>] 
+        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "NonhomogeneousBoundaryConstraint")>] 
          nonhomogeneousboundaryconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,15 +202,15 @@ module NonhomogeneousBoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint_update", Description="Create a NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "Reference to NonhomogeneousBoundaryConstraint")>] 
+        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "NonhomogeneousBoundaryConstraint")>] 
          nonhomogeneousboundaryconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,11 +256,11 @@ module NonhomogeneousBoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint_upperBound", Description="Create a NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "Reference to NonhomogeneousBoundaryConstraint")>] 
+        ([<ExcelArgument(Name="NonhomogeneousBoundaryConstraint",Description = "NonhomogeneousBoundaryConstraint")>] 
          nonhomogeneousboundaryconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module NonhomogeneousBoundaryConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NonhomogeneousBoundaryConstraint_Range", Description="Create a range of NonhomogeneousBoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonhomogeneousBoundaryConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NonhomogeneousBoundaryConstraint")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

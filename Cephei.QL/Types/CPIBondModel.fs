@@ -80,7 +80,8 @@ type CPIBondModel
 (*
     Functions
 *)
-    let _CPIBond                                   = cell (fun () -> withEngine pricingEngine (new CPIBond (settlementDays.Value, faceAmount.Value, growthOnly.Value, baseCPI.Value, observationLag.Value, cpiIndex.Value, observationInterpolation.Value, schedule.Value, fixedRate.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+    let mutable
+        _CPIBond                                   = cell (fun () -> withEngine pricingEngine (new CPIBond (settlementDays.Value, faceAmount.Value, growthOnly.Value, baseCPI.Value, observationLag.Value, cpiIndex.Value, observationInterpolation.Value, schedule.Value, fixedRate.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _baseCPI                                   = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).baseCPI())
     let _cpiIndex                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).cpiIndex())
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).dayCounter())
@@ -141,13 +142,14 @@ type CPIBondModel
     casting 
 *)
     internal new () = new CPIBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CPIBond.Value <- v
+    member internal this.Inject v = _CPIBond <- v
     static member Cast (p : ICell<CPIBond>) = 
         if p :? CPIBondModel then 
             p :?> CPIBondModel
         else
             let o = new CPIBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

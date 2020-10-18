@@ -48,7 +48,8 @@ type EuropeanHestonPathPricerModel
 (*
     Functions
 *)
-    let _EuropeanHestonPathPricer                  = cell (fun () -> new EuropeanHestonPathPricer (Type.Value, strike.Value, discount.Value))
+    let mutable
+        _EuropeanHestonPathPricer                  = cell (fun () -> new EuropeanHestonPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (multiPath : ICell<IPath>)   
                                                    = triv (fun () -> _EuropeanHestonPathPricer.Value.value(multiPath.Value))
     do this.Bind(_EuropeanHestonPathPricer)
@@ -56,13 +57,14 @@ type EuropeanHestonPathPricerModel
     casting 
 *)
     internal new () = new EuropeanHestonPathPricerModel(null,null,null)
-    member internal this.Inject v = _EuropeanHestonPathPricer.Value <- v
+    member internal this.Inject v = _EuropeanHestonPathPricer <- v
     static member Cast (p : ICell<EuropeanHestonPathPricer>) = 
         if p :? EuropeanHestonPathPricerModel then 
             p :?> EuropeanHestonPathPricerModel
         else
             let o = new EuropeanHestonPathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

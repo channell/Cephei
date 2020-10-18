@@ -48,7 +48,8 @@ type AnalyticHaganPricerModel
 (*
     Functions
 *)
-    let _AnalyticHaganPricer                       = cell (fun () -> new AnalyticHaganPricer (swaptionVol.Value, modelOfYieldCurve.Value, meanReversion.Value))
+    let mutable
+        _AnalyticHaganPricer                       = cell (fun () -> new AnalyticHaganPricer (swaptionVol.Value, modelOfYieldCurve.Value, meanReversion.Value))
     let _swapletPrice                              = triv (fun () -> _AnalyticHaganPricer.Value.swapletPrice())
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _AnalyticHaganPricer.Value.capletPrice(effectiveCap.Value))
@@ -83,13 +84,14 @@ type AnalyticHaganPricerModel
     casting 
 *)
     internal new () = new AnalyticHaganPricerModel(null,null,null)
-    member internal this.Inject v = _AnalyticHaganPricer.Value <- v
+    member internal this.Inject v = _AnalyticHaganPricer <- v
     static member Cast (p : ICell<AnalyticHaganPricer>) = 
         if p :? AnalyticHaganPricerModel then 
             p :?> AnalyticHaganPricerModel
         else
             let o = new AnalyticHaganPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

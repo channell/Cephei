@@ -39,13 +39,13 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkMaxIterations", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkMaxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
-        ([<ExcelArgument(Name="iteration",Description = "Reference to iteration")>] 
+        ([<ExcelArgument(Name="iteration",Description = "int")>] 
          iteration : obj)
-        ([<ExcelArgument(Name="ecType",Description = "Reference to ecType")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,15 +87,15 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkStationaryFunctionAccuracy", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkStationaryFunctionAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double")>] 
          f : obj)
-        ([<ExcelArgument(Name="positiveOptimization",Description = "Reference to positiveOptimization")>] 
+        ([<ExcelArgument(Name="positiveOptimization",Description = "bool")>] 
          positiveOptimization : obj)
-        ([<ExcelArgument(Name="ecType",Description = "Reference to ecType")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -141,17 +141,17 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkStationaryFunctionValue", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkStationaryFunctionValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
-        ([<ExcelArgument(Name="fxOld",Description = "Reference to fxOld")>] 
+        ([<ExcelArgument(Name="fxOld",Description = "double")>] 
          fxOld : obj)
-        ([<ExcelArgument(Name="fxNew",Description = "Reference to fxNew")>] 
+        ([<ExcelArgument(Name="fxNew",Description = "double")>] 
          fxNew : obj)
-        ([<ExcelArgument(Name="statStateIterations",Description = "Reference to statStateIterations")>] 
+        ([<ExcelArgument(Name="statStateIterations",Description = "int")>] 
          statStateIterations : obj)
-        ([<ExcelArgument(Name="ecType",Description = "Reference to ecType")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,17 +201,17 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkStationaryPoint", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkStationaryPoint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
-        ([<ExcelArgument(Name="xOld",Description = "Reference to xOld")>] 
+        ([<ExcelArgument(Name="xOld",Description = "double")>] 
          xOld : obj)
-        ([<ExcelArgument(Name="xNew",Description = "Reference to xNew")>] 
+        ([<ExcelArgument(Name="xNew",Description = "double")>] 
          xNew : obj)
-        ([<ExcelArgument(Name="statStateIterations",Description = "Reference to statStateIterations")>] 
+        ([<ExcelArgument(Name="statStateIterations",Description = "int")>] 
          statStateIterations : obj)
-        ([<ExcelArgument(Name="ecType",Description = "Reference to ecType")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -261,13 +261,13 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkZeroGradientNorm", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkZeroGradientNorm
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
-        ([<ExcelArgument(Name="gradientNorm",Description = "Reference to gradientNorm")>] 
+        ([<ExcelArgument(Name="gradientNorm",Description = "double")>] 
          gradientNorm : obj)
-        ([<ExcelArgument(Name="ecType",Description = "Reference to ecType")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -309,17 +309,17 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="maxIterations",Description = "Reference to maxIterations")>] 
+        ([<ExcelArgument(Name="maxIterations",Description = "int")>] 
          maxIterations : obj)
-        ([<ExcelArgument(Name="maxStationaryStateIterations",Description = "Reference to maxStationaryStateIterations")>] 
+        ([<ExcelArgument(Name="maxStationaryStateIterations",Description = "int")>] 
          maxStationaryStateIterations : obj)
-        ([<ExcelArgument(Name="rootEpsilon",Description = "Reference to rootEpsilon")>] 
+        ([<ExcelArgument(Name="rootEpsilon",Description = "double")>] 
          rootEpsilon : obj)
-        ([<ExcelArgument(Name="functionEpsilon",Description = "Reference to functionEpsilon")>] 
+        ([<ExcelArgument(Name="functionEpsilon",Description = "double")>] 
          functionEpsilon : obj)
-        ([<ExcelArgument(Name="gradientNormEpsilon",Description = "Reference to gradientNormEpsilon")>] 
+        ([<ExcelArgument(Name="gradientNormEpsilon",Description = "double")>] 
          gradientNormEpsilon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_functionEpsilon", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_functionEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_gradientNormEpsilon", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_gradientNormEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_maxIterations", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_maxStationaryStateIterations", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_maxStationaryStateIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_rootEpsilon", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_rootEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,25 +550,25 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_value", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EndCriteria",Description = "Reference to EndCriteria")>] 
+        ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
-        ([<ExcelArgument(Name="iteration",Description = "Reference to iteration")>] 
+        ([<ExcelArgument(Name="iteration",Description = "int")>] 
          iteration : obj)
-        ([<ExcelArgument(Name="statStateIterations",Description = "Reference to statStateIterations")>] 
+        ([<ExcelArgument(Name="statStateIterations",Description = "int")>] 
          statStateIterations : obj)
-        ([<ExcelArgument(Name="positiveOptimization",Description = "Reference to positiveOptimization")>] 
+        ([<ExcelArgument(Name="positiveOptimization",Description = "bool")>] 
          positiveOptimization : obj)
-        ([<ExcelArgument(Name="fold",Description = "Reference to fold")>] 
+        ([<ExcelArgument(Name="fold",Description = "double")>] 
          fold : obj)
-        ([<ExcelArgument(Name="UnnamedParameter1",Description = "Reference to UnnamedParameter1")>] 
+        ([<ExcelArgument(Name="UnnamedParameter1",Description = "double")>] 
          UnnamedParameter1 : obj)
-        ([<ExcelArgument(Name="fnew",Description = "Reference to fnew")>] 
+        ([<ExcelArgument(Name="fnew",Description = "double")>] 
          fnew : obj)
-        ([<ExcelArgument(Name="normgnew",Description = "Reference to normgnew")>] 
+        ([<ExcelArgument(Name="normgnew",Description = "double")>] 
          normgnew : obj)
-        ([<ExcelArgument(Name="ecType",Description = "Reference to ecType")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module EndCriteriaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EndCriteria_Range", Description="Create a range of EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EndCriteria")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

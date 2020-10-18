@@ -46,7 +46,8 @@ type SampleModel<'T>
 (*
     Functions
 *)
-    let _Sample                                    = cell (fun () -> new Sample<'T> (value_.Value, weight_.Value))
+    let mutable
+        _Sample                                    = cell (fun () -> new Sample<'T> (value_.Value, weight_.Value))
     let _value                                     = triv (fun () -> _Sample.Value.value)
     let _weight                                    = triv (fun () -> _Sample.Value.weight)
     do this.Bind(_Sample)

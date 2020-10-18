@@ -39,13 +39,13 @@ module eqn3Function =
     *)
     [<ExcelFunction(Name="_eqn3", Description="Create a eqn3",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn3_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "eqn3")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "double")>] 
          h : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "double")>] 
          k : obj)
-        ([<ExcelArgument(Name="Asr",Description = "Reference to Asr")>] 
+        ([<ExcelArgument(Name="Asr",Description = "double")>] 
          Asr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module eqn3Function =
     *)
     [<ExcelFunction(Name="_eqn3_value", Description="Create a eqn3",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn3_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="eqn3",Description = "Reference to eqn3")>] 
+        ([<ExcelArgument(Name="eqn3",Description = "eqn3")>] 
          eqn3 : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -127,9 +127,9 @@ module eqn3Function =
             "<WIZ>"
     [<ExcelFunction(Name="_eqn3_Range", Description="Create a range of eqn3",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn3_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the eqn3")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

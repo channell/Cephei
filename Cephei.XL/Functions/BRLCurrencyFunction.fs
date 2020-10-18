@@ -39,7 +39,7 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BRLCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_code", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_empty", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_Equals", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_format", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_fractionsPerUnit", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_fractionSymbol", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_name", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_numericCode", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_rounding", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_symbol", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_ToString", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module BRLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BRLCurrency_triangulationCurrency", Description="Create a BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BRLCurrency",Description = "Reference to BRLCurrency")>] 
+        ([<ExcelArgument(Name="BRLCurrency",Description = "BRLCurrency")>] 
          brlcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module BRLCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BRLCurrency_Range", Description="Create a range of BRLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BRLCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BRLCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

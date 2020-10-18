@@ -50,7 +50,8 @@ type MultiAssetOptionModel
 (*
     Functions
 *)
-    let _MultiAssetOption                          = cell (fun () -> withEngine pricingEngine (new MultiAssetOption (payoff.Value, exercise.Value)))
+    let mutable
+        _MultiAssetOption                          = cell (fun () -> withEngine pricingEngine (new MultiAssetOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).delta())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).dividendRho())
     let _gamma                                     = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).gamma())
@@ -74,13 +75,14 @@ type MultiAssetOptionModel
     casting 
 *)
     internal new () = new MultiAssetOptionModel(null,null,null,null)
-    member internal this.Inject v = _MultiAssetOption.Value <- v
+    member internal this.Inject v = _MultiAssetOption <- v
     static member Cast (p : ICell<MultiAssetOption>) = 
         if p :? MultiAssetOptionModel then 
             p :?> MultiAssetOptionModel
         else
             let o = new MultiAssetOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

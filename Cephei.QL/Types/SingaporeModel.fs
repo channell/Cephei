@@ -58,7 +58,8 @@ type SingaporeModel
 (*
     Functions
 *)
-    let _Singapore                                 = cell (fun () -> new Singapore ())
+    let mutable
+        _Singapore                                 = cell (fun () -> new Singapore ())
     let _addedHolidays                             = triv (fun () -> _Singapore.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Singapore.Value.addHoliday(d.Value)
@@ -95,13 +96,14 @@ type SingaporeModel
     casting 
 *)
     
-    member internal this.Inject v = _Singapore.Value <- v
+    member internal this.Inject v = _Singapore <- v
     static member Cast (p : ICell<Singapore>) = 
         if p :? SingaporeModel then 
             p :?> SingaporeModel
         else
             let o = new SingaporeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

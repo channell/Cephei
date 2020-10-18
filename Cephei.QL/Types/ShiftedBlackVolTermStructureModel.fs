@@ -46,7 +46,8 @@ type ShiftedBlackVolTermStructureModel
 (*
     Functions
 *)
-    let _ShiftedBlackVolTermStructure              = cell (fun () -> new ShiftedBlackVolTermStructure (varianceOffset.Value, volTS.Value))
+    let mutable
+        _ShiftedBlackVolTermStructure              = cell (fun () -> new ShiftedBlackVolTermStructure (varianceOffset.Value, volTS.Value))
     let _maxDate                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ShiftedBlackVolTermStructure.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ShiftedBlackVolTermStructure.Value.minStrike())
@@ -91,13 +92,14 @@ type ShiftedBlackVolTermStructureModel
     casting 
 *)
     internal new () = new ShiftedBlackVolTermStructureModel(null,null)
-    member internal this.Inject v = _ShiftedBlackVolTermStructure.Value <- v
+    member internal this.Inject v = _ShiftedBlackVolTermStructure <- v
     static member Cast (p : ICell<ShiftedBlackVolTermStructure>) = 
         if p :? ShiftedBlackVolTermStructureModel then 
             p :?> ShiftedBlackVolTermStructureModel
         else
             let o = new ShiftedBlackVolTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

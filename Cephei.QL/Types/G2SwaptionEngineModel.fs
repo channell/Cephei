@@ -48,7 +48,8 @@ type G2SwaptionEngineModel
 (*
     Functions
 *)
-    let _G2SwaptionEngine                          = cell (fun () -> new G2SwaptionEngine (model.Value, range.Value, intervals.Value))
+    let mutable
+        _G2SwaptionEngine                          = cell (fun () -> new G2SwaptionEngine (model.Value, range.Value, intervals.Value))
     let _setModel                                  (model : ICell<Handle<G2>>)   
                                                    = triv (fun () -> _G2SwaptionEngine.Value.setModel(model.Value)
                                                                      _G2SwaptionEngine.Value)
@@ -67,13 +68,14 @@ type G2SwaptionEngineModel
     casting 
 *)
     internal new () = new G2SwaptionEngineModel(null,null,null)
-    member internal this.Inject v = _G2SwaptionEngine.Value <- v
+    member internal this.Inject v = _G2SwaptionEngine <- v
     static member Cast (p : ICell<G2SwaptionEngine>) = 
         if p :? G2SwaptionEngineModel then 
             p :?> G2SwaptionEngineModel
         else
             let o = new G2SwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

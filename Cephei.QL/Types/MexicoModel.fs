@@ -55,7 +55,8 @@ type MexicoModel
 (*
     Functions
 *)
-    let _Mexico                                    = cell (fun () -> new Mexico ())
+    let mutable
+        _Mexico                                    = cell (fun () -> new Mexico ())
     let _addedHolidays                             = triv (fun () -> _Mexico.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Mexico.Value.addHoliday(d.Value)
@@ -92,13 +93,14 @@ type MexicoModel
     casting 
 *)
     
-    member internal this.Inject v = _Mexico.Value <- v
+    member internal this.Inject v = _Mexico <- v
     static member Cast (p : ICell<Mexico>) = 
         if p :? MexicoModel then 
             p :?> MexicoModel
         else
             let o = new MexicoModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

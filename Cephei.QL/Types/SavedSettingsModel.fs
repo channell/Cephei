@@ -41,7 +41,8 @@ type SavedSettingsModel
 (*
     Functions
 *)
-    let _SavedSettings                             = cell (fun () -> new SavedSettings ())
+    let mutable
+        _SavedSettings                             = cell (fun () -> new SavedSettings ())
     let _Dispose                                   = triv (fun () -> _SavedSettings.Value.Dispose()
                                                                      _SavedSettings.Value)
     do this.Bind(_SavedSettings)
@@ -49,13 +50,14 @@ type SavedSettingsModel
     casting 
 *)
     
-    member internal this.Inject v = _SavedSettings.Value <- v
+    member internal this.Inject v = _SavedSettings <- v
     static member Cast (p : ICell<SavedSettings>) = 
         if p :? SavedSettingsModel then 
             p :?> SavedSettingsModel
         else
             let o = new SavedSettingsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

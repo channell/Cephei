@@ -39,7 +39,7 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SITCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_code", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_empty", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_Equals", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_format", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_fractionsPerUnit", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_fractionSymbol", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_name", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_numericCode", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_rounding", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_symbol", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_ToString", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module SITCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SITCurrency_triangulationCurrency", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SITCurrency",Description = "Reference to SITCurrency")>] 
+        ([<ExcelArgument(Name="SITCurrency",Description = "SITCurrency")>] 
          sitcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module SITCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SITCurrency_Range", Description="Create a range of SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SITCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

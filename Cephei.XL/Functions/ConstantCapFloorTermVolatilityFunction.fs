@@ -39,17 +39,17 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility1", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantCapFloorTermVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,17 +100,17 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility2", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantCapFloorTermVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,17 +161,17 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility3", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantCapFloorTermVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,17 +222,17 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantCapFloorTermVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxDate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -319,9 +319,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxStrike", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,9 +355,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_minStrike", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -391,15 +391,15 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="length",Description = "Reference to length")>] 
+        ([<ExcelArgument(Name="length",Description = "Period")>] 
          length : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -445,15 +445,15 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility1", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -499,15 +499,15 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility2", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "Date")>] 
          End : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -553,9 +553,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_businessDayConvention", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -589,11 +589,11 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_optionDateFromTenor", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_calendar", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -667,9 +667,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_dayCounter", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -703,9 +703,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxTime", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -739,9 +739,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_referenceDate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -775,9 +775,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_settlementDays", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -811,11 +811,11 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_timeFromReference", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -853,9 +853,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_update", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -889,9 +889,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_allowsExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -925,11 +925,11 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_disableExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -967,11 +967,11 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_enableExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1009,9 +1009,9 @@ module ConstantCapFloorTermVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_extrapolate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "Reference to ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="ConstantCapFloorTermVolatility",Description = "ConstantCapFloorTermVolatility")>] 
          constantcapfloortermvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1042,9 +1042,9 @@ module ConstantCapFloorTermVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_Range", Description="Create a range of ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConstantCapFloorTermVolatility")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

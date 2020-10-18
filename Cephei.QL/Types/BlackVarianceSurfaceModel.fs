@@ -58,7 +58,8 @@ type BlackVarianceSurfaceModel
 (*
     Functions
 *)
-    let _BlackVarianceSurface                      = cell (fun () -> new BlackVarianceSurface (referenceDate.Value, calendar.Value, dates.Value, strikes.Value, blackVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
+    let mutable
+        _BlackVarianceSurface                      = cell (fun () -> new BlackVarianceSurface (referenceDate.Value, calendar.Value, dates.Value, strikes.Value, blackVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
     let _dates                                     = triv (fun () -> _BlackVarianceSurface.Value.dates())
     let _dayCounter                                = triv (fun () -> _BlackVarianceSurface.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _BlackVarianceSurface.Value.maxDate())
@@ -76,13 +77,14 @@ type BlackVarianceSurfaceModel
     casting 
 *)
     internal new () = new BlackVarianceSurfaceModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _BlackVarianceSurface.Value <- v
+    member internal this.Inject v = _BlackVarianceSurface <- v
     static member Cast (p : ICell<BlackVarianceSurface>) = 
         if p :? BlackVarianceSurfaceModel then 
             p :?> BlackVarianceSurfaceModel
         else
             let o = new BlackVarianceSurfaceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -122,7 +124,8 @@ type BlackVarianceSurfaceModel1
 (*
     Functions
 *)
-    let _BlackVarianceSurface                      = cell (fun () -> new BlackVarianceSurface ())
+    let mutable
+        _BlackVarianceSurface                      = cell (fun () -> new BlackVarianceSurface ())
     let _dates                                     = triv (fun () -> _BlackVarianceSurface.Value.dates())
     let _dayCounter                                = triv (fun () -> _BlackVarianceSurface.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _BlackVarianceSurface.Value.maxDate())
@@ -140,13 +143,14 @@ type BlackVarianceSurfaceModel1
     casting 
 *)
     
-    member internal this.Inject v = _BlackVarianceSurface.Value <- v
+    member internal this.Inject v = _BlackVarianceSurface <- v
     static member Cast (p : ICell<BlackVarianceSurface>) = 
         if p :? BlackVarianceSurfaceModel1 then 
             p :?> BlackVarianceSurfaceModel1
         else
             let o = new BlackVarianceSurfaceModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

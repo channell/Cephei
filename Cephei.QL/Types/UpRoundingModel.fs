@@ -44,7 +44,8 @@ type UpRoundingModel
 (*
     Functions
 *)
-    let _UpRounding                                = cell (fun () -> new UpRounding (precision.Value))
+    let mutable
+        _UpRounding                                = cell (fun () -> new UpRounding (precision.Value))
     let _Digit                                     = triv (fun () -> _UpRounding.Value.Digit)
     let _getType                                   = triv (fun () -> _UpRounding.Value.getType)
     let _Precision                                 = triv (fun () -> _UpRounding.Value.Precision)
@@ -55,13 +56,14 @@ type UpRoundingModel
     casting 
 *)
     internal new () = new UpRoundingModel(null)
-    member internal this.Inject v = _UpRounding.Value <- v
+    member internal this.Inject v = _UpRounding <- v
     static member Cast (p : ICell<UpRounding>) = 
         if p :? UpRoundingModel then 
             p :?> UpRoundingModel
         else
             let o = new UpRoundingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -93,7 +95,8 @@ type UpRoundingModel1
 (*
     Functions
 *)
-    let _UpRounding                                = cell (fun () -> new UpRounding (precision.Value, digit.Value))
+    let mutable
+        _UpRounding                                = cell (fun () -> new UpRounding (precision.Value, digit.Value))
     let _Digit                                     = triv (fun () -> _UpRounding.Value.Digit)
     let _getType                                   = triv (fun () -> _UpRounding.Value.getType)
     let _Precision                                 = triv (fun () -> _UpRounding.Value.Precision)
@@ -104,13 +107,14 @@ type UpRoundingModel1
     casting 
 *)
     internal new () = new UpRoundingModel1(null,null)
-    member internal this.Inject v = _UpRounding.Value <- v
+    member internal this.Inject v = _UpRounding <- v
     static member Cast (p : ICell<UpRounding>) = 
         if p :? UpRoundingModel1 then 
             p :?> UpRoundingModel1
         else
             let o = new UpRoundingModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

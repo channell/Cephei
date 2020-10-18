@@ -50,7 +50,8 @@ type BlackProcessModel
 (*
     Functions
 *)
-    let _BlackProcess                              = cell (fun () -> new BlackProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value, d.Value))
+    let mutable
+        _BlackProcess                              = cell (fun () -> new BlackProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value, d.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _BlackProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _BlackProcess.Value.blackVolatility())
@@ -91,13 +92,14 @@ type BlackProcessModel
     casting 
 *)
     internal new () = new BlackProcessModel(null,null,null,null)
-    member internal this.Inject v = _BlackProcess.Value <- v
+    member internal this.Inject v = _BlackProcess <- v
     static member Cast (p : ICell<BlackProcess>) = 
         if p :? BlackProcessModel then 
             p :?> BlackProcessModel
         else
             let o = new BlackProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -161,7 +163,8 @@ type BlackProcessModel1
 (*
     Functions
 *)
-    let _BlackProcess                              = cell (fun () -> new BlackProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value))
+    let mutable
+        _BlackProcess                              = cell (fun () -> new BlackProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _BlackProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _BlackProcess.Value.blackVolatility())
@@ -202,13 +205,14 @@ type BlackProcessModel1
     casting 
 *)
     internal new () = new BlackProcessModel1(null,null,null)
-    member internal this.Inject v = _BlackProcess.Value <- v
+    member internal this.Inject v = _BlackProcess <- v
     static member Cast (p : ICell<BlackProcess>) = 
         if p :? BlackProcessModel1 then 
             p :?> BlackProcessModel1
         else
             let o = new BlackProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

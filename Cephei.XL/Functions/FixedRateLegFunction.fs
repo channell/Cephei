@@ -39,9 +39,9 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_value", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,17 +112,17 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates3", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRates",Description = "Reference to couponRates")>] 
+        ([<ExcelArgument(Name="couponRates",Description = "double")>] 
          couponRates : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,13 +172,13 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates6", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates6
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRate",Description = "Reference to couponRate")>] 
+        ([<ExcelArgument(Name="couponRate",Description = "double")>] 
          couponRate : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,15 +220,15 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates1", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRate",Description = "Reference to couponRate")>] 
+        ([<ExcelArgument(Name="couponRate",Description = "double")>] 
          couponRate : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,17 +274,17 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRate",Description = "Reference to couponRate")>] 
+        ([<ExcelArgument(Name="couponRate",Description = "double")>] 
          couponRate : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,15 +334,15 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates7", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates7
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRates",Description = "Reference to couponRates")>] 
+        ([<ExcelArgument(Name="couponRates",Description = "double")>] 
          couponRates : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,11 +388,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates5", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRate",Description = "Reference to couponRate")>] 
+        ([<ExcelArgument(Name="couponRate",Description = "InterestRate")>] 
          couponRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,11 +430,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates4", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRates",Description = "Reference to couponRates")>] 
+        ([<ExcelArgument(Name="couponRates",Description = "InterestRate")>] 
          couponRates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,13 +472,13 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withCouponRates2", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="couponRates",Description = "Reference to couponRates")>] 
+        ([<ExcelArgument(Name="couponRates",Description = "double")>] 
          couponRates : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,17 +520,17 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withExCouponPeriod", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withExCouponPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="period",Description = "Reference to period")>] 
+        ([<ExcelArgument(Name="period",Description = "Period")>] 
          period : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "FixedRateLeg")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,11 +580,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withFirstPeriodDayCounter", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withFirstPeriodDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,11 +622,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withLastPeriodDayCounter", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withLastPeriodDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,11 +664,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withPaymentCalendar", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withPaymentCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,11 +706,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withNotionals1", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,11 +748,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withNotionals", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,11 +790,11 @@ module FixedRateLegFunction =
     *)
     [<ExcelFunction(Name="_FixedRateLeg_withPaymentAdjustment", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateLeg",Description = "Reference to FixedRateLeg")>] 
+        ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -829,9 +829,9 @@ module FixedRateLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedRateLeg_Range", Description="Create a range of FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FixedRateLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,13 +39,13 @@ module DiscreteTrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_value", Description="Create a DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteTrapezoidIntegral",Description = "Reference to DiscreteTrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="DiscreteTrapezoidIntegral",Description = "DiscreteTrapezoidIntegral")>] 
          discretetrapezoidintegral : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "Vector")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module DiscreteTrapezoidIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_Range", Description="Create a range of DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscreteTrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

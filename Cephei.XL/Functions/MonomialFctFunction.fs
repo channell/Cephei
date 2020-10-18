@@ -39,9 +39,9 @@ module MonomialFctFunction =
     *)
     [<ExcelFunction(Name="_MonomialFct", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MonomialFct")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="order",Description = "Reference to order")>] 
+        ([<ExcelArgument(Name="order",Description = "int")>] 
          order : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module MonomialFctFunction =
     *)
     [<ExcelFunction(Name="_MonomialFct_value", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonomialFct",Description = "Reference to MonomialFct")>] 
+        ([<ExcelArgument(Name="MonomialFct",Description = "MonomialFct")>] 
          monomialfct : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -115,9 +115,9 @@ module MonomialFctFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonomialFct_Range", Description="Create a range of MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MonomialFct")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

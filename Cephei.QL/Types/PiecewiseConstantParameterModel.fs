@@ -46,7 +46,8 @@ type PiecewiseConstantParameterModel
 (*
     Functions
 *)
-    let _PiecewiseConstantParameter                = cell (fun () -> new PiecewiseConstantParameter (times.Value, Constraint.Value))
+    let mutable
+        _PiecewiseConstantParameter                = cell (fun () -> new PiecewiseConstantParameter (times.Value, Constraint.Value))
     let _constraint                                = triv (fun () -> _PiecewiseConstantParameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _PiecewiseConstantParameter.Value.implementation())
     let _parameters                                = triv (fun () -> _PiecewiseConstantParameter.Value.parameters())
@@ -63,13 +64,14 @@ type PiecewiseConstantParameterModel
     casting 
 *)
     internal new () = new PiecewiseConstantParameterModel(null,null)
-    member internal this.Inject v = _PiecewiseConstantParameter.Value <- v
+    member internal this.Inject v = _PiecewiseConstantParameter <- v
     static member Cast (p : ICell<PiecewiseConstantParameter>) = 
         if p :? PiecewiseConstantParameterModel then 
             p :?> PiecewiseConstantParameterModel
         else
             let o = new PiecewiseConstantParameterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

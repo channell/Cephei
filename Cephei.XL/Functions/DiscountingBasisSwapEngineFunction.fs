@@ -39,11 +39,11 @@ module DiscountingBasisSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingBasisSwapEngine", Description="Create a DiscountingBasisSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBasisSwapEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscountingBasisSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve1",Description = "Reference to discountCurve1")>] 
+        ([<ExcelArgument(Name="discountCurve1",Description = "YieldTermStructure")>] 
          discountCurve1 : obj)
-        ([<ExcelArgument(Name="discountCurve2",Description = "Reference to discountCurve2")>] 
+        ([<ExcelArgument(Name="discountCurve2",Description = "YieldTermStructure")>] 
          discountCurve2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -79,9 +79,9 @@ module DiscountingBasisSwapEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscountingBasisSwapEngine_Range", Description="Create a range of DiscountingBasisSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBasisSwapEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscountingBasisSwapEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

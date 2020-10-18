@@ -44,7 +44,8 @@ type SymmetricSchurDecompositionModel
 (*
     Functions
 *)
-    let _SymmetricSchurDecomposition               = cell (fun () -> new SymmetricSchurDecomposition (s.Value))
+    let mutable
+        _SymmetricSchurDecomposition               = cell (fun () -> new SymmetricSchurDecomposition (s.Value))
     let _eigenvalues                               = triv (fun () -> _SymmetricSchurDecomposition.Value.eigenvalues())
     let _eigenvectors                              = triv (fun () -> _SymmetricSchurDecomposition.Value.eigenvectors())
     do this.Bind(_SymmetricSchurDecomposition)
@@ -52,13 +53,14 @@ type SymmetricSchurDecompositionModel
     casting 
 *)
     internal new () = new SymmetricSchurDecompositionModel(null)
-    member internal this.Inject v = _SymmetricSchurDecomposition.Value <- v
+    member internal this.Inject v = _SymmetricSchurDecomposition <- v
     static member Cast (p : ICell<SymmetricSchurDecomposition>) = 
         if p :? SymmetricSchurDecompositionModel then 
             p :?> SymmetricSchurDecompositionModel
         else
             let o = new SymmetricSchurDecompositionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

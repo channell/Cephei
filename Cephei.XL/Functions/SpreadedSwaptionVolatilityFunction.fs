@@ -39,9 +39,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_calendar", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_dayCounter", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_maxDate", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_maxStrike", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_maxSwapTenor", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_maxSwapTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_maxTime", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedSwaptionVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_minStrike", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedSwaptionVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_referenceDate", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedSwaptionVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_settlementDays", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedSwaptionVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,11 +363,11 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedSwaptionVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="baseVol",Description = "Reference to baseVol")>] 
+        ([<ExcelArgument(Name="baseVol",Description = "SwaptionVolatilityStructure")>] 
          baseVol : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatilityType", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,17 +442,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_blackVariance4", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_blackVariance4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,17 +502,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_blackVariance5", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_blackVariance5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,17 +562,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_blackVariance3", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_blackVariance3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,17 +622,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_blackVariance2", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,17 +682,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_blackVariance1", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,17 +742,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_blackVariance", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,9 +802,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_maxSwapLength", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_maxSwapLength
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -838,15 +838,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_shift4", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_shift4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -892,15 +892,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_shift5", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_shift5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,15 +946,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_shift1", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_shift1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1000,15 +1000,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_shift", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_shift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,15 +1054,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_shift2", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_shift2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1108,15 +1108,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_shift3", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_shift3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1162,15 +1162,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_smileSection1", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1216,15 +1216,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_smileSection2", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_smileSection2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1270,15 +1270,15 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_smileSection", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1324,13 +1324,13 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_swapLength", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_swapLength
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="start",Description = "Reference to start")>] 
+        ([<ExcelArgument(Name="start",Description = "Date")>] 
          start : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "Date")>] 
          End : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1372,11 +1372,11 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_swapLength1", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_swapLength1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1414,17 +1414,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatility4", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatility4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1474,17 +1474,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatility2", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1534,17 +1534,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatility5", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatility5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1594,17 +1594,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatility1", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1654,17 +1654,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatility3", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatility3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapLength",Description = "Reference to swapLength")>] 
+        ([<ExcelArgument(Name="swapLength",Description = "double")>] 
          swapLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1714,17 +1714,17 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_volatility", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1774,9 +1774,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_businessDayConvention", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1810,11 +1810,11 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_optionDateFromTenor", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1852,11 +1852,11 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_timeFromReference", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1894,9 +1894,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_update", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1930,9 +1930,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_allowsExtrapolation", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1966,11 +1966,11 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_disableExtrapolation", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2008,11 +2008,11 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_enableExtrapolation", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2050,9 +2050,9 @@ module SpreadedSwaptionVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_extrapolate", Description="Create a SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "Reference to SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedSwaptionVolatility",Description = "SpreadedSwaptionVolatility")>] 
          spreadedswaptionvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2083,9 +2083,9 @@ module SpreadedSwaptionVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SpreadedSwaptionVolatility_Range", Description="Create a range of SpreadedSwaptionVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSwaptionVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SpreadedSwaptionVolatility")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

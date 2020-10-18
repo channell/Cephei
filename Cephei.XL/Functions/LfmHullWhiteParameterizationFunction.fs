@@ -39,11 +39,11 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_covariance1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_covariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,13 +81,13 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_covariance", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,11 +129,11 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,13 +171,13 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_diffusion1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,13 +219,13 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_integratedCovariance", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_integratedCovariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,11 +267,11 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmHullWhiteParameterization")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "LiborForwardModelProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="capletVol",Description = "Reference to capletVol")>] 
+        ([<ExcelArgument(Name="capletVol",Description = "OptionletVolatilityStructure")>] 
          capletVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,15 +310,15 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmHullWhiteParameterization")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "LiborForwardModelProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="capletVol",Description = "Reference to capletVol")>] 
+        ([<ExcelArgument(Name="capletVol",Description = "OptionletVolatilityStructure")>] 
          capletVol : obj)
-        ([<ExcelArgument(Name="correlation",Description = "Reference to correlation")>] 
+        ([<ExcelArgument(Name="correlation",Description = "Matrix")>] 
          correlation : obj)
-        ([<ExcelArgument(Name="factors",Description = "Reference to factors")>] 
+        ([<ExcelArgument(Name="factors",Description = "int")>] 
          factors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,9 +365,9 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_factors", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -401,9 +401,9 @@ module LfmHullWhiteParameterizationFunction =
     *)
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_size", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "Reference to LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="LfmHullWhiteParameterization",Description = "LfmHullWhiteParameterization")>] 
          lfmhullwhiteparameterization : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -434,9 +434,9 @@ module LfmHullWhiteParameterizationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LfmHullWhiteParameterization_Range", Description="Create a range of LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LfmHullWhiteParameterization")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

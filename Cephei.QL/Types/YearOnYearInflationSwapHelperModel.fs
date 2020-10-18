@@ -56,7 +56,8 @@ type YearOnYearInflationSwapHelperModel
 (*
     Functions
 *)
-    let _YearOnYearInflationSwapHelper             = cell (fun () -> new YearOnYearInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, yii.Value))
+    let mutable
+        _YearOnYearInflationSwapHelper             = cell (fun () -> new YearOnYearInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, yii.Value))
     let _impliedQuote                              = triv (fun () -> _YearOnYearInflationSwapHelper.Value.impliedQuote())
     let _setTermStructure                          (y : ICell<YoYInflationTermStructure>)   
                                                    = triv (fun () -> _YearOnYearInflationSwapHelper.Value.setTermStructure(y.Value)
@@ -83,13 +84,14 @@ type YearOnYearInflationSwapHelperModel
     casting 
 *)
     internal new () = new YearOnYearInflationSwapHelperModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _YearOnYearInflationSwapHelper.Value <- v
+    member internal this.Inject v = _YearOnYearInflationSwapHelper <- v
     static member Cast (p : ICell<YearOnYearInflationSwapHelper>) = 
         if p :? YearOnYearInflationSwapHelperModel then 
             p :?> YearOnYearInflationSwapHelperModel
         else
             let o = new YearOnYearInflationSwapHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

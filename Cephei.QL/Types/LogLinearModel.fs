@@ -41,7 +41,8 @@ type LogLinearModel
 (*
     Functions
 *)
-    let _LogLinear                                 = cell (fun () -> new LogLinear ())
+    let mutable
+        _LogLinear                                 = cell (fun () -> new LogLinear ())
     let _global                                    = triv (fun () -> _LogLinear.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _LogLinear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -51,13 +52,14 @@ type LogLinearModel
     casting 
 *)
     
-    member internal this.Inject v = _LogLinear.Value <- v
+    member internal this.Inject v = _LogLinear <- v
     static member Cast (p : ICell<LogLinear>) = 
         if p :? LogLinearModel then 
             p :?> LogLinearModel
         else
             let o = new LogLinearModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

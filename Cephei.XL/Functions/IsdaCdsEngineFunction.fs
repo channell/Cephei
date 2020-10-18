@@ -40,21 +40,21 @@ module IsdaCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IsdaCdsEngine", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IsdaCdsEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="probability",Description = "Reference to probability")>] 
+        ([<ExcelArgument(Name="probability",Description = "DefaultProbabilityTermStructure")>] 
          probability : obj)
-        ([<ExcelArgument(Name="recoveryRate",Description = "Reference to recoveryRate")>] 
+        ([<ExcelArgument(Name="recoveryRate",Description = "double")>] 
          recoveryRate : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "Reference to includeSettlementDateFlows")>] 
+        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
-        ([<ExcelArgument(Name="numericalFix",Description = "Reference to numericalFix")>] 
+        ([<ExcelArgument(Name="numericalFix",Description = "IsdaCdsEngine")>] 
          numericalFix : obj)
-        ([<ExcelArgument(Name="accrualBias",Description = "Reference to accrualBias")>] 
+        ([<ExcelArgument(Name="accrualBias",Description = "IsdaCdsEngine")>] 
          accrualBias : obj)
-        ([<ExcelArgument(Name="forwardsInCouponPeriod",Description = "Reference to forwardsInCouponPeriod")>] 
+        ([<ExcelArgument(Name="forwardsInCouponPeriod",Description = "IsdaCdsEngine")>] 
          forwardsInCouponPeriod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,9 +113,9 @@ module IsdaCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IsdaCdsEngine_isdaCreditCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_isdaCreditCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DefaultProbabilityTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IsdaCdsEngine",Description = "Reference to IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="IsdaCdsEngine",Description = "IsdaCdsEngine")>] 
          isdacdsengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,9 +149,9 @@ module IsdaCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IsdaCdsEngine_isdaRateCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_isdaRateCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IsdaCdsEngine",Description = "Reference to IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="IsdaCdsEngine",Description = "IsdaCdsEngine")>] 
          isdacdsengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -182,9 +182,9 @@ module IsdaCdsEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IsdaCdsEngine_Range", Description="Create a range of IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

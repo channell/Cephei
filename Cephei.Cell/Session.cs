@@ -125,7 +125,7 @@ namespace Cephei.Cell
             _state = SessionState.Calculating;
             foreach (var c in _scope)
             {
-                c.OnChange(CellEvent.Calculate, c, _epoch, this);
+                c.OnChange(CellEvent.Calculate, c, c, _epoch, this);
             }
         }
 

@@ -39,11 +39,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_addWeekend", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_addWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BespokeCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="w",Description = "Reference to w")>] 
+        ([<ExcelArgument(Name="w",Description = "DayOfWeek")>] 
          w : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BespokeCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,7 +118,7 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar1", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BespokeCalendar")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,9 +149,9 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_name", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,9 +185,9 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_addedHolidays", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,11 +221,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_addHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -263,13 +263,13 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_adjust", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -311,19 +311,19 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_advance1", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "Reference to unit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,17 +377,17 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_advance", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -437,17 +437,17 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_businessDaysBetween", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "Date")>] 
          from : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
-        ([<ExcelArgument(Name="includeFirst",Description = "Reference to includeFirst")>] 
+        ([<ExcelArgument(Name="includeFirst",Description = "bool")>] 
          includeFirst : obj)
-        ([<ExcelArgument(Name="includeLast",Description = "Reference to includeLast")>] 
+        ([<ExcelArgument(Name="includeLast",Description = "bool")>] 
          includeLast : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -497,9 +497,9 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_calendar", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -533,9 +533,9 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_empty", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,11 +569,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_endOfMonth", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -611,11 +611,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_Equals", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -653,11 +653,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_isBusinessDay", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -695,11 +695,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_isEndOfMonth", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -737,11 +737,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_isHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -779,11 +779,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_isWeekend", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="w",Description = "Reference to w")>] 
+        ([<ExcelArgument(Name="w",Description = "DayOfWeek")>] 
          w : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -821,9 +821,9 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_removedHolidays", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,11 +857,11 @@ module BespokeCalendarFunction =
     *)
     [<ExcelFunction(Name="_BespokeCalendar_removeHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BespokeCalendar",Description = "Reference to BespokeCalendar")>] 
+        ([<ExcelArgument(Name="BespokeCalendar",Description = "BespokeCalendar")>] 
          bespokecalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -896,9 +896,9 @@ module BespokeCalendarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BespokeCalendar_Range", Description="Create a range of BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BespokeCalendar")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

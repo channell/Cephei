@@ -41,7 +41,8 @@ type ConfigurationModel
 (*
     Functions
 *)
-    let _Configuration                             = cell (fun () -> new Configuration ())
+    let mutable
+        _Configuration                             = cell (fun () -> new Configuration ())
     let _applyBounds                               = cell (fun () -> _Configuration.Value.applyBounds)
     let _crossoverIsAdaptive                       = cell (fun () -> _Configuration.Value.crossoverIsAdaptive)
     let _crossoverProbability                      = cell (fun () -> _Configuration.Value.crossoverProbability)
@@ -71,13 +72,14 @@ type ConfigurationModel
     casting 
 *)
     
-    member internal this.Inject v = _Configuration.Value <- v
+    member internal this.Inject v = _Configuration <- v
     static member Cast (p : ICell<Configuration>) = 
         if p :? ConfigurationModel then 
             p :?> ConfigurationModel
         else
             let o = new ConfigurationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -54,7 +54,8 @@ type PiecewiseZeroSpreadedTermStructureModel
 (*
     Functions
 *)
-    let _PiecewiseZeroSpreadedTermStructure        = cell (fun () -> new PiecewiseZeroSpreadedTermStructure (h.Value, spreads.Value, dates.Value, compounding.Value, frequency.Value, dc.Value))
+    let mutable
+        _PiecewiseZeroSpreadedTermStructure        = cell (fun () -> new PiecewiseZeroSpreadedTermStructure (h.Value, spreads.Value, dates.Value, compounding.Value, frequency.Value, dc.Value))
     let _calendar                                  = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.calendar())
     let _dayCounter                                = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.maxDate())
@@ -65,13 +66,14 @@ type PiecewiseZeroSpreadedTermStructureModel
     casting 
 *)
     internal new () = new PiecewiseZeroSpreadedTermStructureModel(null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseZeroSpreadedTermStructure.Value <- v
+    member internal this.Inject v = _PiecewiseZeroSpreadedTermStructure <- v
     static member Cast (p : ICell<PiecewiseZeroSpreadedTermStructure>) = 
         if p :? PiecewiseZeroSpreadedTermStructureModel then 
             p :?> PiecewiseZeroSpreadedTermStructureModel
         else
             let o = new PiecewiseZeroSpreadedTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

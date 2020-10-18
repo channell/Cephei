@@ -39,15 +39,15 @@ module IntegrandFunction =
     *)
     [<ExcelFunction(Name="_Integrand", Description="Create a Integrand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Integrand_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Integrand")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="s0",Description = "Reference to s0")>] 
+        ([<ExcelArgument(Name="s0",Description = "double")>] 
          s0 : obj)
-        ([<ExcelArgument(Name="drift",Description = "Reference to drift")>] 
+        ([<ExcelArgument(Name="drift",Description = "double")>] 
          drift : obj)
-        ([<ExcelArgument(Name="variance",Description = "Reference to variance")>] 
+        ([<ExcelArgument(Name="variance",Description = "double")>] 
          variance : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,11 +94,11 @@ module IntegrandFunction =
     *)
     [<ExcelFunction(Name="_Integrand_value", Description="Create a Integrand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Integrand_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Integrand",Description = "Reference to Integrand")>] 
+        ([<ExcelArgument(Name="Integrand",Description = "Integrand")>] 
          integrand : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module IntegrandFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Integrand_Range", Description="Create a range of Integrand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Integrand_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Integrand")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module ExerciseFunction =
     *)
     [<ExcelFunction(Name="_Exercise_date", Description="Create a Exercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Exercise_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Exercise",Description = "Reference to Exercise")>] 
+        ([<ExcelArgument(Name="Exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module ExerciseFunction =
     *)
     [<ExcelFunction(Name="_Exercise_dates", Description="Create a Exercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Exercise_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Exercise",Description = "Reference to Exercise")>] 
+        ([<ExcelArgument(Name="Exercise",Description = "Exercise")>] 
          exercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module ExerciseFunction =
     *)
     [<ExcelFunction(Name="_Exercise", Description="Create a Exercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Exercise_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Exercise.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module ExerciseFunction =
     *)
     [<ExcelFunction(Name="_Exercise_lastDate", Description="Create a Exercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Exercise_lastDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Exercise",Description = "Reference to Exercise")>] 
+        ([<ExcelArgument(Name="Exercise",Description = "Exercise")>] 
          exercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module ExerciseFunction =
     *)
     [<ExcelFunction(Name="_Exercise_type", Description="Create a Exercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Exercise_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Exercise",Description = "Reference to Exercise")>] 
+        ([<ExcelArgument(Name="Exercise",Description = "Exercise")>] 
          exercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module ExerciseFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Exercise_Range", Description="Create a range of Exercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Exercise_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Exercise")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

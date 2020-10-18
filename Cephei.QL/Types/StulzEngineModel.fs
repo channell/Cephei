@@ -48,19 +48,21 @@ type StulzEngineModel
 (*
     Functions
 *)
-    let _StulzEngine                               = cell (fun () -> new StulzEngine (process1.Value, process2.Value, correlation.Value))
+    let mutable
+        _StulzEngine                               = cell (fun () -> new StulzEngine (process1.Value, process2.Value, correlation.Value))
     do this.Bind(_StulzEngine)
 (* 
     casting 
 *)
     internal new () = new StulzEngineModel(null,null,null)
-    member internal this.Inject v = _StulzEngine.Value <- v
+    member internal this.Inject v = _StulzEngine <- v
     static member Cast (p : ICell<StulzEngine>) = 
         if p :? StulzEngineModel then 
             p :?> StulzEngineModel
         else
             let o = new StulzEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

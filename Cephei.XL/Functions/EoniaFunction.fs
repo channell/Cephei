@@ -39,9 +39,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Eonia")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia1", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Eonia")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,11 +107,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_clone", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,9 +149,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_businessDayConvention", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,9 +185,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_endOfMonth", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,15 +221,15 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_forecastFixing1", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,11 +275,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_forecastFixing", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_forwardingTermStructure", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -353,11 +353,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_maturityDate", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,9 +395,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_currency", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -431,9 +431,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_dayCounter", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -467,9 +467,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_familyName", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -503,13 +503,13 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_fixing", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,9 +551,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_fixingCalendar", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -587,11 +587,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_fixingDate", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -629,9 +629,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_fixingDays", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,11 +665,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_isValidFixingDate", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -707,9 +707,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_name", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -743,11 +743,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_pastFixing", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -785,9 +785,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_tenor", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -821,9 +821,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_update", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,11 +857,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_valueDate", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -899,15 +899,15 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_addFixing", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -953,15 +953,15 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_addFixings", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1007,13 +1007,13 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_addFixings1", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1055,9 +1055,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_allowsNativeFixings", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1091,9 +1091,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_clearFixings", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1127,11 +1127,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_registerWith", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1169,9 +1169,9 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_timeSeries", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1205,11 +1205,11 @@ module EoniaFunction =
     *)
     [<ExcelFunction(Name="_Eonia_unregisterWith", Description="Create a Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Eonia",Description = "Reference to Eonia")>] 
+        ([<ExcelArgument(Name="Eonia",Description = "Eonia")>] 
          eonia : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1244,9 +1244,9 @@ module EoniaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Eonia_Range", Description="Create a range of Eonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Eonia_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Eonia")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

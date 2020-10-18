@@ -46,7 +46,8 @@ type pair_doubleModel
 (*
     Functions
 *)
-    let _pair_double                               = cell (fun () -> new pair_double (first.Value, second.Value))
+    let mutable
+        _pair_double                               = cell (fun () -> new pair_double (first.Value, second.Value))
     let _CompareTo                                 (other : ICell<Pair<double,double>>)   
                                                    = triv (fun () -> _pair_double.Value.CompareTo(other.Value))
     let _first                                     = triv (fun () -> _pair_double.Value.first)
@@ -59,13 +60,14 @@ type pair_doubleModel
     casting 
 *)
     internal new () = new pair_doubleModel(null,null)
-    member internal this.Inject v = _pair_double.Value <- v
+    member internal this.Inject v = _pair_double <- v
     static member Cast (p : ICell<pair_double>) = 
         if p :? pair_doubleModel then 
             p :?> pair_doubleModel
         else
             let o = new pair_doubleModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

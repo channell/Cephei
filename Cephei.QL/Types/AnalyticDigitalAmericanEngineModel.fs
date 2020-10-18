@@ -44,20 +44,22 @@ type AnalyticDigitalAmericanEngineModel
 (*
     Functions
 *)
-    let _AnalyticDigitalAmericanEngine             = cell (fun () -> new AnalyticDigitalAmericanEngine (Process.Value))
+    let mutable
+        _AnalyticDigitalAmericanEngine             = cell (fun () -> new AnalyticDigitalAmericanEngine (Process.Value))
     let _knock_in                                  = triv (fun () -> _AnalyticDigitalAmericanEngine.Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticDigitalAmericanEngineModel(null)
-    member internal this.Inject v = _AnalyticDigitalAmericanEngine.Value <- v
+    member internal this.Inject v = _AnalyticDigitalAmericanEngine <- v
     static member Cast (p : ICell<AnalyticDigitalAmericanEngine>) = 
         if p :? AnalyticDigitalAmericanEngineModel then 
             p :?> AnalyticDigitalAmericanEngineModel
         else
             let o = new AnalyticDigitalAmericanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

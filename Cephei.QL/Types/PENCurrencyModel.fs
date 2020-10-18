@@ -41,7 +41,8 @@ type PENCurrencyModel
 (*
     Functions
 *)
-    let _PENCurrency                               = cell (fun () -> new PENCurrency ())
+    let mutable
+        _PENCurrency                               = cell (fun () -> new PENCurrency ())
     let _code                                      = triv (fun () -> _PENCurrency.Value.code)
     let _empty                                     = triv (fun () -> _PENCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type PENCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _PENCurrency.Value <- v
+    member internal this.Inject v = _PENCurrency <- v
     static member Cast (p : ICell<PENCurrency>) = 
         if p :? PENCurrencyModel then 
             p :?> PENCurrencyModel
         else
             let o = new PENCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

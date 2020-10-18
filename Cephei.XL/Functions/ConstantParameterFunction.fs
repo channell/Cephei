@@ -39,11 +39,11 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter1", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantParameter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantParameter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_constraint", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -156,9 +156,9 @@ module ConstantParameterFunction =
     (*!! Impl unresolved
     [<ExcelFunction(Name="_ConstantParameter_implementation", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_implementation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_parameters", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,13 +229,13 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_setParam", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_setParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -277,9 +277,9 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_size", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -313,11 +313,11 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_testParams", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_testParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,11 +355,11 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_value", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantParameter",Description = "Reference to ConstantParameter")>] 
+        ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module ConstantParameterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantParameter_Range", Description="Create a range of ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConstantParameter")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

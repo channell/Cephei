@@ -56,7 +56,8 @@ type IsdaCdsEngineModel
 (*
     Functions
 *)
-    let _IsdaCdsEngine                             = cell (fun () -> new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))
+    let mutable
+        _IsdaCdsEngine                             = cell (fun () -> new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))
     let _isdaCreditCurve                           = triv (fun () -> _IsdaCdsEngine.Value.isdaCreditCurve())
     let _isdaRateCurve                             = triv (fun () -> _IsdaCdsEngine.Value.isdaRateCurve())
     do this.Bind(_IsdaCdsEngine)
@@ -64,13 +65,14 @@ type IsdaCdsEngineModel
     casting 
 *)
     internal new () = new IsdaCdsEngineModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _IsdaCdsEngine.Value <- v
+    member internal this.Inject v = _IsdaCdsEngine <- v
     static member Cast (p : ICell<IsdaCdsEngine>) = 
         if p :? IsdaCdsEngineModel then 
             p :?> IsdaCdsEngineModel
         else
             let o = new IsdaCdsEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

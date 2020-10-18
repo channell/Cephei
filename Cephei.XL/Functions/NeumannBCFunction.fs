@@ -39,11 +39,11 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyAfterApplying", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyAfterApplying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NeumannBC",Description = "Reference to NeumannBC")>] 
+        ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyAfterSolving", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyAfterSolving
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NeumannBC",Description = "Reference to NeumannBC")>] 
+        ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,11 +123,11 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyBeforeApplying", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyBeforeApplying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NeumannBC",Description = "Reference to NeumannBC")>] 
+        ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,13 +165,13 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyBeforeSolving", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyBeforeSolving
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NeumannBC",Description = "Reference to NeumannBC")>] 
+        ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,11 +213,11 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="side",Description = "Reference to side")>] 
+        ([<ExcelArgument(Name="side",Description = ".Side")>] 
          side : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,11 +256,11 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_setTime", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NeumannBC",Description = "Reference to NeumannBC")>] 
+        ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module NeumannBCFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NeumannBC_Range", Description="Create a range of NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NeumannBC")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

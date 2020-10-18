@@ -41,7 +41,8 @@ type EuwaxModel
 (*
     Functions
 *)
-    let _Euwax                                     = cell (fun () -> new Euwax ())
+    let mutable
+        _Euwax                                     = cell (fun () -> new Euwax ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _Euwax.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Euwax.Value.name())
@@ -50,13 +51,14 @@ type EuwaxModel
     casting 
 *)
     
-    member internal this.Inject v = _Euwax.Value <- v
+    member internal this.Inject v = _Euwax <- v
     static member Cast (p : ICell<Euwax>) = 
         if p :? EuwaxModel then 
             p :?> EuwaxModel
         else
             let o = new EuwaxModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

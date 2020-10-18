@@ -48,7 +48,8 @@ type GaussJacobiIntegrationModel
 (*
     Functions
 *)
-    let _GaussJacobiIntegration                    = cell (fun () -> new GaussJacobiIntegration (n.Value, alpha.Value, beta.Value))
+    let mutable
+        _GaussJacobiIntegration                    = cell (fun () -> new GaussJacobiIntegration (n.Value, alpha.Value, beta.Value))
     let _order                                     = triv (fun () -> _GaussJacobiIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussJacobiIntegration.Value.value(f.Value))
@@ -59,13 +60,14 @@ type GaussJacobiIntegrationModel
     casting 
 *)
     internal new () = new GaussJacobiIntegrationModel(null,null,null)
-    member internal this.Inject v = _GaussJacobiIntegration.Value <- v
+    member internal this.Inject v = _GaussJacobiIntegration <- v
     static member Cast (p : ICell<GaussJacobiIntegration>) = 
         if p :? GaussJacobiIntegrationModel then 
             p :?> GaussJacobiIntegrationModel
         else
             let o = new GaussJacobiIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -54,7 +54,8 @@ type KernelInterpolation2DModel
 (*
     Functions
 *)
-    let _KernelInterpolation2D                     = cell (fun () -> new KernelInterpolation2D (xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value, kernel.Value))
+    let mutable
+        _KernelInterpolation2D                     = cell (fun () -> new KernelInterpolation2D (xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value, kernel.Value))
     let _isInRange                                 (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _KernelInterpolation2D.Value.isInRange(x.Value, y.Value))
     let _locateX                                   (x : ICell<double>)   
@@ -87,13 +88,14 @@ type KernelInterpolation2DModel
     casting 
 *)
     internal new () = new KernelInterpolation2DModel(null,null,null,null,null,null)
-    member internal this.Inject v = _KernelInterpolation2D.Value <- v
+    member internal this.Inject v = _KernelInterpolation2D <- v
     static member Cast (p : ICell<KernelInterpolation2D>) = 
         if p :? KernelInterpolation2DModel then 
             p :?> KernelInterpolation2DModel
         else
             let o = new KernelInterpolation2DModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

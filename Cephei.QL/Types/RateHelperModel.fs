@@ -44,7 +44,8 @@ type RateHelperModel
 (*
     Functions
 *)
-    let _RateHelper                                = cell (fun () -> new RateHelper (quote.Value))
+    let mutable
+        _RateHelper                                = cell (fun () -> new RateHelper (quote.Value))
     let _earliestDate                              = triv (fun () -> _RateHelper.Value.earliestDate())
     let _impliedQuote                              = triv (fun () -> _RateHelper.Value.impliedQuote())
     let _latestDate                                = triv (fun () -> _RateHelper.Value.latestDate())
@@ -71,13 +72,14 @@ type RateHelperModel
     casting 
 *)
     internal new () = new RateHelperModel(null)
-    member internal this.Inject v = _RateHelper.Value <- v
+    member internal this.Inject v = _RateHelper <- v
     static member Cast (p : ICell<RateHelper>) = 
         if p :? RateHelperModel then 
             p :?> RateHelperModel
         else
             let o = new RateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -119,7 +121,8 @@ type RateHelperModel1
 (*
     Functions
 *)
-    let _RateHelper                                = cell (fun () -> new RateHelper (quote.Value))
+    let mutable
+        _RateHelper                                = cell (fun () -> new RateHelper (quote.Value))
     let _earliestDate                              = triv (fun () -> _RateHelper.Value.earliestDate())
     let _impliedQuote                              = triv (fun () -> _RateHelper.Value.impliedQuote())
     let _latestDate                                = triv (fun () -> _RateHelper.Value.latestDate())
@@ -146,13 +149,14 @@ type RateHelperModel1
     casting 
 *)
     internal new () = new RateHelperModel1(null)
-    member internal this.Inject v = _RateHelper.Value <- v
+    member internal this.Inject v = _RateHelper <- v
     static member Cast (p : ICell<RateHelper>) = 
         if p :? RateHelperModel1 then 
             p :?> RateHelperModel1
         else
             let o = new RateHelperModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -191,7 +195,8 @@ type RateHelperModel2
 (*
     Functions
 *)
-    let _RateHelper                                = cell (fun () -> new RateHelper ())
+    let mutable
+        _RateHelper                                = cell (fun () -> new RateHelper ())
     let _earliestDate                              = triv (fun () -> _RateHelper.Value.earliestDate())
     let _impliedQuote                              = triv (fun () -> _RateHelper.Value.impliedQuote())
     let _latestDate                                = triv (fun () -> _RateHelper.Value.latestDate())
@@ -218,13 +223,14 @@ type RateHelperModel2
     casting 
 *)
     
-    member internal this.Inject v = _RateHelper.Value <- v
+    member internal this.Inject v = _RateHelper <- v
     static member Cast (p : ICell<RateHelper>) = 
         if p :? RateHelperModel2 then 
             p :?> RateHelperModel2
         else
             let o = new RateHelperModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

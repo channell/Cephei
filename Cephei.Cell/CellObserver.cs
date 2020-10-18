@@ -23,7 +23,7 @@ namespace Cephei.Cell
             source.Change += OnChange;
         }
 
-        public void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
+        public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             switch (eventType)
             {
@@ -52,7 +52,7 @@ namespace Cephei.Cell
                         if (source != null)
                         {
                             _source = source;
-                            OnChange(CellEvent.Calculate, sender, epoch, session);
+                            OnChange(CellEvent.Calculate, sender, sender, epoch, session);
                         }
                     }
                     break;
@@ -79,7 +79,7 @@ namespace Cephei.Cell
             source.Change += OnChange;
         }
 
-        public void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
+        public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             switch (eventType)
             {
@@ -127,7 +127,7 @@ namespace Cephei.Cell
             source.Change += OnChange;
         }
 
-        public void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
+        public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             switch (eventType)
             {

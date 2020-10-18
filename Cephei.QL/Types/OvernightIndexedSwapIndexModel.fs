@@ -52,7 +52,8 @@ type OvernightIndexedSwapIndexModel
 (*
     Functions
 *)
-    let _OvernightIndexedSwapIndex                 = cell (fun () -> new OvernightIndexedSwapIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, overnightIndex.Value))
+    let mutable
+        _OvernightIndexedSwapIndex                 = cell (fun () -> new OvernightIndexedSwapIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, overnightIndex.Value))
     let _overnightIndex                            = triv (fun () -> _OvernightIndexedSwapIndex.Value.overnightIndex())
     let _underlyingSwap                            (fixingDate : ICell<Date>)   
                                                    = triv (fun () -> _OvernightIndexedSwapIndex.Value.underlyingSwap(fixingDate.Value))
@@ -115,13 +116,14 @@ type OvernightIndexedSwapIndexModel
     casting 
 *)
     internal new () = new OvernightIndexedSwapIndexModel(null,null,null,null,null)
-    member internal this.Inject v = _OvernightIndexedSwapIndex.Value <- v
+    member internal this.Inject v = _OvernightIndexedSwapIndex <- v
     static member Cast (p : ICell<OvernightIndexedSwapIndex>) = 
         if p :? OvernightIndexedSwapIndexModel then 
             p :?> OvernightIndexedSwapIndexModel
         else
             let o = new OvernightIndexedSwapIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

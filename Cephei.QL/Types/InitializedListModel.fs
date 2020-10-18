@@ -41,7 +41,8 @@ type InitializedListModel<'T>
 (*
     Functions
 *)
-    let _InitializedList                           = cell (fun () -> new InitializedList<'T> ())
+    let mutable
+        _InitializedList                           = cell (fun () -> new InitializedList<'T> ())
     let _Erase                                     = cell (fun () -> _InitializedList.Value.Erase()
                                                                      _InitializedList.Value)
     do this.Bind(_InitializedList)
@@ -67,7 +68,8 @@ type InitializedListModel1<'T>
 (*
     Functions
 *)
-    let _InitializedList                           = cell (fun () -> new InitializedList<'T> (size.Value))
+    let mutable
+        _InitializedList                           = cell (fun () -> new InitializedList<'T> (size.Value))
     let _Erase                                     = cell (fun () -> _InitializedList.Value.Erase()
                                                                      _InitializedList.Value)
     do this.Bind(_InitializedList)
@@ -96,7 +98,8 @@ type InitializedListModel2<'T>
 (*
     Functions
 *)
-    let _InitializedList                           = cell (fun () -> new InitializedList<'T> (size.Value, value.Value))
+    let mutable
+        _InitializedList                           = cell (fun () -> new InitializedList<'T> (size.Value, value.Value))
     let _Erase                                     = cell (fun () -> _InitializedList.Value.Erase()
                                                                      _InitializedList.Value)
     do this.Bind(_InitializedList)

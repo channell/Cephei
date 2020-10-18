@@ -21,7 +21,7 @@ namespace Cephei.Cell
     /// <param name="sender">the cell that triggered this change</param>
     /// <param name="epoch">the time epoch of the original source change.. used for throttling</param>
     /// <param name="transaction">optionaly the transaction that is completing</param>
-    public delegate void CellChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session);
+    public delegate void CellChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session);
 
     /// <summary>
     /// Cells and observers that handle change events
@@ -39,7 +39,7 @@ namespace Cephei.Cell
         /// order</param>
         /// <param name="session">reference to the session that the eventi was originally
         /// source in</param>
-        void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session);
+        void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session);
     }
 
     /// <summary>
@@ -77,10 +77,10 @@ namespace Cephei.Cell
         bool HasFunction { get; }
 
         /// <summary>
-        /// Clone the dependancies of another cell
+        /// Clone the dependencies of another cell
         /// </summary>
         /// <param name="source"></param>
-        void Clone(ICell source);
+        void Merge(ICell source, Model model);
 
         /// <summary>
         /// Add notifcation 
@@ -129,6 +129,15 @@ namespace Cephei.Cell
     public interface IFast
     {
     }
+
+    /// <summary>
+    /// Model that wrapps a subject cell
+    /// </summary>
+    public interface ICellModel 
+    {
+        ICell Cell { get; }
+    }
+
 
     /// <summary>
     /// Cell provides a  module functions of the Cell framework and a thread static
@@ -317,7 +326,7 @@ namespace Cephei.Cell
         /// <param name="func"></param>
         public static ICell[] Profile<T>(FSharpFunc<Unit, T> func)
         {
-            return ProfileObject<T>(func);
+            return ProfileObject(func);
         }
 
         /// <summary>
@@ -326,7 +335,7 @@ namespace Cephei.Cell
         /// <param name="func"></param>
         public static ICell[] Profile<T>(FSharpFunc<Unit, FSharpFunc<Unit, T>> func)
         {
-            return ProfileObject<T>(func);
+            return ProfileObject(func);
         }
 
         /// <summary>
@@ -343,9 +352,14 @@ namespace Cephei.Cell
             {
                 var o = f.GetValue(func);
                 fd.Add(f.Name, o);
-                if (o is ICell c && !(c is Model))
+                if (o is ICell c && (!(c is Model) || c is ICellModel))
                 {
                     l.AddLast(c);
+                    if (c is ITrivial t)
+                    {
+                        foreach (var x in ProfileObject(t.GetFunction()))
+                            l.AddLast(x);
+                    }
                 }
             }
 

@@ -46,7 +46,8 @@ type StatsHolderModel
 (*
     Functions
 *)
-    let _StatsHolder                               = cell (fun () -> new StatsHolder (mean.Value, standardDeviation.Value))
+    let mutable
+        _StatsHolder                               = cell (fun () -> new StatsHolder (mean.Value, standardDeviation.Value))
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _StatsHolder.Value.add(value.Value, weight.Value)
                                                                      _StatsHolder.Value)
@@ -74,13 +75,14 @@ type StatsHolderModel
     casting 
 *)
     internal new () = new StatsHolderModel(null,null)
-    member internal this.Inject v = _StatsHolder.Value <- v
+    member internal this.Inject v = _StatsHolder <- v
     static member Cast (p : ICell<StatsHolder>) = 
         if p :? StatsHolderModel then 
             p :?> StatsHolderModel
         else
             let o = new StatsHolderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -122,7 +124,8 @@ type StatsHolderModel1
 (*
     Functions
 *)
-    let _StatsHolder                               = cell (fun () -> new StatsHolder ())
+    let mutable
+        _StatsHolder                               = cell (fun () -> new StatsHolder ())
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _StatsHolder.Value.add(value.Value, weight.Value)
                                                                      _StatsHolder.Value)
@@ -150,13 +153,14 @@ type StatsHolderModel1
     casting 
 *)
     
-    member internal this.Inject v = _StatsHolder.Value <- v
+    member internal this.Inject v = _StatsHolder <- v
     static member Cast (p : ICell<StatsHolder>) = 
         if p :? StatsHolderModel1 then 
             p :?> StatsHolderModel1
         else
             let o = new StatsHolderModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

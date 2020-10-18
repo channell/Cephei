@@ -46,7 +46,8 @@ type NonCentralChiSquareDistributionModel
 (*
     Functions
 *)
-    let _NonCentralChiSquareDistribution           = cell (fun () -> new NonCentralChiSquareDistribution (df.Value, ncp.Value))
+    let mutable
+        _NonCentralChiSquareDistribution           = cell (fun () -> new NonCentralChiSquareDistribution (df.Value, ncp.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _NonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_NonCentralChiSquareDistribution)
@@ -54,13 +55,14 @@ type NonCentralChiSquareDistributionModel
     casting 
 *)
     internal new () = new NonCentralChiSquareDistributionModel(null,null)
-    member internal this.Inject v = _NonCentralChiSquareDistribution.Value <- v
+    member internal this.Inject v = _NonCentralChiSquareDistribution <- v
     static member Cast (p : ICell<NonCentralChiSquareDistribution>) = 
         if p :? NonCentralChiSquareDistributionModel then 
             p :?> NonCentralChiSquareDistributionModel
         else
             let o = new NonCentralChiSquareDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

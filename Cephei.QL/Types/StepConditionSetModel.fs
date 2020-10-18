@@ -41,7 +41,8 @@ type StepConditionSetModel<'array_type when 'array_type :> Vector>
 (*
     Functions
 *)
-    let _StepConditionSet                          = cell (fun () -> new StepConditionSet<'array_type> ())
+    let mutable
+        _StepConditionSet                          = cell (fun () -> new StepConditionSet<'array_type> ())
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _StepConditionSet.Value.applyTo(o.Value, t.Value)
                                                                      _StepConditionSet.Value)

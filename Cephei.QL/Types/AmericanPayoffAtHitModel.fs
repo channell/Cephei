@@ -52,7 +52,8 @@ type AmericanPayoffAtHitModel
 (*
     Functions
 *)
-    let _AmericanPayoffAtHit                       = cell (fun () -> new AmericanPayoffAtHit (spot.Value, discount.Value, dividendDiscount.Value, variance.Value, payoff.Value))
+    let mutable
+        _AmericanPayoffAtHit                       = cell (fun () -> new AmericanPayoffAtHit (spot.Value, discount.Value, dividendDiscount.Value, variance.Value, payoff.Value))
     let _delta                                     = triv (fun () -> _AmericanPayoffAtHit.Value.delta())
     let _gamma                                     = triv (fun () -> _AmericanPayoffAtHit.Value.gamma())
     let _rho                                       (maturity : ICell<double>)   
@@ -63,13 +64,14 @@ type AmericanPayoffAtHitModel
     casting 
 *)
     internal new () = new AmericanPayoffAtHitModel(null,null,null,null,null)
-    member internal this.Inject v = _AmericanPayoffAtHit.Value <- v
+    member internal this.Inject v = _AmericanPayoffAtHit <- v
     static member Cast (p : ICell<AmericanPayoffAtHit>) = 
         if p :? AmericanPayoffAtHitModel then 
             p :?> AmericanPayoffAtHitModel
         else
             let o = new AmericanPayoffAtHitModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

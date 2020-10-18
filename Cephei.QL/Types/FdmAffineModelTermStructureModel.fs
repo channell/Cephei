@@ -54,7 +54,8 @@ type FdmAffineModelTermStructureModel
 (*
     Functions
 *)
-    let _FdmAffineModelTermStructure               = cell (fun () -> new FdmAffineModelTermStructure (r.Value, cal.Value, dayCounter.Value, referenceDate.Value, modelReferenceDate.Value, model.Value))
+    let mutable
+        _FdmAffineModelTermStructure               = cell (fun () -> new FdmAffineModelTermStructure (r.Value, cal.Value, dayCounter.Value, referenceDate.Value, modelReferenceDate.Value, model.Value))
     let _maxDate                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.maxDate())
     let _setVariable                               (r : ICell<Vector>)   
                                                    = triv (fun () -> _FdmAffineModelTermStructure.Value.setVariable(r.Value)
@@ -97,13 +98,14 @@ type FdmAffineModelTermStructureModel
     casting 
 *)
     internal new () = new FdmAffineModelTermStructureModel(null,null,null,null,null,null)
-    member internal this.Inject v = _FdmAffineModelTermStructure.Value <- v
+    member internal this.Inject v = _FdmAffineModelTermStructure <- v
     static member Cast (p : ICell<FdmAffineModelTermStructure>) = 
         if p :? FdmAffineModelTermStructureModel then 
             p :?> FdmAffineModelTermStructureModel
         else
             let o = new FdmAffineModelTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

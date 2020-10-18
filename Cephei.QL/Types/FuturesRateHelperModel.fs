@@ -60,7 +60,8 @@ type FuturesRateHelperModel
 (*
     Functions
 *)
-    let _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convAdj.Value, Type.Value))
+    let mutable
+        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convAdj.Value, Type.Value))
     let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
     let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
     let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
@@ -88,13 +89,14 @@ type FuturesRateHelperModel
     casting 
 *)
     internal new () = new FuturesRateHelperModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel then 
             p :?> FuturesRateHelperModel
         else
             let o = new FuturesRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -153,7 +155,8 @@ type FuturesRateHelperModel1
 (*
     Functions
 *)
-    let _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))
+    let mutable
+        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))
     let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
     let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
     let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
@@ -181,13 +184,14 @@ type FuturesRateHelperModel1
     casting 
 *)
     internal new () = new FuturesRateHelperModel1(null,null,null,null,null)
-    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel1 then 
             p :?> FuturesRateHelperModel1
         else
             let o = new FuturesRateHelperModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -242,7 +246,8 @@ type FuturesRateHelperModel2
 (*
     Functions
 *)
-    let _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))
+    let mutable
+        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))
     let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
     let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
     let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
@@ -270,13 +275,14 @@ type FuturesRateHelperModel2
     casting 
 *)
     internal new () = new FuturesRateHelperModel2(null,null,null,null,null)
-    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel2 then 
             p :?> FuturesRateHelperModel2
         else
             let o = new FuturesRateHelperModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -333,7 +339,8 @@ type FuturesRateHelperModel3
 (*
     Functions
 *)
-    let _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))
+    let mutable
+        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))
     let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
     let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
     let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
@@ -361,13 +368,14 @@ type FuturesRateHelperModel3
     casting 
 *)
     internal new () = new FuturesRateHelperModel3(null,null,null,null,null,null)
-    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel3 then 
             p :?> FuturesRateHelperModel3
         else
             let o = new FuturesRateHelperModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -425,7 +433,8 @@ type FuturesRateHelperModel4
 (*
     Functions
 *)
-    let _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))
+    let mutable
+        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))
     let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
     let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
     let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
@@ -453,13 +462,14 @@ type FuturesRateHelperModel4
     casting 
 *)
     internal new () = new FuturesRateHelperModel4(null,null,null,null,null,null)
-    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel4 then 
             p :?> FuturesRateHelperModel4
         else
             let o = new FuturesRateHelperModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -523,7 +533,8 @@ type FuturesRateHelperModel5
 (*
     Functions
 *)
-    let _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convexityAdjustment.Value, Type.Value))
+    let mutable
+        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convexityAdjustment.Value, Type.Value))
     let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
     let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
     let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
@@ -551,13 +562,14 @@ type FuturesRateHelperModel5
     casting 
 *)
     internal new () = new FuturesRateHelperModel5(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel5 then 
             p :?> FuturesRateHelperModel5
         else
             let o = new FuturesRateHelperModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

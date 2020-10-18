@@ -54,7 +54,8 @@ type QuadraticHelperModel
 (*
     Functions
 *)
-    let _QuadraticHelper                           = cell (fun () -> new QuadraticHelper (xPrev.Value, xNext.Value, fPrev.Value, fNext.Value, fAverage.Value, prevPrimitive.Value))
+    let mutable
+        _QuadraticHelper                           = cell (fun () -> new QuadraticHelper (xPrev.Value, xNext.Value, fPrev.Value, fNext.Value, fAverage.Value, prevPrimitive.Value))
     let _fNext                                     = triv (fun () -> _QuadraticHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
                                                    = triv (fun () -> _QuadraticHelper.Value.primitive(x.Value))
@@ -65,13 +66,14 @@ type QuadraticHelperModel
     casting 
 *)
     internal new () = new QuadraticHelperModel(null,null,null,null,null,null)
-    member internal this.Inject v = _QuadraticHelper.Value <- v
+    member internal this.Inject v = _QuadraticHelper <- v
     static member Cast (p : ICell<QuadraticHelper>) = 
         if p :? QuadraticHelperModel then 
             p :?> QuadraticHelperModel
         else
             let o = new QuadraticHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,7 +50,8 @@ type BachelierSwaptionEngineModel
 (*
     Functions
 *)
-    let _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))
+    let mutable
+        _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
@@ -58,13 +59,14 @@ type BachelierSwaptionEngineModel
     casting 
 *)
     internal new () = new BachelierSwaptionEngineModel(null,null,null,null)
-    member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
+    member internal this.Inject v = _BachelierSwaptionEngine <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel then 
             p :?> BachelierSwaptionEngineModel
         else
             let o = new BachelierSwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type BachelierSwaptionEngineModel1
 (*
     Functions
 *)
-    let _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, model.Value))
+    let mutable
+        _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
@@ -106,13 +109,14 @@ type BachelierSwaptionEngineModel1
     casting 
 *)
     internal new () = new BachelierSwaptionEngineModel1(null,null,null)
-    member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
+    member internal this.Inject v = _BachelierSwaptionEngine <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel1 then 
             p :?> BachelierSwaptionEngineModel1
         else
             let o = new BachelierSwaptionEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -147,7 +151,8 @@ type BachelierSwaptionEngineModel2
 (*
     Functions
 *)
-    let _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))
+    let mutable
+        _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
@@ -155,13 +160,14 @@ type BachelierSwaptionEngineModel2
     casting 
 *)
     internal new () = new BachelierSwaptionEngineModel2(null,null,null,null)
-    member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
+    member internal this.Inject v = _BachelierSwaptionEngine <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel2 then 
             p :?> BachelierSwaptionEngineModel2
         else
             let o = new BachelierSwaptionEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

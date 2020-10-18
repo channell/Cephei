@@ -39,7 +39,7 @@ module PositiveConstraintFunction =
     *)
     [<ExcelFunction(Name="_PositiveConstraint", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PositiveConstraint")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module PositiveConstraintFunction =
     *)
     [<ExcelFunction(Name="_PositiveConstraint_empty", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PositiveConstraint",Description = "Reference to PositiveConstraint")>] 
+        ([<ExcelArgument(Name="PositiveConstraint",Description = "PositiveConstraint")>] 
          positiveconstraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,11 +106,11 @@ module PositiveConstraintFunction =
     *)
     [<ExcelFunction(Name="_PositiveConstraint_lowerBound", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PositiveConstraint",Description = "Reference to PositiveConstraint")>] 
+        ([<ExcelArgument(Name="PositiveConstraint",Description = "PositiveConstraint")>] 
          positiveconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,11 +148,11 @@ module PositiveConstraintFunction =
     *)
     [<ExcelFunction(Name="_PositiveConstraint_test", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PositiveConstraint",Description = "Reference to PositiveConstraint")>] 
+        ([<ExcelArgument(Name="PositiveConstraint",Description = "PositiveConstraint")>] 
          positiveconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,15 +190,15 @@ module PositiveConstraintFunction =
     *)
     [<ExcelFunction(Name="_PositiveConstraint_update", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PositiveConstraint",Description = "Reference to PositiveConstraint")>] 
+        ([<ExcelArgument(Name="PositiveConstraint",Description = "PositiveConstraint")>] 
          positiveconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module PositiveConstraintFunction =
     *)
     [<ExcelFunction(Name="_PositiveConstraint_upperBound", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PositiveConstraint",Description = "Reference to PositiveConstraint")>] 
+        ([<ExcelArgument(Name="PositiveConstraint",Description = "PositiveConstraint")>] 
          positiveconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module PositiveConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PositiveConstraint_Range", Description="Create a range of PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PositiveConstraint")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

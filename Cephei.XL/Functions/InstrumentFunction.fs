@@ -39,9 +39,9 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_CASH", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_errorEstimate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_isExpired", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_NPV", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_result", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,11 +225,11 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_setPricingEngine", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,9 +267,9 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_valuationDate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Instrument",Description = "Reference to Instrument")>] 
+        ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module InstrumentFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Instrument_Range", Description="Create a range of Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Instrument")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

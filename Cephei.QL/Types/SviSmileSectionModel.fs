@@ -48,7 +48,8 @@ type SviSmileSectionModel
 (*
     Functions
 *)
-    let _SviSmileSection                           = cell (fun () -> new SviSmileSection (timeToExpiry.Value, forward.Value, sviParameters.Value))
+    let mutable
+        _SviSmileSection                           = cell (fun () -> new SviSmileSection (timeToExpiry.Value, forward.Value, sviParameters.Value))
     let _atmLevel                                  = triv (fun () -> _SviSmileSection.Value.atmLevel())
     let _init                                      = triv (fun () -> _SviSmileSection.Value.init()
                                                                      _SviSmileSection.Value)
@@ -81,13 +82,14 @@ type SviSmileSectionModel
     casting 
 *)
     internal new () = new SviSmileSectionModel(null,null,null)
-    member internal this.Inject v = _SviSmileSection.Value <- v
+    member internal this.Inject v = _SviSmileSection <- v
     static member Cast (p : ICell<SviSmileSection>) = 
         if p :? SviSmileSectionModel then 
             p :?> SviSmileSectionModel
         else
             let o = new SviSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -145,7 +147,8 @@ type SviSmileSectionModel1
 (*
     Functions
 *)
-    let _SviSmileSection                           = cell (fun () -> new SviSmileSection (d.Value, forward.Value, sviParameters.Value, dc.Value))
+    let mutable
+        _SviSmileSection                           = cell (fun () -> new SviSmileSection (d.Value, forward.Value, sviParameters.Value, dc.Value))
     let _atmLevel                                  = triv (fun () -> _SviSmileSection.Value.atmLevel())
     let _init                                      = triv (fun () -> _SviSmileSection.Value.init()
                                                                      _SviSmileSection.Value)
@@ -178,13 +181,14 @@ type SviSmileSectionModel1
     casting 
 *)
     internal new () = new SviSmileSectionModel1(null,null,null,null)
-    member internal this.Inject v = _SviSmileSection.Value <- v
+    member internal this.Inject v = _SviSmileSection <- v
     static member Cast (p : ICell<SviSmileSection>) = 
         if p :? SviSmileSectionModel1 then 
             p :?> SviSmileSectionModel1
         else
             let o = new SviSmileSectionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,7 +39,7 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EEKCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_code", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_empty", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_Equals", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_format", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_fractionsPerUnit", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_fractionSymbol", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_name", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_numericCode", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_rounding", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_symbol", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_ToString", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module EEKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EEKCurrency_triangulationCurrency", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EEKCurrency",Description = "Reference to EEKCurrency")>] 
+        ([<ExcelArgument(Name="EEKCurrency",Description = "EEKCurrency")>] 
          eekcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module EEKCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EEKCurrency_Range", Description="Create a range of EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EEKCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

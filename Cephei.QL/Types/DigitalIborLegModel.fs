@@ -46,7 +46,8 @@ type DigitalIborLegModel
 (*
     Functions
 *)
-    let _DigitalIborLeg                            = cell (fun () -> new DigitalIborLeg (schedule.Value, index.Value))
+    let mutable
+        _DigitalIborLeg                            = cell (fun () -> new DigitalIborLeg (schedule.Value, index.Value))
     let _inArrears                                 = triv (fun () -> _DigitalIborLeg.Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
                                                    = triv (fun () -> _DigitalIborLeg.Value.inArrears(flag.Value))
@@ -105,13 +106,14 @@ type DigitalIborLegModel
     casting 
 *)
     internal new () = new DigitalIborLegModel(null,null)
-    member internal this.Inject v = _DigitalIborLeg.Value <- v
+    member internal this.Inject v = _DigitalIborLeg <- v
     static member Cast (p : ICell<DigitalIborLeg>) = 
         if p :? DigitalIborLegModel then 
             p :?> DigitalIborLegModel
         else
             let o = new DigitalIborLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

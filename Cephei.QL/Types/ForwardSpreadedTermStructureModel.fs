@@ -46,7 +46,8 @@ type ForwardSpreadedTermStructureModel
 (*
     Functions
 *)
-    let _ForwardSpreadedTermStructure              = cell (fun () -> new ForwardSpreadedTermStructure (h.Value, spread.Value))
+    let mutable
+        _ForwardSpreadedTermStructure              = cell (fun () -> new ForwardSpreadedTermStructure (h.Value, spread.Value))
     let _calendar                                  = triv (fun () -> _ForwardSpreadedTermStructure.Value.calendar())
     let _dayCounter                                = triv (fun () -> _ForwardSpreadedTermStructure.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _ForwardSpreadedTermStructure.Value.maxDate())
@@ -58,13 +59,14 @@ type ForwardSpreadedTermStructureModel
     casting 
 *)
     internal new () = new ForwardSpreadedTermStructureModel(null,null)
-    member internal this.Inject v = _ForwardSpreadedTermStructure.Value <- v
+    member internal this.Inject v = _ForwardSpreadedTermStructure <- v
     static member Cast (p : ICell<ForwardSpreadedTermStructure>) = 
         if p :? ForwardSpreadedTermStructureModel then 
             p :?> ForwardSpreadedTermStructureModel
         else
             let o = new ForwardSpreadedTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

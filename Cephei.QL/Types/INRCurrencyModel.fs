@@ -41,7 +41,8 @@ type INRCurrencyModel
 (*
     Functions
 *)
-    let _INRCurrency                               = cell (fun () -> new INRCurrency ())
+    let mutable
+        _INRCurrency                               = cell (fun () -> new INRCurrency ())
     let _code                                      = triv (fun () -> _INRCurrency.Value.code)
     let _empty                                     = triv (fun () -> _INRCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type INRCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _INRCurrency.Value <- v
+    member internal this.Inject v = _INRCurrency <- v
     static member Cast (p : ICell<INRCurrency>) = 
         if p :? INRCurrencyModel then 
             p :?> INRCurrencyModel
         else
             let o = new INRCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

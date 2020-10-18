@@ -41,7 +41,8 @@ type HUFCurrencyModel
 (*
     Functions
 *)
-    let _HUFCurrency                               = cell (fun () -> new HUFCurrency ())
+    let mutable
+        _HUFCurrency                               = cell (fun () -> new HUFCurrency ())
     let _code                                      = triv (fun () -> _HUFCurrency.Value.code)
     let _empty                                     = triv (fun () -> _HUFCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type HUFCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _HUFCurrency.Value <- v
+    member internal this.Inject v = _HUFCurrency <- v
     static member Cast (p : ICell<HUFCurrency>) = 
         if p :? HUFCurrencyModel then 
             p :?> HUFCurrencyModel
         else
             let o = new HUFCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

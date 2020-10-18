@@ -41,7 +41,8 @@ type OvernightIndexedCouponPricerModel
 (*
     Functions
 *)
-    let _OvernightIndexedCouponPricer              = cell (fun () -> new OvernightIndexedCouponPricer ())
+    let mutable
+        _OvernightIndexedCouponPricer              = cell (fun () -> new OvernightIndexedCouponPricer ())
     let _capletPrice                               (d : ICell<double>)   
                                                    = triv (fun () -> _OvernightIndexedCouponPricer.Value.capletPrice(d.Value))
     let _capletRate                                (d : ICell<double>)   
@@ -68,13 +69,14 @@ type OvernightIndexedCouponPricerModel
     casting 
 *)
     
-    member internal this.Inject v = _OvernightIndexedCouponPricer.Value <- v
+    member internal this.Inject v = _OvernightIndexedCouponPricer <- v
     static member Cast (p : ICell<OvernightIndexedCouponPricer>) = 
         if p :? OvernightIndexedCouponPricerModel then 
             p :?> OvernightIndexedCouponPricerModel
         else
             let o = new OvernightIndexedCouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

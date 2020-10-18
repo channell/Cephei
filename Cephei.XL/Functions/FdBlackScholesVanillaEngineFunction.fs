@@ -40,25 +40,25 @@ module FdBlackScholesVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FdBlackScholesVanillaEngine1", Description="Create a FdBlackScholesVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesVanillaEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdBlackScholesVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="quantoHelper",Description = "Reference to quantoHelper")>] 
+        ([<ExcelArgument(Name="quantoHelper",Description = "FdBlackScholesVanillaEngine")>] 
          quantoHelper : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "Reference to tGrid")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "FdBlackScholesVanillaEngine")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "Reference to xGrid")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "FdBlackScholesVanillaEngine")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "Reference to dampingSteps")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "FdBlackScholesVanillaEngine")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "Reference to schemeDesc")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdBlackScholesVanillaEngine")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "Reference to localVol")>] 
+        ([<ExcelArgument(Name="localVol",Description = "FdBlackScholesVanillaEngine")>] 
          localVol : obj)
-        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "Reference to illegalLocalVolOverwrite")>] 
+        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
-        ([<ExcelArgument(Name="cashDividendModel",Description = "Reference to cashDividendModel")>] 
+        ([<ExcelArgument(Name="cashDividendModel",Description = "FdBlackScholesVanillaEngine")>] 
          cashDividendModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,23 +125,23 @@ module FdBlackScholesVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FdBlackScholesVanillaEngine", Description="Create a FdBlackScholesVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdBlackScholesVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "Reference to tGrid")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "FdBlackScholesVanillaEngine")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "Reference to xGrid")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "FdBlackScholesVanillaEngine")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "Reference to dampingSteps")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "FdBlackScholesVanillaEngine")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "Reference to schemeDesc")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdBlackScholesVanillaEngine")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "Reference to localVol")>] 
+        ([<ExcelArgument(Name="localVol",Description = "FdBlackScholesVanillaEngine")>] 
          localVol : obj)
-        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "Reference to illegalLocalVolOverwrite")>] 
+        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
-        ([<ExcelArgument(Name="cashDividendModel",Description = "Reference to cashDividendModel")>] 
+        ([<ExcelArgument(Name="cashDividendModel",Description = "FdBlackScholesVanillaEngine")>] 
          cashDividendModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,9 +201,9 @@ module FdBlackScholesVanillaEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdBlackScholesVanillaEngine_Range", Description="Create a range of FdBlackScholesVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

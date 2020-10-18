@@ -39,13 +39,13 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Callability")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "Callability.Price")>] 
          price : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Callability.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_date", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_price", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_type", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_accept", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,13 +238,13 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_hasOccurred", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_registerWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_unregisterWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Callability",Description = "Reference to Callability")>] 
+        ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -367,9 +367,9 @@ module CallabilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Callability_Range", Description="Create a range of Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Callability")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

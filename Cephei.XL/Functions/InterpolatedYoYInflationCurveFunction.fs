@@ -41,9 +41,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_baseDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -77,9 +77,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_Clone", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,9 +113,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_data", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,9 +149,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_data_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,9 +185,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dates", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,9 +221,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dates_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,9 +257,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_forwards", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_forwards
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,27 +293,27 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="lag",Description = "Reference to lag")>] 
+        ([<ExcelArgument(Name="lag",Description = "Period")>] 
          lag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="rates",Description = "Reference to rates")>] 
+        ([<ExcelArgument(Name="rates",Description = "double")>] 
          rates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -384,25 +384,25 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve1", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="lag",Description = "Reference to lag")>] 
+        ([<ExcelArgument(Name="lag",Description = "Period")>] 
          lag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="rates",Description = "Reference to rates")>] 
+        ([<ExcelArgument(Name="rates",Description = "double")>] 
          rates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -469,9 +469,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_interpolation_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_interpolator_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -541,9 +541,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -577,9 +577,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxDate_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -613,9 +613,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_nodes", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -649,9 +649,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_rates", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_rates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -685,9 +685,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_setupInterpolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -721,9 +721,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_times", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -757,9 +757,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_times_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -793,17 +793,17 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -853,15 +853,15 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -907,13 +907,13 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -955,11 +955,11 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -997,9 +997,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_baseRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_baseRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1033,9 +1033,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_frequency", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1069,9 +1069,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_hasSeasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_hasSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1105,9 +1105,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_indexIsInterpolated", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_indexIsInterpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1141,9 +1141,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_nominalTermStructure", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_nominalTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1177,9 +1177,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_observationLag", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1213,9 +1213,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_seasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_seasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Seasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1249,11 +1249,11 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_setSeasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_setSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="seasonality",Description = "Reference to seasonality")>] 
+        ([<ExcelArgument(Name="seasonality",Description = "Seasonality")>] 
          seasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1291,9 +1291,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_calendar", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1327,9 +1327,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dayCounter", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1363,9 +1363,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxTime", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1399,9 +1399,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_referenceDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1435,9 +1435,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_settlementDays", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1471,11 +1471,11 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_timeFromReference", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1513,9 +1513,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_update", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1549,9 +1549,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_allowsExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1585,11 +1585,11 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_disableExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1627,11 +1627,11 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_enableExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1669,9 +1669,9 @@ module InterpolatedYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_extrapolate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "Reference to InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedYoYInflationCurve",Description = "InterpolatedYoYInflationCurve")>] 
          interpolatedyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1702,9 +1702,9 @@ module InterpolatedYoYInflationCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_Range", Description="Create a range of InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatedYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

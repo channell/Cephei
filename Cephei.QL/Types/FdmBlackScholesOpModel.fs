@@ -56,7 +56,8 @@ type FdmBlackScholesOpModel
 (*
     Functions
 *)
-    let _FdmBlackScholesOp                         = cell (fun () -> new FdmBlackScholesOp (mesher.Value, bsProcess.Value, strike.Value, localVol.Value, illegalLocalVolOverwrite.Value, direction.Value, quantoHelper.Value))
+    let mutable
+        _FdmBlackScholesOp                         = cell (fun () -> new FdmBlackScholesOp (mesher.Value, bsProcess.Value, strike.Value, localVol.Value, illegalLocalVolOverwrite.Value, direction.Value, quantoHelper.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _FdmBlackScholesOp.Value.add(A.Value, B.Value))
     let _apply                                     (r : ICell<Vector>)   
@@ -95,13 +96,14 @@ type FdmBlackScholesOpModel
     casting 
 *)
     internal new () = new FdmBlackScholesOpModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdmBlackScholesOp.Value <- v
+    member internal this.Inject v = _FdmBlackScholesOp <- v
     static member Cast (p : ICell<FdmBlackScholesOp>) = 
         if p :? FdmBlackScholesOpModel then 
             p :?> FdmBlackScholesOpModel
         else
             let o = new FdmBlackScholesOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

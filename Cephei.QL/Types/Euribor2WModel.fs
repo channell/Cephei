@@ -44,7 +44,8 @@ type Euribor2WModel
 (*
     Functions
 *)
-    let _Euribor2W                                 = cell (fun () -> new Euribor2W (h.Value))
+    let mutable
+        _Euribor2W                                 = cell (fun () -> new Euribor2W (h.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor2W.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor2W.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type Euribor2WModel
     casting 
 *)
     internal new () = new Euribor2WModel(null)
-    member internal this.Inject v = _Euribor2W.Value <- v
+    member internal this.Inject v = _Euribor2W <- v
     static member Cast (p : ICell<Euribor2W>) = 
         if p :? Euribor2WModel then 
             p :?> Euribor2WModel
         else
             let o = new Euribor2WModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type Euribor2WModel1
 (*
     Functions
 *)
-    let _Euribor2W                                 = cell (fun () -> new Euribor2W ())
+    let mutable
+        _Euribor2W                                 = cell (fun () -> new Euribor2W ())
     let _businessDayConvention                     = triv (fun () -> _Euribor2W.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor2W.Value.clone(forwarding.Value))
@@ -224,13 +227,14 @@ type Euribor2WModel1
     casting 
 *)
     
-    member internal this.Inject v = _Euribor2W.Value <- v
+    member internal this.Inject v = _Euribor2W <- v
     static member Cast (p : ICell<Euribor2W>) = 
         if p :? Euribor2WModel1 then 
             p :?> Euribor2WModel1
         else
             let o = new Euribor2WModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

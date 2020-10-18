@@ -50,7 +50,8 @@ type InterestRateModel
 (*
     Functions
 *)
-    let _InterestRate                              = cell (fun () -> new InterestRate (r.Value, dc.Value, comp.Value, freq.Value))
+    let mutable
+        _InterestRate                              = cell (fun () -> new InterestRate (r.Value, dc.Value, comp.Value, freq.Value))
     let _compoundFactor                            (t : ICell<double>)   
                                                    = triv (fun () -> _InterestRate.Value.compoundFactor(t.Value))
     let _compoundFactor1                           (d1 : ICell<Date>) (d2 : ICell<Date>) (refStart : ICell<Date>) (refEnd : ICell<Date>)   
@@ -74,13 +75,14 @@ type InterestRateModel
     casting 
 *)
     internal new () = new InterestRateModel(null,null,null,null)
-    member internal this.Inject v = _InterestRate.Value <- v
+    member internal this.Inject v = _InterestRate <- v
     static member Cast (p : ICell<InterestRate>) = 
         if p :? InterestRateModel then 
             p :?> InterestRateModel
         else
             let o = new InterestRateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -123,7 +125,8 @@ type InterestRateModel1
 (*
     Functions
 *)
-    let _InterestRate                              = cell (fun () -> new InterestRate ())
+    let mutable
+        _InterestRate                              = cell (fun () -> new InterestRate ())
     let _compoundFactor                            (t : ICell<double>)   
                                                    = triv (fun () -> _InterestRate.Value.compoundFactor(t.Value))
     let _compoundFactor1                           (d1 : ICell<Date>) (d2 : ICell<Date>) (refStart : ICell<Date>) (refEnd : ICell<Date>)   
@@ -147,13 +150,14 @@ type InterestRateModel1
     casting 
 *)
     
-    member internal this.Inject v = _InterestRate.Value <- v
+    member internal this.Inject v = _InterestRate <- v
     static member Cast (p : ICell<InterestRate>) = 
         if p :? InterestRateModel1 then 
             p :?> InterestRateModel1
         else
             let o = new InterestRateModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

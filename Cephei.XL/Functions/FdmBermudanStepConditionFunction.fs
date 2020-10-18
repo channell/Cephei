@@ -39,13 +39,13 @@ module FdmBermudanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmBermudanStepCondition_applyTo", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBermudanStepCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBermudanStepCondition",Description = "Reference to FdmBermudanStepCondition")>] 
+        ([<ExcelArgument(Name="FdmBermudanStepCondition",Description = "FdmBermudanStepCondition")>] 
          fdmbermudanstepcondition : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module FdmBermudanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmBermudanStepCondition_exerciseTimes", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_exerciseTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBermudanStepCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBermudanStepCondition",Description = "Reference to FdmBermudanStepCondition")>] 
+        ([<ExcelArgument(Name="FdmBermudanStepCondition",Description = "FdmBermudanStepCondition")>] 
          fdmbermudanstepcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,17 +123,17 @@ module FdmBermudanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmBermudanStepCondition", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBermudanStepCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exerciseDates",Description = "Reference to exerciseDates")>] 
+        ([<ExcelArgument(Name="exerciseDates",Description = "Date")>] 
          exerciseDates : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
-        ([<ExcelArgument(Name="calculator",Description = "Reference to calculator")>] 
+        ([<ExcelArgument(Name="calculator",Description = "FdmInnerValueCalculator")>] 
          calculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,9 +181,9 @@ module FdmBermudanStepConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBermudanStepCondition_Range", Description="Create a range of FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmBermudanStepCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

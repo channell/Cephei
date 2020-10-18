@@ -50,7 +50,8 @@ type SVIWrapperModel
 (*
     Functions
 *)
-    let _SVIWrapper                                = cell (fun () -> new SVIWrapper (t.Value, forward.Value, param.Value, addParams.Value))
+    let mutable
+        _SVIWrapper                                = cell (fun () -> new SVIWrapper (t.Value, forward.Value, param.Value, addParams.Value))
     let _volatility                                (x : ICell<double>)   
                                                    = triv (fun () -> _SVIWrapper.Value.volatility(x.Value))
     do this.Bind(_SVIWrapper)
@@ -58,13 +59,14 @@ type SVIWrapperModel
     casting 
 *)
     internal new () = new SVIWrapperModel(null,null,null,null)
-    member internal this.Inject v = _SVIWrapper.Value <- v
+    member internal this.Inject v = _SVIWrapper <- v
     static member Cast (p : ICell<SVIWrapper>) = 
         if p :? SVIWrapperModel then 
             p :?> SVIWrapperModel
         else
             let o = new SVIWrapperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

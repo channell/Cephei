@@ -56,7 +56,8 @@ type ContinuousPartialFloatingLookbackOptionModel
 (*
     Functions
 *)
-    let _ContinuousPartialFloatingLookbackOption   = cell (fun () -> withEngine pricingEngine (new ContinuousPartialFloatingLookbackOption (minmax.Value, lambda.Value, lookbackPeriodEnd.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _ContinuousPartialFloatingLookbackOption   = cell (fun () -> withEngine pricingEngine (new ContinuousPartialFloatingLookbackOption (minmax.Value, lambda.Value, lookbackPeriodEnd.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFloatingLookbackOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFloatingLookbackOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFloatingLookbackOption).dividendRho())
@@ -85,13 +86,14 @@ type ContinuousPartialFloatingLookbackOptionModel
     casting 
 *)
     internal new () = new ContinuousPartialFloatingLookbackOptionModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ContinuousPartialFloatingLookbackOption.Value <- v
+    member internal this.Inject v = _ContinuousPartialFloatingLookbackOption <- v
     static member Cast (p : ICell<ContinuousPartialFloatingLookbackOption>) = 
         if p :? ContinuousPartialFloatingLookbackOptionModel then 
             p :?> ContinuousPartialFloatingLookbackOptionModel
         else
             let o = new ContinuousPartialFloatingLookbackOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

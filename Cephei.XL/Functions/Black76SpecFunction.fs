@@ -39,7 +39,7 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Black76Spec")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec_type", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Black76Spec",Description = "Reference to Black76Spec")>] 
+        ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,21 +106,21 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec_value", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Black76Spec",Description = "Reference to Black76Spec")>] 
+        ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="atmForward",Description = "Reference to atmForward")>] 
+        ([<ExcelArgument(Name="atmForward",Description = "double")>] 
          atmForward : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="annuity",Description = "Reference to annuity")>] 
+        ([<ExcelArgument(Name="annuity",Description = "double")>] 
          annuity : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "Helper.Range.fromModelList")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,21 +178,21 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec_vega", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Black76Spec",Description = "Reference to Black76Spec")>] 
+        ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="atmForward",Description = "Reference to atmForward")>] 
+        ([<ExcelArgument(Name="atmForward",Description = "double")>] 
          atmForward : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="exerciseTime",Description = "Reference to exerciseTime")>] 
+        ([<ExcelArgument(Name="exerciseTime",Description = "double")>] 
          exerciseTime : obj)
-        ([<ExcelArgument(Name="annuity",Description = "Reference to annuity")>] 
+        ([<ExcelArgument(Name="annuity",Description = "double")>] 
          annuity : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "Helper.Range.fromModelList")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -247,9 +247,9 @@ module Black76SpecFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Black76Spec_Range", Description="Create a range of Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Black76Spec")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

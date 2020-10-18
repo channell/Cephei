@@ -58,7 +58,8 @@ type SwedenModel
 (*
     Functions
 *)
-    let _Sweden                                    = cell (fun () -> new Sweden ())
+    let mutable
+        _Sweden                                    = cell (fun () -> new Sweden ())
     let _addedHolidays                             = triv (fun () -> _Sweden.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Sweden.Value.addHoliday(d.Value)
@@ -95,13 +96,14 @@ type SwedenModel
     casting 
 *)
     
-    member internal this.Inject v = _Sweden.Value <- v
+    member internal this.Inject v = _Sweden <- v
     static member Cast (p : ICell<Sweden>) = 
         if p :? SwedenModel then 
             p :?> SwedenModel
         else
             let o = new SwedenModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

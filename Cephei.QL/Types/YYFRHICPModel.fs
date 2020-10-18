@@ -46,7 +46,8 @@ type YYFRHICPModel
 (*
     Functions
 *)
-    let _YYFRHICP                                  = cell (fun () -> new YYFRHICP (interpolated.Value, ts.Value))
+    let mutable
+        _YYFRHICP                                  = cell (fun () -> new YYFRHICP (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYFRHICP.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -90,13 +91,14 @@ type YYFRHICPModel
     casting 
 *)
     internal new () = new YYFRHICPModel(null,null)
-    member internal this.Inject v = _YYFRHICP.Value <- v
+    member internal this.Inject v = _YYFRHICP <- v
     static member Cast (p : ICell<YYFRHICP>) = 
         if p :? YYFRHICPModel then 
             p :?> YYFRHICPModel
         else
             let o = new YYFRHICPModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -153,7 +155,8 @@ type YYFRHICPModel1
 (*
     Functions
 *)
-    let _YYFRHICP                                  = cell (fun () -> new YYFRHICP (interpolated.Value))
+    let mutable
+        _YYFRHICP                                  = cell (fun () -> new YYFRHICP (interpolated.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYFRHICP.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -197,13 +200,14 @@ type YYFRHICPModel1
     casting 
 *)
     internal new () = new YYFRHICPModel1(null)
-    member internal this.Inject v = _YYFRHICP.Value <- v
+    member internal this.Inject v = _YYFRHICP <- v
     static member Cast (p : ICell<YYFRHICP>) = 
         if p :? YYFRHICPModel1 then 
             p :?> YYFRHICPModel1
         else
             let o = new YYFRHICPModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

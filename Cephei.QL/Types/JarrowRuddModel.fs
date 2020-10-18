@@ -41,7 +41,8 @@ type JarrowRuddModel
 (*
     Functions
 *)
-    let _JarrowRudd                                = cell (fun () -> new JarrowRudd ())
+    let mutable
+        _JarrowRudd                                = cell (fun () -> new JarrowRudd ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _JarrowRudd.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
@@ -58,13 +59,14 @@ type JarrowRuddModel
     casting 
 *)
     
-    member internal this.Inject v = _JarrowRudd.Value <- v
+    member internal this.Inject v = _JarrowRudd <- v
     static member Cast (p : ICell<JarrowRudd>) = 
         if p :? JarrowRuddModel then 
             p :?> JarrowRuddModel
         else
             let o = new JarrowRuddModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -105,7 +107,8 @@ type JarrowRuddModel1
 (*
     Functions
 *)
-    let _JarrowRudd                                = cell (fun () -> new JarrowRudd (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _JarrowRudd                                = cell (fun () -> new JarrowRudd (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _JarrowRudd.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
@@ -122,13 +125,14 @@ type JarrowRuddModel1
     casting 
 *)
     internal new () = new JarrowRuddModel1(null,null,null,null)
-    member internal this.Inject v = _JarrowRudd.Value <- v
+    member internal this.Inject v = _JarrowRudd <- v
     static member Cast (p : ICell<JarrowRudd>) = 
         if p :? JarrowRuddModel1 then 
             p :?> JarrowRuddModel1
         else
             let o = new JarrowRuddModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

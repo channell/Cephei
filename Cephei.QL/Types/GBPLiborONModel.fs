@@ -44,7 +44,8 @@ type GBPLiborONModel
 (*
     Functions
 *)
-    let _GBPLiborON                                = cell (fun () -> new GBPLiborON (h.Value))
+    let mutable
+        _GBPLiborON                                = cell (fun () -> new GBPLiborON (h.Value))
     let _businessDayConvention                     = triv (fun () -> _GBPLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _GBPLiborON.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type GBPLiborONModel
     casting 
 *)
     internal new () = new GBPLiborONModel(null)
-    member internal this.Inject v = _GBPLiborON.Value <- v
+    member internal this.Inject v = _GBPLiborON <- v
     static member Cast (p : ICell<GBPLiborON>) = 
         if p :? GBPLiborONModel then 
             p :?> GBPLiborONModel
         else
             let o = new GBPLiborONModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

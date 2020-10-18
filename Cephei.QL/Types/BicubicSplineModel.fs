@@ -52,7 +52,8 @@ type BicubicSplineModel
 (*
     Functions
 *)
-    let _BicubicSpline                             = cell (fun () -> new BicubicSpline (xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value))
+    let mutable
+        _BicubicSpline                             = cell (fun () -> new BicubicSpline (xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value))
     let _derivativeX                               (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _BicubicSpline.Value.derivativeX(x.Value, y.Value))
     let _derivativeXY                              (x : ICell<double>) (y : ICell<double>)   
@@ -95,13 +96,14 @@ type BicubicSplineModel
     casting 
 *)
     internal new () = new BicubicSplineModel(null,null,null,null,null)
-    member internal this.Inject v = _BicubicSpline.Value <- v
+    member internal this.Inject v = _BicubicSpline <- v
     static member Cast (p : ICell<BicubicSpline>) = 
         if p :? BicubicSplineModel then 
             p :?> BicubicSplineModel
         else
             let o = new BicubicSplineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

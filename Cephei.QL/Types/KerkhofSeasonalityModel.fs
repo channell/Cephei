@@ -46,7 +46,8 @@ type KerkhofSeasonalityModel
 (*
     Functions
 *)
-    let _KerkhofSeasonality                        = cell (fun () -> new KerkhofSeasonality (seasonalityBaseDate.Value, seasonalityFactors.Value))
+    let mutable
+        _KerkhofSeasonality                        = cell (fun () -> new KerkhofSeasonality (seasonalityBaseDate.Value, seasonalityFactors.Value))
     let _seasonalityFactor                         (To : ICell<Date>)   
                                                    = triv (fun () -> _KerkhofSeasonality.Value.seasonalityFactor(To.Value))
     let _correctYoYRate                            (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
@@ -66,13 +67,14 @@ type KerkhofSeasonalityModel
     casting 
 *)
     internal new () = new KerkhofSeasonalityModel(null,null)
-    member internal this.Inject v = _KerkhofSeasonality.Value <- v
+    member internal this.Inject v = _KerkhofSeasonality <- v
     static member Cast (p : ICell<KerkhofSeasonality>) = 
         if p :? KerkhofSeasonalityModel then 
             p :?> KerkhofSeasonalityModel
         else
             let o = new KerkhofSeasonalityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

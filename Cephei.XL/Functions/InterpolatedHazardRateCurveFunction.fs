@@ -39,9 +39,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_Clone", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_data", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_data_", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_dates", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_dates_", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_discounts", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_discounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedHazardRateCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_hazardRates", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_hazardRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedHazardRateCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,17 +291,17 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedHazardRateCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="hazardRates",Description = "Reference to hazardRates")>] 
+        ([<ExcelArgument(Name="hazardRates",Description = "double")>] 
          hazardRates : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedHazardRateCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,15 +352,15 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve1", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedHazardRateCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="hazardRates",Description = "Reference to hazardRates")>] 
+        ([<ExcelArgument(Name="hazardRates",Description = "double")>] 
          hazardRates : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedHazardRateCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,21 +407,21 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve2", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedHazardRateCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="hazardRates",Description = "Reference to hazardRates")>] 
+        ([<ExcelArgument(Name="hazardRates",Description = "double")>] 
          hazardRates : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "InterpolatedHazardRateCurve")>] 
          cal : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedHazardRateCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedHazardRateCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedHazardRateCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -480,9 +480,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_interpolation_", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -516,9 +516,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_interpolator_", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -552,9 +552,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_maxDate", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -588,9 +588,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_maxDate_", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -624,9 +624,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_nodes", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -660,9 +660,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_setupInterpolation", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -696,9 +696,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_times", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -732,9 +732,9 @@ module InterpolatedHazardRateCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_times_", Description="Create a InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "Reference to InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedHazardRateCurve",Description = "InterpolatedHazardRateCurve")>] 
          interpolatedhazardratecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -765,9 +765,9 @@ module InterpolatedHazardRateCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedHazardRateCurve_Range", Description="Create a range of InterpolatedHazardRateCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedHazardRateCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatedHazardRateCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

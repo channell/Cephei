@@ -46,7 +46,8 @@ type CompositeConstraintModel
 (*
     Functions
 *)
-    let _CompositeConstraint                       = cell (fun () -> new CompositeConstraint (c1.Value, c2.Value))
+    let mutable
+        _CompositeConstraint                       = cell (fun () -> new CompositeConstraint (c1.Value, c2.Value))
     let _empty                                     = triv (fun () -> _CompositeConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _CompositeConstraint.Value.lowerBound(parameters.Value))
@@ -61,13 +62,14 @@ type CompositeConstraintModel
     casting 
 *)
     internal new () = new CompositeConstraintModel(null,null)
-    member internal this.Inject v = _CompositeConstraint.Value <- v
+    member internal this.Inject v = _CompositeConstraint <- v
     static member Cast (p : ICell<CompositeConstraint>) = 
         if p :? CompositeConstraintModel then 
             p :?> CompositeConstraintModel
         else
             let o = new CompositeConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module SavedSettingsFunction =
     *)
     [<ExcelFunction(Name="_SavedSettings_Dispose", Description="Create a SavedSettings",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SavedSettings_Dispose
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SavedSettings")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SavedSettings",Description = "Reference to SavedSettings")>] 
+        ([<ExcelArgument(Name="SavedSettings",Description = "SavedSettings")>] 
          savedsettings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,7 +75,7 @@ module SavedSettingsFunction =
     *)
     [<ExcelFunction(Name="_SavedSettings", Description="Create a SavedSettings",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SavedSettings_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SavedSettings")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -103,9 +103,9 @@ module SavedSettingsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SavedSettings_Range", Description="Create a range of SavedSettings",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SavedSettings_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SavedSettings")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

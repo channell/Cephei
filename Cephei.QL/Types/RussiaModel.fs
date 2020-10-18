@@ -57,7 +57,8 @@ type RussiaModel
 (*
     Functions
 *)
-    let _Russia                                    = cell (fun () -> new Russia (m.Value))
+    let mutable
+        _Russia                                    = cell (fun () -> new Russia (m.Value))
     let _addedHolidays                             = triv (fun () -> _Russia.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Russia.Value.addHoliday(d.Value)
@@ -94,13 +95,14 @@ type RussiaModel
     casting 
 *)
     internal new () = new RussiaModel(null)
-    member internal this.Inject v = _Russia.Value <- v
+    member internal this.Inject v = _Russia <- v
     static member Cast (p : ICell<Russia>) = 
         if p :? RussiaModel then 
             p :?> RussiaModel
         else
             let o = new RussiaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -164,7 +166,8 @@ type RussiaModel1
 (*
     Functions
 *)
-    let _Russia                                    = cell (fun () -> new Russia ())
+    let mutable
+        _Russia                                    = cell (fun () -> new Russia ())
     let _addedHolidays                             = triv (fun () -> _Russia.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Russia.Value.addHoliday(d.Value)
@@ -201,13 +204,14 @@ type RussiaModel1
     casting 
 *)
     
-    member internal this.Inject v = _Russia.Value <- v
+    member internal this.Inject v = _Russia <- v
     static member Cast (p : ICell<Russia>) = 
         if p :? RussiaModel1 then 
             p :?> RussiaModel1
         else
             let o = new RussiaModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

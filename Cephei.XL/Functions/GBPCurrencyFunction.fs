@@ -39,7 +39,7 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GBPCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_code", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_empty", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_Equals", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_format", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_fractionsPerUnit", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_fractionSymbol", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_name", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_numericCode", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_rounding", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_symbol", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_ToString", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module GBPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_GBPCurrency_triangulationCurrency", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GBPCurrency",Description = "Reference to GBPCurrency")>] 
+        ([<ExcelArgument(Name="GBPCurrency",Description = "GBPCurrency")>] 
          gbpcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module GBPCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GBPCurrency_Range", Description="Create a range of GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GBPCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -58,7 +58,8 @@ type VannaVolgaBarrierEngineModel
 (*
     Functions
 *)
-    let _VannaVolgaBarrierEngine                   = cell (fun () -> new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))
+    let mutable
+        _VannaVolgaBarrierEngine                   = cell (fun () -> new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _VannaVolgaBarrierEngine.Value.registerWith(handler.Value)
                                                                      _VannaVolgaBarrierEngine.Value)
@@ -74,13 +75,14 @@ type VannaVolgaBarrierEngineModel
     casting 
 *)
     internal new () = new VannaVolgaBarrierEngineModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _VannaVolgaBarrierEngine.Value <- v
+    member internal this.Inject v = _VannaVolgaBarrierEngine <- v
     static member Cast (p : ICell<VannaVolgaBarrierEngine>) = 
         if p :? VannaVolgaBarrierEngineModel then 
             p :?> VannaVolgaBarrierEngineModel
         else
             let o = new VannaVolgaBarrierEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

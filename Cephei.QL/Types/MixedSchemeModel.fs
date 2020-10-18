@@ -41,7 +41,8 @@ type MixedSchemeModel<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _MixedScheme                               = cell (fun () -> new MixedScheme<'Operator> ())
+    let mutable
+        _MixedScheme                               = cell (fun () -> new MixedScheme<'Operator> ())
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _MixedScheme.Value.setStep(dt.Value)
                                                                      _MixedScheme.Value)
@@ -78,7 +79,8 @@ type MixedSchemeModel1<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _MixedScheme                               = cell (fun () -> new MixedScheme<'Operator> (L.Value, theta.Value, bcs.Value))
+    let mutable
+        _MixedScheme                               = cell (fun () -> new MixedScheme<'Operator> (L.Value, theta.Value, bcs.Value))
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _MixedScheme.Value.setStep(dt.Value)
                                                                      _MixedScheme.Value)

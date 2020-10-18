@@ -52,7 +52,8 @@ type eqn6Model
 (*
     Functions
 *)
-    let _eqn6                                      = cell (fun () -> new eqn6 (a.Value, c.Value, d.Value, bs.Value, hk.Value))
+    let mutable
+        _eqn6                                      = cell (fun () -> new eqn6 (a.Value, c.Value, d.Value, bs.Value, hk.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _eqn6.Value.value(x.Value))
     do this.Bind(_eqn6)
@@ -60,13 +61,14 @@ type eqn6Model
     casting 
 *)
     internal new () = new eqn6Model(null,null,null,null,null)
-    member internal this.Inject v = _eqn6.Value <- v
+    member internal this.Inject v = _eqn6 <- v
     static member Cast (p : ICell<eqn6>) = 
         if p :? eqn6Model then 
             p :?> eqn6Model
         else
             let o = new eqn6Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

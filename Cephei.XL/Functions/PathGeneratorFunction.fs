@@ -39,9 +39,9 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator_antithetic", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_antithetic
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PathGenerator",Description = "Reference to PathGenerator")>] 
+        ([<ExcelArgument(Name="PathGenerator",Description = "PathGenerator")>] 
          pathgenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator_next", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PathGenerator",Description = "Reference to PathGenerator")>] 
+        ([<ExcelArgument(Name="PathGenerator",Description = "PathGenerator")>] 
          pathgenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,17 +111,17 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PathGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="length",Description = "Reference to length")>] 
+        ([<ExcelArgument(Name="length",Description = "double")>] 
          length : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="generator",Description = "Reference to generator")>] 
+        ([<ExcelArgument(Name="generator",Description = "'GSG")>] 
          generator : obj)
-        ([<ExcelArgument(Name="brownianBridge",Description = "Reference to brownianBridge")>] 
+        ([<ExcelArgument(Name="brownianBridge",Description = "bool")>] 
          brownianBridge : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,15 +172,15 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator1", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PathGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
-        ([<ExcelArgument(Name="generator",Description = "Reference to generator")>] 
+        ([<ExcelArgument(Name="generator",Description = "'GSG")>] 
          generator : obj)
-        ([<ExcelArgument(Name="brownianBridge",Description = "Reference to brownianBridge")>] 
+        ([<ExcelArgument(Name="brownianBridge",Description = "bool")>] 
          brownianBridge : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -224,9 +224,9 @@ module PathGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PathGenerator_Range", Description="Create a range of PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PathGenerator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

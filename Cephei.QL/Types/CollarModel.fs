@@ -52,7 +52,8 @@ type CollarModel
 (*
     Functions
 *)
-    let _Collar                                    = cell (fun () -> withEngine pricingEngine (new Collar (floatingLeg.Value, capRates.Value, floorRates.Value)))
+    let mutable
+        _Collar                                    = cell (fun () -> withEngine pricingEngine (new Collar (floatingLeg.Value, capRates.Value, floorRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Collar).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Collar).capRates())
@@ -83,13 +84,14 @@ type CollarModel
     casting 
 *)
     internal new () = new CollarModel(null,null,null,null,null)
-    member internal this.Inject v = _Collar.Value <- v
+    member internal this.Inject v = _Collar <- v
     static member Cast (p : ICell<Collar>) = 
         if p :? CollarModel then 
             p :?> CollarModel
         else
             let o = new CollarModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

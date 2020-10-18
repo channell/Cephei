@@ -41,7 +41,8 @@ type GRDCurrencyModel
 (*
     Functions
 *)
-    let _GRDCurrency                               = cell (fun () -> new GRDCurrency ())
+    let mutable
+        _GRDCurrency                               = cell (fun () -> new GRDCurrency ())
     let _code                                      = triv (fun () -> _GRDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _GRDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type GRDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _GRDCurrency.Value <- v
+    member internal this.Inject v = _GRDCurrency <- v
     static member Cast (p : ICell<GRDCurrency>) = 
         if p :? GRDCurrencyModel then 
             p :?> GRDCurrencyModel
         else
             let o = new GRDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

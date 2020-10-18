@@ -50,7 +50,8 @@ type FDVanillaEngineModel
 (*
     Functions
 *)
-    let _FDVanillaEngine                           = cell (fun () -> new FDVanillaEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDVanillaEngine                           = cell (fun () -> new FDVanillaEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDVanillaEngine.Value.calculate(r.Value)
                                                                      _FDVanillaEngine.Value)
@@ -66,13 +67,14 @@ type FDVanillaEngineModel
     casting 
 *)
     internal new () = new FDVanillaEngineModel(null,null,null,null)
-    member internal this.Inject v = _FDVanillaEngine.Value <- v
+    member internal this.Inject v = _FDVanillaEngine <- v
     static member Cast (p : ICell<FDVanillaEngine>) = 
         if p :? FDVanillaEngineModel then 
             p :?> FDVanillaEngineModel
         else
             let o = new FDVanillaEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -105,7 +107,8 @@ type FDVanillaEngineModel1
 (*
     Functions
 *)
-    let _FDVanillaEngine                           = cell (fun () -> new FDVanillaEngine ())
+    let mutable
+        _FDVanillaEngine                           = cell (fun () -> new FDVanillaEngine ())
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDVanillaEngine.Value.calculate(r.Value)
                                                                      _FDVanillaEngine.Value)
@@ -121,13 +124,14 @@ type FDVanillaEngineModel1
     casting 
 *)
     
-    member internal this.Inject v = _FDVanillaEngine.Value <- v
+    member internal this.Inject v = _FDVanillaEngine <- v
     static member Cast (p : ICell<FDVanillaEngine>) = 
         if p :? FDVanillaEngineModel1 then 
             p :?> FDVanillaEngineModel1
         else
             let o = new FDVanillaEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

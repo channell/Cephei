@@ -50,7 +50,8 @@ type CapModel
 (*
     Functions
 *)
-    let _Cap                                       = cell (fun () -> withEngine pricingEngine (new Cap (floatingLeg.Value, exerciseRates.Value)))
+    let mutable
+        _Cap                                       = cell (fun () -> withEngine pricingEngine (new Cap (floatingLeg.Value, exerciseRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Cap).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Cap).capRates())
@@ -81,13 +82,14 @@ type CapModel
     casting 
 *)
     internal new () = new CapModel(null,null,null,null)
-    member internal this.Inject v = _Cap.Value <- v
+    member internal this.Inject v = _Cap <- v
     static member Cast (p : ICell<Cap>) = 
         if p :? CapModel then 
             p :?> CapModel
         else
             let o = new CapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

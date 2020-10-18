@@ -54,7 +54,8 @@ type IndexedCashFlowModel
 (*
     Functions
 *)
-    let _IndexedCashFlow                           = cell (fun () -> new IndexedCashFlow (notional.Value, index.Value, baseDate.Value, fixingDate.Value, paymentDate.Value, growthOnly.Value))
+    let mutable
+        _IndexedCashFlow                           = cell (fun () -> new IndexedCashFlow (notional.Value, index.Value, baseDate.Value, fixingDate.Value, paymentDate.Value, growthOnly.Value))
     let _amount                                    = triv (fun () -> _IndexedCashFlow.Value.amount())
     let _baseDate                                  = triv (fun () -> _IndexedCashFlow.Value.baseDate())
     let _date                                      = triv (fun () -> _IndexedCashFlow.Value.date())
@@ -85,13 +86,14 @@ type IndexedCashFlowModel
     casting 
 *)
     internal new () = new IndexedCashFlowModel(null,null,null,null,null,null)
-    member internal this.Inject v = _IndexedCashFlow.Value <- v
+    member internal this.Inject v = _IndexedCashFlow <- v
     static member Cast (p : ICell<IndexedCashFlow>) = 
         if p :? IndexedCashFlowModel then 
             p :?> IndexedCashFlowModel
         else
             let o = new IndexedCashFlowModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,7 +39,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CmsCoupon")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,31 +70,31 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon1", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CmsCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="swapIndex",Description = "Reference to swapIndex")>] 
+        ([<ExcelArgument(Name="swapIndex",Description = "SwapIndex")>] 
          swapIndex : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "CmsCoupon")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "CmsCoupon")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "CmsCoupon")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "CmsCoupon")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "CmsCoupon")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "Reference to isInArrears")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "CmsCoupon")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,33 +173,33 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_factory", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "Reference to isInArrears")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "CashFlow")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_swapIndex", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_swapIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,11 +317,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accruedAmount", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,9 +359,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_adjustedFixing", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,9 +395,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_amount", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -431,9 +431,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_convexityAdjustment", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -467,9 +467,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_dayCounter", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -503,9 +503,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_fixingDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -539,9 +539,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_fixingDays", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -575,9 +575,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_gearing", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -611,9 +611,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_index", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -647,9 +647,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_indexFixing", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,9 +683,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_isInArrears", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,11 +719,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_price", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="yts",Description = "Reference to yts")>] 
+        ([<ExcelArgument(Name="yts",Description = "YieldTermStructure")>] 
          yts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -761,9 +761,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_pricer", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_rate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,11 +833,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_setPricer", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="pricer",Description = "Reference to pricer")>] 
+        ([<ExcelArgument(Name="pricer",Description = "FloatingRateCouponPricer")>] 
          pricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -875,9 +875,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_spread", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,9 +911,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_update", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -947,9 +947,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualDays", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -983,9 +983,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualEndDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,9 +1019,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualPeriod", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1055,9 +1055,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualStartDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1091,11 +1091,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accruedDays", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1133,11 +1133,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accruedPeriod", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1175,9 +1175,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_date", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1211,9 +1211,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_exCouponDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1247,9 +1247,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_nominal", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1283,9 +1283,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_referencePeriodEnd", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1319,9 +1319,9 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_referencePeriodStart", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1355,11 +1355,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_CompareTo", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1397,11 +1397,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_Equals", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1439,13 +1439,13 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_hasOccurred", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1487,11 +1487,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_tradingExCoupon", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1529,11 +1529,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accept", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1571,11 +1571,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_registerWith", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1613,11 +1613,11 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_unregisterWith", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CmsCoupon",Description = "Reference to CmsCoupon")>] 
+        ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1652,9 +1652,9 @@ module CmsCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CmsCoupon_Range", Description="Create a range of CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CmsCoupon")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

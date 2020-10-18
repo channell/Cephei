@@ -44,7 +44,8 @@ type DiscreteTrapezoidIntegratorModel
 (*
     Functions
 *)
-    let _DiscreteTrapezoidIntegrator               = cell (fun () -> new DiscreteTrapezoidIntegrator (evaluations.Value))
+    let mutable
+        _DiscreteTrapezoidIntegrator               = cell (fun () -> new DiscreteTrapezoidIntegrator (evaluations.Value))
     let _absoluteAccuracy                          = triv (fun () -> _DiscreteTrapezoidIntegrator.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _DiscreteTrapezoidIntegrator.Value.absoluteError())
     let _integrationSuccess                        = triv (fun () -> _DiscreteTrapezoidIntegrator.Value.integrationSuccess())
@@ -63,13 +64,14 @@ type DiscreteTrapezoidIntegratorModel
     casting 
 *)
     internal new () = new DiscreteTrapezoidIntegratorModel(null)
-    member internal this.Inject v = _DiscreteTrapezoidIntegrator.Value <- v
+    member internal this.Inject v = _DiscreteTrapezoidIntegrator <- v
     static member Cast (p : ICell<DiscreteTrapezoidIntegrator>) = 
         if p :? DiscreteTrapezoidIntegratorModel then 
             p :?> DiscreteTrapezoidIntegratorModel
         else
             let o = new DiscreteTrapezoidIntegratorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

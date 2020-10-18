@@ -39,11 +39,11 @@ module TermStructureConsistentModelFunction =
     *)
     [<ExcelFunction(Name="_TermStructureConsistentModel_registerWith", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TermStructureConsistentModel",Description = "Reference to TermStructureConsistentModel")>] 
+        ([<ExcelArgument(Name="TermStructureConsistentModel",Description = "TermStructureConsistentModel")>] 
          termstructureconsistentmodel : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module TermStructureConsistentModelFunction =
     *)
     [<ExcelFunction(Name="_TermStructureConsistentModel_termStructure", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TermStructureConsistentModel",Description = "Reference to TermStructureConsistentModel")>] 
+        ([<ExcelArgument(Name="TermStructureConsistentModel",Description = "TermStructureConsistentModel")>] 
          termstructureconsistentmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module TermStructureConsistentModelFunction =
     *)
     [<ExcelFunction(Name="_TermStructureConsistentModel", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TermStructureConsistentModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,11 +154,11 @@ module TermStructureConsistentModelFunction =
     *)
     [<ExcelFunction(Name="_TermStructureConsistentModel_unregisterWith", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TermStructureConsistentModel",Description = "Reference to TermStructureConsistentModel")>] 
+        ([<ExcelArgument(Name="TermStructureConsistentModel",Description = "TermStructureConsistentModel")>] 
          termstructureconsistentmodel : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module TermStructureConsistentModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TermStructureConsistentModel_Range", Description="Create a range of TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TermStructureConsistentModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

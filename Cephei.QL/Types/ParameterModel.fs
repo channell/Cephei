@@ -41,7 +41,8 @@ type ParameterModel
 (*
     Functions
 *)
-    let _Parameter                                 = cell (fun () -> new Parameter ())
+    let mutable
+        _Parameter                                 = cell (fun () -> new Parameter ())
     let _constraint                                = triv (fun () -> _Parameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _Parameter.Value.implementation())
     let _parameters                                = triv (fun () -> _Parameter.Value.parameters())
@@ -58,13 +59,14 @@ type ParameterModel
     casting 
 *)
     
-    member internal this.Inject v = _Parameter.Value <- v
+    member internal this.Inject v = _Parameter <- v
     static member Cast (p : ICell<Parameter>) = 
         if p :? ParameterModel then 
             p :?> ParameterModel
         else
             let o = new ParameterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

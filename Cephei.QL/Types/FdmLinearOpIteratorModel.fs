@@ -44,7 +44,8 @@ type FdmLinearOpIteratorModel
 (*
     Functions
 *)
-    let _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (index.Value))
+    let mutable
+        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (index.Value))
     let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
@@ -57,13 +58,14 @@ type FdmLinearOpIteratorModel
     casting 
 *)
     internal new () = new FdmLinearOpIteratorModel(null)
-    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    member internal this.Inject v = _FdmLinearOpIterator <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel then 
             p :?> FdmLinearOpIteratorModel
         else
             let o = new FdmLinearOpIteratorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -94,7 +96,8 @@ type FdmLinearOpIteratorModel1
 (*
     Functions
 *)
-    let _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (dim.Value))
+    let mutable
+        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (dim.Value))
     let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
@@ -107,13 +110,14 @@ type FdmLinearOpIteratorModel1
     casting 
 *)
     internal new () = new FdmLinearOpIteratorModel1(null)
-    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    member internal this.Inject v = _FdmLinearOpIterator <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel1 then 
             p :?> FdmLinearOpIteratorModel1
         else
             let o = new FdmLinearOpIteratorModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -148,7 +152,8 @@ type FdmLinearOpIteratorModel2
 (*
     Functions
 *)
-    let _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (dim.Value, coordinates.Value, index.Value))
+    let mutable
+        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (dim.Value, coordinates.Value, index.Value))
     let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
@@ -161,13 +166,14 @@ type FdmLinearOpIteratorModel2
     casting 
 *)
     internal new () = new FdmLinearOpIteratorModel2(null,null,null)
-    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    member internal this.Inject v = _FdmLinearOpIterator <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel2 then 
             p :?> FdmLinearOpIteratorModel2
         else
             let o = new FdmLinearOpIteratorModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -200,7 +206,8 @@ type FdmLinearOpIteratorModel3
 (*
     Functions
 *)
-    let _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (iter.Value))
+    let mutable
+        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (iter.Value))
     let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
@@ -213,13 +220,14 @@ type FdmLinearOpIteratorModel3
     casting 
 *)
     internal new () = new FdmLinearOpIteratorModel3(null)
-    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    member internal this.Inject v = _FdmLinearOpIterator <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel3 then 
             p :?> FdmLinearOpIteratorModel3
         else
             let o = new FdmLinearOpIteratorModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

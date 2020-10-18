@@ -41,7 +41,8 @@ type ZeroInflationTraitsModel
 (*
     Functions
 *)
-    let _ZeroInflationTraits                       = cell (fun () -> new ZeroInflationTraits ())
+    let mutable
+        _ZeroInflationTraits                       = cell (fun () -> new ZeroInflationTraits ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _ZeroInflationTraits.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type ZeroInflationTraitsModel
     casting 
 *)
     
-    member internal this.Inject v = _ZeroInflationTraits.Value <- v
+    member internal this.Inject v = _ZeroInflationTraits <- v
     static member Cast (p : ICell<ZeroInflationTraits>) = 
         if p :? ZeroInflationTraitsModel then 
             p :?> ZeroInflationTraitsModel
         else
             let o = new ZeroInflationTraitsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

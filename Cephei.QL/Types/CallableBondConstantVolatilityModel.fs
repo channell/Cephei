@@ -48,7 +48,8 @@ type CallableBondConstantVolatilityModel
 (*
     Functions
 *)
-    let _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (referenceDate.Value, volatility.Value, dayCounter.Value))
+    let mutable
+        _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (referenceDate.Value, volatility.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _CallableBondConstantVolatility.Value.dayCounter())
     let _maxBondLength                             = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondLength())
     let _maxBondTenor                              = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondTenor())
@@ -97,13 +98,14 @@ type CallableBondConstantVolatilityModel
     casting 
 *)
     internal new () = new CallableBondConstantVolatilityModel(null,null,null)
-    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    member internal this.Inject v = _CallableBondConstantVolatility <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel then 
             p :?> CallableBondConstantVolatilityModel
         else
             let o = new CallableBondConstantVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -176,7 +178,8 @@ type CallableBondConstantVolatilityModel1
 (*
     Functions
 *)
-    let _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
+    let mutable
+        _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _CallableBondConstantVolatility.Value.dayCounter())
     let _maxBondLength                             = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondLength())
     let _maxBondTenor                              = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondTenor())
@@ -225,13 +228,14 @@ type CallableBondConstantVolatilityModel1
     casting 
 *)
     internal new () = new CallableBondConstantVolatilityModel1(null,null,null,null)
-    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    member internal this.Inject v = _CallableBondConstantVolatility <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel1 then 
             p :?> CallableBondConstantVolatilityModel1
         else
             let o = new CallableBondConstantVolatilityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -305,7 +309,8 @@ type CallableBondConstantVolatilityModel2
 (*
     Functions
 *)
-    let _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
+    let mutable
+        _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _CallableBondConstantVolatility.Value.dayCounter())
     let _maxBondLength                             = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondLength())
     let _maxBondTenor                              = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondTenor())
@@ -354,13 +359,14 @@ type CallableBondConstantVolatilityModel2
     casting 
 *)
     internal new () = new CallableBondConstantVolatilityModel2(null,null,null,null)
-    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    member internal this.Inject v = _CallableBondConstantVolatility <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel2 then 
             p :?> CallableBondConstantVolatilityModel2
         else
             let o = new CallableBondConstantVolatilityModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -432,7 +438,8 @@ type CallableBondConstantVolatilityModel3
 (*
     Functions
 *)
-    let _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (referenceDate.Value, volatility.Value, dayCounter.Value))
+    let mutable
+        _CallableBondConstantVolatility            = cell (fun () -> new CallableBondConstantVolatility (referenceDate.Value, volatility.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _CallableBondConstantVolatility.Value.dayCounter())
     let _maxBondLength                             = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondLength())
     let _maxBondTenor                              = triv (fun () -> _CallableBondConstantVolatility.Value.maxBondTenor())
@@ -481,13 +488,14 @@ type CallableBondConstantVolatilityModel3
     casting 
 *)
     internal new () = new CallableBondConstantVolatilityModel3(null,null,null)
-    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    member internal this.Inject v = _CallableBondConstantVolatility <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel3 then 
             p :?> CallableBondConstantVolatilityModel3
         else
             let o = new CallableBondConstantVolatilityModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

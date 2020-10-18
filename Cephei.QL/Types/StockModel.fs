@@ -48,7 +48,8 @@ type StockModel
 (*
     Functions
 *)
-    let _Stock                                     = cell (fun () -> withEngine pricingEngine (new Stock (quote.Value)))
+    let mutable
+        _Stock                                     = cell (fun () -> withEngine pricingEngine (new Stock (quote.Value)))
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Stock).CASH())
     let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).errorEstimate())
@@ -64,13 +65,14 @@ type StockModel
     casting 
 *)
     internal new () = new StockModel(null,null,null)
-    member internal this.Inject v = _Stock.Value <- v
+    member internal this.Inject v = _Stock <- v
     static member Cast (p : ICell<Stock>) = 
         if p :? StockModel then 
             p :?> StockModel
         else
             let o = new StockModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

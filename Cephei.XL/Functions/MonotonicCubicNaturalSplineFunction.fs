@@ -39,13 +39,13 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MonotonicCubicNaturalSpline")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_aCoefficients", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_aCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_bCoefficients", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_bCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_cCoefficients", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_cCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,13 +196,13 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_derivative", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_empty", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,13 +280,13 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_primitive", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,13 +328,13 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_secondDerivative", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,9 +376,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_update", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,13 +412,13 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_value1", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,11 +460,11 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_value", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,9 +502,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_xMax", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,9 +538,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_xMin", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_allowsExtrapolation", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_disableExtrapolation", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,11 +652,11 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_enableExtrapolation", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module MonotonicCubicNaturalSplineFunction =
     *)
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_extrapolate", Description="Create a MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "Reference to MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="MonotonicCubicNaturalSpline",Description = "MonotonicCubicNaturalSpline")>] 
          monotoniccubicnaturalspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -727,9 +727,9 @@ module MonotonicCubicNaturalSplineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonotonicCubicNaturalSpline_Range", Description="Create a range of MonotonicCubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicCubicNaturalSpline_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MonotonicCubicNaturalSpline")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

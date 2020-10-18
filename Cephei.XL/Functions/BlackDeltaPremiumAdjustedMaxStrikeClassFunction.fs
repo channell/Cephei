@@ -39,19 +39,19 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ot",Description = "Reference to ot")>] 
+        ([<ExcelArgument(Name="ot",Description = "Option.Type")>] 
          ot : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType")>] 
          dt : obj)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="dDiscount",Description = "Reference to dDiscount")>] 
+        ([<ExcelArgument(Name="dDiscount",Description = "double")>] 
          dDiscount : obj)
-        ([<ExcelArgument(Name="fDiscount",Description = "Reference to fDiscount")>] 
+        ([<ExcelArgument(Name="fDiscount",Description = "double")>] 
          fDiscount : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,11 +106,11 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_value", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedMaxStrikeClass",Description = "Reference to BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
+        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedMaxStrikeClass",Description = "BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
          blackdeltapremiumadjustedmaxstrikeclass : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,11 +148,11 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_derivative", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedMaxStrikeClass",Description = "Reference to BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
+        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedMaxStrikeClass",Description = "BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
          blackdeltapremiumadjustedmaxstrikeclass : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -187,9 +187,9 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_cond", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_cond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_norm2", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_norm2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_rank", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_rank
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_S", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_S
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_singularValues", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_singularValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,11 +219,11 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_solveFor", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -261,9 +261,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SVD")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="M",Description = "Reference to M")>] 
+        ([<ExcelArgument(Name="M",Description = "Matrix")>] 
          M : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,9 +298,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_U", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_U
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module SVDFunction =
     *)
     [<ExcelFunction(Name="_SVD_V", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_V
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVD",Description = "Reference to SVD")>] 
+        ([<ExcelArgument(Name="SVD",Description = "SVD")>] 
          svd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -367,9 +367,9 @@ module SVDFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SVD_Range", Description="Create a range of SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SVD")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_logGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_logGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LogGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LogGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_logGridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_logGridArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,11 +154,11 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_dx", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dx
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_dxArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,11 +232,11 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_dxm", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxm
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_dxmArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxmArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,11 +310,11 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_dxp", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxp
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,9 +352,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_dxpArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxpArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,11 +388,11 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_grid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_gridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_gridArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_size", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,11 +502,11 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_transformedGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_transformedGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module LogGridFunction =
     *)
     [<ExcelFunction(Name="_LogGrid_transformedGridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_transformedGridArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogGrid",Description = "Reference to LogGrid")>] 
+        ([<ExcelArgument(Name="LogGrid",Description = "LogGrid")>] 
          loggrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -577,9 +577,9 @@ module LogGridFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LogGrid_Range", Description="Create a range of LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LogGrid")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

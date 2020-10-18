@@ -46,7 +46,8 @@ type GaussianQuadratureModel
 (*
     Functions
 *)
-    let _GaussianQuadrature                        = cell (fun () -> new GaussianQuadrature (n.Value, orthPoly.Value))
+    let mutable
+        _GaussianQuadrature                        = cell (fun () -> new GaussianQuadrature (n.Value, orthPoly.Value))
     let _order                                     = triv (fun () -> _GaussianQuadrature.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussianQuadrature.Value.value(f.Value))
@@ -57,13 +58,14 @@ type GaussianQuadratureModel
     casting 
 *)
     internal new () = new GaussianQuadratureModel(null,null)
-    member internal this.Inject v = _GaussianQuadrature.Value <- v
+    member internal this.Inject v = _GaussianQuadrature <- v
     static member Cast (p : ICell<GaussianQuadrature>) = 
         if p :? GaussianQuadratureModel then 
             p :?> GaussianQuadratureModel
         else
             let o = new GaussianQuadratureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

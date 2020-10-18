@@ -39,9 +39,9 @@ module LinearRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearRegression_coefficients", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_coefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearRegression",Description = "Reference to LinearRegression")>] 
+        ([<ExcelArgument(Name="LinearRegression",Description = "LinearRegression")>] 
          linearregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module LinearRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearRegression1", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LinearRegression")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module LinearRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearRegression", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LinearRegression")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,9 +161,9 @@ module LinearRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearRegression_residuals", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_residuals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearRegression",Description = "Reference to LinearRegression")>] 
+        ([<ExcelArgument(Name="LinearRegression",Description = "LinearRegression")>] 
          linearregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module LinearRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearRegression_standardErrors", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_standardErrors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearRegression",Description = "Reference to LinearRegression")>] 
+        ([<ExcelArgument(Name="LinearRegression",Description = "LinearRegression")>] 
          linearregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -230,9 +230,9 @@ module LinearRegressionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LinearRegression_Range", Description="Create a range of LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LinearRegression")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

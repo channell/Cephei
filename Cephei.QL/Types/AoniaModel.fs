@@ -44,7 +44,8 @@ type AoniaModel
 (*
     Functions
 *)
-    let _Aonia                                     = cell (fun () -> new Aonia (h.Value))
+    let mutable
+        _Aonia                                     = cell (fun () -> new Aonia (h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Aonia.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _Aonia.Value.businessDayConvention())
@@ -99,13 +100,14 @@ type AoniaModel
     casting 
 *)
     internal new () = new AoniaModel(null)
-    member internal this.Inject v = _Aonia.Value <- v
+    member internal this.Inject v = _Aonia <- v
     static member Cast (p : ICell<Aonia>) = 
         if p :? AoniaModel then 
             p :?> AoniaModel
         else
             let o = new AoniaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

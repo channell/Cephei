@@ -39,15 +39,15 @@ module SVIFunction =
     *)
     [<ExcelFunction(Name="_SVI_interpolate", Description="Create a SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVI",Description = "Reference to SVI")>] 
+        ([<ExcelArgument(Name="SVI",Description = "SVI")>] 
          svi : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xEnd",Description = "Reference to xEnd")>] 
+        ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,45 +93,45 @@ module SVIFunction =
     *)
     [<ExcelFunction(Name="_SVI", Description="Create a SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SVI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "double")>] 
          m : obj)
-        ([<ExcelArgument(Name="aIsFixed",Description = "Reference to aIsFixed")>] 
+        ([<ExcelArgument(Name="aIsFixed",Description = "bool")>] 
          aIsFixed : obj)
-        ([<ExcelArgument(Name="bIsFixed",Description = "Reference to bIsFixed")>] 
+        ([<ExcelArgument(Name="bIsFixed",Description = "bool")>] 
          bIsFixed : obj)
-        ([<ExcelArgument(Name="sigmaIsFixed",Description = "Reference to sigmaIsFixed")>] 
+        ([<ExcelArgument(Name="sigmaIsFixed",Description = "bool")>] 
          sigmaIsFixed : obj)
-        ([<ExcelArgument(Name="rhoIsFixed",Description = "Reference to rhoIsFixed")>] 
+        ([<ExcelArgument(Name="rhoIsFixed",Description = "bool")>] 
          rhoIsFixed : obj)
-        ([<ExcelArgument(Name="mIsFixed",Description = "Reference to mIsFixed")>] 
+        ([<ExcelArgument(Name="mIsFixed",Description = "bool")>] 
          mIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Reference to vegaWeighted")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "SVI")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "SVI")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "Reference to optMethod")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "SVI")>] 
          optMethod : obj)
-        ([<ExcelArgument(Name="errorAccept",Description = "Reference to errorAccept")>] 
+        ([<ExcelArgument(Name="errorAccept",Description = "SVI")>] 
          errorAccept : obj)
-        ([<ExcelArgument(Name="useMaxError",Description = "Reference to useMaxError")>] 
+        ([<ExcelArgument(Name="useMaxError",Description = "SVI")>] 
          useMaxError : obj)
-        ([<ExcelArgument(Name="maxGuesses",Description = "Reference to maxGuesses")>] 
+        ([<ExcelArgument(Name="maxGuesses",Description = "SVI")>] 
          maxGuesses : obj)
-        ([<ExcelArgument(Name="addParams",Description = "Reference to addParams")>] 
+        ([<ExcelArgument(Name="addParams",Description = "SVI")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,9 +235,9 @@ module SVIFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SVI_Range", Description="Create a range of SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SVI")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

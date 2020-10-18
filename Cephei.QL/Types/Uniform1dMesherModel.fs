@@ -48,7 +48,8 @@ type Uniform1dMesherModel
 (*
     Functions
 *)
-    let _Uniform1dMesher                           = cell (fun () -> new Uniform1dMesher (start.Value, End.Value, size.Value))
+    let mutable
+        _Uniform1dMesher                           = cell (fun () -> new Uniform1dMesher (start.Value, End.Value, size.Value))
     let _dminus                                    (index : ICell<int>)   
                                                    = triv (fun () -> _Uniform1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
@@ -62,13 +63,14 @@ type Uniform1dMesherModel
     casting 
 *)
     internal new () = new Uniform1dMesherModel(null,null,null)
-    member internal this.Inject v = _Uniform1dMesher.Value <- v
+    member internal this.Inject v = _Uniform1dMesher <- v
     static member Cast (p : ICell<Uniform1dMesher>) = 
         if p :? Uniform1dMesherModel then 
             p :?> Uniform1dMesherModel
         else
             let o = new Uniform1dMesherModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

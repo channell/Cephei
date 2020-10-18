@@ -39,11 +39,11 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_dx", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dx
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_dxArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_dxm", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxm
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,9 +159,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_dxmArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxmArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,11 +195,11 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_dxp", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxp
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,9 +237,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_dxpArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxpArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -273,11 +273,11 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_grid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,9 +315,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_gridArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_gridArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -351,9 +351,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_size", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TransformedGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,11 +387,11 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_transformedGrid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_transformedGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TransformedGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -429,11 +429,11 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid1", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TransformedGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
-        ([<ExcelArgument(Name="func",Description = "Reference to func")>] 
+        ([<ExcelArgument(Name="func",Description = "double,double")>] 
          func : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TransformedGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -509,9 +509,9 @@ module TransformedGridFunction =
     *)
     [<ExcelFunction(Name="_TransformedGrid_transformedGridArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_transformedGridArray
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TransformedGrid",Description = "Reference to TransformedGrid")>] 
+        ([<ExcelArgument(Name="TransformedGrid",Description = "TransformedGrid")>] 
          transformedgrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -542,9 +542,9 @@ module TransformedGridFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TransformedGrid_Range", Description="Create a range of TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TransformedGrid")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

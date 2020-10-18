@@ -52,7 +52,8 @@ type CliquetOptionModel
 (*
     Functions
 *)
-    let _CliquetOption                             = cell (fun () -> withEngine pricingEngine (new CliquetOption (payoff.Value, maturity.Value, resetDates.Value)))
+    let mutable
+        _CliquetOption                             = cell (fun () -> withEngine pricingEngine (new CliquetOption (payoff.Value, maturity.Value, resetDates.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).dividendRho())
@@ -81,13 +82,14 @@ type CliquetOptionModel
     casting 
 *)
     internal new () = new CliquetOptionModel(null,null,null,null,null)
-    member internal this.Inject v = _CliquetOption.Value <- v
+    member internal this.Inject v = _CliquetOption <- v
     static member Cast (p : ICell<CliquetOption>) = 
         if p :? CliquetOptionModel then 
             p :?> CliquetOptionModel
         else
             let o = new CliquetOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

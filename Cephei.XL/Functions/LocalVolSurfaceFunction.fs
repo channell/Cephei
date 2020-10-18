@@ -39,9 +39,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_dayCounter", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface1", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="blackTS",Description = "Reference to blackTS")>] 
+        ([<ExcelArgument(Name="blackTS",Description = "BlackVolTermStructure")>] 
          blackTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="underlying",Description = "Reference to underlying")>] 
+        ([<ExcelArgument(Name="underlying",Description = "double")>] 
          underlying : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,15 +130,15 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="blackTS",Description = "Reference to blackTS")>] 
+        ([<ExcelArgument(Name="blackTS",Description = "BlackVolTermStructure")>] 
          blackTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="underlying",Description = "Reference to underlying")>] 
+        ([<ExcelArgument(Name="underlying",Description = "Quote")>] 
          underlying : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,9 +185,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_maxDate", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,9 +221,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_maxStrike", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,9 +257,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_minStrike", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,9 +293,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_referenceDate", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,15 +329,15 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_localVol", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_localVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,15 +383,15 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_localVol1", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_localVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -437,9 +437,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_businessDayConvention", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -473,11 +473,11 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_optionDateFromTenor", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,9 +515,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_calendar", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,9 +551,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_maxTime", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -587,9 +587,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_settlementDays", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -623,11 +623,11 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_timeFromReference", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,9 +665,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_update", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -701,9 +701,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_allowsExtrapolation", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -737,11 +737,11 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_disableExtrapolation", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -779,11 +779,11 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_enableExtrapolation", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -821,9 +821,9 @@ module LocalVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_LocalVolSurface_extrapolate", Description="Create a LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolSurface",Description = "Reference to LocalVolSurface")>] 
+        ([<ExcelArgument(Name="LocalVolSurface",Description = "LocalVolSurface")>] 
          localvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -854,9 +854,9 @@ module LocalVolSurfaceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LocalVolSurface_Range", Description="Create a range of LocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolSurface_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LocalVolSurface")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

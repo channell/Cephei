@@ -39,17 +39,17 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_factory", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JarrowRudd")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JarrowRudd",Description = "Reference to JarrowRudd")>] 
+        ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,15 +99,15 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd1", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JarrowRudd")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JarrowRudd")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,15 +185,15 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_probability", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JarrowRudd",Description = "Reference to JarrowRudd")>] 
+        ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="z",Description = "Reference to z")>] 
+        ([<ExcelArgument(Name="z",Description = "int")>] 
          z : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_underlying", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JarrowRudd",Description = "Reference to JarrowRudd")>] 
+        ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,15 +287,15 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_descendant", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JarrowRudd",Description = "Reference to JarrowRudd")>] 
+        ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_size", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JarrowRudd",Description = "Reference to JarrowRudd")>] 
+        ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_columns", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JarrowRudd",Description = "Reference to JarrowRudd")>] 
+        ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,9 +416,9 @@ module JarrowRuddFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JarrowRudd_Range", Description="Create a range of JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the JarrowRudd")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

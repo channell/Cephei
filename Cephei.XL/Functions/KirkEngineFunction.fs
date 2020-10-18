@@ -40,13 +40,13 @@ module KirkEngineFunction =
     *)
     [<ExcelFunction(Name="_KirkEngine", Description="Create a KirkEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "KirkEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="process1",Description = "Reference to process1")>] 
+        ([<ExcelArgument(Name="process1",Description = "BlackProcess")>] 
          process1 : obj)
-        ([<ExcelArgument(Name="process2",Description = "Reference to process2")>] 
+        ([<ExcelArgument(Name="process2",Description = "BlackProcess")>] 
          process2 : obj)
-        ([<ExcelArgument(Name="correlation",Description = "Reference to correlation")>] 
+        ([<ExcelArgument(Name="correlation",Description = "double")>] 
          correlation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -86,9 +86,9 @@ module KirkEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KirkEngine_Range", Description="Create a range of KirkEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the KirkEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

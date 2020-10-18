@@ -48,7 +48,8 @@ type AkimaCubicInterpolationModel
 (*
     Functions
 *)
-    let _AkimaCubicInterpolation                   = cell (fun () -> new AkimaCubicInterpolation (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _AkimaCubicInterpolation                   = cell (fun () -> new AkimaCubicInterpolation (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _AkimaCubicInterpolation.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _AkimaCubicInterpolation.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _AkimaCubicInterpolation.Value.cCoefficients())
@@ -80,13 +81,14 @@ type AkimaCubicInterpolationModel
     casting 
 *)
     internal new () = new AkimaCubicInterpolationModel(null,null,null)
-    member internal this.Inject v = _AkimaCubicInterpolation.Value <- v
+    member internal this.Inject v = _AkimaCubicInterpolation <- v
     static member Cast (p : ICell<AkimaCubicInterpolation>) = 
         if p :? AkimaCubicInterpolationModel then 
             p :?> AkimaCubicInterpolationModel
         else
             let o = new AkimaCubicInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type FdmHullWhiteOpModel
 (*
     Functions
 *)
-    let _FdmHullWhiteOp                            = cell (fun () -> new FdmHullWhiteOp (mesher.Value, model.Value, direction.Value))
+    let mutable
+        _FdmHullWhiteOp                            = cell (fun () -> new FdmHullWhiteOp (mesher.Value, model.Value, direction.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _FdmHullWhiteOp.Value.add(A.Value, B.Value))
     let _apply                                     (r : ICell<Vector>)   
@@ -87,13 +88,14 @@ type FdmHullWhiteOpModel
     casting 
 *)
     internal new () = new FdmHullWhiteOpModel(null,null,null)
-    member internal this.Inject v = _FdmHullWhiteOp.Value <- v
+    member internal this.Inject v = _FdmHullWhiteOp <- v
     static member Cast (p : ICell<FdmHullWhiteOp>) = 
         if p :? FdmHullWhiteOpModel then 
             p :?> FdmHullWhiteOpModel
         else
             let o = new FdmHullWhiteOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module ImpliedVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolTermStructure_accept", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "Reference to ImpliedVolTermStructure")>] 
+        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "ImpliedVolTermStructure")>] 
          impliedvoltermstructure : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module ImpliedVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolTermStructure_dayCounter", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "Reference to ImpliedVolTermStructure")>] 
+        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "ImpliedVolTermStructure")>] 
          impliedvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module ImpliedVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolTermStructure", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ImpliedVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="originalTS",Description = "Reference to originalTS")>] 
+        ([<ExcelArgument(Name="originalTS",Description = "BlackVolTermStructure")>] 
          originalTS : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module ImpliedVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolTermStructure_maxDate", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "Reference to ImpliedVolTermStructure")>] 
+        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "ImpliedVolTermStructure")>] 
          impliedvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module ImpliedVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolTermStructure_maxStrike", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "Reference to ImpliedVolTermStructure")>] 
+        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "ImpliedVolTermStructure")>] 
          impliedvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module ImpliedVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolTermStructure_minStrike", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "Reference to ImpliedVolTermStructure")>] 
+        ([<ExcelArgument(Name="ImpliedVolTermStructure",Description = "ImpliedVolTermStructure")>] 
          impliedvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -265,9 +265,9 @@ module ImpliedVolTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ImpliedVolTermStructure_Range", Description="Create a range of ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ImpliedVolTermStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

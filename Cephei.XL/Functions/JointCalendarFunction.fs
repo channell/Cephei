@@ -39,15 +39,15 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar4", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JointCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Calendar")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
-        ([<ExcelArgument(Name="c3",Description = "Reference to c3")>] 
+        ([<ExcelArgument(Name="c3",Description = "Calendar")>] 
          c3 : obj)
-        ([<ExcelArgument(Name="c4",Description = "Reference to c4")>] 
+        ([<ExcelArgument(Name="c4",Description = "Calendar")>] 
          c4 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,13 +94,13 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JointCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Calendar")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,13 +143,13 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar1", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JointCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Calendar")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
-        ([<ExcelArgument(Name="c3",Description = "Reference to c3")>] 
+        ([<ExcelArgument(Name="c3",Description = "Calendar")>] 
          c3 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,15 +192,15 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar2", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JointCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Calendar")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
-        ([<ExcelArgument(Name="c3",Description = "Reference to c3")>] 
+        ([<ExcelArgument(Name="c3",Description = "Calendar")>] 
          c3 : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -247,17 +247,17 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar3", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JointCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Calendar")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
-        ([<ExcelArgument(Name="c3",Description = "Reference to c3")>] 
+        ([<ExcelArgument(Name="c3",Description = "Calendar")>] 
          c3 : obj)
-        ([<ExcelArgument(Name="c4",Description = "Reference to c4")>] 
+        ([<ExcelArgument(Name="c4",Description = "Calendar")>] 
          c4 : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -308,11 +308,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar5", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JointCalendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Calendar")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -351,9 +351,9 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_addedHolidays", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,11 +387,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_addHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -429,13 +429,13 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_adjust", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -477,19 +477,19 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_advance1", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "Reference to unit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -543,17 +543,17 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_advance", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -603,17 +603,17 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_businessDaysBetween", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "Date")>] 
          from : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
-        ([<ExcelArgument(Name="includeFirst",Description = "Reference to includeFirst")>] 
+        ([<ExcelArgument(Name="includeFirst",Description = "bool")>] 
          includeFirst : obj)
-        ([<ExcelArgument(Name="includeLast",Description = "Reference to includeLast")>] 
+        ([<ExcelArgument(Name="includeLast",Description = "bool")>] 
          includeLast : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -663,9 +663,9 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_calendar", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -699,9 +699,9 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_empty", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -735,11 +735,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_endOfMonth", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -777,11 +777,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_Equals", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,11 +819,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_isBusinessDay", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -861,11 +861,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_isEndOfMonth", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -903,11 +903,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_isHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -945,11 +945,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_isWeekend", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="w",Description = "Reference to w")>] 
+        ([<ExcelArgument(Name="w",Description = "DayOfWeek")>] 
          w : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -989,9 +989,9 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_name", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1025,9 +1025,9 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_removedHolidays", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1061,11 +1061,11 @@ module JointCalendarFunction =
     *)
     [<ExcelFunction(Name="_JointCalendar_removeHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JointCalendar",Description = "Reference to JointCalendar")>] 
+        ([<ExcelArgument(Name="JointCalendar",Description = "JointCalendar")>] 
          jointcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1100,9 +1100,9 @@ module JointCalendarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JointCalendar_Range", Description="Create a range of JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the JointCalendar")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

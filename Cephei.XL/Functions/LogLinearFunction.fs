@@ -39,9 +39,9 @@ module LogLinearFunction =
     *)
     [<ExcelFunction(Name="_LogLinear_global", Description="Create a LogLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinear_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogLinear",Description = "Reference to LogLinear")>] 
+        ([<ExcelArgument(Name="LogLinear",Description = "LogLinear")>] 
          loglinear : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module LogLinearFunction =
     *)
     [<ExcelFunction(Name="_LogLinear_interpolate", Description="Create a LogLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogLinear",Description = "Reference to LogLinear")>] 
+        ([<ExcelArgument(Name="LogLinear",Description = "LogLinear")>] 
          loglinear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,9 +129,9 @@ module LogLinearFunction =
     *)
     [<ExcelFunction(Name="_LogLinear_requiredPoints", Description="Create a LogLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinear_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogLinear",Description = "Reference to LogLinear")>] 
+        ([<ExcelArgument(Name="LogLinear",Description = "LogLinear")>] 
          loglinear : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -162,9 +162,9 @@ module LogLinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LogLinear_Range", Description="Create a range of LogLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LogLinear")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

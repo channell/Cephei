@@ -48,7 +48,8 @@ type AnalyticBSMHullWhiteEngineModel
 (*
     Functions
 *)
-    let _AnalyticBSMHullWhiteEngine                = cell (fun () -> new AnalyticBSMHullWhiteEngine (equityShortRateCorrelation.Value, Process.Value, model.Value))
+    let mutable
+        _AnalyticBSMHullWhiteEngine                = cell (fun () -> new AnalyticBSMHullWhiteEngine (equityShortRateCorrelation.Value, Process.Value, model.Value))
     let _setModel                                  (model : ICell<Handle<HullWhite>>)   
                                                    = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.setModel(model.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
@@ -67,13 +68,14 @@ type AnalyticBSMHullWhiteEngineModel
     casting 
 *)
     internal new () = new AnalyticBSMHullWhiteEngineModel(null,null,null)
-    member internal this.Inject v = _AnalyticBSMHullWhiteEngine.Value <- v
+    member internal this.Inject v = _AnalyticBSMHullWhiteEngine <- v
     static member Cast (p : ICell<AnalyticBSMHullWhiteEngine>) = 
         if p :? AnalyticBSMHullWhiteEngineModel then 
             p :?> AnalyticBSMHullWhiteEngineModel
         else
             let o = new AnalyticBSMHullWhiteEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

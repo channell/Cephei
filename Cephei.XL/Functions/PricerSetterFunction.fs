@@ -39,9 +39,9 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PricerSetter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="pricer",Description = "Reference to pricer")>] 
+        ([<ExcelArgument(Name="pricer",Description = "FloatingRateCouponPricer")>] 
          pricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit8", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit8
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "CappedFlooredCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit3", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit4", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "CashFlow")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,11 +202,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "RangeAccrualFloatersCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit7", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit7
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "FloatingRateCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit9", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit9
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "IborCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit10", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit10
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "DigitalIborCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,11 +370,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit2", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "CappedFlooredIborCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,11 +412,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit5", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "CmsCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,11 +454,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit11", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit11
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "CappedFlooredCmsCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,11 +496,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit1", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "DigitalCmsCoupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,11 +538,11 @@ module PricerSetterFunction =
     *)
     [<ExcelFunction(Name="_PricerSetter_visit6", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit6
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricerSetter",Description = "Reference to PricerSetter")>] 
+        ([<ExcelArgument(Name="PricerSetter",Description = "PricerSetter")>] 
          pricersetter : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "Coupon")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -577,9 +577,9 @@ module PricerSetterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PricerSetter_Range", Description="Create a range of PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PricerSetter")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

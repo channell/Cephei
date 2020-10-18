@@ -41,7 +41,8 @@ type DiscreteTrapezoidIntegralModel
 (*
     Functions
 *)
-    let _DiscreteTrapezoidIntegral                 = cell (fun () -> new DiscreteTrapezoidIntegral ())
+    let mutable
+        _DiscreteTrapezoidIntegral                 = cell (fun () -> new DiscreteTrapezoidIntegral ())
     let _value                                     (x : ICell<Vector>) (f : ICell<Vector>)   
                                                    = triv (fun () -> _DiscreteTrapezoidIntegral.Value.value(x.Value, f.Value))
     do this.Bind(_DiscreteTrapezoidIntegral)
@@ -49,13 +50,14 @@ type DiscreteTrapezoidIntegralModel
     casting 
 *)
     
-    member internal this.Inject v = _DiscreteTrapezoidIntegral.Value <- v
+    member internal this.Inject v = _DiscreteTrapezoidIntegral <- v
     static member Cast (p : ICell<DiscreteTrapezoidIntegral>) = 
         if p :? DiscreteTrapezoidIntegralModel then 
             p :?> DiscreteTrapezoidIntegralModel
         else
             let o = new DiscreteTrapezoidIntegralModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

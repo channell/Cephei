@@ -41,7 +41,8 @@ type BackwardflatLinearModel
 (*
     Functions
 *)
-    let _BackwardflatLinear                        = cell (fun () -> new BackwardflatLinear ())
+    let mutable
+        _BackwardflatLinear                        = cell (fun () -> new BackwardflatLinear ())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>) (yEnd : ICell<int>) (z : ICell<Matrix>)   
                                                    = triv (fun () -> _BackwardflatLinear.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value, yEnd.Value, z.Value))
     do this.Bind(_BackwardflatLinear)
@@ -49,13 +50,14 @@ type BackwardflatLinearModel
     casting 
 *)
     
-    member internal this.Inject v = _BackwardflatLinear.Value <- v
+    member internal this.Inject v = _BackwardflatLinear <- v
     static member Cast (p : ICell<BackwardflatLinear>) = 
         if p :? BackwardflatLinearModel then 
             p :?> BackwardflatLinearModel
         else
             let o = new BackwardflatLinearModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

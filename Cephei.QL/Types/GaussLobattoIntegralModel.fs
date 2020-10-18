@@ -50,7 +50,8 @@ type GaussLobattoIntegralModel
 (*
     Functions
 *)
-    let _GaussLobattoIntegral                      = cell (fun () -> new GaussLobattoIntegral (maxIterations.Value, absAccuracy.Value, relAccuracy.Value, useConvergenceEstimate.Value))
+    let mutable
+        _GaussLobattoIntegral                      = cell (fun () -> new GaussLobattoIntegral (maxIterations.Value, absAccuracy.Value, relAccuracy.Value, useConvergenceEstimate.Value))
     let _absoluteAccuracy                          = triv (fun () -> _GaussLobattoIntegral.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _GaussLobattoIntegral.Value.absoluteError())
     let _integrationSuccess                        = triv (fun () -> _GaussLobattoIntegral.Value.integrationSuccess())
@@ -69,13 +70,14 @@ type GaussLobattoIntegralModel
     casting 
 *)
     internal new () = new GaussLobattoIntegralModel(null,null,null,null)
-    member internal this.Inject v = _GaussLobattoIntegral.Value <- v
+    member internal this.Inject v = _GaussLobattoIntegral <- v
     static member Cast (p : ICell<GaussLobattoIntegral>) = 
         if p :? GaussLobattoIntegralModel then 
             p :?> GaussLobattoIntegralModel
         else
             let o = new GaussLobattoIntegralModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

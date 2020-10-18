@@ -41,7 +41,8 @@ type HKDCurrencyModel
 (*
     Functions
 *)
-    let _HKDCurrency                               = cell (fun () -> new HKDCurrency ())
+    let mutable
+        _HKDCurrency                               = cell (fun () -> new HKDCurrency ())
     let _code                                      = triv (fun () -> _HKDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _HKDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type HKDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _HKDCurrency.Value <- v
+    member internal this.Inject v = _HKDCurrency <- v
     static member Cast (p : ICell<HKDCurrency>) = 
         if p :? HKDCurrencyModel then 
             p :?> HKDCurrencyModel
         else
             let o = new HKDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

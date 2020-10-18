@@ -39,7 +39,7 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IEPCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_code", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_empty", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_Equals", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_format", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_fractionsPerUnit", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_fractionSymbol", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_name", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_numericCode", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_rounding", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_symbol", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_ToString", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module IEPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IEPCurrency_triangulationCurrency", Description="Create a IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IEPCurrency",Description = "Reference to IEPCurrency")>] 
+        ([<ExcelArgument(Name="IEPCurrency",Description = "IEPCurrency")>] 
          iepcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module IEPCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IEPCurrency_Range", Description="Create a range of IEPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IEPCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IEPCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

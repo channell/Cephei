@@ -54,7 +54,8 @@ type CapFloorTermVolCurveModel
 (*
     Functions
 *)
-    let _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolCurve.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.minStrike())
@@ -92,13 +93,14 @@ type CapFloorTermVolCurveModel
     casting 
 *)
     internal new () = new CapFloorTermVolCurveModel(null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    member internal this.Inject v = _CapFloorTermVolCurve <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel then 
             p :?> CapFloorTermVolCurveModel
         else
             let o = new CapFloorTermVolCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -167,7 +169,8 @@ type CapFloorTermVolCurveModel1
 (*
     Functions
 *)
-    let _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolCurve.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.minStrike())
@@ -205,13 +208,14 @@ type CapFloorTermVolCurveModel1
     casting 
 *)
     internal new () = new CapFloorTermVolCurveModel1(null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    member internal this.Inject v = _CapFloorTermVolCurve <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel1 then 
             p :?> CapFloorTermVolCurveModel1
         else
             let o = new CapFloorTermVolCurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -280,7 +284,8 @@ type CapFloorTermVolCurveModel2
 (*
     Functions
 *)
-    let _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolCurve.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.minStrike())
@@ -318,13 +323,14 @@ type CapFloorTermVolCurveModel2
     casting 
 *)
     internal new () = new CapFloorTermVolCurveModel2(null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    member internal this.Inject v = _CapFloorTermVolCurve <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel2 then 
             p :?> CapFloorTermVolCurveModel2
         else
             let o = new CapFloorTermVolCurveModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -393,7 +399,8 @@ type CapFloorTermVolCurveModel3
 (*
     Functions
 *)
-    let _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolCurve                      = cell (fun () -> new CapFloorTermVolCurve (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolCurve.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolCurve.Value.minStrike())
@@ -431,13 +438,14 @@ type CapFloorTermVolCurveModel3
     casting 
 *)
     internal new () = new CapFloorTermVolCurveModel3(null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    member internal this.Inject v = _CapFloorTermVolCurve <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel3 then 
             p :?> CapFloorTermVolCurveModel3
         else
             let o = new CapFloorTermVolCurveModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

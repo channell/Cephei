@@ -39,9 +39,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_fixedLeg", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_fixedLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,25 +75,25 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedLoan")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="fixedSchedule",Description = "Reference to fixedSchedule")>] 
+        ([<ExcelArgument(Name="fixedSchedule",Description = "Schedule")>] 
          fixedSchedule : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="fixedDayCount",Description = "Reference to fixedDayCount")>] 
+        ([<ExcelArgument(Name="fixedDayCount",Description = "DayCounter")>] 
          fixedDayCount : obj)
-        ([<ExcelArgument(Name="principalSchedule",Description = "Reference to principalSchedule")>] 
+        ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_principalLeg", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_isExpired", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_CASH", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_errorEstimate", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_NPV", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,11 +340,11 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_result", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,11 +382,11 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_setPricingEngine", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,9 +424,9 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_valuationDate", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedLoan",Description = "Reference to FixedLoan")>] 
+        ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -457,9 +457,9 @@ module FixedLoanFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedLoan_Range", Description="Create a range of FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FixedLoan")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

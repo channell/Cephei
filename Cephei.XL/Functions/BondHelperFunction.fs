@@ -39,9 +39,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_bond", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_bond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BondHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "Quote")>] 
          price : obj)
-        ([<ExcelArgument(Name="bond",Description = "Reference to bond")>] 
+        ([<ExcelArgument(Name="bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="useCleanPrice",Description = "Reference to useCleanPrice")>] 
+        ([<ExcelArgument(Name="useCleanPrice",Description = "BondHelper")>] 
          useCleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_impliedQuote", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_setTermStructure", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "YieldTermStructure")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,9 +202,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_useCleanPrice", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_useCleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_earliestDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_latestDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_latestRelevantDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_maturityDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_pillarDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_quote", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_quoteError", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_quoteIsValid", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_quoteValue", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,11 +562,11 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_registerWith", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,11 +604,11 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_unregisterWith", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module BondHelperFunction =
     *)
     [<ExcelFunction(Name="_BondHelper_update", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BondHelper",Description = "Reference to BondHelper")>] 
+        ([<ExcelArgument(Name="BondHelper",Description = "BondHelper")>] 
          bondhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -679,9 +679,9 @@ module BondHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BondHelper_Range", Description="Create a range of BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BondHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

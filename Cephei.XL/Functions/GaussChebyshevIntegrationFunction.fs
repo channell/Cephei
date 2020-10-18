@@ -39,9 +39,9 @@ module GaussChebyshevIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshevIntegration", Description="Create a GaussChebyshevIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussChebyshevIntegration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module GaussChebyshevIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshevIntegration_order", Description="Create a GaussChebyshevIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "Reference to GaussChebyshevIntegration")>] 
+        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "GaussChebyshevIntegration")>] 
          gausschebyshevintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module GaussChebyshevIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshevIntegration_value", Description="Create a GaussChebyshevIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "Reference to GaussChebyshevIntegration")>] 
+        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "GaussChebyshevIntegration")>] 
          gausschebyshevintegration : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module GaussChebyshevIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshevIntegration_weights", Description="Create a GaussChebyshevIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "Reference to GaussChebyshevIntegration")>] 
+        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "GaussChebyshevIntegration")>] 
          gausschebyshevintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module GaussChebyshevIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshevIntegration_x", Description="Create a GaussChebyshevIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "Reference to GaussChebyshevIntegration")>] 
+        ([<ExcelArgument(Name="GaussChebyshevIntegration",Description = "GaussChebyshevIntegration")>] 
          gausschebyshevintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module GaussChebyshevIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussChebyshevIntegration_Range", Description="Create a range of GaussChebyshevIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussChebyshevIntegration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

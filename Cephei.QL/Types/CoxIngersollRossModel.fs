@@ -50,7 +50,8 @@ type CoxIngersollRossModel
 (*
     Functions
 *)
-    let _CoxIngersollRoss                          = cell (fun () -> new CoxIngersollRoss (r0.Value, theta.Value, k.Value, sigma.Value))
+    let mutable
+        _CoxIngersollRoss                          = cell (fun () -> new CoxIngersollRoss (r0.Value, theta.Value, k.Value, sigma.Value))
     let _discountBondOption                        (Type : ICell<Option.Type>) (strike : ICell<double>) (maturity : ICell<double>) (bondMaturity : ICell<double>)   
                                                    = triv (fun () -> _CoxIngersollRoss.Value.discountBondOption(Type.Value, strike.Value, maturity.Value, bondMaturity.Value))
     let _dynamics                                  = triv (fun () -> _CoxIngersollRoss.Value.dynamics())
@@ -88,13 +89,14 @@ type CoxIngersollRossModel
     casting 
 *)
     internal new () = new CoxIngersollRossModel(null,null,null,null)
-    member internal this.Inject v = _CoxIngersollRoss.Value <- v
+    member internal this.Inject v = _CoxIngersollRoss <- v
     static member Cast (p : ICell<CoxIngersollRoss>) = 
         if p :? CoxIngersollRossModel then 
             p :?> CoxIngersollRossModel
         else
             let o = new CoxIngersollRossModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

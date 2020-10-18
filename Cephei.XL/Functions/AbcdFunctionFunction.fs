@@ -39,15 +39,15 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "AbcdFunction")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "AbcdFunction")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "AbcdFunction")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "AbcdFunction")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,17 +94,17 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_covariance1", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_covariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
-        ([<ExcelArgument(Name="S",Description = "Reference to S")>] 
+        ([<ExcelArgument(Name="S",Description = "double")>] 
          S : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,15 +154,15 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_covariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="T2",Description = "Reference to T2")>] 
+        ([<ExcelArgument(Name="T2",Description = "double")>] 
          T2 : obj)
-        ([<ExcelArgument(Name="S",Description = "Reference to S")>] 
+        ([<ExcelArgument(Name="S",Description = "double")>] 
          S : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,15 +208,15 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_instantaneousCovariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_instantaneousCovariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
-        ([<ExcelArgument(Name="S",Description = "Reference to S")>] 
+        ([<ExcelArgument(Name="S",Description = "double")>] 
          S : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,13 +262,13 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_instantaneousVariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_instantaneousVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,13 +310,13 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_instantaneousVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_instantaneousVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,9 +358,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_longTermVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_longTermVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_maximumVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_maximumVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,15 +430,15 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_primitive", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="T2",Description = "Reference to T2")>] 
+        ([<ExcelArgument(Name="T2",Description = "double")>] 
          T2 : obj)
-        ([<ExcelArgument(Name="S",Description = "Reference to S")>] 
+        ([<ExcelArgument(Name="S",Description = "double")>] 
          S : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,9 +484,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_shortTermVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_shortTermVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,15 +520,15 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_variance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="tMin",Description = "Reference to tMin")>] 
+        ([<ExcelArgument(Name="tMin",Description = "double")>] 
          tMin : obj)
-        ([<ExcelArgument(Name="tMax",Description = "Reference to tMax")>] 
+        ([<ExcelArgument(Name="tMax",Description = "double")>] 
          tMax : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,15 +574,15 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_volatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="tMin",Description = "Reference to tMin")>] 
+        ([<ExcelArgument(Name="tMin",Description = "double")>] 
          tMin : obj)
-        ([<ExcelArgument(Name="tMax",Description = "Reference to tMax")>] 
+        ([<ExcelArgument(Name="tMax",Description = "double")>] 
          tMax : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -628,9 +628,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_a", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,9 +664,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_b", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,9 +700,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_c", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_c
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -736,9 +736,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_coefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_coefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -772,9 +772,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_d", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_d
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -808,13 +808,13 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_definiteDerivativeCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_definiteDerivativeCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -856,13 +856,13 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_definiteIntegral", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_definiteIntegral
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,13 +904,13 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_definiteIntegralCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_definiteIntegralCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -952,11 +952,11 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_derivative", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -994,9 +994,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_derivativeCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_derivativeCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1030,9 +1030,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_longTermValue", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_longTermValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,9 +1066,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_maximumLocation", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_maximumLocation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1102,9 +1102,9 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_maximumValue", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_maximumValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1138,11 +1138,11 @@ module AbcdFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdFunction_value", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdFunction",Description = "Reference to AbcdFunction")>] 
+        ([<ExcelArgument(Name="AbcdFunction",Description = "AbcdFunction")>] 
          abcdfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1177,9 +1177,9 @@ module AbcdFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdFunction_Range", Description="Create a range of AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AbcdFunction")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

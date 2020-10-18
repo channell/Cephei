@@ -46,7 +46,8 @@ type IborLegModel
 (*
     Functions
 *)
-    let _IborLeg                                   = cell (fun () -> new IborLeg (schedule.Value, index.Value))
+    let mutable
+        _IborLeg                                   = cell (fun () -> new IborLeg (schedule.Value, index.Value))
     let _value                                     = triv (fun () -> _IborLeg.Value.value())
     let _inArrears                                 = triv (fun () -> _IborLeg.Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
@@ -87,13 +88,14 @@ type IborLegModel
     casting 
 *)
     internal new () = new IborLegModel(null,null)
-    member internal this.Inject v = _IborLeg.Value <- v
+    member internal this.Inject v = _IborLeg <- v
     static member Cast (p : ICell<IborLeg>) = 
         if p :? IborLegModel then 
             p :?> IborLegModel
         else
             let o = new IborLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

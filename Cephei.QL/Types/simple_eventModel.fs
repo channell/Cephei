@@ -44,7 +44,8 @@ type simple_eventModel
 (*
     Functions
 *)
-    let _simple_event                              = cell (fun () -> new simple_event (date.Value))
+    let mutable
+        _simple_event                              = cell (fun () -> new simple_event (date.Value))
     let _date                                      = triv (fun () -> _simple_event.Value.date())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
                                                    = triv (fun () -> _simple_event.Value.accept(v.Value)
@@ -62,13 +63,14 @@ type simple_eventModel
     casting 
 *)
     internal new () = new simple_eventModel(null)
-    member internal this.Inject v = _simple_event.Value <- v
+    member internal this.Inject v = _simple_event <- v
     static member Cast (p : ICell<simple_event>) = 
         if p :? simple_eventModel then 
             p :?> simple_eventModel
         else
             let o = new simple_eventModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

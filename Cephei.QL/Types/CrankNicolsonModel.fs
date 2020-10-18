@@ -41,7 +41,8 @@ type CrankNicolsonModel<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _CrankNicolson                             = cell (fun () -> new CrankNicolson<'Operator> ())
+    let mutable
+        _CrankNicolson                             = cell (fun () -> new CrankNicolson<'Operator> ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
                                                    = triv (fun () -> _CrankNicolson.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -80,7 +81,8 @@ type CrankNicolsonModel1<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _CrankNicolson                             = cell (fun () -> new CrankNicolson<'Operator> (L.Value, bcs.Value))
+    let mutable
+        _CrankNicolson                             = cell (fun () -> new CrankNicolson<'Operator> (L.Value, bcs.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
                                                    = triv (fun () -> _CrankNicolson.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   

@@ -39,9 +39,9 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
     *)
     [<ExcelFunction(Name="_BaroneAdesiWhaleyApproximationEngine", Description="Create a BaroneAdesiWhaleyApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BaroneAdesiWhaleyApproximationEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BaroneAdesiWhaleyApproximationEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -74,9 +74,9 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
 
     [<ExcelFunction(Name="_BaroneAdesiWhaleyApproximationEngine_Range", Description="Create a range of BaroneAdesiWhaleyApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BaroneAdesiWhaleyApproximationEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BaroneAdesiWhaleyApproximationEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

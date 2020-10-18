@@ -39,11 +39,11 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_accumulate", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_accumulate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AverageBasketPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff1", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AverageBasketPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Payoff")>] 
          p : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AverageBasketPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Payoff")>] 
          p : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,9 +167,9 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_basePayoff", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_basePayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,9 +203,9 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_description", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,9 +239,9 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_name", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,11 +275,11 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_value1", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,11 +317,11 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_value", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,11 +359,11 @@ module AverageBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_AverageBasketPayoff_accept", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "Reference to AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="AverageBasketPayoff",Description = "AverageBasketPayoff")>] 
          averagebasketpayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -398,9 +398,9 @@ module AverageBasketPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AverageBasketPayoff_Range", Description="Create a range of AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AverageBasketPayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

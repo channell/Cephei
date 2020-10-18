@@ -41,7 +41,8 @@ type FellerConstraintModel
 (*
     Functions
 *)
-    let _FellerConstraint                          = cell (fun () -> new FellerConstraint ())
+    let mutable
+        _FellerConstraint                          = cell (fun () -> new FellerConstraint ())
     let _empty                                     = cell (fun () -> _FellerConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = cell (fun () -> _FellerConstraint.Value.lowerBound(parameters.Value))
@@ -56,13 +57,14 @@ type FellerConstraintModel
     casting 
 *)
     
-    member internal this.Inject v = _FellerConstraint.Value <- v
+    member internal this.Inject v = _FellerConstraint <- v
     static member Cast (p : ICell<FellerConstraint>) = 
         if p :? FellerConstraintModel then 
             p :?> FellerConstraintModel
         else
             let o = new FellerConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

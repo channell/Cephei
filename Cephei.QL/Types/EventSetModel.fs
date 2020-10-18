@@ -48,7 +48,8 @@ type EventSetModel
 (*
     Functions
 *)
-    let _EventSet                                  = cell (fun () -> new EventSet (events.Value, eventsStart.Value, eventsEnd.Value))
+    let mutable
+        _EventSet                                  = cell (fun () -> new EventSet (events.Value, eventsStart.Value, eventsEnd.Value))
     let _newSimulation                             (start : ICell<Date>) (End : ICell<Date>)   
                                                    = triv (fun () -> _EventSet.Value.newSimulation(start.Value, End.Value))
     do this.Bind(_EventSet)
@@ -56,13 +57,14 @@ type EventSetModel
     casting 
 *)
     internal new () = new EventSetModel(null,null,null)
-    member internal this.Inject v = _EventSet.Value <- v
+    member internal this.Inject v = _EventSet <- v
     static member Cast (p : ICell<EventSet>) = 
         if p :? EventSetModel then 
             p :?> EventSetModel
         else
             let o = new EventSetModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

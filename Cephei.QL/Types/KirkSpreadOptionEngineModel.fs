@@ -48,19 +48,21 @@ type KirkSpreadOptionEngineModel
 (*
     Functions
 *)
-    let _KirkSpreadOptionEngine                    = cell (fun () -> new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))
+    let mutable
+        _KirkSpreadOptionEngine                    = cell (fun () -> new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))
     do this.Bind(_KirkSpreadOptionEngine)
 (* 
     casting 
 *)
     internal new () = new KirkSpreadOptionEngineModel(null,null,null)
-    member internal this.Inject v = _KirkSpreadOptionEngine.Value <- v
+    member internal this.Inject v = _KirkSpreadOptionEngine <- v
     static member Cast (p : ICell<KirkSpreadOptionEngine>) = 
         if p :? KirkSpreadOptionEngineModel then 
             p :?> KirkSpreadOptionEngineModel
         else
             let o = new KirkSpreadOptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

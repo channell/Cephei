@@ -39,13 +39,13 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_discountImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_forwardImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,17 +135,17 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_guess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,11 +195,11 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_initialDate", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_initialValue", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_maxIterations", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,17 +315,17 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_maxValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,17 +375,17 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_minValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,15 +435,15 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_updateGuess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,13 +489,13 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_zeroYieldImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroYield",Description = "Reference to ZeroYield")>] 
+        ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -534,9 +534,9 @@ module ZeroYieldFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroYield_Range", Description="Create a range of ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ZeroYield")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

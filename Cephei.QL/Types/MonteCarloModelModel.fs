@@ -56,7 +56,8 @@ type MonteCarloModelModel<'MC, 'RNG, 'S when 'S :> IGeneralStatistics>
 (*
     Functions
 *)
-    let _MonteCarloModel                           = cell (fun () -> new MonteCarloModel<'MC,'RNG,'S> (pathGenerator.Value, pathPricer.Value, sampleAccumulator.Value, antitheticVariate.Value, cvPathPricer.Value, cvOptionValue.Value, cvPathGenerator.Value))
+    let mutable
+        _MonteCarloModel                           = cell (fun () -> new MonteCarloModel<'MC,'RNG,'S> (pathGenerator.Value, pathPricer.Value, sampleAccumulator.Value, antitheticVariate.Value, cvPathPricer.Value, cvOptionValue.Value, cvPathGenerator.Value))
     let _addSamples                                (samples : ICell<int>)   
                                                    = triv (fun () -> _MonteCarloModel.Value.addSamples(samples.Value)
                                                                      _MonteCarloModel.Value)

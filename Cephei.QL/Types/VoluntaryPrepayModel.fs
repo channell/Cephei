@@ -46,7 +46,8 @@ type VoluntaryPrepayModel
 (*
     Functions
 *)
-    let _VoluntaryPrepay                           = cell (fun () -> new VoluntaryPrepay (amount.Value, date.Value))
+    let mutable
+        _VoluntaryPrepay                           = cell (fun () -> new VoluntaryPrepay (amount.Value, date.Value))
     let _amount                                    = triv (fun () -> _VoluntaryPrepay.Value.amount())
     let _date                                      = triv (fun () -> _VoluntaryPrepay.Value.date())
     let _CompareTo                                 (cf : ICell<CashFlow>)   
@@ -72,13 +73,14 @@ type VoluntaryPrepayModel
     casting 
 *)
     internal new () = new VoluntaryPrepayModel(null,null)
-    member internal this.Inject v = _VoluntaryPrepay.Value <- v
+    member internal this.Inject v = _VoluntaryPrepay <- v
     static member Cast (p : ICell<VoluntaryPrepay>) = 
         if p :? VoluntaryPrepayModel then 
             p :?> VoluntaryPrepayModel
         else
             let o = new VoluntaryPrepayModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

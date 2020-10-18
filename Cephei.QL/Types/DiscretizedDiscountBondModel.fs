@@ -41,7 +41,8 @@ type DiscretizedDiscountBondModel
 (*
     Functions
 *)
-    let _DiscretizedDiscountBond                   = cell (fun () -> new DiscretizedDiscountBond ())
+    let mutable
+        _DiscretizedDiscountBond                   = cell (fun () -> new DiscretizedDiscountBond ())
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedDiscountBond.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedDiscountBond.Value.reset(size.Value)
@@ -76,13 +77,14 @@ type DiscretizedDiscountBondModel
     casting 
 *)
     
-    member internal this.Inject v = _DiscretizedDiscountBond.Value <- v
+    member internal this.Inject v = _DiscretizedDiscountBond <- v
     static member Cast (p : ICell<DiscretizedDiscountBond>) = 
         if p :? DiscretizedDiscountBondModel then 
             p :?> DiscretizedDiscountBondModel
         else
             let o = new DiscretizedDiscountBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

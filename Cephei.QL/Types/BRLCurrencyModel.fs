@@ -41,7 +41,8 @@ type BRLCurrencyModel
 (*
     Functions
 *)
-    let _BRLCurrency                               = cell (fun () -> new BRLCurrency ())
+    let mutable
+        _BRLCurrency                               = cell (fun () -> new BRLCurrency ())
     let _code                                      = triv (fun () -> _BRLCurrency.Value.code)
     let _empty                                     = triv (fun () -> _BRLCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type BRLCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _BRLCurrency.Value <- v
+    member internal this.Inject v = _BRLCurrency <- v
     static member Cast (p : ICell<BRLCurrency>) = 
         if p :? BRLCurrencyModel then 
             p :?> BRLCurrencyModel
         else
             let o = new BRLCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

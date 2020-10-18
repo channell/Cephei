@@ -46,7 +46,8 @@ type SpreadedOptionletVolatilityModel
 (*
     Functions
 *)
-    let _SpreadedOptionletVolatility               = cell (fun () -> new SpreadedOptionletVolatility (baseVol.Value, spread.Value))
+    let mutable
+        _SpreadedOptionletVolatility               = cell (fun () -> new SpreadedOptionletVolatility (baseVol.Value, spread.Value))
     let _businessDayConvention                     = triv (fun () -> _SpreadedOptionletVolatility.Value.businessDayConvention())
     let _calendar                                  = triv (fun () -> _SpreadedOptionletVolatility.Value.calendar())
     let _dayCounter                                = triv (fun () -> _SpreadedOptionletVolatility.Value.dayCounter())
@@ -95,13 +96,14 @@ type SpreadedOptionletVolatilityModel
     casting 
 *)
     internal new () = new SpreadedOptionletVolatilityModel(null,null)
-    member internal this.Inject v = _SpreadedOptionletVolatility.Value <- v
+    member internal this.Inject v = _SpreadedOptionletVolatility <- v
     static member Cast (p : ICell<SpreadedOptionletVolatility>) = 
         if p :? SpreadedOptionletVolatilityModel then 
             p :?> SpreadedOptionletVolatilityModel
         else
             let o = new SpreadedOptionletVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

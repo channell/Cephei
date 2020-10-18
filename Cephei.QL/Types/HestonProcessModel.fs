@@ -60,7 +60,8 @@ type HestonProcessModel
 (*
     Functions
 *)
-    let _HestonProcess                             = cell (fun () -> new HestonProcess (riskFreeRate.Value, dividendYield.Value, s0.Value, v0.Value, kappa.Value, theta.Value, sigma.Value, rho.Value, d.Value))
+    let mutable
+        _HestonProcess                             = cell (fun () -> new HestonProcess (riskFreeRate.Value, dividendYield.Value, s0.Value, v0.Value, kappa.Value, theta.Value, sigma.Value, rho.Value, d.Value))
     let _apply                                     (x0 : ICell<Vector>) (dx : ICell<Vector>)   
                                                    = triv (fun () -> _HestonProcess.Value.apply(x0.Value, dx.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<Vector>)   
@@ -101,13 +102,14 @@ type HestonProcessModel
     casting 
 *)
     internal new () = new HestonProcessModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _HestonProcess.Value <- v
+    member internal this.Inject v = _HestonProcess <- v
     static member Cast (p : ICell<HestonProcess>) = 
         if p :? HestonProcessModel then 
             p :?> HestonProcessModel
         else
             let o = new HestonProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_displacement", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StrippedOptionletAdapter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_maxDate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StrippedOptionletAdapter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_maxStrike", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StrippedOptionletAdapter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_minStrike", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StrippedOptionletAdapter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StrippedOptionletAdapter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "StrippedOptionletBase")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_update", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_volatilityType", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,15 +292,15 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,15 +346,15 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,15 +400,15 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,13 +454,13 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,13 +502,13 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_smileSection2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,13 +550,13 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,15 +598,15 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,15 +652,15 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,15 +706,15 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_businessDayConvention", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,11 +796,11 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_optionDateFromTenor", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -838,9 +838,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_calendar", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,9 +874,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_dayCounter", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -910,9 +910,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_maxTime", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_referenceDate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,9 +982,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_settlementDays", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,11 +1018,11 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_timeFromReference", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1060,9 +1060,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_allowsExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1096,11 +1096,11 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_disableExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1138,11 +1138,11 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_enableExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1180,9 +1180,9 @@ module StrippedOptionletAdapterFunction =
     *)
     [<ExcelFunction(Name="_StrippedOptionletAdapter_extrapolate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "Reference to StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="StrippedOptionletAdapter",Description = "StrippedOptionletAdapter")>] 
          strippedoptionletadapter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1213,9 +1213,9 @@ module StrippedOptionletAdapterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StrippedOptionletAdapter_Range", Description="Create a range of StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the StrippedOptionletAdapter")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

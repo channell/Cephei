@@ -60,7 +60,8 @@ type MCDiscreteAveragingAsianEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (
 (*
     Functions
 *)
-    let _MCDiscreteAveragingAsianEngine            = cell (fun () -> new MCDiscreteAveragingAsianEngine<'RNG,'S> (Process.Value, maxTimeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+    let mutable
+        _MCDiscreteAveragingAsianEngine            = cell (fun () -> new MCDiscreteAveragingAsianEngine<'RNG,'S> (Process.Value, maxTimeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.registerWith(handler.Value)
                                                                      _MCDiscreteAveragingAsianEngine.Value)

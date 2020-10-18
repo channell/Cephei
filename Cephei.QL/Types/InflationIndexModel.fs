@@ -56,7 +56,8 @@ type InflationIndexModel
 (*
     Functions
 *)
-    let _InflationIndex                            = cell (fun () -> new InflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, frequency.Value, availabilitiyLag.Value, currency.Value))
+    let mutable
+        _InflationIndex                            = cell (fun () -> new InflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, frequency.Value, availabilitiyLag.Value, currency.Value))
     let _addFixing                                 (fixingDate : ICell<Date>) (fixing : ICell<double>) (forceOverwrite : ICell<bool>)   
                                                    = triv (fun () -> _InflationIndex.Value.addFixing(fixingDate.Value, fixing.Value, forceOverwrite.Value)
                                                                      _InflationIndex.Value)
@@ -96,13 +97,14 @@ type InflationIndexModel
     casting 
 *)
     internal new () = new InflationIndexModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _InflationIndex.Value <- v
+    member internal this.Inject v = _InflationIndex <- v
     static member Cast (p : ICell<InflationIndex>) = 
         if p :? InflationIndexModel then 
             p :?> InflationIndexModel
         else
             let o = new InflationIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SecondOrderMixedDerivativeOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="d0",Description = "Reference to d0")>] 
+        ([<ExcelArgument(Name="d0",Description = "int")>] 
          d0 : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "int")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,13 +89,13 @@ module SecondOrderMixedDerivativeOpFunction =
     (*!! duplicate Add function 
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_add", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -138,11 +138,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_apply", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -180,11 +180,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_applyTo", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,9 +222,9 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_Clone", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -258,11 +258,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_identity", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_isTimeDependent", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,11 +336,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_mult", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_mult
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -378,13 +378,13 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_multiply", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="D",Description = "Reference to D")>] 
+        ([<ExcelArgument(Name="D",Description = "IOperator")>] 
          D : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -426,11 +426,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_setTime", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -468,9 +468,9 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_size", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -504,11 +504,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_solveFor", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -546,13 +546,13 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_subtract", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,11 +594,11 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_swap", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "NinePointLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -636,9 +636,9 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_toMatrix", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "Reference to SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -669,9 +669,9 @@ module SecondOrderMixedDerivativeOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_Range", Description="Create a range of SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

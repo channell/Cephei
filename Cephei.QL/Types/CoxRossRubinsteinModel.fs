@@ -41,7 +41,8 @@ type CoxRossRubinsteinModel
 (*
     Functions
 *)
-    let _CoxRossRubinstein                         = cell (fun () -> new CoxRossRubinstein ())
+    let mutable
+        _CoxRossRubinstein                         = cell (fun () -> new CoxRossRubinstein ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _CoxRossRubinstein.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
@@ -58,13 +59,14 @@ type CoxRossRubinsteinModel
     casting 
 *)
     
-    member internal this.Inject v = _CoxRossRubinstein.Value <- v
+    member internal this.Inject v = _CoxRossRubinstein <- v
     static member Cast (p : ICell<CoxRossRubinstein>) = 
         if p :? CoxRossRubinsteinModel then 
             p :?> CoxRossRubinsteinModel
         else
             let o = new CoxRossRubinsteinModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -105,7 +107,8 @@ type CoxRossRubinsteinModel1
 (*
     Functions
 *)
-    let _CoxRossRubinstein                         = cell (fun () -> new CoxRossRubinstein (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _CoxRossRubinstein                         = cell (fun () -> new CoxRossRubinstein (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _CoxRossRubinstein.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
@@ -122,13 +125,14 @@ type CoxRossRubinsteinModel1
     casting 
 *)
     internal new () = new CoxRossRubinsteinModel1(null,null,null,null)
-    member internal this.Inject v = _CoxRossRubinstein.Value <- v
+    member internal this.Inject v = _CoxRossRubinstein <- v
     static member Cast (p : ICell<CoxRossRubinstein>) = 
         if p :? CoxRossRubinsteinModel1 then 
             p :?> CoxRossRubinsteinModel1
         else
             let o = new CoxRossRubinsteinModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

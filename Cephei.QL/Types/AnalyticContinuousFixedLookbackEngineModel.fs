@@ -44,19 +44,21 @@ type AnalyticContinuousFixedLookbackEngineModel
 (*
     Functions
 *)
-    let _AnalyticContinuousFixedLookbackEngine     = cell (fun () -> new AnalyticContinuousFixedLookbackEngine (Process.Value))
+    let mutable
+        _AnalyticContinuousFixedLookbackEngine     = cell (fun () -> new AnalyticContinuousFixedLookbackEngine (Process.Value))
     do this.Bind(_AnalyticContinuousFixedLookbackEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticContinuousFixedLookbackEngineModel(null)
-    member internal this.Inject v = _AnalyticContinuousFixedLookbackEngine.Value <- v
+    member internal this.Inject v = _AnalyticContinuousFixedLookbackEngine <- v
     static member Cast (p : ICell<AnalyticContinuousFixedLookbackEngine>) = 
         if p :? AnalyticContinuousFixedLookbackEngineModel then 
             p :?> AnalyticContinuousFixedLookbackEngineModel
         else
             let o = new AnalyticContinuousFixedLookbackEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

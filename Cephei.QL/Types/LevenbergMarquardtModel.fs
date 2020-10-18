@@ -42,7 +42,8 @@ type LevenbergMarquardtModel
 (*
     Functions
 *)
-    let _LevenbergMarquardt                        = cell (fun () -> new LevenbergMarquardt ())
+    let mutable
+        _LevenbergMarquardt                        = cell (fun () -> new LevenbergMarquardt ())
     let _fcn                                       (m : ICell<int>) (n : ICell<int>) (x : ICell<Vector>) (iflag : ICell<int>)   
                                                    = triv (fun () -> _LevenbergMarquardt.Value.fcn(m.Value, n.Value, x.Value, iflag.Value))
     let _getInfo                                   = triv (fun () -> _LevenbergMarquardt.Value.getInfo())
@@ -55,13 +56,14 @@ type LevenbergMarquardtModel
     casting 
 *)
     
-    member internal this.Inject v = _LevenbergMarquardt.Value <- v
+    member internal this.Inject v = _LevenbergMarquardt <- v
     static member Cast (p : ICell<LevenbergMarquardt>) = 
         if p :? LevenbergMarquardtModel then 
             p :?> LevenbergMarquardtModel
         else
             let o = new LevenbergMarquardtModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -99,7 +101,8 @@ type LevenbergMarquardtModel1
 (*
     Functions
 *)
-    let _LevenbergMarquardt                        = cell (fun () -> new LevenbergMarquardt (epsfcn.Value, xtol.Value, gtol.Value, useCostFunctionsJacobian.Value))
+    let mutable
+        _LevenbergMarquardt                        = cell (fun () -> new LevenbergMarquardt (epsfcn.Value, xtol.Value, gtol.Value, useCostFunctionsJacobian.Value))
     let _fcn                                       (m : ICell<int>) (n : ICell<int>) (x : ICell<Vector>) (iflag : ICell<int>)   
                                                    = triv (fun () -> _LevenbergMarquardt.Value.fcn(m.Value, n.Value, x.Value, iflag.Value))
     let _getInfo                                   = triv (fun () -> _LevenbergMarquardt.Value.getInfo())
@@ -112,13 +115,14 @@ type LevenbergMarquardtModel1
     casting 
 *)
     internal new () = new LevenbergMarquardtModel1(null,null,null,null)
-    member internal this.Inject v = _LevenbergMarquardt.Value <- v
+    member internal this.Inject v = _LevenbergMarquardt <- v
     static member Cast (p : ICell<LevenbergMarquardt>) = 
         if p :? LevenbergMarquardtModel1 then 
             p :?> LevenbergMarquardtModel1
         else
             let o = new LevenbergMarquardtModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

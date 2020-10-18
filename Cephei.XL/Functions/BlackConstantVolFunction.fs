@@ -39,15 +39,15 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,15 +94,15 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol1", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,15 +149,15 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol2", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,15 +204,15 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol3", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,9 +259,9 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol_maxDate", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackConstantVol",Description = "Reference to BlackConstantVol")>] 
+        ([<ExcelArgument(Name="BlackConstantVol",Description = "BlackConstantVol")>] 
          blackconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol_maxStrike", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackConstantVol",Description = "Reference to BlackConstantVol")>] 
+        ([<ExcelArgument(Name="BlackConstantVol",Description = "BlackConstantVol")>] 
          blackconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -331,9 +331,9 @@ module BlackConstantVolFunction =
     *)
     [<ExcelFunction(Name="_BlackConstantVol_minStrike", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackConstantVol",Description = "Reference to BlackConstantVol")>] 
+        ([<ExcelArgument(Name="BlackConstantVol",Description = "BlackConstantVol")>] 
          blackconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BlackConstantVolFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackConstantVol_Range", Description="Create a range of BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackConstantVol")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,15 +39,15 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_descendant", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,11 +93,11 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_dx", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_dx
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,15 +135,15 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_probability", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -189,11 +189,11 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_size", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -231,9 +231,9 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_timeGrid", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_timeGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,11 +267,11 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrinomialTree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,13 +310,13 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree1", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrinomialTree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
-        ([<ExcelArgument(Name="isPositive",Description = "Reference to isPositive")>] 
+        ([<ExcelArgument(Name="isPositive",Description = "bool")>] 
          isPositive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,13 +359,13 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_underlying", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module TrinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_TrinomialTree_columns", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrinomialTree",Description = "Reference to TrinomialTree")>] 
+        ([<ExcelArgument(Name="TrinomialTree",Description = "TrinomialTree")>] 
          trinomialtree : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -440,9 +440,9 @@ module TrinomialTreeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TrinomialTree_Range", Description="Create a range of TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TrinomialTree")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

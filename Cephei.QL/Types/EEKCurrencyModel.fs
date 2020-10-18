@@ -41,7 +41,8 @@ type EEKCurrencyModel
 (*
     Functions
 *)
-    let _EEKCurrency                               = cell (fun () -> new EEKCurrency ())
+    let mutable
+        _EEKCurrency                               = cell (fun () -> new EEKCurrency ())
     let _code                                      = triv (fun () -> _EEKCurrency.Value.code)
     let _empty                                     = triv (fun () -> _EEKCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type EEKCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _EEKCurrency.Value <- v
+    member internal this.Inject v = _EEKCurrency <- v
     static member Cast (p : ICell<EEKCurrency>) = 
         if p :? EEKCurrencyModel then 
             p :?> EEKCurrencyModel
         else
             let o = new EEKCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

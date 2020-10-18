@@ -44,7 +44,8 @@ type NzocrModel
 (*
     Functions
 *)
-    let _Nzocr                                     = cell (fun () -> new Nzocr (h.Value))
+    let mutable
+        _Nzocr                                     = cell (fun () -> new Nzocr (h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Nzocr.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _Nzocr.Value.businessDayConvention())
@@ -99,13 +100,14 @@ type NzocrModel
     casting 
 *)
     internal new () = new NzocrModel(null)
-    member internal this.Inject v = _Nzocr.Value <- v
+    member internal this.Inject v = _Nzocr <- v
     static member Cast (p : ICell<Nzocr>) = 
         if p :? NzocrModel then 
             p :?> NzocrModel
         else
             let o = new NzocrModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

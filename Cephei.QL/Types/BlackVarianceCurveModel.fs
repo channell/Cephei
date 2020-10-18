@@ -52,7 +52,8 @@ type BlackVarianceCurveModel
 (*
     Functions
 *)
-    let _BlackVarianceCurve                        = cell (fun () -> new BlackVarianceCurve (referenceDate.Value, dates.Value, blackVolCurve.Value, dayCounter.Value, forceMonotoneVariance.Value))
+    let mutable
+        _BlackVarianceCurve                        = cell (fun () -> new BlackVarianceCurve (referenceDate.Value, dates.Value, blackVolCurve.Value, dayCounter.Value, forceMonotoneVariance.Value))
     let _dayCounter                                = triv (fun () -> _BlackVarianceCurve.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _BlackVarianceCurve.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _BlackVarianceCurve.Value.maxStrike())
@@ -65,13 +66,14 @@ type BlackVarianceCurveModel
     casting 
 *)
     internal new () = new BlackVarianceCurveModel(null,null,null,null,null)
-    member internal this.Inject v = _BlackVarianceCurve.Value <- v
+    member internal this.Inject v = _BlackVarianceCurve <- v
     static member Cast (p : ICell<BlackVarianceCurve>) = 
         if p :? BlackVarianceCurveModel then 
             p :?> BlackVarianceCurveModel
         else
             let o = new BlackVarianceCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

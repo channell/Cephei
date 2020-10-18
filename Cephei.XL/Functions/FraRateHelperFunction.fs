@@ -39,27 +39,27 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper7", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create7
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
-        ([<ExcelArgument(Name="monthsToStart",Description = "Reference to monthsToStart")>] 
+        ([<ExcelArgument(Name="monthsToStart",Description = "int")>] 
          monthsToStart : obj)
-        ([<ExcelArgument(Name="monthsToEnd",Description = "Reference to monthsToEnd")>] 
+        ([<ExcelArgument(Name="monthsToEnd",Description = "int")>] 
          monthsToEnd : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,17 +130,17 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="periodToStart",Description = "Reference to periodToStart")>] 
+        ([<ExcelArgument(Name="periodToStart",Description = "Period")>] 
          periodToStart : obj)
-        ([<ExcelArgument(Name="iborIndex",Description = "Reference to iborIndex")>] 
+        ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,17 +191,17 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper1", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
-        ([<ExcelArgument(Name="periodToStart",Description = "Reference to periodToStart")>] 
+        ([<ExcelArgument(Name="periodToStart",Description = "Period")>] 
          periodToStart : obj)
-        ([<ExcelArgument(Name="iborIndex",Description = "Reference to iborIndex")>] 
+        ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -252,27 +252,27 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper2", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="periodToStart",Description = "Reference to periodToStart")>] 
+        ([<ExcelArgument(Name="periodToStart",Description = "Period")>] 
          periodToStart : obj)
-        ([<ExcelArgument(Name="lengthInMonths",Description = "Reference to lengthInMonths")>] 
+        ([<ExcelArgument(Name="lengthInMonths",Description = "int")>] 
          lengthInMonths : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -343,27 +343,27 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper3", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
-        ([<ExcelArgument(Name="periodToStart",Description = "Reference to periodToStart")>] 
+        ([<ExcelArgument(Name="periodToStart",Description = "Period")>] 
          periodToStart : obj)
-        ([<ExcelArgument(Name="lengthInMonths",Description = "Reference to lengthInMonths")>] 
+        ([<ExcelArgument(Name="lengthInMonths",Description = "int")>] 
          lengthInMonths : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -434,17 +434,17 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper4", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="monthsToStart",Description = "Reference to monthsToStart")>] 
+        ([<ExcelArgument(Name="monthsToStart",Description = "int")>] 
          monthsToStart : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "IborIndex")>] 
          i : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -495,27 +495,27 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper6", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create6
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="monthsToStart",Description = "Reference to monthsToStart")>] 
+        ([<ExcelArgument(Name="monthsToStart",Description = "int")>] 
          monthsToStart : obj)
-        ([<ExcelArgument(Name="monthsToEnd",Description = "Reference to monthsToEnd")>] 
+        ([<ExcelArgument(Name="monthsToEnd",Description = "int")>] 
          monthsToEnd : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,17 +586,17 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper5", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FraRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
-        ([<ExcelArgument(Name="monthsToStart",Description = "Reference to monthsToStart")>] 
+        ([<ExcelArgument(Name="monthsToStart",Description = "int")>] 
          monthsToStart : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "IborIndex")>] 
          i : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "Reference to pillarChoice")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "FraRateHelper")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "Reference to customPillarDate")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "FraRateHelper")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -647,9 +647,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_impliedQuote", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,11 +683,11 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_setTermStructure", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "YieldTermStructure")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -725,9 +725,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_update", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -761,9 +761,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_earliestDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_latestDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_latestRelevantDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,9 +869,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_maturityDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -905,9 +905,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_pillarDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -941,9 +941,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_quote", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -977,9 +977,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_quoteError", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1013,9 +1013,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_quoteIsValid", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1049,9 +1049,9 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_quoteValue", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1085,11 +1085,11 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_registerWith", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1127,11 +1127,11 @@ module FraRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FraRateHelper_unregisterWith", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FraRateHelper",Description = "Reference to FraRateHelper")>] 
+        ([<ExcelArgument(Name="FraRateHelper",Description = "FraRateHelper")>] 
          fraratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1166,9 +1166,9 @@ module FraRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FraRateHelper_Range", Description="Create a range of FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FraRateHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

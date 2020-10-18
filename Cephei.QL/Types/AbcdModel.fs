@@ -64,7 +64,8 @@ type AbcdModel
 (*
     Functions
 *)
-    let _Abcd                                      = cell (fun () -> new Abcd (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
+    let mutable
+        _Abcd                                      = cell (fun () -> new Abcd (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
     let _global                                    = triv (fun () -> _Abcd.Value.GLOBAL)
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _Abcd.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -73,13 +74,14 @@ type AbcdModel
     casting 
 *)
     internal new () = new AbcdModel(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _Abcd.Value <- v
+    member internal this.Inject v = _Abcd <- v
     static member Cast (p : ICell<Abcd>) = 
         if p :? AbcdModel then 
             p :?> AbcdModel
         else
             let o = new AbcdModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

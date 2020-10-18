@@ -80,7 +80,8 @@ type SVIModel
 (*
     Functions
 *)
-    let _SVI                                       = cell (fun () -> new SVI (t.Value, forward.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, aIsFixed.Value, bIsFixed.Value, sigmaIsFixed.Value, rhoIsFixed.Value, mIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, addParams.Value))
+    let mutable
+        _SVI                                       = cell (fun () -> new SVI (t.Value, forward.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, aIsFixed.Value, bIsFixed.Value, sigmaIsFixed.Value, rhoIsFixed.Value, mIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, addParams.Value))
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _SVI.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
     do this.Bind(_SVI)
@@ -88,13 +89,14 @@ type SVIModel
     casting 
 *)
     internal new () = new SVIModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SVI.Value <- v
+    member internal this.Inject v = _SVI <- v
     static member Cast (p : ICell<SVI>) = 
         if p :? SVIModel then 
             p :?> SVIModel
         else
             let o = new SVIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

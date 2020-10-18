@@ -39,13 +39,13 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite_dminus", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherComposite",Description = "Reference to FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="FdmMesherComposite",Description = "FdmMesherComposite")>] 
          fdmmeshercomposite : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite_dplus", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherComposite",Description = "Reference to FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="FdmMesherComposite",Description = "FdmMesherComposite")>] 
          fdmmeshercomposite : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,11 +135,11 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="layout",Description = "Reference to layout")>] 
+        ([<ExcelArgument(Name="layout",Description = "FdmLinearOpLayout")>] 
          layout : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "Fdm1dMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite1", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "Fdm1dMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -215,9 +215,9 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite3", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "Fdm1dMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -252,11 +252,11 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite4", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m1",Description = "Reference to m1")>] 
+        ([<ExcelArgument(Name="m1",Description = "Fdm1dMesher")>] 
          m1 : obj)
-        ([<ExcelArgument(Name="m2",Description = "Reference to m2")>] 
+        ([<ExcelArgument(Name="m2",Description = "Fdm1dMesher")>] 
          m2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,15 +295,15 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite2", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m1",Description = "Reference to m1")>] 
+        ([<ExcelArgument(Name="m1",Description = "Fdm1dMesher")>] 
          m1 : obj)
-        ([<ExcelArgument(Name="m2",Description = "Reference to m2")>] 
+        ([<ExcelArgument(Name="m2",Description = "Fdm1dMesher")>] 
          m2 : obj)
-        ([<ExcelArgument(Name="m3",Description = "Reference to m3")>] 
+        ([<ExcelArgument(Name="m3",Description = "Fdm1dMesher")>] 
          m3 : obj)
-        ([<ExcelArgument(Name="m4",Description = "Reference to m4")>] 
+        ([<ExcelArgument(Name="m4",Description = "Fdm1dMesher")>] 
          m4 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -350,13 +350,13 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite5", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m1",Description = "Reference to m1")>] 
+        ([<ExcelArgument(Name="m1",Description = "Fdm1dMesher")>] 
          m1 : obj)
-        ([<ExcelArgument(Name="m2",Description = "Reference to m2")>] 
+        ([<ExcelArgument(Name="m2",Description = "Fdm1dMesher")>] 
          m2 : obj)
-        ([<ExcelArgument(Name="m3",Description = "Reference to m3")>] 
+        ([<ExcelArgument(Name="m3",Description = "Fdm1dMesher")>] 
          m3 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,9 +399,9 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite_getFdm1dMeshers", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_getFdm1dMeshers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherComposite",Description = "Reference to FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="FdmMesherComposite",Description = "FdmMesherComposite")>] 
          fdmmeshercomposite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,13 +435,13 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite_location", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherComposite",Description = "Reference to FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="FdmMesherComposite",Description = "FdmMesherComposite")>] 
          fdmmeshercomposite : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -483,11 +483,11 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite_locations", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherComposite",Description = "Reference to FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="FdmMesherComposite",Description = "FdmMesherComposite")>] 
          fdmmeshercomposite : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -525,9 +525,9 @@ module FdmMesherCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherComposite_layout", Description="Create a FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_layout
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpLayout")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherComposite",Description = "Reference to FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="FdmMesherComposite",Description = "FdmMesherComposite")>] 
          fdmmeshercomposite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,9 +558,9 @@ module FdmMesherCompositeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmMesherComposite_Range", Description="Create a range of FdmMesherComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherComposite_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmMesherComposite")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

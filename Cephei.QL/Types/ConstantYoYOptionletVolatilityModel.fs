@@ -62,7 +62,8 @@ type ConstantYoYOptionletVolatilityModel
 (*
     Functions
 *)
-    let _ConstantYoYOptionletVolatility            = cell (fun () -> new ConstantYoYOptionletVolatility (v.Value, settlementDays.Value, cal.Value, bdc.Value, dc.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, minStrike.Value, maxStrike.Value))
+    let mutable
+        _ConstantYoYOptionletVolatility            = cell (fun () -> new ConstantYoYOptionletVolatility (v.Value, settlementDays.Value, cal.Value, bdc.Value, dc.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, minStrike.Value, maxStrike.Value))
     let _maxDate                                   = triv (fun () -> _ConstantYoYOptionletVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantYoYOptionletVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantYoYOptionletVolatility.Value.minStrike())
@@ -124,13 +125,14 @@ type ConstantYoYOptionletVolatilityModel
     casting 
 *)
     internal new () = new ConstantYoYOptionletVolatilityModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConstantYoYOptionletVolatility.Value <- v
+    member internal this.Inject v = _ConstantYoYOptionletVolatility <- v
     static member Cast (p : ICell<ConstantYoYOptionletVolatility>) = 
         if p :? ConstantYoYOptionletVolatilityModel then 
             p :?> ConstantYoYOptionletVolatilityModel
         else
             let o = new ConstantYoYOptionletVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

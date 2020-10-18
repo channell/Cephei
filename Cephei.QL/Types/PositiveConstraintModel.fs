@@ -41,7 +41,8 @@ type PositiveConstraintModel
 (*
     Functions
 *)
-    let _PositiveConstraint                        = cell (fun () -> new PositiveConstraint ())
+    let mutable
+        _PositiveConstraint                        = cell (fun () -> new PositiveConstraint ())
     let _empty                                     = triv (fun () -> _PositiveConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _PositiveConstraint.Value.lowerBound(parameters.Value))
@@ -56,13 +57,14 @@ type PositiveConstraintModel
     casting 
 *)
     
-    member internal this.Inject v = _PositiveConstraint.Value <- v
+    member internal this.Inject v = _PositiveConstraint <- v
     static member Cast (p : ICell<PositiveConstraint>) = 
         if p :? PositiveConstraintModel then 
             p :?> PositiveConstraintModel
         else
             let o = new PositiveConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

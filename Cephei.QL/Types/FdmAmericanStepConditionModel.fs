@@ -46,7 +46,8 @@ type FdmAmericanStepConditionModel
 (*
     Functions
 *)
-    let _FdmAmericanStepCondition                  = cell (fun () -> new FdmAmericanStepCondition (mesher.Value, calculator.Value))
+    let mutable
+        _FdmAmericanStepCondition                  = cell (fun () -> new FdmAmericanStepCondition (mesher.Value, calculator.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmAmericanStepCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmAmericanStepCondition.Value)
@@ -55,13 +56,14 @@ type FdmAmericanStepConditionModel
     casting 
 *)
     internal new () = new FdmAmericanStepConditionModel(null,null)
-    member internal this.Inject v = _FdmAmericanStepCondition.Value <- v
+    member internal this.Inject v = _FdmAmericanStepCondition <- v
     static member Cast (p : ICell<FdmAmericanStepCondition>) = 
         if p :? FdmAmericanStepConditionModel then 
             p :?> FdmAmericanStepConditionModel
         else
             let o = new FdmAmericanStepConditionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module DiscreteSimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegral_value", Description="Create a DiscreteSimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscreteSimpsonIntegral",Description = "Reference to DiscreteSimpsonIntegral")>] 
+        ([<ExcelArgument(Name="DiscreteSimpsonIntegral",Description = "DiscreteSimpsonIntegral")>] 
          discretesimpsonintegral : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "Vector")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module DiscreteSimpsonIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteSimpsonIntegral_Range", Description="Create a range of DiscreteSimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscreteSimpsonIntegral")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

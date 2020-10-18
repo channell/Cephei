@@ -41,7 +41,8 @@ type MYRCurrencyModel
 (*
     Functions
 *)
-    let _MYRCurrency                               = cell (fun () -> new MYRCurrency ())
+    let mutable
+        _MYRCurrency                               = cell (fun () -> new MYRCurrency ())
     let _code                                      = triv (fun () -> _MYRCurrency.Value.code)
     let _empty                                     = triv (fun () -> _MYRCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type MYRCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _MYRCurrency.Value <- v
+    member internal this.Inject v = _MYRCurrency <- v
     static member Cast (p : ICell<MYRCurrency>) = 
         if p :? MYRCurrencyModel then 
             p :?> MYRCurrencyModel
         else
             let o = new MYRCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

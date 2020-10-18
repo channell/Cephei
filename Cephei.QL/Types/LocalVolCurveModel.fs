@@ -44,7 +44,8 @@ type LocalVolCurveModel
 (*
     Functions
 *)
-    let _LocalVolCurve                             = cell (fun () -> new LocalVolCurve (curve.Value))
+    let mutable
+        _LocalVolCurve                             = cell (fun () -> new LocalVolCurve (curve.Value))
     let _calendar                                  = triv (fun () -> _LocalVolCurve.Value.calendar())
     let _dayCounter                                = triv (fun () -> _LocalVolCurve.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalVolCurve.Value.maxDate())
@@ -77,13 +78,14 @@ type LocalVolCurveModel
     casting 
 *)
     internal new () = new LocalVolCurveModel(null)
-    member internal this.Inject v = _LocalVolCurve.Value <- v
+    member internal this.Inject v = _LocalVolCurve <- v
     static member Cast (p : ICell<LocalVolCurve>) = 
         if p :? LocalVolCurveModel then 
             p :?> LocalVolCurveModel
         else
             let o = new LocalVolCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

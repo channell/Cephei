@@ -69,7 +69,8 @@ type SouthKoreaModel
 (*
     Functions
 *)
-    let _SouthKorea                                = cell (fun () -> new SouthKorea ())
+    let mutable
+        _SouthKorea                                = cell (fun () -> new SouthKorea ())
     let _addedHolidays                             = triv (fun () -> _SouthKorea.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _SouthKorea.Value.addHoliday(d.Value)
@@ -106,13 +107,14 @@ type SouthKoreaModel
     casting 
 *)
     
-    member internal this.Inject v = _SouthKorea.Value <- v
+    member internal this.Inject v = _SouthKorea <- v
     static member Cast (p : ICell<SouthKorea>) = 
         if p :? SouthKoreaModel then 
             p :?> SouthKoreaModel
         else
             let o = new SouthKoreaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -193,7 +195,8 @@ type SouthKoreaModel1
 (*
     Functions
 *)
-    let _SouthKorea                                = cell (fun () -> new SouthKorea (m.Value))
+    let mutable
+        _SouthKorea                                = cell (fun () -> new SouthKorea (m.Value))
     let _addedHolidays                             = triv (fun () -> _SouthKorea.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _SouthKorea.Value.addHoliday(d.Value)
@@ -230,13 +233,14 @@ type SouthKoreaModel1
     casting 
 *)
     internal new () = new SouthKoreaModel1(null)
-    member internal this.Inject v = _SouthKorea.Value <- v
+    member internal this.Inject v = _SouthKorea <- v
     static member Cast (p : ICell<SouthKorea>) = 
         if p :? SouthKoreaModel1 then 
             p :?> SouthKoreaModel1
         else
             let o = new SouthKoreaModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

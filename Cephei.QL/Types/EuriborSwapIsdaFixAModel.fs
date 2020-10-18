@@ -44,7 +44,8 @@ type EuriborSwapIsdaFixAModel
 (*
     Functions
 *)
-    let _EuriborSwapIsdaFixA                       = cell (fun () -> new EuriborSwapIsdaFixA (tenor.Value))
+    let mutable
+        _EuriborSwapIsdaFixA                       = cell (fun () -> new EuriborSwapIsdaFixA (tenor.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _EuriborSwapIsdaFixA.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -106,13 +107,14 @@ type EuriborSwapIsdaFixAModel
     casting 
 *)
     internal new () = new EuriborSwapIsdaFixAModel(null)
-    member internal this.Inject v = _EuriborSwapIsdaFixA.Value <- v
+    member internal this.Inject v = _EuriborSwapIsdaFixA <- v
     static member Cast (p : ICell<EuriborSwapIsdaFixA>) = 
         if p :? EuriborSwapIsdaFixAModel then 
             p :?> EuriborSwapIsdaFixAModel
         else
             let o = new EuriborSwapIsdaFixAModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -188,7 +190,8 @@ type EuriborSwapIsdaFixAModel1
 (*
     Functions
 *)
-    let _EuriborSwapIsdaFixA                       = cell (fun () -> new EuriborSwapIsdaFixA (tenor.Value, h.Value))
+    let mutable
+        _EuriborSwapIsdaFixA                       = cell (fun () -> new EuriborSwapIsdaFixA (tenor.Value, h.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _EuriborSwapIsdaFixA.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -250,13 +253,14 @@ type EuriborSwapIsdaFixAModel1
     casting 
 *)
     internal new () = new EuriborSwapIsdaFixAModel1(null,null)
-    member internal this.Inject v = _EuriborSwapIsdaFixA.Value <- v
+    member internal this.Inject v = _EuriborSwapIsdaFixA <- v
     static member Cast (p : ICell<EuriborSwapIsdaFixA>) = 
         if p :? EuriborSwapIsdaFixAModel1 then 
             p :?> EuriborSwapIsdaFixAModel1
         else
             let o = new EuriborSwapIsdaFixAModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -335,7 +339,8 @@ type EuriborSwapIsdaFixAModel2
 (*
     Functions
 *)
-    let _EuriborSwapIsdaFixA                       = cell (fun () -> new EuriborSwapIsdaFixA (tenor.Value, forwarding.Value, discounting.Value))
+    let mutable
+        _EuriborSwapIsdaFixA                       = cell (fun () -> new EuriborSwapIsdaFixA (tenor.Value, forwarding.Value, discounting.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _EuriborSwapIsdaFixA.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -397,13 +402,14 @@ type EuriborSwapIsdaFixAModel2
     casting 
 *)
     internal new () = new EuriborSwapIsdaFixAModel2(null,null,null)
-    member internal this.Inject v = _EuriborSwapIsdaFixA.Value <- v
+    member internal this.Inject v = _EuriborSwapIsdaFixA <- v
     static member Cast (p : ICell<EuriborSwapIsdaFixA>) = 
         if p :? EuriborSwapIsdaFixAModel2 then 
             p :?> EuriborSwapIsdaFixAModel2
         else
             let o = new EuriborSwapIsdaFixAModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

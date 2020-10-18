@@ -40,13 +40,13 @@ module TreeVanillaSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeVanillaSwapEngine1", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TreeVanillaSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,13 +89,13 @@ module TreeVanillaSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeVanillaSwapEngine", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TreeVanillaSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -138,9 +138,9 @@ module TreeVanillaSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeVanillaSwapEngine_update", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "Reference to TreeVanillaSwapEngine")>] 
+        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "TreeVanillaSwapEngine")>] 
          treevanillaswapengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -175,11 +175,11 @@ module TreeVanillaSwapEngineFunction =
     (*!!
     [<ExcelFunction(Name="_TreeVanillaSwapEngine_setModel", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "Reference to TreeVanillaSwapEngine")>] 
+        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "TreeVanillaSwapEngine")>] 
          treevanillaswapengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -218,11 +218,11 @@ module TreeVanillaSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeVanillaSwapEngine_registerWith", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "Reference to TreeVanillaSwapEngine")>] 
+        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "TreeVanillaSwapEngine")>] 
          treevanillaswapengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module TreeVanillaSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeVanillaSwapEngine_reset", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "Reference to TreeVanillaSwapEngine")>] 
+        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "TreeVanillaSwapEngine")>] 
          treevanillaswapengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -296,11 +296,11 @@ module TreeVanillaSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_TreeVanillaSwapEngine_unregisterWith", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "Reference to TreeVanillaSwapEngine")>] 
+        ([<ExcelArgument(Name="TreeVanillaSwapEngine",Description = "TreeVanillaSwapEngine")>] 
          treevanillaswapengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -335,9 +335,9 @@ module TreeVanillaSwapEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TreeVanillaSwapEngine_Range", Description="Create a range of TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TreeVanillaSwapEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

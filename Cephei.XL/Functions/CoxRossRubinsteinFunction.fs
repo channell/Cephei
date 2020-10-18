@@ -39,15 +39,15 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein1", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CoxRossRubinstein")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CoxRossRubinstein")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,17 +125,17 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_factory", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CoxRossRubinstein")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "Reference to CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,15 +185,15 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_probability", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "Reference to CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_underlying", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "Reference to CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,15 +287,15 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_descendant", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "Reference to CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_size", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "Reference to CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_columns", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "Reference to CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,9 +416,9 @@ module CoxRossRubinsteinFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CoxRossRubinstein_Range", Description="Create a range of CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -44,7 +44,8 @@ type AbcdMathFunctionModel
 (*
     Functions
 *)
-    let _AbcdMathFunction                          = cell (fun () -> new AbcdMathFunction (abcd.Value))
+    let mutable
+        _AbcdMathFunction                          = cell (fun () -> new AbcdMathFunction (abcd.Value))
     let _a                                         = triv (fun () -> _AbcdMathFunction.Value.a())
     let _b                                         = triv (fun () -> _AbcdMathFunction.Value.b())
     let _c                                         = triv (fun () -> _AbcdMathFunction.Value.c())
@@ -71,13 +72,14 @@ type AbcdMathFunctionModel
     casting 
 *)
     internal new () = new AbcdMathFunctionModel(null)
-    member internal this.Inject v = _AbcdMathFunction.Value <- v
+    member internal this.Inject v = _AbcdMathFunction <- v
     static member Cast (p : ICell<AbcdMathFunction>) = 
         if p :? AbcdMathFunctionModel then 
             p :?> AbcdMathFunctionModel
         else
             let o = new AbcdMathFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -129,7 +131,8 @@ type AbcdMathFunctionModel1
 (*
     Functions
 *)
-    let _AbcdMathFunction                          = cell (fun () -> new AbcdMathFunction (a.Value, b.Value, c.Value, d.Value))
+    let mutable
+        _AbcdMathFunction                          = cell (fun () -> new AbcdMathFunction (a.Value, b.Value, c.Value, d.Value))
     let _a                                         = triv (fun () -> _AbcdMathFunction.Value.a())
     let _b                                         = triv (fun () -> _AbcdMathFunction.Value.b())
     let _c                                         = triv (fun () -> _AbcdMathFunction.Value.c())
@@ -156,13 +159,14 @@ type AbcdMathFunctionModel1
     casting 
 *)
     internal new () = new AbcdMathFunctionModel1(null,null,null,null)
-    member internal this.Inject v = _AbcdMathFunction.Value <- v
+    member internal this.Inject v = _AbcdMathFunction <- v
     static member Cast (p : ICell<AbcdMathFunction>) = 
         if p :? AbcdMathFunctionModel1 then 
             p :?> AbcdMathFunctionModel1
         else
             let o = new AbcdMathFunctionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

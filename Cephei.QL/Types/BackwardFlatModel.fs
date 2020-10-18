@@ -41,7 +41,8 @@ type BackwardFlatModel
 (*
     Functions
 *)
-    let _BackwardFlat                              = cell (fun () -> new BackwardFlat ())
+    let mutable
+        _BackwardFlat                              = cell (fun () -> new BackwardFlat ())
     let _global                                    = triv (fun () -> _BackwardFlat.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _BackwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -51,13 +52,14 @@ type BackwardFlatModel
     casting 
 *)
     
-    member internal this.Inject v = _BackwardFlat.Value <- v
+    member internal this.Inject v = _BackwardFlat <- v
     static member Cast (p : ICell<BackwardFlat>) = 
         if p :? BackwardFlatModel then 
             p :?> BackwardFlatModel
         else
             let o = new BackwardFlatModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

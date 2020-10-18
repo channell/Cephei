@@ -39,9 +39,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_adjustObservationDates", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_adjustObservationDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_dayCounter", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_fairRate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fairRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedCalendar", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedConvention", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedLeg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedLegNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedRate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationCalendar", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,9 +363,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationConvention", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,9 +399,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationIndex", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,9 +435,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationLeg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -471,9 +471,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationLegNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -507,9 +507,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_maturityDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -543,9 +543,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_nominal", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -579,9 +579,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_observationLag", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -615,9 +615,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_startDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroCouponInflationSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -651,9 +651,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_type", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroCouponInflationSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -687,37 +687,37 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroCouponInflationSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "ZeroCouponInflationSwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Date")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="fixCalendar",Description = "Reference to fixCalendar")>] 
+        ([<ExcelArgument(Name="fixCalendar",Description = "Calendar")>] 
          fixCalendar : obj)
-        ([<ExcelArgument(Name="fixConvention",Description = "Reference to fixConvention")>] 
+        ([<ExcelArgument(Name="fixConvention",Description = "BusinessDayConvention")>] 
          fixConvention : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="infIndex",Description = "Reference to infIndex")>] 
+        ([<ExcelArgument(Name="infIndex",Description = "ZeroInflationIndex")>] 
          infIndex : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="adjustInfObsDates",Description = "Reference to adjustInfObsDates")>] 
+        ([<ExcelArgument(Name="adjustInfObsDates",Description = "ZeroCouponInflationSwap")>] 
          adjustInfObsDates : obj)
-        ([<ExcelArgument(Name="infCalendar",Description = "Reference to infCalendar")>] 
+        ([<ExcelArgument(Name="infCalendar",Description = "ZeroCouponInflationSwap")>] 
          infCalendar : obj)
-        ([<ExcelArgument(Name="infConvention",Description = "Reference to infConvention")>] 
+        ([<ExcelArgument(Name="infConvention",Description = "BusinessDayConvention")>] 
          infConvention : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -808,11 +808,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_endDiscounts", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -851,9 +851,9 @@ module ZeroCouponInflationSwapFunction =
     (*!!
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_engine", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -888,9 +888,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_isExpired", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -924,11 +924,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_leg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -966,11 +966,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_legBPS", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1008,11 +1008,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_legNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1050,9 +1050,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_npvDateDiscount", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1086,11 +1086,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_payer", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1128,11 +1128,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_startDiscounts", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1170,9 +1170,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_CASH", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1206,9 +1206,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_errorEstimate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1242,9 +1242,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_NPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1278,11 +1278,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_result", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1320,11 +1320,11 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_setPricingEngine", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1362,9 +1362,9 @@ module ZeroCouponInflationSwapFunction =
     *)
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_valuationDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "Reference to ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="ZeroCouponInflationSwap",Description = "ZeroCouponInflationSwap")>] 
          zerocouponinflationswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1395,9 +1395,9 @@ module ZeroCouponInflationSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroCouponInflationSwap_Range", Description="Create a range of ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ZeroCouponInflationSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

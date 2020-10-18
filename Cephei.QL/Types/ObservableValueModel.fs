@@ -44,7 +44,8 @@ type ObservableValueModel<'T>
 (*
     Functions
 *)
-    let _ObservableValue                           = cell (fun () -> new ObservableValue<'T> (t.Value))
+    let mutable
+        _ObservableValue                           = cell (fun () -> new ObservableValue<'T> (t.Value))
     let _Assign                                    (t : ICell<'T>)   
                                                    = cell (fun () -> _ObservableValue.Value.Assign(t.Value))
     let _Assign1                                   (t : ICell<ObservableValue<'T>>)   
@@ -88,7 +89,8 @@ type ObservableValueModel1<'T>
 (*
     Functions
 *)
-    let _ObservableValue                           = cell (fun () -> new ObservableValue<'T> (t.Value))
+    let mutable
+        _ObservableValue                           = cell (fun () -> new ObservableValue<'T> (t.Value))
     let _Assign                                    (t : ICell<'T>)   
                                                    = cell (fun () -> _ObservableValue.Value.Assign(t.Value))
     let _Assign1                                   (t : ICell<ObservableValue<'T>>)   
@@ -129,7 +131,8 @@ type ObservableValueModel2<'T>
 (*
     Functions
 *)
-    let _ObservableValue                           = cell (fun () -> new ObservableValue<'T> ())
+    let mutable
+        _ObservableValue                           = cell (fun () -> new ObservableValue<'T> ())
     let _Assign                                    (t : ICell<'T>)   
                                                    = cell (fun () -> _ObservableValue.Value.Assign(t.Value))
     let _Assign1                                   (t : ICell<ObservableValue<'T>>)   

@@ -48,7 +48,8 @@ type DiscretizedConvertibleModel
 (*
     Functions
 *)
-    let _DiscretizedConvertible                    = cell (fun () -> new DiscretizedConvertible (args.Value, Process.Value, grid.Value))
+    let mutable
+        _DiscretizedConvertible                    = cell (fun () -> new DiscretizedConvertible (args.Value, Process.Value, grid.Value))
     let _addCoupon                                 (i : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedConvertible.Value.addCoupon(i.Value)
                                                                      _DiscretizedConvertible.Value)
@@ -96,13 +97,14 @@ type DiscretizedConvertibleModel
     casting 
 *)
     internal new () = new DiscretizedConvertibleModel(null,null,null)
-    member internal this.Inject v = _DiscretizedConvertible.Value <- v
+    member internal this.Inject v = _DiscretizedConvertible <- v
     static member Cast (p : ICell<DiscretizedConvertible>) = 
         if p :? DiscretizedConvertibleModel then 
             p :?> DiscretizedConvertibleModel
         else
             let o = new DiscretizedConvertibleModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

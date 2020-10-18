@@ -41,7 +41,8 @@ type MoneyModel
 (*
     Functions
 *)
-    let _Money                                     = cell (fun () -> new Money ())
+    let mutable
+        _Money                                     = cell (fun () -> new Money ())
     let _currency                                  = triv (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _Money.Value.Equals(o.Value))
@@ -53,13 +54,14 @@ type MoneyModel
     casting 
 *)
     
-    member internal this.Inject v = _Money.Value <- v
+    member internal this.Inject v = _Money <- v
     static member Cast (p : ICell<Money>) = 
         if p :? MoneyModel then 
             p :?> MoneyModel
         else
             let o = new MoneyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -91,7 +93,8 @@ type MoneyModel1
 (*
     Functions
 *)
-    let _Money                                     = cell (fun () -> new Money (currency.Value, value.Value))
+    let mutable
+        _Money                                     = cell (fun () -> new Money (currency.Value, value.Value))
     let _currency                                  = triv (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _Money.Value.Equals(o.Value))
@@ -103,13 +106,14 @@ type MoneyModel1
     casting 
 *)
     internal new () = new MoneyModel1(null,null)
-    member internal this.Inject v = _Money.Value <- v
+    member internal this.Inject v = _Money <- v
     static member Cast (p : ICell<Money>) = 
         if p :? MoneyModel1 then 
             p :?> MoneyModel1
         else
             let o = new MoneyModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -143,7 +147,8 @@ type MoneyModel2
 (*
     Functions
 *)
-    let _Money                                     = cell (fun () -> new Money (value.Value, currency.Value))
+    let mutable
+        _Money                                     = cell (fun () -> new Money (value.Value, currency.Value))
     let _currency                                  = triv (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _Money.Value.Equals(o.Value))
@@ -155,13 +160,14 @@ type MoneyModel2
     casting 
 *)
     internal new () = new MoneyModel2(null,null)
-    member internal this.Inject v = _Money.Value <- v
+    member internal this.Inject v = _Money <- v
     static member Cast (p : ICell<Money>) = 
         if p :? MoneyModel2 then 
             p :?> MoneyModel2
         else
             let o = new MoneyModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

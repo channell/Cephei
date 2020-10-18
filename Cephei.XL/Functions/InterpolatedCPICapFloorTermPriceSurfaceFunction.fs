@@ -39,13 +39,13 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_capPrice", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_capPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "double")>] 
          k : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_floorPrice", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_floorPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "double")>] 
          k : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,33 +135,33 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="startRate",Description = "Reference to startRate")>] 
+        ([<ExcelArgument(Name="startRate",Description = "double")>] 
          startRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="zii",Description = "Reference to zii")>] 
+        ([<ExcelArgument(Name="zii",Description = "ZeroInflationIndex")>] 
          zii : obj)
-        ([<ExcelArgument(Name="yts",Description = "Reference to yts")>] 
+        ([<ExcelArgument(Name="yts",Description = "YieldTermStructure")>] 
          yts : obj)
-        ([<ExcelArgument(Name="cStrikes",Description = "Reference to cStrikes")>] 
+        ([<ExcelArgument(Name="cStrikes",Description = "double")>] 
          cStrikes : obj)
-        ([<ExcelArgument(Name="fStrikes",Description = "Reference to fStrikes")>] 
+        ([<ExcelArgument(Name="fStrikes",Description = "double")>] 
          fStrikes : obj)
-        ([<ExcelArgument(Name="cfMaturities",Description = "Reference to cfMaturities")>] 
+        ([<ExcelArgument(Name="cfMaturities",Description = "Period")>] 
          cfMaturities : obj)
-        ([<ExcelArgument(Name="cPrice",Description = "Reference to cPrice")>] 
+        ([<ExcelArgument(Name="cPrice",Description = "Matrix")>] 
          cPrice : obj)
-        ([<ExcelArgument(Name="fPrice",Description = "Reference to fPrice")>] 
+        ([<ExcelArgument(Name="fPrice",Description = "Matrix")>] 
          fPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,13 +244,13 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_price", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "double")>] 
          k : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_update", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_baseDate", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_businessDayConvention", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_capPrices", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_capPrices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_capStrikes", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_capStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,11 +472,11 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_cpiOptionDateFromTenor", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_cpiOptionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_floorPrices", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_floorPrices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_floorStrikes", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_floorStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_maturities", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_maturities
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,9 +622,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_maxDate", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -658,9 +658,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_maxStrike", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_minDate", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_minDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -730,9 +730,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_minStrike", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,9 +766,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_nominal", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,9 +802,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_observationLag", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -838,9 +838,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_strikes", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_strikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,9 +874,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_zeroInflationIndex", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_zeroInflationIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -910,9 +910,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_baseRate", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_baseRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_frequency", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,9 +982,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_hasSeasonality", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_hasSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,9 +1018,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_indexIsInterpolated", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_indexIsInterpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,9 +1054,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_nominalTermStructure", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_nominalTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1090,9 +1090,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_seasonality", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_seasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Seasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1126,11 +1126,11 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_setSeasonality", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_setSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="seasonality",Description = "Reference to seasonality")>] 
+        ([<ExcelArgument(Name="seasonality",Description = "Seasonality")>] 
          seasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1168,9 +1168,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_calendar", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1204,9 +1204,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_dayCounter", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1240,9 +1240,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_maxTime", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1276,9 +1276,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_referenceDate", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1312,9 +1312,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_settlementDays", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1348,11 +1348,11 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_timeFromReference", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1390,9 +1390,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_allowsExtrapolation", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1426,11 +1426,11 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_disableExtrapolation", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1468,11 +1468,11 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_enableExtrapolation", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1510,9 +1510,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_extrapolate", Description="Create a InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "Reference to InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="InterpolatedCPICapFloorTermPriceSurface",Description = "InterpolatedCPICapFloorTermPriceSurface")>] 
          interpolatedcpicapfloortermpricesurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1543,9 +1543,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedCPICapFloorTermPriceSurface_Range", Description="Create a range of InterpolatedCPICapFloorTermPriceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedCPICapFloorTermPriceSurface_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatedCPICapFloorTermPriceSurface")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

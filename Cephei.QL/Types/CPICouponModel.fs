@@ -72,7 +72,8 @@ type CPICouponModel
 (*
     Functions
 *)
-    let _CPICoupon                                 = cell (fun () -> new CPICoupon (baseCPI.Value, paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, observationLag.Value, observationInterpolation.Value, dayCounter.Value, fixedRate.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value))
+    let mutable
+        _CPICoupon                                 = cell (fun () -> new CPICoupon (baseCPI.Value, paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, observationLag.Value, observationInterpolation.Value, dayCounter.Value, fixedRate.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value))
     let _adjustedFixing                            = triv (fun () -> _CPICoupon.Value.adjustedFixing())
     let _baseCPI                                   = triv (fun () -> _CPICoupon.Value.baseCPI())
     let _cpiIndex                                  = triv (fun () -> _CPICoupon.Value.cpiIndex())
@@ -134,13 +135,14 @@ type CPICouponModel
     casting 
 *)
     internal new () = new CPICouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CPICoupon.Value <- v
+    member internal this.Inject v = _CPICoupon <- v
     static member Cast (p : ICell<CPICoupon>) = 
         if p :? CPICouponModel then 
             p :?> CPICouponModel
         else
             let o = new CPICouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

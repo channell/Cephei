@@ -58,7 +58,8 @@ type DiscreteAveragingAsianOptionModel
 (*
     Functions
 *)
-    let _DiscreteAveragingAsianOption              = cell (fun () -> withEngine pricingEngine (new DiscreteAveragingAsianOption (averageType.Value, runningAccumulator.Value, pastFixings.Value, fixingDates.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _DiscreteAveragingAsianOption              = cell (fun () -> withEngine pricingEngine (new DiscreteAveragingAsianOption (averageType.Value, runningAccumulator.Value, pastFixings.Value, fixingDates.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).dividendRho())
@@ -87,13 +88,14 @@ type DiscreteAveragingAsianOptionModel
     casting 
 *)
     internal new () = new DiscreteAveragingAsianOptionModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _DiscreteAveragingAsianOption.Value <- v
+    member internal this.Inject v = _DiscreteAveragingAsianOption <- v
     static member Cast (p : ICell<DiscreteAveragingAsianOption>) = 
         if p :? DiscreteAveragingAsianOptionModel then 
             p :?> DiscreteAveragingAsianOptionModel
         else
             let o = new DiscreteAveragingAsianOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

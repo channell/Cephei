@@ -54,7 +54,8 @@ type CatBondModel
 (*
     Functions
 *)
-    let _CatBond                                   = cell (fun () -> withEngine pricingEngine (new CatBond (settlementDays.Value, calendar.Value, issueDate.Value, notionalRisk.Value)))
+    let mutable
+        _CatBond                                   = cell (fun () -> withEngine pricingEngine (new CatBond (settlementDays.Value, calendar.Value, issueDate.Value, notionalRisk.Value)))
     let _exhaustionProbability                     = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).exhaustionProbability())
     let _expectedLoss                              = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).expectedLoss())
     let _lossProbability                           = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).lossProbability())
@@ -111,13 +112,14 @@ type CatBondModel
     casting 
 *)
     internal new () = new CatBondModel(null,null,null,null,null,null)
-    member internal this.Inject v = _CatBond.Value <- v
+    member internal this.Inject v = _CatBond <- v
     static member Cast (p : ICell<CatBond>) = 
         if p :? CatBondModel then 
             p :?> CatBondModel
         else
             let o = new CatBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

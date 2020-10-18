@@ -41,7 +41,8 @@ type AdditiveEQPBinomialTreeModel
 (*
     Functions
 *)
-    let _AdditiveEQPBinomialTree                   = cell (fun () -> new AdditiveEQPBinomialTree ())
+    let mutable
+        _AdditiveEQPBinomialTree                   = cell (fun () -> new AdditiveEQPBinomialTree ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _AdditiveEQPBinomialTree.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
@@ -58,13 +59,14 @@ type AdditiveEQPBinomialTreeModel
     casting 
 *)
     
-    member internal this.Inject v = _AdditiveEQPBinomialTree.Value <- v
+    member internal this.Inject v = _AdditiveEQPBinomialTree <- v
     static member Cast (p : ICell<AdditiveEQPBinomialTree>) = 
         if p :? AdditiveEQPBinomialTreeModel then 
             p :?> AdditiveEQPBinomialTreeModel
         else
             let o = new AdditiveEQPBinomialTreeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -105,7 +107,8 @@ type AdditiveEQPBinomialTreeModel1
 (*
     Functions
 *)
-    let _AdditiveEQPBinomialTree                   = cell (fun () -> new AdditiveEQPBinomialTree (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _AdditiveEQPBinomialTree                   = cell (fun () -> new AdditiveEQPBinomialTree (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _AdditiveEQPBinomialTree.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
@@ -122,13 +125,14 @@ type AdditiveEQPBinomialTreeModel1
     casting 
 *)
     internal new () = new AdditiveEQPBinomialTreeModel1(null,null,null,null)
-    member internal this.Inject v = _AdditiveEQPBinomialTree.Value <- v
+    member internal this.Inject v = _AdditiveEQPBinomialTree <- v
     static member Cast (p : ICell<AdditiveEQPBinomialTree>) = 
         if p :? AdditiveEQPBinomialTreeModel1 then 
             p :?> AdditiveEQPBinomialTreeModel1
         else
             let o = new AdditiveEQPBinomialTreeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

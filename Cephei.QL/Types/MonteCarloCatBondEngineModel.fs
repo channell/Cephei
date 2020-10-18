@@ -48,20 +48,22 @@ type MonteCarloCatBondEngineModel
 (*
     Functions
 *)
-    let _MonteCarloCatBondEngine                   = cell (fun () -> new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))
+    let mutable
+        _MonteCarloCatBondEngine                   = cell (fun () -> new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))
     let _discountCurve                             = triv (fun () -> _MonteCarloCatBondEngine.Value.discountCurve())
     do this.Bind(_MonteCarloCatBondEngine)
 (* 
     casting 
 *)
     internal new () = new MonteCarloCatBondEngineModel(null,null,null)
-    member internal this.Inject v = _MonteCarloCatBondEngine.Value <- v
+    member internal this.Inject v = _MonteCarloCatBondEngine <- v
     static member Cast (p : ICell<MonteCarloCatBondEngine>) = 
         if p :? MonteCarloCatBondEngineModel then 
             p :?> MonteCarloCatBondEngineModel
         else
             let o = new MonteCarloCatBondEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

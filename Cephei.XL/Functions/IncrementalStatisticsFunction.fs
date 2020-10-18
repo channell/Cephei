@@ -40,13 +40,13 @@ module IncrementalStatisticsFunction =
     (*! duplicate add function 
     [<ExcelFunction(Name="_IncrementalStatistics_add", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="weight",Description = "Reference to weight")>] 
+        ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,11 +89,11 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_add", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,11 +131,11 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_addSequence", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_addSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="list",Description = "Reference to list")>] 
+        ([<ExcelArgument(Name="list",Description = "double")>] 
          list : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,13 +173,13 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_addSequence1", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_addSequence1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="weight",Description = "Reference to weight")>] 
+        ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,9 +221,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_downsideDeviation", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_downsideDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,9 +257,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_downsideVariance", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_downsideVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,9 +293,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_errorEstimate", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,13 +329,13 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_expectationValue", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_expectationValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = ",double")>] 
          f : obj)
-        ([<ExcelArgument(Name="inRange",Description = "Reference to inRange")>] 
+        ([<ExcelArgument(Name="inRange",Description = ",bool")>] 
          inRange : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,7 +377,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,9 +408,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_kurtosis", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_kurtosis
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -444,9 +444,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_max", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_max
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -480,9 +480,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_mean", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_mean
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -516,9 +516,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_min", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_min
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -552,11 +552,11 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_percentile", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_percentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="percent",Description = "Reference to percent")>] 
+        ([<ExcelArgument(Name="percent",Description = "double")>] 
          percent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_reset", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,9 +630,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_samples", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_samples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -666,9 +666,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_skewness", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_skewness
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -702,9 +702,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_standardDeviation", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_standardDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -738,9 +738,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_variance", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -774,9 +774,9 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_weightSum", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_weightSum
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IncrementalStatistics",Description = "Reference to IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -807,9 +807,9 @@ module IncrementalStatisticsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IncrementalStatistics_Range", Description="Create a range of IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

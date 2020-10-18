@@ -39,15 +39,15 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticH1HWEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="hullWhiteModel",Description = "Reference to hullWhiteModel")>] 
+        ([<ExcelArgument(Name="hullWhiteModel",Description = "HullWhite")>] 
          hullWhiteModel : obj)
-        ([<ExcelArgument(Name="rhoSr",Description = "Reference to rhoSr")>] 
+        ([<ExcelArgument(Name="rhoSr",Description = "double")>] 
          rhoSr : obj)
-        ([<ExcelArgument(Name="integrationOrder",Description = "Reference to integrationOrder")>] 
+        ([<ExcelArgument(Name="integrationOrder",Description = "AnalyticH1HWEngine")>] 
          integrationOrder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,17 +94,17 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine1", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticH1HWEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="hullWhiteModel",Description = "Reference to hullWhiteModel")>] 
+        ([<ExcelArgument(Name="hullWhiteModel",Description = "HullWhite")>] 
          hullWhiteModel : obj)
-        ([<ExcelArgument(Name="rhoSr",Description = "Reference to rhoSr")>] 
+        ([<ExcelArgument(Name="rhoSr",Description = "double")>] 
          rhoSr : obj)
-        ([<ExcelArgument(Name="relTolerance",Description = "Reference to relTolerance")>] 
+        ([<ExcelArgument(Name="relTolerance",Description = "double")>] 
          relTolerance : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -156,9 +156,9 @@ module AnalyticH1HWEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticH1HWEngine_update", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "Reference to AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "AnalyticH1HWEngine")>] 
          analytich1hwengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,9 +192,9 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine_numberOfEvaluations", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "Reference to AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "AnalyticH1HWEngine")>] 
          analytich1hwengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -228,11 +228,11 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine_setModel", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "Reference to AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "AnalyticH1HWEngine")>] 
          analytich1hwengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -270,11 +270,11 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine_registerWith", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "Reference to AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "AnalyticH1HWEngine")>] 
          analytich1hwengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -312,9 +312,9 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine_reset", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "Reference to AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "AnalyticH1HWEngine")>] 
          analytich1hwengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -348,11 +348,11 @@ module AnalyticH1HWEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticH1HWEngine_unregisterWith", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "Reference to AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="AnalyticH1HWEngine",Description = "AnalyticH1HWEngine")>] 
          analytich1hwengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,9 +387,9 @@ module AnalyticH1HWEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticH1HWEngine_Range", Description="Create a range of AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AnalyticH1HWEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

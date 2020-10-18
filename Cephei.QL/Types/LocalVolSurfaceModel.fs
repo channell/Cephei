@@ -50,7 +50,8 @@ type LocalVolSurfaceModel
 (*
     Functions
 *)
-    let _LocalVolSurface                           = cell (fun () -> new LocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value))
+    let mutable
+        _LocalVolSurface                           = cell (fun () -> new LocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value))
     let _dayCounter                                = triv (fun () -> _LocalVolSurface.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _LocalVolSurface.Value.maxStrike())
@@ -83,13 +84,14 @@ type LocalVolSurfaceModel
     casting 
 *)
     internal new () = new LocalVolSurfaceModel(null,null,null,null)
-    member internal this.Inject v = _LocalVolSurface.Value <- v
+    member internal this.Inject v = _LocalVolSurface <- v
     static member Cast (p : ICell<LocalVolSurface>) = 
         if p :? LocalVolSurfaceModel then 
             p :?> LocalVolSurfaceModel
         else
             let o = new LocalVolSurfaceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -147,7 +149,8 @@ type LocalVolSurfaceModel1
 (*
     Functions
 *)
-    let _LocalVolSurface                           = cell (fun () -> new LocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value))
+    let mutable
+        _LocalVolSurface                           = cell (fun () -> new LocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value))
     let _dayCounter                                = triv (fun () -> _LocalVolSurface.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _LocalVolSurface.Value.maxStrike())
@@ -180,13 +183,14 @@ type LocalVolSurfaceModel1
     casting 
 *)
     internal new () = new LocalVolSurfaceModel1(null,null,null,null)
-    member internal this.Inject v = _LocalVolSurface.Value <- v
+    member internal this.Inject v = _LocalVolSurface <- v
     static member Cast (p : ICell<LocalVolSurface>) = 
         if p :? LocalVolSurfaceModel1 then 
             p :?> LocalVolSurfaceModel1
         else
             let o = new LocalVolSurfaceModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module ArithmeticASOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticASOPathPricer2", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticASOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,13 +82,13 @@ module ArithmeticASOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticASOPathPricer", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticASOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="runningSum",Description = "Reference to runningSum")>] 
+        ([<ExcelArgument(Name="runningSum",Description = "double")>] 
          runningSum : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,15 +131,15 @@ module ArithmeticASOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticASOPathPricer1", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticASOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="runningSum",Description = "Reference to runningSum")>] 
+        ([<ExcelArgument(Name="runningSum",Description = "double")>] 
          runningSum : obj)
-        ([<ExcelArgument(Name="pastFixings",Description = "Reference to pastFixings")>] 
+        ([<ExcelArgument(Name="pastFixings",Description = "int")>] 
          pastFixings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,11 +186,11 @@ module ArithmeticASOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticASOPathPricer_value", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ArithmeticASOPathPricer",Description = "Reference to ArithmeticASOPathPricer")>] 
+        ([<ExcelArgument(Name="ArithmeticASOPathPricer",Description = "ArithmeticASOPathPricer")>] 
          arithmeticasopathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "Path")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,9 +225,9 @@ module ArithmeticASOPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ArithmeticASOPathPricer_Range", Description="Create a range of ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ArithmeticASOPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

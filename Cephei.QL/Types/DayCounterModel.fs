@@ -44,7 +44,8 @@ type DayCounterModel
 (*
     Functions
 *)
-    let _DayCounter                                = cell (fun () -> new DayCounter (d.Value))
+    let mutable
+        _DayCounter                                = cell (fun () -> new DayCounter (d.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _DayCounter.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _DayCounter.Value.dayCounter)
@@ -62,13 +63,14 @@ type DayCounterModel
     casting 
 *)
     internal new () = new DayCounterModel(null)
-    member internal this.Inject v = _DayCounter.Value <- v
+    member internal this.Inject v = _DayCounter <- v
     static member Cast (p : ICell<DayCounter>) = 
         if p :? DayCounterModel then 
             p :?> DayCounterModel
         else
             let o = new DayCounterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -102,7 +104,8 @@ type DayCounterModel1
 (*
     Functions
 *)
-    let _DayCounter                                = cell (fun () -> new DayCounter ())
+    let mutable
+        _DayCounter                                = cell (fun () -> new DayCounter ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _DayCounter.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _DayCounter.Value.dayCounter)
@@ -120,13 +123,14 @@ type DayCounterModel1
     casting 
 *)
     
-    member internal this.Inject v = _DayCounter.Value <- v
+    member internal this.Inject v = _DayCounter <- v
     static member Cast (p : ICell<DayCounter>) = 
         if p :? DayCounterModel1 then 
             p :?> DayCounterModel1
         else
             let o = new DayCounterModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

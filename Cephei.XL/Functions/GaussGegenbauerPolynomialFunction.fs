@@ -39,9 +39,9 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussGegenbauerPolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lambda",Description = "Reference to lambda")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_alpha", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "Reference to GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "GaussGegenbauerPolynomial")>] 
          gaussgegenbauerpolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_beta", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "Reference to GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "GaussGegenbauerPolynomial")>] 
          gaussgegenbauerpolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_mu_0", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_mu_0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "Reference to GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "GaussGegenbauerPolynomial")>] 
          gaussgegenbauerpolynomial : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_w", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_w
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "Reference to GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "GaussGegenbauerPolynomial")>] 
          gaussgegenbauerpolynomial : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,13 +238,13 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_value", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "Reference to GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "GaussGegenbauerPolynomial")>] 
          gaussgegenbauerpolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,13 +286,13 @@ module GaussGegenbauerPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_weightedValue", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_weightedValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "Reference to GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerPolynomial",Description = "GaussGegenbauerPolynomial")>] 
          gaussgegenbauerpolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -331,9 +331,9 @@ module GaussGegenbauerPolynomialFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussGegenbauerPolynomial_Range", Description="Create a range of GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussGegenbauerPolynomial")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

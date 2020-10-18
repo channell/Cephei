@@ -48,7 +48,8 @@ type TreeVanillaSwapEngineModel
 (*
     Functions
 *)
-    let _TreeVanillaSwapEngine                     = cell (fun () -> new TreeVanillaSwapEngine (model.Value, timeSteps.Value, termStructure.Value))
+    let mutable
+        _TreeVanillaSwapEngine                     = cell (fun () -> new TreeVanillaSwapEngine (model.Value, timeSteps.Value, termStructure.Value))
     let _update                                    = triv (fun () -> _TreeVanillaSwapEngine.Value.update()
                                                                      _TreeVanillaSwapEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -67,13 +68,14 @@ type TreeVanillaSwapEngineModel
     casting 
 *)
     internal new () = new TreeVanillaSwapEngineModel(null,null,null)
-    member internal this.Inject v = _TreeVanillaSwapEngine.Value <- v
+    member internal this.Inject v = _TreeVanillaSwapEngine <- v
     static member Cast (p : ICell<TreeVanillaSwapEngine>) = 
         if p :? TreeVanillaSwapEngineModel then 
             p :?> TreeVanillaSwapEngineModel
         else
             let o = new TreeVanillaSwapEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type TreeVanillaSwapEngineModel1
 (*
     Functions
 *)
-    let _TreeVanillaSwapEngine                     = cell (fun () -> new TreeVanillaSwapEngine (model.Value, timeGrid.Value, termStructure.Value))
+    let mutable
+        _TreeVanillaSwapEngine                     = cell (fun () -> new TreeVanillaSwapEngine (model.Value, timeGrid.Value, termStructure.Value))
     let _update                                    = triv (fun () -> _TreeVanillaSwapEngine.Value.update()
                                                                      _TreeVanillaSwapEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -131,13 +134,14 @@ type TreeVanillaSwapEngineModel1
     casting 
 *)
     internal new () = new TreeVanillaSwapEngineModel1(null,null,null)
-    member internal this.Inject v = _TreeVanillaSwapEngine.Value <- v
+    member internal this.Inject v = _TreeVanillaSwapEngine <- v
     static member Cast (p : ICell<TreeVanillaSwapEngine>) = 
         if p :? TreeVanillaSwapEngineModel1 then 
             p :?> TreeVanillaSwapEngineModel1
         else
             let o = new TreeVanillaSwapEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

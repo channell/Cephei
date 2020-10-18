@@ -41,20 +41,22 @@ type complexValueModel
 (*
     Functions
 *)
-    let _complexValue                              = cell (fun () -> new complexValue ())
+    let mutable
+        _complexValue                              = cell (fun () -> new complexValue ())
     let _value                                     = cell (fun () -> _complexValue.Value.value())
     do this.Bind(_complexValue)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _complexValue.Value <- v
+    member internal this.Inject v = _complexValue <- v
     static member Cast (p : ICell<complexValue>) = 
         if p :? complexValueModel then 
             p :?> complexValueModel
         else
             let o = new complexValueModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

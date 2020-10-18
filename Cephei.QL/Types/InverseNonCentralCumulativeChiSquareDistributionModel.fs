@@ -50,7 +50,8 @@ type InverseNonCentralCumulativeChiSquareDistributionModel
 (*
     Functions
 *)
-    let _InverseNonCentralCumulativeChiSquareDistribution = cell (fun () -> new InverseNonCentralCumulativeChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
+    let mutable
+        _InverseNonCentralCumulativeChiSquareDistribution = cell (fun () -> new InverseNonCentralCumulativeChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralCumulativeChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralCumulativeChiSquareDistribution)
@@ -58,13 +59,14 @@ type InverseNonCentralCumulativeChiSquareDistributionModel
     casting 
 *)
     internal new () = new InverseNonCentralCumulativeChiSquareDistributionModel(null,null,null,null)
-    member internal this.Inject v = _InverseNonCentralCumulativeChiSquareDistribution.Value <- v
+    member internal this.Inject v = _InverseNonCentralCumulativeChiSquareDistribution <- v
     static member Cast (p : ICell<InverseNonCentralCumulativeChiSquareDistribution>) = 
         if p :? InverseNonCentralCumulativeChiSquareDistributionModel then 
             p :?> InverseNonCentralCumulativeChiSquareDistributionModel
         else
             let o = new InverseNonCentralCumulativeChiSquareDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

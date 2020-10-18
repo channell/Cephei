@@ -39,9 +39,9 @@ module ChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_ChiSquareDistribution", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ChiSquareDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="df",Description = "Reference to df")>] 
+        ([<ExcelArgument(Name="df",Description = "double")>] 
          df : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module ChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_ChiSquareDistribution_value", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ChiSquareDistribution",Description = "Reference to ChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="ChiSquareDistribution",Description = "ChiSquareDistribution")>] 
          chisquaredistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -115,9 +115,9 @@ module ChiSquareDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ChiSquareDistribution_Range", Description="Create a range of ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

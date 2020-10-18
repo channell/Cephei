@@ -41,7 +41,8 @@ type SimpleQuoteModel
 (*
     Functions
 *)
-    let _SimpleQuote                               = cell (fun () -> new SimpleQuote ())
+    let mutable
+        _SimpleQuote                               = cell (fun () -> new SimpleQuote ())
     let _isValid                                   = triv (fun () -> _SimpleQuote.Value.isValid())
     let _reset                                     = triv (fun () -> _SimpleQuote.Value.reset()
                                                                      _SimpleQuote.Value)
@@ -59,13 +60,14 @@ type SimpleQuoteModel
     casting 
 *)
     
-    member internal this.Inject v = _SimpleQuote.Value <- v
+    member internal this.Inject v = _SimpleQuote <- v
     static member Cast (p : ICell<SimpleQuote>) = 
         if p :? SimpleQuoteModel then 
             p :?> SimpleQuoteModel
         else
             let o = new SimpleQuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type SimpleQuoteModel1
 (*
     Functions
 *)
-    let _SimpleQuote                               = cell (fun () -> new SimpleQuote (value.Value))
+    let mutable
+        _SimpleQuote                               = cell (fun () -> new SimpleQuote (value.Value))
     let _isValid                                   = triv (fun () -> _SimpleQuote.Value.isValid())
     let _reset                                     = triv (fun () -> _SimpleQuote.Value.reset()
                                                                      _SimpleQuote.Value)
@@ -116,13 +119,14 @@ type SimpleQuoteModel1
     casting 
 *)
     internal new () = new SimpleQuoteModel1(null)
-    member internal this.Inject v = _SimpleQuote.Value <- v
+    member internal this.Inject v = _SimpleQuote <- v
     static member Cast (p : ICell<SimpleQuote>) = 
         if p :? SimpleQuoteModel1 then 
             p :?> SimpleQuoteModel1
         else
             let o = new SimpleQuoteModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

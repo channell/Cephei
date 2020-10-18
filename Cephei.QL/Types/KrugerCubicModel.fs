@@ -48,7 +48,8 @@ type KrugerCubicModel
 (*
     Functions
 *)
-    let _KrugerCubic                               = cell (fun () -> new KrugerCubic (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _KrugerCubic                               = cell (fun () -> new KrugerCubic (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _KrugerCubic.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _KrugerCubic.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _KrugerCubic.Value.cCoefficients())
@@ -80,13 +81,14 @@ type KrugerCubicModel
     casting 
 *)
     internal new () = new KrugerCubicModel(null,null,null)
-    member internal this.Inject v = _KrugerCubic.Value <- v
+    member internal this.Inject v = _KrugerCubic <- v
     static member Cast (p : ICell<KrugerCubic>) = 
         if p :? KrugerCubicModel then 
             p :?> KrugerCubicModel
         else
             let o = new KrugerCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

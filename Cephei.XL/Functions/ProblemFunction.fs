@@ -39,9 +39,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_constraint", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_costFunction", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_costFunction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CostFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_currentValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_currentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_functionEvaluation", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_functionEvaluation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Problem")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_functionValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_functionValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Problem")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,13 +219,13 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_gradient", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_gradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Problem")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="grad_f",Description = "Reference to grad_f")>] 
+        ([<ExcelArgument(Name="grad_f",Description = "Vector")>] 
          grad_f : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,9 +267,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_gradientEvaluation", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_gradientEvaluation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Problem")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -303,9 +303,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_gradientNormValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_gradientNormValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Problem")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -339,13 +339,13 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Problem")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="costFunction",Description = "Reference to costFunction")>] 
+        ([<ExcelArgument(Name="costFunction",Description = "CostFunction")>] 
          costFunction : obj)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
-        ([<ExcelArgument(Name="initialValue",Description = "Reference to initialValue")>] 
+        ([<ExcelArgument(Name="initialValue",Description = "Vector")>] 
          initialValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,9 +388,9 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_reset", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,11 +424,11 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_setCurrentValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_setCurrentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="currentValue",Description = "Reference to currentValue")>] 
+        ([<ExcelArgument(Name="currentValue",Description = "Vector")>] 
          currentValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,11 +466,11 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_setFunctionValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_setFunctionValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="functionValue",Description = "Reference to functionValue")>] 
+        ([<ExcelArgument(Name="functionValue",Description = "double")>] 
          functionValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,11 +508,11 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_setGradientNormValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_setGradientNormValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="squaredNorm",Description = "Reference to squaredNorm")>] 
+        ([<ExcelArgument(Name="squaredNorm",Description = "double")>] 
          squaredNorm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,11 +550,11 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_value", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,13 +592,13 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_valueAndGradient", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_valueAndGradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="grad_f",Description = "Reference to grad_f")>] 
+        ([<ExcelArgument(Name="grad_f",Description = "Vector")>] 
          grad_f : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,11 +640,11 @@ module ProblemFunction =
     *)
     [<ExcelFunction(Name="_Problem_values", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Problem",Description = "Reference to Problem")>] 
+        ([<ExcelArgument(Name="Problem",Description = "Problem")>] 
          problem : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -679,9 +679,9 @@ module ProblemFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Problem_Range", Description="Create a range of Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Problem")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

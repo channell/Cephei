@@ -41,7 +41,8 @@ type RONCurrencyModel
 (*
     Functions
 *)
-    let _RONCurrency                               = cell (fun () -> new RONCurrency ())
+    let mutable
+        _RONCurrency                               = cell (fun () -> new RONCurrency ())
     let _code                                      = triv (fun () -> _RONCurrency.Value.code)
     let _empty                                     = triv (fun () -> _RONCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type RONCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _RONCurrency.Value <- v
+    member internal this.Inject v = _RONCurrency <- v
     static member Cast (p : ICell<RONCurrency>) = 
         if p :? RONCurrencyModel then 
             p :?> RONCurrencyModel
         else
             let o = new RONCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type GeometricAPOPathPricerModel
 (*
     Functions
 *)
-    let _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value))
+    let mutable
+        _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
@@ -56,13 +57,14 @@ type GeometricAPOPathPricerModel
     casting 
 *)
     internal new () = new GeometricAPOPathPricerModel(null,null,null)
-    member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
+    member internal this.Inject v = _GeometricAPOPathPricer <- v
     static member Cast (p : ICell<GeometricAPOPathPricer>) = 
         if p :? GeometricAPOPathPricerModel then 
             p :?> GeometricAPOPathPricerModel
         else
             let o = new GeometricAPOPathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -97,7 +99,8 @@ type GeometricAPOPathPricerModel1
 (*
     Functions
 *)
-    let _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value, runningProduct.Value))
+    let mutable
+        _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value, runningProduct.Value))
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
@@ -105,13 +108,14 @@ type GeometricAPOPathPricerModel1
     casting 
 *)
     internal new () = new GeometricAPOPathPricerModel1(null,null,null,null)
-    member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
+    member internal this.Inject v = _GeometricAPOPathPricer <- v
     static member Cast (p : ICell<GeometricAPOPathPricer>) = 
         if p :? GeometricAPOPathPricerModel1 then 
             p :?> GeometricAPOPathPricerModel1
         else
             let o = new GeometricAPOPathPricerModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -149,7 +153,8 @@ type GeometricAPOPathPricerModel2
 (*
     Functions
 *)
-    let _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value, runningProduct.Value, pastFixings.Value))
+    let mutable
+        _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value, runningProduct.Value, pastFixings.Value))
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
@@ -157,13 +162,14 @@ type GeometricAPOPathPricerModel2
     casting 
 *)
     internal new () = new GeometricAPOPathPricerModel2(null,null,null,null,null)
-    member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
+    member internal this.Inject v = _GeometricAPOPathPricer <- v
     static member Cast (p : ICell<GeometricAPOPathPricer>) = 
         if p :? GeometricAPOPathPricerModel2 then 
             p :?> GeometricAPOPathPricerModel2
         else
             let o = new GeometricAPOPathPricerModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

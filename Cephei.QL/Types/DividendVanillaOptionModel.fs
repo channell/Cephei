@@ -54,7 +54,8 @@ type DividendVanillaOptionModel
 (*
     Functions
 *)
-    let _DividendVanillaOption                     = cell (fun () -> withEngine pricingEngine (new DividendVanillaOption (payoff.Value, exercise.Value, dividendDates.Value, dividends.Value)))
+    let mutable
+        _DividendVanillaOption                     = cell (fun () -> withEngine pricingEngine (new DividendVanillaOption (payoff.Value, exercise.Value, dividendDates.Value, dividends.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _DividendVanillaOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _DividendVanillaOption).delta())
@@ -85,13 +86,14 @@ type DividendVanillaOptionModel
     casting 
 *)
     internal new () = new DividendVanillaOptionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _DividendVanillaOption.Value <- v
+    member internal this.Inject v = _DividendVanillaOption <- v
     static member Cast (p : ICell<DividendVanillaOption>) = 
         if p :? DividendVanillaOptionModel then 
             p :?> DividendVanillaOptionModel
         else
             let o = new DividendVanillaOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

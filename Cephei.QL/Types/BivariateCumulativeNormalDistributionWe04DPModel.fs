@@ -44,7 +44,8 @@ type BivariateCumulativeNormalDistributionWe04DPModel
 (*
     Functions
 *)
-    let _BivariateCumulativeNormalDistributionWe04DP = cell (fun () -> new BivariateCumulativeNormalDistributionWe04DP (rho.Value))
+    let mutable
+        _BivariateCumulativeNormalDistributionWe04DP = cell (fun () -> new BivariateCumulativeNormalDistributionWe04DP (rho.Value))
     let _value                                     (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _BivariateCumulativeNormalDistributionWe04DP.Value.value(x.Value, y.Value))
     do this.Bind(_BivariateCumulativeNormalDistributionWe04DP)
@@ -52,13 +53,14 @@ type BivariateCumulativeNormalDistributionWe04DPModel
     casting 
 *)
     internal new () = new BivariateCumulativeNormalDistributionWe04DPModel(null)
-    member internal this.Inject v = _BivariateCumulativeNormalDistributionWe04DP.Value <- v
+    member internal this.Inject v = _BivariateCumulativeNormalDistributionWe04DP <- v
     static member Cast (p : ICell<BivariateCumulativeNormalDistributionWe04DP>) = 
         if p :? BivariateCumulativeNormalDistributionWe04DPModel then 
             p :?> BivariateCumulativeNormalDistributionWe04DPModel
         else
             let o = new BivariateCumulativeNormalDistributionWe04DPModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

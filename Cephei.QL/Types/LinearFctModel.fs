@@ -44,7 +44,8 @@ type LinearFctModel
 (*
     Functions
 *)
-    let _LinearFct                                 = cell (fun () -> new LinearFct (i.Value))
+    let mutable
+        _LinearFct                                 = cell (fun () -> new LinearFct (i.Value))
     let _value                                     (x : ICell<Generic.List<double>>)   
                                                    = cell (fun () -> _LinearFct.Value.value(x.Value))
     do this.Bind(_LinearFct)
@@ -52,13 +53,14 @@ type LinearFctModel
     casting 
 *)
     internal new () = LinearFctModel(null)
-    member internal this.Inject v = _LinearFct.Value <- v
+    member internal this.Inject v = _LinearFct <- v
     static member Cast (p : ICell<LinearFct>) = 
         if p :? LinearFctModel then 
             p :?> LinearFctModel
         else
             let o = new LinearFctModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -39,9 +39,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_impliedQuote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OISRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OISRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "Quote")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="overnightIndex",Description = "Reference to overnightIndex")>] 
+        ([<ExcelArgument(Name="overnightIndex",Description = "OvernightIndex")>] 
          overnightIndex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,11 +130,11 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_setTermStructure", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "YieldTermStructure")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_swap", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,9 +208,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_update", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_earliestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,9 +280,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_latestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_latestRelevantDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,9 +352,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_maturityDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,9 +388,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_pillarDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,9 +424,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,9 +460,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quoteError", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,9 +496,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quoteIsValid", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,9 +532,9 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quoteValue", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,11 +568,11 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_registerWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_unregisterWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OISRateHelper",Description = "Reference to OISRateHelper")>] 
+        ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -649,9 +649,9 @@ module OISRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OISRateHelper_Range", Description="Create a range of OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the OISRateHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

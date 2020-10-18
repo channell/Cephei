@@ -39,9 +39,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_dayCounter", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol2", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,13 +124,13 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol1", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,15 +173,15 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol3", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -228,15 +228,15 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalConstantVol")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_maxDate", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -319,9 +319,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_maxStrike", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,9 +355,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_minStrike", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -391,15 +391,15 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_localVol", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_localVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -445,15 +445,15 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_localVol1", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_localVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -499,9 +499,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_businessDayConvention", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -535,11 +535,11 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_optionDateFromTenor", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -577,9 +577,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_calendar", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -613,9 +613,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_maxTime", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -649,9 +649,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_referenceDate", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -685,9 +685,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_settlementDays", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -721,11 +721,11 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_timeFromReference", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -763,9 +763,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_update", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -799,9 +799,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_allowsExtrapolation", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -835,11 +835,11 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_disableExtrapolation", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -877,11 +877,11 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_enableExtrapolation", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -919,9 +919,9 @@ module LocalConstantVolFunction =
     *)
     [<ExcelFunction(Name="_LocalConstantVol_extrapolate", Description="Create a LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalConstantVol",Description = "Reference to LocalConstantVol")>] 
+        ([<ExcelArgument(Name="LocalConstantVol",Description = "LocalConstantVol")>] 
          localconstantvol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -952,9 +952,9 @@ module LocalConstantVolFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LocalConstantVol_Range", Description="Create a range of LocalConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalConstantVol_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LocalConstantVol")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

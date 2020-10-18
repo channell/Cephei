@@ -39,35 +39,35 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CappedFlooredCmsCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "SwapIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "CappedFlooredCmsCoupon")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "CappedFlooredCmsCoupon")>] 
          spread : obj)
-        ([<ExcelArgument(Name="cap",Description = "Reference to cap")>] 
+        ([<ExcelArgument(Name="cap",Description = "double")>] 
          cap : obj)
-        ([<ExcelArgument(Name="floor",Description = "Reference to floor")>] 
+        ([<ExcelArgument(Name="floor",Description = "double")>] 
          floor : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "CappedFlooredCmsCoupon")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "CappedFlooredCmsCoupon")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "CappedFlooredCmsCoupon")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "Reference to isInArrears")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "CappedFlooredCmsCoupon")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon1", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CappedFlooredCmsCoupon")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,37 +185,37 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_factory", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
          spread : obj)
-        ([<ExcelArgument(Name="cap",Description = "Reference to cap")>] 
+        ([<ExcelArgument(Name="cap",Description = "double")>] 
          cap : obj)
-        ([<ExcelArgument(Name="floor",Description = "Reference to floor")>] 
+        ([<ExcelArgument(Name="floor",Description = "double")>] 
          floor : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "Reference to isInArrears")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "CashFlow")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,9 +305,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_cap", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_cap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,9 +341,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_convexityAdjustment", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,9 +377,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_effectiveCap", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_effectiveCap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -413,9 +413,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_effectiveFloor", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_effectiveFloor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,9 +449,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_floor", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_floor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isCapped", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_isCapped
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isFloored", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_isFloored
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,9 +557,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_rate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -593,11 +593,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_setPricer", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="pricer",Description = "Reference to pricer")>] 
+        ([<ExcelArgument(Name="pricer",Description = "FloatingRateCouponPricer")>] 
          pricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,11 +635,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedAmount", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,9 +677,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_adjustedFixing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -713,9 +713,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_amount", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -749,9 +749,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_dayCounter", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -785,9 +785,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_fixingDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -821,9 +821,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_fixingDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,9 +857,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_gearing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -893,9 +893,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_index", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -929,9 +929,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_indexFixing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,9 +965,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isInArrears", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1001,11 +1001,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_price", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="yts",Description = "Reference to yts")>] 
+        ([<ExcelArgument(Name="yts",Description = "YieldTermStructure")>] 
          yts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1043,9 +1043,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_pricer", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1079,9 +1079,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_spread", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1115,9 +1115,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_update", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1151,9 +1151,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1187,9 +1187,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualEndDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1223,9 +1223,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualPeriod", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1259,9 +1259,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualStartDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1295,11 +1295,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1337,11 +1337,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedPeriod", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1379,9 +1379,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_date", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1415,9 +1415,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_exCouponDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1451,9 +1451,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_nominal", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1487,9 +1487,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_referencePeriodEnd", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1523,9 +1523,9 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_referencePeriodStart", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1559,11 +1559,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_CompareTo", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1601,11 +1601,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_Equals", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1643,13 +1643,13 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_hasOccurred", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1691,11 +1691,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_tradingExCoupon", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1733,11 +1733,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accept", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1775,11 +1775,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_registerWith", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1817,11 +1817,11 @@ module CappedFlooredCmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_unregisterWith", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "Reference to CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="CappedFlooredCmsCoupon",Description = "CappedFlooredCmsCoupon")>] 
          cappedflooredcmscoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1856,9 +1856,9 @@ module CappedFlooredCmsCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CappedFlooredCmsCoupon_Range", Description="Create a range of CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CappedFlooredCmsCoupon")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

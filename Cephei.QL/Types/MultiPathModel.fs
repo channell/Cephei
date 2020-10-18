@@ -46,7 +46,8 @@ type MultiPathModel
 (*
     Functions
 *)
-    let _MultiPath                                 = cell (fun () -> new MultiPath (nAsset.Value, timeGrid.Value))
+    let mutable
+        _MultiPath                                 = cell (fun () -> new MultiPath (nAsset.Value, timeGrid.Value))
     let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
     let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
     let _length                                    = triv (fun () -> _MultiPath.Value.length())
@@ -58,13 +59,14 @@ type MultiPathModel
     casting 
 *)
     internal new () = new MultiPathModel(null,null)
-    member internal this.Inject v = _MultiPath.Value <- v
+    member internal this.Inject v = _MultiPath <- v
     static member Cast (p : ICell<MultiPath>) = 
         if p :? MultiPathModel then 
             p :?> MultiPathModel
         else
             let o = new MultiPathModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -93,7 +95,8 @@ type MultiPathModel1
 (*
     Functions
 *)
-    let _MultiPath                                 = cell (fun () -> new MultiPath ())
+    let mutable
+        _MultiPath                                 = cell (fun () -> new MultiPath ())
     let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
     let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
     let _length                                    = triv (fun () -> _MultiPath.Value.length())
@@ -105,13 +108,14 @@ type MultiPathModel1
     casting 
 *)
     
-    member internal this.Inject v = _MultiPath.Value <- v
+    member internal this.Inject v = _MultiPath <- v
     static member Cast (p : ICell<MultiPath>) = 
         if p :? MultiPathModel1 then 
             p :?> MultiPathModel1
         else
             let o = new MultiPathModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -141,7 +145,8 @@ type MultiPathModel2
 (*
     Functions
 *)
-    let _MultiPath                                 = cell (fun () -> new MultiPath (multiPath.Value))
+    let mutable
+        _MultiPath                                 = cell (fun () -> new MultiPath (multiPath.Value))
     let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
     let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
     let _length                                    = triv (fun () -> _MultiPath.Value.length())
@@ -153,13 +158,14 @@ type MultiPathModel2
     casting 
 *)
     internal new () = new MultiPathModel2(null)
-    member internal this.Inject v = _MultiPath.Value <- v
+    member internal this.Inject v = _MultiPath <- v
     static member Cast (p : ICell<MultiPath>) = 
         if p :? MultiPathModel2 then 
             p :?> MultiPathModel2
         else
             let o = new MultiPathModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

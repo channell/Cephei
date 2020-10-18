@@ -46,19 +46,21 @@ type RootNotBracketExceptionModel
 (*
     Functions
 *)
-    let _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value, inner.Value))
+    let mutable
+        _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value, inner.Value))
     do this.Bind(_RootNotBracketException)
 (* 
     casting 
 *)
     internal new () = new RootNotBracketExceptionModel(null,null)
-    member internal this.Inject v = _RootNotBracketException.Value <- v
+    member internal this.Inject v = _RootNotBracketException <- v
     static member Cast (p : ICell<RootNotBracketException>) = 
         if p :? RootNotBracketExceptionModel then 
             p :?> RootNotBracketExceptionModel
         else
             let o = new RootNotBracketExceptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -84,19 +86,21 @@ type RootNotBracketExceptionModel1
 (*
     Functions
 *)
-    let _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value))
+    let mutable
+        _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value))
     do this.Bind(_RootNotBracketException)
 (* 
     casting 
 *)
     internal new () = new RootNotBracketExceptionModel1(null)
-    member internal this.Inject v = _RootNotBracketException.Value <- v
+    member internal this.Inject v = _RootNotBracketException <- v
     static member Cast (p : ICell<RootNotBracketException>) = 
         if p :? RootNotBracketExceptionModel1 then 
             p :?> RootNotBracketExceptionModel1
         else
             let o = new RootNotBracketExceptionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -118,19 +122,21 @@ type RootNotBracketExceptionModel2
 (*
     Functions
 *)
-    let _RootNotBracketException                   = cell (fun () -> new RootNotBracketException ())
+    let mutable
+        _RootNotBracketException                   = cell (fun () -> new RootNotBracketException ())
     do this.Bind(_RootNotBracketException)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _RootNotBracketException.Value <- v
+    member internal this.Inject v = _RootNotBracketException <- v
     static member Cast (p : ICell<RootNotBracketException>) = 
         if p :? RootNotBracketExceptionModel2 then 
             p :?> RootNotBracketExceptionModel2
         else
             let o = new RootNotBracketExceptionModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

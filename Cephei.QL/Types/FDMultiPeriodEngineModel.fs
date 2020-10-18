@@ -41,7 +41,8 @@ type FDMultiPeriodEngineModel
 (*
     Functions
 *)
-    let _FDMultiPeriodEngine                       = cell (fun () -> new FDMultiPeriodEngine ())
+    let mutable
+        _FDMultiPeriodEngine                       = cell (fun () -> new FDMultiPeriodEngine ())
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDMultiPeriodEngine.Value.calculate(r.Value)
                                                                      _FDMultiPeriodEngine.Value)
@@ -60,13 +61,14 @@ type FDMultiPeriodEngineModel
     casting 
 *)
     
-    member internal this.Inject v = _FDMultiPeriodEngine.Value <- v
+    member internal this.Inject v = _FDMultiPeriodEngine <- v
     static member Cast (p : ICell<FDMultiPeriodEngine>) = 
         if p :? FDMultiPeriodEngineModel then 
             p :?> FDMultiPeriodEngineModel
         else
             let o = new FDMultiPeriodEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

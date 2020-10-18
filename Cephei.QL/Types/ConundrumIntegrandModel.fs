@@ -60,7 +60,8 @@ type ConundrumIntegrandModel
 (*
     Functions
 *)
-    let _ConundrumIntegrand                        = cell (fun () -> new ConundrumIntegrand (o.Value, curve.Value, gFunction.Value, fixingDate.Value, paymentDate.Value, annuity.Value, forwardValue.Value, strike.Value, optionType.Value))
+    let mutable
+        _ConundrumIntegrand                        = cell (fun () -> new ConundrumIntegrand (o.Value, curve.Value, gFunction.Value, fixingDate.Value, paymentDate.Value, annuity.Value, forwardValue.Value, strike.Value, optionType.Value))
     let _firstDerivativeOfF                        (x : ICell<double>)   
                                                    = cell (fun () -> _ConundrumIntegrand.Value.firstDerivativeOfF(x.Value))
     let _secondDerivativeOfF                       (x : ICell<double>)   
@@ -72,13 +73,14 @@ type ConundrumIntegrandModel
     casting 
 *)
     internal new () = ConundrumIntegrandModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConundrumIntegrand.Value <- v
+    member internal this.Inject v = _ConundrumIntegrand <- v
     static member Cast (p : ICell<ConundrumIntegrand>) = 
         if p :? ConundrumIntegrandModel then 
             p :?> ConundrumIntegrandModel
         else
             let o = new ConundrumIntegrandModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

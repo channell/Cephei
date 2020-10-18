@@ -41,7 +41,8 @@ type EulerDiscretizationModel
 (*
     Functions
 *)
-    let _EulerDiscretization                       = cell (fun () -> new EulerDiscretization ())
+    let mutable
+        _EulerDiscretization                       = cell (fun () -> new EulerDiscretization ())
     let _covariance                                (Process : ICell<StochasticProcess>) (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>)   
                                                    = triv (fun () -> _EulerDiscretization.Value.covariance(Process.Value, t0.Value, x0.Value, dt.Value))
     let _diffusion                                 (Process : ICell<StochasticProcess1D>) (t0 : ICell<double>) (x0 : ICell<double>) (dt : ICell<double>)   
@@ -59,13 +60,14 @@ type EulerDiscretizationModel
     casting 
 *)
     
-    member internal this.Inject v = _EulerDiscretization.Value <- v
+    member internal this.Inject v = _EulerDiscretization <- v
     static member Cast (p : ICell<EulerDiscretization>) = 
         if p :? EulerDiscretizationModel then 
             p :?> EulerDiscretizationModel
         else
             let o = new EulerDiscretizationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

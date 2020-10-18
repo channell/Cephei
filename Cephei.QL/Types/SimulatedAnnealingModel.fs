@@ -52,7 +52,8 @@ type SimulatedAnnealingModel<'RNG when 'RNG : not struct and 'RNG :> IRNGTraits 
 (*
     Functions
 *)
-    let _SimulatedAnnealing                        = cell (fun () -> new SimulatedAnnealing<'RNG> (lambda.Value, T0.Value, K.Value, alpha.Value, rng.Value))
+    let mutable
+        _SimulatedAnnealing                        = cell (fun () -> new SimulatedAnnealing<'RNG> (lambda.Value, T0.Value, K.Value, alpha.Value, rng.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _SimulatedAnnealing.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_SimulatedAnnealing)
@@ -92,7 +93,8 @@ type SimulatedAnnealingModel1<'RNG when 'RNG : not struct and 'RNG :> IRNGTraits
 (*
     Functions
 *)
-    let _SimulatedAnnealing                        = cell (fun () -> new SimulatedAnnealing<'RNG> (lambda.Value, T0.Value, epsilon.Value, m.Value, rng.Value))
+    let mutable
+        _SimulatedAnnealing                        = cell (fun () -> new SimulatedAnnealing<'RNG> (lambda.Value, T0.Value, epsilon.Value, m.Value, rng.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _SimulatedAnnealing.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_SimulatedAnnealing)

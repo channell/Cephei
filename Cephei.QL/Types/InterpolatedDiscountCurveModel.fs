@@ -52,7 +52,8 @@ type InterpolatedDiscountCurveModel<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (referenceDate.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (referenceDate.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)
@@ -178,7 +179,8 @@ type InterpolatedDiscountCurveModel1<'Interpolator when 'Interpolator : not stru
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)
@@ -307,7 +309,8 @@ type InterpolatedDiscountCurveModel2<'Interpolator when 'Interpolator : not stru
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (settlementDays.Value, calendar.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (settlementDays.Value, calendar.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)
@@ -436,7 +439,8 @@ type InterpolatedDiscountCurveModel3<'Interpolator when 'Interpolator : not stru
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, calendar.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, calendar.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)
@@ -566,7 +570,8 @@ type InterpolatedDiscountCurveModel4<'Interpolator when 'Interpolator : not stru
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)
@@ -693,7 +698,8 @@ type InterpolatedDiscountCurveModel5<'Interpolator when 'Interpolator : not stru
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)
@@ -824,7 +830,8 @@ type InterpolatedDiscountCurveModel6<'Interpolator when 'Interpolator : not stru
 (*
     Functions
 *)
-    let _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedDiscountCurve                 = cell (fun () -> new InterpolatedDiscountCurve<'Interpolator> (dates.Value, discounts.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedDiscountCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedDiscountCurve.Value.data_)

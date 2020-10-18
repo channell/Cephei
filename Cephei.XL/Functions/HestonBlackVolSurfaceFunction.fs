@@ -39,9 +39,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonBlackVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="hestonModel",Description = "Reference to hestonModel")>] 
+        ([<ExcelArgument(Name="hestonModel",Description = "HestonModel")>] 
          hestonModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_maxDate", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_maxStrike", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_minStrike", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,17 +184,17 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVariance", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="time1",Description = "Reference to time1")>] 
+        ([<ExcelArgument(Name="time1",Description = "double")>] 
          time1 : obj)
-        ([<ExcelArgument(Name="time2",Description = "Reference to time2")>] 
+        ([<ExcelArgument(Name="time2",Description = "double")>] 
          time2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,17 +244,17 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVariance1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="date1",Description = "Reference to date1")>] 
+        ([<ExcelArgument(Name="date1",Description = "Date")>] 
          date1 : obj)
-        ([<ExcelArgument(Name="date2",Description = "Reference to date2")>] 
+        ([<ExcelArgument(Name="date2",Description = "Date")>] 
          date2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,17 +304,17 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVol1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="date1",Description = "Reference to date1")>] 
+        ([<ExcelArgument(Name="date1",Description = "Date")>] 
          date1 : obj)
-        ([<ExcelArgument(Name="date2",Description = "Reference to date2")>] 
+        ([<ExcelArgument(Name="date2",Description = "Date")>] 
          date2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,17 +364,17 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVol", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="time1",Description = "Reference to time1")>] 
+        ([<ExcelArgument(Name="time1",Description = "double")>] 
          time1 : obj)
-        ([<ExcelArgument(Name="time2",Description = "Reference to time2")>] 
+        ([<ExcelArgument(Name="time2",Description = "double")>] 
          time2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,15 +424,15 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVariance1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,15 +478,15 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVariance", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Date")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,15 +532,15 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVol", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Date")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,15 +586,15 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVol1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,9 +640,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_businessDayConvention", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -676,11 +676,11 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_optionDateFromTenor", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,9 +718,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_calendar", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,9 +754,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_dayCounter", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,9 +790,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_maxTime", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,9 +826,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_referenceDate", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,9 +862,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_settlementDays", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -898,11 +898,11 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_timeFromReference", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,9 +940,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_update", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -976,9 +976,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_allowsExtrapolation", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1012,11 +1012,11 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_disableExtrapolation", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,11 +1054,11 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_enableExtrapolation", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1096,9 +1096,9 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_extrapolate", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "Reference to HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1129,9 +1129,9 @@ module HestonBlackVolSurfaceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonBlackVolSurface_Range", Description="Create a range of HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

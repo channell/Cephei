@@ -44,19 +44,21 @@ type AnalyticDiscreteGeometricAverageStrikeAsianEngineModel
 (*
     Functions
 *)
-    let _AnalyticDiscreteGeometricAverageStrikeAsianEngine = cell (fun () -> new AnalyticDiscreteGeometricAverageStrikeAsianEngine (Process.Value))
+    let mutable
+        _AnalyticDiscreteGeometricAverageStrikeAsianEngine = cell (fun () -> new AnalyticDiscreteGeometricAverageStrikeAsianEngine (Process.Value))
     do this.Bind(_AnalyticDiscreteGeometricAverageStrikeAsianEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticDiscreteGeometricAverageStrikeAsianEngineModel(null)
-    member internal this.Inject v = _AnalyticDiscreteGeometricAverageStrikeAsianEngine.Value <- v
+    member internal this.Inject v = _AnalyticDiscreteGeometricAverageStrikeAsianEngine <- v
     static member Cast (p : ICell<AnalyticDiscreteGeometricAverageStrikeAsianEngine>) = 
         if p :? AnalyticDiscreteGeometricAverageStrikeAsianEngineModel then 
             p :?> AnalyticDiscreteGeometricAverageStrikeAsianEngineModel
         else
             let o = new AnalyticDiscreteGeometricAverageStrikeAsianEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module ConstantCPRFunction =
     *)
     [<ExcelFunction(Name="_ConstantCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantCPR")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="cpr",Description = "Reference to cpr")>] 
+        ([<ExcelArgument(Name="cpr",Description = "double")>] 
          cpr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module ConstantCPRFunction =
     *)
     [<ExcelFunction(Name="_ConstantCPR_getCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_getCPR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCPR",Description = "Reference to ConstantCPR")>] 
+        ([<ExcelArgument(Name="ConstantCPR",Description = "ConstantCPR")>] 
          constantcpr : obj)
-        ([<ExcelArgument(Name="valDate",Description = "Reference to valDate")>] 
+        ([<ExcelArgument(Name="valDate",Description = "Date")>] 
          valDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module ConstantCPRFunction =
     *)
     [<ExcelFunction(Name="_ConstantCPR_getSMM", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_getSMM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantCPR",Description = "Reference to ConstantCPR")>] 
+        ([<ExcelArgument(Name="ConstantCPR",Description = "ConstantCPR")>] 
          constantcpr : obj)
-        ([<ExcelArgument(Name="valDate",Description = "Reference to valDate")>] 
+        ([<ExcelArgument(Name="valDate",Description = "Date")>] 
          valDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -157,9 +157,9 @@ module ConstantCPRFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantCPR_Range", Description="Create a range of ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConstantCPR")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type ZeroConditionModel<'array_type when 'array_type :> Vector>
 (*
     Functions
 *)
-    let _ZeroCondition                             = cell (fun () -> new ZeroCondition<'array_type> ())
+    let mutable
+        _ZeroCondition                             = cell (fun () -> new ZeroCondition<'array_type> ())
     let _applyTo                                   (a : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _ZeroCondition.Value.applyTo(a.Value, t.Value)
                                                                      _ZeroCondition.Value)

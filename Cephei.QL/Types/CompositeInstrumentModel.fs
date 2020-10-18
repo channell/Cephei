@@ -44,7 +44,8 @@ type CompositeInstrumentModel
 (*
     Functions
 *)
-    let _CompositeInstrument                       = cell (fun () -> withEngine pricingEngine (new CompositeInstrument ()))
+    let mutable
+        _CompositeInstrument                       = cell (fun () -> withEngine pricingEngine (new CompositeInstrument ()))
     let _add                                       (instrument : ICell<Instrument>) (multiplier : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CompositeInstrument).add(instrument.Value, multiplier.Value)
                                                                      _CompositeInstrument.Value)
@@ -66,13 +67,14 @@ type CompositeInstrumentModel
     casting 
 *)
     internal new () = new CompositeInstrumentModel(null,null)
-    member internal this.Inject v = _CompositeInstrument.Value <- v
+    member internal this.Inject v = _CompositeInstrument <- v
     static member Cast (p : ICell<CompositeInstrument>) = 
         if p :? CompositeInstrumentModel then 
             p :?> CompositeInstrumentModel
         else
             let o = new CompositeInstrumentModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

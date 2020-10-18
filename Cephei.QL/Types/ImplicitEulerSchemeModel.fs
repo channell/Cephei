@@ -50,7 +50,8 @@ type ImplicitEulerSchemeModel
 (*
     Functions
 *)
-    let _ImplicitEulerScheme                       = cell (fun () -> new ImplicitEulerScheme (map.Value, bcSet.Value, relTol.Value, solverType.Value))
+    let mutable
+        _ImplicitEulerScheme                       = cell (fun () -> new ImplicitEulerScheme (map.Value, bcSet.Value, relTol.Value, solverType.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
                                                    = triv (fun () -> _ImplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _numberOfIterations                        = triv (fun () -> _ImplicitEulerScheme.Value.numberOfIterations())
@@ -65,13 +66,14 @@ type ImplicitEulerSchemeModel
     casting 
 *)
     internal new () = new ImplicitEulerSchemeModel(null,null,null,null)
-    member internal this.Inject v = _ImplicitEulerScheme.Value <- v
+    member internal this.Inject v = _ImplicitEulerScheme <- v
     static member Cast (p : ICell<ImplicitEulerScheme>) = 
         if p :? ImplicitEulerSchemeModel then 
             p :?> ImplicitEulerSchemeModel
         else
             let o = new ImplicitEulerSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -103,7 +105,8 @@ type ImplicitEulerSchemeModel1
 (*
     Functions
 *)
-    let _ImplicitEulerScheme                       = cell (fun () -> new ImplicitEulerScheme ())
+    let mutable
+        _ImplicitEulerScheme                       = cell (fun () -> new ImplicitEulerScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
                                                    = triv (fun () -> _ImplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _numberOfIterations                        = triv (fun () -> _ImplicitEulerScheme.Value.numberOfIterations())
@@ -118,13 +121,14 @@ type ImplicitEulerSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _ImplicitEulerScheme.Value <- v
+    member internal this.Inject v = _ImplicitEulerScheme <- v
     static member Cast (p : ICell<ImplicitEulerScheme>) = 
         if p :? ImplicitEulerSchemeModel1 then 
             p :?> ImplicitEulerSchemeModel1
         else
             let o = new ImplicitEulerSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

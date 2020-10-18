@@ -39,11 +39,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_accruedAmount", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Bond")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,23 +81,23 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="faceAmount",Description = "Reference to faceAmount")>] 
+        ([<ExcelArgument(Name="faceAmount",Description = "double")>] 
          faceAmount : obj)
-        ([<ExcelArgument(Name="maturityDate",Description = "Reference to maturityDate")>] 
+        ([<ExcelArgument(Name="maturityDate",Description = "Date")>] 
          maturityDate : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Bond")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="cashflows",Description = "Reference to cashflows")>] 
+        ([<ExcelArgument(Name="cashflows",Description = "Bond")>] 
          cashflows : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,19 +160,19 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond1", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Bond")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="coupons",Description = "Reference to coupons")>] 
+        ([<ExcelArgument(Name="coupons",Description = "Bond")>] 
          coupons : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,9 +227,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_calendar", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -263,9 +263,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_cashflows", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -299,9 +299,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_cleanPrice", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -335,19 +335,19 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_cleanPrice1", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "CashFlow")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -401,19 +401,19 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_dirtyPrice1", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "CashFlow")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -467,9 +467,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_dirtyPrice", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -503,9 +503,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_isExpired", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -539,9 +539,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_issueDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -575,11 +575,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_isTradable", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "CashFlow")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -617,9 +617,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_maturityDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -653,11 +653,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_nextCashFlowDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "CashFlow")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -695,11 +695,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_nextCouponRate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "CashFlow")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -737,11 +737,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_notional", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "CashFlow")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -779,9 +779,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_notionals", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -815,11 +815,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_previousCashFlowDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "CashFlow")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,11 +857,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_previousCouponRate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "CashFlow")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -899,9 +899,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_redemption", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -935,9 +935,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_redemptions", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -971,11 +971,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_settlementDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Helper.Range.fromModelList")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1013,9 +1013,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_settlementDays", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1049,11 +1049,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_settlementValue", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1091,9 +1091,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_settlementValue1", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1127,9 +1127,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_startDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1163,23 +1163,23 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_yield1", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Helper.Range.fromModelList")>] 
          settlement : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "Helper.Range.fromModelList")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "Helper.Range.fromModelList")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1241,19 +1241,19 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_yield", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "Helper.Range.fromModelList")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "Helper.Range.fromModelList")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1307,9 +1307,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_CASH", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1343,9 +1343,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_errorEstimate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1379,9 +1379,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_NPV", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1415,11 +1415,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_result", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1457,11 +1457,11 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_setPricingEngine", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1499,9 +1499,9 @@ module BondFunction =
     *)
     [<ExcelFunction(Name="_Bond_valuationDate", Description="Create a Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bond",Description = "Reference to Bond")>] 
+        ([<ExcelArgument(Name="Bond",Description = "Bond")>] 
          bond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1532,9 +1532,9 @@ module BondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bond_Range", Description="Create a range of Bond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Bond")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

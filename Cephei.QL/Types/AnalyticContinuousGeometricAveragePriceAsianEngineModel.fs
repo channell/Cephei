@@ -44,19 +44,21 @@ type AnalyticContinuousGeometricAveragePriceAsianEngineModel
 (*
     Functions
 *)
-    let _AnalyticContinuousGeometricAveragePriceAsianEngine = cell (fun () -> new AnalyticContinuousGeometricAveragePriceAsianEngine (Process.Value))
+    let mutable
+        _AnalyticContinuousGeometricAveragePriceAsianEngine = cell (fun () -> new AnalyticContinuousGeometricAveragePriceAsianEngine (Process.Value))
     do this.Bind(_AnalyticContinuousGeometricAveragePriceAsianEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticContinuousGeometricAveragePriceAsianEngineModel(null)
-    member internal this.Inject v = _AnalyticContinuousGeometricAveragePriceAsianEngine.Value <- v
+    member internal this.Inject v = _AnalyticContinuousGeometricAveragePriceAsianEngine <- v
     static member Cast (p : ICell<AnalyticContinuousGeometricAveragePriceAsianEngine>) = 
         if p :? AnalyticContinuousGeometricAveragePriceAsianEngineModel then 
             p :?> AnalyticContinuousGeometricAveragePriceAsianEngineModel
         else
             let o = new AnalyticContinuousGeometricAveragePriceAsianEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

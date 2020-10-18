@@ -41,7 +41,8 @@ type KWDCurrencyModel
 (*
     Functions
 *)
-    let _KWDCurrency                               = cell (fun () -> new KWDCurrency ())
+    let mutable
+        _KWDCurrency                               = cell (fun () -> new KWDCurrency ())
     let _code                                      = triv (fun () -> _KWDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _KWDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type KWDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _KWDCurrency.Value <- v
+    member internal this.Inject v = _KWDCurrency <- v
     static member Cast (p : ICell<KWDCurrency>) = 
         if p :? KWDCurrencyModel then 
             p :?> KWDCurrencyModel
         else
             let o = new KWDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

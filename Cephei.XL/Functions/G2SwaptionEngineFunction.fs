@@ -40,13 +40,13 @@ module G2SwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_G2SwaptionEngine", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2SwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "G2")>] 
          model : obj)
-        ([<ExcelArgument(Name="range",Description = "Reference to range")>] 
+        ([<ExcelArgument(Name="range",Description = "double")>] 
          range : obj)
-        ([<ExcelArgument(Name="intervals",Description = "Reference to intervals")>] 
+        ([<ExcelArgument(Name="intervals",Description = "int")>] 
          intervals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -90,11 +90,11 @@ module G2SwaptionEngineFunction =
     (*!!
     [<ExcelFunction(Name="_G2SwaptionEngine_setModel", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "Reference to G2SwaptionEngine")>] 
+        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "G2SwaptionEngine")>] 
          g2swaptionengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,11 +133,11 @@ module G2SwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_G2SwaptionEngine_registerWith", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "Reference to G2SwaptionEngine")>] 
+        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "G2SwaptionEngine")>] 
          g2swaptionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -175,9 +175,9 @@ module G2SwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_G2SwaptionEngine_reset", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "Reference to G2SwaptionEngine")>] 
+        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "G2SwaptionEngine")>] 
          g2swaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -211,11 +211,11 @@ module G2SwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_G2SwaptionEngine_unregisterWith", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "Reference to G2SwaptionEngine")>] 
+        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "G2SwaptionEngine")>] 
          g2swaptionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -253,9 +253,9 @@ module G2SwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_G2SwaptionEngine_update", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "Reference to G2SwaptionEngine")>] 
+        ([<ExcelArgument(Name="G2SwaptionEngine",Description = "G2SwaptionEngine")>] 
          g2swaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module G2SwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_G2SwaptionEngine_Range", Description="Create a range of G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the G2SwaptionEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

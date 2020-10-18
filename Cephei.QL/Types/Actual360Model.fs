@@ -44,7 +44,8 @@ type Actual360Model
 (*
     Functions
 *)
-    let _Actual360                                 = cell (fun () -> new Actual360 (c.Value))
+    let mutable
+        _Actual360                                 = cell (fun () -> new Actual360 (c.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Actual360.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _Actual360.Value.dayCounter)
@@ -62,13 +63,14 @@ type Actual360Model
     casting 
 *)
     internal new () = new Actual360Model(null)
-    member internal this.Inject v = _Actual360.Value <- v
+    member internal this.Inject v = _Actual360 <- v
     static member Cast (p : ICell<Actual360>) = 
         if p :? Actual360Model then 
             p :?> Actual360Model
         else
             let o = new Actual360Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

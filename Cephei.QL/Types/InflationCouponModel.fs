@@ -64,7 +64,8 @@ type InflationCouponModel
 (*
     Functions
 *)
-    let _InflationCoupon                           = cell (fun () -> new InflationCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, observationLag.Value, dayCounter.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value))
+    let mutable
+        _InflationCoupon                           = cell (fun () -> new InflationCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, observationLag.Value, dayCounter.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _InflationCoupon.Value.accruedAmount(d.Value))
     let _amount                                    = triv (fun () -> _InflationCoupon.Value.amount())
@@ -118,13 +119,14 @@ type InflationCouponModel
     casting 
 *)
     internal new () = new InflationCouponModel(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _InflationCoupon.Value <- v
+    member internal this.Inject v = _InflationCoupon <- v
     static member Cast (p : ICell<InflationCoupon>) = 
         if p :? InflationCouponModel then 
             p :?> InflationCouponModel
         else
             let o = new InflationCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

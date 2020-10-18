@@ -39,11 +39,11 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_accept", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Payoff",Description = "Reference to Payoff")>] 
+        ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_description", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Payoff",Description = "Reference to Payoff")>] 
+        ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_name", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Payoff",Description = "Reference to Payoff")>] 
+        ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,11 +153,11 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_value", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Payoff",Description = "Reference to Payoff")>] 
+        ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,9 +192,9 @@ module PayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Payoff_Range", Description="Create a range of Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Payoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

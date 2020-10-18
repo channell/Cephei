@@ -52,7 +52,8 @@ type VasicekModel
 (*
     Functions
 *)
-    let _Vasicek                                   = cell (fun () -> new Vasicek (r0.Value, a.Value, b.Value, sigma.Value, lambda.Value))
+    let mutable
+        _Vasicek                                   = cell (fun () -> new Vasicek (r0.Value, a.Value, b.Value, sigma.Value, lambda.Value))
     let _a                                         = triv (fun () -> _Vasicek.Value.a())
     let _b                                         = triv (fun () -> _Vasicek.Value.b())
     let _discountBondOption                        (Type : ICell<Option.Type>) (strike : ICell<double>) (maturity : ICell<double>) (bondMaturity : ICell<double>)   
@@ -94,13 +95,14 @@ type VasicekModel
     casting 
 *)
     internal new () = new VasicekModel(null,null,null,null,null)
-    member internal this.Inject v = _Vasicek.Value <- v
+    member internal this.Inject v = _Vasicek <- v
     static member Cast (p : ICell<Vasicek>) = 
         if p :? VasicekModel then 
             p :?> VasicekModel
         else
             let o = new VasicekModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

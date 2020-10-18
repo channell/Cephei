@@ -39,9 +39,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fairRate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fairRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fairSpread", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fairSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fixedDayCount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedDayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fixedLeg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fixedLegBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedLegBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fixedLegNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fixedRate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_fixedSchedule", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedSchedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_floatingDayCount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingDayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,9 +363,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_floatingLeg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,9 +399,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_floatingLegBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingLegBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,9 +435,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_floatingLegNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -471,9 +471,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_floatingSchedule", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingSchedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -507,9 +507,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_iborIndex", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -543,9 +543,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_nominal", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -579,9 +579,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_spread", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -615,9 +615,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_swapType", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_swapType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -651,31 +651,31 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="fixedSchedule",Description = "Reference to fixedSchedule")>] 
+        ([<ExcelArgument(Name="fixedSchedule",Description = "Schedule")>] 
          fixedSchedule : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="fixedDayCount",Description = "Reference to fixedDayCount")>] 
+        ([<ExcelArgument(Name="fixedDayCount",Description = "DayCounter")>] 
          fixedDayCount : obj)
-        ([<ExcelArgument(Name="floatSchedule",Description = "Reference to floatSchedule")>] 
+        ([<ExcelArgument(Name="floatSchedule",Description = "Schedule")>] 
          floatSchedule : obj)
-        ([<ExcelArgument(Name="iborIndex",Description = "Reference to iborIndex")>] 
+        ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
-        ([<ExcelArgument(Name="floatingDayCount",Description = "Reference to floatingDayCount")>] 
+        ([<ExcelArgument(Name="floatingDayCount",Description = "DayCounter")>] 
          floatingDayCount : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,11 +754,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_endDiscounts", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module VanillaSwapFunction =
     (*!!
     [<ExcelFunction(Name="_VanillaSwap_engine", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -834,9 +834,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_isExpired", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -870,11 +870,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_leg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -912,11 +912,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_legBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -954,11 +954,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_legNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -996,9 +996,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_maturityDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1032,9 +1032,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_npvDateDiscount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1068,11 +1068,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_payer", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1110,9 +1110,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_startDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1146,11 +1146,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_startDiscounts", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1188,9 +1188,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_CASH", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1224,9 +1224,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_errorEstimate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1260,9 +1260,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_NPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1296,11 +1296,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_result", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1338,11 +1338,11 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_setPricingEngine", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1380,9 +1380,9 @@ module VanillaSwapFunction =
     *)
     [<ExcelFunction(Name="_VanillaSwap_valuationDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VanillaSwap",Description = "Reference to VanillaSwap")>] 
+        ([<ExcelArgument(Name="VanillaSwap",Description = "VanillaSwap")>] 
          vanillaswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1413,9 +1413,9 @@ module VanillaSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VanillaSwap_Range", Description="Create a range of VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the VanillaSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

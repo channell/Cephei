@@ -52,7 +52,8 @@ type NoExceptLocalVolSurfaceModel
 (*
     Functions
 *)
-    let _NoExceptLocalVolSurface                   = cell (fun () -> new NoExceptLocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value, illegalLocalVolOverwrite.Value))
+    let mutable
+        _NoExceptLocalVolSurface                   = cell (fun () -> new NoExceptLocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value, illegalLocalVolOverwrite.Value))
     let _dayCounter                                = triv (fun () -> _NoExceptLocalVolSurface.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _NoExceptLocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _NoExceptLocalVolSurface.Value.maxStrike())
@@ -85,13 +86,14 @@ type NoExceptLocalVolSurfaceModel
     casting 
 *)
     internal new () = new NoExceptLocalVolSurfaceModel(null,null,null,null,null)
-    member internal this.Inject v = _NoExceptLocalVolSurface.Value <- v
+    member internal this.Inject v = _NoExceptLocalVolSurface <- v
     static member Cast (p : ICell<NoExceptLocalVolSurface>) = 
         if p :? NoExceptLocalVolSurfaceModel then 
             p :?> NoExceptLocalVolSurfaceModel
         else
             let o = new NoExceptLocalVolSurfaceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -152,7 +154,8 @@ type NoExceptLocalVolSurfaceModel1
 (*
     Functions
 *)
-    let _NoExceptLocalVolSurface                   = cell (fun () -> new NoExceptLocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value, illegalLocalVolOverwrite.Value))
+    let mutable
+        _NoExceptLocalVolSurface                   = cell (fun () -> new NoExceptLocalVolSurface (blackTS.Value, riskFreeTS.Value, dividendTS.Value, underlying.Value, illegalLocalVolOverwrite.Value))
     let _dayCounter                                = triv (fun () -> _NoExceptLocalVolSurface.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _NoExceptLocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _NoExceptLocalVolSurface.Value.maxStrike())
@@ -185,13 +188,14 @@ type NoExceptLocalVolSurfaceModel1
     casting 
 *)
     internal new () = new NoExceptLocalVolSurfaceModel1(null,null,null,null,null)
-    member internal this.Inject v = _NoExceptLocalVolSurface.Value <- v
+    member internal this.Inject v = _NoExceptLocalVolSurface <- v
     static member Cast (p : ICell<NoExceptLocalVolSurface>) = 
         if p :? NoExceptLocalVolSurfaceModel1 then 
             p :?> NoExceptLocalVolSurfaceModel1
         else
             let o = new NoExceptLocalVolSurfaceModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

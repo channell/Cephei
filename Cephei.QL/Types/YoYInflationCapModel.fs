@@ -50,7 +50,8 @@ type YoYInflationCapModel
 (*
     Functions
 *)
-    let _YoYInflationCap                           = cell (fun () -> withEngine pricingEngine (new YoYInflationCap (yoyLeg.Value, exerciseRates.Value)))
+    let mutable
+        _YoYInflationCap                           = cell (fun () -> withEngine pricingEngine (new YoYInflationCap (yoyLeg.Value, exerciseRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCap).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCap).capRates())
@@ -79,13 +80,14 @@ type YoYInflationCapModel
     casting 
 *)
     internal new () = new YoYInflationCapModel(null,null,null,null)
-    member internal this.Inject v = _YoYInflationCap.Value <- v
+    member internal this.Inject v = _YoYInflationCap <- v
     static member Cast (p : ICell<YoYInflationCap>) = 
         if p :? YoYInflationCapModel then 
             p :?> YoYInflationCapModel
         else
             let o = new YoYInflationCapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

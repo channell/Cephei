@@ -50,7 +50,8 @@ type OrnsteinUhlenbeckProcessModel
 (*
     Functions
 *)
-    let _OrnsteinUhlenbeckProcess                  = cell (fun () -> new OrnsteinUhlenbeckProcess (speed.Value, vol.Value, x0.Value, level.Value))
+    let mutable
+        _OrnsteinUhlenbeckProcess                  = cell (fun () -> new OrnsteinUhlenbeckProcess (speed.Value, vol.Value, x0.Value, level.Value))
     let _diffusion                                 (UnnamedParameter1 : ICell<double>) (UnnamedParameter2 : ICell<double>)   
                                                    = triv (fun () -> _OrnsteinUhlenbeckProcess.Value.diffusion(UnnamedParameter1.Value, UnnamedParameter2.Value))
     let _drift                                     (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
@@ -93,13 +94,14 @@ type OrnsteinUhlenbeckProcessModel
     casting 
 *)
     internal new () = new OrnsteinUhlenbeckProcessModel(null,null,null,null)
-    member internal this.Inject v = _OrnsteinUhlenbeckProcess.Value <- v
+    member internal this.Inject v = _OrnsteinUhlenbeckProcess <- v
     static member Cast (p : ICell<OrnsteinUhlenbeckProcess>) = 
         if p :? OrnsteinUhlenbeckProcessModel then 
             p :?> OrnsteinUhlenbeckProcessModel
         else
             let o = new OrnsteinUhlenbeckProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

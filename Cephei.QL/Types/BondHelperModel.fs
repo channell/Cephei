@@ -48,7 +48,8 @@ type BondHelperModel
 (*
     Functions
 *)
-    let _BondHelper                                = cell (fun () -> new BondHelper (price.Value, bond.Value, useCleanPrice.Value))
+    let mutable
+        _BondHelper                                = cell (fun () -> new BondHelper (price.Value, bond.Value, useCleanPrice.Value))
     let _bond                                      = triv (fun () -> _BondHelper.Value.bond())
     let _impliedQuote                              = triv (fun () -> _BondHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
@@ -77,13 +78,14 @@ type BondHelperModel
     casting 
 *)
     internal new () = new BondHelperModel(null,null,null)
-    member internal this.Inject v = _BondHelper.Value <- v
+    member internal this.Inject v = _BondHelper <- v
     static member Cast (p : ICell<BondHelper>) = 
         if p :? BondHelperModel then 
             p :?> BondHelperModel
         else
             let o = new BondHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

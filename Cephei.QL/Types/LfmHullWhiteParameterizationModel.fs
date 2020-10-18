@@ -50,7 +50,8 @@ type LfmHullWhiteParameterizationModel
 (*
     Functions
 *)
-    let _LfmHullWhiteParameterization              = cell (fun () -> new LfmHullWhiteParameterization (Process.Value, capletVol.Value, correlation.Value, factors.Value))
+    let mutable
+        _LfmHullWhiteParameterization              = cell (fun () -> new LfmHullWhiteParameterization (Process.Value, capletVol.Value, correlation.Value, factors.Value))
     let _covariance                                (t : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LfmHullWhiteParameterization.Value.covariance(t.Value, x.Value))
     let _covariance1                               (t : ICell<double>)   
@@ -68,13 +69,14 @@ type LfmHullWhiteParameterizationModel
     casting 
 *)
     internal new () = new LfmHullWhiteParameterizationModel(null,null,null,null)
-    member internal this.Inject v = _LfmHullWhiteParameterization.Value <- v
+    member internal this.Inject v = _LfmHullWhiteParameterization <- v
     static member Cast (p : ICell<LfmHullWhiteParameterization>) = 
         if p :? LfmHullWhiteParameterizationModel then 
             p :?> LfmHullWhiteParameterizationModel
         else
             let o = new LfmHullWhiteParameterizationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -116,7 +118,8 @@ type LfmHullWhiteParameterizationModel1
 (*
     Functions
 *)
-    let _LfmHullWhiteParameterization              = cell (fun () -> new LfmHullWhiteParameterization (Process.Value, capletVol.Value))
+    let mutable
+        _LfmHullWhiteParameterization              = cell (fun () -> new LfmHullWhiteParameterization (Process.Value, capletVol.Value))
     let _covariance                                (t : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LfmHullWhiteParameterization.Value.covariance(t.Value, x.Value))
     let _covariance1                               (t : ICell<double>)   
@@ -134,13 +137,14 @@ type LfmHullWhiteParameterizationModel1
     casting 
 *)
     internal new () = new LfmHullWhiteParameterizationModel1(null,null)
-    member internal this.Inject v = _LfmHullWhiteParameterization.Value <- v
+    member internal this.Inject v = _LfmHullWhiteParameterization <- v
     static member Cast (p : ICell<LfmHullWhiteParameterization>) = 
         if p :? LfmHullWhiteParameterizationModel1 then 
             p :?> LfmHullWhiteParameterizationModel1
         else
             let o = new LfmHullWhiteParameterizationModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

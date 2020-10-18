@@ -39,19 +39,19 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CatBond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="notionalRisk",Description = "Reference to notionalRisk")>] 
+        ([<ExcelArgument(Name="notionalRisk",Description = "NotionalRisk")>] 
          notionalRisk : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_exhaustionProbability", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_exhaustionProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,9 +142,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_expectedLoss", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_expectedLoss
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_lossProbability", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_lossProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,11 +214,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_accruedAmount", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_calendar", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_cashflows", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_cleanPrice", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,19 +364,19 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_cleanPrice1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,19 +430,19 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_dirtyPrice1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,9 +496,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_dirtyPrice", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,9 +532,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_isExpired", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,9 +568,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_issueDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,11 +604,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_isTradable", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_maturityDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,11 +682,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_nextCashFlowDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,11 +724,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_nextCouponRate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,11 +766,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_notional", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -808,9 +808,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_notionals", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -844,11 +844,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_previousCashFlowDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -886,11 +886,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_previousCouponRate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -928,9 +928,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_redemption", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -964,9 +964,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_redemptions", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1000,11 +1000,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_settlementDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1042,9 +1042,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_settlementDays", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1078,11 +1078,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_settlementValue", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1120,9 +1120,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_settlementValue1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1156,9 +1156,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_startDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1192,23 +1192,23 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_yield1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1270,19 +1270,19 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_yield", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1336,9 +1336,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_CASH", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1372,9 +1372,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_errorEstimate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1408,9 +1408,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_NPV", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1444,11 +1444,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_result", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1486,11 +1486,11 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_setPricingEngine", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1528,9 +1528,9 @@ module CatBondFunction =
     *)
     [<ExcelFunction(Name="_CatBond_valuationDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CatBond",Description = "Reference to CatBond")>] 
+        ([<ExcelArgument(Name="CatBond",Description = "CatBond")>] 
          catbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1561,9 +1561,9 @@ module CatBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CatBond_Range", Description="Create a range of CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CatBond")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

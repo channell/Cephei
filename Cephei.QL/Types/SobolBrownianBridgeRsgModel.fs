@@ -52,7 +52,8 @@ type SobolBrownianBridgeRsgModel
 (*
     Functions
 *)
-    let _SobolBrownianBridgeRsg                    = cell (fun () -> new SobolBrownianBridgeRsg (factors.Value, steps.Value, ordering.Value, seed.Value, directionIntegers.Value))
+    let mutable
+        _SobolBrownianBridgeRsg                    = cell (fun () -> new SobolBrownianBridgeRsg (factors.Value, steps.Value, ordering.Value, seed.Value, directionIntegers.Value))
     let _dimension                                 = triv (fun () -> _SobolBrownianBridgeRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _SobolBrownianBridgeRsg.Value.factory(dimensionality.Value, seed.Value))
@@ -63,13 +64,14 @@ type SobolBrownianBridgeRsgModel
     casting 
 *)
     internal new () = new SobolBrownianBridgeRsgModel(null,null,null,null,null)
-    member internal this.Inject v = _SobolBrownianBridgeRsg.Value <- v
+    member internal this.Inject v = _SobolBrownianBridgeRsg <- v
     static member Cast (p : ICell<SobolBrownianBridgeRsg>) = 
         if p :? SobolBrownianBridgeRsgModel then 
             p :?> SobolBrownianBridgeRsgModel
         else
             let o = new SobolBrownianBridgeRsgModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

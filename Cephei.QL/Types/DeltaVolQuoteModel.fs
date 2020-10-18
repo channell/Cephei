@@ -50,7 +50,8 @@ type DeltaVolQuoteModel
 (*
     Functions
 *)
-    let _DeltaVolQuote                             = cell (fun () -> new DeltaVolQuote (vol.Value, deltaType.Value, maturity.Value, atmType.Value))
+    let mutable
+        _DeltaVolQuote                             = cell (fun () -> new DeltaVolQuote (vol.Value, deltaType.Value, maturity.Value, atmType.Value))
     let _atmType                                   = triv (fun () -> _DeltaVolQuote.Value.atmType())
     let _delta                                     = triv (fun () -> _DeltaVolQuote.Value.delta())
     let _deltaType                                 = triv (fun () -> _DeltaVolQuote.Value.deltaType())
@@ -70,13 +71,14 @@ type DeltaVolQuoteModel
     casting 
 *)
     internal new () = new DeltaVolQuoteModel(null,null,null,null)
-    member internal this.Inject v = _DeltaVolQuote.Value <- v
+    member internal this.Inject v = _DeltaVolQuote <- v
     static member Cast (p : ICell<DeltaVolQuote>) = 
         if p :? DeltaVolQuoteModel then 
             p :?> DeltaVolQuoteModel
         else
             let o = new DeltaVolQuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -121,7 +123,8 @@ type DeltaVolQuoteModel1
 (*
     Functions
 *)
-    let _DeltaVolQuote                             = cell (fun () -> new DeltaVolQuote (delta.Value, vol.Value, maturity.Value, deltaType.Value))
+    let mutable
+        _DeltaVolQuote                             = cell (fun () -> new DeltaVolQuote (delta.Value, vol.Value, maturity.Value, deltaType.Value))
     let _atmType                                   = triv (fun () -> _DeltaVolQuote.Value.atmType())
     let _delta                                     = triv (fun () -> _DeltaVolQuote.Value.delta())
     let _deltaType                                 = triv (fun () -> _DeltaVolQuote.Value.deltaType())
@@ -141,13 +144,14 @@ type DeltaVolQuoteModel1
     casting 
 *)
     internal new () = new DeltaVolQuoteModel1(null,null,null,null)
-    member internal this.Inject v = _DeltaVolQuote.Value <- v
+    member internal this.Inject v = _DeltaVolQuote <- v
     static member Cast (p : ICell<DeltaVolQuote>) = 
         if p :? DeltaVolQuoteModel1 then 
             p :?> DeltaVolQuoteModel1
         else
             let o = new DeltaVolQuoteModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

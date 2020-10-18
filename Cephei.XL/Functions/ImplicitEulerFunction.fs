@@ -39,7 +39,7 @@ module ImplicitEulerFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEuler", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ImplicitEuler")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,11 +70,11 @@ module ImplicitEulerFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEuler1", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ImplicitEuler")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "'Operator")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "IOperator")>] 
          bcs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,11 +113,11 @@ module ImplicitEulerFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEuler_setStep", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImplicitEuler",Description = "Reference to ImplicitEuler")>] 
+        ([<ExcelArgument(Name="ImplicitEuler",Description = "ImplicitEuler")>] 
          impliciteuler : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,15 +155,15 @@ module ImplicitEulerFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEuler_step", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ImplicitEuler",Description = "Reference to ImplicitEuler")>] 
+        ([<ExcelArgument(Name="ImplicitEuler",Description = "ImplicitEuler")>] 
          impliciteuler : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "double")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -206,9 +206,9 @@ module ImplicitEulerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ImplicitEuler_Range", Description="Create a range of ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ImplicitEuler")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

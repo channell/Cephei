@@ -39,9 +39,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_clone", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimplePolynomialFitting")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="degree",Description = "Reference to degree")>] 
+        ([<ExcelArgument(Name="degree",Description = "int")>] 
          degree : obj)
-        ([<ExcelArgument(Name="constrainAtZero",Description = "Reference to constrainAtZero")>] 
+        ([<ExcelArgument(Name="constrainAtZero",Description = "SimplePolynomialFitting")>] 
          constrainAtZero : obj)
-        ([<ExcelArgument(Name="weights",Description = "Reference to weights")>] 
+        ([<ExcelArgument(Name="weights",Description = "SimplePolynomialFitting")>] 
          weights : obj)
-        ([<ExcelArgument(Name="optimizationMethod",Description = "Reference to optimizationMethod")>] 
+        ([<ExcelArgument(Name="optimizationMethod",Description = "SimplePolynomialFitting")>] 
          optimizationMethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,9 +130,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_size", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_constrainAtZero", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_constrainAtZero
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_discount", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_minimumCostValue", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_minimumCostValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_numberOfIterations", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,9 +322,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_optimizationMethod", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_optimizationMethod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,9 +358,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_solution", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_solution
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module SimplePolynomialFittingFunction =
     *)
     [<ExcelFunction(Name="_SimplePolynomialFitting_weights", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "Reference to SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="SimplePolynomialFitting",Description = "SimplePolynomialFitting")>] 
          simplepolynomialfitting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -427,9 +427,9 @@ module SimplePolynomialFittingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimplePolynomialFitting_Range", Description="Create a range of SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SimplePolynomialFitting")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

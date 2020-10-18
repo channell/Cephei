@@ -1,10 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+	  <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="enums.fsx" />
+    <None Include="recomment.fsx" />
+    <None Include="mutable.fsx" />
     <None Include="tst.fsx" />
     <None Include="CastConversion.fsx" />
     <None Include="addcast.fsx" />

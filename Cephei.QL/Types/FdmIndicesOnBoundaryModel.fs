@@ -48,20 +48,22 @@ type FdmIndicesOnBoundaryModel
 (*
     Functions
 *)
-    let _FdmIndicesOnBoundary                      = cell (fun () -> new FdmIndicesOnBoundary (layout.Value, direction.Value, side.Value))
+    let mutable
+        _FdmIndicesOnBoundary                      = cell (fun () -> new FdmIndicesOnBoundary (layout.Value, direction.Value, side.Value))
     let _getIndices                                = triv (fun () -> _FdmIndicesOnBoundary.Value.getIndices())
     do this.Bind(_FdmIndicesOnBoundary)
 (* 
     casting 
 *)
     internal new () = new FdmIndicesOnBoundaryModel(null,null,null)
-    member internal this.Inject v = _FdmIndicesOnBoundary.Value <- v
+    member internal this.Inject v = _FdmIndicesOnBoundary <- v
     static member Cast (p : ICell<FdmIndicesOnBoundary>) = 
         if p :? FdmIndicesOnBoundaryModel then 
             p :?> FdmIndicesOnBoundaryModel
         else
             let o = new FdmIndicesOnBoundaryModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

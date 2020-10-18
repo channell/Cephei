@@ -39,9 +39,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_a", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdMathFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdMathFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="abcd",Description = "Reference to abcd")>] 
+        ([<ExcelArgument(Name="abcd",Description = "double")>] 
          abcd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,15 +112,15 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction1", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdMathFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "AbcdMathFunction")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "AbcdMathFunction")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "AbcdMathFunction")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "AbcdMathFunction")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,9 +167,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_b", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,9 +203,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_c", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_c
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,9 +239,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_coefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_coefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,9 +275,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_d", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_d
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -311,13 +311,13 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_definiteDerivativeCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_definiteDerivativeCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,13 +359,13 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_definiteIntegral", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_definiteIntegral
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,13 +407,13 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_definiteIntegralCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_definiteIntegralCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -455,11 +455,11 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_derivative", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -497,9 +497,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_derivativeCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_derivativeCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -533,9 +533,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_longTermValue", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_longTermValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,9 +569,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_maximumLocation", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_maximumLocation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -605,9 +605,9 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_maximumValue", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_maximumValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,11 +641,11 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_primitive", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,11 +683,11 @@ module AbcdMathFunctionFunction =
     *)
     [<ExcelFunction(Name="_AbcdMathFunction_value", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdMathFunction",Description = "Reference to AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="AbcdMathFunction",Description = "AbcdMathFunction")>] 
          abcdmathfunction : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -722,9 +722,9 @@ module AbcdMathFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdMathFunction_Range", Description="Create a range of AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AbcdMathFunction")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type SobolBrownianGeneratorFactoryModel
 (*
     Functions
 *)
-    let _SobolBrownianGeneratorFactory             = cell (fun () -> new SobolBrownianGeneratorFactory (ordering.Value, seed.Value, integers.Value))
+    let mutable
+        _SobolBrownianGeneratorFactory             = cell (fun () -> new SobolBrownianGeneratorFactory (ordering.Value, seed.Value, integers.Value))
     let _create                                    (factors : ICell<int>) (steps : ICell<int>)   
                                                    = triv (fun () -> _SobolBrownianGeneratorFactory.Value.create(factors.Value, steps.Value))
     do this.Bind(_SobolBrownianGeneratorFactory)
@@ -56,13 +57,14 @@ type SobolBrownianGeneratorFactoryModel
     casting 
 *)
     internal new () = new SobolBrownianGeneratorFactoryModel(null,null,null)
-    member internal this.Inject v = _SobolBrownianGeneratorFactory.Value <- v
+    member internal this.Inject v = _SobolBrownianGeneratorFactory <- v
     static member Cast (p : ICell<SobolBrownianGeneratorFactory>) = 
         if p :? SobolBrownianGeneratorFactoryModel then 
             p :?> SobolBrownianGeneratorFactoryModel
         else
             let o = new SobolBrownianGeneratorFactoryModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

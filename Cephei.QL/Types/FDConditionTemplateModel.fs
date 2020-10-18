@@ -41,7 +41,8 @@ type FDConditionTemplateModel<'baseEngine when 'baseEngine :> FDConditionEngineT
 (*
     Functions
 *)
-    let _FDConditionTemplate                       = cell (fun () -> new FDConditionTemplate<'baseEngine> ())
+    let mutable
+        _FDConditionTemplate                       = cell (fun () -> new FDConditionTemplate<'baseEngine> ())
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDConditionTemplate.Value.calculate(r.Value)
                                                                      _FDConditionTemplate.Value)
@@ -93,7 +94,8 @@ type FDConditionTemplateModel1<'baseEngine when 'baseEngine :> FDConditionEngine
 (*
     Functions
 *)
-    let _FDConditionTemplate                       = cell (fun () -> new FDConditionTemplate<'baseEngine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDConditionTemplate                       = cell (fun () -> new FDConditionTemplate<'baseEngine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDConditionTemplate.Value.calculate(r.Value)
                                                                      _FDConditionTemplate.Value)

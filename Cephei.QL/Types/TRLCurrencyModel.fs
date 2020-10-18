@@ -41,7 +41,8 @@ type TRLCurrencyModel
 (*
     Functions
 *)
-    let _TRLCurrency                               = cell (fun () -> new TRLCurrency ())
+    let mutable
+        _TRLCurrency                               = cell (fun () -> new TRLCurrency ())
     let _code                                      = triv (fun () -> _TRLCurrency.Value.code)
     let _empty                                     = triv (fun () -> _TRLCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type TRLCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _TRLCurrency.Value <- v
+    member internal this.Inject v = _TRLCurrency <- v
     static member Cast (p : ICell<TRLCurrency>) = 
         if p :? TRLCurrencyModel then 
             p :?> TRLCurrencyModel
         else
             let o = new TRLCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

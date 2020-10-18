@@ -46,7 +46,8 @@ type ProjectionModel
 (*
     Functions
 *)
-    let _Projection                                = cell (fun () -> new Projection (parameterValues.Value, fixParameters.Value))
+    let mutable
+        _Projection                                = cell (fun () -> new Projection (parameterValues.Value, fixParameters.Value))
     let _include                                   (projectedParameters : ICell<Vector>)   
                                                    = triv (fun () -> _Projection.Value.INCLUDE(projectedParameters.Value))
     let _project                                   (parameters : ICell<Vector>)   
@@ -56,13 +57,14 @@ type ProjectionModel
     casting 
 *)
     internal new () = new ProjectionModel(null,null)
-    member internal this.Inject v = _Projection.Value <- v
+    member internal this.Inject v = _Projection <- v
     static member Cast (p : ICell<Projection>) = 
         if p :? ProjectionModel then 
             p :?> ProjectionModel
         else
             let o = new ProjectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

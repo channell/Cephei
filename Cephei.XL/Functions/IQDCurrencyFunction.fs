@@ -39,7 +39,7 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IQDCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_code", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_empty", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_Equals", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_format", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_fractionsPerUnit", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_fractionSymbol", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_name", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_numericCode", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_rounding", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_symbol", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_ToString", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module IQDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IQDCurrency_triangulationCurrency", Description="Create a IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IQDCurrency",Description = "Reference to IQDCurrency")>] 
+        ([<ExcelArgument(Name="IQDCurrency",Description = "IQDCurrency")>] 
          iqdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module IQDCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IQDCurrency_Range", Description="Create a range of IQDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IQDCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IQDCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type complexExponentiallyWeightedModel
 (*
     Functions
 *)
-    let _complexExponentiallyWeighted              = cell (fun () -> new complexExponentiallyWeighted ())
+    let mutable
+        _complexExponentiallyWeighted              = cell (fun () -> new complexExponentiallyWeighted ())
     let _weight1LargeX                             (x : ICell<Complex>)   
                                                    = cell (fun () -> _complexExponentiallyWeighted.Value.weight1LargeX(x.Value))
     let _weight2LargeX                             (x : ICell<Complex>)   
@@ -53,13 +54,14 @@ type complexExponentiallyWeightedModel
     casting 
 *)
     
-    member internal this.Inject v = _complexExponentiallyWeighted.Value <- v
+    member internal this.Inject v = _complexExponentiallyWeighted <- v
     static member Cast (p : ICell<complexExponentiallyWeighted>) = 
         if p :? complexExponentiallyWeightedModel then 
             p :?> complexExponentiallyWeightedModel
         else
             let o = new complexExponentiallyWeightedModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

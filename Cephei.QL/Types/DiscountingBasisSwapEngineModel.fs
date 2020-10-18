@@ -46,19 +46,21 @@ type DiscountingBasisSwapEngineModel
 (*
     Functions
 *)
-    let _DiscountingBasisSwapEngine                = cell (fun () -> new DiscountingBasisSwapEngine (discountCurve1.Value, discountCurve2.Value))
+    let mutable
+        _DiscountingBasisSwapEngine                = cell (fun () -> new DiscountingBasisSwapEngine (discountCurve1.Value, discountCurve2.Value))
     do this.Bind(_DiscountingBasisSwapEngine)
 (* 
     casting 
 *)
     internal new () = new DiscountingBasisSwapEngineModel(null,null)
-    member internal this.Inject v = _DiscountingBasisSwapEngine.Value <- v
+    member internal this.Inject v = _DiscountingBasisSwapEngine <- v
     static member Cast (p : ICell<DiscountingBasisSwapEngine>) = 
         if p :? DiscountingBasisSwapEngineModel then 
             p :?> DiscountingBasisSwapEngineModel
         else
             let o = new DiscountingBasisSwapEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_mandatoryTimes", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_reset", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_adjustValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,13 +153,13 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_initialize", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,9 +201,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_method", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_partialRollback", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_postAdjustValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,9 +315,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_preAdjustValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -351,9 +351,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_presentValue", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,11 +387,11 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_rollback", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -429,11 +429,11 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_setTime", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -471,11 +471,11 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_setValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -513,9 +513,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_time", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -549,9 +549,9 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_values", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "Reference to DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -582,9 +582,9 @@ module DiscretizedDiscountBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedDiscountBond_Range", Description="Create a range of DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedDiscountBond")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

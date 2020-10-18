@@ -66,7 +66,8 @@ type AssetSwapModel
 (*
     Functions
 *)
-    let _AssetSwap                                 = cell (fun () -> withEngine pricingEngine (new AssetSwap (parAssetSwap.Value, bond.Value, bondCleanPrice.Value, nonParRepayment.Value, gearing.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, dealMaturity.Value, payBondCoupon.Value)))
+    let mutable
+        _AssetSwap                                 = cell (fun () -> withEngine pricingEngine (new AssetSwap (parAssetSwap.Value, bond.Value, bondCleanPrice.Value, nonParRepayment.Value, gearing.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, dealMaturity.Value, payBondCoupon.Value)))
     let _bond                                      = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bond())
     let _bondLeg                                   = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bondLeg())
     let _cleanPrice                                = cell (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).cleanPrice())
@@ -111,13 +112,14 @@ type AssetSwapModel
     casting 
 *)
     internal new () = new AssetSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AssetSwap.Value <- v
+    member internal this.Inject v = _AssetSwap <- v
     static member Cast (p : ICell<AssetSwap>) = 
         if p :? AssetSwapModel then 
             p :?> AssetSwapModel
         else
             let o = new AssetSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -209,7 +211,8 @@ type AssetSwapModel1
 (*
     Functions
 *)
-    let _AssetSwap                                 = cell (fun () -> withEngine pricingEngine (new AssetSwap (payBondCoupon.Value, bond.Value, bondCleanPrice.Value, iborIndex.Value, spread.Value, floatSchedule.Value, floatingDayCount.Value, parAssetSwap.Value)))
+    let mutable
+        _AssetSwap                                 = cell (fun () -> withEngine pricingEngine (new AssetSwap (payBondCoupon.Value, bond.Value, bondCleanPrice.Value, iborIndex.Value, spread.Value, floatSchedule.Value, floatingDayCount.Value, parAssetSwap.Value)))
     let _bond                                      = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bond())
     let _bondLeg                                   = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bondLeg())
     let _cleanPrice                                = cell (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).cleanPrice())
@@ -254,13 +257,14 @@ type AssetSwapModel1
     casting 
 *)
     internal new () = new AssetSwapModel1(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AssetSwap.Value <- v
+    member internal this.Inject v = _AssetSwap <- v
     static member Cast (p : ICell<AssetSwap>) = 
         if p :? AssetSwapModel1 then 
             p :?> AssetSwapModel1
         else
             let o = new AssetSwapModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

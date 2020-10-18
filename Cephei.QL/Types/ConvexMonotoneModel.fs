@@ -48,7 +48,8 @@ type ConvexMonotoneModel
 (*
     Functions
 *)
-    let _ConvexMonotone                            = cell (fun () -> new ConvexMonotone (quadraticity.Value, monotonicity.Value, forcePositive.Value))
+    let mutable
+        _ConvexMonotone                            = cell (fun () -> new ConvexMonotone (quadraticity.Value, monotonicity.Value, forcePositive.Value))
     let _dataSizeAdjustment                        = triv (fun () -> _ConvexMonotone.Value.dataSizeAdjustment)
     let _global                                    = triv (fun () -> _ConvexMonotone.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
@@ -61,13 +62,14 @@ type ConvexMonotoneModel
     casting 
 *)
     internal new () = new ConvexMonotoneModel(null,null,null)
-    member internal this.Inject v = _ConvexMonotone.Value <- v
+    member internal this.Inject v = _ConvexMonotone <- v
     static member Cast (p : ICell<ConvexMonotone>) = 
         if p :? ConvexMonotoneModel then 
             p :?> ConvexMonotoneModel
         else
             let o = new ConvexMonotoneModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type ConvexMonotoneModel1
 (*
     Functions
 *)
-    let _ConvexMonotone                            = cell (fun () -> new ConvexMonotone ())
+    let mutable
+        _ConvexMonotone                            = cell (fun () -> new ConvexMonotone ())
     let _dataSizeAdjustment                        = triv (fun () -> _ConvexMonotone.Value.dataSizeAdjustment)
     let _global                                    = triv (fun () -> _ConvexMonotone.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
@@ -111,13 +114,14 @@ type ConvexMonotoneModel1
     casting 
 *)
     
-    member internal this.Inject v = _ConvexMonotone.Value <- v
+    member internal this.Inject v = _ConvexMonotone <- v
     static member Cast (p : ICell<ConvexMonotone>) = 
         if p :? ConvexMonotoneModel1 then 
             p :?> ConvexMonotoneModel1
         else
             let o = new ConvexMonotoneModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,19 +48,21 @@ type LinearLeastSquaresRegressionModel
 (*
     Functions
 *)
-    let _LinearLeastSquaresRegression              = cell (fun () -> new LinearLeastSquaresRegression (x.Value, y.Value, v.Value))
+    let mutable
+        _LinearLeastSquaresRegression              = cell (fun () -> new LinearLeastSquaresRegression (x.Value, y.Value, v.Value))
     do this.Bind(_LinearLeastSquaresRegression)
 (* 
     casting 
 *)
     internal new () = new LinearLeastSquaresRegressionModel(null,null,null)
-    member internal this.Inject v = _LinearLeastSquaresRegression.Value <- v
+    member internal this.Inject v = _LinearLeastSquaresRegression <- v
     static member Cast (p : ICell<LinearLeastSquaresRegression>) = 
         if p :? LinearLeastSquaresRegressionModel then 
             p :?> LinearLeastSquaresRegressionModel
         else
             let o = new LinearLeastSquaresRegressionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

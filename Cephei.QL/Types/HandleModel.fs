@@ -42,7 +42,8 @@ type HandleModel<'T when 'T :> IObservable>
 (*
     Functions
 *)
-    let _Handle                                    = cell (fun () -> new Handle<'T> ())
+    let mutable
+        _Handle                                    = cell (fun () -> new Handle<'T> ())
     let _currentLink                               = triv (fun () -> _Handle.Value.currentLink())
     let _empty                                     = triv (fun () -> _Handle.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -88,7 +89,8 @@ type HandleModel1<'T when 'T :> IObservable>
 (*
     Functions
 *)
-    let _Handle                                    = cell (fun () -> new Handle<'T> (h.Value, registerAsObserver.Value))
+    let mutable
+        _Handle                                    = cell (fun () -> new Handle<'T> (h.Value, registerAsObserver.Value))
     let _currentLink                               = triv (fun () -> _Handle.Value.currentLink())
     let _empty                                     = triv (fun () -> _Handle.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -134,7 +136,8 @@ type HandleModel2<'T when 'T :> IObservable>
 (*
     Functions
 *)
-    let _Handle                                    = cell (fun () -> new Handle<'T> (h.Value))
+    let mutable
+        _Handle                                    = cell (fun () -> new Handle<'T> (h.Value))
     let _currentLink                               = triv (fun () -> _Handle.Value.currentLink())
     let _empty                                     = triv (fun () -> _Handle.Value.empty())
     let _Equals                                    (o : ICell<Object>)   

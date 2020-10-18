@@ -39,9 +39,9 @@ module CumulativeChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeChiSquareDistribution", Description="Create a CumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeChiSquareDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CumulativeChiSquareDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="df",Description = "Reference to df")>] 
+        ([<ExcelArgument(Name="df",Description = "double")>] 
          df : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module CumulativeChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeChiSquareDistribution_value", Description="Create a CumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeChiSquareDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CumulativeChiSquareDistribution",Description = "Reference to CumulativeChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="CumulativeChiSquareDistribution",Description = "CumulativeChiSquareDistribution")>] 
          cumulativechisquaredistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -115,9 +115,9 @@ module CumulativeChiSquareDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CumulativeChiSquareDistribution_Range", Description="Create a range of CumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeChiSquareDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CumulativeChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

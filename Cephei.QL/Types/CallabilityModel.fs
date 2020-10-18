@@ -48,7 +48,8 @@ type CallabilityModel
 (*
     Functions
 *)
-    let _Callability                               = cell (fun () -> new Callability (price.Value, Type.Value, date.Value))
+    let mutable
+        _Callability                               = cell (fun () -> new Callability (price.Value, Type.Value, date.Value))
     let _date                                      = triv (fun () -> _Callability.Value.date())
     let _price                                     = triv (fun () -> _Callability.Value.price())
     let _type                                      = triv (fun () -> _Callability.Value.TYPE())
@@ -68,13 +69,14 @@ type CallabilityModel
     casting 
 *)
     internal new () = new CallabilityModel(null,null,null)
-    member internal this.Inject v = _Callability.Value <- v
+    member internal this.Inject v = _Callability <- v
     static member Cast (p : ICell<Callability>) = 
         if p :? CallabilityModel then 
             p :?> CallabilityModel
         else
             let o = new CallabilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

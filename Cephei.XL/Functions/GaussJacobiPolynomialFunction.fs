@@ -39,11 +39,11 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial_alpha", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussJacobiPolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "Reference to GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "GaussJacobiPolynomial")>] 
          gaussjacobipolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial_beta", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussJacobiPolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "Reference to GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "GaussJacobiPolynomial")>] 
          gaussjacobipolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,11 +123,11 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussJacobiPolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial_mu_0", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_mu_0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "Reference to GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "GaussJacobiPolynomial")>] 
          gaussjacobipolynomial : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,11 +202,11 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial_w", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_w
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "Reference to GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "GaussJacobiPolynomial")>] 
          gaussjacobipolynomial : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,13 +244,13 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial_value", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "Reference to GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "GaussJacobiPolynomial")>] 
          gaussjacobipolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,13 +292,13 @@ module GaussJacobiPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiPolynomial_weightedValue", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_weightedValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "Reference to GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="GaussJacobiPolynomial",Description = "GaussJacobiPolynomial")>] 
          gaussjacobipolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -337,9 +337,9 @@ module GaussJacobiPolynomialFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussJacobiPolynomial_Range", Description="Create a range of GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussJacobiPolynomial")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

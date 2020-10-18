@@ -39,11 +39,11 @@ module GaussLaguerreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLaguerreIntegration", Description="Create a GaussLaguerreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLaguerreIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussLaguerreIntegration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "GaussLaguerreIntegration")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module GaussLaguerreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLaguerreIntegration_order", Description="Create a GaussLaguerreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLaguerreIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "Reference to GaussLaguerreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "GaussLaguerreIntegration")>] 
          gausslaguerreintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module GaussLaguerreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLaguerreIntegration_value", Description="Create a GaussLaguerreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLaguerreIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "Reference to GaussLaguerreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "GaussLaguerreIntegration")>] 
          gausslaguerreintegration : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module GaussLaguerreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLaguerreIntegration_weights", Description="Create a GaussLaguerreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLaguerreIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "Reference to GaussLaguerreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "GaussLaguerreIntegration")>] 
          gausslaguerreintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module GaussLaguerreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLaguerreIntegration_x", Description="Create a GaussLaguerreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLaguerreIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "Reference to GaussLaguerreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLaguerreIntegration",Description = "GaussLaguerreIntegration")>] 
          gausslaguerreintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module GaussLaguerreIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussLaguerreIntegration_Range", Description="Create a range of GaussLaguerreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLaguerreIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussLaguerreIntegration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

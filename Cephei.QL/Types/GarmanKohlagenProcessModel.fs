@@ -54,7 +54,8 @@ type GarmanKohlagenProcessModel
 (*
     Functions
 *)
-    let _GarmanKohlagenProcess                     = cell (fun () -> new GarmanKohlagenProcess (x0.Value, foreignRiskFreeTS.Value, domesticRiskFreeTS.Value, blackVolTS.Value, localVolTS.Value, d.Value))
+    let mutable
+        _GarmanKohlagenProcess                     = cell (fun () -> new GarmanKohlagenProcess (x0.Value, foreignRiskFreeTS.Value, domesticRiskFreeTS.Value, blackVolTS.Value, localVolTS.Value, d.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _GarmanKohlagenProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _GarmanKohlagenProcess.Value.blackVolatility())
@@ -95,13 +96,14 @@ type GarmanKohlagenProcessModel
     casting 
 *)
     internal new () = new GarmanKohlagenProcessModel(null,null,null,null,null,null)
-    member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
+    member internal this.Inject v = _GarmanKohlagenProcess <- v
     static member Cast (p : ICell<GarmanKohlagenProcess>) = 
         if p :? GarmanKohlagenProcessModel then 
             p :?> GarmanKohlagenProcessModel
         else
             let o = new GarmanKohlagenProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -171,7 +173,8 @@ type GarmanKohlagenProcessModel1
 (*
     Functions
 *)
-    let _GarmanKohlagenProcess                     = cell (fun () -> new GarmanKohlagenProcess (x0.Value, foreignRiskFreeTS.Value, domesticRiskFreeTS.Value, blackVolTS.Value, d.Value))
+    let mutable
+        _GarmanKohlagenProcess                     = cell (fun () -> new GarmanKohlagenProcess (x0.Value, foreignRiskFreeTS.Value, domesticRiskFreeTS.Value, blackVolTS.Value, d.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _GarmanKohlagenProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _GarmanKohlagenProcess.Value.blackVolatility())
@@ -212,13 +215,14 @@ type GarmanKohlagenProcessModel1
     casting 
 *)
     internal new () = new GarmanKohlagenProcessModel1(null,null,null,null,null)
-    member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
+    member internal this.Inject v = _GarmanKohlagenProcess <- v
     static member Cast (p : ICell<GarmanKohlagenProcess>) = 
         if p :? GarmanKohlagenProcessModel1 then 
             p :?> GarmanKohlagenProcessModel1
         else
             let o = new GarmanKohlagenProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -285,7 +289,8 @@ type GarmanKohlagenProcessModel2
 (*
     Functions
 *)
-    let _GarmanKohlagenProcess                     = cell (fun () -> new GarmanKohlagenProcess (x0.Value, foreignRiskFreeTS.Value, domesticRiskFreeTS.Value, blackVolTS.Value))
+    let mutable
+        _GarmanKohlagenProcess                     = cell (fun () -> new GarmanKohlagenProcess (x0.Value, foreignRiskFreeTS.Value, domesticRiskFreeTS.Value, blackVolTS.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _GarmanKohlagenProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _GarmanKohlagenProcess.Value.blackVolatility())
@@ -326,13 +331,14 @@ type GarmanKohlagenProcessModel2
     casting 
 *)
     internal new () = new GarmanKohlagenProcessModel2(null,null,null,null)
-    member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
+    member internal this.Inject v = _GarmanKohlagenProcess <- v
     static member Cast (p : ICell<GarmanKohlagenProcess>) = 
         if p :? GarmanKohlagenProcessModel2 then 
             p :?> GarmanKohlagenProcessModel2
         else
             let o = new GarmanKohlagenProcessModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

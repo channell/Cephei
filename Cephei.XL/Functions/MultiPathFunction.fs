@@ -39,9 +39,9 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath_assetNumber", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_assetNumber
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPath",Description = "Reference to MultiPath")>] 
+        ([<ExcelArgument(Name="MultiPath",Description = "MultiPath")>] 
          multipath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath_Clone", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPath",Description = "Reference to MultiPath")>] 
+        ([<ExcelArgument(Name="MultiPath",Description = "MultiPath")>] 
          multipath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath_length", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_length
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPath",Description = "Reference to MultiPath")>] 
+        ([<ExcelArgument(Name="MultiPath",Description = "MultiPath")>] 
          multipath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath2", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="multiPath",Description = "Reference to multiPath")>] 
+        ([<ExcelArgument(Name="multiPath",Description = "Path")>] 
          multiPath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,11 +184,11 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="nAsset",Description = "Reference to nAsset")>] 
+        ([<ExcelArgument(Name="nAsset",Description = "int")>] 
          nAsset : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,7 +227,7 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath1", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPath")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -258,9 +258,9 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath_pathSize", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_pathSize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPath",Description = "Reference to MultiPath")>] 
+        ([<ExcelArgument(Name="MultiPath",Description = "MultiPath")>] 
          multipath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -294,11 +294,11 @@ module MultiPathFunction =
     *)
     [<ExcelFunction(Name="_MultiPath_this", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_this
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MultiPath",Description = "Reference to MultiPath")>] 
+        ([<ExcelArgument(Name="MultiPath",Description = "MultiPath")>] 
          multipath : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,9 +333,9 @@ module MultiPathFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MultiPath_Range", Description="Create a range of MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MultiPath")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

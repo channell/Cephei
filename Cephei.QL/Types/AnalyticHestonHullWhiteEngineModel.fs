@@ -50,7 +50,8 @@ type AnalyticHestonHullWhiteEngineModel
 (*
     Functions
 *)
-    let _AnalyticHestonHullWhiteEngine             = cell (fun () -> new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, relTolerance.Value, maxEvaluations.Value))
+    let mutable
+        _AnalyticHestonHullWhiteEngine             = cell (fun () -> new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, relTolerance.Value, maxEvaluations.Value))
     let _update                                    = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.update()
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.numberOfEvaluations())
@@ -70,13 +71,14 @@ type AnalyticHestonHullWhiteEngineModel
     casting 
 *)
     internal new () = new AnalyticHestonHullWhiteEngineModel(null,null,null,null)
-    member internal this.Inject v = _AnalyticHestonHullWhiteEngine.Value <- v
+    member internal this.Inject v = _AnalyticHestonHullWhiteEngine <- v
     static member Cast (p : ICell<AnalyticHestonHullWhiteEngine>) = 
         if p :? AnalyticHestonHullWhiteEngineModel then 
             p :?> AnalyticHestonHullWhiteEngineModel
         else
             let o = new AnalyticHestonHullWhiteEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -117,7 +119,8 @@ type AnalyticHestonHullWhiteEngineModel1
 (*
     Functions
 *)
-    let _AnalyticHestonHullWhiteEngine             = cell (fun () -> new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, integrationOrder.Value))
+    let mutable
+        _AnalyticHestonHullWhiteEngine             = cell (fun () -> new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, integrationOrder.Value))
     let _update                                    = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.update()
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.numberOfEvaluations())
@@ -137,13 +140,14 @@ type AnalyticHestonHullWhiteEngineModel1
     casting 
 *)
     internal new () = new AnalyticHestonHullWhiteEngineModel1(null,null,null)
-    member internal this.Inject v = _AnalyticHestonHullWhiteEngine.Value <- v
+    member internal this.Inject v = _AnalyticHestonHullWhiteEngine <- v
     static member Cast (p : ICell<AnalyticHestonHullWhiteEngine>) = 
         if p :? AnalyticHestonHullWhiteEngineModel1 then 
             p :?> AnalyticHestonHullWhiteEngineModel1
         else
             let o = new AnalyticHestonHullWhiteEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

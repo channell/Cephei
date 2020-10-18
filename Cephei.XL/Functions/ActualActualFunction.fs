@@ -39,7 +39,7 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ActualActual")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,11 +70,11 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual1", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ActualActual")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "ActualActual.Convention")>] 
          c : obj)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "ActualActual")>] 
          schedule : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,13 +113,13 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_dayCount", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,9 +161,9 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_dayCounter", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_empty", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,11 +233,11 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_Equals", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,9 +275,9 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_name", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -311,9 +311,9 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_ToString", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -347,17 +347,17 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_yearFraction", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date")>] 
          refPeriodEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,13 +407,13 @@ module ActualActualFunction =
     *)
     [<ExcelFunction(Name="_ActualActual_yearFraction1", Description="Create a ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_yearFraction1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ActualActual",Description = "Reference to ActualActual")>] 
+        ([<ExcelArgument(Name="ActualActual",Description = "ActualActual")>] 
          actualactual : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -452,9 +452,9 @@ module ActualActualFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ActualActual_Range", Description="Create a range of ActualActual",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ActualActual_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ActualActual")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_clone", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YoYInflationTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,13 +81,13 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_fixing", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "YoYInflationIndex")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,9 +129,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_ratio", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_ratio
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,25 +165,25 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="familyName",Description = "Reference to familyName")>] 
+        ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
-        ([<ExcelArgument(Name="region",Description = "Reference to region")>] 
+        ([<ExcelArgument(Name="region",Description = "Region")>] 
          region : obj)
-        ([<ExcelArgument(Name="revised",Description = "Reference to revised")>] 
+        ([<ExcelArgument(Name="revised",Description = "bool")>] 
          revised : obj)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="ratio",Description = "Reference to ratio")>] 
+        ([<ExcelArgument(Name="ratio",Description = "bool")>] 
          ratio : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="availabilityLag",Description = "Reference to availabilityLag")>] 
+        ([<ExcelArgument(Name="availabilityLag",Description = "Period")>] 
          availabilityLag : obj)
-        ([<ExcelArgument(Name="currency",Description = "Reference to currency")>] 
+        ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
-        ([<ExcelArgument(Name="yoyInflation",Description = "Reference to yoyInflation")>] 
+        ([<ExcelArgument(Name="yoyInflation",Description = "YoYInflationTermStructure")>] 
          yoyInflation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_yoyInflationTermStructure", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_yoyInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,15 +286,15 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_addFixing", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="fixing",Description = "Reference to fixing")>] 
+        ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,9 +341,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_availabilityLag", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,9 +377,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_currency", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -413,9 +413,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_familyName", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,9 +449,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_fixingCalendar", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_frequency", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_interpolated", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,11 +557,11 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_isValidFixingDate", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,9 +599,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_name", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,9 +635,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_region", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -671,9 +671,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_revised", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -707,9 +707,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_update", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -743,15 +743,15 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_addFixings", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,13 +797,13 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_addFixings1", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -845,9 +845,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_allowsNativeFixings", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -881,9 +881,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_clearFixings", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -917,11 +917,11 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_registerWith", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -959,9 +959,9 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_timeSeries", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -995,11 +995,11 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_unregisterWith", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YoYInflationIndex",Description = "Reference to YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1034,9 +1034,9 @@ module YoYInflationIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YoYInflationIndex_Range", Description="Create a range of YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

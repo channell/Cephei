@@ -44,7 +44,8 @@ type BespokeCalendarModel
 (*
     Functions
 *)
-    let _BespokeCalendar                           = cell (fun () -> new BespokeCalendar (name.Value))
+    let mutable
+        _BespokeCalendar                           = cell (fun () -> new BespokeCalendar (name.Value))
     let _addWeekend                                (w : ICell<DayOfWeek>)   
                                                    = triv (fun () -> _BespokeCalendar.Value.addWeekend(w.Value)
                                                                      _BespokeCalendar.Value)
@@ -84,13 +85,14 @@ type BespokeCalendarModel
     casting 
 *)
     internal new () = new BespokeCalendarModel(null)
-    member internal this.Inject v = _BespokeCalendar.Value <- v
+    member internal this.Inject v = _BespokeCalendar <- v
     static member Cast (p : ICell<BespokeCalendar>) = 
         if p :? BespokeCalendarModel then 
             p :?> BespokeCalendarModel
         else
             let o = new BespokeCalendarModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -143,7 +145,8 @@ type BespokeCalendarModel1
 (*
     Functions
 *)
-    let _BespokeCalendar                           = cell (fun () -> new BespokeCalendar ())
+    let mutable
+        _BespokeCalendar                           = cell (fun () -> new BespokeCalendar ())
     let _addWeekend                                (w : ICell<DayOfWeek>)   
                                                    = triv (fun () -> _BespokeCalendar.Value.addWeekend(w.Value)
                                                                      _BespokeCalendar.Value)
@@ -183,13 +186,14 @@ type BespokeCalendarModel1
     casting 
 *)
     
-    member internal this.Inject v = _BespokeCalendar.Value <- v
+    member internal this.Inject v = _BespokeCalendar <- v
     static member Cast (p : ICell<BespokeCalendar>) = 
         if p :? BespokeCalendarModel1 then 
             p :?> BespokeCalendarModel1
         else
             let o = new BespokeCalendarModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

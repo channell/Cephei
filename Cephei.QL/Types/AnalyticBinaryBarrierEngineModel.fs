@@ -44,19 +44,21 @@ type AnalyticBinaryBarrierEngineModel
 (*
     Functions
 *)
-    let _AnalyticBinaryBarrierEngine               = cell (fun () -> new AnalyticBinaryBarrierEngine (Process.Value))
+    let mutable
+        _AnalyticBinaryBarrierEngine               = cell (fun () -> new AnalyticBinaryBarrierEngine (Process.Value))
     do this.Bind(_AnalyticBinaryBarrierEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticBinaryBarrierEngineModel(null)
-    member internal this.Inject v = _AnalyticBinaryBarrierEngine.Value <- v
+    member internal this.Inject v = _AnalyticBinaryBarrierEngine <- v
     static member Cast (p : ICell<AnalyticBinaryBarrierEngine>) = 
         if p :? AnalyticBinaryBarrierEngineModel then 
             p :?> AnalyticBinaryBarrierEngineModel
         else
             let o = new AnalyticBinaryBarrierEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

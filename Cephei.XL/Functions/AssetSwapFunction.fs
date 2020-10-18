@@ -39,31 +39,31 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AssetSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="parAssetSwap",Description = "Reference to parAssetSwap")>] 
+        ([<ExcelArgument(Name="parAssetSwap",Description = "AssetSwap")>] 
          parAssetSwap : obj)
-        ([<ExcelArgument(Name="bond",Description = "Reference to bond")>] 
+        ([<ExcelArgument(Name="bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="bondCleanPrice",Description = "Reference to bondCleanPrice")>] 
+        ([<ExcelArgument(Name="bondCleanPrice",Description = "double")>] 
          bondCleanPrice : obj)
-        ([<ExcelArgument(Name="nonParRepayment",Description = "Reference to nonParRepayment")>] 
+        ([<ExcelArgument(Name="nonParRepayment",Description = "double")>] 
          nonParRepayment : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="iborIndex",Description = "Reference to iborIndex")>] 
+        ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "AssetSwap")>] 
          spread : obj)
-        ([<ExcelArgument(Name="floatingDayCount",Description = "Reference to floatingDayCount")>] 
+        ([<ExcelArgument(Name="floatingDayCount",Description = "AssetSwap")>] 
          floatingDayCount : obj)
-        ([<ExcelArgument(Name="dealMaturity",Description = "Reference to dealMaturity")>] 
+        ([<ExcelArgument(Name="dealMaturity",Description = "AssetSwap")>] 
          dealMaturity : obj)
-        ([<ExcelArgument(Name="payBondCoupon",Description = "Reference to payBondCoupon")>] 
+        ([<ExcelArgument(Name="payBondCoupon",Description = "AssetSwap")>] 
          payBondCoupon : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,27 +142,27 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap1", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AssetSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payBondCoupon",Description = "Reference to payBondCoupon")>] 
+        ([<ExcelArgument(Name="payBondCoupon",Description = "AssetSwap")>] 
          payBondCoupon : obj)
-        ([<ExcelArgument(Name="bond",Description = "Reference to bond")>] 
+        ([<ExcelArgument(Name="bond",Description = "Bond")>] 
          bond : obj)
-        ([<ExcelArgument(Name="bondCleanPrice",Description = "Reference to bondCleanPrice")>] 
+        ([<ExcelArgument(Name="bondCleanPrice",Description = "double")>] 
          bondCleanPrice : obj)
-        ([<ExcelArgument(Name="iborIndex",Description = "Reference to iborIndex")>] 
+        ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "AssetSwap")>] 
          spread : obj)
-        ([<ExcelArgument(Name="floatSchedule",Description = "Reference to floatSchedule")>] 
+        ([<ExcelArgument(Name="floatSchedule",Description = "AssetSwap")>] 
          floatSchedule : obj)
-        ([<ExcelArgument(Name="floatingDayCount",Description = "Reference to floatingDayCount")>] 
+        ([<ExcelArgument(Name="floatingDayCount",Description = "AssetSwap")>] 
          floatingDayCount : obj)
-        ([<ExcelArgument(Name="parAssetSwap",Description = "Reference to parAssetSwap")>] 
+        ([<ExcelArgument(Name="parAssetSwap",Description = "AssetSwap")>] 
          parAssetSwap : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,9 +233,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_bond", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_bond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -269,9 +269,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_bondLeg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_bondLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,9 +305,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_cleanPrice", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,9 +341,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_fairCleanPrice", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_fairCleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,9 +377,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_fairNonParRepayment", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_fairNonParRepayment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -413,9 +413,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_fairSpread", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_fairSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,9 +449,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_floatingLeg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_floatingLegBPS", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_floatingLegBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_floatingLegNPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_floatingLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,9 +557,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_nonParRepayment", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_nonParRepayment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -593,9 +593,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_parSwap", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_parSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -629,9 +629,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_payBondCoupon", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_payBondCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,9 +665,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_spread", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -701,11 +701,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_endDiscounts", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -744,9 +744,9 @@ module AssetSwapFunction =
     (*!!
     [<ExcelFunction(Name="_AssetSwap_engine", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -781,9 +781,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_isExpired", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -817,11 +817,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_leg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -859,11 +859,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_legBPS", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -901,11 +901,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_legNPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -943,9 +943,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_maturityDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -979,9 +979,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_npvDateDiscount", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1015,11 +1015,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_payer", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1057,9 +1057,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_startDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1093,11 +1093,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_startDiscounts", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1135,9 +1135,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_CASH", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1171,9 +1171,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_errorEstimate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1207,9 +1207,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_NPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1243,11 +1243,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_result", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1285,11 +1285,11 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_setPricingEngine", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1327,9 +1327,9 @@ module AssetSwapFunction =
     *)
     [<ExcelFunction(Name="_AssetSwap_valuationDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetSwap",Description = "Reference to AssetSwap")>] 
+        ([<ExcelArgument(Name="AssetSwap",Description = "AssetSwap")>] 
          assetswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1360,9 +1360,9 @@ module AssetSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AssetSwap_Range", Description="Create a range of AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AssetSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

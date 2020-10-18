@@ -66,7 +66,8 @@ type ConvertibleZeroCouponBondModel
 (*
     Functions
 *)
-    let _ConvertibleZeroCouponBond                 = cell (fun () -> withEngine pricingEngine (new ConvertibleZeroCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, dayCounter.Value, schedule.Value, redemption.Value)))
+    let mutable
+        _ConvertibleZeroCouponBond                 = cell (fun () -> withEngine pricingEngine (new ConvertibleZeroCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, dayCounter.Value, schedule.Value, redemption.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).callability())
     let _conversionRatio                           = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).conversionRatio())
     let _creditSpread                              = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).creditSpread())
@@ -124,13 +125,14 @@ type ConvertibleZeroCouponBondModel
     casting 
 *)
     internal new () = new ConvertibleZeroCouponBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConvertibleZeroCouponBond.Value <- v
+    member internal this.Inject v = _ConvertibleZeroCouponBond <- v
     static member Cast (p : ICell<ConvertibleZeroCouponBond>) = 
         if p :? ConvertibleZeroCouponBondModel then 
             p :?> ConvertibleZeroCouponBondModel
         else
             let o = new ConvertibleZeroCouponBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

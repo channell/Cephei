@@ -40,9 +40,9 @@ module JamshidianSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_JamshidianSwaptionEngine", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JamshidianSwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "OneFactorAffineModel")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -77,11 +77,11 @@ module JamshidianSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_JamshidianSwaptionEngine1", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JamshidianSwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "OneFactorAffineModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,11 +121,11 @@ module JamshidianSwaptionEngineFunction =
     (*!!
     [<ExcelFunction(Name="_JamshidianSwaptionEngine_setModel", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "Reference to JamshidianSwaptionEngine")>] 
+        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "JamshidianSwaptionEngine")>] 
          jamshidianswaptionengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -163,11 +163,11 @@ module JamshidianSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_JamshidianSwaptionEngine_registerWith", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "Reference to JamshidianSwaptionEngine")>] 
+        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "JamshidianSwaptionEngine")>] 
          jamshidianswaptionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -205,9 +205,9 @@ module JamshidianSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_JamshidianSwaptionEngine_reset", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "Reference to JamshidianSwaptionEngine")>] 
+        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "JamshidianSwaptionEngine")>] 
          jamshidianswaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -241,11 +241,11 @@ module JamshidianSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_JamshidianSwaptionEngine_unregisterWith", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "Reference to JamshidianSwaptionEngine")>] 
+        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "JamshidianSwaptionEngine")>] 
          jamshidianswaptionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module JamshidianSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_JamshidianSwaptionEngine_update", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "Reference to JamshidianSwaptionEngine")>] 
+        ([<ExcelArgument(Name="JamshidianSwaptionEngine",Description = "JamshidianSwaptionEngine")>] 
          jamshidianswaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module JamshidianSwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JamshidianSwaptionEngine_Range", Description="Create a range of JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the JamshidianSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

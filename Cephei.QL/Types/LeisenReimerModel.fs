@@ -50,7 +50,8 @@ type LeisenReimerModel
 (*
     Functions
 *)
-    let _LeisenReimer                              = cell (fun () -> new LeisenReimer (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _LeisenReimer                              = cell (fun () -> new LeisenReimer (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _LeisenReimer.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
@@ -67,13 +68,14 @@ type LeisenReimerModel
     casting 
 *)
     internal new () = new LeisenReimerModel(null,null,null,null)
-    member internal this.Inject v = _LeisenReimer.Value <- v
+    member internal this.Inject v = _LeisenReimer <- v
     static member Cast (p : ICell<LeisenReimer>) = 
         if p :? LeisenReimerModel then 
             p :?> LeisenReimerModel
         else
             let o = new LeisenReimerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -109,7 +111,8 @@ type LeisenReimerModel1
 (*
     Functions
 *)
-    let _LeisenReimer                              = cell (fun () -> new LeisenReimer ())
+    let mutable
+        _LeisenReimer                              = cell (fun () -> new LeisenReimer ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _LeisenReimer.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
@@ -126,13 +129,14 @@ type LeisenReimerModel1
     casting 
 *)
     
-    member internal this.Inject v = _LeisenReimer.Value <- v
+    member internal this.Inject v = _LeisenReimer <- v
     static member Cast (p : ICell<LeisenReimer>) = 
         if p :? LeisenReimerModel1 then 
             p :?> LeisenReimerModel1
         else
             let o = new LeisenReimerModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

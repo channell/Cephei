@@ -50,7 +50,8 @@ type AbcdFunctionModel
 (*
     Functions
 *)
-    let _AbcdFunction                              = cell (fun () -> new AbcdFunction (a.Value, b.Value, c.Value, d.Value))
+    let mutable
+        _AbcdFunction                              = cell (fun () -> new AbcdFunction (a.Value, b.Value, c.Value, d.Value))
     let _covariance                                (t : ICell<double>) (T2 : ICell<double>) (S : ICell<double>)   
                                                    = triv (fun () -> _AbcdFunction.Value.covariance(t.Value, T2.Value, S.Value))
     let _covariance1                               (t1 : ICell<double>) (t2 : ICell<double>) (T : ICell<double>) (S : ICell<double>)   
@@ -94,13 +95,14 @@ type AbcdFunctionModel
     casting 
 *)
     internal new () = new AbcdFunctionModel(null,null,null,null)
-    member internal this.Inject v = _AbcdFunction.Value <- v
+    member internal this.Inject v = _AbcdFunction <- v
     static member Cast (p : ICell<AbcdFunction>) = 
         if p :? AbcdFunctionModel then 
             p :?> AbcdFunctionModel
         else
             let o = new AbcdFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

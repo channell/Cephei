@@ -44,7 +44,8 @@ type BachelierYoYInflationCouponPricerModel
 (*
     Functions
 *)
-    let _BachelierYoYInflationCouponPricer         = cell (fun () -> new BachelierYoYInflationCouponPricer (capletVol.Value))
+    let mutable
+        _BachelierYoYInflationCouponPricer         = cell (fun () -> new BachelierYoYInflationCouponPricer (capletVol.Value))
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -75,13 +76,14 @@ type BachelierYoYInflationCouponPricerModel
     casting 
 *)
     internal new () = new BachelierYoYInflationCouponPricerModel(null)
-    member internal this.Inject v = _BachelierYoYInflationCouponPricer.Value <- v
+    member internal this.Inject v = _BachelierYoYInflationCouponPricer <- v
     static member Cast (p : ICell<BachelierYoYInflationCouponPricer>) = 
         if p :? BachelierYoYInflationCouponPricerModel then 
             p :?> BachelierYoYInflationCouponPricerModel
         else
             let o = new BachelierYoYInflationCouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

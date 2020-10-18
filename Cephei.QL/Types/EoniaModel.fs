@@ -44,7 +44,8 @@ type EoniaModel
 (*
     Functions
 *)
-    let _Eonia                                     = cell (fun () -> new Eonia (h.Value))
+    let mutable
+        _Eonia                                     = cell (fun () -> new Eonia (h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Eonia.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _Eonia.Value.businessDayConvention())
@@ -99,13 +100,14 @@ type EoniaModel
     casting 
 *)
     internal new () = new EoniaModel(null)
-    member internal this.Inject v = _Eonia.Value <- v
+    member internal this.Inject v = _Eonia <- v
     static member Cast (p : ICell<Eonia>) = 
         if p :? EoniaModel then 
             p :?> EoniaModel
         else
             let o = new EoniaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type EoniaModel1
 (*
     Functions
 *)
-    let _Eonia                                     = cell (fun () -> new Eonia ())
+    let mutable
+        _Eonia                                     = cell (fun () -> new Eonia ())
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Eonia.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _Eonia.Value.businessDayConvention())
@@ -224,13 +227,14 @@ type EoniaModel1
     casting 
 *)
     
-    member internal this.Inject v = _Eonia.Value <- v
+    member internal this.Inject v = _Eonia <- v
     static member Cast (p : ICell<Eonia>) = 
         if p :? EoniaModel1 then 
             p :?> EoniaModel1
         else
             let o = new EoniaModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

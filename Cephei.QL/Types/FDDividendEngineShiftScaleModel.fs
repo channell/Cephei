@@ -50,7 +50,8 @@ type FDDividendEngineShiftScaleModel
 (*
     Functions
 *)
-    let _FDDividendEngineShiftScale                = cell (fun () -> new FDDividendEngineShiftScale (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDDividendEngineShiftScale                = cell (fun () -> new FDDividendEngineShiftScale (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDDividendEngineShiftScale.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
@@ -71,13 +72,14 @@ type FDDividendEngineShiftScaleModel
     casting 
 *)
     internal new () = new FDDividendEngineShiftScaleModel(null,null,null,null)
-    member internal this.Inject v = _FDDividendEngineShiftScale.Value <- v
+    member internal this.Inject v = _FDDividendEngineShiftScale <- v
     static member Cast (p : ICell<FDDividendEngineShiftScale>) = 
         if p :? FDDividendEngineShiftScaleModel then 
             p :?> FDDividendEngineShiftScaleModel
         else
             let o = new FDDividendEngineShiftScaleModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

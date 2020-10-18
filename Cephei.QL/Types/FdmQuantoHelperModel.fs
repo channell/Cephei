@@ -52,7 +52,8 @@ type FdmQuantoHelperModel
 (*
     Functions
 *)
-    let _FdmQuantoHelper                           = cell (fun () -> new FdmQuantoHelper (rTS.Value, fTS.Value, fxVolTS.Value, equityFxCorrelation.Value, exchRateATMlevel.Value))
+    let mutable
+        _FdmQuantoHelper                           = cell (fun () -> new FdmQuantoHelper (rTS.Value, fTS.Value, fxVolTS.Value, equityFxCorrelation.Value, exchRateATMlevel.Value))
     let _equityFxCorrelation                       = triv (fun () -> _FdmQuantoHelper.Value.equityFxCorrelation())
     let _exchRateATMlevel                          = triv (fun () -> _FdmQuantoHelper.Value.exchRateATMlevel())
     let _foreignTermStructure                      = triv (fun () -> _FdmQuantoHelper.Value.foreignTermStructure())
@@ -75,13 +76,14 @@ type FdmQuantoHelperModel
     casting 
 *)
     internal new () = new FdmQuantoHelperModel(null,null,null,null,null)
-    member internal this.Inject v = _FdmQuantoHelper.Value <- v
+    member internal this.Inject v = _FdmQuantoHelper <- v
     static member Cast (p : ICell<FdmQuantoHelper>) = 
         if p :? FdmQuantoHelperModel then 
             p :?> FdmQuantoHelperModel
         else
             let o = new FdmQuantoHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

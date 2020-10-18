@@ -41,7 +41,8 @@ type VectorModel
 (*
     Functions
 *)
-    let _Vector                                    = cell (fun () -> new Vector ())
+    let mutable
+        _Vector                                    = cell (fun () -> new Vector ())
     let _Clone                                     = triv (fun () -> _Vector.Value.Clone())
     let _empty                                     = triv (fun () -> _Vector.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -57,13 +58,14 @@ type VectorModel
     casting 
 *)
     
-    member internal this.Inject v = _Vector.Value <- v
+    member internal this.Inject v = _Vector <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel then 
             p :?> VectorModel
         else
             let o = new VectorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -96,7 +98,8 @@ type VectorModel1
 (*
     Functions
 *)
-    let _Vector                                    = cell (fun () -> new Vector (from.Value))
+    let mutable
+        _Vector                                    = cell (fun () -> new Vector (from.Value))
     let _Clone                                     = triv (fun () -> _Vector.Value.Clone())
     let _empty                                     = triv (fun () -> _Vector.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -112,13 +115,14 @@ type VectorModel1
     casting 
 *)
     internal new () = new VectorModel1(null)
-    member internal this.Inject v = _Vector.Value <- v
+    member internal this.Inject v = _Vector <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel1 then 
             p :?> VectorModel1
         else
             let o = new VectorModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -152,7 +156,8 @@ type VectorModel2
 (*
     Functions
 *)
-    let _Vector                                    = cell (fun () -> new Vector (from.Value))
+    let mutable
+        _Vector                                    = cell (fun () -> new Vector (from.Value))
     let _Clone                                     = triv (fun () -> _Vector.Value.Clone())
     let _empty                                     = triv (fun () -> _Vector.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -168,13 +173,14 @@ type VectorModel2
     casting 
 *)
     internal new () = new VectorModel2(null)
-    member internal this.Inject v = _Vector.Value <- v
+    member internal this.Inject v = _Vector <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel2 then 
             p :?> VectorModel2
         else
             let o = new VectorModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -212,7 +218,8 @@ type VectorModel3
 (*
     Functions
 *)
-    let _Vector                                    = cell (fun () -> new Vector (size.Value, value.Value, increment.Value))
+    let mutable
+        _Vector                                    = cell (fun () -> new Vector (size.Value, value.Value, increment.Value))
     let _Clone                                     = triv (fun () -> _Vector.Value.Clone())
     let _empty                                     = triv (fun () -> _Vector.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -228,13 +235,14 @@ type VectorModel3
     casting 
 *)
     internal new () = new VectorModel3(null,null,null)
-    member internal this.Inject v = _Vector.Value <- v
+    member internal this.Inject v = _Vector <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel3 then 
             p :?> VectorModel3
         else
             let o = new VectorModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -270,7 +278,8 @@ type VectorModel4
 (*
     Functions
 *)
-    let _Vector                                    = cell (fun () -> new Vector (size.Value))
+    let mutable
+        _Vector                                    = cell (fun () -> new Vector (size.Value))
     let _Clone                                     = triv (fun () -> _Vector.Value.Clone())
     let _empty                                     = triv (fun () -> _Vector.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -286,13 +295,14 @@ type VectorModel4
     casting 
 *)
     internal new () = new VectorModel4(null)
-    member internal this.Inject v = _Vector.Value <- v
+    member internal this.Inject v = _Vector <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel4 then 
             p :?> VectorModel4
         else
             let o = new VectorModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -328,7 +338,8 @@ type VectorModel5
 (*
     Functions
 *)
-    let _Vector                                    = cell (fun () -> new Vector (size.Value, value.Value))
+    let mutable
+        _Vector                                    = cell (fun () -> new Vector (size.Value, value.Value))
     let _Clone                                     = triv (fun () -> _Vector.Value.Clone())
     let _empty                                     = triv (fun () -> _Vector.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -344,13 +355,14 @@ type VectorModel5
     casting 
 *)
     internal new () = new VectorModel5(null,null)
-    member internal this.Inject v = _Vector.Value <- v
+    member internal this.Inject v = _Vector <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel5 then 
             p :?> VectorModel5
         else
             let o = new VectorModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

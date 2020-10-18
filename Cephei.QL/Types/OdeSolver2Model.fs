@@ -46,7 +46,8 @@ type OdeSolver2Model
 (*
     Functions
 *)
-    let _OdeSolver2                                = cell (fun () -> new OdeSolver2 (func.Value, z.Value))
+    let mutable
+        _OdeSolver2                                = cell (fun () -> new OdeSolver2 (func.Value, z.Value))
     let _value                                     (v : ICell<double>)   
                                                    = cell (fun () -> _OdeSolver2.Value.value(v.Value))
     let _derivative                                (x : ICell<double>)   
@@ -56,13 +57,14 @@ type OdeSolver2Model
     casting 
 *)
     internal new () = OdeSolver2Model(null,null)
-    member internal this.Inject v = _OdeSolver2.Value <- v
+    member internal this.Inject v = _OdeSolver2 <- v
     static member Cast (p : ICell<OdeSolver2>) = 
         if p :? OdeSolver2Model then 
             p :?> OdeSolver2Model
         else
             let o = new OdeSolver2Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -41,7 +41,8 @@ type GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType when 'Mode
 (*
     Functions
 *)
-    let _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> ())
+    let mutable
+        _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> ())
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
                                                    = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
@@ -85,7 +86,8 @@ type GenericModelEngineModel1<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
 (*
     Functions
 *)
-    let _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
+    let mutable
+        _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
                                                    = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
@@ -130,7 +132,8 @@ type GenericModelEngineModel2<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
 (*
     Functions
 *)
-    let _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
+    let mutable
+        _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
                                                    = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)

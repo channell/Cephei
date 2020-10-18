@@ -80,7 +80,8 @@ type CPIBondHelperModel
 (*
     Functions
 *)
-    let _CPIBondHelper                             = cell (fun () -> new CPIBondHelper (price.Value, settlementDays.Value, faceAmount.Value, growthOnly.Value, baseCPI.Value, observationLag.Value, cpiIndex.Value, observationInterpolation.Value, schedule.Value, fixedRate.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value, useCleanPrice.Value))
+    let mutable
+        _CPIBondHelper                             = cell (fun () -> new CPIBondHelper (price.Value, settlementDays.Value, faceAmount.Value, growthOnly.Value, baseCPI.Value, observationLag.Value, cpiIndex.Value, observationInterpolation.Value, schedule.Value, fixedRate.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value, useCleanPrice.Value))
     let _cpiBond                                   = triv (fun () -> _CPIBondHelper.Value.cpiBond())
     let _bond                                      = triv (fun () -> _CPIBondHelper.Value.bond())
     let _impliedQuote                              = triv (fun () -> _CPIBondHelper.Value.impliedQuote())
@@ -110,13 +111,14 @@ type CPIBondHelperModel
     casting 
 *)
     internal new () = new CPIBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CPIBondHelper.Value <- v
+    member internal this.Inject v = _CPIBondHelper <- v
     static member Cast (p : ICell<CPIBondHelper>) = 
         if p :? CPIBondHelperModel then 
             p :?> CPIBondHelperModel
         else
             let o = new CPIBondHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

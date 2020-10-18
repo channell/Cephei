@@ -44,7 +44,8 @@ type GaussHyperbolicIntegrationModel
 (*
     Functions
 *)
-    let _GaussHyperbolicIntegration                = cell (fun () -> new GaussHyperbolicIntegration (n.Value))
+    let mutable
+        _GaussHyperbolicIntegration                = cell (fun () -> new GaussHyperbolicIntegration (n.Value))
     let _order                                     = triv (fun () -> _GaussHyperbolicIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussHyperbolicIntegration.Value.value(f.Value))
@@ -55,13 +56,14 @@ type GaussHyperbolicIntegrationModel
     casting 
 *)
     internal new () = new GaussHyperbolicIntegrationModel(null)
-    member internal this.Inject v = _GaussHyperbolicIntegration.Value <- v
+    member internal this.Inject v = _GaussHyperbolicIntegration <- v
     static member Cast (p : ICell<GaussHyperbolicIntegration>) = 
         if p :? GaussHyperbolicIntegrationModel then 
             p :?> GaussHyperbolicIntegrationModel
         else
             let o = new GaussHyperbolicIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

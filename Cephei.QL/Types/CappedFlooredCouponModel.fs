@@ -41,7 +41,8 @@ type CappedFlooredCouponModel
 (*
     Functions
 *)
-    let _CappedFlooredCoupon                       = cell (fun () -> new CappedFlooredCoupon ())
+    let mutable
+        _CappedFlooredCoupon                       = cell (fun () -> new CappedFlooredCoupon ())
     let _cap                                       = triv (fun () -> _CappedFlooredCoupon.Value.cap())
     let _convexityAdjustment                       = triv (fun () -> _CappedFlooredCoupon.Value.convexityAdjustment())
     let _effectiveCap                              = triv (fun () -> _CappedFlooredCoupon.Value.effectiveCap())
@@ -107,13 +108,14 @@ type CappedFlooredCouponModel
     casting 
 *)
     
-    member internal this.Inject v = _CappedFlooredCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredCoupon <- v
     static member Cast (p : ICell<CappedFlooredCoupon>) = 
         if p :? CappedFlooredCouponModel then 
             p :?> CappedFlooredCouponModel
         else
             let o = new CappedFlooredCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -196,7 +198,8 @@ type CappedFlooredCouponModel1
 (*
     Functions
 *)
-    let _CappedFlooredCoupon                       = cell (fun () -> new CappedFlooredCoupon (underlying.Value, cap.Value, floor.Value))
+    let mutable
+        _CappedFlooredCoupon                       = cell (fun () -> new CappedFlooredCoupon (underlying.Value, cap.Value, floor.Value))
     let _cap                                       = triv (fun () -> _CappedFlooredCoupon.Value.cap())
     let _convexityAdjustment                       = triv (fun () -> _CappedFlooredCoupon.Value.convexityAdjustment())
     let _effectiveCap                              = triv (fun () -> _CappedFlooredCoupon.Value.effectiveCap())
@@ -262,13 +265,14 @@ type CappedFlooredCouponModel1
     casting 
 *)
     internal new () = new CappedFlooredCouponModel1(null,null,null)
-    member internal this.Inject v = _CappedFlooredCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredCoupon <- v
     static member Cast (p : ICell<CappedFlooredCoupon>) = 
         if p :? CappedFlooredCouponModel1 then 
             p :?> CappedFlooredCouponModel1
         else
             let o = new CappedFlooredCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module SimulatedAnnealingFunction =
     *)
     [<ExcelFunction(Name="_SimulatedAnnealing_minimize", Description="Create a SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimulatedAnnealing")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimulatedAnnealing",Description = "Reference to SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="SimulatedAnnealing",Description = "SimulatedAnnealing")>] 
          simulatedannealing : obj)
-        ([<ExcelArgument(Name="P",Description = "Reference to P")>] 
+        ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,17 +87,17 @@ module SimulatedAnnealingFunction =
     *)
     [<ExcelFunction(Name="_SimulatedAnnealing", Description="Create a SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimulatedAnnealing")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lambda",Description = "Reference to lambda")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
-        ([<ExcelArgument(Name="T0",Description = "Reference to T0")>] 
+        ([<ExcelArgument(Name="T0",Description = "double")>] 
          T0 : obj)
-        ([<ExcelArgument(Name="K",Description = "Reference to K")>] 
+        ([<ExcelArgument(Name="K",Description = "int")>] 
          K : obj)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="rng",Description = "Reference to rng")>] 
+        ([<ExcelArgument(Name="rng",Description = "SimulatedAnnealing")>] 
          rng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,17 +148,17 @@ module SimulatedAnnealingFunction =
     *)
     [<ExcelFunction(Name="_SimulatedAnnealing1", Description="Create a SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimulatedAnnealing")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lambda",Description = "Reference to lambda")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
-        ([<ExcelArgument(Name="T0",Description = "Reference to T0")>] 
+        ([<ExcelArgument(Name="T0",Description = "double")>] 
          T0 : obj)
-        ([<ExcelArgument(Name="epsilon",Description = "Reference to epsilon")>] 
+        ([<ExcelArgument(Name="epsilon",Description = "double")>] 
          epsilon : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "int")>] 
          m : obj)
-        ([<ExcelArgument(Name="rng",Description = "Reference to rng")>] 
+        ([<ExcelArgument(Name="rng",Description = "SimulatedAnnealing")>] 
          rng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -206,9 +206,9 @@ module SimulatedAnnealingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimulatedAnnealing_Range", Description="Create a range of SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,15 +39,15 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree1", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AdditiveEQPBinomialTree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AdditiveEQPBinomialTree")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,17 +125,17 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_factory", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AdditiveEQPBinomialTree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "Reference to AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "AdditiveEQPBinomialTree")>] 
          additiveeqpbinomialtree : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,15 +185,15 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_probability", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "Reference to AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "AdditiveEQPBinomialTree")>] 
          additiveeqpbinomialtree : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="z",Description = "Reference to z")>] 
+        ([<ExcelArgument(Name="z",Description = "int")>] 
          z : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_underlying", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "Reference to AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "AdditiveEQPBinomialTree")>] 
          additiveeqpbinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,15 +287,15 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_descendant", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "Reference to AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "AdditiveEQPBinomialTree")>] 
          additiveeqpbinomialtree : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_size", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "Reference to AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "AdditiveEQPBinomialTree")>] 
          additiveeqpbinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module AdditiveEQPBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_columns", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "Reference to AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="AdditiveEQPBinomialTree",Description = "AdditiveEQPBinomialTree")>] 
          additiveeqpbinomialtree : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,9 +416,9 @@ module AdditiveEQPBinomialTreeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AdditiveEQPBinomialTree_Range", Description="Create a range of AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AdditiveEQPBinomialTree")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

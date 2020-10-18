@@ -39,9 +39,9 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_isExpired", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Loan")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Loan")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="legs",Description = "Reference to legs")>] 
+        ([<ExcelArgument(Name="legs",Description = "int")>] 
          legs : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_CASH", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_errorEstimate", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_NPV", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,11 +232,11 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_result", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_setPricingEngine", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module LoanFunction =
     *)
     [<ExcelFunction(Name="_Loan_valuationDate", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Loan",Description = "Reference to Loan")>] 
+        ([<ExcelArgument(Name="Loan",Description = "Loan")>] 
          loan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module LoanFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Loan_Range", Description="Create a range of Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Loan")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -50,7 +50,8 @@ type BlackVanillaOptionPricerModel
 (*
     Functions
 *)
-    let _BlackVanillaOptionPricer                  = cell (fun () -> new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))
+    let mutable
+        _BlackVanillaOptionPricer                  = cell (fun () -> new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))
     let _value                                     (strike : ICell<double>) (optionType : ICell<Option.Type>) (deflator : ICell<double>)   
                                                    = triv (fun () -> _BlackVanillaOptionPricer.Value.value(strike.Value, optionType.Value, deflator.Value))
     do this.Bind(_BlackVanillaOptionPricer)
@@ -58,13 +59,14 @@ type BlackVanillaOptionPricerModel
     casting 
 *)
     internal new () = new BlackVanillaOptionPricerModel(null,null,null,null)
-    member internal this.Inject v = _BlackVanillaOptionPricer.Value <- v
+    member internal this.Inject v = _BlackVanillaOptionPricer <- v
     static member Cast (p : ICell<BlackVanillaOptionPricer>) = 
         if p :? BlackVanillaOptionPricerModel then 
             p :?> BlackVanillaOptionPricerModel
         else
             let o = new BlackVanillaOptionPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

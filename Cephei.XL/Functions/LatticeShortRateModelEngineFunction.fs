@@ -39,11 +39,11 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LatticeShortRateModelEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,11 +82,11 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine1", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LatticeShortRateModelEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,9 +125,9 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_update", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "Reference to LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,11 +161,11 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_setModel", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "Reference to LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,11 +204,11 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_registerWith", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "Reference to LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,9 +246,9 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_reset", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "Reference to LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -282,11 +282,11 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_unregisterWith", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "Reference to LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -321,9 +321,9 @@ module LatticeShortRateModelEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_Range", Description="Create a range of LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

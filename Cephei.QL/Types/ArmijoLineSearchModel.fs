@@ -44,7 +44,8 @@ type ArmijoLineSearchModel
 (*
     Functions
 *)
-    let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value))
+    let mutable
+        _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value))
     let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
@@ -60,13 +61,14 @@ type ArmijoLineSearchModel
     casting 
 *)
     internal new () = new ArmijoLineSearchModel(null)
-    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    member internal this.Inject v = _ArmijoLineSearch <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel then 
             p :?> ArmijoLineSearchModel
         else
             let o = new ArmijoLineSearchModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -103,7 +105,8 @@ type ArmijoLineSearchModel1
 (*
     Functions
 *)
-    let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value, alpha.Value))
+    let mutable
+        _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value, alpha.Value))
     let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
@@ -119,13 +122,14 @@ type ArmijoLineSearchModel1
     casting 
 *)
     internal new () = new ArmijoLineSearchModel1(null,null)
-    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    member internal this.Inject v = _ArmijoLineSearch <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel1 then 
             p :?> ArmijoLineSearchModel1
         else
             let o = new ArmijoLineSearchModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -165,7 +169,8 @@ type ArmijoLineSearchModel2
 (*
     Functions
 *)
-    let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value, alpha.Value, beta.Value))
+    let mutable
+        _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value, alpha.Value, beta.Value))
     let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
@@ -181,13 +186,14 @@ type ArmijoLineSearchModel2
     casting 
 *)
     internal new () = new ArmijoLineSearchModel2(null,null,null)
-    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    member internal this.Inject v = _ArmijoLineSearch <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel2 then 
             p :?> ArmijoLineSearchModel2
         else
             let o = new ArmijoLineSearchModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -221,7 +227,8 @@ type ArmijoLineSearchModel3
 (*
     Functions
 *)
-    let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch ())
+    let mutable
+        _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch ())
     let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
@@ -237,13 +244,14 @@ type ArmijoLineSearchModel3
     casting 
 *)
     
-    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    member internal this.Inject v = _ArmijoLineSearch <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel3 then 
             p :?> ArmijoLineSearchModel3
         else
             let o = new ArmijoLineSearchModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

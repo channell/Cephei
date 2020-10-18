@@ -52,7 +52,8 @@ type BlackImpliedStdDevHelperModel
 (*
     Functions
 *)
-    let _BlackImpliedStdDevHelper                  = cell (fun () -> new BlackImpliedStdDevHelper (optionType.Value, strike.Value, forward.Value, undiscountedBlackPrice.Value, displacement.Value))
+    let mutable
+        _BlackImpliedStdDevHelper                  = cell (fun () -> new BlackImpliedStdDevHelper (optionType.Value, strike.Value, forward.Value, undiscountedBlackPrice.Value, displacement.Value))
     let _derivative                                (stdDev : ICell<double>)   
                                                    = cell (fun () -> _BlackImpliedStdDevHelper.Value.derivative(stdDev.Value))
     let _value                                     (stdDev : ICell<double>)   
@@ -62,13 +63,14 @@ type BlackImpliedStdDevHelperModel
     casting 
 *)
     internal new () = BlackImpliedStdDevHelperModel(null,null,null,null,null)
-    member internal this.Inject v = _BlackImpliedStdDevHelper.Value <- v
+    member internal this.Inject v = _BlackImpliedStdDevHelper <- v
     static member Cast (p : ICell<BlackImpliedStdDevHelper>) = 
         if p :? BlackImpliedStdDevHelperModel then 
             p :?> BlackImpliedStdDevHelperModel
         else
             let o = new BlackImpliedStdDevHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

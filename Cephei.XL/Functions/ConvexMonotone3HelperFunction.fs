@@ -39,21 +39,21 @@ module ConvexMonotone3HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone3Helper", Description="Create a ConvexMonotone3Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone3Helper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConvexMonotone3Helper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xPrev",Description = "Reference to xPrev")>] 
+        ([<ExcelArgument(Name="xPrev",Description = "double")>] 
          xPrev : obj)
-        ([<ExcelArgument(Name="xNext",Description = "Reference to xNext")>] 
+        ([<ExcelArgument(Name="xNext",Description = "double")>] 
          xNext : obj)
-        ([<ExcelArgument(Name="gPrev",Description = "Reference to gPrev")>] 
+        ([<ExcelArgument(Name="gPrev",Description = "double")>] 
          gPrev : obj)
-        ([<ExcelArgument(Name="gNext",Description = "Reference to gNext")>] 
+        ([<ExcelArgument(Name="gNext",Description = "double")>] 
          gNext : obj)
-        ([<ExcelArgument(Name="fAverage",Description = "Reference to fAverage")>] 
+        ([<ExcelArgument(Name="fAverage",Description = "double")>] 
          fAverage : obj)
-        ([<ExcelArgument(Name="eta3",Description = "Reference to eta3")>] 
+        ([<ExcelArgument(Name="eta3",Description = "double")>] 
          eta3 : obj)
-        ([<ExcelArgument(Name="prevPrimitive",Description = "Reference to prevPrimitive")>] 
+        ([<ExcelArgument(Name="prevPrimitive",Description = "double")>] 
          prevPrimitive : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module ConvexMonotone3HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone3Helper_fNext", Description="Create a ConvexMonotone3Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone3Helper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone3Helper",Description = "Reference to ConvexMonotone3Helper")>] 
+        ([<ExcelArgument(Name="ConvexMonotone3Helper",Description = "ConvexMonotone3Helper")>] 
          convexmonotone3helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,11 +148,11 @@ module ConvexMonotone3HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone3Helper_primitive", Description="Create a ConvexMonotone3Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone3Helper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone3Helper",Description = "Reference to ConvexMonotone3Helper")>] 
+        ([<ExcelArgument(Name="ConvexMonotone3Helper",Description = "ConvexMonotone3Helper")>] 
          convexmonotone3helper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,11 +190,11 @@ module ConvexMonotone3HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone3Helper_value", Description="Create a ConvexMonotone3Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone3Helper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotone3Helper",Description = "Reference to ConvexMonotone3Helper")>] 
+        ([<ExcelArgument(Name="ConvexMonotone3Helper",Description = "ConvexMonotone3Helper")>] 
          convexmonotone3helper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module ConvexMonotone3HelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvexMonotone3Helper_Range", Description="Create a range of ConvexMonotone3Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone3Helper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConvexMonotone3Helper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

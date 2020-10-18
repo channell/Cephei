@@ -48,7 +48,8 @@ type FiniteDifferenceModelModel<'Evolver when 'Evolver :> IMixedScheme and 'Evol
 (*
     Functions
 *)
-    let _FiniteDifferenceModel                     = cell (fun () -> new FiniteDifferenceModel<'Evolver> (L.Value, bcs.Value, stoppingTimes.Value))
+    let mutable
+        _FiniteDifferenceModel                     = cell (fun () -> new FiniteDifferenceModel<'Evolver> (L.Value, bcs.Value, stoppingTimes.Value))
     let _evolver                                   = triv (fun () -> _FiniteDifferenceModel.Value.evolver())
     let _rollback                                  (a : ICell<Object>) (from : ICell<double>) (To : ICell<double>) (steps : ICell<int>)   
                                                    = triv (fun () -> _FiniteDifferenceModel.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value)
@@ -88,7 +89,8 @@ type FiniteDifferenceModelModel1<'Evolver when 'Evolver :> IMixedScheme and 'Evo
 (*
     Functions
 *)
-    let _FiniteDifferenceModel                     = cell (fun () -> new FiniteDifferenceModel<'Evolver> (L.Value, bcs.Value))
+    let mutable
+        _FiniteDifferenceModel                     = cell (fun () -> new FiniteDifferenceModel<'Evolver> (L.Value, bcs.Value))
     let _evolver                                   = triv (fun () -> _FiniteDifferenceModel.Value.evolver())
     let _rollback                                  (a : ICell<Object>) (from : ICell<double>) (To : ICell<double>) (steps : ICell<int>)   
                                                    = triv (fun () -> _FiniteDifferenceModel.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value)
@@ -127,7 +129,8 @@ type FiniteDifferenceModelModel2<'Evolver when 'Evolver :> IMixedScheme and 'Evo
 (*
     Functions
 *)
-    let _FiniteDifferenceModel                     = cell (fun () -> new FiniteDifferenceModel<'Evolver> (evolver.Value, stoppingTimes.Value))
+    let mutable
+        _FiniteDifferenceModel                     = cell (fun () -> new FiniteDifferenceModel<'Evolver> (evolver.Value, stoppingTimes.Value))
     let _evolver                                   = triv (fun () -> _FiniteDifferenceModel.Value.evolver())
     let _rollback                                  (a : ICell<Object>) (from : ICell<double>) (To : ICell<double>) (steps : ICell<int>)   
                                                    = triv (fun () -> _FiniteDifferenceModel.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value)

@@ -63,7 +63,8 @@ type FittedBondDiscountCurveModel
 (*
     Functions
 *)
-    let _FittedBondDiscountCurve                   = cell (fun () -> new FittedBondDiscountCurve (settlementDays.Value, calendar.Value, bondHelpers.Value, dayCounter.Value, fittingMethod.Value, accuracy.Value, maxEvaluations.Value, guess.Value, simplexLambda.Value, maxStationaryStateIterations.Value))
+    let mutable
+        _FittedBondDiscountCurve                   = cell (fun () -> new FittedBondDiscountCurve (settlementDays.Value, calendar.Value, bondHelpers.Value, dayCounter.Value, fittingMethod.Value, accuracy.Value, maxEvaluations.Value, guess.Value, simplexLambda.Value, maxStationaryStateIterations.Value))
     let _maxDate                                   = triv (fun () -> _FittedBondDiscountCurve.Value.maxDate())
     let _numberOfBonds                             = triv (fun () -> _FittedBondDiscountCurve.Value.numberOfBonds())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
@@ -104,13 +105,14 @@ type FittedBondDiscountCurveModel
     casting 
 *)
     internal new () = new FittedBondDiscountCurveModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FittedBondDiscountCurve.Value <- v
+    member internal this.Inject v = _FittedBondDiscountCurve <- v
     static member Cast (p : ICell<FittedBondDiscountCurve>) = 
         if p :? FittedBondDiscountCurveModel then 
             p :?> FittedBondDiscountCurveModel
         else
             let o = new FittedBondDiscountCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -193,7 +195,8 @@ type FittedBondDiscountCurveModel1
 (*
     Functions
 *)
-    let _FittedBondDiscountCurve                   = cell (fun () -> new FittedBondDiscountCurve (referenceDate.Value, bondHelpers.Value, dayCounter.Value, fittingMethod.Value, accuracy.Value, maxEvaluations.Value, guess.Value, simplexLambda.Value, maxStationaryStateIterations.Value))
+    let mutable
+        _FittedBondDiscountCurve                   = cell (fun () -> new FittedBondDiscountCurve (referenceDate.Value, bondHelpers.Value, dayCounter.Value, fittingMethod.Value, accuracy.Value, maxEvaluations.Value, guess.Value, simplexLambda.Value, maxStationaryStateIterations.Value))
     let _maxDate                                   = triv (fun () -> _FittedBondDiscountCurve.Value.maxDate())
     let _numberOfBonds                             = triv (fun () -> _FittedBondDiscountCurve.Value.numberOfBonds())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
@@ -234,13 +237,14 @@ type FittedBondDiscountCurveModel1
     casting 
 *)
     internal new () = new FittedBondDiscountCurveModel1(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FittedBondDiscountCurve.Value <- v
+    member internal this.Inject v = _FittedBondDiscountCurve <- v
     static member Cast (p : ICell<FittedBondDiscountCurve>) = 
         if p :? FittedBondDiscountCurveModel1 then 
             p :?> FittedBondDiscountCurveModel1
         else
             let o = new FittedBondDiscountCurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

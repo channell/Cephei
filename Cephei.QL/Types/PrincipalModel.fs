@@ -41,7 +41,8 @@ type PrincipalModel
 (*
     Functions
 *)
-    let _Principal                                 = cell (fun () -> new Principal ())
+    let mutable
+        _Principal                                 = cell (fun () -> new Principal ())
     let _accrualEndDate                            = triv (fun () -> _Principal.Value.accrualEndDate())
     let _accrualStartDate                          = triv (fun () -> _Principal.Value.accrualStartDate())
     let _amount                                    = triv (fun () -> _Principal.Value.amount())
@@ -76,13 +77,14 @@ type PrincipalModel
     casting 
 *)
     
-    member internal this.Inject v = _Principal.Value <- v
+    member internal this.Inject v = _Principal <- v
     static member Cast (p : ICell<Principal>) = 
         if p :? PrincipalModel then 
             p :?> PrincipalModel
         else
             let o = new PrincipalModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -145,7 +147,8 @@ type PrincipalModel1
 (*
     Functions
 *)
-    let _Principal                                 = cell (fun () -> new Principal (amount.Value, nominal.Value, paymentDate.Value, accrualStartDate.Value, accrualEndDate.Value, dayCounter.Value, refPeriodStart.Value, refPeriodEnd.Value))
+    let mutable
+        _Principal                                 = cell (fun () -> new Principal (amount.Value, nominal.Value, paymentDate.Value, accrualStartDate.Value, accrualEndDate.Value, dayCounter.Value, refPeriodStart.Value, refPeriodEnd.Value))
     let _accrualEndDate                            = triv (fun () -> _Principal.Value.accrualEndDate())
     let _accrualStartDate                          = triv (fun () -> _Principal.Value.accrualStartDate())
     let _amount                                    = triv (fun () -> _Principal.Value.amount())
@@ -180,13 +183,14 @@ type PrincipalModel1
     casting 
 *)
     internal new () = new PrincipalModel1(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _Principal.Value <- v
+    member internal this.Inject v = _Principal <- v
     static member Cast (p : ICell<Principal>) = 
         if p :? PrincipalModel1 then 
             p :?> PrincipalModel1
         else
             let o = new PrincipalModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

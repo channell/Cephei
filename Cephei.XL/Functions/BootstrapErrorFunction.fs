@@ -39,13 +39,13 @@ module BootstrapErrorFunction =
     *)
     [<ExcelFunction(Name="_BootstrapError", Description="Create a BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BootstrapError")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="curve",Description = "Reference to curve")>] 
+        ([<ExcelArgument(Name="curve",Description = "'T")>] 
          curve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "'U")>] 
          helper : obj)
-        ([<ExcelArgument(Name="segment",Description = "Reference to segment")>] 
+        ([<ExcelArgument(Name="segment",Description = "int")>] 
          segment : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module BootstrapErrorFunction =
     *)
     [<ExcelFunction(Name="_BootstrapError_value", Description="Create a BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapError",Description = "Reference to BootstrapError")>] 
+        ([<ExcelArgument(Name="BootstrapError",Description = "BootstrapError")>] 
          bootstraperror : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "double")>] 
          guess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,11 +130,11 @@ module BootstrapErrorFunction =
     *)
     [<ExcelFunction(Name="_BootstrapError_derivative", Description="Create a BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapError",Description = "Reference to BootstrapError")>] 
+        ([<ExcelArgument(Name="BootstrapError",Description = "BootstrapError")>] 
          bootstraperror : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -169,9 +169,9 @@ module BootstrapErrorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BootstrapError_Range", Description="Create a range of BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BootstrapError")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -62,7 +62,8 @@ type InterpolatedYoYInflationCurveModel<'Interpolator when 'Interpolator : not s
 (*
     Functions
 *)
-    let _InterpolatedYoYInflationCurve             = cell (fun () -> new InterpolatedYoYInflationCurve<'Interpolator> (referenceDate.Value, calendar.Value, dayCounter.Value, lag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value, dates.Value, rates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedYoYInflationCurve             = cell (fun () -> new InterpolatedYoYInflationCurve<'Interpolator> (referenceDate.Value, calendar.Value, dayCounter.Value, lag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value, dates.Value, rates.Value, interpolator.Value))
     let _baseDate                                  = triv (fun () -> _InterpolatedYoYInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _InterpolatedYoYInflationCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedYoYInflationCurve.Value.data())
@@ -210,7 +211,8 @@ type InterpolatedYoYInflationCurveModel1<'Interpolator when 'Interpolator : not 
 (*
     Functions
 *)
-    let _InterpolatedYoYInflationCurve             = cell (fun () -> new InterpolatedYoYInflationCurve<'Interpolator> (referenceDate.Value, calendar.Value, dayCounter.Value, lag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value, dates.Value, rates.Value))
+    let mutable
+        _InterpolatedYoYInflationCurve             = cell (fun () -> new InterpolatedYoYInflationCurve<'Interpolator> (referenceDate.Value, calendar.Value, dayCounter.Value, lag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value, dates.Value, rates.Value))
     let _baseDate                                  = triv (fun () -> _InterpolatedYoYInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _InterpolatedYoYInflationCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedYoYInflationCurve.Value.data())

@@ -54,7 +54,8 @@ type CashModel
 (*
     Functions
 *)
-    let _Cash                                      = cell (fun () -> withEngine pricingEngine (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
+    let mutable
+        _Cash                                      = cell (fun () -> withEngine pricingEngine (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Cash).CASH())
@@ -71,13 +72,14 @@ type CashModel
     casting 
 *)
     internal new () = new CashModel(null,null,null,null,null,null)
-    member internal this.Inject v = _Cash.Value <- v
+    member internal this.Inject v = _Cash <- v
     static member Cast (p : ICell<Cash>) = 
         if p :? CashModel then 
             p :?> CashModel
         else
             let o = new CashModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

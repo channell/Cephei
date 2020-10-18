@@ -44,7 +44,8 @@ type YYEUHICPrModel
 (*
     Functions
 *)
-    let _YYEUHICPr                                 = cell (fun () -> new YYEUHICPr (interpolated.Value))
+    let mutable
+        _YYEUHICPr                                 = cell (fun () -> new YYEUHICPr (interpolated.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYEUHICPr.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -88,13 +89,14 @@ type YYEUHICPrModel
     casting 
 *)
     internal new () = new YYEUHICPrModel(null)
-    member internal this.Inject v = _YYEUHICPr.Value <- v
+    member internal this.Inject v = _YYEUHICPr <- v
     static member Cast (p : ICell<YYEUHICPr>) = 
         if p :? YYEUHICPrModel then 
             p :?> YYEUHICPrModel
         else
             let o = new YYEUHICPrModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -152,7 +154,8 @@ type YYEUHICPrModel1
 (*
     Functions
 *)
-    let _YYEUHICPr                                 = cell (fun () -> new YYEUHICPr (interpolated.Value, ts.Value))
+    let mutable
+        _YYEUHICPr                                 = cell (fun () -> new YYEUHICPr (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYEUHICPr.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -196,13 +199,14 @@ type YYEUHICPrModel1
     casting 
 *)
     internal new () = new YYEUHICPrModel1(null,null)
-    member internal this.Inject v = _YYEUHICPr.Value <- v
+    member internal this.Inject v = _YYEUHICPr <- v
     static member Cast (p : ICell<YYEUHICPr>) = 
         if p :? YYEUHICPrModel1 then 
             p :?> YYEUHICPrModel1
         else
             let o = new YYEUHICPrModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

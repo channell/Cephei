@@ -41,7 +41,8 @@ type ZeroYieldModel
 (*
     Functions
 *)
-    let _ZeroYield                                 = cell (fun () -> new ZeroYield ())
+    let mutable
+        _ZeroYield                                 = cell (fun () -> new ZeroYield ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _ZeroYield.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type ZeroYieldModel
     casting 
 *)
     
-    member internal this.Inject v = _ZeroYield.Value <- v
+    member internal this.Inject v = _ZeroYield <- v
     static member Cast (p : ICell<ZeroYield>) = 
         if p :? ZeroYieldModel then 
             p :?> ZeroYieldModel
         else
             let o = new ZeroYieldModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

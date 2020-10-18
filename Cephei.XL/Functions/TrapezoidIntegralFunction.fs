@@ -39,11 +39,11 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrapezoidIntegral")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxIterations",Description = "Reference to maxIterations")>] 
+        ([<ExcelArgument(Name="maxIterations",Description = "int")>] 
          maxIterations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_absoluteAccuracy", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_absoluteError", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_integrationSuccess", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_maxEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,9 +226,9 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_numberOfEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,11 +262,11 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_setAbsoluteAccuracy", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,11 +304,11 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_setMaxEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,15 +346,15 @@ module TrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_TrapezoidIntegral_value", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "Reference to TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="TrapezoidIntegral",Description = "TrapezoidIntegral")>] 
          trapezoidintegral : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -397,9 +397,9 @@ module TrapezoidIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TrapezoidIntegral_Range", Description="Create a range of TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TrapezoidIntegral")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -54,7 +54,8 @@ type InterpolatedForwardCurveModel<'Interpolator when 'Interpolator : not struct
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)
@@ -120,7 +121,8 @@ type InterpolatedForwardCurveModel1<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, calendar.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, calendar.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)
@@ -189,7 +191,8 @@ type InterpolatedForwardCurveModel2<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)
@@ -258,7 +261,8 @@ type InterpolatedForwardCurveModel3<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (settlementDays.Value, calendar.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (settlementDays.Value, calendar.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)
@@ -324,7 +328,8 @@ type InterpolatedForwardCurveModel4<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (referenceDate.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (referenceDate.Value, dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)
@@ -387,7 +392,8 @@ type InterpolatedForwardCurveModel5<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dayCounter.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)
@@ -449,7 +455,8 @@ type InterpolatedForwardCurveModel6<'Interpolator when 'Interpolator : not struc
 (*
     Functions
 *)
-    let _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, interpolator.Value))
+    let mutable
+        _InterpolatedForwardCurve                  = cell (fun () -> new InterpolatedForwardCurve<'Interpolator> (dates.Value, forwards.Value, dayCounter.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedForwardCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedForwardCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedForwardCurve.Value.data_)

@@ -39,9 +39,9 @@ module GenericPseudoRandomFunction =
     *)
     [<ExcelFunction(Name="_GenericPseudoRandom_allowsErrorEstimate", Description="Create a GenericPseudoRandom",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericPseudoRandom_allowsErrorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericPseudoRandom",Description = "Reference to GenericPseudoRandom")>] 
+        ([<ExcelArgument(Name="GenericPseudoRandom",Description = "GenericPseudoRandom")>] 
          genericpseudorandom : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module GenericPseudoRandomFunction =
     *)
     [<ExcelFunction(Name="_GenericPseudoRandom_make_sequence_generator", Description="Create a GenericPseudoRandom",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericPseudoRandom_make_sequence_generator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericPseudoRandom",Description = "Reference to GenericPseudoRandom")>] 
+        ([<ExcelArgument(Name="GenericPseudoRandom",Description = "GenericPseudoRandom")>] 
          genericpseudorandom : obj)
-        ([<ExcelArgument(Name="dimension",Description = "Reference to dimension")>] 
+        ([<ExcelArgument(Name="dimension",Description = "int")>] 
          dimension : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -120,9 +120,9 @@ module GenericPseudoRandomFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GenericPseudoRandom_Range", Description="Create a range of GenericPseudoRandom",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericPseudoRandom_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GenericPseudoRandom")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

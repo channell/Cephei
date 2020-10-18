@@ -44,7 +44,8 @@ type Euribor4MModel
 (*
     Functions
 *)
-    let _Euribor4M                                 = cell (fun () -> new Euribor4M (h.Value))
+    let mutable
+        _Euribor4M                                 = cell (fun () -> new Euribor4M (h.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor4M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor4M.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type Euribor4MModel
     casting 
 *)
     internal new () = new Euribor4MModel(null)
-    member internal this.Inject v = _Euribor4M.Value <- v
+    member internal this.Inject v = _Euribor4M <- v
     static member Cast (p : ICell<Euribor4M>) = 
         if p :? Euribor4MModel then 
             p :?> Euribor4MModel
         else
             let o = new Euribor4MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type Euribor4MModel1
 (*
     Functions
 *)
-    let _Euribor4M                                 = cell (fun () -> new Euribor4M ())
+    let mutable
+        _Euribor4M                                 = cell (fun () -> new Euribor4M ())
     let _businessDayConvention                     = triv (fun () -> _Euribor4M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor4M.Value.clone(forwarding.Value))
@@ -224,13 +227,14 @@ type Euribor4MModel1
     casting 
 *)
     
-    member internal this.Inject v = _Euribor4M.Value <- v
+    member internal this.Inject v = _Euribor4M <- v
     static member Cast (p : ICell<Euribor4M>) = 
         if p :? Euribor4MModel1 then 
             p :?> Euribor4MModel1
         else
             let o = new Euribor4MModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

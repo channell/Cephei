@@ -39,13 +39,13 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_apply", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_diffusion", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_dividendYield", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,13 +171,13 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_drift", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,17 +219,17 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_evolve", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_factors", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,25 +315,25 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="riskFreeRate",Description = "Reference to riskFreeRate")>] 
+        ([<ExcelArgument(Name="riskFreeRate",Description = "YieldTermStructure")>] 
          riskFreeRate : obj)
-        ([<ExcelArgument(Name="dividendYield",Description = "Reference to dividendYield")>] 
+        ([<ExcelArgument(Name="dividendYield",Description = "YieldTermStructure")>] 
          dividendYield : obj)
-        ([<ExcelArgument(Name="s0",Description = "Reference to s0")>] 
+        ([<ExcelArgument(Name="s0",Description = "Quote")>] 
          s0 : obj)
-        ([<ExcelArgument(Name="v0",Description = "Reference to v0")>] 
+        ([<ExcelArgument(Name="v0",Description = "double")>] 
          v0 : obj)
-        ([<ExcelArgument(Name="kappa",Description = "Reference to kappa")>] 
+        ([<ExcelArgument(Name="kappa",Description = "double")>] 
          kappa : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "double")>] 
          theta : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "HestonProcess")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_initialValues", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_kappa", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_kappa
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_rho", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,9 +508,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_riskFreeRate", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_s0", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_s0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,9 +580,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_sigma", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_sigma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,9 +616,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_size", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,9 +652,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_theta", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -688,11 +688,11 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_time", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -730,9 +730,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_v0", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_v0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,15 +766,15 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_covariance", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,15 +820,15 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_expectation", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,11 +874,11 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_registerWith", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -916,15 +916,15 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_stdDeviation", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -970,11 +970,11 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_unregisterWith", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1012,9 +1012,9 @@ module HestonProcessFunction =
     *)
     [<ExcelFunction(Name="_HestonProcess_update", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonProcess",Description = "Reference to HestonProcess")>] 
+        ([<ExcelArgument(Name="HestonProcess",Description = "HestonProcess")>] 
          hestonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1045,9 +1045,9 @@ module HestonProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonProcess_Range", Description="Create a range of HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HestonProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

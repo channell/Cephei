@@ -50,7 +50,8 @@ type BlackConstantVolModel
 (*
     Functions
 *)
-    let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (settlementDays.Value, cal.Value, volatility.Value, dc.Value))
+    let mutable
+        _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (settlementDays.Value, cal.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
@@ -59,13 +60,14 @@ type BlackConstantVolModel
     casting 
 *)
     internal new () = new BlackConstantVolModel(null,null,null,null)
-    member internal this.Inject v = _BlackConstantVol.Value <- v
+    member internal this.Inject v = _BlackConstantVol <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel then 
             p :?> BlackConstantVolModel
         else
             let o = new BlackConstantVolModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -102,7 +104,8 @@ type BlackConstantVolModel1
 (*
     Functions
 *)
-    let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (settlementDays.Value, cal.Value, volatility.Value, dc.Value))
+    let mutable
+        _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (settlementDays.Value, cal.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
@@ -111,13 +114,14 @@ type BlackConstantVolModel1
     casting 
 *)
     internal new () = new BlackConstantVolModel1(null,null,null,null)
-    member internal this.Inject v = _BlackConstantVol.Value <- v
+    member internal this.Inject v = _BlackConstantVol <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel1 then 
             p :?> BlackConstantVolModel1
         else
             let o = new BlackConstantVolModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -154,7 +158,8 @@ type BlackConstantVolModel2
 (*
     Functions
 *)
-    let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (referenceDate.Value, cal.Value, volatility.Value, dc.Value))
+    let mutable
+        _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (referenceDate.Value, cal.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
@@ -163,13 +168,14 @@ type BlackConstantVolModel2
     casting 
 *)
     internal new () = new BlackConstantVolModel2(null,null,null,null)
-    member internal this.Inject v = _BlackConstantVol.Value <- v
+    member internal this.Inject v = _BlackConstantVol <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel2 then 
             p :?> BlackConstantVolModel2
         else
             let o = new BlackConstantVolModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -206,7 +212,8 @@ type BlackConstantVolModel3
 (*
     Functions
 *)
-    let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (referenceDate.Value, cal.Value, volatility.Value, dc.Value))
+    let mutable
+        _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (referenceDate.Value, cal.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
@@ -215,13 +222,14 @@ type BlackConstantVolModel3
     casting 
 *)
     internal new () = new BlackConstantVolModel3(null,null,null,null)
-    member internal this.Inject v = _BlackConstantVol.Value <- v
+    member internal this.Inject v = _BlackConstantVol <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel3 then 
             p :?> BlackConstantVolModel3
         else
             let o = new BlackConstantVolModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

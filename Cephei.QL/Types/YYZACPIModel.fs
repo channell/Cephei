@@ -46,7 +46,8 @@ type YYZACPIModel
 (*
     Functions
 *)
-    let _YYZACPI                                   = cell (fun () -> new YYZACPI (interpolated.Value, ts.Value))
+    let mutable
+        _YYZACPI                                   = cell (fun () -> new YYZACPI (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYZACPI.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -90,13 +91,14 @@ type YYZACPIModel
     casting 
 *)
     internal new () = new YYZACPIModel(null,null)
-    member internal this.Inject v = _YYZACPI.Value <- v
+    member internal this.Inject v = _YYZACPI <- v
     static member Cast (p : ICell<YYZACPI>) = 
         if p :? YYZACPIModel then 
             p :?> YYZACPIModel
         else
             let o = new YYZACPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -153,7 +155,8 @@ type YYZACPIModel1
 (*
     Functions
 *)
-    let _YYZACPI                                   = cell (fun () -> new YYZACPI (interpolated.Value))
+    let mutable
+        _YYZACPI                                   = cell (fun () -> new YYZACPI (interpolated.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYZACPI.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -197,13 +200,14 @@ type YYZACPIModel1
     casting 
 *)
     internal new () = new YYZACPIModel1(null)
-    member internal this.Inject v = _YYZACPI.Value <- v
+    member internal this.Inject v = _YYZACPI <- v
     static member Cast (p : ICell<YYZACPI>) = 
         if p :? YYZACPIModel1 then 
             p :?> YYZACPIModel1
         else
             let o = new YYZACPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

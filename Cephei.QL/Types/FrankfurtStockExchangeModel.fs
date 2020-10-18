@@ -41,7 +41,8 @@ type FrankfurtStockExchangeModel
 (*
     Functions
 *)
-    let _FrankfurtStockExchange                    = cell (fun () -> new FrankfurtStockExchange ())
+    let mutable
+        _FrankfurtStockExchange                    = cell (fun () -> new FrankfurtStockExchange ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _FrankfurtStockExchange.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _FrankfurtStockExchange.Value.name())
@@ -50,13 +51,14 @@ type FrankfurtStockExchangeModel
     casting 
 *)
     
-    member internal this.Inject v = _FrankfurtStockExchange.Value <- v
+    member internal this.Inject v = _FrankfurtStockExchange <- v
     static member Cast (p : ICell<FrankfurtStockExchange>) = 
         if p :? FrankfurtStockExchangeModel then 
             p :?> FrankfurtStockExchangeModel
         else
             let o = new FrankfurtStockExchangeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

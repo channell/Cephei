@@ -44,7 +44,8 @@ type SpyModel
 (*
     Functions
 *)
-    let _Spy                                       = cell (fun () -> new Spy (f.Value))
+    let mutable
+        _Spy                                       = cell (fun () -> new Spy (f.Value))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _Spy.Value.value(x.Value))
     do this.Bind(_Spy)
@@ -52,13 +53,14 @@ type SpyModel
     casting 
 *)
     internal new () = SpyModel(null)
-    member internal this.Inject v = _Spy.Value <- v
+    member internal this.Inject v = _Spy <- v
     static member Cast (p : ICell<Spy>) = 
         if p :? SpyModel then 
             p :?> SpyModel
         else
             let o = new SpyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

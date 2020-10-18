@@ -41,7 +41,8 @@ type USRegionModel
 (*
     Functions
 *)
-    let _USRegion                                  = cell (fun () -> new USRegion ())
+    let mutable
+        _USRegion                                  = cell (fun () -> new USRegion ())
     let _code                                      = triv (fun () -> _USRegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _USRegion.Value.Equals(o.Value))
@@ -51,13 +52,14 @@ type USRegionModel
     casting 
 *)
     
-    member internal this.Inject v = _USRegion.Value <- v
+    member internal this.Inject v = _USRegion <- v
     static member Cast (p : ICell<USRegion>) = 
         if p :? USRegionModel then 
             p :?> USRegionModel
         else
             let o = new USRegionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type FDDividendEngineModel
 (*
     Functions
 *)
-    let _FDDividendEngine                          = cell (fun () -> new FDDividendEngine ())
+    let mutable
+        _FDDividendEngine                          = cell (fun () -> new FDDividendEngine ())
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDDividendEngine.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
@@ -62,13 +63,14 @@ type FDDividendEngineModel
     casting 
 *)
     
-    member internal this.Inject v = _FDDividendEngine.Value <- v
+    member internal this.Inject v = _FDDividendEngine <- v
     static member Cast (p : ICell<FDDividendEngine>) = 
         if p :? FDDividendEngineModel then 
             p :?> FDDividendEngineModel
         else
             let o = new FDDividendEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -110,7 +112,8 @@ type FDDividendEngineModel1
 (*
     Functions
 *)
-    let _FDDividendEngine                          = cell (fun () -> new FDDividendEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDDividendEngine                          = cell (fun () -> new FDDividendEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDDividendEngine.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
@@ -131,13 +134,14 @@ type FDDividendEngineModel1
     casting 
 *)
     internal new () = new FDDividendEngineModel1(null,null,null,null)
-    member internal this.Inject v = _FDDividendEngine.Value <- v
+    member internal this.Inject v = _FDDividendEngine <- v
     static member Cast (p : ICell<FDDividendEngine>) = 
         if p :? FDDividendEngineModel1 then 
             p :?> FDDividendEngineModel1
         else
             let o = new FDDividendEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

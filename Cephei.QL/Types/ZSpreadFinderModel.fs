@@ -60,7 +60,8 @@ type ZSpreadFinderModel
 (*
     Functions
 *)
-    let _ZSpreadFinder                             = cell (fun () -> new ZSpreadFinder (leg.Value, discountCurve.Value, npv.Value, dc.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
+    let mutable
+        _ZSpreadFinder                             = cell (fun () -> new ZSpreadFinder (leg.Value, discountCurve.Value, npv.Value, dc.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
     let _value                                     (zSpread : ICell<double>)   
                                                    = cell (fun () -> _ZSpreadFinder.Value.value(zSpread.Value))
     let _derivative                                (x : ICell<double>)   
@@ -70,13 +71,14 @@ type ZSpreadFinderModel
     casting 
 *)
     internal new () = ZSpreadFinderModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ZSpreadFinder.Value <- v
+    member internal this.Inject v = _ZSpreadFinder <- v
     static member Cast (p : ICell<ZSpreadFinder>) = 
         if p :? ZSpreadFinderModel then 
             p :?> ZSpreadFinderModel
         else
             let o = new ZSpreadFinderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -67,7 +67,8 @@ type IndonesiaModel
 (*
     Functions
 *)
-    let _Indonesia                                 = cell (fun () -> new Indonesia (m.Value))
+    let mutable
+        _Indonesia                                 = cell (fun () -> new Indonesia (m.Value))
     let _addedHolidays                             = triv (fun () -> _Indonesia.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Indonesia.Value.addHoliday(d.Value)
@@ -104,13 +105,14 @@ type IndonesiaModel
     casting 
 *)
     internal new () = new IndonesiaModel(null)
-    member internal this.Inject v = _Indonesia.Value <- v
+    member internal this.Inject v = _Indonesia <- v
     static member Cast (p : ICell<Indonesia>) = 
         if p :? IndonesiaModel then 
             p :?> IndonesiaModel
         else
             let o = new IndonesiaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -184,7 +186,8 @@ type IndonesiaModel1
 (*
     Functions
 *)
-    let _Indonesia                                 = cell (fun () -> new Indonesia ())
+    let mutable
+        _Indonesia                                 = cell (fun () -> new Indonesia ())
     let _addedHolidays                             = triv (fun () -> _Indonesia.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Indonesia.Value.addHoliday(d.Value)
@@ -221,13 +224,14 @@ type IndonesiaModel1
     casting 
 *)
     
-    member internal this.Inject v = _Indonesia.Value <- v
+    member internal this.Inject v = _Indonesia <- v
     static member Cast (p : ICell<Indonesia>) = 
         if p :? IndonesiaModel1 then 
             p :?> IndonesiaModel1
         else
             let o = new IndonesiaModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

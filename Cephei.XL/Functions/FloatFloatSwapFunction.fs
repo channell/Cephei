@@ -39,9 +39,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_cappedRate1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_cappedRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_cappedRate2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_cappedRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_dayCount1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_dayCount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_dayCount2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_dayCount2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,53 +183,53 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatFloatSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal1",Description = "Reference to nominal1")>] 
+        ([<ExcelArgument(Name="nominal1",Description = "double")>] 
          nominal1 : obj)
-        ([<ExcelArgument(Name="nominal2",Description = "Reference to nominal2")>] 
+        ([<ExcelArgument(Name="nominal2",Description = "double")>] 
          nominal2 : obj)
-        ([<ExcelArgument(Name="schedule1",Description = "Reference to schedule1")>] 
+        ([<ExcelArgument(Name="schedule1",Description = "Schedule")>] 
          schedule1 : obj)
-        ([<ExcelArgument(Name="index1",Description = "Reference to index1")>] 
+        ([<ExcelArgument(Name="index1",Description = "InterestRateIndex")>] 
          index1 : obj)
-        ([<ExcelArgument(Name="dayCount1",Description = "Reference to dayCount1")>] 
+        ([<ExcelArgument(Name="dayCount1",Description = "DayCounter")>] 
          dayCount1 : obj)
-        ([<ExcelArgument(Name="schedule2",Description = "Reference to schedule2")>] 
+        ([<ExcelArgument(Name="schedule2",Description = "Schedule")>] 
          schedule2 : obj)
-        ([<ExcelArgument(Name="index2",Description = "Reference to index2")>] 
+        ([<ExcelArgument(Name="index2",Description = "InterestRateIndex")>] 
          index2 : obj)
-        ([<ExcelArgument(Name="dayCount2",Description = "Reference to dayCount2")>] 
+        ([<ExcelArgument(Name="dayCount2",Description = "DayCounter")>] 
          dayCount2 : obj)
-        ([<ExcelArgument(Name="intermediateCapitalExchange",Description = "Reference to intermediateCapitalExchange")>] 
+        ([<ExcelArgument(Name="intermediateCapitalExchange",Description = "FloatFloatSwap")>] 
          intermediateCapitalExchange : obj)
-        ([<ExcelArgument(Name="finalCapitalExchange",Description = "Reference to finalCapitalExchange")>] 
+        ([<ExcelArgument(Name="finalCapitalExchange",Description = "FloatFloatSwap")>] 
          finalCapitalExchange : obj)
-        ([<ExcelArgument(Name="gearing1",Description = "Reference to gearing1")>] 
+        ([<ExcelArgument(Name="gearing1",Description = "FloatFloatSwap")>] 
          gearing1 : obj)
-        ([<ExcelArgument(Name="spread1",Description = "Reference to spread1")>] 
+        ([<ExcelArgument(Name="spread1",Description = "FloatFloatSwap")>] 
          spread1 : obj)
-        ([<ExcelArgument(Name="cappedRate1",Description = "Reference to cappedRate1")>] 
+        ([<ExcelArgument(Name="cappedRate1",Description = "FloatFloatSwap")>] 
          cappedRate1 : obj)
-        ([<ExcelArgument(Name="flooredRate1",Description = "Reference to flooredRate1")>] 
+        ([<ExcelArgument(Name="flooredRate1",Description = "FloatFloatSwap")>] 
          flooredRate1 : obj)
-        ([<ExcelArgument(Name="gearing2",Description = "Reference to gearing2")>] 
+        ([<ExcelArgument(Name="gearing2",Description = "FloatFloatSwap")>] 
          gearing2 : obj)
-        ([<ExcelArgument(Name="spread2",Description = "Reference to spread2")>] 
+        ([<ExcelArgument(Name="spread2",Description = "FloatFloatSwap")>] 
          spread2 : obj)
-        ([<ExcelArgument(Name="cappedRate2",Description = "Reference to cappedRate2")>] 
+        ([<ExcelArgument(Name="cappedRate2",Description = "FloatFloatSwap")>] 
          cappedRate2 : obj)
-        ([<ExcelArgument(Name="flooredRate2",Description = "Reference to flooredRate2")>] 
+        ([<ExcelArgument(Name="flooredRate2",Description = "FloatFloatSwap")>] 
          flooredRate2 : obj)
-        ([<ExcelArgument(Name="paymentConvention1",Description = "Reference to paymentConvention1")>] 
+        ([<ExcelArgument(Name="paymentConvention1",Description = "BusinessDayConvention")>] 
          paymentConvention1 : obj)
-        ([<ExcelArgument(Name="paymentConvention2",Description = "Reference to paymentConvention2")>] 
+        ([<ExcelArgument(Name="paymentConvention2",Description = "BusinessDayConvention")>] 
          paymentConvention2 : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,53 +352,53 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatFloatSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal1",Description = "Reference to nominal1")>] 
+        ([<ExcelArgument(Name="nominal1",Description = "double")>] 
          nominal1 : obj)
-        ([<ExcelArgument(Name="nominal2",Description = "Reference to nominal2")>] 
+        ([<ExcelArgument(Name="nominal2",Description = "double")>] 
          nominal2 : obj)
-        ([<ExcelArgument(Name="schedule1",Description = "Reference to schedule1")>] 
+        ([<ExcelArgument(Name="schedule1",Description = "Schedule")>] 
          schedule1 : obj)
-        ([<ExcelArgument(Name="index1",Description = "Reference to index1")>] 
+        ([<ExcelArgument(Name="index1",Description = "InterestRateIndex")>] 
          index1 : obj)
-        ([<ExcelArgument(Name="dayCount1",Description = "Reference to dayCount1")>] 
+        ([<ExcelArgument(Name="dayCount1",Description = "DayCounter")>] 
          dayCount1 : obj)
-        ([<ExcelArgument(Name="schedule2",Description = "Reference to schedule2")>] 
+        ([<ExcelArgument(Name="schedule2",Description = "Schedule")>] 
          schedule2 : obj)
-        ([<ExcelArgument(Name="index2",Description = "Reference to index2")>] 
+        ([<ExcelArgument(Name="index2",Description = "InterestRateIndex")>] 
          index2 : obj)
-        ([<ExcelArgument(Name="dayCount2",Description = "Reference to dayCount2")>] 
+        ([<ExcelArgument(Name="dayCount2",Description = "DayCounter")>] 
          dayCount2 : obj)
-        ([<ExcelArgument(Name="intermediateCapitalExchange",Description = "Reference to intermediateCapitalExchange")>] 
+        ([<ExcelArgument(Name="intermediateCapitalExchange",Description = "FloatFloatSwap")>] 
          intermediateCapitalExchange : obj)
-        ([<ExcelArgument(Name="finalCapitalExchange",Description = "Reference to finalCapitalExchange")>] 
+        ([<ExcelArgument(Name="finalCapitalExchange",Description = "FloatFloatSwap")>] 
          finalCapitalExchange : obj)
-        ([<ExcelArgument(Name="gearing1",Description = "Reference to gearing1")>] 
+        ([<ExcelArgument(Name="gearing1",Description = "double")>] 
          gearing1 : obj)
-        ([<ExcelArgument(Name="spread1",Description = "Reference to spread1")>] 
+        ([<ExcelArgument(Name="spread1",Description = "double")>] 
          spread1 : obj)
-        ([<ExcelArgument(Name="cappedRate1",Description = "Reference to cappedRate1")>] 
+        ([<ExcelArgument(Name="cappedRate1",Description = "double")>] 
          cappedRate1 : obj)
-        ([<ExcelArgument(Name="flooredRate1",Description = "Reference to flooredRate1")>] 
+        ([<ExcelArgument(Name="flooredRate1",Description = "double")>] 
          flooredRate1 : obj)
-        ([<ExcelArgument(Name="gearing2",Description = "Reference to gearing2")>] 
+        ([<ExcelArgument(Name="gearing2",Description = "double")>] 
          gearing2 : obj)
-        ([<ExcelArgument(Name="spread2",Description = "Reference to spread2")>] 
+        ([<ExcelArgument(Name="spread2",Description = "double")>] 
          spread2 : obj)
-        ([<ExcelArgument(Name="cappedRate2",Description = "Reference to cappedRate2")>] 
+        ([<ExcelArgument(Name="cappedRate2",Description = "double")>] 
          cappedRate2 : obj)
-        ([<ExcelArgument(Name="flooredRate2",Description = "Reference to flooredRate2")>] 
+        ([<ExcelArgument(Name="flooredRate2",Description = "double")>] 
          flooredRate2 : obj)
-        ([<ExcelArgument(Name="paymentConvention1",Description = "Reference to paymentConvention1")>] 
+        ([<ExcelArgument(Name="paymentConvention1",Description = "BusinessDayConvention")>] 
          paymentConvention1 : obj)
-        ([<ExcelArgument(Name="paymentConvention2",Description = "Reference to paymentConvention2")>] 
+        ([<ExcelArgument(Name="paymentConvention2",Description = "BusinessDayConvention")>] 
          paymentConvention2 : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_flooredRate1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_flooredRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,9 +557,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_flooredRate2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_flooredRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -593,9 +593,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_gearing1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_gearing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -629,9 +629,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_gearing2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_gearing2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,9 +665,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_index1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_index1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -701,9 +701,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_index2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_index2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -737,9 +737,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_leg1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_leg1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -773,9 +773,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_leg2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_leg2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -809,9 +809,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_nominal1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_nominal1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -845,9 +845,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_nominal2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_nominal2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -881,9 +881,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_paymentConvention1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_paymentConvention1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -917,9 +917,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_paymentConvention2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_paymentConvention2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -953,9 +953,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_schedule1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_schedule1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -989,9 +989,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_schedule2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_schedule2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1025,9 +1025,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_spread1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_spread1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1061,9 +1061,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_spread2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_spread2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1097,9 +1097,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_type", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1133,11 +1133,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_endDiscounts", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1176,9 +1176,9 @@ module FloatFloatSwapFunction =
     (*!!
     [<ExcelFunction(Name="_FloatFloatSwap_engine", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1213,9 +1213,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_isExpired", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1249,11 +1249,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_leg", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1291,11 +1291,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_legBPS", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1333,11 +1333,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_legNPV", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1375,9 +1375,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_maturityDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1411,9 +1411,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_npvDateDiscount", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1447,11 +1447,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_payer", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1489,9 +1489,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_startDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1525,11 +1525,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_startDiscounts", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1567,9 +1567,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_CASH", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1603,9 +1603,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_errorEstimate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1639,9 +1639,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_NPV", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1675,11 +1675,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_result", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1717,11 +1717,11 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_setPricingEngine", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1759,9 +1759,9 @@ module FloatFloatSwapFunction =
     *)
     [<ExcelFunction(Name="_FloatFloatSwap_valuationDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatFloatSwap",Description = "Reference to FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="FloatFloatSwap",Description = "FloatFloatSwap")>] 
          floatfloatswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1792,9 +1792,9 @@ module FloatFloatSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FloatFloatSwap_Range", Description="Create a range of FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FloatFloatSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

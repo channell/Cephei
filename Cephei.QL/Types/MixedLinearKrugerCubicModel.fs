@@ -52,7 +52,8 @@ type MixedLinearKrugerCubicModel
 (*
     Functions
 *)
-    let _MixedLinearKrugerCubic                    = cell (fun () -> new MixedLinearKrugerCubic (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
+    let mutable
+        _MixedLinearKrugerCubic                    = cell (fun () -> new MixedLinearKrugerCubic (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _MixedLinearKrugerCubic.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _MixedLinearKrugerCubic.Value.empty())
@@ -81,13 +82,14 @@ type MixedLinearKrugerCubicModel
     casting 
 *)
     internal new () = new MixedLinearKrugerCubicModel(null,null,null,null,null)
-    member internal this.Inject v = _MixedLinearKrugerCubic.Value <- v
+    member internal this.Inject v = _MixedLinearKrugerCubic <- v
     static member Cast (p : ICell<MixedLinearKrugerCubic>) = 
         if p :? MixedLinearKrugerCubicModel then 
             p :?> MixedLinearKrugerCubicModel
         else
             let o = new MixedLinearKrugerCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

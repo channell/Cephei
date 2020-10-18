@@ -46,7 +46,8 @@ type PlainVanillaPayoffModel
 (*
     Functions
 *)
-    let _PlainVanillaPayoff                        = cell (fun () -> new PlainVanillaPayoff (Type.Value, strike.Value))
+    let mutable
+        _PlainVanillaPayoff                        = cell (fun () -> new PlainVanillaPayoff (Type.Value, strike.Value))
     let _name                                      = triv (fun () -> _PlainVanillaPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
                                                    = triv (fun () -> _PlainVanillaPayoff.Value.value(price.Value))
@@ -61,13 +62,14 @@ type PlainVanillaPayoffModel
     casting 
 *)
     internal new () = new PlainVanillaPayoffModel(null,null)
-    member internal this.Inject v = _PlainVanillaPayoff.Value <- v
+    member internal this.Inject v = _PlainVanillaPayoff <- v
     static member Cast (p : ICell<PlainVanillaPayoff>) = 
         if p :? PlainVanillaPayoffModel then 
             p :?> PlainVanillaPayoffModel
         else
             let o = new PlainVanillaPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

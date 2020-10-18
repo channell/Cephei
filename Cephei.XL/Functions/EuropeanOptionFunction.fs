@@ -39,15 +39,15 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EuropeanOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,21 +94,21 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_impliedVolatility", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_delta", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,9 +202,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_deltaForward", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_dividendRho", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_elasticity", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_gamma", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_isExpired", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_itmCashProbability", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_rho", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_strikeSensitivity", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_theta", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_thetaPerDay", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_vega", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_exercise", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,9 +634,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_payoff", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -670,9 +670,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_CASH", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,9 +706,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_errorEstimate", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,9 +742,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_NPV", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,11 +778,11 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_result", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,11 +820,11 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_setPricingEngine", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,9 +862,9 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_valuationDate", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanOption",Description = "Reference to EuropeanOption")>] 
+        ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -895,9 +895,9 @@ module EuropeanOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EuropeanOption_Range", Description="Create a range of EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EuropeanOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

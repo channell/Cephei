@@ -39,7 +39,7 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SKKCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_code", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_empty", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_Equals", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_format", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_fractionsPerUnit", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_fractionSymbol", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_name", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_numericCode", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_rounding", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_symbol", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_ToString", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module SKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SKKCurrency_triangulationCurrency", Description="Create a SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SKKCurrency",Description = "Reference to SKKCurrency")>] 
+        ([<ExcelArgument(Name="SKKCurrency",Description = "SKKCurrency")>] 
          skkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module SKKCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SKKCurrency_Range", Description="Create a range of SKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SKKCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SKKCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

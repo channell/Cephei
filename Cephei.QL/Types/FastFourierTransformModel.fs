@@ -45,7 +45,8 @@ type FastFourierTransformModel
 (*
     Functions
 *)
-    let _FastFourierTransform                      = cell (fun () -> new FastFourierTransform (order.Value))
+    let mutable
+        _FastFourierTransform                      = cell (fun () -> new FastFourierTransform (order.Value))
     let _inverse_transform                         (input : ICell<Generic.List<Complex>>) (inputBeg : ICell<int>) (inputEnd : ICell<int>) (output : ICell<Generic.List<Complex>>)   
                                                    = triv (fun () -> _FastFourierTransform.Value.inverse_transform(input.Value, inputBeg.Value, inputEnd.Value, output.Value)
                                                                      _FastFourierTransform.Value)
@@ -58,13 +59,14 @@ type FastFourierTransformModel
     casting 
 *)
     internal new () = new FastFourierTransformModel(null)
-    member internal this.Inject v = _FastFourierTransform.Value <- v
+    member internal this.Inject v = _FastFourierTransform <- v
     static member Cast (p : ICell<FastFourierTransform>) = 
         if p :? FastFourierTransformModel then 
             p :?> FastFourierTransformModel
         else
             let o = new FastFourierTransformModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

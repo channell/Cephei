@@ -48,7 +48,8 @@ type DouglasSchemeModel
 (*
     Functions
 *)
-    let _DouglasScheme                             = cell (fun () -> new DouglasScheme (theta.Value, map.Value, bcSet.Value))
+    let mutable
+        _DouglasScheme                             = cell (fun () -> new DouglasScheme (theta.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _DouglasScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -62,13 +63,14 @@ type DouglasSchemeModel
     casting 
 *)
     internal new () = new DouglasSchemeModel(null,null,null)
-    member internal this.Inject v = _DouglasScheme.Value <- v
+    member internal this.Inject v = _DouglasScheme <- v
     static member Cast (p : ICell<DouglasScheme>) = 
         if p :? DouglasSchemeModel then 
             p :?> DouglasSchemeModel
         else
             let o = new DouglasSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type DouglasSchemeModel1
 (*
     Functions
 *)
-    let _DouglasScheme                             = cell (fun () -> new DouglasScheme ())
+    let mutable
+        _DouglasScheme                             = cell (fun () -> new DouglasScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _DouglasScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -112,13 +115,14 @@ type DouglasSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _DouglasScheme.Value <- v
+    member internal this.Inject v = _DouglasScheme <- v
     static member Cast (p : ICell<DouglasScheme>) = 
         if p :? DouglasSchemeModel1 then 
             p :?> DouglasSchemeModel1
         else
             let o = new DouglasSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type GaussGegenbauerPolynomialModel
 (*
     Functions
 *)
-    let _GaussGegenbauerPolynomial                 = cell (fun () -> new GaussGegenbauerPolynomial (lambda.Value))
+    let mutable
+        _GaussGegenbauerPolynomial                 = cell (fun () -> new GaussGegenbauerPolynomial (lambda.Value))
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussGegenbauerPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -61,13 +62,14 @@ type GaussGegenbauerPolynomialModel
     casting 
 *)
     internal new () = new GaussGegenbauerPolynomialModel(null)
-    member internal this.Inject v = _GaussGegenbauerPolynomial.Value <- v
+    member internal this.Inject v = _GaussGegenbauerPolynomial <- v
     static member Cast (p : ICell<GaussGegenbauerPolynomial>) = 
         if p :? GaussGegenbauerPolynomialModel then 
             p :?> GaussGegenbauerPolynomialModel
         else
             let o = new GaussGegenbauerPolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type ConjugateGradientModel
 (*
     Functions
 *)
-    let _ConjugateGradient                         = cell (fun () -> new ConjugateGradient (lineSearch.Value))
+    let mutable
+        _ConjugateGradient                         = cell (fun () -> new ConjugateGradient (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _ConjugateGradient.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_ConjugateGradient)
@@ -52,13 +53,14 @@ type ConjugateGradientModel
     casting 
 *)
     internal new () = new ConjugateGradientModel(null)
-    member internal this.Inject v = _ConjugateGradient.Value <- v
+    member internal this.Inject v = _ConjugateGradient <- v
     static member Cast (p : ICell<ConjugateGradient>) = 
         if p :? ConjugateGradientModel then 
             p :?> ConjugateGradientModel
         else
             let o = new ConjugateGradientModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

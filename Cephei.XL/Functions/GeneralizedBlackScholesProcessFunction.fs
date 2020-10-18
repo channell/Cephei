@@ -39,13 +39,13 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_apply", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_blackVolatility", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_blackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,13 +123,13 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_diffusion", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,9 +171,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_dividendYield", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,13 +207,13 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_drift", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,17 +255,17 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_evolve", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "double")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,15 +315,15 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_expectation", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -369,17 +369,17 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess1", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="blackVolTS",Description = "Reference to blackVolTS")>] 
+        ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
-        ([<ExcelArgument(Name="disc",Description = "Reference to disc")>] 
+        ([<ExcelArgument(Name="disc",Description = "GeneralizedBlackScholesProcess")>] 
          disc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,19 +430,19 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="blackVolTS",Description = "Reference to blackVolTS")>] 
+        ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
-        ([<ExcelArgument(Name="localVolTS",Description = "Reference to localVolTS")>] 
+        ([<ExcelArgument(Name="localVolTS",Description = "LocalVolTermStructure")>] 
          localVolTS : obj)
-        ([<ExcelArgument(Name="disc",Description = "Reference to disc")>] 
+        ([<ExcelArgument(Name="disc",Description = "GeneralizedBlackScholesProcess")>] 
          disc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -497,9 +497,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_localVolatility", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_localVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -533,9 +533,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_riskFreeRate", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,9 +569,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_stateVariable", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_stateVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -605,15 +605,15 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_stdDeviation", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -659,11 +659,11 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_time", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -701,9 +701,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_update", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -737,15 +737,15 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_variance", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,9 +791,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_x0", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -827,9 +827,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_initialValues", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -863,9 +863,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_size", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -899,15 +899,15 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_covariance", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -953,9 +953,9 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_factors", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -989,11 +989,11 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_registerWith", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1031,11 +1031,11 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_unregisterWith", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "Reference to GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1070,9 +1070,9 @@ module GeneralizedBlackScholesProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_Range", Description="Create a range of GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type OdeIntegrationFctModel
 (*
     Functions
 *)
-    let _OdeIntegrationFct                         = cell (fun () -> new OdeIntegrationFct (points.Value, betas.Value, tol.Value))
+    let mutable
+        _OdeIntegrationFct                         = cell (fun () -> new OdeIntegrationFct (points.Value, betas.Value, tol.Value))
     let _solve                                     (a : ICell<double>) (y0 : ICell<double>) (x0 : ICell<double>) (x1 : ICell<double>)   
                                                    = cell (fun () -> _OdeIntegrationFct.Value.solve(a.Value, y0.Value, x0.Value, x1.Value))
     do this.Bind(_OdeIntegrationFct)
@@ -56,13 +57,14 @@ type OdeIntegrationFctModel
     casting 
 *)
     internal new () = OdeIntegrationFctModel(null,null,null)
-    member internal this.Inject v = _OdeIntegrationFct.Value <- v
+    member internal this.Inject v = _OdeIntegrationFct <- v
     static member Cast (p : ICell<OdeIntegrationFct>) = 
         if p :? OdeIntegrationFctModel then 
             p :?> OdeIntegrationFctModel
         else
             let o = new OdeIntegrationFctModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

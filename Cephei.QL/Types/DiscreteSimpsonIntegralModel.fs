@@ -41,7 +41,8 @@ type DiscreteSimpsonIntegralModel
 (*
     Functions
 *)
-    let _DiscreteSimpsonIntegral                   = cell (fun () -> new DiscreteSimpsonIntegral ())
+    let mutable
+        _DiscreteSimpsonIntegral                   = cell (fun () -> new DiscreteSimpsonIntegral ())
     let _value                                     (x : ICell<Vector>) (f : ICell<Vector>)   
                                                    = triv (fun () -> _DiscreteSimpsonIntegral.Value.value(x.Value, f.Value))
     do this.Bind(_DiscreteSimpsonIntegral)
@@ -49,13 +50,14 @@ type DiscreteSimpsonIntegralModel
     casting 
 *)
     
-    member internal this.Inject v = _DiscreteSimpsonIntegral.Value <- v
+    member internal this.Inject v = _DiscreteSimpsonIntegral <- v
     static member Cast (p : ICell<DiscreteSimpsonIntegral>) = 
         if p :? DiscreteSimpsonIntegralModel then 
             p :?> DiscreteSimpsonIntegralModel
         else
             let o = new DiscreteSimpsonIntegralModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

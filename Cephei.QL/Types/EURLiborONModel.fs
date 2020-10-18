@@ -44,7 +44,8 @@ type EURLiborONModel
 (*
     Functions
 *)
-    let _EURLiborON                                = cell (fun () -> new EURLiborON (h.Value))
+    let mutable
+        _EURLiborON                                = cell (fun () -> new EURLiborON (h.Value))
     let _businessDayConvention                     = triv (fun () -> _EURLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _EURLiborON.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type EURLiborONModel
     casting 
 *)
     internal new () = new EURLiborONModel(null)
-    member internal this.Inject v = _EURLiborON.Value <- v
+    member internal this.Inject v = _EURLiborON <- v
     static member Cast (p : ICell<EURLiborON>) = 
         if p :? EURLiborONModel then 
             p :?> EURLiborONModel
         else
             let o = new EURLiborONModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type EURLiborONModel1
 (*
     Functions
 *)
-    let _EURLiborON                                = cell (fun () -> new EURLiborON ())
+    let mutable
+        _EURLiborON                                = cell (fun () -> new EURLiborON ())
     let _businessDayConvention                     = triv (fun () -> _EURLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _EURLiborON.Value.clone(forwarding.Value))
@@ -224,13 +227,14 @@ type EURLiborONModel1
     casting 
 *)
     
-    member internal this.Inject v = _EURLiborON.Value <- v
+    member internal this.Inject v = _EURLiborON <- v
     static member Cast (p : ICell<EURLiborON>) = 
         if p :? EURLiborONModel1 then 
             p :?> EURLiborONModel1
         else
             let o = new EURLiborONModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

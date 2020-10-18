@@ -46,7 +46,8 @@ type CouponConversionModel
 (*
     Functions
 *)
-    let _CouponConversion                          = cell (fun () -> new CouponConversion (date.Value, rate.Value))
+    let mutable
+        _CouponConversion                          = cell (fun () -> new CouponConversion (date.Value, rate.Value))
     let _Date                                      = triv (fun () -> _CouponConversion.Value.Date)
     let _Rate                                      = triv (fun () -> _CouponConversion.Value.Rate)
     let _ToString                                  = triv (fun () -> _CouponConversion.Value.ToString())
@@ -55,13 +56,14 @@ type CouponConversionModel
     casting 
 *)
     internal new () = new CouponConversionModel(null,null)
-    member internal this.Inject v = _CouponConversion.Value <- v
+    member internal this.Inject v = _CouponConversion <- v
     static member Cast (p : ICell<CouponConversion>) = 
         if p :? CouponConversionModel then 
             p :?> CouponConversionModel
         else
             let o = new CouponConversionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

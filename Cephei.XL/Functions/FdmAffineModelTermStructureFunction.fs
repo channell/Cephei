@@ -39,19 +39,19 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmAffineModelTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="modelReferenceDate",Description = "Reference to modelReferenceDate")>] 
+        ([<ExcelArgument(Name="modelReferenceDate",Description = "Date")>] 
          modelReferenceDate : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "IAffineModel")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_maxDate", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_setVariable", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_setVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,13 +184,13 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_discount", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,13 +232,13 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_discount1", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_discount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,21 +280,21 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_forwardRate", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,21 +352,21 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_forwardRate1", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_forwardRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,19 +424,19 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_forwardRate2", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_forwardRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_jumpDates", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_jumpTimes", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_update", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,19 +598,19 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_zeroRate1", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_zeroRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,17 +664,17 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_zeroRate", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,9 +724,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_calendar", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_dayCounter", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,9 +796,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_maxTime", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,9 +832,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_referenceDate", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -868,9 +868,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_settlementDays", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,11 +904,11 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_timeFromReference", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_allowsExtrapolation", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,11 +982,11 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_disableExtrapolation", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1024,11 +1024,11 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_enableExtrapolation", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,9 +1066,9 @@ module FdmAffineModelTermStructureFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_extrapolate", Description="Create a FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "Reference to FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="FdmAffineModelTermStructure",Description = "FdmAffineModelTermStructure")>] 
          fdmaffinemodeltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1099,9 +1099,9 @@ module FdmAffineModelTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmAffineModelTermStructure_Range", Description="Create a range of FdmAffineModelTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmAffineModelTermStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

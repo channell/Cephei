@@ -39,9 +39,9 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackYoYInflationCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="capletVol",Description = "Reference to capletVol")>] 
+        ([<ExcelArgument(Name="capletVol",Description = "YoYOptionletVolatilitySurface")>] 
          capletVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_capletPrice", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveCap",Description = "Reference to effectiveCap")>] 
+        ([<ExcelArgument(Name="effectiveCap",Description = "double")>] 
          effectiveCap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_capletRate", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveCap",Description = "Reference to effectiveCap")>] 
+        ([<ExcelArgument(Name="effectiveCap",Description = "double")>] 
          effectiveCap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_capletVolatility", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_capletVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_floorletPrice", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveFloor",Description = "Reference to effectiveFloor")>] 
+        ([<ExcelArgument(Name="effectiveFloor",Description = "double")>] 
          effectiveFloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,11 +238,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_floorletRate", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveFloor",Description = "Reference to effectiveFloor")>] 
+        ([<ExcelArgument(Name="effectiveFloor",Description = "double")>] 
          effectiveFloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,11 +280,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_initialize", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="coupon",Description = "Reference to coupon")>] 
+        ([<ExcelArgument(Name="coupon",Description = "InflationCoupon")>] 
          coupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_setCapletVolatility", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_setCapletVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="capletVol",Description = "Reference to capletVol")>] 
+        ([<ExcelArgument(Name="capletVol",Description = "YoYOptionletVolatilitySurface")>] 
          capletVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_swapletPrice", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_swapletRate", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_registerWith", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_unregisterWith", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,9 +520,9 @@ module BlackYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_update", Description="Create a BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "Reference to BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackYoYInflationCouponPricer",Description = "BlackYoYInflationCouponPricer")>] 
          blackyoyinflationcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -553,9 +553,9 @@ module BlackYoYInflationCouponPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackYoYInflationCouponPricer_Range", Description="Create a range of BlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackYoYInflationCouponPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

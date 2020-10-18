@@ -44,7 +44,8 @@ type MersenneTwisterUniformRngModel
 (*
     Functions
 *)
-    let _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng (seed.Value))
+    let mutable
+        _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng (seed.Value))
     let _factory                                   (seed : ICell<uint64>)   
                                                    = triv (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
     let _next                                      = triv (fun () -> _MersenneTwisterUniformRng.Value.next())
@@ -55,13 +56,14 @@ type MersenneTwisterUniformRngModel
     casting 
 *)
     internal new () = new MersenneTwisterUniformRngModel(null)
-    member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
+    member internal this.Inject v = _MersenneTwisterUniformRng <- v
     static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
         if p :? MersenneTwisterUniformRngModel then 
             p :?> MersenneTwisterUniformRngModel
         else
             let o = new MersenneTwisterUniformRngModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -88,7 +90,8 @@ type MersenneTwisterUniformRngModel1
 (*
     Functions
 *)
-    let _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng ())
+    let mutable
+        _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng ())
     let _factory                                   (seed : ICell<uint64>)   
                                                    = triv (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
     let _next                                      = triv (fun () -> _MersenneTwisterUniformRng.Value.next())
@@ -99,13 +102,14 @@ type MersenneTwisterUniformRngModel1
     casting 
 *)
     
-    member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
+    member internal this.Inject v = _MersenneTwisterUniformRng <- v
     static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
         if p :? MersenneTwisterUniformRngModel1 then 
             p :?> MersenneTwisterUniformRngModel1
         else
             let o = new MersenneTwisterUniformRngModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -134,7 +138,8 @@ type MersenneTwisterUniformRngModel2
 (*
     Functions
 *)
-    let _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng (seeds.Value))
+    let mutable
+        _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng (seeds.Value))
     let _factory                                   (seed : ICell<uint64>)   
                                                    = triv (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
     let _next                                      = triv (fun () -> _MersenneTwisterUniformRng.Value.next())
@@ -145,13 +150,14 @@ type MersenneTwisterUniformRngModel2
     casting 
 *)
     internal new () = new MersenneTwisterUniformRngModel2(null)
-    member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
+    member internal this.Inject v = _MersenneTwisterUniformRng <- v
     static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
         if p :? MersenneTwisterUniformRngModel2 then 
             p :?> MersenneTwisterUniformRngModel2
         else
             let o = new MersenneTwisterUniformRngModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

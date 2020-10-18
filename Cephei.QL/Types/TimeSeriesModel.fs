@@ -41,7 +41,8 @@ type TimeSeriesModel<'T>
 (*
     Functions
 *)
-    let _TimeSeries                                = cell (fun () -> new TimeSeries<'T> ())
+    let mutable
+        _TimeSeries                                = cell (fun () -> new TimeSeries<'T> ())
     let _Add                                       (item : ICell<KeyValuePair<Date,'T>>)   
                                                    = triv (fun () -> _TimeSeries.Value.Add(item.Value)
                                                                      _TimeSeries.Value)
@@ -116,7 +117,8 @@ type TimeSeriesModel1<'T>
 (*
     Functions
 *)
-    let _TimeSeries                                = cell (fun () -> new TimeSeries<'T> (size.Value))
+    let mutable
+        _TimeSeries                                = cell (fun () -> new TimeSeries<'T> (size.Value))
     let _Add                                       (item : ICell<KeyValuePair<Date,'T>>)   
                                                    = triv (fun () -> _TimeSeries.Value.Add(item.Value)
                                                                      _TimeSeries.Value)

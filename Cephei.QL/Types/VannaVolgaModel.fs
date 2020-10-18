@@ -50,7 +50,8 @@ type VannaVolgaModel
 (*
     Functions
 *)
-    let _VannaVolga                                = cell (fun () -> new VannaVolga (spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
+    let mutable
+        _VannaVolga                                = cell (fun () -> new VannaVolga (spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _VannaVolga.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     do this.Bind(_VannaVolga)
@@ -58,13 +59,14 @@ type VannaVolgaModel
     casting 
 *)
     internal new () = new VannaVolgaModel(null,null,null,null)
-    member internal this.Inject v = _VannaVolga.Value <- v
+    member internal this.Inject v = _VannaVolga <- v
     static member Cast (p : ICell<VannaVolga>) = 
         if p :? VannaVolgaModel then 
             p :?> VannaVolgaModel
         else
             let o = new VannaVolgaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

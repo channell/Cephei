@@ -39,13 +39,13 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EqualJumpsBinomialTree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree1", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EqualJumpsBinomialTree")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,15 +119,15 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree_probability", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "Reference to EqualJumpsBinomialTree")>] 
+        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "EqualJumpsBinomialTree")>] 
          equaljumpsbinomialtree : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,13 +173,13 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree_underlying", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "Reference to EqualJumpsBinomialTree")>] 
+        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "EqualJumpsBinomialTree")>] 
          equaljumpsbinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,15 +221,15 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree_descendant", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "Reference to EqualJumpsBinomialTree")>] 
+        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "EqualJumpsBinomialTree")>] 
          equaljumpsbinomialtree : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,11 +275,11 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree_size", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "Reference to EqualJumpsBinomialTree")>] 
+        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "EqualJumpsBinomialTree")>] 
          equaljumpsbinomialtree : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module EqualJumpsBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualJumpsBinomialTree_columns", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "Reference to EqualJumpsBinomialTree")>] 
+        ([<ExcelArgument(Name="EqualJumpsBinomialTree",Description = "EqualJumpsBinomialTree")>] 
          equaljumpsbinomialtree : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -350,9 +350,9 @@ module EqualJumpsBinomialTreeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EqualJumpsBinomialTree_Range", Description="Create a range of EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EqualJumpsBinomialTree")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -51,7 +51,8 @@ type TurkeyModel
 (*
     Functions
 *)
-    let _Turkey                                    = cell (fun () -> new Turkey ())
+    let mutable
+        _Turkey                                    = cell (fun () -> new Turkey ())
     let _addedHolidays                             = triv (fun () -> _Turkey.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Turkey.Value.addHoliday(d.Value)
@@ -88,13 +89,14 @@ type TurkeyModel
     casting 
 *)
     
-    member internal this.Inject v = _Turkey.Value <- v
+    member internal this.Inject v = _Turkey <- v
     static member Cast (p : ICell<Turkey>) = 
         if p :? TurkeyModel then 
             p :?> TurkeyModel
         else
             let o = new TurkeyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

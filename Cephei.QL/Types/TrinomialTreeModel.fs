@@ -46,7 +46,8 @@ type TrinomialTreeModel
 (*
     Functions
 *)
-    let _TrinomialTree                             = cell (fun () -> new TrinomialTree (Process.Value, timeGrid.Value))
+    let mutable
+        _TrinomialTree                             = cell (fun () -> new TrinomialTree (Process.Value, timeGrid.Value))
     let _descendant                                (i : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
                                                    = triv (fun () -> _TrinomialTree.Value.descendant(i.Value, index.Value, branch.Value))
     let _dx                                        (i : ICell<int>)   
@@ -64,13 +65,14 @@ type TrinomialTreeModel
     casting 
 *)
     internal new () = new TrinomialTreeModel(null,null)
-    member internal this.Inject v = _TrinomialTree.Value <- v
+    member internal this.Inject v = _TrinomialTree <- v
     static member Cast (p : ICell<TrinomialTree>) = 
         if p :? TrinomialTreeModel then 
             p :?> TrinomialTreeModel
         else
             let o = new TrinomialTreeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type TrinomialTreeModel1
 (*
     Functions
 *)
-    let _TrinomialTree                             = cell (fun () -> new TrinomialTree (Process.Value, timeGrid.Value, isPositive.Value))
+    let mutable
+        _TrinomialTree                             = cell (fun () -> new TrinomialTree (Process.Value, timeGrid.Value, isPositive.Value))
     let _descendant                                (i : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
                                                    = triv (fun () -> _TrinomialTree.Value.descendant(i.Value, index.Value, branch.Value))
     let _dx                                        (i : ICell<int>)   
@@ -130,13 +133,14 @@ type TrinomialTreeModel1
     casting 
 *)
     internal new () = new TrinomialTreeModel1(null,null,null)
-    member internal this.Inject v = _TrinomialTree.Value <- v
+    member internal this.Inject v = _TrinomialTree <- v
     static member Cast (p : ICell<TrinomialTree>) = 
         if p :? TrinomialTreeModel1 then 
             p :?> TrinomialTreeModel1
         else
             let o = new TrinomialTreeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

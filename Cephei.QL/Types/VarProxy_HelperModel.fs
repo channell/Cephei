@@ -48,7 +48,8 @@ type VarProxy_HelperModel
 (*
     Functions
 *)
-    let _VarProxy_Helper                           = cell (fun () -> new VarProxy_Helper (proxy.Value, i.Value, j.Value))
+    let mutable
+        _VarProxy_Helper                           = cell (fun () -> new VarProxy_Helper (proxy.Value, i.Value, j.Value))
     let _corrModel_                                = triv (fun () -> _VarProxy_Helper.Value.corrModel_)
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _VarProxy_Helper.Value.value(t.Value))
@@ -58,13 +59,14 @@ type VarProxy_HelperModel
     casting 
 *)
     internal new () = new VarProxy_HelperModel(null,null,null)
-    member internal this.Inject v = _VarProxy_Helper.Value <- v
+    member internal this.Inject v = _VarProxy_Helper <- v
     static member Cast (p : ICell<VarProxy_Helper>) = 
         if p :? VarProxy_HelperModel then 
             p :?> VarProxy_HelperModel
         else
             let o = new VarProxy_HelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

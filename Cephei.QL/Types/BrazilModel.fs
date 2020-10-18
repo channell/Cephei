@@ -79,7 +79,8 @@ type BrazilModel
 (*
     Functions
 *)
-    let _Brazil                                    = cell (fun () -> new Brazil (market.Value))
+    let mutable
+        _Brazil                                    = cell (fun () -> new Brazil (market.Value))
     let _addedHolidays                             = triv (fun () -> _Brazil.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Brazil.Value.addHoliday(d.Value)
@@ -116,13 +117,14 @@ type BrazilModel
     casting 
 *)
     internal new () = new BrazilModel(null)
-    member internal this.Inject v = _Brazil.Value <- v
+    member internal this.Inject v = _Brazil <- v
     static member Cast (p : ICell<Brazil>) = 
         if p :? BrazilModel then 
             p :?> BrazilModel
         else
             let o = new BrazilModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -208,7 +210,8 @@ type BrazilModel1
 (*
     Functions
 *)
-    let _Brazil                                    = cell (fun () -> new Brazil ())
+    let mutable
+        _Brazil                                    = cell (fun () -> new Brazil ())
     let _addedHolidays                             = triv (fun () -> _Brazil.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Brazil.Value.addHoliday(d.Value)
@@ -245,13 +248,14 @@ type BrazilModel1
     casting 
 *)
     
-    member internal this.Inject v = _Brazil.Value <- v
+    member internal this.Inject v = _Brazil <- v
     static member Cast (p : ICell<Brazil>) = 
         if p :? BrazilModel1 then 
             p :?> BrazilModel1
         else
             let o = new BrazilModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

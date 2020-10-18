@@ -56,7 +56,8 @@ type ConstantSwaptionVolatilityModel
 (*
     Functions
 *)
-    let _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
+    let mutable
+        _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
     let _maxDate                                   = triv (fun () -> _ConstantSwaptionVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantSwaptionVolatility.Value.maxStrike())
     let _maxSwapTenor                              = triv (fun () -> _ConstantSwaptionVolatility.Value.maxSwapTenor())
@@ -134,13 +135,14 @@ type ConstantSwaptionVolatilityModel
     casting 
 *)
     internal new () = new ConstantSwaptionVolatilityModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    member internal this.Inject v = _ConstantSwaptionVolatility <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel then 
             p :?> ConstantSwaptionVolatilityModel
         else
             let o = new ConstantSwaptionVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -252,7 +254,8 @@ type ConstantSwaptionVolatilityModel1
 (*
     Functions
 *)
-    let _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
+    let mutable
+        _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
     let _maxDate                                   = triv (fun () -> _ConstantSwaptionVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantSwaptionVolatility.Value.maxStrike())
     let _maxSwapTenor                              = triv (fun () -> _ConstantSwaptionVolatility.Value.maxSwapTenor())
@@ -330,13 +333,14 @@ type ConstantSwaptionVolatilityModel1
     casting 
 *)
     internal new () = new ConstantSwaptionVolatilityModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    member internal this.Inject v = _ConstantSwaptionVolatility <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel1 then 
             p :?> ConstantSwaptionVolatilityModel1
         else
             let o = new ConstantSwaptionVolatilityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -448,7 +452,8 @@ type ConstantSwaptionVolatilityModel2
 (*
     Functions
 *)
-    let _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
+    let mutable
+        _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
     let _maxDate                                   = triv (fun () -> _ConstantSwaptionVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantSwaptionVolatility.Value.maxStrike())
     let _maxSwapTenor                              = triv (fun () -> _ConstantSwaptionVolatility.Value.maxSwapTenor())
@@ -526,13 +531,14 @@ type ConstantSwaptionVolatilityModel2
     casting 
 *)
     internal new () = new ConstantSwaptionVolatilityModel2(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    member internal this.Inject v = _ConstantSwaptionVolatility <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel2 then 
             p :?> ConstantSwaptionVolatilityModel2
         else
             let o = new ConstantSwaptionVolatilityModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -644,7 +650,8 @@ type ConstantSwaptionVolatilityModel3
 (*
     Functions
 *)
-    let _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
+    let mutable
+        _ConstantSwaptionVolatility                = cell (fun () -> new ConstantSwaptionVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value, Type.Value, shift.Value))
     let _maxDate                                   = triv (fun () -> _ConstantSwaptionVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantSwaptionVolatility.Value.maxStrike())
     let _maxSwapTenor                              = triv (fun () -> _ConstantSwaptionVolatility.Value.maxSwapTenor())
@@ -722,13 +729,14 @@ type ConstantSwaptionVolatilityModel3
     casting 
 *)
     internal new () = new ConstantSwaptionVolatilityModel3(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    member internal this.Inject v = _ConstantSwaptionVolatility <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel3 then 
             p :?> ConstantSwaptionVolatilityModel3
         else
             let o = new ConstantSwaptionVolatilityModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type TreeCallableFixedRateBondEngineModel
 (*
     Functions
 *)
-    let _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeSteps.Value, termStructure.Value))
+    let mutable
+        _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeSteps.Value, termStructure.Value))
     let _update                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -67,13 +68,14 @@ type TreeCallableFixedRateBondEngineModel
     casting 
 *)
     internal new () = new TreeCallableFixedRateBondEngineModel(null,null,null)
-    member internal this.Inject v = _TreeCallableFixedRateBondEngine.Value <- v
+    member internal this.Inject v = _TreeCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
         if p :? TreeCallableFixedRateBondEngineModel then 
             p :?> TreeCallableFixedRateBondEngineModel
         else
             let o = new TreeCallableFixedRateBondEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type TreeCallableFixedRateBondEngineModel1
 (*
     Functions
 *)
-    let _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeGrid.Value, termStructure.Value))
+    let mutable
+        _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeGrid.Value, termStructure.Value))
     let _update                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -131,13 +134,14 @@ type TreeCallableFixedRateBondEngineModel1
     casting 
 *)
     internal new () = new TreeCallableFixedRateBondEngineModel1(null,null,null)
-    member internal this.Inject v = _TreeCallableFixedRateBondEngine.Value <- v
+    member internal this.Inject v = _TreeCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
         if p :? TreeCallableFixedRateBondEngineModel1 then 
             p :?> TreeCallableFixedRateBondEngineModel1
         else
             let o = new TreeCallableFixedRateBondEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

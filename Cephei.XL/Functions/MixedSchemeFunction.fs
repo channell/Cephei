@@ -39,7 +39,7 @@ module MixedSchemeFunction =
     *)
     [<ExcelFunction(Name="_MixedScheme", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MixedScheme")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,13 +70,13 @@ module MixedSchemeFunction =
     *)
     [<ExcelFunction(Name="_MixedScheme1", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "'Operator")>] 
          L : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "MixedScheme")>] 
          theta : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "IOperator")>] 
          bcs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module MixedSchemeFunction =
     *)
     [<ExcelFunction(Name="_MixedScheme_setStep", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedScheme",Description = "Reference to MixedScheme")>] 
+        ([<ExcelArgument(Name="MixedScheme",Description = "MixedScheme")>] 
          mixedscheme : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,15 +161,15 @@ module MixedSchemeFunction =
     *)
     [<ExcelFunction(Name="_MixedScheme_step", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedScheme",Description = "Reference to MixedScheme")>] 
+        ([<ExcelArgument(Name="MixedScheme",Description = "MixedScheme")>] 
          mixedscheme : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -212,9 +212,9 @@ module MixedSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MixedScheme_Range", Description="Create a range of MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MixedScheme")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type TreeLattice2DModel<'T, 'Tl when 'T :> IGenericLattice and 'Tl :> TrinomialT
 (*
     Functions
 *)
-    let _TreeLattice2D                             = cell (fun () -> new TreeLattice2D<'T,'Tl> (tree1.Value, tree2.Value, correlation.Value))
+    let mutable
+        _TreeLattice2D                             = cell (fun () -> new TreeLattice2D<'T,'Tl> (tree1.Value, tree2.Value, correlation.Value))
     let _descendant                                (i : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
                                                    = triv (fun () -> _TreeLattice2D.Value.descendant(i.Value, index.Value, branch.Value))
     let _grid                                      (t : ICell<double>)   

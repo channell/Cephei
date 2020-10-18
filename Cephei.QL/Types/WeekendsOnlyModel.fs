@@ -41,7 +41,8 @@ type WeekendsOnlyModel
 (*
     Functions
 *)
-    let _WeekendsOnly                              = cell (fun () -> new WeekendsOnly ())
+    let mutable
+        _WeekendsOnly                              = cell (fun () -> new WeekendsOnly ())
     let _addedHolidays                             = triv (fun () -> _WeekendsOnly.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _WeekendsOnly.Value.addHoliday(d.Value)
@@ -78,13 +79,14 @@ type WeekendsOnlyModel
     casting 
 *)
     
-    member internal this.Inject v = _WeekendsOnly.Value <- v
+    member internal this.Inject v = _WeekendsOnly <- v
     static member Cast (p : ICell<WeekendsOnly>) = 
         if p :? WeekendsOnlyModel then 
             p :?> WeekendsOnlyModel
         else
             let o = new WeekendsOnlyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

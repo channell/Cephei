@@ -44,7 +44,8 @@ type DiscrepancyStatisticsModel
 (*
     Functions
 *)
-    let _DiscrepancyStatistics                     = cell (fun () -> new DiscrepancyStatistics (dimension.Value))
+    let mutable
+        _DiscrepancyStatistics                     = cell (fun () -> new DiscrepancyStatistics (dimension.Value))
     let _add                                       (Begin : ICell<Generic.List<double>>) (weight : ICell<double>)   
                                                    = triv (fun () -> _DiscrepancyStatistics.Value.add(Begin.Value, weight.Value)
                                                                      _DiscrepancyStatistics.Value)
@@ -103,13 +104,14 @@ type DiscrepancyStatisticsModel
     casting 
 *)
     internal new () = new DiscrepancyStatisticsModel(null)
-    member internal this.Inject v = _DiscrepancyStatistics.Value <- v
+    member internal this.Inject v = _DiscrepancyStatistics <- v
     static member Cast (p : ICell<DiscrepancyStatistics>) = 
         if p :? DiscrepancyStatisticsModel then 
             p :?> DiscrepancyStatisticsModel
         else
             let o = new DiscrepancyStatisticsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

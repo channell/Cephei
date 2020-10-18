@@ -52,7 +52,8 @@ type BlackScholesMertonProcessModel
 (*
     Functions
 *)
-    let _BlackScholesMertonProcess                 = cell (fun () -> new BlackScholesMertonProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value, d.Value))
+    let mutable
+        _BlackScholesMertonProcess                 = cell (fun () -> new BlackScholesMertonProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value, d.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _BlackScholesMertonProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _BlackScholesMertonProcess.Value.blackVolatility())
@@ -93,13 +94,14 @@ type BlackScholesMertonProcessModel
     casting 
 *)
     internal new () = new BlackScholesMertonProcessModel(null,null,null,null,null)
-    member internal this.Inject v = _BlackScholesMertonProcess.Value <- v
+    member internal this.Inject v = _BlackScholesMertonProcess <- v
     static member Cast (p : ICell<BlackScholesMertonProcess>) = 
         if p :? BlackScholesMertonProcessModel then 
             p :?> BlackScholesMertonProcessModel
         else
             let o = new BlackScholesMertonProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -166,7 +168,8 @@ type BlackScholesMertonProcessModel1
 (*
     Functions
 *)
-    let _BlackScholesMertonProcess                 = cell (fun () -> new BlackScholesMertonProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value))
+    let mutable
+        _BlackScholesMertonProcess                 = cell (fun () -> new BlackScholesMertonProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _BlackScholesMertonProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _BlackScholesMertonProcess.Value.blackVolatility())
@@ -207,13 +210,14 @@ type BlackScholesMertonProcessModel1
     casting 
 *)
     internal new () = new BlackScholesMertonProcessModel1(null,null,null,null)
-    member internal this.Inject v = _BlackScholesMertonProcess.Value <- v
+    member internal this.Inject v = _BlackScholesMertonProcess <- v
     static member Cast (p : ICell<BlackScholesMertonProcess>) = 
         if p :? BlackScholesMertonProcessModel1 then 
             p :?> BlackScholesMertonProcessModel1
         else
             let o = new BlackScholesMertonProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

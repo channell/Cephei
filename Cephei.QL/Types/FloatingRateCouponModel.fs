@@ -66,7 +66,8 @@ type FloatingRateCouponModel
 (*
     Functions
 *)
-    let _FloatingRateCoupon                        = cell (fun () -> new FloatingRateCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let mutable
+        _FloatingRateCoupon                        = cell (fun () -> new FloatingRateCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _FloatingRateCoupon.Value.accruedAmount(d.Value))
     let _adjustedFixing                            = triv (fun () -> _FloatingRateCoupon.Value.adjustedFixing)
@@ -126,13 +127,14 @@ type FloatingRateCouponModel
     casting 
 *)
     internal new () = new FloatingRateCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingRateCoupon.Value <- v
+    member internal this.Inject v = _FloatingRateCoupon <- v
     static member Cast (p : ICell<FloatingRateCoupon>) = 
         if p :? FloatingRateCouponModel then 
             p :?> FloatingRateCouponModel
         else
             let o = new FloatingRateCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -214,7 +216,8 @@ type FloatingRateCouponModel1
 (*
     Functions
 *)
-    let _FloatingRateCoupon                        = cell (fun () -> new FloatingRateCoupon ())
+    let mutable
+        _FloatingRateCoupon                        = cell (fun () -> new FloatingRateCoupon ())
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _FloatingRateCoupon.Value.accruedAmount(d.Value))
     let _adjustedFixing                            = triv (fun () -> _FloatingRateCoupon.Value.adjustedFixing)
@@ -274,13 +277,14 @@ type FloatingRateCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _FloatingRateCoupon.Value <- v
+    member internal this.Inject v = _FloatingRateCoupon <- v
     static member Cast (p : ICell<FloatingRateCoupon>) = 
         if p :? FloatingRateCouponModel1 then 
             p :?> FloatingRateCouponModel1
         else
             let o = new FloatingRateCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

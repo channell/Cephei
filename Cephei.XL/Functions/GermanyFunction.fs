@@ -104,7 +104,7 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany1", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Germany")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Germany")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "Germany.Market")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_addedHolidays", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,11 +208,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_addHoliday", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,13 +250,13 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_adjust", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,19 +298,19 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_advance1", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "Reference to unit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,17 +364,17 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_advance", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,17 +424,17 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_businessDaysBetween", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "Date")>] 
          from : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
-        ([<ExcelArgument(Name="includeFirst",Description = "Reference to includeFirst")>] 
+        ([<ExcelArgument(Name="includeFirst",Description = "bool")>] 
          includeFirst : obj)
-        ([<ExcelArgument(Name="includeLast",Description = "Reference to includeLast")>] 
+        ([<ExcelArgument(Name="includeLast",Description = "bool")>] 
          includeLast : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,9 +484,9 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_calendar", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,9 +520,9 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_empty", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,11 +556,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_endOfMonth", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,11 +598,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_Equals", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,11 +640,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_isBusinessDay", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,11 +682,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_isEndOfMonth", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,11 +724,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_isHoliday", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,11 +766,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_isWeekend", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="w",Description = "Reference to w")>] 
+        ([<ExcelArgument(Name="w",Description = "DayOfWeek")>] 
          w : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -810,9 +810,9 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_name", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -846,9 +846,9 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_removedHolidays", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -882,11 +882,11 @@ module GermanyFunction =
     *)
     [<ExcelFunction(Name="_Germany_removeHoliday", Description="Create a Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Germany",Description = "Reference to Germany")>] 
+        ([<ExcelArgument(Name="Germany",Description = "Germany")>] 
          germany : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -921,9 +921,9 @@ module GermanyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Germany_Range", Description="Create a range of Germany",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Germany_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Germany")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

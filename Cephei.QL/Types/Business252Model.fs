@@ -44,7 +44,8 @@ type Business252Model
 (*
     Functions
 *)
-    let _Business252                               = cell (fun () -> new Business252 (c.Value))
+    let mutable
+        _Business252                               = cell (fun () -> new Business252 (c.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Business252.Value.dayCount(d1.Value, d2.Value))
     let _name                                      = triv (fun () -> _Business252.Value.name())
@@ -60,13 +61,14 @@ type Business252Model
     casting 
 *)
     internal new () = new Business252Model(null)
-    member internal this.Inject v = _Business252.Value <- v
+    member internal this.Inject v = _Business252 <- v
     static member Cast (p : ICell<Business252>) = 
         if p :? Business252Model then 
             p :?> Business252Model
         else
             let o = new Business252Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type CumulativeChiSquareDistributionModel
 (*
     Functions
 *)
-    let _CumulativeChiSquareDistribution           = cell (fun () -> new CumulativeChiSquareDistribution (df.Value))
+    let mutable
+        _CumulativeChiSquareDistribution           = cell (fun () -> new CumulativeChiSquareDistribution (df.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _CumulativeChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_CumulativeChiSquareDistribution)
@@ -52,13 +53,14 @@ type CumulativeChiSquareDistributionModel
     casting 
 *)
     internal new () = new CumulativeChiSquareDistributionModel(null)
-    member internal this.Inject v = _CumulativeChiSquareDistribution.Value <- v
+    member internal this.Inject v = _CumulativeChiSquareDistribution <- v
     static member Cast (p : ICell<CumulativeChiSquareDistribution>) = 
         if p :? CumulativeChiSquareDistributionModel then 
             p :?> CumulativeChiSquareDistributionModel
         else
             let o = new CumulativeChiSquareDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

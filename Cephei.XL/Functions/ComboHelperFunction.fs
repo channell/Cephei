@@ -39,13 +39,13 @@ module ComboHelperFunction =
     *)
     [<ExcelFunction(Name="_ComboHelper", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ComboHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="quadraticHelper",Description = "Reference to quadraticHelper")>] 
+        ([<ExcelArgument(Name="quadraticHelper",Description = "ISectionHelper")>] 
          quadraticHelper : obj)
-        ([<ExcelArgument(Name="convMonoHelper",Description = "Reference to convMonoHelper")>] 
+        ([<ExcelArgument(Name="convMonoHelper",Description = "ISectionHelper")>] 
          convMonoHelper : obj)
-        ([<ExcelArgument(Name="quadraticity",Description = "Reference to quadraticity")>] 
+        ([<ExcelArgument(Name="quadraticity",Description = "double")>] 
          quadraticity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module ComboHelperFunction =
     *)
     [<ExcelFunction(Name="_ComboHelper_fNext", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ComboHelper",Description = "Reference to ComboHelper")>] 
+        ([<ExcelArgument(Name="ComboHelper",Description = "ComboHelper")>] 
          combohelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module ComboHelperFunction =
     *)
     [<ExcelFunction(Name="_ComboHelper_primitive", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ComboHelper",Description = "Reference to ComboHelper")>] 
+        ([<ExcelArgument(Name="ComboHelper",Description = "ComboHelper")>] 
          combohelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,11 +166,11 @@ module ComboHelperFunction =
     *)
     [<ExcelFunction(Name="_ComboHelper_value", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ComboHelper",Description = "Reference to ComboHelper")>] 
+        ([<ExcelArgument(Name="ComboHelper",Description = "ComboHelper")>] 
          combohelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -205,9 +205,9 @@ module ComboHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ComboHelper_Range", Description="Create a range of ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ComboHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

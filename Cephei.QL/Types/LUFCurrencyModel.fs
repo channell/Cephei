@@ -41,7 +41,8 @@ type LUFCurrencyModel
 (*
     Functions
 *)
-    let _LUFCurrency                               = cell (fun () -> new LUFCurrency ())
+    let mutable
+        _LUFCurrency                               = cell (fun () -> new LUFCurrency ())
     let _code                                      = triv (fun () -> _LUFCurrency.Value.code)
     let _empty                                     = triv (fun () -> _LUFCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type LUFCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _LUFCurrency.Value <- v
+    member internal this.Inject v = _LUFCurrency <- v
     static member Cast (p : ICell<LUFCurrency>) = 
         if p :? LUFCurrencyModel then 
             p :?> LUFCurrencyModel
         else
             let o = new LUFCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

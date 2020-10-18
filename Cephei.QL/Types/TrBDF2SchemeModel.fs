@@ -54,7 +54,8 @@ type TrBDF2SchemeModel<'TrapezoidalScheme when 'TrapezoidalScheme : not struct a
 (*
     Functions
 *)
-    let _TrBDF2Scheme                              = cell (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> (alpha.Value, map.Value, trapezoidalScheme.Value, bcSet.Value, relTol.Value, solverType.Value))
+    let mutable
+        _TrBDF2Scheme                              = cell (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> (alpha.Value, map.Value, trapezoidalScheme.Value, bcSet.Value, relTol.Value, solverType.Value))
     let _apply                                     (r : ICell<Vector>)   
                                                    = triv (fun () -> _TrBDF2Scheme.Value.apply(r.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
@@ -100,7 +101,8 @@ type TrBDF2SchemeModel1<'TrapezoidalScheme when 'TrapezoidalScheme : not struct 
 (*
     Functions
 *)
-    let _TrBDF2Scheme                              = cell (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> ())
+    let mutable
+        _TrBDF2Scheme                              = cell (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> ())
     let _apply                                     (r : ICell<Vector>)   
                                                    = triv (fun () -> _TrBDF2Scheme.Value.apply(r.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   

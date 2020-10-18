@@ -58,7 +58,8 @@ type IrrFinderModel
 (*
     Functions
 *)
-    let _IrrFinder                                 = cell (fun () -> new IrrFinder (leg.Value, npv.Value, dayCounter.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
+    let mutable
+        _IrrFinder                                 = cell (fun () -> new IrrFinder (leg.Value, npv.Value, dayCounter.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
     let _derivative                                (y : ICell<double>)   
                                                    = cell (fun () -> _IrrFinder.Value.derivative(y.Value))
     let _value                                     (y : ICell<double>)   
@@ -68,13 +69,14 @@ type IrrFinderModel
     casting 
 *)
     internal new () = IrrFinderModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _IrrFinder.Value <- v
+    member internal this.Inject v = _IrrFinder <- v
     static member Cast (p : ICell<IrrFinder>) = 
         if p :? IrrFinderModel then 
             p :?> IrrFinderModel
         else
             let o = new IrrFinderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

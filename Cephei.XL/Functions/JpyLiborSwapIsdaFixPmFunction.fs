@@ -39,11 +39,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JpyLiborSwapIsdaFixPm")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm1", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "JpyLiborSwapIsdaFixPm")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_clone", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,13 +161,13 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_clone1", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_clone1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
-        ([<ExcelArgument(Name="discounting",Description = "Reference to discounting")>] 
+        ([<ExcelArgument(Name="discounting",Description = "YieldTermStructure")>] 
          discounting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,11 +209,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_clone2", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_clone2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,9 +251,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_discountingTermStructure", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_discountingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,9 +287,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_exogenousDiscount", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_exogenousDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -323,9 +323,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_fixedLegConvention", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_fixedLegConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,9 +359,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_fixedLegTenor", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_fixedLegTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,11 +395,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_forecastFixing", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -437,9 +437,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_forwardingTermStructure", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -473,9 +473,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_iborIndex", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -509,11 +509,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_maturityDate", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,11 +551,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_underlyingSwap", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_underlyingSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -593,9 +593,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_currency", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -629,9 +629,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_dayCounter", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,9 +665,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_familyName", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -701,13 +701,13 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_fixing", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -749,9 +749,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_fixingCalendar", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -785,11 +785,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_fixingDate", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -827,9 +827,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_fixingDays", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -863,11 +863,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_isValidFixingDate", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -905,9 +905,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_name", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -941,11 +941,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_pastFixing", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -983,9 +983,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_tenor", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,9 +1019,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_update", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1055,11 +1055,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_valueDate", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1097,15 +1097,15 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_addFixing", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1151,15 +1151,15 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_addFixings", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1205,13 +1205,13 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_addFixings1", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1253,9 +1253,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_allowsNativeFixings", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1289,9 +1289,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_clearFixings", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1325,11 +1325,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_registerWith", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1367,9 +1367,9 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_timeSeries", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1403,11 +1403,11 @@ module JpyLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_unregisterWith", Description="Create a JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "Reference to JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="JpyLiborSwapIsdaFixPm",Description = "JpyLiborSwapIsdaFixPm")>] 
          jpyliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1442,9 +1442,9 @@ module JpyLiborSwapIsdaFixPmFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JpyLiborSwapIsdaFixPm_Range", Description="Create a range of JpyLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JpyLiborSwapIsdaFixPm_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the JpyLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -52,7 +52,8 @@ type EventSetSimulationModel
 (*
     Functions
 *)
-    let _EventSetSimulation                        = cell (fun () -> new EventSetSimulation (events.Value, eventsStart.Value, eventsEnd.Value, start.Value, End.Value))
+    let mutable
+        _EventSetSimulation                        = cell (fun () -> new EventSetSimulation (events.Value, eventsStart.Value, eventsEnd.Value, start.Value, End.Value))
     let _nextPath                                  (path : ICell<Generic.List<KeyValuePair<Date,double>>>)   
                                                    = triv (fun () -> _EventSetSimulation.Value.nextPath(path.Value))
     do this.Bind(_EventSetSimulation)
@@ -60,13 +61,14 @@ type EventSetSimulationModel
     casting 
 *)
     internal new () = new EventSetSimulationModel(null,null,null,null,null)
-    member internal this.Inject v = _EventSetSimulation.Value <- v
+    member internal this.Inject v = _EventSetSimulation <- v
     static member Cast (p : ICell<EventSetSimulation>) = 
         if p :? EventSetSimulationModel then 
             p :?> EventSetSimulationModel
         else
             let o = new EventSetSimulationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

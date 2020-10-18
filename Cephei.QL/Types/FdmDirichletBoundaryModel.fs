@@ -50,7 +50,8 @@ type FdmDirichletBoundaryModel
 (*
     Functions
 *)
-    let _FdmDirichletBoundary                      = cell (fun () -> new FdmDirichletBoundary (mesher.Value, valueOnBoundary.Value, direction.Value, side.Value))
+    let mutable
+        _FdmDirichletBoundary                      = cell (fun () -> new FdmDirichletBoundary (mesher.Value, valueOnBoundary.Value, direction.Value, side.Value))
     let _applyAfterApplying                        (v : ICell<Vector>)   
                                                    = triv (fun () -> _FdmDirichletBoundary.Value.applyAfterApplying(v.Value)
                                                                      _FdmDirichletBoundary.Value)
@@ -73,13 +74,14 @@ type FdmDirichletBoundaryModel
     casting 
 *)
     internal new () = new FdmDirichletBoundaryModel(null,null,null,null)
-    member internal this.Inject v = _FdmDirichletBoundary.Value <- v
+    member internal this.Inject v = _FdmDirichletBoundary <- v
     static member Cast (p : ICell<FdmDirichletBoundary>) = 
         if p :? FdmDirichletBoundaryModel then 
             p :?> FdmDirichletBoundaryModel
         else
             let o = new FdmDirichletBoundaryModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

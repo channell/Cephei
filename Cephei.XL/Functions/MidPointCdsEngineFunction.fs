@@ -40,15 +40,15 @@ module MidPointCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_MidPointCdsEngine", Description="Create a MidPointCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPointCdsEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MidPointCdsEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="probability",Description = "Reference to probability")>] 
+        ([<ExcelArgument(Name="probability",Description = "DefaultProbabilityTermStructure")>] 
          probability : obj)
-        ([<ExcelArgument(Name="recoveryRate",Description = "Reference to recoveryRate")>] 
+        ([<ExcelArgument(Name="recoveryRate",Description = "double")>] 
          recoveryRate : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "Reference to includeSettlementDateFlows")>] 
+        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -92,9 +92,9 @@ module MidPointCdsEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MidPointCdsEngine_Range", Description="Create a range of MidPointCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPointCdsEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MidPointCdsEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

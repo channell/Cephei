@@ -48,7 +48,8 @@ type TreeSwaptionEngineModel
 (*
     Functions
 *)
-    let _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeGrid.Value, termStructure.Value))
+    let mutable
+        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeGrid.Value, termStructure.Value))
     let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -67,13 +68,14 @@ type TreeSwaptionEngineModel
     casting 
 *)
     internal new () = new TreeSwaptionEngineModel(null,null,null)
-    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel then 
             p :?> TreeSwaptionEngineModel
         else
             let o = new TreeSwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -110,7 +112,8 @@ type TreeSwaptionEngineModel1
 (*
     Functions
 *)
-    let _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeGrid.Value))
+    let mutable
+        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeGrid.Value))
     let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -129,13 +132,14 @@ type TreeSwaptionEngineModel1
     casting 
 *)
     internal new () = new TreeSwaptionEngineModel1(null,null)
-    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel1 then 
             p :?> TreeSwaptionEngineModel1
         else
             let o = new TreeSwaptionEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -173,7 +177,8 @@ type TreeSwaptionEngineModel2
 (*
     Functions
 *)
-    let _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeSteps.Value, termStructure.Value))
+    let mutable
+        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeSteps.Value, termStructure.Value))
     let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -192,13 +197,14 @@ type TreeSwaptionEngineModel2
     casting 
 *)
     internal new () = new TreeSwaptionEngineModel2(null,null,null)
-    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel2 then 
             p :?> TreeSwaptionEngineModel2
         else
             let o = new TreeSwaptionEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -235,7 +241,8 @@ type TreeSwaptionEngineModel3
 (*
     Functions
 *)
-    let _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeSteps.Value))
+    let mutable
+        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeSteps.Value))
     let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -254,13 +261,14 @@ type TreeSwaptionEngineModel3
     casting 
 *)
     internal new () = new TreeSwaptionEngineModel3(null,null)
-    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel3 then 
             p :?> TreeSwaptionEngineModel3
         else
             let o = new TreeSwaptionEngineModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

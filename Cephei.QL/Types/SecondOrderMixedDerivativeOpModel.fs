@@ -48,7 +48,8 @@ type SecondOrderMixedDerivativeOpModel
 (*
     Functions
 *)
-    let _SecondOrderMixedDerivativeOp              = cell (fun () -> new SecondOrderMixedDerivativeOp (d0.Value, d1.Value, mesher.Value))
+    let mutable
+        _SecondOrderMixedDerivativeOp              = cell (fun () -> new SecondOrderMixedDerivativeOp (d0.Value, d1.Value, mesher.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _SecondOrderMixedDerivativeOp.Value.add(A.Value, B.Value))
     let _apply                                     (r : ICell<Vector>)   
@@ -80,13 +81,14 @@ type SecondOrderMixedDerivativeOpModel
     casting 
 *)
     internal new () = new SecondOrderMixedDerivativeOpModel(null,null,null)
-    member internal this.Inject v = _SecondOrderMixedDerivativeOp.Value <- v
+    member internal this.Inject v = _SecondOrderMixedDerivativeOp <- v
     static member Cast (p : ICell<SecondOrderMixedDerivativeOp>) = 
         if p :? SecondOrderMixedDerivativeOpModel then 
             p :?> SecondOrderMixedDerivativeOpModel
         else
             let o = new SecondOrderMixedDerivativeOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

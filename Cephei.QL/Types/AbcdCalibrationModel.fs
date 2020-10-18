@@ -41,7 +41,8 @@ type AbcdCalibrationModel
 (*
     Functions
 *)
-    let _AbcdCalibration                           = cell (fun () -> new AbcdCalibration ())
+    let mutable
+        _AbcdCalibration                           = cell (fun () -> new AbcdCalibration ())
     let _a                                         = triv (fun () -> _AbcdCalibration.Value.a())
     let _abcdBlackVolatility                       (u : ICell<double>) (a : ICell<double>) (b : ICell<double>) (c : ICell<double>) (d : ICell<double>)   
                                                    = triv (fun () -> _AbcdCalibration.Value.abcdBlackVolatility(u.Value, a.Value, b.Value, c.Value, d.Value))
@@ -68,13 +69,14 @@ type AbcdCalibrationModel
     casting 
 *)
     
-    member internal this.Inject v = _AbcdCalibration.Value <- v
+    member internal this.Inject v = _AbcdCalibration <- v
     static member Cast (p : ICell<AbcdCalibration>) = 
         if p :? AbcdCalibrationModel then 
             p :?> AbcdCalibrationModel
         else
             let o = new AbcdCalibrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -142,7 +144,8 @@ type AbcdCalibrationModel1
 (*
     Functions
 *)
-    let _AbcdCalibration                           = cell (fun () -> new AbcdCalibration (t.Value, blackVols.Value, aGuess.Value, bGuess.Value, cGuess.Value, dGuess.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value))
+    let mutable
+        _AbcdCalibration                           = cell (fun () -> new AbcdCalibration (t.Value, blackVols.Value, aGuess.Value, bGuess.Value, cGuess.Value, dGuess.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value))
     let _a                                         = triv (fun () -> _AbcdCalibration.Value.a())
     let _abcdBlackVolatility                       (u : ICell<double>) (a : ICell<double>) (b : ICell<double>) (c : ICell<double>) (d : ICell<double>)   
                                                    = triv (fun () -> _AbcdCalibration.Value.abcdBlackVolatility(u.Value, a.Value, b.Value, c.Value, d.Value))
@@ -169,13 +172,14 @@ type AbcdCalibrationModel1
     casting 
 *)
     internal new () = new AbcdCalibrationModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AbcdCalibration.Value <- v
+    member internal this.Inject v = _AbcdCalibration <- v
     static member Cast (p : ICell<AbcdCalibration>) = 
         if p :? AbcdCalibrationModel1 then 
             p :?> AbcdCalibrationModel1
         else
             let o = new AbcdCalibrationModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

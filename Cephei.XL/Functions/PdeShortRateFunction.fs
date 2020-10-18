@@ -39,13 +39,13 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate_diffusion", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeShortRate",Description = "Reference to PdeShortRate")>] 
+        ([<ExcelArgument(Name="PdeShortRate",Description = "PdeShortRate")>] 
          pdeshortrate : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate_discount", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeShortRate",Description = "Reference to PdeShortRate")>] 
+        ([<ExcelArgument(Name="PdeShortRate",Description = "PdeShortRate")>] 
          pdeshortrate : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,13 +135,13 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate_drift", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeShortRate",Description = "Reference to PdeShortRate")>] 
+        ([<ExcelArgument(Name="PdeShortRate",Description = "PdeShortRate")>] 
          pdeshortrate : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate_factory", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeShortRate",Description = "Reference to PdeShortRate")>] 
+        ([<ExcelArgument(Name="PdeShortRate",Description = "PdeShortRate")>] 
          pdeshortrate : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,9 +225,9 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeShortRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "OneFactorModel.ShortRateDynamics")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,7 +262,7 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate1", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeShortRate")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,15 +293,15 @@ module PdeShortRateFunction =
     *)
     [<ExcelFunction(Name="_PdeShortRate_generateOperator", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_generateOperator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeShortRate",Description = "Reference to PdeShortRate")>] 
+        ([<ExcelArgument(Name="PdeShortRate",Description = "PdeShortRate")>] 
          pdeshortrate : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="tg",Description = "Reference to tg")>] 
+        ([<ExcelArgument(Name="tg",Description = "TransformedGrid")>] 
          tg : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "TridiagonalOperator")>] 
          L : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -344,9 +344,9 @@ module PdeShortRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeShortRate_Range", Description="Create a range of PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PdeShortRate")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,13 +39,13 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CallableBondConstantVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,15 +88,15 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility2", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CallableBondConstantVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,15 +143,15 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility1", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CallableBondConstantVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -198,13 +198,13 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility3", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CallableBondConstantVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -247,9 +247,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_dayCounter", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_maxBondLength", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_maxBondLength
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -319,9 +319,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_maxBondTenor", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_maxBondTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,9 +355,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_maxDate", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -391,9 +391,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_maxStrike", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -427,9 +427,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_minStrike", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -463,17 +463,17 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_blackVariance", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -523,17 +523,17 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_blackVariance1", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="bondLength",Description = "Reference to bondLength")>] 
+        ([<ExcelArgument(Name="bondLength",Description = "double")>] 
          bondLength : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -583,17 +583,17 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_blackVariance2", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -643,9 +643,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_businessDayConvention", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -679,13 +679,13 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_convertDates", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_convertDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -727,11 +727,11 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_optionDateFromTenor", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -769,13 +769,13 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_smileSection1", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -817,13 +817,13 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_smileSection", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -865,17 +865,17 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_volatility2", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -925,17 +925,17 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_volatility1", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "Period")>] 
          bondTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -985,17 +985,17 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_volatility", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "double")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="bondTenor",Description = "Reference to bondTenor")>] 
+        ([<ExcelArgument(Name="bondTenor",Description = "double")>] 
          bondTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1045,9 +1045,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_calendar", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1081,9 +1081,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_maxTime", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1117,9 +1117,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_referenceDate", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1153,9 +1153,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_settlementDays", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1189,11 +1189,11 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_timeFromReference", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1231,9 +1231,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_update", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1267,9 +1267,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_allowsExtrapolation", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1303,11 +1303,11 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_disableExtrapolation", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1345,11 +1345,11 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_enableExtrapolation", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1387,9 +1387,9 @@ module CallableBondConstantVolatilityFunction =
     *)
     [<ExcelFunction(Name="_CallableBondConstantVolatility_extrapolate", Description="Create a CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "Reference to CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="CallableBondConstantVolatility",Description = "CallableBondConstantVolatility")>] 
          callablebondconstantvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1420,9 +1420,9 @@ module CallableBondConstantVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CallableBondConstantVolatility_Range", Description="Create a range of CallableBondConstantVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableBondConstantVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CallableBondConstantVolatility")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

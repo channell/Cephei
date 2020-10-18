@@ -46,19 +46,19 @@ module CounterpartyAdjSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CounterpartyAdjSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="blackVol",Description = "Reference to blackVol")>] 
+        ([<ExcelArgument(Name="blackVol",Description = "Quote")>] 
          blackVol : obj)
-        ([<ExcelArgument(Name="ctptyDTS",Description = "Reference to ctptyDTS")>] 
+        ([<ExcelArgument(Name="ctptyDTS",Description = "DefaultProbabilityTermStructure")>] 
          ctptyDTS : obj)
-        ([<ExcelArgument(Name="ctptyRecoveryRate",Description = "Reference to ctptyRecoveryRate")>] 
+        ([<ExcelArgument(Name="ctptyRecoveryRate",Description = "double")>] 
          ctptyRecoveryRate : obj)
-        ([<ExcelArgument(Name="invstDTS",Description = "Reference to invstDTS")>] 
+        ([<ExcelArgument(Name="invstDTS",Description = "DefaultProbabilityTermStructure")>] 
          invstDTS : obj)
-        ([<ExcelArgument(Name="invstRecoveryRate",Description = "Reference to invstRecoveryRate")>] 
+        ([<ExcelArgument(Name="invstRecoveryRate",Description = "CounterpartyAdjSwapEngine")>] 
          invstRecoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,19 +119,19 @@ module CounterpartyAdjSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine1", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CounterpartyAdjSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="blackVol",Description = "Reference to blackVol")>] 
+        ([<ExcelArgument(Name="blackVol",Description = "double")>] 
          blackVol : obj)
-        ([<ExcelArgument(Name="ctptyDTS",Description = "Reference to ctptyDTS")>] 
+        ([<ExcelArgument(Name="ctptyDTS",Description = "DefaultProbabilityTermStructure")>] 
          ctptyDTS : obj)
-        ([<ExcelArgument(Name="ctptyRecoveryRate",Description = "Reference to ctptyRecoveryRate")>] 
+        ([<ExcelArgument(Name="ctptyRecoveryRate",Description = "double")>] 
          ctptyRecoveryRate : obj)
-        ([<ExcelArgument(Name="invstDTS",Description = "Reference to invstDTS")>] 
+        ([<ExcelArgument(Name="invstDTS",Description = "DefaultProbabilityTermStructure")>] 
          invstDTS : obj)
-        ([<ExcelArgument(Name="invstRecoveryRate",Description = "Reference to invstRecoveryRate")>] 
+        ([<ExcelArgument(Name="invstRecoveryRate",Description = "CounterpartyAdjSwapEngine")>] 
          invstRecoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,19 +192,19 @@ module CounterpartyAdjSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine2", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CounterpartyAdjSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="swaptionEngine",Description = "Reference to swaptionEngine")>] 
+        ([<ExcelArgument(Name="swaptionEngine",Description = "IPricingEngine")>] 
          swaptionEngine : obj)
-        ([<ExcelArgument(Name="ctptyDTS",Description = "Reference to ctptyDTS")>] 
+        ([<ExcelArgument(Name="ctptyDTS",Description = "DefaultProbabilityTermStructure")>] 
          ctptyDTS : obj)
-        ([<ExcelArgument(Name="ctptyRecoveryRate",Description = "Reference to ctptyRecoveryRate")>] 
+        ([<ExcelArgument(Name="ctptyRecoveryRate",Description = "double")>] 
          ctptyRecoveryRate : obj)
-        ([<ExcelArgument(Name="invstDTS",Description = "Reference to invstDTS")>] 
+        ([<ExcelArgument(Name="invstDTS",Description = "DefaultProbabilityTermStructure")>] 
          invstDTS : obj)
-        ([<ExcelArgument(Name="invstRecoveryRate",Description = "Reference to invstRecoveryRate")>] 
+        ([<ExcelArgument(Name="invstRecoveryRate",Description = "CounterpartyAdjSwapEngine")>] 
          invstRecoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module CounterpartyAdjSwapEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine_Range", Description="Create a range of CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

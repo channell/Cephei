@@ -86,7 +86,8 @@ type SABRInterpolationModel
 (*
     Functions
 *)
-    let _SABRInterpolation                         = cell (fun () -> new SABRInterpolation (xBegin.Value, xEnd.Value, yBegin.Value, t.Value, forward.Value, alpha.Value, beta.Value, nu.Value, rho.Value, alphaIsFixed.Value, betaIsFixed.Value, nuIsFixed.Value, rhoIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, shift.Value, volatilityType.Value, approximationModel.Value))
+    let mutable
+        _SABRInterpolation                         = cell (fun () -> new SABRInterpolation (xBegin.Value, xEnd.Value, yBegin.Value, t.Value, forward.Value, alpha.Value, beta.Value, nu.Value, rho.Value, alphaIsFixed.Value, betaIsFixed.Value, nuIsFixed.Value, rhoIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, shift.Value, volatilityType.Value, approximationModel.Value))
     let _alpha                                     = triv (fun () -> _SABRInterpolation.Value.alpha())
     let _beta                                      = triv (fun () -> _SABRInterpolation.Value.beta())
     let _endCriteria                               = triv (fun () -> _SABRInterpolation.Value.endCriteria())
@@ -125,13 +126,14 @@ type SABRInterpolationModel
     casting 
 *)
     internal new () = new SABRInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SABRInterpolation.Value <- v
+    member internal this.Inject v = _SABRInterpolation <- v
     static member Cast (p : ICell<SABRInterpolation>) = 
         if p :? SABRInterpolationModel then 
             p :?> SABRInterpolationModel
         else
             let o = new SABRInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

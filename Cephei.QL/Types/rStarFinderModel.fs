@@ -52,7 +52,8 @@ type rStarFinderModel
 (*
     Functions
 *)
-    let _rStarFinder                               = cell (fun () -> new rStarFinder (model.Value, nominal.Value, maturity.Value, fixedPayTimes.Value, amounts.Value))
+    let mutable
+        _rStarFinder                               = cell (fun () -> new rStarFinder (model.Value, nominal.Value, maturity.Value, fixedPayTimes.Value, amounts.Value))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _rStarFinder.Value.value(x.Value))
     let _derivative                                (x : ICell<double>)   
@@ -62,13 +63,14 @@ type rStarFinderModel
     casting 
 *)
     internal new () = rStarFinderModel(null,null,null,null,null)
-    member internal this.Inject v = _rStarFinder.Value <- v
+    member internal this.Inject v = _rStarFinder <- v
     static member Cast (p : ICell<rStarFinder>) = 
         if p :? rStarFinderModel then 
             p :?> rStarFinderModel
         else
             let o = new rStarFinderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

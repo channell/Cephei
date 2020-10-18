@@ -52,7 +52,8 @@ type CompositeZeroYieldStructureModel
 (*
     Functions
 *)
-    let _CompositeZeroYieldStructure               = cell (fun () -> new CompositeZeroYieldStructure (h1.Value, h2.Value, f.Value, comp.Value, freq.Value))
+    let mutable
+        _CompositeZeroYieldStructure               = cell (fun () -> new CompositeZeroYieldStructure (h1.Value, h2.Value, f.Value, comp.Value, freq.Value))
     let _calendar                                  = triv (fun () -> _CompositeZeroYieldStructure.Value.calendar())
     let _dayCounter                                = triv (fun () -> _CompositeZeroYieldStructure.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _CompositeZeroYieldStructure.Value.maxDate())
@@ -66,13 +67,14 @@ type CompositeZeroYieldStructureModel
     casting 
 *)
     internal new () = new CompositeZeroYieldStructureModel(null,null,null,null,null)
-    member internal this.Inject v = _CompositeZeroYieldStructure.Value <- v
+    member internal this.Inject v = _CompositeZeroYieldStructure <- v
     static member Cast (p : ICell<CompositeZeroYieldStructure>) = 
         if p :? CompositeZeroYieldStructureModel then 
             p :?> CompositeZeroYieldStructureModel
         else
             let o = new CompositeZeroYieldStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

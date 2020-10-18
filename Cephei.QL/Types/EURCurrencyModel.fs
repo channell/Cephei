@@ -41,7 +41,8 @@ type EURCurrencyModel
 (*
     Functions
 *)
-    let _EURCurrency                               = cell (fun () -> new EURCurrency ())
+    let mutable
+        _EURCurrency                               = cell (fun () -> new EURCurrency ())
     let _code                                      = triv (fun () -> _EURCurrency.Value.code)
     let _empty                                     = triv (fun () -> _EURCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type EURCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _EURCurrency.Value <- v
+    member internal this.Inject v = _EURCurrency <- v
     static member Cast (p : ICell<EURCurrency>) = 
         if p :? EURCurrencyModel then 
             p :?> EURCurrencyModel
         else
             let o = new EURCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

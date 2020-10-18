@@ -44,7 +44,8 @@ type BPSCalculatorModel
 (*
     Functions
 *)
-    let _BPSCalculator                             = cell (fun () -> new BPSCalculator (discountCurve.Value))
+    let mutable
+        _BPSCalculator                             = cell (fun () -> new BPSCalculator (discountCurve.Value))
     let _bps                                       = cell (fun () -> _BPSCalculator.Value.bps())
     let _nonSensNPV                                = cell (fun () -> _BPSCalculator.Value.nonSensNPV())
     let _visit                                     (cf : ICell<CashFlow>)   
@@ -61,13 +62,14 @@ type BPSCalculatorModel
     casting 
 *)
     internal new () = BPSCalculatorModel(null)
-    member internal this.Inject v = _BPSCalculator.Value <- v
+    member internal this.Inject v = _BPSCalculator <- v
     static member Cast (p : ICell<BPSCalculator>) = 
         if p :? BPSCalculatorModel then 
             p :?> BPSCalculatorModel
         else
             let o = new BPSCalculatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

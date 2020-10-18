@@ -39,13 +39,13 @@ module FdmAffineModelSwapInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_avgInnerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_avgInnerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmAffineModelSwapInnerValue")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelSwapInnerValue",Description = "Reference to FdmAffineModelSwapInnerValue")>] 
+        ([<ExcelArgument(Name="FdmAffineModelSwapInnerValue",Description = "FdmAffineModelSwapInnerValue")>] 
          fdmaffinemodelswapinnervalue : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,19 +87,19 @@ module FdmAffineModelSwapInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmAffineModelSwapInnerValue")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="disModel",Description = "Reference to disModel")>] 
+        ([<ExcelArgument(Name="disModel",Description = "'ModelType")>] 
          disModel : obj)
-        ([<ExcelArgument(Name="fwdModel",Description = "Reference to fwdModel")>] 
+        ([<ExcelArgument(Name="fwdModel",Description = "'ModelType")>] 
          fwdModel : obj)
-        ([<ExcelArgument(Name="swap",Description = "Reference to swap")>] 
+        ([<ExcelArgument(Name="swap",Description = "VanillaSwap")>] 
          swap : obj)
-        ([<ExcelArgument(Name="exerciseDates",Description = "Reference to exerciseDates")>] 
+        ([<ExcelArgument(Name="exerciseDates",Description = "double,Date")>] 
          exerciseDates : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,15 +154,15 @@ module FdmAffineModelSwapInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_getState", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_getState
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelSwapInnerValue",Description = "Reference to FdmAffineModelSwapInnerValue")>] 
+        ([<ExcelArgument(Name="FdmAffineModelSwapInnerValue",Description = "FdmAffineModelSwapInnerValue")>] 
          fdmaffinemodelswapinnervalue : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,13 +208,13 @@ module FdmAffineModelSwapInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_innerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_innerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmAffineModelSwapInnerValue",Description = "Reference to FdmAffineModelSwapInnerValue")>] 
+        ([<ExcelArgument(Name="FdmAffineModelSwapInnerValue",Description = "FdmAffineModelSwapInnerValue")>] 
          fdmaffinemodelswapinnervalue : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -253,9 +253,9 @@ module FdmAffineModelSwapInnerValueFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_Range", Description="Create a range of FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmAffineModelSwapInnerValue")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,13 +39,13 @@ module GaussJacobiIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiIntegration", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussJacobiIntegration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module GaussJacobiIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiIntegration_order", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "Reference to GaussJacobiIntegration")>] 
+        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "GaussJacobiIntegration")>] 
          gaussjacobiintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module GaussJacobiIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiIntegration_value", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "Reference to GaussJacobiIntegration")>] 
+        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "GaussJacobiIntegration")>] 
          gaussjacobiintegration : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module GaussJacobiIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiIntegration_weights", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "Reference to GaussJacobiIntegration")>] 
+        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "GaussJacobiIntegration")>] 
          gaussjacobiintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,9 +202,9 @@ module GaussJacobiIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussJacobiIntegration_x", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "Reference to GaussJacobiIntegration")>] 
+        ([<ExcelArgument(Name="GaussJacobiIntegration",Description = "GaussJacobiIntegration")>] 
          gaussjacobiintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,9 +235,9 @@ module GaussJacobiIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussJacobiIntegration_Range", Description="Create a range of GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussJacobiIntegration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

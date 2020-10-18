@@ -39,9 +39,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_addParams_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_addParams_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_error_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_error_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_forward_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_forward_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_maxError_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_maxError_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_model_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_model_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_modelInstance_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_modelInstance_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_paramIsFixed_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_paramIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRCoeffHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_params_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_params_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRCoeffHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_t_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_t_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRCoeffHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,9 +363,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_updateModelInstance", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_updateModelInstance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRCoeffHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,9 +399,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_weights_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_weights_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRCoeffHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,17 +435,17 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRCoeffHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="_params",Description = "Reference to _params")>] 
+        ([<ExcelArgument(Name="_params",Description = "double")>] 
          _params : obj)
-        ([<ExcelArgument(Name="paramIsFixed",Description = "Reference to paramIsFixed")>] 
+        ([<ExcelArgument(Name="paramIsFixed",Description = "bool")>] 
          paramIsFixed : obj)
-        ([<ExcelArgument(Name="addParams",Description = "Reference to addParams")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,9 +496,9 @@ module XABRCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_XABRCoeffHolder_XABREndCriteria_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_XABREndCriteria_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "Reference to XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="XABRCoeffHolder",Description = "XABRCoeffHolder")>] 
          xabrcoeffholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -529,9 +529,9 @@ module XABRCoeffHolderFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_XABRCoeffHolder_Range", Description="Create a range of XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the XABRCoeffHolder")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

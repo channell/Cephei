@@ -40,13 +40,13 @@ module SobolBrownianGeneratorFactoryFunction =
     (*!! not implemented 
     [<ExcelFunction(Name="_SobolBrownianGeneratorFactory_create", Description="Create a SobolBrownianGeneratorFactory",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGeneratorFactory_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGeneratorFactory",Description = "Reference to SobolBrownianGeneratorFactory")>] 
+        ([<ExcelArgument(Name="SobolBrownianGeneratorFactory",Description = "SobolBrownianGeneratorFactory")>] 
          sobolbrowniangeneratorfactory : obj)
-        ([<ExcelArgument(Name="factors",Description = "Reference to factors")>] 
+        ([<ExcelArgument(Name="factors",Description = "int")>] 
          factors : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,13 +89,13 @@ module SobolBrownianGeneratorFactoryFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGeneratorFactory", Description="Create a SobolBrownianGeneratorFactory",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGeneratorFactory_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGeneratorFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ordering",Description = "Reference to ordering")>] 
+        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering")>] 
          ordering : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "SobolBrownianGeneratorFactory")>] 
          seed : obj)
-        ([<ExcelArgument(Name="integers",Description = "Reference to integers")>] 
+        ([<ExcelArgument(Name="integers",Description = "SobolBrownianGeneratorFactory")>] 
          integers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module SobolBrownianGeneratorFactoryFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SobolBrownianGeneratorFactory_Range", Description="Create a range of SobolBrownianGeneratorFactory",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGeneratorFactory_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SobolBrownianGeneratorFactory")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

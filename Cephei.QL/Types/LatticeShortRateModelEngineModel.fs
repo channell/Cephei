@@ -46,7 +46,8 @@ type LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType when 'Argumen
 (*
     Functions
 *)
-    let _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeGrid.Value))
+    let mutable
+        _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeGrid.Value))
     let _update                                    = triv (fun () -> _LatticeShortRateModelEngine.Value.update()
                                                                      _LatticeShortRateModelEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
@@ -94,7 +95,8 @@ type LatticeShortRateModelEngineModel1<'ArgumentsType, 'ResultsType when 'Argume
 (*
     Functions
 *)
-    let _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeSteps.Value))
+    let mutable
+        _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeSteps.Value))
     let _update                                    = triv (fun () -> _LatticeShortRateModelEngine.Value.update()
                                                                      _LatticeShortRateModelEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   

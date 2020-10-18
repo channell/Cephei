@@ -52,7 +52,8 @@ type ContinuousPartialFixedLookbackOptionModel
 (*
     Functions
 *)
-    let _ContinuousPartialFixedLookbackOption      = cell (fun () -> withEngine pricingEngine (new ContinuousPartialFixedLookbackOption (lookbackPeriodStart.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _ContinuousPartialFixedLookbackOption      = cell (fun () -> withEngine pricingEngine (new ContinuousPartialFixedLookbackOption (lookbackPeriodStart.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFixedLookbackOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFixedLookbackOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFixedLookbackOption).dividendRho())
@@ -81,13 +82,14 @@ type ContinuousPartialFixedLookbackOptionModel
     casting 
 *)
     internal new () = new ContinuousPartialFixedLookbackOptionModel(null,null,null,null,null)
-    member internal this.Inject v = _ContinuousPartialFixedLookbackOption.Value <- v
+    member internal this.Inject v = _ContinuousPartialFixedLookbackOption <- v
     static member Cast (p : ICell<ContinuousPartialFixedLookbackOption>) = 
         if p :? ContinuousPartialFixedLookbackOptionModel then 
             p :?> ContinuousPartialFixedLookbackOptionModel
         else
             let o = new ContinuousPartialFixedLookbackOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

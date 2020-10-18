@@ -39,13 +39,13 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Parabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_aCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_aCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_bCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_bCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_cCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_cCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,13 +196,13 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_derivative", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_empty", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,13 +280,13 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_primitive", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,13 +328,13 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_secondDerivative", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,9 +376,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_update", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,13 +412,13 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_value1", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,11 +460,11 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_value", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,9 +502,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_xMax", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,9 +538,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_xMin", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_allowsExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_disableExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,11 +652,11 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_enableExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module ParabolicFunction =
     *)
     [<ExcelFunction(Name="_Parabolic_extrapolate", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parabolic",Description = "Reference to Parabolic")>] 
+        ([<ExcelArgument(Name="Parabolic",Description = "Parabolic")>] 
          parabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -727,9 +727,9 @@ module ParabolicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Parabolic_Range", Description="Create a range of Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Parabolic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

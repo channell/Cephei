@@ -70,7 +70,8 @@ type RangeAccrualFloatersCouponModel
 (*
     Functions
 *)
-    let _RangeAccrualFloatersCoupon                = cell (fun () -> new RangeAccrualFloatersCoupon (paymentDate.Value, nominal.Value, index.Value, startDate.Value, endDate.Value, fixingDays.Value, dayCounter.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, observationsSchedule.Value, lowerTrigger.Value, upperTrigger.Value))
+    let mutable
+        _RangeAccrualFloatersCoupon                = cell (fun () -> new RangeAccrualFloatersCoupon (paymentDate.Value, nominal.Value, index.Value, startDate.Value, endDate.Value, fixingDays.Value, dayCounter.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, observationsSchedule.Value, lowerTrigger.Value, upperTrigger.Value))
     let _endTime                                   = triv (fun () -> _RangeAccrualFloatersCoupon.Value.endTime())
     let _lowerTrigger                              = triv (fun () -> _RangeAccrualFloatersCoupon.Value.lowerTrigger())
     let _observationDates                          = triv (fun () -> _RangeAccrualFloatersCoupon.Value.observationDates())
@@ -140,13 +141,14 @@ type RangeAccrualFloatersCouponModel
     casting 
 *)
     internal new () = new RangeAccrualFloatersCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _RangeAccrualFloatersCoupon.Value <- v
+    member internal this.Inject v = _RangeAccrualFloatersCoupon <- v
     static member Cast (p : ICell<RangeAccrualFloatersCoupon>) = 
         if p :? RangeAccrualFloatersCouponModel then 
             p :?> RangeAccrualFloatersCouponModel
         else
             let o = new RangeAccrualFloatersCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,15 +39,15 @@ module BlackVanillaOptionPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackVanillaOptionPricer", Description="Create a BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVanillaOptionPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVanillaOptionPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="forwardValue",Description = "Reference to forwardValue")>] 
+        ([<ExcelArgument(Name="forwardValue",Description = "double")>] 
          forwardValue : obj)
-        ([<ExcelArgument(Name="expiryDate",Description = "Reference to expiryDate")>] 
+        ([<ExcelArgument(Name="expiryDate",Description = "Date")>] 
          expiryDate : obj)
-        ([<ExcelArgument(Name="swapTenor",Description = "Reference to swapTenor")>] 
+        ([<ExcelArgument(Name="swapTenor",Description = "Period")>] 
          swapTenor : obj)
-        ([<ExcelArgument(Name="volatilityStructure",Description = "Reference to volatilityStructure")>] 
+        ([<ExcelArgument(Name="volatilityStructure",Description = "SwaptionVolatilityStructure")>] 
          volatilityStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,15 +94,15 @@ module BlackVanillaOptionPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackVanillaOptionPricer_value", Description="Create a BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVanillaOptionPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVanillaOptionPricer",Description = "Reference to BlackVanillaOptionPricer")>] 
+        ([<ExcelArgument(Name="BlackVanillaOptionPricer",Description = "BlackVanillaOptionPricer")>] 
          blackvanillaoptionpricer : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="optionType",Description = "Reference to optionType")>] 
+        ([<ExcelArgument(Name="optionType",Description = "Option.Type")>] 
          optionType : obj)
-        ([<ExcelArgument(Name="deflator",Description = "Reference to deflator")>] 
+        ([<ExcelArgument(Name="deflator",Description = "double")>] 
          deflator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -145,9 +145,9 @@ module BlackVanillaOptionPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackVanillaOptionPricer_Range", Description="Create a range of BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVanillaOptionPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackVanillaOptionPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

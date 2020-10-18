@@ -39,15 +39,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapletVarianceCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="capletVolCurve",Description = "Reference to capletVolCurve")>] 
+        ([<ExcelArgument(Name="capletVolCurve",Description = "double")>] 
          capletVolCurve : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,9 +94,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_dayCounter", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,9 +130,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_maxDate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_maxStrike", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,9 +202,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_minStrike", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,15 +238,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,15 +292,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,15 +346,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_displacement", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,13 +436,13 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_smileSection", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,13 +484,13 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_smileSection2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_smileSection2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,13 +532,13 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_smileSection1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,15 +580,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_volatility2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,15 +634,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_volatility1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -688,15 +688,15 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_volatility", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,9 +742,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_volatilityType", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,9 +778,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_businessDayConvention", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -814,11 +814,11 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_optionDateFromTenor", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -856,9 +856,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_calendar", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -892,9 +892,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_maxTime", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -928,9 +928,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_referenceDate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -964,9 +964,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_settlementDays", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1000,11 +1000,11 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_timeFromReference", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1042,9 +1042,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_update", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1078,9 +1078,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_allowsExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1114,11 +1114,11 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_disableExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1156,11 +1156,11 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_enableExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1198,9 +1198,9 @@ module CapletVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_CapletVarianceCurve_extrapolate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "Reference to CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="CapletVarianceCurve",Description = "CapletVarianceCurve")>] 
          capletvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1231,9 +1231,9 @@ module CapletVarianceCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CapletVarianceCurve_Range", Description="Create a range of CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CapletVarianceCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

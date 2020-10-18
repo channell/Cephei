@@ -40,13 +40,13 @@ module TridiagonalOperatorFunction =
     (*!! duplicate add function)
     [<ExcelFunction(Name="_TridiagonalOperator_add", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,11 +89,11 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_applyTo", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,9 +131,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_Clone", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,9 +167,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_diagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,11 +203,11 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_identity", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_isTimeDependent", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_lowerDiagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,13 +317,13 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_multiply", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,13 +365,13 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_setFirstRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -413,13 +413,13 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_setLastRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -461,17 +461,17 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_setMidRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,15 +521,15 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_setMidRows", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -575,11 +575,11 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_setTime", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -617,9 +617,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_size", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -653,11 +653,11 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_solveFor", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -695,13 +695,13 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_SOR", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
-        ([<ExcelArgument(Name="tol",Description = "Reference to tol")>] 
+        ([<ExcelArgument(Name="tol",Description = "double")>] 
          tol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -743,13 +743,13 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_subtract", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,13 +791,13 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator1", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TridiagonalOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="low",Description = "Reference to low")>] 
+        ([<ExcelArgument(Name="low",Description = "Vector")>] 
          low : obj)
-        ([<ExcelArgument(Name="mid",Description = "Reference to mid")>] 
+        ([<ExcelArgument(Name="mid",Description = "Vector")>] 
          mid : obj)
-        ([<ExcelArgument(Name="high",Description = "Reference to high")>] 
+        ([<ExcelArgument(Name="high",Description = "Vector")>] 
          high : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -840,9 +840,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator2", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TridiagonalOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -877,7 +877,7 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TridiagonalOperator")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -908,9 +908,9 @@ module TridiagonalOperatorFunction =
     *)
     [<ExcelFunction(Name="_TridiagonalOperator_upperDiagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TridiagonalOperator",Description = "Reference to TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="TridiagonalOperator",Description = "TridiagonalOperator")>] 
          tridiagonaloperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -941,9 +941,9 @@ module TridiagonalOperatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TridiagonalOperator_Range", Description="Create a range of TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TridiagonalOperator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

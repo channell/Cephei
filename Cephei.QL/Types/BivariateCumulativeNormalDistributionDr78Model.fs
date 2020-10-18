@@ -44,7 +44,8 @@ type BivariateCumulativeNormalDistributionDr78Model
 (*
     Functions
 *)
-    let _BivariateCumulativeNormalDistributionDr78 = cell (fun () -> new BivariateCumulativeNormalDistributionDr78 (rho.Value))
+    let mutable
+        _BivariateCumulativeNormalDistributionDr78 = cell (fun () -> new BivariateCumulativeNormalDistributionDr78 (rho.Value))
     let _value                                     (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _BivariateCumulativeNormalDistributionDr78.Value.value(a.Value, b.Value))
     do this.Bind(_BivariateCumulativeNormalDistributionDr78)
@@ -52,13 +53,14 @@ type BivariateCumulativeNormalDistributionDr78Model
     casting 
 *)
     internal new () = new BivariateCumulativeNormalDistributionDr78Model(null)
-    member internal this.Inject v = _BivariateCumulativeNormalDistributionDr78.Value <- v
+    member internal this.Inject v = _BivariateCumulativeNormalDistributionDr78 <- v
     static member Cast (p : ICell<BivariateCumulativeNormalDistributionDr78>) = 
         if p :? BivariateCumulativeNormalDistributionDr78Model then 
             p :?> BivariateCumulativeNormalDistributionDr78Model
         else
             let o = new BivariateCumulativeNormalDistributionDr78Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

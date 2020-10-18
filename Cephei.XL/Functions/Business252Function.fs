@@ -39,9 +39,9 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Business252")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "Business252")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,13 +76,13 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_dayCount", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_name", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,17 +160,17 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_yearFraction", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="d3",Description = "Reference to d3")>] 
+        ([<ExcelArgument(Name="d3",Description = "Date")>] 
          d3 : obj)
-        ([<ExcelArgument(Name="d4",Description = "Reference to d4")>] 
+        ([<ExcelArgument(Name="d4",Description = "Date")>] 
          d4 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_dayCounter", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_empty", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,11 +292,11 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_Equals", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module Business252Function =
     *)
     [<ExcelFunction(Name="_Business252_ToString", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Business252",Description = "Reference to Business252")>] 
+        ([<ExcelArgument(Name="Business252",Description = "Business252")>] 
          business252 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -367,9 +367,9 @@ module Business252Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Business252_Range", Description="Create a range of Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Business252")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

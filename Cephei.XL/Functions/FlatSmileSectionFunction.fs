@@ -39,9 +39,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_atmLevel", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_atmLevel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,19 +75,19 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exerciseTime",Description = "Reference to exerciseTime")>] 
+        ([<ExcelArgument(Name="exerciseTime",Description = "double")>] 
          exerciseTime : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="atmLevel",Description = "Reference to atmLevel")>] 
+        ([<ExcelArgument(Name="atmLevel",Description = "double")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "FlatSmileSection")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,21 +142,21 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection1", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "FlatSmileSection")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="atmLevel",Description = "Reference to atmLevel")>] 
+        ([<ExcelArgument(Name="atmLevel",Description = "double")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "FlatSmileSection")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -215,9 +215,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_maxStrike", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,9 +251,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_minStrike", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,9 +287,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_dayCounter", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -323,15 +323,15 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_density", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_density
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="gap",Description = "Reference to gap")>] 
+        ([<ExcelArgument(Name="gap",Description = "double")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,17 +377,17 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_digitalOptionPrice", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_digitalOptionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="gap",Description = "Reference to gap")>] 
+        ([<ExcelArgument(Name="gap",Description = "double")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -437,9 +437,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_exerciseDate", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_exerciseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -473,9 +473,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_exerciseTime", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_exerciseTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -509,15 +509,15 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_optionPrice", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_optionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_referenceDate", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,9 +599,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_shift", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_shift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,9 +635,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_update", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -671,11 +671,11 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_variance", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -713,13 +713,13 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_vega", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -761,15 +761,15 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_volatility", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "Reference to volatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "Helper.Range.fromModelList")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -815,11 +815,11 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_volatility1", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,9 +857,9 @@ module FlatSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_FlatSmileSection_volatilityType", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatSmileSection",Description = "Reference to FlatSmileSection")>] 
+        ([<ExcelArgument(Name="FlatSmileSection",Description = "FlatSmileSection")>] 
          flatsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -890,9 +890,9 @@ module FlatSmileSectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FlatSmileSection_Range", Description="Create a range of FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FlatSmileSection")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

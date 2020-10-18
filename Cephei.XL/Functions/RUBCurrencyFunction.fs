@@ -39,7 +39,7 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RUBCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_code", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_empty", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_Equals", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_format", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_fractionsPerUnit", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_fractionSymbol", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_name", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_numericCode", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_rounding", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_symbol", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_ToString", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module RUBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RUBCurrency_triangulationCurrency", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RUBCurrency",Description = "Reference to RUBCurrency")>] 
+        ([<ExcelArgument(Name="RUBCurrency",Description = "RUBCurrency")>] 
          rubcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module RUBCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RUBCurrency_Range", Description="Create a range of RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RUBCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

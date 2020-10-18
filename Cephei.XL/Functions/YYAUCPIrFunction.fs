@@ -39,13 +39,13 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YYAUCPIr")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="revised",Description = "Reference to revised")>] 
+        ([<ExcelArgument(Name="revised",Description = "bool")>] 
          revised : obj)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,15 +88,15 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr1", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YYAUCPIr")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="revised",Description = "Reference to revised")>] 
+        ([<ExcelArgument(Name="revised",Description = "bool")>] 
          revised : obj)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "YoYInflationTermStructure")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,11 +143,11 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_clone", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YoYInflationTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,13 +185,13 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_fixing", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,9 +233,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_ratio", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_ratio
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -269,9 +269,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_yoyInflationTermStructure", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_yoyInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,15 +305,15 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_addFixing", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="fixing",Description = "Reference to fixing")>] 
+        ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -360,9 +360,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_availabilityLag", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -396,9 +396,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_currency", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -432,9 +432,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_familyName", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -468,9 +468,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_fixingCalendar", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -504,9 +504,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_frequency", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -540,9 +540,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_interpolated", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -576,11 +576,11 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_isValidFixingDate", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -618,9 +618,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_name", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -654,9 +654,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_region", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -690,9 +690,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_revised", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -726,9 +726,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_update", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -762,15 +762,15 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_addFixings", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -816,13 +816,13 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_addFixings1", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -864,9 +864,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_allowsNativeFixings", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -900,9 +900,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_clearFixings", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -936,11 +936,11 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_registerWith", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -978,9 +978,9 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_timeSeries", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1014,11 +1014,11 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_unregisterWith", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="YYAUCPIr",Description = "Reference to YYAUCPIr")>] 
+        ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1053,9 +1053,9 @@ module YYAUCPIrFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YYAUCPIr_Range", Description="Create a range of YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the YYAUCPIr")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

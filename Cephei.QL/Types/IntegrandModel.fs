@@ -50,7 +50,8 @@ type IntegrandModel
 (*
     Functions
 *)
-    let _Integrand                                 = cell (fun () -> new Integrand (payoff.Value, s0.Value, drift.Value, variance.Value))
+    let mutable
+        _Integrand                                 = cell (fun () -> new Integrand (payoff.Value, s0.Value, drift.Value, variance.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _Integrand.Value.value(x.Value))
     do this.Bind(_Integrand)
@@ -58,13 +59,14 @@ type IntegrandModel
     casting 
 *)
     internal new () = new IntegrandModel(null,null,null,null)
-    member internal this.Inject v = _Integrand.Value <- v
+    member internal this.Inject v = _Integrand <- v
     static member Cast (p : ICell<Integrand>) = 
         if p :? IntegrandModel then 
             p :?> IntegrandModel
         else
             let o = new IntegrandModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

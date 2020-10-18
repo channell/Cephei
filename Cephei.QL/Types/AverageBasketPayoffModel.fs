@@ -46,7 +46,8 @@ type AverageBasketPayoffModel
 (*
     Functions
 *)
-    let _AverageBasketPayoff                       = cell (fun () -> new AverageBasketPayoff (p.Value, a.Value))
+    let mutable
+        _AverageBasketPayoff                       = cell (fun () -> new AverageBasketPayoff (p.Value, a.Value))
     let _accumulate                                (a : ICell<Vector>)   
                                                    = triv (fun () -> _AverageBasketPayoff.Value.accumulate(a.Value))
     let _basePayoff                                = triv (fun () -> _AverageBasketPayoff.Value.basePayoff())
@@ -64,13 +65,14 @@ type AverageBasketPayoffModel
     casting 
 *)
     internal new () = new AverageBasketPayoffModel(null,null)
-    member internal this.Inject v = _AverageBasketPayoff.Value <- v
+    member internal this.Inject v = _AverageBasketPayoff <- v
     static member Cast (p : ICell<AverageBasketPayoff>) = 
         if p :? AverageBasketPayoffModel then 
             p :?> AverageBasketPayoffModel
         else
             let o = new AverageBasketPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -109,7 +111,8 @@ type AverageBasketPayoffModel1
 (*
     Functions
 *)
-    let _AverageBasketPayoff                       = cell (fun () -> new AverageBasketPayoff (p.Value, n.Value))
+    let mutable
+        _AverageBasketPayoff                       = cell (fun () -> new AverageBasketPayoff (p.Value, n.Value))
     let _accumulate                                (a : ICell<Vector>)   
                                                    = triv (fun () -> _AverageBasketPayoff.Value.accumulate(a.Value))
     let _basePayoff                                = triv (fun () -> _AverageBasketPayoff.Value.basePayoff())
@@ -127,13 +130,14 @@ type AverageBasketPayoffModel1
     casting 
 *)
     internal new () = new AverageBasketPayoffModel1(null,null)
-    member internal this.Inject v = _AverageBasketPayoff.Value <- v
+    member internal this.Inject v = _AverageBasketPayoff <- v
     static member Cast (p : ICell<AverageBasketPayoff>) = 
         if p :? AverageBasketPayoffModel1 then 
             p :?> AverageBasketPayoffModel1
         else
             let o = new AverageBasketPayoffModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

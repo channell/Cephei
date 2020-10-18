@@ -41,7 +41,8 @@ type EqualProbabilitiesBinomialTreeModel<'T>
 (*
     Functions
 *)
-    let _EqualProbabilitiesBinomialTree            = cell (fun () -> new EqualProbabilitiesBinomialTree<'T> ())
+    let mutable
+        _EqualProbabilitiesBinomialTree            = cell (fun () -> new EqualProbabilitiesBinomialTree<'T> ())
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
                                                    = triv (fun () -> _EqualProbabilitiesBinomialTree.Value.probability(x.Value, y.Value, z.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
@@ -86,7 +87,8 @@ type EqualProbabilitiesBinomialTreeModel1<'T>
 (*
     Functions
 *)
-    let _EqualProbabilitiesBinomialTree            = cell (fun () -> new EqualProbabilitiesBinomialTree<'T> (Process.Value, End.Value, steps.Value))
+    let mutable
+        _EqualProbabilitiesBinomialTree            = cell (fun () -> new EqualProbabilitiesBinomialTree<'T> (Process.Value, End.Value, steps.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
                                                    = triv (fun () -> _EqualProbabilitiesBinomialTree.Value.probability(x.Value, y.Value, z.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   

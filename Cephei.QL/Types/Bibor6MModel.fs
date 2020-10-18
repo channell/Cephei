@@ -44,7 +44,8 @@ type Bibor6MModel
 (*
     Functions
 *)
-    let _Bibor6M                                   = cell (fun () -> new Bibor6M (h.Value))
+    let mutable
+        _Bibor6M                                   = cell (fun () -> new Bibor6M (h.Value))
     let _businessDayConvention                     = cell (fun () -> _Bibor6M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = cell (fun () -> _Bibor6M.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type Bibor6MModel
     casting 
 *)
     internal new () = Bibor6MModel(null)
-    member internal this.Inject v = _Bibor6M.Value <- v
+    member internal this.Inject v = _Bibor6M <- v
     static member Cast (p : ICell<Bibor6M>) = 
         if p :? Bibor6MModel then 
             p :?> Bibor6MModel
         else
             let o = new Bibor6MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

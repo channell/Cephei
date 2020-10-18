@@ -39,9 +39,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_dayCounter", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,35 +75,35 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond2", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateBond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="faceAmount",Description = "Reference to faceAmount")>] 
+        ([<ExcelArgument(Name="faceAmount",Description = "double")>] 
          faceAmount : obj)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="coupons",Description = "Reference to coupons")>] 
+        ([<ExcelArgument(Name="coupons",Description = "InterestRate")>] 
          coupons : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "FixedRateBond")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="redemption",Description = "Reference to redemption")>] 
+        ([<ExcelArgument(Name="redemption",Description = "FixedRateBond")>] 
          redemption : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "FixedRateBond")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="paymentCalendar",Description = "Reference to paymentCalendar")>] 
+        ([<ExcelArgument(Name="paymentCalendar",Description = "FixedRateBond")>] 
          paymentCalendar : obj)
-        ([<ExcelArgument(Name="exCouponPeriod",Description = "Reference to exCouponPeriod")>] 
+        ([<ExcelArgument(Name="exCouponPeriod",Description = "FixedRateBond")>] 
          exCouponPeriod : obj)
-        ([<ExcelArgument(Name="exCouponCalendar",Description = "Reference to exCouponCalendar")>] 
+        ([<ExcelArgument(Name="exCouponCalendar",Description = "FixedRateBond")>] 
          exCouponCalendar : obj)
-        ([<ExcelArgument(Name="exCouponConvention",Description = "Reference to exCouponConvention")>] 
+        ([<ExcelArgument(Name="exCouponConvention",Description = "FixedRateBond")>] 
          exCouponConvention : obj)
-        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "Reference to exCouponEndOfMonth")>] 
+        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "FixedRateBond")>] 
          exCouponEndOfMonth : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,51 +190,51 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond1", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateBond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="faceAmount",Description = "Reference to faceAmount")>] 
+        ([<ExcelArgument(Name="faceAmount",Description = "double")>] 
          faceAmount : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="maturityDate",Description = "Reference to maturityDate")>] 
+        ([<ExcelArgument(Name="maturityDate",Description = "Date")>] 
          maturityDate : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="coupons",Description = "Reference to coupons")>] 
+        ([<ExcelArgument(Name="coupons",Description = "double")>] 
          coupons : obj)
-        ([<ExcelArgument(Name="accrualDayCounter",Description = "Reference to accrualDayCounter")>] 
+        ([<ExcelArgument(Name="accrualDayCounter",Description = "DayCounter")>] 
          accrualDayCounter : obj)
-        ([<ExcelArgument(Name="accrualConvention",Description = "Reference to accrualConvention")>] 
+        ([<ExcelArgument(Name="accrualConvention",Description = "FixedRateBond")>] 
          accrualConvention : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "FixedRateBond")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="redemption",Description = "Reference to redemption")>] 
+        ([<ExcelArgument(Name="redemption",Description = "FixedRateBond")>] 
          redemption : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "FixedRateBond")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="stubDate",Description = "Reference to stubDate")>] 
+        ([<ExcelArgument(Name="stubDate",Description = "FixedRateBond")>] 
          stubDate : obj)
-        ([<ExcelArgument(Name="rule",Description = "Reference to rule")>] 
+        ([<ExcelArgument(Name="rule",Description = "FixedRateBond")>] 
          rule : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "FixedRateBond")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="paymentCalendar",Description = "Reference to paymentCalendar")>] 
+        ([<ExcelArgument(Name="paymentCalendar",Description = "FixedRateBond")>] 
          paymentCalendar : obj)
-        ([<ExcelArgument(Name="exCouponPeriod",Description = "Reference to exCouponPeriod")>] 
+        ([<ExcelArgument(Name="exCouponPeriod",Description = "FixedRateBond")>] 
          exCouponPeriod : obj)
-        ([<ExcelArgument(Name="exCouponCalendar",Description = "Reference to exCouponCalendar")>] 
+        ([<ExcelArgument(Name="exCouponCalendar",Description = "FixedRateBond")>] 
          exCouponCalendar : obj)
-        ([<ExcelArgument(Name="exCouponConvention",Description = "Reference to exCouponConvention")>] 
+        ([<ExcelArgument(Name="exCouponConvention",Description = "FixedRateBond")>] 
          exCouponConvention : obj)
-        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "Reference to exCouponEndOfMonth")>] 
+        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "FixedRateBond")>] 
          exCouponEndOfMonth : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -353,37 +353,37 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateBond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="faceAmount",Description = "Reference to faceAmount")>] 
+        ([<ExcelArgument(Name="faceAmount",Description = "double")>] 
          faceAmount : obj)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="coupons",Description = "Reference to coupons")>] 
+        ([<ExcelArgument(Name="coupons",Description = "double")>] 
          coupons : obj)
-        ([<ExcelArgument(Name="accrualDayCounter",Description = "Reference to accrualDayCounter")>] 
+        ([<ExcelArgument(Name="accrualDayCounter",Description = "DayCounter")>] 
          accrualDayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "FixedRateBond")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="redemption",Description = "Reference to redemption")>] 
+        ([<ExcelArgument(Name="redemption",Description = "FixedRateBond")>] 
          redemption : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "FixedRateBond")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="paymentCalendar",Description = "Reference to paymentCalendar")>] 
+        ([<ExcelArgument(Name="paymentCalendar",Description = "FixedRateBond")>] 
          paymentCalendar : obj)
-        ([<ExcelArgument(Name="exCouponPeriod",Description = "Reference to exCouponPeriod")>] 
+        ([<ExcelArgument(Name="exCouponPeriod",Description = "FixedRateBond")>] 
          exCouponPeriod : obj)
-        ([<ExcelArgument(Name="exCouponCalendar",Description = "Reference to exCouponCalendar")>] 
+        ([<ExcelArgument(Name="exCouponCalendar",Description = "FixedRateBond")>] 
          exCouponCalendar : obj)
-        ([<ExcelArgument(Name="exCouponConvention",Description = "Reference to exCouponConvention")>] 
+        ([<ExcelArgument(Name="exCouponConvention",Description = "FixedRateBond")>] 
          exCouponConvention : obj)
-        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "Reference to exCouponEndOfMonth")>] 
+        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "FixedRateBond")>] 
          exCouponEndOfMonth : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -474,9 +474,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_frequency", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -510,11 +510,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_accruedAmount", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -552,9 +552,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_calendar", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -588,9 +588,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_cashflows", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -624,9 +624,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_cleanPrice", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -660,19 +660,19 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_cleanPrice1", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -726,19 +726,19 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_dirtyPrice1", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -792,9 +792,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_dirtyPrice", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -828,9 +828,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_isExpired", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -864,9 +864,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_issueDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -900,11 +900,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_isTradable", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -942,9 +942,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_maturityDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -978,11 +978,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_nextCashFlowDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1020,11 +1020,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_nextCouponRate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1062,11 +1062,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_notional", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1104,9 +1104,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_notionals", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1140,11 +1140,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_previousCashFlowDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1182,11 +1182,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_previousCouponRate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1224,9 +1224,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_redemption", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1260,9 +1260,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_redemptions", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1296,11 +1296,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_settlementDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1338,9 +1338,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_settlementDays", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1374,11 +1374,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_settlementValue", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1416,9 +1416,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_settlementValue1", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1452,9 +1452,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_startDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1488,23 +1488,23 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_yield1", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1566,19 +1566,19 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_yield", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1632,9 +1632,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_CASH", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1668,9 +1668,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_errorEstimate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1704,9 +1704,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_NPV", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1740,11 +1740,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_result", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1782,11 +1782,11 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_setPricingEngine", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1824,9 +1824,9 @@ module FixedRateBondFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBond_valuationDate", Description="Create a FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedRateBond",Description = "Reference to FixedRateBond")>] 
+        ([<ExcelArgument(Name="FixedRateBond",Description = "FixedRateBond")>] 
          fixedratebond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1857,9 +1857,9 @@ module FixedRateBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedRateBond_Range", Description="Create a range of FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FixedRateBond")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

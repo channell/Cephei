@@ -39,13 +39,13 @@ module StepConditionSetFunction =
     *)
     [<ExcelFunction(Name="_StepConditionSet_applyTo", Description="Create a StepConditionSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StepConditionSet_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StepConditionSet",Description = "Reference to StepConditionSet")>] 
+        ([<ExcelArgument(Name="StepConditionSet",Description = "StepConditionSet")>] 
          stepconditionset : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module StepConditionSetFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StepConditionSet_Range", Description="Create a range of StepConditionSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StepConditionSet_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the StepConditionSet")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

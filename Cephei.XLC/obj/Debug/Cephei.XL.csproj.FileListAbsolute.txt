@@ -31,11 +31,11 @@ C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\bin\Debug\Cephei.XL.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\bin\Debug\Serilog.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\bin\Debug\Serilog.xml
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\bin\Debug\FSharp.Core.xml
-C:\Users\steve\source\repos\Cephei2\bin\Debug\Cephei.XL.dll
-C:\Users\steve\source\repos\Cephei2\bin\Debug\Cephei.XL.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.csproj.CoreCompileInputs.cache
+C:\Users\steve\source\repos\Cephei2\bin\Debug\Cephei.XL.dll.config
+C:\Users\steve\source\repos\Cephei2\bin\Debug\Cephei.XL.dll
+C:\Users\steve\source\repos\Cephei2\bin\Debug\Cephei.XL.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.csproj.CopyComplete
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.pdb
-C:\Users\steve\Source\Repos\Cephei2\bin\Debug\Cephei.XL.dll.config

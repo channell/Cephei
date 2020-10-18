@@ -46,19 +46,21 @@ type BlackCallableFixedRateBondEngineModel
 (*
     Functions
 *)
-    let _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))
+    let mutable
+        _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))
     do this.Bind(_BlackCallableFixedRateBondEngine)
 (* 
     casting 
 *)
     internal new () = new BlackCallableFixedRateBondEngineModel(null,null)
-    member internal this.Inject v = _BlackCallableFixedRateBondEngine.Value <- v
+    member internal this.Inject v = _BlackCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
         if p :? BlackCallableFixedRateBondEngineModel then 
             p :?> BlackCallableFixedRateBondEngineModel
         else
             let o = new BlackCallableFixedRateBondEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -86,19 +88,21 @@ type BlackCallableFixedRateBondEngineModel1
 (*
     Functions
 *)
-    let _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))
+    let mutable
+        _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))
     do this.Bind(_BlackCallableFixedRateBondEngine)
 (* 
     casting 
 *)
     internal new () = new BlackCallableFixedRateBondEngineModel1(null,null)
-    member internal this.Inject v = _BlackCallableFixedRateBondEngine.Value <- v
+    member internal this.Inject v = _BlackCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
         if p :? BlackCallableFixedRateBondEngineModel1 then 
             p :?> BlackCallableFixedRateBondEngineModel1
         else
             let o = new BlackCallableFixedRateBondEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

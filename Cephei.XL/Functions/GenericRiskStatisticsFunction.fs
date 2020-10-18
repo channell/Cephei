@@ -39,13 +39,13 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_add", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="weight",Description = "Reference to weight")>] 
+        ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_addSequence", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_addSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="weight",Description = "Reference to weight")>] 
+        ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,11 +135,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_averageShortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_averageShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="target",Description = "Reference to target")>] 
+        ([<ExcelArgument(Name="target",Description = "double")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -177,9 +177,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_downsideDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_downsideDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,9 +213,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_downsideVariance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_downsideVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -249,9 +249,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_errorEstimate", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -285,13 +285,13 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_expectationValue", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_expectationValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = ",double")>] 
          f : obj)
-        ([<ExcelArgument(Name="inRange",Description = "Reference to inRange")>] 
+        ([<ExcelArgument(Name="inRange",Description = ",bool")>] 
          inRange : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,11 +333,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_expectedShortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_expectedShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="centile",Description = "Reference to centile")>] 
+        ([<ExcelArgument(Name="centile",Description = "double")>] 
          centile : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,9 +375,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_kurtosis", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_kurtosis
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -411,9 +411,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_max", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_max
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -447,9 +447,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_mean", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_mean
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -483,9 +483,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_min", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_min
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -519,11 +519,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_percentile", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_percentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="percent",Description = "Reference to percent")>] 
+        ([<ExcelArgument(Name="percent",Description = "double")>] 
          percent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -561,11 +561,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_potentialUpside", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_potentialUpside
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="centile",Description = "Reference to centile")>] 
+        ([<ExcelArgument(Name="centile",Description = "double")>] 
          centile : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -603,11 +603,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_regret", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_regret
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="target",Description = "Reference to target")>] 
+        ([<ExcelArgument(Name="target",Description = "double")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -645,9 +645,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_reset", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -681,9 +681,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_samples", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_samples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -717,9 +717,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_semiDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_semiDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -753,9 +753,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_semiVariance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_semiVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -789,11 +789,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_shortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_shortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="target",Description = "Reference to target")>] 
+        ([<ExcelArgument(Name="target",Description = "double")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -831,9 +831,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_skewness", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_skewness
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -867,9 +867,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_standardDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_standardDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -903,11 +903,11 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_valueAtRisk", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_valueAtRisk
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
-        ([<ExcelArgument(Name="centile",Description = "Reference to centile")>] 
+        ([<ExcelArgument(Name="centile",Description = "double")>] 
          centile : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -945,9 +945,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_variance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -981,9 +981,9 @@ module GenericRiskStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericRiskStatistics_weightSum", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_weightSum
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "Reference to GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="GenericRiskStatistics",Description = "GenericRiskStatistics")>] 
          genericriskstatistics : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1014,9 +1014,9 @@ module GenericRiskStatisticsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GenericRiskStatistics_Range", Description="Create a range of GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GenericRiskStatistics")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

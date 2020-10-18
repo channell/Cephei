@@ -58,7 +58,8 @@ type SwaptionVolCube2Model
 (*
     Functions
 *)
-    let _SwaptionVolCube2                          = cell (fun () -> new SwaptionVolCube2 (atmVolStructure.Value, optionTenors.Value, swapTenors.Value, strikeSpreads.Value, volSpreads.Value, swapIndexBase.Value, shortSwapIndexBase.Value, vegaWeightedSmileFit.Value))
+    let mutable
+        _SwaptionVolCube2                          = cell (fun () -> new SwaptionVolCube2 (atmVolStructure.Value, optionTenors.Value, swapTenors.Value, strikeSpreads.Value, volSpreads.Value, swapIndexBase.Value, shortSwapIndexBase.Value, vegaWeightedSmileFit.Value))
     let _volSpreads                                (i : ICell<int>)   
                                                    = triv (fun () -> _SwaptionVolCube2.Value.volSpreads(i.Value))
     let _atmStrike                                 (optionDate : ICell<Date>) (swapTenor : ICell<Period>)   
@@ -154,13 +155,14 @@ type SwaptionVolCube2Model
     casting 
 *)
     internal new () = new SwaptionVolCube2Model(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolCube2.Value <- v
+    member internal this.Inject v = _SwaptionVolCube2 <- v
     static member Cast (p : ICell<SwaptionVolCube2>) = 
         if p :? SwaptionVolCube2Model then 
             p :?> SwaptionVolCube2Model
         else
             let o = new SwaptionVolCube2Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

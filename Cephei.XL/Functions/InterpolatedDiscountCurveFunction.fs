@@ -39,9 +39,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_Clone", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_data", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_data_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_dates", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_dates_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_discounts", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_discounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,19 +255,19 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="discounts",Description = "Reference to discounts")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double")>] 
          discounts : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedDiscountCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedDiscountCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,15 +322,15 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve1", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="discounts",Description = "Reference to discounts")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double")>] 
          discounts : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,17 +377,17 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve2", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="discounts",Description = "Reference to discounts")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double")>] 
          discounts : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "InterpolatedDiscountCurve")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -438,21 +438,21 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve3", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="discounts",Description = "Reference to discounts")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double")>] 
          discounts : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "InterpolatedDiscountCurve")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedDiscountCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedDiscountCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -511,19 +511,19 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve4", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "InterpolatedDiscountCurve")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedDiscountCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedDiscountCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -578,17 +578,17 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve5", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedDiscountCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedDiscountCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -639,15 +639,15 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve6", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create6
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "InterpolatedDiscountCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedDiscountCurve")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedDiscountCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_interpolation_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -730,9 +730,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_interpolator_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,9 +766,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxDate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,9 +802,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxDate_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -838,9 +838,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_nodes", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,9 +874,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_setupInterpolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -910,9 +910,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_times", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_times_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,13 +982,13 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_discount", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1030,13 +1030,13 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_discount", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1078,21 +1078,21 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1150,21 +1150,21 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1222,19 +1222,19 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1288,9 +1288,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_jumpDates", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1324,9 +1324,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_jumpTimes", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1360,9 +1360,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_update", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1396,19 +1396,19 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_zeroRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1462,17 +1462,17 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_zeroRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1522,9 +1522,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_calendar", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1558,9 +1558,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_dayCounter", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1594,9 +1594,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxTime", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1630,9 +1630,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_referenceDate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1666,9 +1666,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_settlementDays", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1702,11 +1702,11 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_timeFromReference", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1744,9 +1744,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_allowsExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1780,11 +1780,11 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_disableExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1822,11 +1822,11 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_enableExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1864,9 +1864,9 @@ module InterpolatedDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_extrapolate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "Reference to InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedDiscountCurve",Description = "InterpolatedDiscountCurve")>] 
          interpolateddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1897,9 +1897,9 @@ module InterpolatedDiscountCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedDiscountCurve_Range", Description="Create a range of InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatedDiscountCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

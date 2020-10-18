@@ -60,7 +60,8 @@ type BMASwapRateHelperModel
 (*
     Functions
 *)
-    let _BMASwapRateHelper                         = cell (fun () -> new BMASwapRateHelper (liborFraction.Value, tenor.Value, settlementDays.Value, calendar.Value, bmaPeriod.Value, bmaConvention.Value, bmaDayCount.Value, bmaIndex.Value, iborIndex.Value))
+    let mutable
+        _BMASwapRateHelper                         = cell (fun () -> new BMASwapRateHelper (liborFraction.Value, tenor.Value, settlementDays.Value, calendar.Value, bmaPeriod.Value, bmaConvention.Value, bmaDayCount.Value, bmaIndex.Value, iborIndex.Value))
     let _impliedQuote                              = triv (fun () -> _BMASwapRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _BMASwapRateHelper.Value.setTermStructure(t.Value)
@@ -87,13 +88,14 @@ type BMASwapRateHelperModel
     casting 
 *)
     internal new () = new BMASwapRateHelperModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _BMASwapRateHelper.Value <- v
+    member internal this.Inject v = _BMASwapRateHelper <- v
     static member Cast (p : ICell<BMASwapRateHelper>) = 
         if p :? BMASwapRateHelperModel then 
             p :?> BMASwapRateHelperModel
         else
             let o = new BMASwapRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

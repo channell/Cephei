@@ -48,7 +48,8 @@ type HestonHullWhitePathPricerModel
 (*
     Functions
 *)
-    let _HestonHullWhitePathPricer                 = cell (fun () -> new HestonHullWhitePathPricer (exerciseTime.Value, payoff.Value, Process.Value))
+    let mutable
+        _HestonHullWhitePathPricer                 = cell (fun () -> new HestonHullWhitePathPricer (exerciseTime.Value, payoff.Value, Process.Value))
     let _value                                     (path : ICell<IPath>)   
                                                    = triv (fun () -> _HestonHullWhitePathPricer.Value.value(path.Value))
     do this.Bind(_HestonHullWhitePathPricer)
@@ -56,13 +57,14 @@ type HestonHullWhitePathPricerModel
     casting 
 *)
     internal new () = new HestonHullWhitePathPricerModel(null,null,null)
-    member internal this.Inject v = _HestonHullWhitePathPricer.Value <- v
+    member internal this.Inject v = _HestonHullWhitePathPricer <- v
     static member Cast (p : ICell<HestonHullWhitePathPricer>) = 
         if p :? HestonHullWhitePathPricerModel then 
             p :?> HestonHullWhitePathPricerModel
         else
             let o = new HestonHullWhitePathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

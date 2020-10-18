@@ -39,13 +39,13 @@ module HestonHullWhitePathPricerFunction =
     *)
     [<ExcelFunction(Name="_HestonHullWhitePathPricer", Description="Create a HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonHullWhitePathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonHullWhitePathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exerciseTime",Description = "Reference to exerciseTime")>] 
+        ([<ExcelArgument(Name="exerciseTime",Description = "double")>] 
          exerciseTime : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "HybridHestonHullWhiteProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module HestonHullWhitePathPricerFunction =
     *)
     [<ExcelFunction(Name="_HestonHullWhitePathPricer_value", Description="Create a HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonHullWhitePathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonHullWhitePathPricer",Description = "Reference to HestonHullWhitePathPricer")>] 
+        ([<ExcelArgument(Name="HestonHullWhitePathPricer",Description = "HestonHullWhitePathPricer")>] 
          hestonhullwhitepathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -127,9 +127,9 @@ module HestonHullWhitePathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonHullWhitePathPricer_Range", Description="Create a range of HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonHullWhitePathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HestonHullWhitePathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

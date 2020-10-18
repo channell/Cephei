@@ -46,7 +46,8 @@ type BoundaryConstraintModel
 (*
     Functions
 *)
-    let _BoundaryConstraint                        = cell (fun () -> new BoundaryConstraint (low.Value, high.Value))
+    let mutable
+        _BoundaryConstraint                        = cell (fun () -> new BoundaryConstraint (low.Value, high.Value))
     let _empty                                     = triv (fun () -> _BoundaryConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _BoundaryConstraint.Value.lowerBound(parameters.Value))
@@ -61,13 +62,14 @@ type BoundaryConstraintModel
     casting 
 *)
     internal new () = new BoundaryConstraintModel(null,null)
-    member internal this.Inject v = _BoundaryConstraint.Value <- v
+    member internal this.Inject v = _BoundaryConstraint <- v
     static member Cast (p : ICell<BoundaryConstraint>) = 
         if p :? BoundaryConstraintModel then 
             p :?> BoundaryConstraintModel
         else
             let o = new BoundaryConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

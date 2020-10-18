@@ -39,19 +39,19 @@ module AbcdSquaredFunction =
     *)
     [<ExcelFunction(Name="_AbcdSquared", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdSquared")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "double")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
-        ([<ExcelArgument(Name="S",Description = "Reference to S")>] 
+        ([<ExcelArgument(Name="S",Description = "double")>] 
          S : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,11 +106,11 @@ module AbcdSquaredFunction =
     *)
     [<ExcelFunction(Name="_AbcdSquared_value", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdSquared",Description = "Reference to AbcdSquared")>] 
+        ([<ExcelArgument(Name="AbcdSquared",Description = "AbcdSquared")>] 
          abcdsquared : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -145,9 +145,9 @@ module AbcdSquaredFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdSquared_Range", Description="Create a range of AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AbcdSquared")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -70,7 +70,8 @@ type YearOnYearInflationSwapModel
 (*
     Functions
 *)
-    let _YearOnYearInflationSwap                   = cell (fun () -> withEngine pricingEngine (new YearOnYearInflationSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, yoySchedule.Value, yoyIndex.Value, observationLag.Value, spread.Value, yoyDayCount.Value, paymentCalendar.Value, paymentConvention.Value)))
+    let mutable
+        _YearOnYearInflationSwap                   = cell (fun () -> withEngine pricingEngine (new YearOnYearInflationSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, yoySchedule.Value, yoyIndex.Value, observationLag.Value, spread.Value, yoyDayCount.Value, paymentCalendar.Value, paymentConvention.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YearOnYearInflationSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _YearOnYearInflationSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _YearOnYearInflationSwap).fixedDayCount())
@@ -120,13 +121,14 @@ type YearOnYearInflationSwapModel
     casting 
 *)
     internal new () = new YearOnYearInflationSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _YearOnYearInflationSwap.Value <- v
+    member internal this.Inject v = _YearOnYearInflationSwap <- v
     static member Cast (p : ICell<YearOnYearInflationSwap>) = 
         if p :? YearOnYearInflationSwapModel then 
             p :?> YearOnYearInflationSwapModel
         else
             let o = new YearOnYearInflationSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type SpreadBasketPayoffModel
 (*
     Functions
 *)
-    let _SpreadBasketPayoff                        = cell (fun () -> new SpreadBasketPayoff (p.Value))
+    let mutable
+        _SpreadBasketPayoff                        = cell (fun () -> new SpreadBasketPayoff (p.Value))
     let _accumulate                                (a : ICell<Vector>)   
                                                    = triv (fun () -> _SpreadBasketPayoff.Value.accumulate(a.Value))
     let _basePayoff                                = triv (fun () -> _SpreadBasketPayoff.Value.basePayoff())
@@ -62,13 +63,14 @@ type SpreadBasketPayoffModel
     casting 
 *)
     internal new () = new SpreadBasketPayoffModel(null)
-    member internal this.Inject v = _SpreadBasketPayoff.Value <- v
+    member internal this.Inject v = _SpreadBasketPayoff <- v
     static member Cast (p : ICell<SpreadBasketPayoff>) = 
         if p :? SpreadBasketPayoffModel then 
             p :?> SpreadBasketPayoffModel
         else
             let o = new SpreadBasketPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

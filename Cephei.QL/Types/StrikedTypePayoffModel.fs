@@ -44,7 +44,8 @@ type StrikedTypePayoffModel
 (*
     Functions
 *)
-    let _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (p.Value))
+    let mutable
+        _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (p.Value))
     let _description                               = triv (fun () -> _StrikedTypePayoff.Value.description())
     let _strike                                    = triv (fun () -> _StrikedTypePayoff.Value.strike())
     let _optionType                                = triv (fun () -> _StrikedTypePayoff.Value.optionType())
@@ -59,13 +60,14 @@ type StrikedTypePayoffModel
     casting 
 *)
     internal new () = new StrikedTypePayoffModel(null)
-    member internal this.Inject v = _StrikedTypePayoff.Value <- v
+    member internal this.Inject v = _StrikedTypePayoff <- v
     static member Cast (p : ICell<StrikedTypePayoff>) = 
         if p :? StrikedTypePayoffModel then 
             p :?> StrikedTypePayoffModel
         else
             let o = new StrikedTypePayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -100,7 +102,8 @@ type StrikedTypePayoffModel1
 (*
     Functions
 *)
-    let _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (Type.Value, strike.Value))
+    let mutable
+        _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (Type.Value, strike.Value))
     let _description                               = triv (fun () -> _StrikedTypePayoff.Value.description())
     let _strike                                    = triv (fun () -> _StrikedTypePayoff.Value.strike())
     let _optionType                                = triv (fun () -> _StrikedTypePayoff.Value.optionType())
@@ -115,13 +118,14 @@ type StrikedTypePayoffModel1
     casting 
 *)
     internal new () = new StrikedTypePayoffModel1(null,null)
-    member internal this.Inject v = _StrikedTypePayoff.Value <- v
+    member internal this.Inject v = _StrikedTypePayoff <- v
     static member Cast (p : ICell<StrikedTypePayoff>) = 
         if p :? StrikedTypePayoffModel1 then 
             p :?> StrikedTypePayoffModel1
         else
             let o = new StrikedTypePayoffModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

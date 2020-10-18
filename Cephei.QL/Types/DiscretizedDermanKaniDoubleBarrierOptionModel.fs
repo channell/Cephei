@@ -48,7 +48,8 @@ type DiscretizedDermanKaniDoubleBarrierOptionModel
 (*
     Functions
 *)
-    let _DiscretizedDermanKaniDoubleBarrierOption  = cell (fun () -> new DiscretizedDermanKaniDoubleBarrierOption (args.Value, Process.Value, grid.Value))
+    let mutable
+        _DiscretizedDermanKaniDoubleBarrierOption  = cell (fun () -> new DiscretizedDermanKaniDoubleBarrierOption (args.Value, Process.Value, grid.Value))
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedDermanKaniDoubleBarrierOption.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedDermanKaniDoubleBarrierOption.Value.reset(size.Value)
@@ -83,13 +84,14 @@ type DiscretizedDermanKaniDoubleBarrierOptionModel
     casting 
 *)
     internal new () = new DiscretizedDermanKaniDoubleBarrierOptionModel(null,null,null)
-    member internal this.Inject v = _DiscretizedDermanKaniDoubleBarrierOption.Value <- v
+    member internal this.Inject v = _DiscretizedDermanKaniDoubleBarrierOption <- v
     static member Cast (p : ICell<DiscretizedDermanKaniDoubleBarrierOption>) = 
         if p :? DiscretizedDermanKaniDoubleBarrierOptionModel then 
             p :?> DiscretizedDermanKaniDoubleBarrierOptionModel
         else
             let o = new DiscretizedDermanKaniDoubleBarrierOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

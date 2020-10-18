@@ -48,7 +48,8 @@ type BlackIborCouponPricerModel
 (*
     Functions
 *)
-    let _BlackIborCouponPricer                     = cell (fun () -> new BlackIborCouponPricer (v.Value, timingAdjustment.Value, correlation.Value))
+    let mutable
+        _BlackIborCouponPricer                     = cell (fun () -> new BlackIborCouponPricer (v.Value, timingAdjustment.Value, correlation.Value))
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _BlackIborCouponPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -79,13 +80,14 @@ type BlackIborCouponPricerModel
     casting 
 *)
     internal new () = new BlackIborCouponPricerModel(null,null,null)
-    member internal this.Inject v = _BlackIborCouponPricer.Value <- v
+    member internal this.Inject v = _BlackIborCouponPricer <- v
     static member Cast (p : ICell<BlackIborCouponPricer>) = 
         if p :? BlackIborCouponPricerModel then 
             p :?> BlackIborCouponPricerModel
         else
             let o = new BlackIborCouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

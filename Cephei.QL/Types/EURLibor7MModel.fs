@@ -44,7 +44,8 @@ type EURLibor7MModel
 (*
     Functions
 *)
-    let _EURLibor7M                                = cell (fun () -> new EURLibor7M (h.Value))
+    let mutable
+        _EURLibor7M                                = cell (fun () -> new EURLibor7M (h.Value))
     let _maturityDate                              (valueDate : ICell<Date>)   
                                                    = triv (fun () -> _EURLibor7M.Value.maturityDate(valueDate.Value))
     let _valueDate                                 (fixingDate : ICell<Date>)   
@@ -99,13 +100,14 @@ type EURLibor7MModel
     casting 
 *)
     internal new () = new EURLibor7MModel(null)
-    member internal this.Inject v = _EURLibor7M.Value <- v
+    member internal this.Inject v = _EURLibor7M <- v
     static member Cast (p : ICell<EURLibor7M>) = 
         if p :? EURLibor7MModel then 
             p :?> EURLibor7MModel
         else
             let o = new EURLibor7MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type EURLibor7MModel1
 (*
     Functions
 *)
-    let _EURLibor7M                                = cell (fun () -> new EURLibor7M ())
+    let mutable
+        _EURLibor7M                                = cell (fun () -> new EURLibor7M ())
     let _maturityDate                              (valueDate : ICell<Date>)   
                                                    = triv (fun () -> _EURLibor7M.Value.maturityDate(valueDate.Value))
     let _valueDate                                 (fixingDate : ICell<Date>)   
@@ -224,13 +227,14 @@ type EURLibor7MModel1
     casting 
 *)
     
-    member internal this.Inject v = _EURLibor7M.Value <- v
+    member internal this.Inject v = _EURLibor7M <- v
     static member Cast (p : ICell<EURLibor7M>) = 
         if p :? EURLibor7MModel1 then 
             p :?> EURLibor7MModel1
         else
             let o = new EURLibor7MModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

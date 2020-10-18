@@ -66,7 +66,8 @@ type YoYInflationCouponModel
 (*
     Functions
 *)
-    let _YoYInflationCoupon                        = cell (fun () -> new YoYInflationCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, yoyIndex.Value, observationLag.Value, dayCounter.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value))
+    let mutable
+        _YoYInflationCoupon                        = cell (fun () -> new YoYInflationCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, yoyIndex.Value, observationLag.Value, dayCounter.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value))
     let _adjustedFixing                            = triv (fun () -> _YoYInflationCoupon.Value.adjustedFixing())
     let _gearing                                   = triv (fun () -> _YoYInflationCoupon.Value.gearing())
     let _spread                                    = triv (fun () -> _YoYInflationCoupon.Value.spread())
@@ -124,13 +125,14 @@ type YoYInflationCouponModel
     casting 
 *)
     internal new () = new YoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _YoYInflationCoupon.Value <- v
+    member internal this.Inject v = _YoYInflationCoupon <- v
     static member Cast (p : ICell<YoYInflationCoupon>) = 
         if p :? YoYInflationCouponModel then 
             p :?> YoYInflationCouponModel
         else
             let o = new YoYInflationCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BermudanExercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise1", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BermudanExercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="payoffAtExpiry",Description = "Reference to payoffAtExpiry")>] 
+        ([<ExcelArgument(Name="payoffAtExpiry",Description = "bool")>] 
          payoffAtExpiry : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise_payoffAtExpiry", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_payoffAtExpiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BermudanExercise",Description = "Reference to BermudanExercise")>] 
+        ([<ExcelArgument(Name="BermudanExercise",Description = "BermudanExercise")>] 
          bermudanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,11 +155,11 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise_date", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BermudanExercise",Description = "Reference to BermudanExercise")>] 
+        ([<ExcelArgument(Name="BermudanExercise",Description = "BermudanExercise")>] 
          bermudanexercise : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise_dates", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BermudanExercise",Description = "Reference to BermudanExercise")>] 
+        ([<ExcelArgument(Name="BermudanExercise",Description = "BermudanExercise")>] 
          bermudanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,9 +233,9 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise_lastDate", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_lastDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BermudanExercise",Description = "Reference to BermudanExercise")>] 
+        ([<ExcelArgument(Name="BermudanExercise",Description = "BermudanExercise")>] 
          bermudanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -269,9 +269,9 @@ module BermudanExerciseFunction =
     *)
     [<ExcelFunction(Name="_BermudanExercise_type", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BermudanExercise",Description = "Reference to BermudanExercise")>] 
+        ([<ExcelArgument(Name="BermudanExercise",Description = "BermudanExercise")>] 
          bermudanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -302,9 +302,9 @@ module BermudanExerciseFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BermudanExercise_Range", Description="Create a range of BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BermudanExercise")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

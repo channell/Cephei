@@ -52,7 +52,8 @@ type BSMOperatorModel
 (*
     Functions
 *)
-    let _BSMOperator                               = cell (fun () -> new BSMOperator (size.Value, dx.Value, r.Value, q.Value, sigma.Value))
+    let mutable
+        _BSMOperator                               = cell (fun () -> new BSMOperator (size.Value, dx.Value, r.Value, q.Value, sigma.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _BSMOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -93,13 +94,14 @@ type BSMOperatorModel
     casting 
 *)
     internal new () = new BSMOperatorModel(null,null,null,null,null)
-    member internal this.Inject v = _BSMOperator.Value <- v
+    member internal this.Inject v = _BSMOperator <- v
     static member Cast (p : ICell<BSMOperator>) = 
         if p :? BSMOperatorModel then 
             p :?> BSMOperatorModel
         else
             let o = new BSMOperatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -162,7 +164,8 @@ type BSMOperatorModel1
 (*
     Functions
 *)
-    let _BSMOperator                               = cell (fun () -> new BSMOperator (grid.Value, Process.Value, residualTime.Value))
+    let mutable
+        _BSMOperator                               = cell (fun () -> new BSMOperator (grid.Value, Process.Value, residualTime.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _BSMOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -203,13 +206,14 @@ type BSMOperatorModel1
     casting 
 *)
     internal new () = new BSMOperatorModel1(null,null,null)
-    member internal this.Inject v = _BSMOperator.Value <- v
+    member internal this.Inject v = _BSMOperator <- v
     static member Cast (p : ICell<BSMOperator>) = 
         if p :? BSMOperatorModel1 then 
             p :?> BSMOperatorModel1
         else
             let o = new BSMOperatorModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -263,7 +267,8 @@ type BSMOperatorModel2
 (*
     Functions
 *)
-    let _BSMOperator                               = cell (fun () -> new BSMOperator ())
+    let mutable
+        _BSMOperator                               = cell (fun () -> new BSMOperator ())
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _BSMOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -304,13 +309,14 @@ type BSMOperatorModel2
     casting 
 *)
     
-    member internal this.Inject v = _BSMOperator.Value <- v
+    member internal this.Inject v = _BSMOperator <- v
     static member Cast (p : ICell<BSMOperator>) = 
         if p :? BSMOperatorModel2 then 
             p :?> BSMOperatorModel2
         else
             let o = new BSMOperatorModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

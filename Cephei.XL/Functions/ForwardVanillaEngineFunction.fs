@@ -40,15 +40,15 @@ module ForwardVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaEngine", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="getEngine",Description = "Reference to getEngine")>] 
+        ([<ExcelArgument(Name="getEngine",Description = "ForwardVanillaEngine.GetOriginalEngine")>] 
          getEngine : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -96,11 +96,11 @@ module ForwardVanillaEngineFunction =
     (*!!omitted 
     [<ExcelFunction(Name="_ForwardVanillaEngine_GetOriginalEngine", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_GetOriginalEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IPricingEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "Reference to ForwardVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "ForwardVanillaEngine")>] 
          forwardvanillaengine : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -139,11 +139,11 @@ module ForwardVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaEngine_registerWith", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "Reference to ForwardVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "ForwardVanillaEngine")>] 
          forwardvanillaengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,9 +181,9 @@ module ForwardVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaEngine_reset", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "Reference to ForwardVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "ForwardVanillaEngine")>] 
          forwardvanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,11 +217,11 @@ module ForwardVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaEngine_unregisterWith", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "Reference to ForwardVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "ForwardVanillaEngine")>] 
          forwardvanillaengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,9 +259,9 @@ module ForwardVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaEngine_update", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "Reference to ForwardVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardVanillaEngine",Description = "ForwardVanillaEngine")>] 
          forwardvanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module ForwardVanillaEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardVanillaEngine_Range", Description="Create a range of ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardVanillaEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

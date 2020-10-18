@@ -39,13 +39,13 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackIborCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "OptionletVolatilityStructure")>] 
          v : obj)
-        ([<ExcelArgument(Name="timingAdjustment",Description = "Reference to timingAdjustment")>] 
+        ([<ExcelArgument(Name="timingAdjustment",Description = "BlackIborCouponPricer")>] 
          timingAdjustment : obj)
-        ([<ExcelArgument(Name="correlation",Description = "Reference to correlation")>] 
+        ([<ExcelArgument(Name="correlation",Description = "Quote")>] 
          correlation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_capletPrice", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveCap",Description = "Reference to effectiveCap")>] 
+        ([<ExcelArgument(Name="effectiveCap",Description = "double")>] 
          effectiveCap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,11 +130,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_capletRate", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveCap",Description = "Reference to effectiveCap")>] 
+        ([<ExcelArgument(Name="effectiveCap",Description = "double")>] 
          effectiveCap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,11 +172,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_floorletPrice", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveFloor",Description = "Reference to effectiveFloor")>] 
+        ([<ExcelArgument(Name="effectiveFloor",Description = "double")>] 
          effectiveFloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,11 +214,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_floorletRate", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="effectiveFloor",Description = "Reference to effectiveFloor")>] 
+        ([<ExcelArgument(Name="effectiveFloor",Description = "double")>] 
          effectiveFloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,11 +256,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_initialize", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="coupon",Description = "Reference to coupon")>] 
+        ([<ExcelArgument(Name="coupon",Description = "FloatingRateCoupon")>] 
          coupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,9 +298,9 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_swapletPrice", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_swapletRate", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_capletVolatility", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_capletVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,11 +406,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_setCapletVolatility", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_setCapletVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "OptionletVolatilityStructure")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,11 +448,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_registerWith", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,11 +490,11 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_unregisterWith", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,9 +532,9 @@ module BlackIborCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BlackIborCouponPricer_update", Description="Create a BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "Reference to BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="BlackIborCouponPricer",Description = "BlackIborCouponPricer")>] 
          blackiborcouponpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -565,9 +565,9 @@ module BlackIborCouponPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackIborCouponPricer_Range", Description="Create a range of BlackIborCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackIborCouponPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackIborCouponPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

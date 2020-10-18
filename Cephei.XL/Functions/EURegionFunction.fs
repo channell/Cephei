@@ -39,7 +39,7 @@ module EURegionFunction =
     *)
     [<ExcelFunction(Name="_EURegion", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EURegion")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module EURegionFunction =
     *)
     [<ExcelFunction(Name="_EURegion_code", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EURegion",Description = "Reference to EURegion")>] 
+        ([<ExcelArgument(Name="EURegion",Description = "EURegion")>] 
          euregion : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,11 +106,11 @@ module EURegionFunction =
     *)
     [<ExcelFunction(Name="_EURegion_Equals", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EURegion",Description = "Reference to EURegion")>] 
+        ([<ExcelArgument(Name="EURegion",Description = "EURegion")>] 
          euregion : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module EURegionFunction =
     *)
     [<ExcelFunction(Name="_EURegion_name", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EURegion",Description = "Reference to EURegion")>] 
+        ([<ExcelArgument(Name="EURegion",Description = "EURegion")>] 
          euregion : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,9 +181,9 @@ module EURegionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EURegion_Range", Description="Create a range of EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EURegion")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

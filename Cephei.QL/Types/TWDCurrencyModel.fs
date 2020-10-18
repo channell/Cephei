@@ -41,7 +41,8 @@ type TWDCurrencyModel
 (*
     Functions
 *)
-    let _TWDCurrency                               = cell (fun () -> new TWDCurrency ())
+    let mutable
+        _TWDCurrency                               = cell (fun () -> new TWDCurrency ())
     let _code                                      = triv (fun () -> _TWDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _TWDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type TWDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _TWDCurrency.Value <- v
+    member internal this.Inject v = _TWDCurrency <- v
     static member Cast (p : ICell<TWDCurrency>) = 
         if p :? TWDCurrencyModel then 
             p :?> TWDCurrencyModel
         else
             let o = new TWDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

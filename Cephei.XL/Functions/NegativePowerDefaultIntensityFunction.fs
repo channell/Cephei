@@ -39,13 +39,13 @@ module NegativePowerDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_NegativePowerDefaultIntensity_defaultRecovery", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_defaultRecovery
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NegativePowerDefaultIntensity")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NegativePowerDefaultIntensity",Description = "Reference to NegativePowerDefaultIntensity")>] 
+        ([<ExcelArgument(Name="NegativePowerDefaultIntensity",Description = "NegativePowerDefaultIntensity")>] 
          negativepowerdefaultintensity : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module NegativePowerDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_NegativePowerDefaultIntensity_hazardRate", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_hazardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NegativePowerDefaultIntensity")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NegativePowerDefaultIntensity",Description = "Reference to NegativePowerDefaultIntensity")>] 
+        ([<ExcelArgument(Name="NegativePowerDefaultIntensity",Description = "NegativePowerDefaultIntensity")>] 
          negativepowerdefaultintensity : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,13 +135,13 @@ module NegativePowerDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_NegativePowerDefaultIntensity1", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NegativePowerDefaultIntensity")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "double")>] 
          p : obj)
-        ([<ExcelArgument(Name="recovery",Description = "Reference to recovery")>] 
+        ([<ExcelArgument(Name="recovery",Description = "double")>] 
          recovery : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,11 +184,11 @@ module NegativePowerDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_NegativePowerDefaultIntensity", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NegativePowerDefaultIntensity")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "double")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -224,9 +224,9 @@ module NegativePowerDefaultIntensityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NegativePowerDefaultIntensity_Range", Description="Create a range of NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NegativePowerDefaultIntensity")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

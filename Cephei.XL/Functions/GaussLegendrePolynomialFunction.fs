@@ -39,7 +39,7 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussLegendrePolynomial")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,11 +70,11 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial_alpha", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "Reference to GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "GaussLegendrePolynomial")>] 
          gausslegendrepolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial_beta", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "Reference to GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "GaussLegendrePolynomial")>] 
          gausslegendrepolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial_mu_0", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_mu_0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "Reference to GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "GaussLegendrePolynomial")>] 
          gausslegendrepolynomial : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,11 +190,11 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial_w", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_w
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "Reference to GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "GaussLegendrePolynomial")>] 
          gausslegendrepolynomial : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,13 +232,13 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial_value", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "Reference to GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "GaussLegendrePolynomial")>] 
          gausslegendrepolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,13 +280,13 @@ module GaussLegendrePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendrePolynomial_weightedValue", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_weightedValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "Reference to GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="GaussLegendrePolynomial",Description = "GaussLegendrePolynomial")>] 
          gausslegendrepolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -325,9 +325,9 @@ module GaussLegendrePolynomialFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussLegendrePolynomial_Range", Description="Create a range of GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussLegendrePolynomial")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

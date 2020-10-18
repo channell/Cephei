@@ -54,7 +54,8 @@ type FittingParameterModel
 (*
     Functions
 *)
-    let _FittingParameter                          = cell (fun () -> new FittingParameter (termStructure.Value, a.Value, sigma.Value, b.Value, eta.Value, rho.Value))
+    let mutable
+        _FittingParameter                          = cell (fun () -> new FittingParameter (termStructure.Value, a.Value, sigma.Value, b.Value, eta.Value, rho.Value))
     let _constraint                                = cell (fun () -> _FittingParameter.Value.CONSTRAINT())
     let _implementation                            = cell (fun () -> _FittingParameter.Value.implementation())
     let _parameters                                = cell (fun () -> _FittingParameter.Value.parameters())
@@ -71,13 +72,14 @@ type FittingParameterModel
     casting 
 *)
     internal new () = FittingParameterModel(null,null,null,null,null,null)
-    member internal this.Inject v = _FittingParameter.Value <- v
+    member internal this.Inject v = _FittingParameter <- v
     static member Cast (p : ICell<FittingParameter>) = 
         if p :? FittingParameterModel then 
             p :?> FittingParameterModel
         else
             let o = new FittingParameterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

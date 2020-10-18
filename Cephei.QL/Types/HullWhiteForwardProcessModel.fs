@@ -48,7 +48,8 @@ type HullWhiteForwardProcessModel
 (*
     Functions
 *)
-    let _HullWhiteForwardProcess                   = cell (fun () -> new HullWhiteForwardProcess (h.Value, a.Value, sigma.Value))
+    let mutable
+        _HullWhiteForwardProcess                   = cell (fun () -> new HullWhiteForwardProcess (h.Value, a.Value, sigma.Value))
     let _a                                         = triv (fun () -> _HullWhiteForwardProcess.Value.a())
     let _alpha                                     (t : ICell<double>)   
                                                    = triv (fun () -> _HullWhiteForwardProcess.Value.alpha(t.Value))
@@ -100,13 +101,14 @@ type HullWhiteForwardProcessModel
     casting 
 *)
     internal new () = new HullWhiteForwardProcessModel(null,null,null)
-    member internal this.Inject v = _HullWhiteForwardProcess.Value <- v
+    member internal this.Inject v = _HullWhiteForwardProcess <- v
     static member Cast (p : ICell<HullWhiteForwardProcess>) = 
         if p :? HullWhiteForwardProcessModel then 
             p :?> HullWhiteForwardProcessModel
         else
             let o = new HullWhiteForwardProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

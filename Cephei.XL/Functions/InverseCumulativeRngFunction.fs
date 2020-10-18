@@ -39,9 +39,9 @@ module InverseCumulativeRngFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRng", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativeRng")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="uniformGenerator",Description = "Reference to uniformGenerator")>] 
+        ([<ExcelArgument(Name="uniformGenerator",Description = "'RNG")>] 
          uniformGenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module InverseCumulativeRngFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRng_next", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativeRng",Description = "Reference to InverseCumulativeRng")>] 
+        ([<ExcelArgument(Name="InverseCumulativeRng",Description = "InverseCumulativeRng")>] 
          inversecumulativerng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -109,9 +109,9 @@ module InverseCumulativeRngFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseCumulativeRng_Range", Description="Create a range of InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InverseCumulativeRng")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

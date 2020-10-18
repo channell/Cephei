@@ -56,7 +56,8 @@ type FloatingRateBondModel
 (*
     Functions
 *)
-    let _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value)))
+    let mutable
+        _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -110,13 +111,14 @@ type FloatingRateBondModel
     casting 
 *)
     internal new () = new FloatingRateBondModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingRateBond.Value <- v
+    member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel then 
             p :?> FloatingRateBondModel
         else
             let o = new FloatingRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -214,7 +216,8 @@ type FloatingRateBondModel1
 (*
     Functions
 *)
-    let _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value)))
+    let mutable
+        _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -268,13 +271,14 @@ type FloatingRateBondModel1
     casting 
 *)
     internal new () = new FloatingRateBondModel1(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingRateBond.Value <- v
+    member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel1 then 
             p :?> FloatingRateBondModel1
         else
             let o = new FloatingRateBondModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -386,7 +390,8 @@ type FloatingRateBondModel2
 (*
     Functions
 *)
-    let _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
+    let mutable
+        _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -440,13 +445,14 @@ type FloatingRateBondModel2
     casting 
 *)
     internal new () = new FloatingRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingRateBond.Value <- v
+    member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel2 then 
             p :?> FloatingRateBondModel2
         else
             let o = new FloatingRateBondModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -577,7 +583,8 @@ type FloatingRateBondModel3
 (*
     Functions
 *)
-    let _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, index.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
+    let mutable
+        _FloatingRateBond                          = cell (fun () -> withEngine pricingEngine (new FloatingRateBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, index.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -631,13 +638,14 @@ type FloatingRateBondModel3
     casting 
 *)
     internal new () = new FloatingRateBondModel3(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingRateBond.Value <- v
+    member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel3 then 
             p :?> FloatingRateBondModel3
         else
             let o = new FloatingRateBondModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

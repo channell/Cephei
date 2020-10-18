@@ -39,11 +39,11 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_factory", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNGTraits")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "Reference to MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng2", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MersenneTwisterUniformRng")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="seeds",Description = "Reference to seeds")>] 
+        ([<ExcelArgument(Name="seeds",Description = "uint64")>] 
          seeds : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MersenneTwisterUniformRng")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,7 +155,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng1", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MersenneTwisterUniformRng")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,9 +186,9 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_next", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "Reference to MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,9 +222,9 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_nextInt32", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_nextInt32
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "Reference to MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -258,9 +258,9 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_nextReal", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_nextReal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "Reference to MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module MersenneTwisterUniformRngFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_Range", Description="Create a range of MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

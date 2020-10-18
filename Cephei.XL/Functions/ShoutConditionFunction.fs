@@ -39,13 +39,13 @@ module ShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_ShoutCondition_applyTo", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShoutCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShoutCondition",Description = "Reference to ShoutCondition")>] 
+        ([<ExcelArgument(Name="ShoutCondition",Description = "ShoutCondition")>] 
          shoutcondition : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,15 +87,15 @@ module ShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_ShoutCondition", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShoutCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="resTime",Description = "Reference to resTime")>] 
+        ([<ExcelArgument(Name="resTime",Description = "double")>] 
          resTime : obj)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,13 +142,13 @@ module ShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_ShoutCondition1", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShoutCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="intrinsicValues",Description = "Reference to intrinsicValues")>] 
+        ([<ExcelArgument(Name="intrinsicValues",Description = "Vector")>] 
          intrinsicValues : obj)
-        ([<ExcelArgument(Name="resTime",Description = "Reference to resTime")>] 
+        ([<ExcelArgument(Name="resTime",Description = "double")>] 
          resTime : obj)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -188,9 +188,9 @@ module ShoutConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ShoutCondition_Range", Description="Create a range of ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ShoutCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

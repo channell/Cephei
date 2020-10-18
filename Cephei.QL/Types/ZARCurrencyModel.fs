@@ -41,7 +41,8 @@ type ZARCurrencyModel
 (*
     Functions
 *)
-    let _ZARCurrency                               = cell (fun () -> new ZARCurrency ())
+    let mutable
+        _ZARCurrency                               = cell (fun () -> new ZARCurrency ())
     let _code                                      = triv (fun () -> _ZARCurrency.Value.code)
     let _empty                                     = triv (fun () -> _ZARCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type ZARCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _ZARCurrency.Value <- v
+    member internal this.Inject v = _ZARCurrency <- v
     static member Cast (p : ICell<ZARCurrency>) = 
         if p :? ZARCurrencyModel then 
             p :?> ZARCurrencyModel
         else
             let o = new ZARCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

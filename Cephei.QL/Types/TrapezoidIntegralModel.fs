@@ -46,7 +46,8 @@ type TrapezoidIntegralModel<'IntegrationPolicy when 'IntegrationPolicy :> IInteg
 (*
     Functions
 *)
-    let _TrapezoidIntegral                         = cell (fun () -> new TrapezoidIntegral<'IntegrationPolicy> (accuracy.Value, maxIterations.Value))
+    let mutable
+        _TrapezoidIntegral                         = cell (fun () -> new TrapezoidIntegral<'IntegrationPolicy> (accuracy.Value, maxIterations.Value))
     let _absoluteAccuracy                          = triv (fun () -> _TrapezoidIntegral.Value.absoluteAccuracy())
     let _absoluteError                             = triv (fun () -> _TrapezoidIntegral.Value.absoluteError())
     let _integrationSuccess                        = triv (fun () -> _TrapezoidIntegral.Value.integrationSuccess())

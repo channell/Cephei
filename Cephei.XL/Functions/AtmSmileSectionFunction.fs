@@ -39,9 +39,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_atmLevel", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_atmLevel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AtmSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AtmSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "SmileSection")>] 
          source : obj)
-        ([<ExcelArgument(Name="atm",Description = "Reference to atm")>] 
+        ([<ExcelArgument(Name="atm",Description = "double")>] 
          atm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_dayCounter", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_exerciseDate", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_exerciseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_exerciseTime", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_exerciseTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,9 +226,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_maxStrike", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,9 +262,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_minStrike", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,9 +298,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_referenceDate", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_shift", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_shift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_volatilityType", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,15 +406,15 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_density", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_density
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="gap",Description = "Reference to gap")>] 
+        ([<ExcelArgument(Name="gap",Description = "double")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,17 +460,17 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_digitalOptionPrice", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_digitalOptionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="gap",Description = "Reference to gap")>] 
+        ([<ExcelArgument(Name="gap",Description = "double")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,15 +520,15 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_optionPrice", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_optionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_update", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_variance", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,13 +652,13 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_vega", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,15 +700,15 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_volatility", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "Reference to volatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "double")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,11 +754,11 @@ module AtmSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_AtmSmileSection_volatility1", Description="Create a AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AtmSmileSection",Description = "Reference to AtmSmileSection")>] 
+        ([<ExcelArgument(Name="AtmSmileSection",Description = "AtmSmileSection")>] 
          atmsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -793,9 +793,9 @@ module AtmSmileSectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AtmSmileSection_Range", Description="Create a range of AtmSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AtmSmileSection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AtmSmileSection")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

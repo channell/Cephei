@@ -41,7 +41,8 @@ type NotionalPathModel
 (*
     Functions
 *)
-    let _NotionalPath                              = cell (fun () -> new NotionalPath ())
+    let mutable
+        _NotionalPath                              = cell (fun () -> new NotionalPath ())
     let _addReduction                              (date : ICell<Date>) (newRate : ICell<double>)   
                                                    = triv (fun () -> _NotionalPath.Value.addReduction(date.Value, newRate.Value)
                                                                      _NotionalPath.Value)
@@ -55,13 +56,14 @@ type NotionalPathModel
     casting 
 *)
     
-    member internal this.Inject v = _NotionalPath.Value <- v
+    member internal this.Inject v = _NotionalPath <- v
     static member Cast (p : ICell<NotionalPath>) = 
         if p :? NotionalPathModel then 
             p :?> NotionalPathModel
         else
             let o = new NotionalPathModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

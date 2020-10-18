@@ -58,7 +58,8 @@ type UkraineModel
 (*
     Functions
 *)
-    let _Ukraine                                   = cell (fun () -> new Ukraine (m.Value))
+    let mutable
+        _Ukraine                                   = cell (fun () -> new Ukraine (m.Value))
     let _addedHolidays                             = triv (fun () -> _Ukraine.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Ukraine.Value.addHoliday(d.Value)
@@ -95,13 +96,14 @@ type UkraineModel
     casting 
 *)
     internal new () = new UkraineModel(null)
-    member internal this.Inject v = _Ukraine.Value <- v
+    member internal this.Inject v = _Ukraine <- v
     static member Cast (p : ICell<Ukraine>) = 
         if p :? UkraineModel then 
             p :?> UkraineModel
         else
             let o = new UkraineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_accuracy_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_accuracy_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_baseDate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_Clone", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_data", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_data_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_dates", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_dates_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,13 +291,13 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_discountImpl", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -339,13 +339,13 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_forwardImpl", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,9 +387,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_forwards", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_forwards
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -423,17 +423,17 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_guess", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -483,9 +483,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_initialDate1", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_initialDate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -519,11 +519,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_initialDate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "ZeroInflationTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -561,9 +561,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_initialValue", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -597,11 +597,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_initialValue1", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_initialValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "ZeroInflationTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -639,9 +639,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_instruments_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_instruments_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -675,9 +675,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_interpolation_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -711,9 +711,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_interpolator_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -747,9 +747,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_maxDate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -783,9 +783,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_maxDate_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,9 +819,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_maxIterations", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -855,17 +855,17 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_maxValueAfter", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -915,17 +915,17 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_minValueAfter", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -975,9 +975,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_moving_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_moving_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1011,9 +1011,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_nodes", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1047,7 +1047,7 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve3", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1078,23 +1078,23 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve1", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="baseZeroRate",Description = "Reference to baseZeroRate")>] 
+        ([<ExcelArgument(Name="baseZeroRate",Description = "double")>] 
          baseZeroRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1157,23 +1157,23 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="baseZeroRate",Description = "Reference to baseZeroRate")>] 
+        ([<ExcelArgument(Name="baseZeroRate",Description = "double")>] 
          baseZeroRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1236,19 +1236,19 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve2", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="baseZeroRate",Description = "Reference to baseZeroRate")>] 
+        ([<ExcelArgument(Name="baseZeroRate",Description = "double")>] 
          baseZeroRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1303,9 +1303,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_rates", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_rates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1339,11 +1339,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_registerWith", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "ZeroInflationTermStructure")>] 
          helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1381,11 +1381,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_setTermStructure", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "ZeroInflationTermStructure")>] 
          helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1423,9 +1423,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_setupInterpolation", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1459,9 +1459,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_times", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1495,9 +1495,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_times_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1531,9 +1531,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_traits_", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_traits_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1567,15 +1567,15 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_updateGuess", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1621,13 +1621,13 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_zeroYieldImpl", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1669,17 +1669,17 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_zeroRate3", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_zeroRate3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1729,15 +1729,15 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_zeroRate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1783,13 +1783,13 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_zeroRate1", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_zeroRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1831,11 +1831,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_zeroRate2", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_zeroRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1873,9 +1873,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_baseRate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_baseRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1909,9 +1909,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_frequency", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1945,9 +1945,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_hasSeasonality", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_hasSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1981,9 +1981,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_indexIsInterpolated", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_indexIsInterpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2017,9 +2017,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_nominalTermStructure", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_nominalTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2053,9 +2053,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_observationLag", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2089,9 +2089,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_seasonality", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_seasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Seasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2125,11 +2125,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_setSeasonality", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_setSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="seasonality",Description = "Reference to seasonality")>] 
+        ([<ExcelArgument(Name="seasonality",Description = "Seasonality")>] 
          seasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2167,9 +2167,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_calendar", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2203,9 +2203,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_dayCounter", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2239,9 +2239,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_maxTime", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2275,9 +2275,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_referenceDate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2311,9 +2311,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_settlementDays", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2347,11 +2347,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_timeFromReference", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2389,9 +2389,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_update", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2425,9 +2425,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_allowsExtrapolation", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2461,11 +2461,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_disableExtrapolation", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2503,11 +2503,11 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_enableExtrapolation", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2545,9 +2545,9 @@ module PiecewiseZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_extrapolate", Description="Create a PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "Reference to PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseZeroInflationCurve",Description = "PiecewiseZeroInflationCurve")>] 
          piecewisezeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2578,9 +2578,9 @@ module PiecewiseZeroInflationCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PiecewiseZeroInflationCurve_Range", Description="Create a range of PiecewiseZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroInflationCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PiecewiseZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

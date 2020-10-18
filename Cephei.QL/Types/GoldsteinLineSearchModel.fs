@@ -50,7 +50,8 @@ type GoldsteinLineSearchModel
 (*
     Functions
 *)
-    let _GoldsteinLineSearch                       = cell (fun () -> new GoldsteinLineSearch (eps.Value, alpha.Value, beta.Value, extrapolation.Value))
+    let mutable
+        _GoldsteinLineSearch                       = cell (fun () -> new GoldsteinLineSearch (eps.Value, alpha.Value, beta.Value, extrapolation.Value))
     let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
                                                    = triv (fun () -> _GoldsteinLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _GoldsteinLineSearch.Value.lastFunctionValue())
@@ -66,13 +67,14 @@ type GoldsteinLineSearchModel
     casting 
 *)
     internal new () = new GoldsteinLineSearchModel(null,null,null,null)
-    member internal this.Inject v = _GoldsteinLineSearch.Value <- v
+    member internal this.Inject v = _GoldsteinLineSearch <- v
     static member Cast (p : ICell<GoldsteinLineSearch>) = 
         if p :? GoldsteinLineSearchModel then 
             p :?> GoldsteinLineSearchModel
         else
             let o = new GoldsteinLineSearchModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type MatrixModel
 (*
     Functions
 *)
-    let _Matrix                                    = cell (fun () -> new Matrix (rows.Value, columns.Value, value.Value))
+    let mutable
+        _Matrix                                    = cell (fun () -> new Matrix (rows.Value, columns.Value, value.Value))
     let _column                                    (c : ICell<int>)   
                                                    = triv (fun () -> _Matrix.Value.column(c.Value))
     let _columns                                   = triv (fun () -> _Matrix.Value.columns())
@@ -78,13 +79,14 @@ type MatrixModel
     casting 
 *)
     internal new () = new MatrixModel(null,null,null)
-    member internal this.Inject v = _Matrix.Value <- v
+    member internal this.Inject v = _Matrix <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel then 
             p :?> MatrixModel
         else
             let o = new MatrixModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -134,7 +136,8 @@ type MatrixModel1
 (*
     Functions
 *)
-    let _Matrix                                    = cell (fun () -> new Matrix (rows.Value, columns.Value))
+    let mutable
+        _Matrix                                    = cell (fun () -> new Matrix (rows.Value, columns.Value))
     let _column                                    (c : ICell<int>)   
                                                    = triv (fun () -> _Matrix.Value.column(c.Value))
     let _columns                                   = triv (fun () -> _Matrix.Value.columns())
@@ -164,13 +167,14 @@ type MatrixModel1
     casting 
 *)
     internal new () = new MatrixModel1(null,null)
-    member internal this.Inject v = _Matrix.Value <- v
+    member internal this.Inject v = _Matrix <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel1 then 
             p :?> MatrixModel1
         else
             let o = new MatrixModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -217,7 +221,8 @@ type MatrixModel2
 (*
     Functions
 *)
-    let _Matrix                                    = cell (fun () -> new Matrix (from.Value))
+    let mutable
+        _Matrix                                    = cell (fun () -> new Matrix (from.Value))
     let _column                                    (c : ICell<int>)   
                                                    = triv (fun () -> _Matrix.Value.column(c.Value))
     let _columns                                   = triv (fun () -> _Matrix.Value.columns())
@@ -247,13 +252,14 @@ type MatrixModel2
     casting 
 *)
     internal new () = new MatrixModel2(null)
-    member internal this.Inject v = _Matrix.Value <- v
+    member internal this.Inject v = _Matrix <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel2 then 
             p :?> MatrixModel2
         else
             let o = new MatrixModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -296,7 +302,8 @@ type MatrixModel3
 (*
     Functions
 *)
-    let _Matrix                                    = cell (fun () -> new Matrix ())
+    let mutable
+        _Matrix                                    = cell (fun () -> new Matrix ())
     let _column                                    (c : ICell<int>)   
                                                    = triv (fun () -> _Matrix.Value.column(c.Value))
     let _columns                                   = triv (fun () -> _Matrix.Value.columns())
@@ -326,13 +333,14 @@ type MatrixModel3
     casting 
 *)
     
-    member internal this.Inject v = _Matrix.Value <- v
+    member internal this.Inject v = _Matrix <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel3 then 
             p :?> MatrixModel3
         else
             let o = new MatrixModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

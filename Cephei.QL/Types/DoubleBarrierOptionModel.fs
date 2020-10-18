@@ -58,7 +58,8 @@ type DoubleBarrierOptionModel
 (*
     Functions
 *)
-    let _DoubleBarrierOption                       = cell (fun () -> withEngine pricingEngine (new DoubleBarrierOption (barrierType.Value, barrier_lo.Value, barrier_hi.Value, rebate.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _DoubleBarrierOption                       = cell (fun () -> withEngine pricingEngine (new DoubleBarrierOption (barrierType.Value, barrier_lo.Value, barrier_hi.Value, rebate.Value, payoff.Value, exercise.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _DoubleBarrierOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _DoubleBarrierOption).delta())
@@ -89,13 +90,14 @@ type DoubleBarrierOptionModel
     casting 
 *)
     internal new () = new DoubleBarrierOptionModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _DoubleBarrierOption.Value <- v
+    member internal this.Inject v = _DoubleBarrierOption <- v
     static member Cast (p : ICell<DoubleBarrierOption>) = 
         if p :? DoubleBarrierOptionModel then 
             p :?> DoubleBarrierOptionModel
         else
             let o = new DoubleBarrierOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

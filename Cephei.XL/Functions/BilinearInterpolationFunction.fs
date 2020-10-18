@@ -39,17 +39,17 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BilinearInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xSize",Description = "Reference to xSize")>] 
+        ([<ExcelArgument(Name="xSize",Description = "int")>] 
          xSize : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="ySize",Description = "Reference to ySize")>] 
+        ([<ExcelArgument(Name="ySize",Description = "int")>] 
          ySize : obj)
-        ([<ExcelArgument(Name="zData",Description = "Reference to zData")>] 
+        ([<ExcelArgument(Name="zData",Description = "Matrix")>] 
          zData : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,13 +100,13 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_isInRange", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_isInRange
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,11 +148,11 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_locateX", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_locateX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,11 +190,11 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_locateY", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_locateY
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_update", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,13 +268,13 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_value1", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,15 +316,15 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_value", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_xMax", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_xMin", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_xValues", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_xValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_yMax", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_yMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_yMin", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_yMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_yValues", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_yValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_zData", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_zData
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,9 +622,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_allowsExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -658,11 +658,11 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_disableExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,11 +700,11 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_enableExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,9 +742,9 @@ module BilinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_BilinearInterpolation_extrapolate", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BilinearInterpolation",Description = "Reference to BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="BilinearInterpolation",Description = "BilinearInterpolation")>] 
          bilinearinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -775,9 +775,9 @@ module BilinearInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BilinearInterpolation_Range", Description="Create a range of BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BilinearInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

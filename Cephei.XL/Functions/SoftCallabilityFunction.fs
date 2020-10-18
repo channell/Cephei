@@ -39,13 +39,13 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SoftCallability")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "Callability.Price")>] 
          price : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
-        ([<ExcelArgument(Name="trigger",Description = "Reference to trigger")>] 
+        ([<ExcelArgument(Name="trigger",Description = "double")>] 
          trigger : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_trigger", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_trigger
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_date", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_price", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_type", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,11 +232,11 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_accept", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,13 +274,13 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_hasOccurred", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_registerWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,11 +364,11 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_unregisterWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SoftCallability",Description = "Reference to SoftCallability")>] 
+        ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -403,9 +403,9 @@ module SoftCallabilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SoftCallability_Range", Description="Create a range of SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SoftCallability")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

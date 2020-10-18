@@ -39,9 +39,9 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_amount", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleCashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_date", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleCashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,11 +111,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleCashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="amount",Description = "Reference to amount")>] 
+        ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,11 +154,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_CompareTo", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_Equals", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_exCouponDate", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,13 +274,13 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_hasOccurred", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,11 +322,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_tradingExCoupon", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,11 +364,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_accept", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,11 +406,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_registerWith", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,11 +448,11 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_unregisterWith", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SimpleCashFlow",Description = "Reference to SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -487,9 +487,9 @@ module SimpleCashFlowFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimpleCashFlow_Range", Description="Create a range of SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

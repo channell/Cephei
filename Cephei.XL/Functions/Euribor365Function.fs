@@ -39,9 +39,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor3651", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Euribor365")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Euribor365")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_businessDayConvention", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,11 +155,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_clone", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_endOfMonth", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,15 +233,15 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_forecastFixing1", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,11 +287,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_forecastFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,9 +329,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_forwardingTermStructure", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,11 +365,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_maturityDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_currency", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,9 +443,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_dayCounter", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,9 +479,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_familyName", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,13 +515,13 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_fixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_fixingCalendar", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,11 +599,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_fixingDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,9 +641,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_fixingDays", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,11 +677,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_isValidFixingDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_name", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,11 +755,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_pastFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_tenor", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_update", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,11 +869,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_valueDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,15 +911,15 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_addFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,15 +965,15 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_addFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,13 +1019,13 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_addFixings1", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1067,9 +1067,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_allowsNativeFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1103,9 +1103,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_clearFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,11 +1139,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_registerWith", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1181,9 +1181,9 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_timeSeries", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1217,11 +1217,11 @@ module Euribor365Function =
     *)
     [<ExcelFunction(Name="_Euribor365_unregisterWith", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Euribor365",Description = "Reference to Euribor365")>] 
+        ([<ExcelArgument(Name="Euribor365",Description = "Euribor365")>] 
          euribor365 : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1256,9 +1256,9 @@ module Euribor365Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Euribor365_Range", Description="Create a range of Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Euribor365")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

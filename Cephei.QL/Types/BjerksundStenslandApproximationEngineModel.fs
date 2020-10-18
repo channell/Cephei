@@ -44,19 +44,21 @@ type BjerksundStenslandApproximationEngineModel
 (*
     Functions
 *)
-    let _BjerksundStenslandApproximationEngine     = cell (fun () -> new BjerksundStenslandApproximationEngine (Process.Value))
+    let mutable
+        _BjerksundStenslandApproximationEngine     = cell (fun () -> new BjerksundStenslandApproximationEngine (Process.Value))
     do this.Bind(_BjerksundStenslandApproximationEngine)
 (* 
     casting 
 *)
     internal new () = new BjerksundStenslandApproximationEngineModel(null)
-    member internal this.Inject v = _BjerksundStenslandApproximationEngine.Value <- v
+    member internal this.Inject v = _BjerksundStenslandApproximationEngine <- v
     static member Cast (p : ICell<BjerksundStenslandApproximationEngine>) = 
         if p :? BjerksundStenslandApproximationEngineModel then 
             p :?> BjerksundStenslandApproximationEngineModel
         else
             let o = new BjerksundStenslandApproximationEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

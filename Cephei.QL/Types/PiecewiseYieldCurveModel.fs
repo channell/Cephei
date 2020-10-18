@@ -41,7 +41,8 @@ type PiecewiseYieldCurveModel
 (*
     Functions
 *)
-    let _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve ())
+    let mutable
+        _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve ())
     let _accuracy_                                 = triv (fun () -> _PiecewiseYieldCurve.Value.accuracy_)
     let _Clone                                     = triv (fun () -> _PiecewiseYieldCurve.Value.Clone())
     let _data                                      = triv (fun () -> _PiecewiseYieldCurve.Value.data())
@@ -126,13 +127,14 @@ type PiecewiseYieldCurveModel
     casting 
 *)
     
-    member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYieldCurve <- v
     static member Cast (p : ICell<PiecewiseYieldCurve>) = 
         if p :? PiecewiseYieldCurveModel then 
             p :?> PiecewiseYieldCurveModel
         else
             let o = new PiecewiseYieldCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -236,7 +238,8 @@ type PiecewiseYieldCurveModel1
 (*
     Functions
 *)
-    let _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (settlementDays.Value, cal.Value, dc.Value, jumps.Value, jumpDates.Value))
+    let mutable
+        _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (settlementDays.Value, cal.Value, dc.Value, jumps.Value, jumpDates.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseYieldCurve.Value.accuracy_)
     let _Clone                                     = triv (fun () -> _PiecewiseYieldCurve.Value.Clone())
     let _data                                      = triv (fun () -> _PiecewiseYieldCurve.Value.data())
@@ -321,13 +324,14 @@ type PiecewiseYieldCurveModel1
     casting 
 *)
     internal new () = new PiecewiseYieldCurveModel1(null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYieldCurve <- v
     static member Cast (p : ICell<PiecewiseYieldCurve>) = 
         if p :? PiecewiseYieldCurveModel1 then 
             p :?> PiecewiseYieldCurveModel1
         else
             let o = new PiecewiseYieldCurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -436,7 +440,8 @@ type PiecewiseYieldCurveModel2
 (*
     Functions
 *)
-    let _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (referenceDate.Value, cal.Value, dc.Value, jumps.Value, jumpDates.Value))
+    let mutable
+        _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (referenceDate.Value, cal.Value, dc.Value, jumps.Value, jumpDates.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseYieldCurve.Value.accuracy_)
     let _Clone                                     = triv (fun () -> _PiecewiseYieldCurve.Value.Clone())
     let _data                                      = triv (fun () -> _PiecewiseYieldCurve.Value.data())
@@ -521,13 +526,14 @@ type PiecewiseYieldCurveModel2
     casting 
 *)
     internal new () = new PiecewiseYieldCurveModel2(null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYieldCurve <- v
     static member Cast (p : ICell<PiecewiseYieldCurve>) = 
         if p :? PiecewiseYieldCurveModel2 then 
             p :?> PiecewiseYieldCurveModel2
         else
             let o = new PiecewiseYieldCurveModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -54,7 +54,8 @@ type GeneralizedBlackScholesProcessModel
 (*
     Functions
 *)
-    let _GeneralizedBlackScholesProcess            = cell (fun () -> new GeneralizedBlackScholesProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value, localVolTS.Value, disc.Value))
+    let mutable
+        _GeneralizedBlackScholesProcess            = cell (fun () -> new GeneralizedBlackScholesProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value, localVolTS.Value, disc.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _GeneralizedBlackScholesProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _GeneralizedBlackScholesProcess.Value.blackVolatility())
@@ -95,13 +96,14 @@ type GeneralizedBlackScholesProcessModel
     casting 
 *)
     internal new () = new GeneralizedBlackScholesProcessModel(null,null,null,null,null,null)
-    member internal this.Inject v = _GeneralizedBlackScholesProcess.Value <- v
+    member internal this.Inject v = _GeneralizedBlackScholesProcess <- v
     static member Cast (p : ICell<GeneralizedBlackScholesProcess>) = 
         if p :? GeneralizedBlackScholesProcessModel then 
             p :?> GeneralizedBlackScholesProcessModel
         else
             let o = new GeneralizedBlackScholesProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -171,7 +173,8 @@ type GeneralizedBlackScholesProcessModel1
 (*
     Functions
 *)
-    let _GeneralizedBlackScholesProcess            = cell (fun () -> new GeneralizedBlackScholesProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value, disc.Value))
+    let mutable
+        _GeneralizedBlackScholesProcess            = cell (fun () -> new GeneralizedBlackScholesProcess (x0.Value, dividendTS.Value, riskFreeTS.Value, blackVolTS.Value, disc.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _GeneralizedBlackScholesProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _GeneralizedBlackScholesProcess.Value.blackVolatility())
@@ -212,13 +215,14 @@ type GeneralizedBlackScholesProcessModel1
     casting 
 *)
     internal new () = new GeneralizedBlackScholesProcessModel1(null,null,null,null,null)
-    member internal this.Inject v = _GeneralizedBlackScholesProcess.Value <- v
+    member internal this.Inject v = _GeneralizedBlackScholesProcess <- v
     static member Cast (p : ICell<GeneralizedBlackScholesProcess>) = 
         if p :? GeneralizedBlackScholesProcessModel1 then 
             p :?> GeneralizedBlackScholesProcessModel1
         else
             let o = new GeneralizedBlackScholesProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

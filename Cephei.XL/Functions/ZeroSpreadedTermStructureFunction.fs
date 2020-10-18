@@ -39,9 +39,9 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_calendar", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "Reference to ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_dayCounter", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "Reference to ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_maxDate", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "Reference to ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_maxTime", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "Reference to ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_referenceDate", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "Reference to ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_settlementDays", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "Reference to ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,17 +255,17 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "ZeroSpreadedTermStructure")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "ZeroSpreadedTermStructure")>] 
          freq : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "ZeroSpreadedTermStructure")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -313,9 +313,9 @@ module ZeroSpreadedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_Range", Description="Create a range of ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

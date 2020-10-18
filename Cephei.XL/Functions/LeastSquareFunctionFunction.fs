@@ -39,13 +39,13 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_gradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_gradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LeastSquareFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
-        ([<ExcelArgument(Name="grad_f",Description = "Reference to grad_f")>] 
+        ([<ExcelArgument(Name="grad_f",Description = "Vector")>] 
          grad_f : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LeastSquareFunction")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lsp",Description = "Reference to lsp")>] 
+        ([<ExcelArgument(Name="lsp",Description = "LeastSquareProblem")>] 
          lsp : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_value", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,13 +166,13 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_valueAndGradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_valueAndGradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
-        ([<ExcelArgument(Name="grad_f",Description = "Reference to grad_f")>] 
+        ([<ExcelArgument(Name="grad_f",Description = "Vector")>] 
          grad_f : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,11 +214,11 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_values", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_finiteDifferenceEpsilon", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_finiteDifferenceEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,13 +292,13 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_jacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_jacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
-        ([<ExcelArgument(Name="jac",Description = "Reference to jac")>] 
+        ([<ExcelArgument(Name="jac",Description = "Matrix")>] 
          jac : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,13 +340,13 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_valuesAndJacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_valuesAndJacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LeastSquareFunction",Description = "Reference to LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
-        ([<ExcelArgument(Name="jac",Description = "Reference to jac")>] 
+        ([<ExcelArgument(Name="jac",Description = "Matrix")>] 
          jac : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -385,9 +385,9 @@ module LeastSquareFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LeastSquareFunction_Range", Description="Create a range of LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module RegionFunction =
     *)
     [<ExcelFunction(Name="_Region_code", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Region",Description = "Reference to Region")>] 
+        ([<ExcelArgument(Name="Region",Description = "Region")>] 
          region : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module RegionFunction =
     *)
     [<ExcelFunction(Name="_Region_Equals", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Region",Description = "Reference to Region")>] 
+        ([<ExcelArgument(Name="Region",Description = "Region")>] 
          region : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module RegionFunction =
     *)
     [<ExcelFunction(Name="_Region_name", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Region",Description = "Reference to Region")>] 
+        ([<ExcelArgument(Name="Region",Description = "Region")>] 
          region : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -150,9 +150,9 @@ module RegionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Region_Range", Description="Create a range of Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Region")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

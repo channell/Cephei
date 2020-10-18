@@ -40,13 +40,13 @@ module TripleBandLinearOpFunction =
     (*!! duplicate add function
     [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,11 +89,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -132,11 +132,11 @@ module TripleBandLinearOpFunction =
     (*!! duplicate add function
     [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "TripleBandLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -175,11 +175,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_apply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,11 +217,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_applyTo", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,17 +259,17 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_axpyb", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_axpyb
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "TripleBandLinearOp")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "TripleBandLinearOp")>] 
          y : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -319,9 +319,9 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_Clone", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,11 +355,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_identity", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -397,9 +397,9 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_isTimeDependent", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -433,11 +433,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_mult", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_mult
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -475,13 +475,13 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_multiply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="D",Description = "Reference to D")>] 
+        ([<ExcelArgument(Name="D",Description = "IOperator")>] 
          D : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -523,11 +523,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_multR", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_multR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "Vector")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -565,11 +565,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_setTime", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -607,9 +607,9 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_size", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -643,15 +643,15 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_solve_splitting", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_solve_splitting
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -697,11 +697,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_solveFor", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -739,13 +739,13 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_subtract", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -787,11 +787,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_swap", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "TripleBandLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -829,9 +829,9 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp_toMatrix", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "TripleBandLinearOp")>] 
          triplebandlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -865,9 +865,9 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "TripleBandLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -902,11 +902,11 @@ module TripleBandLinearOpFunction =
     *)
     [<ExcelFunction(Name="_TripleBandLinearOp1", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TripleBandLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -942,9 +942,9 @@ module TripleBandLinearOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TripleBandLinearOp_Range", Description="Create a range of TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TripleBandLinearOp")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

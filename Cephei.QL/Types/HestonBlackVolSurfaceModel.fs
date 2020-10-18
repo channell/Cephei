@@ -44,7 +44,8 @@ type HestonBlackVolSurfaceModel
 (*
     Functions
 *)
-    let _HestonBlackVolSurface                     = cell (fun () -> new HestonBlackVolSurface (hestonModel.Value))
+    let mutable
+        _HestonBlackVolSurface                     = cell (fun () -> new HestonBlackVolSurface (hestonModel.Value))
     let _maxDate                                   = triv (fun () -> _HestonBlackVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _HestonBlackVolSurface.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _HestonBlackVolSurface.Value.minStrike())
@@ -89,13 +90,14 @@ type HestonBlackVolSurfaceModel
     casting 
 *)
     internal new () = new HestonBlackVolSurfaceModel(null)
-    member internal this.Inject v = _HestonBlackVolSurface.Value <- v
+    member internal this.Inject v = _HestonBlackVolSurface <- v
     static member Cast (p : ICell<HestonBlackVolSurface>) = 
         if p :? HestonBlackVolSurfaceModel then 
             p :?> HestonBlackVolSurfaceModel
         else
             let o = new HestonBlackVolSurfaceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

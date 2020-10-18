@@ -39,13 +39,13 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_apply", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_diffusion", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_discretization", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_discretization
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,13 +171,13 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_drift", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_eta", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_eta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,17 +255,17 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_evolve", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,9 +315,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_hestonProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_hestonProcess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -351,9 +351,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_hullWhiteProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_hullWhiteProcess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,15 +387,15 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HybridHestonHullWhiteProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="hestonProcess",Description = "Reference to hestonProcess")>] 
+        ([<ExcelArgument(Name="hestonProcess",Description = "HestonProcess")>] 
          hestonProcess : obj)
-        ([<ExcelArgument(Name="hullWhiteProcess",Description = "Reference to hullWhiteProcess")>] 
+        ([<ExcelArgument(Name="hullWhiteProcess",Description = "HullWhiteForwardProcess")>] 
          hullWhiteProcess : obj)
-        ([<ExcelArgument(Name="corrEquityShortRate",Description = "Reference to corrEquityShortRate")>] 
+        ([<ExcelArgument(Name="corrEquityShortRate",Description = "double")>] 
          corrEquityShortRate : obj)
-        ([<ExcelArgument(Name="discretization",Description = "Reference to discretization")>] 
+        ([<ExcelArgument(Name="discretization",Description = "HybridHestonHullWhiteProcess")>] 
          discretization : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_initialValues", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,13 +478,13 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_numeraire", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_numeraire
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_size", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,11 +562,11 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_time", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,9 +604,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_update", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,15 +640,15 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_covariance", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,15 +694,15 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_expectation", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,9 +748,9 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_factors", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -784,11 +784,11 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_registerWith", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,15 +826,15 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_stdDeviation", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -880,11 +880,11 @@ module HybridHestonHullWhiteProcessFunction =
     *)
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_unregisterWith", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "Reference to HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="HybridHestonHullWhiteProcess",Description = "HybridHestonHullWhiteProcess")>] 
          hybridhestonhullwhiteprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -919,9 +919,9 @@ module HybridHestonHullWhiteProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_Range", Description="Create a range of HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HybridHestonHullWhiteProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

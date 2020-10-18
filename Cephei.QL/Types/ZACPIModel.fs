@@ -44,7 +44,8 @@ type ZACPIModel
 (*
     Functions
 *)
-    let _ZACPI                                     = cell (fun () -> new ZACPI (interpolated.Value))
+    let mutable
+        _ZACPI                                     = cell (fun () -> new ZACPI (interpolated.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _ZACPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -87,13 +88,14 @@ type ZACPIModel
     casting 
 *)
     internal new () = new ZACPIModel(null)
-    member internal this.Inject v = _ZACPI.Value <- v
+    member internal this.Inject v = _ZACPI <- v
     static member Cast (p : ICell<ZACPI>) = 
         if p :? ZACPIModel then 
             p :?> ZACPIModel
         else
             let o = new ZACPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -150,7 +152,8 @@ type ZACPIModel1
 (*
     Functions
 *)
-    let _ZACPI                                     = cell (fun () -> new ZACPI (interpolated.Value, ts.Value))
+    let mutable
+        _ZACPI                                     = cell (fun () -> new ZACPI (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _ZACPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -193,13 +196,14 @@ type ZACPIModel1
     casting 
 *)
     internal new () = new ZACPIModel1(null,null)
-    member internal this.Inject v = _ZACPI.Value <- v
+    member internal this.Inject v = _ZACPI <- v
     static member Cast (p : ICell<ZACPI>) = 
         if p :? ZACPIModel1 then 
             p :?> ZACPIModel1
         else
             let o = new ZACPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

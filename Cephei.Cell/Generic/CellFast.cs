@@ -40,6 +40,7 @@ namespace Cephei.Cell.Generic
         private T _value;
         private Exception _lastException = null;
         private DateTime _epoch;
+        private bool _disposd = false;
 
         // number of pending calculations
         volatile int _pending;
@@ -47,17 +48,34 @@ namespace Cephei.Cell.Generic
         public string Mnemonic { get; set; }
         public ICell Parent { get; set; }
 
-        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependancies)
+        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies)
         {
+            _func = func;
             if (Cell.Parellel && !Cell.Lazy)
                 Task.Run(() => Calculate(DateTime.Now, 0));
             else if (!Cell.Lazy)
                 Calculate(DateTime.Now, 0);
 
-            foreach (var d in dependancies)
+            foreach (var d in dependencies)
                 d.Notify(this);
         }
-        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependancies, string mnemonic) : this(func, dependancies)
+        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies, string mnemonic) : this(func, dependencies)
+        {
+            Mnemonic = mnemonic;
+        }
+        public CellFast(FSharpFunc<Unit, T> func)
+        {
+            var dependencies = Cell.Profile(func);
+            _func = func;
+            if (Cell.Parellel && !Cell.Lazy)
+                Task.Run(() => Calculate(DateTime.Now, 0));
+            else if (!Cell.Lazy)
+                Calculate(DateTime.Now, 0);
+
+            foreach (var d in dependencies)
+                d.Notify(this);
+        }
+        public CellFast(FSharpFunc<Unit, T> func, string mnemonic) : this(func)
         {
             Mnemonic = mnemonic;
         }
@@ -134,7 +152,8 @@ namespace Cephei.Cell.Generic
                 {
                     _lastException = e;
                     SetState(CellState.Error);
-                    RaiseChange(CellEvent.Error, this, epoch, null);
+                    RaiseChange(CellEvent.Error, this, this, epoch, null);
+
                     throw;
                 }
             }
@@ -166,6 +185,11 @@ namespace Cephei.Cell.Generic
                         var v = _value;
                         _spinLock.Exit(true);
                         taken = false;
+                        if (v == null && _lastException == null)
+                        {
+                            SetState(CellState.Dirty);
+                            return GetValue(recurse + 1);
+                        }
                         var ses = Session.Current;
                         if (ses != null && ses.HasJoined(this))
                         {
@@ -234,10 +258,12 @@ namespace Cephei.Cell.Generic
                         if (ses != null)
                         {
                             ses.SetValue<T>(this, value);
-                            RaiseChange(CellEvent.JoinSession, this, DateTime.Now, ses);
+                            RaiseChange(CellEvent.JoinSession, this, this, DateTime.Now, ses);
+
                         }
                         else
-                            RaiseChange(CellEvent.Calculate, this, _epoch, ses);
+                            RaiseChange(CellEvent.Calculate, this, this, _epoch, ses);
+
                     }
                 }
                 finally
@@ -253,16 +279,29 @@ namespace Cephei.Cell.Generic
             {
                 if (Change != null)
                 {
-                    var l = Change.GetInvocationList();
-                    var r = new ICell[l.Length];
-                    for (int c = 0; c < l.Length; ++c)
+                    bool taken = false;
+                    ICellEvent[] r = null;
+                    while (taken == false)
                     {
-                        r[c] = l[c].Target as ICell;
+                        _spinLock.Enter(ref taken);
+                        if (taken)
+                        {
+                            var l = Change.GetInvocationList();
+                            r = new ICellEvent[l.Length];
+                            for (int c = 0; c < l.Length; ++c)
+                            {
+                                r[c] = l[c].Target as ICellEvent;
+                            }
+                        }
+                        else
+                            Thread.Sleep(100);
+
                     }
+                    if (taken) _spinLock.Exit();
                     return r;
                 }
                 else
-                    return new ICell[0];
+                    return new ICellEvent[0];
             }
         }
 
@@ -270,7 +309,9 @@ namespace Cephei.Cell.Generic
 
         public void Dispose()
         {
-            RaiseChange(CellEvent.Delete, this, DateTime.Now, null);
+            _disposd = true;
+            RaiseChange(CellEvent.Delete, this, this, DateTime.Now, null);
+
             Change = delegate { };
         }
 
@@ -279,17 +320,18 @@ namespace Cephei.Cell.Generic
             var lastsession = Session.Current;
             Session.Current = session;
             Calculate(epoch, 0, session);
-            RaiseChange(CellEvent.Calculate, this, epoch, session);
+            RaiseChange(CellEvent.Calculate, this, this, epoch, session);
+
             Session.Current = lastsession;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void RaiseChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             if (Change != null)
-                Change(eventType, root, epoch, session);
+                Change(eventType, root, this, epoch, session);
             if (Parent != null)
-                Parent.OnChange(eventType, root, epoch, session);
+                Parent.OnChange(eventType, root, this, epoch, session);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -304,8 +346,9 @@ namespace Cephei.Cell.Generic
             return s;
         }
 
-        public virtual void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
+            if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
             switch (eventType)
             {
                 case CellEvent.Calculate:
@@ -313,24 +356,30 @@ namespace Cephei.Cell.Generic
                         _pending++;
                     else
                     {
-                        RaiseChange(CellEvent.Invalidate, root, epoch, session);
-                        if (Cell.Parellel)
-                            Task.Run(() => PoolCalculate(DateTime.Now, session));
-                        else
-                            PoolCalculate(epoch, session);
+                        if (epoch > _epoch)
+                        {
+                            RaiseChange(CellEvent.Invalidate, root, this, epoch, session);
+                            if (Cell.Parellel)
+                                Task.Run(() => PoolCalculate(epoch, session));
+                            else
+                                PoolCalculate(epoch, session);
+                        }
                     }
+                    break;
+                case CellEvent.Delete:
+                    Change -= sender.OnChange;
                     break;
                 case CellEvent.Invalidate:
                     var lastState = (CellState)Interlocked.Exchange(ref _state, (int)CellState.Dirty);
                     if (lastState == CellState.Calculating || lastState == CellState.Blocking)
                         lastState = (CellState)Interlocked.Exchange(ref _state, (int)lastState);
                     else
-                        RaiseChange(eventType, root, epoch, session);
+                        RaiseChange(eventType, root, this, epoch, session);
                     break;
 
                 case CellEvent.JoinSession:
                     session.Join(this);
-                    RaiseChange(eventType, root, epoch, session);
+                    RaiseChange(eventType, root, this, epoch, session);
                     break;
 
                 case CellEvent.Error:
@@ -344,9 +393,20 @@ namespace Cephei.Cell.Generic
                     else
                     {
                         Thread.Sleep(100);
-                        OnChange(eventType, root, epoch, session);
+                        OnChange(eventType, root,  this, epoch, session);
                     }
                     break;
+
+                case CellEvent.Link:
+                    if (root == this)
+                    {
+                        throw new CyclicDependencyException();
+                    }
+                    else
+                        SetState(CellState.Dirty);
+                        RaiseChange(eventType, root, this, epoch, session);
+                    break;
+
                 default:
                     break;
             }
@@ -374,23 +434,31 @@ namespace Cephei.Cell.Generic
             {
                 return _func;
             }
+            set
+            {
+                _func = value;
+            }
         }
 
-        public void Clone(ICell source)
+        public void Merge(ICell source, Model model)
         {
-            Change = delegate { };
-            foreach (var d in source.Dependants)
-            {
-                Change += d.OnChange;
-            }
-            if (source.GetType() == this.GetType())
+            if (source != this)
             {
                 var c = (ICell<T>)source;
+                var f = _func;
                 _func = c.Function;
+                c.Function = f;
+                _state = (int)CellState.Dirty;
             }
-            _lastException = null;
-            _state = (int)CellState.Dirty;
-            RaiseChange(CellEvent.Link, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
+            // handle update of current while this cell is being constructed
+            if (Parent is Model m)
+            {
+                var cur = m[this.Mnemonic];
+                if (cur != this && cur.GetType() == this.GetType())
+                    cur.Merge(this, model);
+            }
         }
 
         #region observable
@@ -434,12 +502,14 @@ namespace Cephei.Cell.Generic
             foreach (var v in Dependants)
                 if (v == listener)
                     return;
-            Change += listener.OnChange;
+            if (listener != null)
+                Change += listener.OnChange;
         }
 
         public void UnNotify(ICell listener)
         {
-            Change -= listener.OnChange;
+            if (listener != null)
+                Change -= listener.OnChange;
         }
 
     }

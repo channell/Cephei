@@ -41,7 +41,8 @@ type RiskStatisticsModel
 (*
     Functions
 *)
-    let _RiskStatistics                            = cell (fun () -> new RiskStatistics ())
+    let mutable
+        _RiskStatistics                            = cell (fun () -> new RiskStatistics ())
     let _gaussianAverageShortfall                  (value : ICell<double>)   
                                                    = triv (fun () -> _RiskStatistics.Value.gaussianAverageShortfall(value.Value))
     let _gaussianDownsideVariance                  = triv (fun () -> _RiskStatistics.Value.gaussianDownsideVariance())
@@ -100,13 +101,14 @@ type RiskStatisticsModel
     casting 
 *)
     
-    member internal this.Inject v = _RiskStatistics.Value <- v
+    member internal this.Inject v = _RiskStatistics <- v
     static member Cast (p : ICell<RiskStatistics>) = 
         if p :? RiskStatisticsModel then 
             p :?> RiskStatisticsModel
         else
             let o = new RiskStatisticsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

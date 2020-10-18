@@ -41,7 +41,8 @@ type DoublingConvergenceStepsModel
 (*
     Functions
 *)
-    let _DoublingConvergenceSteps                  = cell (fun () -> new DoublingConvergenceSteps ())
+    let mutable
+        _DoublingConvergenceSteps                  = cell (fun () -> new DoublingConvergenceSteps ())
     let _initialSamples                            = triv (fun () -> _DoublingConvergenceSteps.Value.initialSamples())
     let _nextSamples                               (current : ICell<int>)   
                                                    = triv (fun () -> _DoublingConvergenceSteps.Value.nextSamples(current.Value))
@@ -50,13 +51,14 @@ type DoublingConvergenceStepsModel
     casting 
 *)
     
-    member internal this.Inject v = _DoublingConvergenceSteps.Value <- v
+    member internal this.Inject v = _DoublingConvergenceSteps <- v
     static member Cast (p : ICell<DoublingConvergenceSteps>) = 
         if p :? DoublingConvergenceStepsModel then 
             p :?> DoublingConvergenceStepsModel
         else
             let o = new DoublingConvergenceStepsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

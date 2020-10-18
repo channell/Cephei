@@ -48,7 +48,8 @@ type HarmonicCubicModel
 (*
     Functions
 *)
-    let _HarmonicCubic                             = cell (fun () -> new HarmonicCubic (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _HarmonicCubic                             = cell (fun () -> new HarmonicCubic (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _HarmonicCubic.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _HarmonicCubic.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _HarmonicCubic.Value.cCoefficients())
@@ -80,13 +81,14 @@ type HarmonicCubicModel
     casting 
 *)
     internal new () = new HarmonicCubicModel(null,null,null)
-    member internal this.Inject v = _HarmonicCubic.Value <- v
+    member internal this.Inject v = _HarmonicCubic <- v
     static member Cast (p : ICell<HarmonicCubic>) = 
         if p :? HarmonicCubicModel then 
             p :?> HarmonicCubicModel
         else
             let o = new HarmonicCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

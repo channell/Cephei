@@ -39,17 +39,17 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_factory2", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_factory2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,15 +99,15 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendEngineMerton73")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton731", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendEngineMerton73")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,17 +185,17 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_factory", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,11 +246,11 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_setStepCondition", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
-        ([<ExcelArgument(Name="impl",Description = "Reference to impl")>] 
+        ([<ExcelArgument(Name="impl",Description = "Vector")>] 
          impl : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -288,9 +288,9 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_ensureStrikeInGrid", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -324,9 +324,9 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_getResidualTime", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -360,9 +360,9 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_grid", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -396,9 +396,9 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_intrinsicValues_", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "Reference to FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -429,9 +429,9 @@ module FDDividendEngineMerton73Function =
             "<WIZ>"
     [<ExcelFunction(Name="_FDDividendEngineMerton73_Range", Description="Create a range of FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

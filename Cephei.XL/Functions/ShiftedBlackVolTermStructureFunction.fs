@@ -39,9 +39,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_maxDate", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_maxStrike", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_minStrike", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,11 +147,11 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="varianceOffset",Description = "Reference to varianceOffset")>] 
+        ([<ExcelArgument(Name="varianceOffset",Description = "double")>] 
          varianceOffset : obj)
-        ([<ExcelArgument(Name="volTS",Description = "Reference to volTS")>] 
+        ([<ExcelArgument(Name="volTS",Description = "BlackVolTermStructure")>] 
          volTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,17 +190,17 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVariance", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="time1",Description = "Reference to time1")>] 
+        ([<ExcelArgument(Name="time1",Description = "double")>] 
          time1 : obj)
-        ([<ExcelArgument(Name="time2",Description = "Reference to time2")>] 
+        ([<ExcelArgument(Name="time2",Description = "double")>] 
          time2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,17 +250,17 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVariance1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="date1",Description = "Reference to date1")>] 
+        ([<ExcelArgument(Name="date1",Description = "Date")>] 
          date1 : obj)
-        ([<ExcelArgument(Name="date2",Description = "Reference to date2")>] 
+        ([<ExcelArgument(Name="date2",Description = "Date")>] 
          date2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,17 +310,17 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVol1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="date1",Description = "Reference to date1")>] 
+        ([<ExcelArgument(Name="date1",Description = "Date")>] 
          date1 : obj)
-        ([<ExcelArgument(Name="date2",Description = "Reference to date2")>] 
+        ([<ExcelArgument(Name="date2",Description = "Date")>] 
          date2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,17 +370,17 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVol", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="time1",Description = "Reference to time1")>] 
+        ([<ExcelArgument(Name="time1",Description = "double")>] 
          time1 : obj)
-        ([<ExcelArgument(Name="time2",Description = "Reference to time2")>] 
+        ([<ExcelArgument(Name="time2",Description = "double")>] 
          time2 : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,15 +430,15 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVariance1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,15 +484,15 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVariance", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Date")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,15 +538,15 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVol", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Date")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,15 +592,15 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVol1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_businessDayConvention", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,11 +682,11 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_optionDateFromTenor", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,9 +724,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_calendar", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_dayCounter", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,9 +796,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_maxTime", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,9 +832,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_referenceDate", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -868,9 +868,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_settlementDays", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,11 +904,11 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_timeFromReference", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_update", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,9 +982,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_allowsExtrapolation", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,11 +1018,11 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_disableExtrapolation", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1060,11 +1060,11 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_enableExtrapolation", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1102,9 +1102,9 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_extrapolate", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "Reference to ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1135,9 +1135,9 @@ module ShiftedBlackVolTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_Range", Description="Create a range of ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

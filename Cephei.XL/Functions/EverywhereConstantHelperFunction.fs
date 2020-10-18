@@ -39,13 +39,13 @@ module EverywhereConstantHelperFunction =
     *)
     [<ExcelFunction(Name="_EverywhereConstantHelper", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EverywhereConstantHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="prevPrimitive",Description = "Reference to prevPrimitive")>] 
+        ([<ExcelArgument(Name="prevPrimitive",Description = "double")>] 
          prevPrimitive : obj)
-        ([<ExcelArgument(Name="xPrev",Description = "Reference to xPrev")>] 
+        ([<ExcelArgument(Name="xPrev",Description = "double")>] 
          xPrev : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module EverywhereConstantHelperFunction =
     *)
     [<ExcelFunction(Name="_EverywhereConstantHelper_fNext", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EverywhereConstantHelper",Description = "Reference to EverywhereConstantHelper")>] 
+        ([<ExcelArgument(Name="EverywhereConstantHelper",Description = "EverywhereConstantHelper")>] 
          everywhereconstanthelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module EverywhereConstantHelperFunction =
     *)
     [<ExcelFunction(Name="_EverywhereConstantHelper_primitive", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EverywhereConstantHelper",Description = "Reference to EverywhereConstantHelper")>] 
+        ([<ExcelArgument(Name="EverywhereConstantHelper",Description = "EverywhereConstantHelper")>] 
          everywhereconstanthelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,11 +166,11 @@ module EverywhereConstantHelperFunction =
     *)
     [<ExcelFunction(Name="_EverywhereConstantHelper_value", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EverywhereConstantHelper",Description = "Reference to EverywhereConstantHelper")>] 
+        ([<ExcelArgument(Name="EverywhereConstantHelper",Description = "EverywhereConstantHelper")>] 
          everywhereconstanthelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -205,9 +205,9 @@ module EverywhereConstantHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EverywhereConstantHelper_Range", Description="Create a range of EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EverywhereConstantHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

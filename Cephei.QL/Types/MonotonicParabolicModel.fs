@@ -48,7 +48,8 @@ type MonotonicParabolicModel
 (*
     Functions
 *)
-    let _MonotonicParabolic                        = cell (fun () -> new MonotonicParabolic (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _MonotonicParabolic                        = cell (fun () -> new MonotonicParabolic (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _MonotonicParabolic.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _MonotonicParabolic.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _MonotonicParabolic.Value.cCoefficients())
@@ -80,13 +81,14 @@ type MonotonicParabolicModel
     casting 
 *)
     internal new () = new MonotonicParabolicModel(null,null,null)
-    member internal this.Inject v = _MonotonicParabolic.Value <- v
+    member internal this.Inject v = _MonotonicParabolic <- v
     static member Cast (p : ICell<MonotonicParabolic>) = 
         if p :? MonotonicParabolicModel then 
             p :?> MonotonicParabolicModel
         else
             let o = new MonotonicParabolicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -46,7 +46,8 @@ type YoYInflationCapFloorEngineModel
 (*
     Functions
 *)
-    let _YoYInflationCapFloorEngine                = cell (fun () -> new YoYInflationCapFloorEngine (index.Value, vol.Value))
+    let mutable
+        _YoYInflationCapFloorEngine                = cell (fun () -> new YoYInflationCapFloorEngine (index.Value, vol.Value))
     let _index                                     = triv (fun () -> _YoYInflationCapFloorEngine.Value.index())
     let _setVolatility                             (vol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
                                                    = triv (fun () -> _YoYInflationCapFloorEngine.Value.setVolatility(vol.Value)
@@ -57,13 +58,14 @@ type YoYInflationCapFloorEngineModel
     casting 
 *)
     internal new () = new YoYInflationCapFloorEngineModel(null,null)
-    member internal this.Inject v = _YoYInflationCapFloorEngine.Value <- v
+    member internal this.Inject v = _YoYInflationCapFloorEngine <- v
     static member Cast (p : ICell<YoYInflationCapFloorEngine>) = 
         if p :? YoYInflationCapFloorEngineModel then 
             p :?> YoYInflationCapFloorEngineModel
         else
             let o = new YoYInflationCapFloorEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

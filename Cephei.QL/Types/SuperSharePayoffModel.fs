@@ -48,7 +48,8 @@ type SuperSharePayoffModel
 (*
     Functions
 *)
-    let _SuperSharePayoff                          = cell (fun () -> new SuperSharePayoff (strike.Value, secondStrike.Value, cashPayoff.Value))
+    let mutable
+        _SuperSharePayoff                          = cell (fun () -> new SuperSharePayoff (strike.Value, secondStrike.Value, cashPayoff.Value))
     let _cashPayoff                                = triv (fun () -> _SuperSharePayoff.Value.cashPayoff())
     let _description                               = triv (fun () -> _SuperSharePayoff.Value.description())
     let _name                                      = triv (fun () -> _SuperSharePayoff.Value.name())
@@ -65,13 +66,14 @@ type SuperSharePayoffModel
     casting 
 *)
     internal new () = new SuperSharePayoffModel(null,null,null)
-    member internal this.Inject v = _SuperSharePayoff.Value <- v
+    member internal this.Inject v = _SuperSharePayoff <- v
     static member Cast (p : ICell<SuperSharePayoff>) = 
         if p :? SuperSharePayoffModel then 
             p :?> SuperSharePayoffModel
         else
             let o = new SuperSharePayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

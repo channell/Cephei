@@ -39,9 +39,9 @@ module VarProxy_HelperFunction =
     *)
     [<ExcelFunction(Name="_VarProxy_Helper_corrModel_", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_corrModel_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VarProxy_Helper",Description = "Reference to VarProxy_Helper")>] 
+        ([<ExcelArgument(Name="VarProxy_Helper",Description = "VarProxy_Helper")>] 
          varproxy_helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module VarProxy_HelperFunction =
     *)
     [<ExcelFunction(Name="_VarProxy_Helper_value", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VarProxy_Helper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VarProxy_Helper",Description = "Reference to VarProxy_Helper")>] 
+        ([<ExcelArgument(Name="VarProxy_Helper",Description = "VarProxy_Helper")>] 
          varproxy_helper : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,13 +117,13 @@ module VarProxy_HelperFunction =
     *)
     [<ExcelFunction(Name="_VarProxy_Helper", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VarProxy_Helper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="proxy",Description = "Reference to proxy")>] 
+        ([<ExcelArgument(Name="proxy",Description = "LfmCovarianceProxy")>] 
          proxy : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module VarProxy_HelperFunction =
     *)
     [<ExcelFunction(Name="_VarProxy_Helper_volaModel_", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_volaModel_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VarProxy_Helper",Description = "Reference to VarProxy_Helper")>] 
+        ([<ExcelArgument(Name="VarProxy_Helper",Description = "VarProxy_Helper")>] 
          varproxy_helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -199,9 +199,9 @@ module VarProxy_HelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VarProxy_Helper_Range", Description="Create a range of VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the VarProxy_Helper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_a", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,19 +75,19 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_abcdBlackVolatility", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_abcdBlackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "double")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -141,33 +141,33 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration1", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="blackVols",Description = "Reference to blackVols")>] 
+        ([<ExcelArgument(Name="blackVols",Description = "double")>] 
          blackVols : obj)
-        ([<ExcelArgument(Name="aGuess",Description = "Reference to aGuess")>] 
+        ([<ExcelArgument(Name="aGuess",Description = "AbcdCalibration")>] 
          aGuess : obj)
-        ([<ExcelArgument(Name="bGuess",Description = "Reference to bGuess")>] 
+        ([<ExcelArgument(Name="bGuess",Description = "AbcdCalibration")>] 
          bGuess : obj)
-        ([<ExcelArgument(Name="cGuess",Description = "Reference to cGuess")>] 
+        ([<ExcelArgument(Name="cGuess",Description = "AbcdCalibration")>] 
          cGuess : obj)
-        ([<ExcelArgument(Name="dGuess",Description = "Reference to dGuess")>] 
+        ([<ExcelArgument(Name="dGuess",Description = "AbcdCalibration")>] 
          dGuess : obj)
-        ([<ExcelArgument(Name="aIsFixed",Description = "Reference to aIsFixed")>] 
+        ([<ExcelArgument(Name="aIsFixed",Description = "AbcdCalibration")>] 
          aIsFixed : obj)
-        ([<ExcelArgument(Name="bIsFixed",Description = "Reference to bIsFixed")>] 
+        ([<ExcelArgument(Name="bIsFixed",Description = "AbcdCalibration")>] 
          bIsFixed : obj)
-        ([<ExcelArgument(Name="cIsFixed",Description = "Reference to cIsFixed")>] 
+        ([<ExcelArgument(Name="cIsFixed",Description = "AbcdCalibration")>] 
          cIsFixed : obj)
-        ([<ExcelArgument(Name="dIsFixed",Description = "Reference to dIsFixed")>] 
+        ([<ExcelArgument(Name="dIsFixed",Description = "AbcdCalibration")>] 
          dIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Reference to vegaWeighted")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "AbcdCalibration")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "AbcdCalibration")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,7 +250,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_aIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_aIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_b", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -353,9 +353,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_bIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_bIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -389,9 +389,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_c", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_c
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -425,9 +425,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_cIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_cIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -461,9 +461,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_compute", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_compute
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -497,9 +497,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_d", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_d
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -533,9 +533,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_dIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_dIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,9 +569,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_endCriteria", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -605,9 +605,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_error", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_error
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,9 +641,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_errors", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_errors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,13 +677,13 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_k", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_k
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IParametersTransformation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="blackVols",Description = "Reference to blackVols")>] 
+        ([<ExcelArgument(Name="blackVols",Description = "double")>] 
          blackVols : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -725,9 +725,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_maxError", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IParametersTransformation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -761,9 +761,9 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_transformation_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_transformation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IParametersTransformation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,11 +797,11 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_value", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AbcdCalibration",Description = "Reference to AbcdCalibration")>] 
+        ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -836,9 +836,9 @@ module AbcdCalibrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdCalibration_Range", Description="Create a range of AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AbcdCalibration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

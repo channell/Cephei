@@ -46,7 +46,8 @@ type SvenssonFittingModel
 (*
     Functions
 *)
-    let _SvenssonFitting                           = cell (fun () -> new SvenssonFitting (weights.Value, optimizationMethod.Value))
+    let mutable
+        _SvenssonFitting                           = cell (fun () -> new SvenssonFitting (weights.Value, optimizationMethod.Value))
     let _clone                                     = triv (fun () -> _SvenssonFitting.Value.clone())
     let _size                                      = triv (fun () -> _SvenssonFitting.Value.size())
     let _constrainAtZero                           = triv (fun () -> _SvenssonFitting.Value.constrainAtZero())
@@ -62,13 +63,14 @@ type SvenssonFittingModel
     casting 
 *)
     internal new () = new SvenssonFittingModel(null,null)
-    member internal this.Inject v = _SvenssonFitting.Value <- v
+    member internal this.Inject v = _SvenssonFitting <- v
     static member Cast (p : ICell<SvenssonFitting>) = 
         if p :? SvenssonFittingModel then 
             p :?> SvenssonFittingModel
         else
             let o = new SvenssonFittingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

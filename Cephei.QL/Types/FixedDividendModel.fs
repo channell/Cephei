@@ -46,7 +46,8 @@ type FixedDividendModel
 (*
     Functions
 *)
-    let _FixedDividend                             = cell (fun () -> new FixedDividend (amount.Value, date.Value))
+    let mutable
+        _FixedDividend                             = cell (fun () -> new FixedDividend (amount.Value, date.Value))
     let _amount                                    = triv (fun () -> _FixedDividend.Value.amount())
     let _amount1                                   (d : ICell<double>)   
                                                    = triv (fun () -> _FixedDividend.Value.amount(d.Value))
@@ -74,13 +75,14 @@ type FixedDividendModel
     casting 
 *)
     internal new () = new FixedDividendModel(null,null)
-    member internal this.Inject v = _FixedDividend.Value <- v
+    member internal this.Inject v = _FixedDividend <- v
     static member Cast (p : ICell<FixedDividend>) = 
         if p :? FixedDividendModel then 
             p :?> FixedDividendModel
         else
             let o = new FixedDividendModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

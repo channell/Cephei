@@ -39,13 +39,13 @@ module BiCGStabResultFunction =
     *)
     [<ExcelFunction(Name="_BiCGStabResult", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BiCGStabResult")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "double")>] 
          e : obj)
-        ([<ExcelArgument(Name="xx",Description = "Reference to xx")>] 
+        ([<ExcelArgument(Name="xx",Description = "Vector")>] 
          xx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module BiCGStabResultFunction =
     *)
     [<ExcelFunction(Name="_BiCGStabResult_Error", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_Error
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BiCGStabResult",Description = "Reference to BiCGStabResult")>] 
+        ([<ExcelArgument(Name="BiCGStabResult",Description = "BiCGStabResult")>] 
          bicgstabresult : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module BiCGStabResultFunction =
     *)
     [<ExcelFunction(Name="_BiCGStabResult_Iterations", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_Iterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BiCGStabResult",Description = "Reference to BiCGStabResult")>] 
+        ([<ExcelArgument(Name="BiCGStabResult",Description = "BiCGStabResult")>] 
          bicgstabresult : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module BiCGStabResultFunction =
     *)
     [<ExcelFunction(Name="_BiCGStabResult_X", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_X
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BiCGStabResult",Description = "Reference to BiCGStabResult")>] 
+        ([<ExcelArgument(Name="BiCGStabResult",Description = "BiCGStabResult")>] 
          bicgstabresult : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module BiCGStabResultFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BiCGStabResult_Range", Description="Create a range of BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BiCGStabResult")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

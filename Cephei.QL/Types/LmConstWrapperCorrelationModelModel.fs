@@ -44,7 +44,8 @@ type LmConstWrapperCorrelationModelModel
 (*
     Functions
 *)
-    let _LmConstWrapperCorrelationModel            = cell (fun () -> new LmConstWrapperCorrelationModel (corrModel.Value))
+    let mutable
+        _LmConstWrapperCorrelationModel            = cell (fun () -> new LmConstWrapperCorrelationModel (corrModel.Value))
     let _correlation                               (t : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LmConstWrapperCorrelationModel.Value.correlation(t.Value, x.Value))
     let _correlation1                              (i : ICell<int>) (j : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
@@ -63,13 +64,14 @@ type LmConstWrapperCorrelationModelModel
     casting 
 *)
     internal new () = new LmConstWrapperCorrelationModelModel(null)
-    member internal this.Inject v = _LmConstWrapperCorrelationModel.Value <- v
+    member internal this.Inject v = _LmConstWrapperCorrelationModel <- v
     static member Cast (p : ICell<LmConstWrapperCorrelationModel>) = 
         if p :? LmConstWrapperCorrelationModelModel then 
             p :?> LmConstWrapperCorrelationModelModel
         else
             let o = new LmConstWrapperCorrelationModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module SteepestDescentFunction =
     *)
     [<ExcelFunction(Name="_SteepestDescent", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SteepestDescent")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "Reference to lineSearch")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "SteepestDescent")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,13 +76,13 @@ module SteepestDescentFunction =
     *)
     [<ExcelFunction(Name="_SteepestDescent_minimize", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SteepestDescent",Description = "Reference to SteepestDescent")>] 
+        ([<ExcelArgument(Name="SteepestDescent",Description = "SteepestDescent")>] 
          steepestdescent : obj)
-        ([<ExcelArgument(Name="P",Description = "Reference to P")>] 
+        ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module SteepestDescentFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SteepestDescent_Range", Description="Create a range of SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SteepestDescent")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

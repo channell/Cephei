@@ -52,7 +52,8 @@ type ContinuousFixedLookbackOptionModel
 (*
     Functions
 *)
-    let _ContinuousFixedLookbackOption             = cell (fun () -> withEngine pricingEngine (new ContinuousFixedLookbackOption (minmax.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _ContinuousFixedLookbackOption             = cell (fun () -> withEngine pricingEngine (new ContinuousFixedLookbackOption (minmax.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousFixedLookbackOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousFixedLookbackOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousFixedLookbackOption).dividendRho())
@@ -81,13 +82,14 @@ type ContinuousFixedLookbackOptionModel
     casting 
 *)
     internal new () = new ContinuousFixedLookbackOptionModel(null,null,null,null,null)
-    member internal this.Inject v = _ContinuousFixedLookbackOption.Value <- v
+    member internal this.Inject v = _ContinuousFixedLookbackOption <- v
     static member Cast (p : ICell<ContinuousFixedLookbackOption>) = 
         if p :? ContinuousFixedLookbackOptionModel then 
             p :?> ContinuousFixedLookbackOptionModel
         else
             let o = new ContinuousFixedLookbackOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

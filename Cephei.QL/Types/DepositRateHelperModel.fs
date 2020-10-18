@@ -56,7 +56,8 @@ type DepositRateHelperModel
 (*
     Functions
 *)
-    let _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))
+    let mutable
+        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))
     let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
@@ -83,13 +84,14 @@ type DepositRateHelperModel
     casting 
 *)
     internal new () = new DepositRateHelperModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _DepositRateHelper.Value <- v
+    member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel then 
             p :?> DepositRateHelperModel
         else
             let o = new DepositRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -139,7 +141,8 @@ type DepositRateHelperModel1
 (*
     Functions
 *)
-    let _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, i.Value))
+    let mutable
+        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, i.Value))
     let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
@@ -166,13 +169,14 @@ type DepositRateHelperModel1
     casting 
 *)
     internal new () = new DepositRateHelperModel1(null,null)
-    member internal this.Inject v = _DepositRateHelper.Value <- v
+    member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel1 then 
             p :?> DepositRateHelperModel1
         else
             let o = new DepositRateHelperModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -217,7 +221,8 @@ type DepositRateHelperModel2
 (*
     Functions
 *)
-    let _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, i.Value))
+    let mutable
+        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, i.Value))
     let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
@@ -244,13 +249,14 @@ type DepositRateHelperModel2
     casting 
 *)
     internal new () = new DepositRateHelperModel2(null,null)
-    member internal this.Inject v = _DepositRateHelper.Value <- v
+    member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel2 then 
             p :?> DepositRateHelperModel2
         else
             let o = new DepositRateHelperModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -305,7 +311,8 @@ type DepositRateHelperModel3
 (*
     Functions
 *)
-    let _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))
+    let mutable
+        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))
     let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
@@ -332,13 +339,14 @@ type DepositRateHelperModel3
     casting 
 *)
     internal new () = new DepositRateHelperModel3(null,null,null,null,null,null,null)
-    member internal this.Inject v = _DepositRateHelper.Value <- v
+    member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel3 then 
             p :?> DepositRateHelperModel3
         else
             let o = new DepositRateHelperModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

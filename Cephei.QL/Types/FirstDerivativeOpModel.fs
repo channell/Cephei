@@ -44,7 +44,8 @@ type FirstDerivativeOpModel
 (*
     Functions
 *)
-    let _FirstDerivativeOp                         = cell (fun () -> new FirstDerivativeOp (rhs.Value))
+    let mutable
+        _FirstDerivativeOp                         = cell (fun () -> new FirstDerivativeOp (rhs.Value))
     let _add                                       (m : ICell<TripleBandLinearOp>)   
                                                    = triv (fun () -> _FirstDerivativeOp.Value.add(m.Value))
     let _add1                                      (u : ICell<Vector>)   
@@ -87,13 +88,14 @@ type FirstDerivativeOpModel
     casting 
 *)
     internal new () = new FirstDerivativeOpModel(null)
-    member internal this.Inject v = _FirstDerivativeOp.Value <- v
+    member internal this.Inject v = _FirstDerivativeOp <- v
     static member Cast (p : ICell<FirstDerivativeOp>) = 
         if p :? FirstDerivativeOpModel then 
             p :?> FirstDerivativeOpModel
         else
             let o = new FirstDerivativeOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -154,7 +156,8 @@ type FirstDerivativeOpModel1
 (*
     Functions
 *)
-    let _FirstDerivativeOp                         = cell (fun () -> new FirstDerivativeOp (direction.Value, mesher.Value))
+    let mutable
+        _FirstDerivativeOp                         = cell (fun () -> new FirstDerivativeOp (direction.Value, mesher.Value))
     let _add                                       (m : ICell<TripleBandLinearOp>)   
                                                    = triv (fun () -> _FirstDerivativeOp.Value.add(m.Value))
     let _add1                                      (u : ICell<Vector>)   
@@ -197,13 +200,14 @@ type FirstDerivativeOpModel1
     casting 
 *)
     internal new () = new FirstDerivativeOpModel1(null,null)
-    member internal this.Inject v = _FirstDerivativeOp.Value <- v
+    member internal this.Inject v = _FirstDerivativeOp <- v
     static member Cast (p : ICell<FirstDerivativeOp>) = 
         if p :? FirstDerivativeOpModel1 then 
             p :?> FirstDerivativeOpModel1
         else
             let o = new FirstDerivativeOpModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

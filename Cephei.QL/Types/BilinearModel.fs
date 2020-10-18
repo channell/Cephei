@@ -41,7 +41,8 @@ type BilinearModel
 (*
     Functions
 *)
-    let _Bilinear                                  = cell (fun () -> new Bilinear ())
+    let mutable
+        _Bilinear                                  = cell (fun () -> new Bilinear ())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xSize : ICell<int>) (yBegin : ICell<Generic.List<double>>) (ySize : ICell<int>) (zData : ICell<Matrix>)   
                                                    = triv (fun () -> _Bilinear.Value.interpolate(xBegin.Value, xSize.Value, yBegin.Value, ySize.Value, zData.Value))
     do this.Bind(_Bilinear)
@@ -49,13 +50,14 @@ type BilinearModel
     casting 
 *)
     
-    member internal this.Inject v = _Bilinear.Value <- v
+    member internal this.Inject v = _Bilinear <- v
     static member Cast (p : ICell<Bilinear>) = 
         if p :? BilinearModel then 
             p :?> BilinearModel
         else
             let o = new BilinearModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

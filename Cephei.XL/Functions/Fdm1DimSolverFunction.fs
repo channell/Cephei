@@ -39,11 +39,11 @@ module Fdm1DimSolverFunction =
     *)
     [<ExcelFunction(Name="_Fdm1DimSolver_derivativeX", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_derivativeX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Fdm1DimSolver")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Reference to Fdm1DimSolver")>] 
+        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Fdm1DimSolver")>] 
          fdm1dimsolver : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module Fdm1DimSolverFunction =
     *)
     [<ExcelFunction(Name="_Fdm1DimSolver_derivativeXX", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_derivativeXX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Fdm1DimSolver")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Reference to Fdm1DimSolver")>] 
+        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Fdm1DimSolver")>] 
          fdm1dimsolver : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,13 +123,13 @@ module Fdm1DimSolverFunction =
     *)
     [<ExcelFunction(Name="_Fdm1DimSolver", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Fdm1DimSolver")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="solverDesc",Description = "Reference to solverDesc")>] 
+        ([<ExcelArgument(Name="solverDesc",Description = "FdmSolverDesc")>] 
          solverDesc : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "Reference to schemeDesc")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="op",Description = "Reference to op")>] 
+        ([<ExcelArgument(Name="op",Description = "FdmLinearOpComposite")>] 
          op : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,11 +172,11 @@ module Fdm1DimSolverFunction =
     *)
     [<ExcelFunction(Name="_Fdm1DimSolver_interpolateAt", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_interpolateAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Reference to Fdm1DimSolver")>] 
+        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Fdm1DimSolver")>] 
          fdm1dimsolver : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,11 +214,11 @@ module Fdm1DimSolverFunction =
     *)
     [<ExcelFunction(Name="_Fdm1DimSolver_thetaAt", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_thetaAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Reference to Fdm1DimSolver")>] 
+        ([<ExcelArgument(Name="Fdm1DimSolver",Description = "Fdm1DimSolver")>] 
          fdm1dimsolver : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -253,9 +253,9 @@ module Fdm1DimSolverFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Fdm1DimSolver_Range", Description="Create a range of Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Fdm1DimSolver")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

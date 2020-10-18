@@ -57,7 +57,8 @@ type IcelandModel
 (*
     Functions
 *)
-    let _Iceland                                   = cell (fun () -> new Iceland ())
+    let mutable
+        _Iceland                                   = cell (fun () -> new Iceland ())
     let _addedHolidays                             = triv (fun () -> _Iceland.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Iceland.Value.addHoliday(d.Value)
@@ -94,13 +95,14 @@ type IcelandModel
     casting 
 *)
     
-    member internal this.Inject v = _Iceland.Value <- v
+    member internal this.Inject v = _Iceland <- v
     static member Cast (p : ICell<Iceland>) = 
         if p :? IcelandModel then 
             p :?> IcelandModel
         else
             let o = new IcelandModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

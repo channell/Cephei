@@ -40,31 +40,31 @@ module MCAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_MCAmericanEngine", Description="Create a MCAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCAmericanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MCAmericanEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="timeStepsPerYear",Description = "Reference to timeStepsPerYear")>] 
+        ([<ExcelArgument(Name="timeStepsPerYear",Description = "int")>] 
          timeStepsPerYear : obj)
-        ([<ExcelArgument(Name="antitheticVariate",Description = "Reference to antitheticVariate")>] 
+        ([<ExcelArgument(Name="antitheticVariate",Description = "bool")>] 
          antitheticVariate : obj)
-        ([<ExcelArgument(Name="controlVariate",Description = "Reference to controlVariate")>] 
+        ([<ExcelArgument(Name="controlVariate",Description = "bool")>] 
          controlVariate : obj)
-        ([<ExcelArgument(Name="requiredSamples",Description = "Reference to requiredSamples")>] 
+        ([<ExcelArgument(Name="requiredSamples",Description = "int")>] 
          requiredSamples : obj)
-        ([<ExcelArgument(Name="requiredTolerance",Description = "Reference to requiredTolerance")>] 
+        ([<ExcelArgument(Name="requiredTolerance",Description = "double")>] 
          requiredTolerance : obj)
-        ([<ExcelArgument(Name="maxSamples",Description = "Reference to maxSamples")>] 
+        ([<ExcelArgument(Name="maxSamples",Description = "int")>] 
          maxSamples : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
-        ([<ExcelArgument(Name="polynomOrder",Description = "Reference to polynomOrder")>] 
+        ([<ExcelArgument(Name="polynomOrder",Description = "int")>] 
          polynomOrder : obj)
-        ([<ExcelArgument(Name="polynomType",Description = "Reference to polynomType")>] 
+        ([<ExcelArgument(Name="polynomType",Description = "LsmBasisSystem.PolynomType")>] 
          polynomType : obj)
-        ([<ExcelArgument(Name="nCalibrationSamples",Description = "Reference to nCalibrationSamples")>] 
+        ([<ExcelArgument(Name="nCalibrationSamples",Description = "int")>] 
          nCalibrationSamples : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -140,9 +140,9 @@ module MCAmericanEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCAmericanEngine_Range", Description="Create a range of MCAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCAmericanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MCAmericanEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

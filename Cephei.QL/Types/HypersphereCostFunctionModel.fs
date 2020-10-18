@@ -48,7 +48,8 @@ type HypersphereCostFunctionModel
 (*
     Functions
 *)
-    let _HypersphereCostFunction                   = cell (fun () -> new HypersphereCostFunction (targetMatrix.Value, targetVariance.Value, lowerDiagonal.Value))
+    let mutable
+        _HypersphereCostFunction                   = cell (fun () -> new HypersphereCostFunction (targetMatrix.Value, targetVariance.Value, lowerDiagonal.Value))
     let _value                                     (x : ICell<Vector>)   
                                                    = cell (fun () -> _HypersphereCostFunction.Value.value(x.Value))
     let _values                                    (a : ICell<Vector>)   
@@ -69,13 +70,14 @@ type HypersphereCostFunctionModel
     casting 
 *)
     internal new () = HypersphereCostFunctionModel(null,null,null)
-    member internal this.Inject v = _HypersphereCostFunction.Value <- v
+    member internal this.Inject v = _HypersphereCostFunction <- v
     static member Cast (p : ICell<HypersphereCostFunction>) = 
         if p :? HypersphereCostFunctionModel then 
             p :?> HypersphereCostFunctionModel
         else
             let o = new HypersphereCostFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

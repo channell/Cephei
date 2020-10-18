@@ -39,15 +39,15 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_addFixing", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="fixing",Description = "Reference to fixing")>] 
+        ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "Period")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,9 +94,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_availabilityLag", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,9 +130,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_currency", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_familyName", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_fixing", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Calendar")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_fixingCalendar", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_frequency", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,21 +322,21 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="familyName",Description = "Reference to familyName")>] 
+        ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
-        ([<ExcelArgument(Name="region",Description = "Reference to region")>] 
+        ([<ExcelArgument(Name="region",Description = "Region")>] 
          region : obj)
-        ([<ExcelArgument(Name="revised",Description = "Reference to revised")>] 
+        ([<ExcelArgument(Name="revised",Description = "bool")>] 
          revised : obj)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="availabilitiyLag",Description = "Reference to availabilitiyLag")>] 
+        ([<ExcelArgument(Name="availabilitiyLag",Description = "Period")>] 
          availabilitiyLag : obj)
-        ([<ExcelArgument(Name="currency",Description = "Reference to currency")>] 
+        ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,9 +395,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_interpolated", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -431,11 +431,11 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_isValidFixingDate", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -473,9 +473,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_name", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -509,9 +509,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_region", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -545,9 +545,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_revised", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -581,9 +581,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_update", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -617,15 +617,15 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_addFixings", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "Helper.Range.fromModelList")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -671,13 +671,13 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_addFixings1", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "Helper.Range.fromModelList")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_allowsNativeFixings", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,9 +755,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_clearFixings", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,11 +791,11 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_registerWith", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_timeSeries", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,11 +869,11 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_unregisterWith", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InflationIndex",Description = "Reference to InflationIndex")>] 
+        ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -908,9 +908,9 @@ module InflationIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InflationIndex_Range", Description="Create a range of InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InflationIndex")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

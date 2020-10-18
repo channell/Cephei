@@ -39,9 +39,9 @@ module BFGSFunction =
     *)
     [<ExcelFunction(Name="_BFGS", Description="Create a BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BFGS")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "Reference to lineSearch")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "BFGS")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,13 +76,13 @@ module BFGSFunction =
     *)
     [<ExcelFunction(Name="_BFGS_minimize", Description="Create a BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BFGS",Description = "Reference to BFGS")>] 
+        ([<ExcelArgument(Name="BFGS",Description = "BFGS")>] 
          bfgs : obj)
-        ([<ExcelArgument(Name="P",Description = "Reference to P")>] 
+        ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module BFGSFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BFGS_Range", Description="Create a range of BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BFGS")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

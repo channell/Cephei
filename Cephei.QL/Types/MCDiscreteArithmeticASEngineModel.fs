@@ -56,7 +56,8 @@ type MCDiscreteArithmeticASEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (ne
 (*
     Functions
 *)
-    let _MCDiscreteArithmeticASEngine              = cell (fun () -> new MCDiscreteArithmeticASEngine<'RNG,'S> (Process.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+    let mutable
+        _MCDiscreteArithmeticASEngine              = cell (fun () -> new MCDiscreteArithmeticASEngine<'RNG,'S> (Process.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.registerWith(handler.Value)
                                                                      _MCDiscreteArithmeticASEngine.Value)

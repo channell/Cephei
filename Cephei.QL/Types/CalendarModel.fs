@@ -41,7 +41,8 @@ type CalendarModel
 (*
     Functions
 *)
-    let _Calendar                                  = cell (fun () -> new Calendar ())
+    let mutable
+        _Calendar                                  = cell (fun () -> new Calendar ())
     let _addedHolidays                             = triv (fun () -> _Calendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Calendar.Value.addHoliday(d.Value)
@@ -78,13 +79,14 @@ type CalendarModel
     casting 
 *)
     
-    member internal this.Inject v = _Calendar.Value <- v
+    member internal this.Inject v = _Calendar <- v
     static member Cast (p : ICell<Calendar>) = 
         if p :? CalendarModel then 
             p :?> CalendarModel
         else
             let o = new CalendarModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -137,7 +139,8 @@ type CalendarModel1
 (*
     Functions
 *)
-    let _Calendar                                  = cell (fun () -> new Calendar (c.Value))
+    let mutable
+        _Calendar                                  = cell (fun () -> new Calendar (c.Value))
     let _addedHolidays                             = triv (fun () -> _Calendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Calendar.Value.addHoliday(d.Value)
@@ -174,13 +177,14 @@ type CalendarModel1
     casting 
 *)
     internal new () = new CalendarModel1(null)
-    member internal this.Inject v = _Calendar.Value <- v
+    member internal this.Inject v = _Calendar <- v
     static member Cast (p : ICell<Calendar>) = 
         if p :? CalendarModel1 then 
             p :?> CalendarModel1
         else
             let o = new CalendarModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

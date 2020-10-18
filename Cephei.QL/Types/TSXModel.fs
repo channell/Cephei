@@ -41,7 +41,8 @@ type TSXModel
 (*
     Functions
 *)
-    let _TSX                                       = cell (fun () -> new TSX ())
+    let mutable
+        _TSX                                       = cell (fun () -> new TSX ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _TSX.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _TSX.Value.name())
@@ -50,13 +51,14 @@ type TSXModel
     casting 
 *)
     
-    member internal this.Inject v = _TSX.Value <- v
+    member internal this.Inject v = _TSX <- v
     static member Cast (p : ICell<TSX>) = 
         if p :? TSXModel then 
             p :?> TSXModel
         else
             let o = new TSXModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

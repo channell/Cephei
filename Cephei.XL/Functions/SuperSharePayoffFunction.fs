@@ -39,9 +39,9 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_cashPayoff", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_cashPayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SuperSharePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_description", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SuperSharePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_name", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SuperSharePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_secondStrike", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_secondStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SuperSharePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,13 +183,13 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SuperSharePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="secondStrike",Description = "Reference to secondStrike")>] 
+        ([<ExcelArgument(Name="secondStrike",Description = "double")>] 
          secondStrike : obj)
-        ([<ExcelArgument(Name="cashPayoff",Description = "Reference to cashPayoff")>] 
+        ([<ExcelArgument(Name="cashPayoff",Description = "double")>] 
          cashPayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,11 +232,11 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_value", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_strike", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_optionType", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,11 +346,11 @@ module SuperSharePayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperSharePayoff_accept", Description="Create a SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SuperSharePayoff",Description = "Reference to SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="SuperSharePayoff",Description = "SuperSharePayoff")>] 
          supersharepayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -385,9 +385,9 @@ module SuperSharePayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SuperSharePayoff_Range", Description="Create a range of SuperSharePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperSharePayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SuperSharePayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

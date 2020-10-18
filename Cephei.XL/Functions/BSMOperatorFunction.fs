@@ -39,13 +39,13 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator1", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BSMOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="residualTime",Description = "Reference to residualTime")>] 
+        ([<ExcelArgument(Name="residualTime",Description = "double")>] 
          residualTime : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator2", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BSMOperator")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,17 +119,17 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BSMOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="q",Description = "Reference to q")>] 
+        ([<ExcelArgument(Name="q",Description = "double")>] 
          q : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,13 +181,13 @@ module BSMOperatorFunction =
     (*!! name clash with Dictionary Add method 
     [<ExcelFunction(Name="_BSMOperator_add", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -230,11 +230,11 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_applyTo", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -272,9 +272,9 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_Clone", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -308,9 +308,9 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_diagonal", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -344,11 +344,11 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_identity", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -386,9 +386,9 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_isTimeDependent", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -422,9 +422,9 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_lowerDiagonal", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -458,13 +458,13 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_multiply", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -506,13 +506,13 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setFirstRow", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -554,13 +554,13 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setLastRow", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -602,17 +602,17 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setMidRow", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -662,15 +662,15 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setMidRows", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -716,11 +716,11 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setTime", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -758,9 +758,9 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_size", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -794,11 +794,11 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_solveFor", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -836,13 +836,13 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_SOR", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
-        ([<ExcelArgument(Name="tol",Description = "Reference to tol")>] 
+        ([<ExcelArgument(Name="tol",Description = "double")>] 
          tol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -884,13 +884,13 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_subtract", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -932,9 +932,9 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_upperDiagonal", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSMOperator",Description = "Reference to BSMOperator")>] 
+        ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,9 +965,9 @@ module BSMOperatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BSMOperator_Range", Description="Create a range of BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BSMOperator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

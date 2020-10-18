@@ -44,7 +44,8 @@ type FdmLinearOpLayoutModel
 (*
     Functions
 *)
-    let _FdmLinearOpLayout                         = cell (fun () -> new FdmLinearOpLayout (dim.Value))
+    let mutable
+        _FdmLinearOpLayout                         = cell (fun () -> new FdmLinearOpLayout (dim.Value))
     let _begin                                     = triv (fun () -> _FdmLinearOpLayout.Value.BEGIN())
     let _dim                                       = triv (fun () -> _FdmLinearOpLayout.Value.dim())
     let _end                                       = triv (fun () -> _FdmLinearOpLayout.Value.END())
@@ -63,13 +64,14 @@ type FdmLinearOpLayoutModel
     casting 
 *)
     internal new () = new FdmLinearOpLayoutModel(null)
-    member internal this.Inject v = _FdmLinearOpLayout.Value <- v
+    member internal this.Inject v = _FdmLinearOpLayout <- v
     static member Cast (p : ICell<FdmLinearOpLayout>) = 
         if p :? FdmLinearOpLayoutModel then 
             p :?> FdmLinearOpLayoutModel
         else
             let o = new FdmLinearOpLayoutModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

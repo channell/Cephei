@@ -66,7 +66,8 @@ type BasisSwapModel
 (*
     Functions
 *)
-    let _BasisSwap                                 = cell (fun () -> withEngine pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value)))
+    let mutable
+        _BasisSwap                                 = cell (fun () -> withEngine pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value)))
     let _fairLongSpread                            = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairLongSpread())
     let _fairShortSpread                           = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairShortSpread())
     let _floating1Leg                              = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).floating1Leg())
@@ -114,13 +115,14 @@ type BasisSwapModel
     casting 
 *)
     internal new () = new BasisSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _BasisSwap.Value <- v
+    member internal this.Inject v = _BasisSwap <- v
     static member Cast (p : ICell<BasisSwap>) = 
         if p :? BasisSwapModel then 
             p :?> BasisSwapModel
         else
             let o = new BasisSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -221,7 +223,8 @@ type BasisSwapModel1
 (*
     Functions
 *)
-    let _BasisSwap                                 = cell (fun () -> withEngine pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value, paymentConvention.Value)))
+    let mutable
+        _BasisSwap                                 = cell (fun () -> withEngine pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value, paymentConvention.Value)))
     let _fairLongSpread                            = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairLongSpread())
     let _fairShortSpread                           = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairShortSpread())
     let _floating1Leg                              = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).floating1Leg())
@@ -269,13 +272,14 @@ type BasisSwapModel1
     casting 
 *)
     internal new () = new BasisSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _BasisSwap.Value <- v
+    member internal this.Inject v = _BasisSwap <- v
     static member Cast (p : ICell<BasisSwap>) = 
         if p :? BasisSwapModel1 then 
             p :?> BasisSwapModel1
         else
             let o = new BasisSwapModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

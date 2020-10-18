@@ -39,13 +39,13 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardFlatInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,13 +88,13 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_derivative", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_empty", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,13 +172,13 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_primitive", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,13 +220,13 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_secondDerivative", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_update", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,13 +304,13 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_value1", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,11 +352,11 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_value", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_xMax", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_xMin", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_allowsExtrapolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,11 +502,11 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_disableExtrapolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,11 +544,11 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_enableExtrapolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_extrapolate", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "Reference to ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -619,9 +619,9 @@ module ForwardFlatInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardFlatInterpolation_Range", Description="Create a range of ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

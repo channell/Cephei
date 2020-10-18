@@ -39,7 +39,7 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DKKCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_code", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_empty", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_Equals", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_format", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_fractionsPerUnit", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_fractionSymbol", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_name", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_numericCode", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_rounding", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_symbol", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_ToString", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module DKKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DKKCurrency_triangulationCurrency", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DKKCurrency",Description = "Reference to DKKCurrency")>] 
+        ([<ExcelArgument(Name="DKKCurrency",Description = "DKKCurrency")>] 
          dkkcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module DKKCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DKKCurrency_Range", Description="Create a range of DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DKKCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

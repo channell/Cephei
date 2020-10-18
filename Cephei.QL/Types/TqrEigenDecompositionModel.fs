@@ -50,7 +50,8 @@ type TqrEigenDecompositionModel
 (*
     Functions
 *)
-    let _TqrEigenDecomposition                     = cell (fun () -> new TqrEigenDecomposition (diag.Value, sub.Value, calc.Value, strategy.Value))
+    let mutable
+        _TqrEigenDecomposition                     = cell (fun () -> new TqrEigenDecomposition (diag.Value, sub.Value, calc.Value, strategy.Value))
     let _eigenvalues                               = triv (fun () -> _TqrEigenDecomposition.Value.eigenvalues())
     let _eigenvectors                              = triv (fun () -> _TqrEigenDecomposition.Value.eigenvectors())
     let _iterations                                = triv (fun () -> _TqrEigenDecomposition.Value.iterations())
@@ -59,13 +60,14 @@ type TqrEigenDecompositionModel
     casting 
 *)
     internal new () = new TqrEigenDecompositionModel(null,null,null,null)
-    member internal this.Inject v = _TqrEigenDecomposition.Value <- v
+    member internal this.Inject v = _TqrEigenDecomposition <- v
     static member Cast (p : ICell<TqrEigenDecomposition>) = 
         if p :? TqrEigenDecompositionModel then 
             p :?> TqrEigenDecompositionModel
         else
             let o = new TqrEigenDecompositionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

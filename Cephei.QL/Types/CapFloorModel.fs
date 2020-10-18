@@ -54,7 +54,8 @@ type CapFloorModel
 (*
     Functions
 *)
-    let _CapFloor                                  = cell (fun () -> withEngine pricingEngine (new CapFloor (Type.Value, floatingLeg.Value, capRates.Value, floorRates.Value)))
+    let mutable
+        _CapFloor                                  = cell (fun () -> withEngine pricingEngine (new CapFloor (Type.Value, floatingLeg.Value, capRates.Value, floorRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).capRates())
@@ -85,13 +86,14 @@ type CapFloorModel
     casting 
 *)
     internal new () = new CapFloorModel(null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloor.Value <- v
+    member internal this.Inject v = _CapFloor <- v
     static member Cast (p : ICell<CapFloor>) = 
         if p :? CapFloorModel then 
             p :?> CapFloorModel
         else
             let o = new CapFloorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -153,7 +155,8 @@ type CapFloorModel1
 (*
     Functions
 *)
-    let _CapFloor                                  = cell (fun () -> withEngine pricingEngine (new CapFloor (Type.Value, floatingLeg.Value, strikes.Value)))
+    let mutable
+        _CapFloor                                  = cell (fun () -> withEngine pricingEngine (new CapFloor (Type.Value, floatingLeg.Value, strikes.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).capRates())
@@ -184,13 +187,14 @@ type CapFloorModel1
     casting 
 *)
     internal new () = new CapFloorModel1(null,null,null,null,null)
-    member internal this.Inject v = _CapFloor.Value <- v
+    member internal this.Inject v = _CapFloor <- v
     static member Cast (p : ICell<CapFloor>) = 
         if p :? CapFloorModel1 then 
             p :?> CapFloorModel1
         else
             let o = new CapFloorModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type SABRSpecsModel
 (*
     Functions
 *)
-    let _SABRSpecs                                 = cell (fun () -> new SABRSpecs ())
+    let mutable
+        _SABRSpecs                                 = cell (fun () -> new SABRSpecs ())
     let _defaultValues                             (param : ICell<List<Nullable<double>>>) (b : ICell<Generic.List<bool>>) (forward : ICell<double>) (expiryTime : ICell<double>) (addParams : ICell<List<Nullable<double>>>)   
                                                    = triv (fun () -> _SABRSpecs.Value.defaultValues(param.Value, b.Value, forward.Value, expiryTime.Value, addParams.Value)
                                                                      _SABRSpecs.Value)
@@ -65,13 +66,14 @@ type SABRSpecsModel
     casting 
 *)
     
-    member internal this.Inject v = _SABRSpecs.Value <- v
+    member internal this.Inject v = _SABRSpecs <- v
     static member Cast (p : ICell<SABRSpecs>) = 
         if p :? SABRSpecsModel then 
             p :?> SABRSpecsModel
         else
             let o = new SABRSpecsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -40,17 +40,17 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_fcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_fcn
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "Reference to LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "int")>] 
          m : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="iflag",Description = "Reference to iflag")>] 
+        ([<ExcelArgument(Name="iflag",Description = "int")>] 
          iflag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,9 +100,9 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_getInfo", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_getInfo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "Reference to LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,17 +136,17 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_jacFcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_jacFcn
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "Reference to LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "int")>] 
          m : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="iflag",Description = "Reference to iflag")>] 
+        ([<ExcelArgument(Name="iflag",Description = "int")>] 
          iflag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,7 +196,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LevenbergMarquardt")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,15 +227,15 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt1", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LevenbergMarquardt")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="epsfcn",Description = "Reference to epsfcn")>] 
+        ([<ExcelArgument(Name="epsfcn",Description = "double")>] 
          epsfcn : obj)
-        ([<ExcelArgument(Name="xtol",Description = "Reference to xtol")>] 
+        ([<ExcelArgument(Name="xtol",Description = "double")>] 
          xtol : obj)
-        ([<ExcelArgument(Name="gtol",Description = "Reference to gtol")>] 
+        ([<ExcelArgument(Name="gtol",Description = "double")>] 
          gtol : obj)
-        ([<ExcelArgument(Name="useCostFunctionsJacobian",Description = "Reference to useCostFunctionsJacobian")>] 
+        ([<ExcelArgument(Name="useCostFunctionsJacobian",Description = "LevenbergMarquardt")>] 
          useCostFunctionsJacobian : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -282,13 +282,13 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_minimize", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "Reference to LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
-        ([<ExcelArgument(Name="P",Description = "Reference to P")>] 
+        ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module LevenbergMarquardtFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LevenbergMarquardt_Range", Description="Create a range of LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

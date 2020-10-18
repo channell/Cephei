@@ -39,15 +39,15 @@ module VannaVolgaFunction =
     *)
     [<ExcelFunction(Name="_VannaVolga_interpolate", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolga",Description = "Reference to VannaVolga")>] 
+        ([<ExcelArgument(Name="VannaVolga",Description = "VannaVolga")>] 
          vannavolga : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,15 +93,15 @@ module VannaVolgaFunction =
     *)
     [<ExcelFunction(Name="_VannaVolga", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VannaVolga")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="dDiscount",Description = "Reference to dDiscount")>] 
+        ([<ExcelArgument(Name="dDiscount",Description = "double")>] 
          dDiscount : obj)
-        ([<ExcelArgument(Name="fDiscount",Description = "Reference to fDiscount")>] 
+        ([<ExcelArgument(Name="fDiscount",Description = "double")>] 
          fDiscount : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -145,9 +145,9 @@ module VannaVolgaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VannaVolga_Range", Description="Create a range of VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the VannaVolga")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

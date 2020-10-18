@@ -39,9 +39,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_correlationModel", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_correlationModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_corrModel", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_corrModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_corrModel_", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_corrModel_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,13 +147,13 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_covariance", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,13 +195,13 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_diffusion1", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_diffusion1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -243,11 +243,11 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_diffusion", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -285,17 +285,17 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_integratedCovariance1", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_integratedCovariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmCovarianceProxy")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -345,15 +345,15 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_integratedCovariance", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_integratedCovariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmCovarianceProxy")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,11 +399,11 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmCovarianceProxy")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="volaModel",Description = "Reference to volaModel")>] 
+        ([<ExcelArgument(Name="volaModel",Description = "LmVolatilityModel")>] 
          volaModel : obj)
-        ([<ExcelArgument(Name="corrModel",Description = "Reference to corrModel")>] 
+        ([<ExcelArgument(Name="corrModel",Description = "LmCorrelationModel")>] 
          corrModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_volaModel", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_volaModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_volaModel_", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_volaModel_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_volatilityModel", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_volatilityModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_factors", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module LfmCovarianceProxyFunction =
     *)
     [<ExcelFunction(Name="_LfmCovarianceProxy_size", Description="Create a LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "Reference to LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="LfmCovarianceProxy",Description = "LfmCovarianceProxy")>] 
          lfmcovarianceproxy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -619,9 +619,9 @@ module LfmCovarianceProxyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LfmCovarianceProxy_Range", Description="Create a range of LfmCovarianceProxy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmCovarianceProxy_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LfmCovarianceProxy")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

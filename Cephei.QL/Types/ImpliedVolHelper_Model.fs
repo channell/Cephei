@@ -52,7 +52,8 @@ type ImpliedVolHelper_Model
 (*
     Functions
 *)
-    let _ImpliedVolHelper_                         = cell (fun () -> new ImpliedVolHelper_ (swaption.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))
+    let mutable
+        _ImpliedVolHelper_                         = cell (fun () -> new ImpliedVolHelper_ (swaption.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _ImpliedVolHelper_.Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
@@ -62,13 +63,14 @@ type ImpliedVolHelper_Model
     casting 
 *)
     internal new () = new ImpliedVolHelper_Model(null,null,null,null,null)
-    member internal this.Inject v = _ImpliedVolHelper_.Value <- v
+    member internal this.Inject v = _ImpliedVolHelper_ <- v
     static member Cast (p : ICell<ImpliedVolHelper_>) = 
         if p :? ImpliedVolHelper_Model then 
             p :?> ImpliedVolHelper_Model
         else
             let o = new ImpliedVolHelper_Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

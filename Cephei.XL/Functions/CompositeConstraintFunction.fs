@@ -39,11 +39,11 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CompositeConstraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c1",Description = "Reference to c1")>] 
+        ([<ExcelArgument(Name="c1",Description = "Constraint")>] 
          c1 : obj)
-        ([<ExcelArgument(Name="c2",Description = "Reference to c2")>] 
+        ([<ExcelArgument(Name="c2",Description = "Constraint")>] 
          c2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_empty", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeConstraint",Description = "Reference to CompositeConstraint")>] 
+        ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_lowerBound", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeConstraint",Description = "Reference to CompositeConstraint")>] 
+        ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_test", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeConstraint",Description = "Reference to CompositeConstraint")>] 
+        ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,15 +202,15 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_update", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeConstraint",Description = "Reference to CompositeConstraint")>] 
+        ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,11 +256,11 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_upperBound", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CompositeConstraint",Description = "Reference to CompositeConstraint")>] 
+        ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module CompositeConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CompositeConstraint_Range", Description="Create a range of CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CompositeConstraint")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

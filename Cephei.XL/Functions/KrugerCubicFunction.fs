@@ -39,13 +39,13 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "KrugerCubic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_aCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_aCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_bCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_bCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_cCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_cCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,13 +196,13 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_derivative", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_empty", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,13 +280,13 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_primitive", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,13 +328,13 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_secondDerivative", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,9 +376,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_update", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,13 +412,13 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_value1", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,11 +460,11 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_value", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,9 +502,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_xMax", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,9 +538,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_xMin", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_allowsExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_disableExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,11 +652,11 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_enableExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module KrugerCubicFunction =
     *)
     [<ExcelFunction(Name="_KrugerCubic_extrapolate", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="KrugerCubic",Description = "Reference to KrugerCubic")>] 
+        ([<ExcelArgument(Name="KrugerCubic",Description = "KrugerCubic")>] 
          krugercubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -727,9 +727,9 @@ module KrugerCubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KrugerCubic_Range", Description="Create a range of KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the KrugerCubic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

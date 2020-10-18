@@ -39,11 +39,11 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_accumulate", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_accumulate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MinBasketPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MinBasketPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Payoff")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_basePayoff", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_basePayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_description", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_name", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,11 +226,11 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_value1", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Vector")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,11 +268,11 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_value", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,11 +310,11 @@ module MinBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MinBasketPayoff_accept", Description="Create a MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MinBasketPayoff",Description = "Reference to MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="MinBasketPayoff",Description = "MinBasketPayoff")>] 
          minbasketpayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module MinBasketPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MinBasketPayoff_Range", Description="Create a range of MinBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MinBasketPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MinBasketPayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

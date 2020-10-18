@@ -50,7 +50,8 @@ type Joshi4Model
 (*
     Functions
 *)
-    let _Joshi4                                    = cell (fun () -> new Joshi4 (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _Joshi4                                    = cell (fun () -> new Joshi4 (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _Joshi4.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
@@ -67,13 +68,14 @@ type Joshi4Model
     casting 
 *)
     internal new () = new Joshi4Model(null,null,null,null)
-    member internal this.Inject v = _Joshi4.Value <- v
+    member internal this.Inject v = _Joshi4 <- v
     static member Cast (p : ICell<Joshi4>) = 
         if p :? Joshi4Model then 
             p :?> Joshi4Model
         else
             let o = new Joshi4Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -109,7 +111,8 @@ type Joshi4Model1
 (*
     Functions
 *)
-    let _Joshi4                                    = cell (fun () -> new Joshi4 ())
+    let mutable
+        _Joshi4                                    = cell (fun () -> new Joshi4 ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _Joshi4.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
@@ -126,13 +129,14 @@ type Joshi4Model1
     casting 
 *)
     
-    member internal this.Inject v = _Joshi4.Value <- v
+    member internal this.Inject v = _Joshi4 <- v
     static member Cast (p : ICell<Joshi4>) = 
         if p :? Joshi4Model1 then 
             p :?> Joshi4Model1
         else
             let o = new Joshi4Model1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

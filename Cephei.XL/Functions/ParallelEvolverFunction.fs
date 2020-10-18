@@ -39,15 +39,15 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver_factory", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ParallelEvolver",Description = "Reference to ParallelEvolver")>] 
+        ([<ExcelArgument(Name="ParallelEvolver",Description = "ParallelEvolver")>] 
          parallelevolver : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "Object")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalFields",Description = "Reference to additionalFields")>] 
+        ([<ExcelArgument(Name="additionalFields",Description = "IMixedScheme")>] 
          additionalFields : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,11 +93,11 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ParallelEvolver")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "IOperator")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "BoundaryConditionSet")>] 
          bcs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,7 +136,7 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver1", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ParallelEvolver")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,11 +167,11 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver_setStep", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ParallelEvolver",Description = "Reference to ParallelEvolver")>] 
+        ([<ExcelArgument(Name="ParallelEvolver",Description = "ParallelEvolver")>] 
          parallelevolver : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,15 +209,15 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver_step", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ParallelEvolver",Description = "Reference to ParallelEvolver")>] 
+        ([<ExcelArgument(Name="ParallelEvolver",Description = "ParallelEvolver")>] 
          parallelevolver : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module ParallelEvolverFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ParallelEvolver_Range", Description="Create a range of ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ParallelEvolver")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

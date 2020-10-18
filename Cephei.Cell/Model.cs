@@ -53,9 +53,9 @@ namespace Cephei.Cell
             Change = delegate { };
         }
 
-        public void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
-            if (Change != null) Change(eventType, root, epoch, session);
+            RaiseChange(eventType, root, this, epoch, session);
         }
         #endregion
 
@@ -111,12 +111,12 @@ namespace Cephei.Cell
         #endregion
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void RaiseChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             if (Change != null)
-                Change(eventType, root, epoch, session);
+                Change(eventType, root, this, epoch, session);
             if (Parent != null)
-                Parent.OnChange(eventType, root, epoch, session);
+                Parent.OnChange(eventType, root,  this, epoch, session);
         }
 
         public Model(string mnemonic) : base()
@@ -273,7 +273,7 @@ namespace Cephei.Cell
             {
                 if (value.Parent == this)
                     value.Parent = null;
-                RaiseChange(CellEvent.Link, value, DateTime.Now, Session.Current);
+                RaiseChange(CellEvent.Link, value, this, DateTime.Now, Session.Current);
                 return true;
             }
             else
@@ -310,7 +310,7 @@ namespace Cephei.Cell
                 if (newValue != comparisonValue)
                 {
                     newValue.Parent = this;
-                    RaiseChange(CellEvent.Link, newValue, DateTime.Now, Session.Current);
+                    RaiseChange(CellEvent.Link, newValue, this, DateTime.Now, Session.Current);
                     return true;
                 }
                 else
@@ -379,7 +379,7 @@ namespace Cephei.Cell
                         foreach (var c in dependants)
                         {
                             if (this != c)
-                                c.OnChange(CellEvent.Link, this, DateTime.Now, null);
+                                c.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
                         }
                     }
                 }
@@ -501,7 +501,7 @@ namespace Cephei.Cell
             return new ModelCellObserver<decimal>(this, observer);
         }
 
-        public virtual void Clone(ICell source)
+        public virtual void Merge(ICell source, Model model)
         {
             foreach (var d in source.Dependants)
             {

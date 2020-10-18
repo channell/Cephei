@@ -86,7 +86,8 @@ type SviInterpolationModel
 (*
     Functions
 *)
-    let _SviInterpolation                          = cell (fun () -> new SviInterpolation (xBegin.Value, size.Value, yBegin.Value, t.Value, forward.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, aIsFixed.Value, bIsFixed.Value, sigmaIsFixed.Value, rhoIsFixed.Value, mIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, addParams.Value))
+    let mutable
+        _SviInterpolation                          = cell (fun () -> new SviInterpolation (xBegin.Value, size.Value, yBegin.Value, t.Value, forward.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, aIsFixed.Value, bIsFixed.Value, sigmaIsFixed.Value, rhoIsFixed.Value, mIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, addParams.Value))
     let _a                                         = triv (fun () -> _SviInterpolation.Value.a())
     let _b                                         = triv (fun () -> _SviInterpolation.Value.b())
     let _endCriteria                               = triv (fun () -> _SviInterpolation.Value.endCriteria())
@@ -126,13 +127,14 @@ type SviInterpolationModel
     casting 
 *)
     internal new () = new SviInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SviInterpolation.Value <- v
+    member internal this.Inject v = _SviInterpolation <- v
     static member Cast (p : ICell<SviInterpolation>) = 
         if p :? SviInterpolationModel then 
             p :?> SviInterpolationModel
         else
             let o = new SviInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

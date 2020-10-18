@@ -48,7 +48,8 @@ type SoftCallabilityModel
 (*
     Functions
 *)
-    let _SoftCallability                           = cell (fun () -> new SoftCallability (price.Value, date.Value, trigger.Value))
+    let mutable
+        _SoftCallability                           = cell (fun () -> new SoftCallability (price.Value, date.Value, trigger.Value))
     let _trigger                                   = triv (fun () -> _SoftCallability.Value.trigger())
     let _date                                      = triv (fun () -> _SoftCallability.Value.date())
     let _price                                     = triv (fun () -> _SoftCallability.Value.price())
@@ -69,13 +70,14 @@ type SoftCallabilityModel
     casting 
 *)
     internal new () = new SoftCallabilityModel(null,null,null)
-    member internal this.Inject v = _SoftCallability.Value <- v
+    member internal this.Inject v = _SoftCallability <- v
     static member Cast (p : ICell<SoftCallability>) = 
         if p :? SoftCallabilityModel then 
             p :?> SoftCallabilityModel
         else
             let o = new SoftCallabilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,19 +50,21 @@ type MidPointCdsEngineModel
 (*
     Functions
 *)
-    let _MidPointCdsEngine                         = cell (fun () -> new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
+    let mutable
+        _MidPointCdsEngine                         = cell (fun () -> new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
     do this.Bind(_MidPointCdsEngine)
 (* 
     casting 
 *)
     internal new () = new MidPointCdsEngineModel(null,null,null,null)
-    member internal this.Inject v = _MidPointCdsEngine.Value <- v
+    member internal this.Inject v = _MidPointCdsEngine <- v
     static member Cast (p : ICell<MidPointCdsEngine>) = 
         if p :? MidPointCdsEngineModel then 
             p :?> MidPointCdsEngineModel
         else
             let o = new MidPointCdsEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

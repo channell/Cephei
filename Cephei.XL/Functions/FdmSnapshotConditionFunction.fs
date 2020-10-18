@@ -39,13 +39,13 @@ module FdmSnapshotConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmSnapshotCondition_applyTo", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSnapshotCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSnapshotCondition",Description = "Reference to FdmSnapshotCondition")>] 
+        ([<ExcelArgument(Name="FdmSnapshotCondition",Description = "FdmSnapshotCondition")>] 
          fdmsnapshotcondition : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module FdmSnapshotConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmSnapshotCondition", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSnapshotCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module FdmSnapshotConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmSnapshotCondition_getTime", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_getTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSnapshotCondition",Description = "Reference to FdmSnapshotCondition")>] 
+        ([<ExcelArgument(Name="FdmSnapshotCondition",Description = "FdmSnapshotCondition")>] 
          fdmsnapshotcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module FdmSnapshotConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmSnapshotCondition_getValues", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_getValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSnapshotCondition",Description = "Reference to FdmSnapshotCondition")>] 
+        ([<ExcelArgument(Name="FdmSnapshotCondition",Description = "FdmSnapshotCondition")>] 
          fdmsnapshotcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module FdmSnapshotConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmSnapshotCondition_Range", Description="Create a range of FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmSnapshotCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

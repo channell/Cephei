@@ -41,7 +41,8 @@ type QuoteModel
 (*
     Functions
 *)
-    let _Quote                                     = cell (fun () -> new Quote ())
+    let mutable
+        _Quote                                     = cell (fun () -> new Quote ())
     let _isValid                                   = triv (fun () -> _Quote.Value.isValid())
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _Quote.Value.registerWith(handler.Value)
@@ -55,13 +56,14 @@ type QuoteModel
     casting 
 *)
     
-    member internal this.Inject v = _Quote.Value <- v
+    member internal this.Inject v = _Quote <- v
     static member Cast (p : ICell<Quote>) = 
         if p :? QuoteModel then 
             p :?> QuoteModel
         else
             let o = new QuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

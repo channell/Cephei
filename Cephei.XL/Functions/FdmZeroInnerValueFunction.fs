@@ -39,13 +39,13 @@ module FdmZeroInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmZeroInnerValue_avgInnerValue", Description="Create a FdmZeroInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmZeroInnerValue_avgInnerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmZeroInnerValue",Description = "Reference to FdmZeroInnerValue")>] 
+        ([<ExcelArgument(Name="FdmZeroInnerValue",Description = "FdmZeroInnerValue")>] 
          fdmzeroinnervalue : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module FdmZeroInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmZeroInnerValue_innerValue", Description="Create a FdmZeroInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmZeroInnerValue_innerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmZeroInnerValue",Description = "Reference to FdmZeroInnerValue")>] 
+        ([<ExcelArgument(Name="FdmZeroInnerValue",Description = "FdmZeroInnerValue")>] 
          fdmzeroinnervalue : obj)
-        ([<ExcelArgument(Name="iter",Description = "Reference to iter")>] 
+        ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -132,9 +132,9 @@ module FdmZeroInnerValueFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmZeroInnerValue_Range", Description="Create a range of FdmZeroInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmZeroInnerValue_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmZeroInnerValue")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

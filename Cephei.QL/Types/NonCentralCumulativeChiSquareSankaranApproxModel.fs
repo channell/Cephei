@@ -46,19 +46,21 @@ type NonCentralCumulativeChiSquareSankaranApproxModel
 (*
     Functions
 *)
-    let _NonCentralCumulativeChiSquareSankaranApprox = cell (fun () -> new NonCentralCumulativeChiSquareSankaranApprox (df.Value, ncp.Value))
+    let mutable
+        _NonCentralCumulativeChiSquareSankaranApprox = cell (fun () -> new NonCentralCumulativeChiSquareSankaranApprox (df.Value, ncp.Value))
     do this.Bind(_NonCentralCumulativeChiSquareSankaranApprox)
 (* 
     casting 
 *)
     internal new () = new NonCentralCumulativeChiSquareSankaranApproxModel(null,null)
-    member internal this.Inject v = _NonCentralCumulativeChiSquareSankaranApprox.Value <- v
+    member internal this.Inject v = _NonCentralCumulativeChiSquareSankaranApprox <- v
     static member Cast (p : ICell<NonCentralCumulativeChiSquareSankaranApprox>) = 
         if p :? NonCentralCumulativeChiSquareSankaranApproxModel then 
             p :?> NonCentralCumulativeChiSquareSankaranApproxModel
         else
             let o = new NonCentralCumulativeChiSquareSankaranApproxModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

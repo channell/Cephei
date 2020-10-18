@@ -50,7 +50,8 @@ type OneAssetOptionModel
 (*
     Functions
 *)
-    let _OneAssetOption                            = cell (fun () -> withEngine pricingEngine (new OneAssetOption (payoff.Value, exercise.Value)))
+    let mutable
+        _OneAssetOption                            = cell (fun () -> withEngine pricingEngine (new OneAssetOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).dividendRho())
@@ -79,13 +80,14 @@ type OneAssetOptionModel
     casting 
 *)
     internal new () = new OneAssetOptionModel(null,null,null,null)
-    member internal this.Inject v = _OneAssetOption.Value <- v
+    member internal this.Inject v = _OneAssetOption <- v
     static member Cast (p : ICell<OneAssetOption>) = 
         if p :? OneAssetOptionModel then 
             p :?> OneAssetOptionModel
         else
             let o = new OneAssetOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,19 +39,19 @@ module BackwardflatLinearFunction =
     *)
     [<ExcelFunction(Name="_BackwardflatLinear_interpolate", Description="Create a BackwardflatLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardflatLinear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation2D")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BackwardflatLinear",Description = "Reference to BackwardflatLinear")>] 
+        ([<ExcelArgument(Name="BackwardflatLinear",Description = "BackwardflatLinear")>] 
          backwardflatlinear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xEnd",Description = "Reference to xEnd")>] 
+        ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="yEnd",Description = "Reference to yEnd")>] 
+        ([<ExcelArgument(Name="yEnd",Description = "int")>] 
          yEnd : obj)
-        ([<ExcelArgument(Name="z",Description = "Reference to z")>] 
+        ([<ExcelArgument(Name="z",Description = "Matrix")>] 
          z : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -102,9 +102,9 @@ module BackwardflatLinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BackwardflatLinear_Range", Description="Create a range of BackwardflatLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardflatLinear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BackwardflatLinear")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module LongstaffSchwartzPathPricerFunction =
     *)
     [<ExcelFunction(Name="_LongstaffSchwartzPathPricer_calibrate", Description="Create a LongstaffSchwartzPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LongstaffSchwartzPathPricer_calibrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LongstaffSchwartzPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LongstaffSchwartzPathPricer",Description = "Reference to LongstaffSchwartzPathPricer")>] 
+        ([<ExcelArgument(Name="LongstaffSchwartzPathPricer",Description = "LongstaffSchwartzPathPricer")>] 
          longstaffschwartzpathpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module LongstaffSchwartzPathPricerFunction =
     *)
     [<ExcelFunction(Name="_LongstaffSchwartzPathPricer", Description="Create a LongstaffSchwartzPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LongstaffSchwartzPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LongstaffSchwartzPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "TimeGrid")>] 
          times : obj)
-        ([<ExcelArgument(Name="pathPricer",Description = "Reference to pathPricer")>] 
+        ([<ExcelArgument(Name="pathPricer",Description = "PathType,double")>] 
          pathPricer : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module LongstaffSchwartzPathPricerFunction =
     *)
     [<ExcelFunction(Name="_LongstaffSchwartzPathPricer_value", Description="Create a LongstaffSchwartzPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LongstaffSchwartzPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LongstaffSchwartzPathPricer",Description = "Reference to LongstaffSchwartzPathPricer")>] 
+        ([<ExcelArgument(Name="LongstaffSchwartzPathPricer",Description = "LongstaffSchwartzPathPricer")>] 
          longstaffschwartzpathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "'PathType")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -163,9 +163,9 @@ module LongstaffSchwartzPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LongstaffSchwartzPathPricer_Range", Description="Create a range of LongstaffSchwartzPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LongstaffSchwartzPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LongstaffSchwartzPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

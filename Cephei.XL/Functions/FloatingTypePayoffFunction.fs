@@ -39,9 +39,9 @@ module FloatingTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_FloatingTypePayoff", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingTypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module FloatingTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_FloatingTypePayoff_name", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "Reference to FloatingTypePayoff")>] 
+        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "FloatingTypePayoff")>] 
          floatingtypepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module FloatingTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_FloatingTypePayoff_value", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "Reference to FloatingTypePayoff")>] 
+        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "FloatingTypePayoff")>] 
          floatingtypepayoff : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "double")>] 
          k : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module FloatingTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_FloatingTypePayoff_description", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "Reference to FloatingTypePayoff")>] 
+        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "FloatingTypePayoff")>] 
          floatingtypepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module FloatingTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_FloatingTypePayoff_optionType", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "Reference to FloatingTypePayoff")>] 
+        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "FloatingTypePayoff")>] 
          floatingtypepayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,11 +226,11 @@ module FloatingTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_FloatingTypePayoff_accept", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "Reference to FloatingTypePayoff")>] 
+        ([<ExcelArgument(Name="FloatingTypePayoff",Description = "FloatingTypePayoff")>] 
          floatingtypepayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -265,9 +265,9 @@ module FloatingTypePayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FloatingTypePayoff_Range", Description="Create a range of FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FloatingTypePayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

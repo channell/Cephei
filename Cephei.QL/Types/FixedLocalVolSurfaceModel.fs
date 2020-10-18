@@ -56,7 +56,8 @@ type FixedLocalVolSurfaceModel
 (*
     Functions
 *)
-    let _FixedLocalVolSurface                      = cell (fun () -> new FixedLocalVolSurface (referenceDate.Value, times.Value, strikes.Value, localVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
+    let mutable
+        _FixedLocalVolSurface                      = cell (fun () -> new FixedLocalVolSurface (referenceDate.Value, times.Value, strikes.Value, localVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
     let _maxDate                                   = triv (fun () -> _FixedLocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _FixedLocalVolSurface.Value.maxStrike())
     let _maxTime                                   = triv (fun () -> _FixedLocalVolSurface.Value.maxTime())
@@ -92,13 +93,14 @@ type FixedLocalVolSurfaceModel
     casting 
 *)
     internal new () = new FixedLocalVolSurfaceModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedLocalVolSurface.Value <- v
+    member internal this.Inject v = _FixedLocalVolSurface <- v
     static member Cast (p : ICell<FixedLocalVolSurface>) = 
         if p :? FixedLocalVolSurfaceModel then 
             p :?> FixedLocalVolSurfaceModel
         else
             let o = new FixedLocalVolSurfaceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -167,7 +169,8 @@ type FixedLocalVolSurfaceModel1
 (*
     Functions
 *)
-    let _FixedLocalVolSurface                      = cell (fun () -> new FixedLocalVolSurface (referenceDate.Value, times.Value, strikes.Value, localVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
+    let mutable
+        _FixedLocalVolSurface                      = cell (fun () -> new FixedLocalVolSurface (referenceDate.Value, times.Value, strikes.Value, localVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
     let _maxDate                                   = triv (fun () -> _FixedLocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _FixedLocalVolSurface.Value.maxStrike())
     let _maxTime                                   = triv (fun () -> _FixedLocalVolSurface.Value.maxTime())
@@ -203,13 +206,14 @@ type FixedLocalVolSurfaceModel1
     casting 
 *)
     internal new () = new FixedLocalVolSurfaceModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedLocalVolSurface.Value <- v
+    member internal this.Inject v = _FixedLocalVolSurface <- v
     static member Cast (p : ICell<FixedLocalVolSurface>) = 
         if p :? FixedLocalVolSurfaceModel1 then 
             p :?> FixedLocalVolSurfaceModel1
         else
             let o = new FixedLocalVolSurfaceModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -278,7 +282,8 @@ type FixedLocalVolSurfaceModel2
 (*
     Functions
 *)
-    let _FixedLocalVolSurface                      = cell (fun () -> new FixedLocalVolSurface (referenceDate.Value, dates.Value, strikes.Value, localVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
+    let mutable
+        _FixedLocalVolSurface                      = cell (fun () -> new FixedLocalVolSurface (referenceDate.Value, dates.Value, strikes.Value, localVolMatrix.Value, dayCounter.Value, lowerExtrapolation.Value, upperExtrapolation.Value))
     let _maxDate                                   = triv (fun () -> _FixedLocalVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _FixedLocalVolSurface.Value.maxStrike())
     let _maxTime                                   = triv (fun () -> _FixedLocalVolSurface.Value.maxTime())
@@ -314,13 +319,14 @@ type FixedLocalVolSurfaceModel2
     casting 
 *)
     internal new () = new FixedLocalVolSurfaceModel2(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedLocalVolSurface.Value <- v
+    member internal this.Inject v = _FixedLocalVolSurface <- v
     static member Cast (p : ICell<FixedLocalVolSurface>) = 
         if p :? FixedLocalVolSurfaceModel2 then 
             p :?> FixedLocalVolSurfaceModel2
         else
             let o = new FixedLocalVolSurfaceModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

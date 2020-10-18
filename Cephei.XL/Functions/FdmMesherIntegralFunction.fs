@@ -39,11 +39,11 @@ module FdmMesherIntegralFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherIntegral", Description="Create a FdmMesherIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherIntegral")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesherComposite")>] 
          mesher : obj)
-        ([<ExcelArgument(Name="integrator1d",Description = "Reference to integrator1d")>] 
+        ([<ExcelArgument(Name="integrator1d",Description = "Vector,Vector,double")>] 
          integrator1d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,11 +82,11 @@ module FdmMesherIntegralFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherIntegral_integrate", Description="Create a FdmMesherIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherIntegral_integrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmMesherIntegral",Description = "Reference to FdmMesherIntegral")>] 
+        ([<ExcelArgument(Name="FdmMesherIntegral",Description = "FdmMesherIntegral")>] 
          fdmmesherintegral : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "Vector")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module FdmMesherIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmMesherIntegral_Range", Description="Create a range of FdmMesherIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmMesherIntegral")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -60,7 +60,8 @@ type FixedLoanModel
 (*
     Functions
 *)
-    let _FixedLoan                                 = triv (fun () -> withEngine pricingEngine (new FixedLoan (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
+    let mutable
+        _FixedLoan                                 = triv (fun () -> withEngine pricingEngine (new FixedLoan (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
     let _fixedLeg                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).fixedLeg())
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).isExpired())
@@ -78,13 +79,14 @@ type FixedLoanModel
     casting 
 *)
     internal new () = new FixedLoanModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedLoan.Value <- v
+    member internal this.Inject v = _FixedLoan <- v
     static member Cast (p : ICell<FixedLoan>) = 
         if p :? FixedLoanModel then 
             p :?> FixedLoanModel
         else
             let o = new FixedLoanModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

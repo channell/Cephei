@@ -44,7 +44,8 @@ type ExerciseModel
 (*
     Functions
 *)
-    let _Exercise                                  = cell (fun () -> new Exercise (Type.Value))
+    let mutable
+        _Exercise                                  = cell (fun () -> new Exercise (Type.Value))
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _Exercise.Value.date(index.Value))
     let _dates                                     = triv (fun () -> _Exercise.Value.dates())
@@ -55,13 +56,14 @@ type ExerciseModel
     casting 
 *)
     internal new () = new ExerciseModel(null)
-    member internal this.Inject v = _Exercise.Value <- v
+    member internal this.Inject v = _Exercise <- v
     static member Cast (p : ICell<Exercise>) = 
         if p :? ExerciseModel then 
             p :?> ExerciseModel
         else
             let o = new ExerciseModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

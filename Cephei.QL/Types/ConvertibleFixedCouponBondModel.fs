@@ -68,7 +68,8 @@ type ConvertibleFixedCouponBondModel
 (*
     Functions
 *)
-    let _ConvertibleFixedCouponBond                = cell (fun () -> withEngine pricingEngine (new ConvertibleFixedCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, coupons.Value, dayCounter.Value, schedule.Value, redemption.Value)))
+    let mutable
+        _ConvertibleFixedCouponBond                = cell (fun () -> withEngine pricingEngine (new ConvertibleFixedCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, coupons.Value, dayCounter.Value, schedule.Value, redemption.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFixedCouponBond).callability())
     let _conversionRatio                           = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFixedCouponBond).conversionRatio())
     let _creditSpread                              = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFixedCouponBond).creditSpread())
@@ -126,13 +127,14 @@ type ConvertibleFixedCouponBondModel
     casting 
 *)
     internal new () = new ConvertibleFixedCouponBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConvertibleFixedCouponBond.Value <- v
+    member internal this.Inject v = _ConvertibleFixedCouponBond <- v
     static member Cast (p : ICell<ConvertibleFixedCouponBond>) = 
         if p :? ConvertibleFixedCouponBondModel then 
             p :?> ConvertibleFixedCouponBondModel
         else
             let o = new ConvertibleFixedCouponBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

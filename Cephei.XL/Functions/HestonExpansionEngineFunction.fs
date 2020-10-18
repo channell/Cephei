@@ -40,11 +40,11 @@ module HestonExpansionEngineFunction =
     *)
     [<ExcelFunction(Name="_HestonExpansionEngine", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HestonExpansionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="formula",Description = "Reference to formula")>] 
+        ([<ExcelArgument(Name="formula",Description = "HestonExpansionEngine.HestonExpansionFormula")>] 
          formula : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,11 +84,11 @@ module HestonExpansionEngineFunction =
     (*!!
     [<ExcelFunction(Name="_HestonExpansionEngine_setModel", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "Reference to HestonExpansionEngine")>] 
+        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "HestonExpansionEngine")>] 
          hestonexpansionengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -126,11 +126,11 @@ module HestonExpansionEngineFunction =
     *)
     [<ExcelFunction(Name="_HestonExpansionEngine_registerWith", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "Reference to HestonExpansionEngine")>] 
+        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "HestonExpansionEngine")>] 
          hestonexpansionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -168,9 +168,9 @@ module HestonExpansionEngineFunction =
     *)
     [<ExcelFunction(Name="_HestonExpansionEngine_reset", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "Reference to HestonExpansionEngine")>] 
+        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "HestonExpansionEngine")>] 
          hestonexpansionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,11 +204,11 @@ module HestonExpansionEngineFunction =
     *)
     [<ExcelFunction(Name="_HestonExpansionEngine_unregisterWith", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "Reference to HestonExpansionEngine")>] 
+        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "HestonExpansionEngine")>] 
          hestonexpansionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,9 +246,9 @@ module HestonExpansionEngineFunction =
     *)
     [<ExcelFunction(Name="_HestonExpansionEngine_update", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "Reference to HestonExpansionEngine")>] 
+        ([<ExcelArgument(Name="HestonExpansionEngine",Description = "HestonExpansionEngine")>] 
          hestonexpansionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module HestonExpansionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonExpansionEngine_Range", Description="Create a range of HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HestonExpansionEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

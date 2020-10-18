@@ -48,7 +48,8 @@ type DiscretizedCallableFixedRateBondModel
 (*
     Functions
 *)
-    let _DiscretizedCallableFixedRateBond          = cell (fun () -> new DiscretizedCallableFixedRateBond (args.Value, referenceDate.Value, dayCounter.Value))
+    let mutable
+        _DiscretizedCallableFixedRateBond          = cell (fun () -> new DiscretizedCallableFixedRateBond (args.Value, referenceDate.Value, dayCounter.Value))
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedCallableFixedRateBond.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedCallableFixedRateBond.Value.reset(size.Value)
@@ -83,13 +84,14 @@ type DiscretizedCallableFixedRateBondModel
     casting 
 *)
     internal new () = new DiscretizedCallableFixedRateBondModel(null,null,null)
-    member internal this.Inject v = _DiscretizedCallableFixedRateBond.Value <- v
+    member internal this.Inject v = _DiscretizedCallableFixedRateBond <- v
     static member Cast (p : ICell<DiscretizedCallableFixedRateBond>) = 
         if p :? DiscretizedCallableFixedRateBondModel then 
             p :?> DiscretizedCallableFixedRateBondModel
         else
             let o = new DiscretizedCallableFixedRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module FloorTruncationFunction =
     *)
     [<ExcelFunction(Name="_FloorTruncation", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloorTruncation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
-        ([<ExcelArgument(Name="digit",Description = "Reference to digit")>] 
+        ([<ExcelArgument(Name="digit",Description = "int")>] 
          digit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module FloorTruncationFunction =
     *)
     [<ExcelFunction(Name="_FloorTruncation1", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloorTruncation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module FloorTruncationFunction =
     *)
     [<ExcelFunction(Name="_FloorTruncation_Digit", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Digit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloorTruncation",Description = "Reference to FloorTruncation")>] 
+        ([<ExcelArgument(Name="FloorTruncation",Description = "FloorTruncation")>] 
          floortruncation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,9 +155,9 @@ module FloorTruncationFunction =
     *)
     [<ExcelFunction(Name="_FloorTruncation_getType", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloorTruncation",Description = "Reference to FloorTruncation")>] 
+        ([<ExcelArgument(Name="FloorTruncation",Description = "FloorTruncation")>] 
          floortruncation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,9 +191,9 @@ module FloorTruncationFunction =
     *)
     [<ExcelFunction(Name="_FloorTruncation_Precision", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Precision
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloorTruncation",Description = "Reference to FloorTruncation")>] 
+        ([<ExcelArgument(Name="FloorTruncation",Description = "FloorTruncation")>] 
          floortruncation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,11 +227,11 @@ module FloorTruncationFunction =
     *)
     [<ExcelFunction(Name="_FloorTruncation_Round", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Round
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloorTruncation",Description = "Reference to FloorTruncation")>] 
+        ([<ExcelArgument(Name="FloorTruncation",Description = "FloorTruncation")>] 
          floortruncation : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -266,9 +266,9 @@ module FloorTruncationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FloorTruncation_Range", Description="Create a range of FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FloorTruncation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

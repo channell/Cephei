@@ -39,13 +39,13 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_diffusion", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeBSM",Description = "Reference to PdeBSM")>] 
+        ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_discount", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeBSM",Description = "Reference to PdeBSM")>] 
+        ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,13 +135,13 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_drift", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeBSM",Description = "Reference to PdeBSM")>] 
+        ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_factory", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeBSM",Description = "Reference to PdeBSM")>] 
+        ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,9 +225,9 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM1", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeBSM")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,7 +262,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeBSM")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,15 +293,15 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_generateOperator", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_generateOperator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeBSM",Description = "Reference to PdeBSM")>] 
+        ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="tg",Description = "Reference to tg")>] 
+        ([<ExcelArgument(Name="tg",Description = "TransformedGrid")>] 
          tg : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "TridiagonalOperator")>] 
          L : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -344,9 +344,9 @@ module PdeBSMFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeBSM_Range", Description="Create a range of PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PdeBSM")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

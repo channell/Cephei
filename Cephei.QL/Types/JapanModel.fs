@@ -65,7 +65,8 @@ type JapanModel
 (*
     Functions
 *)
-    let _Japan                                     = cell (fun () -> new Japan ())
+    let mutable
+        _Japan                                     = cell (fun () -> new Japan ())
     let _addedHolidays                             = triv (fun () -> _Japan.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Japan.Value.addHoliday(d.Value)
@@ -102,13 +103,14 @@ type JapanModel
     casting 
 *)
     
-    member internal this.Inject v = _Japan.Value <- v
+    member internal this.Inject v = _Japan <- v
     static member Cast (p : ICell<Japan>) = 
         if p :? JapanModel then 
             p :?> JapanModel
         else
             let o = new JapanModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

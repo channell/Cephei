@@ -52,7 +52,8 @@ type SquareRootProcessModel
 (*
     Functions
 *)
-    let _SquareRootProcess                         = cell (fun () -> new SquareRootProcess (b.Value, a.Value, sigma.Value, x0.Value, disc.Value))
+    let mutable
+        _SquareRootProcess                         = cell (fun () -> new SquareRootProcess (b.Value, a.Value, sigma.Value, x0.Value, disc.Value))
     let _diffusion                                 (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _SquareRootProcess.Value.diffusion(UnnamedParameter1.Value, x.Value))
     let _drift                                     (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
@@ -98,13 +99,14 @@ type SquareRootProcessModel
     casting 
 *)
     internal new () = new SquareRootProcessModel(null,null,null,null,null)
-    member internal this.Inject v = _SquareRootProcess.Value <- v
+    member internal this.Inject v = _SquareRootProcess <- v
     static member Cast (p : ICell<SquareRootProcess>) = 
         if p :? SquareRootProcessModel then 
             p :?> SquareRootProcessModel
         else
             let o = new SquareRootProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -174,7 +176,8 @@ type SquareRootProcessModel1
 (*
     Functions
 *)
-    let _SquareRootProcess                         = cell (fun () -> new SquareRootProcess (b.Value, a.Value, sigma.Value))
+    let mutable
+        _SquareRootProcess                         = cell (fun () -> new SquareRootProcess (b.Value, a.Value, sigma.Value))
     let _diffusion                                 (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _SquareRootProcess.Value.diffusion(UnnamedParameter1.Value, x.Value))
     let _drift                                     (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
@@ -220,13 +223,14 @@ type SquareRootProcessModel1
     casting 
 *)
     internal new () = new SquareRootProcessModel1(null,null,null)
-    member internal this.Inject v = _SquareRootProcess.Value <- v
+    member internal this.Inject v = _SquareRootProcess <- v
     static member Cast (p : ICell<SquareRootProcess>) = 
         if p :? SquareRootProcessModel1 then 
             p :?> SquareRootProcessModel1
         else
             let o = new SquareRootProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -296,7 +300,8 @@ type SquareRootProcessModel2
 (*
     Functions
 *)
-    let _SquareRootProcess                         = cell (fun () -> new SquareRootProcess (b.Value, a.Value, sigma.Value, x0.Value))
+    let mutable
+        _SquareRootProcess                         = cell (fun () -> new SquareRootProcess (b.Value, a.Value, sigma.Value, x0.Value))
     let _diffusion                                 (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _SquareRootProcess.Value.diffusion(UnnamedParameter1.Value, x.Value))
     let _drift                                     (UnnamedParameter1 : ICell<double>) (x : ICell<double>)   
@@ -342,13 +347,14 @@ type SquareRootProcessModel2
     casting 
 *)
     internal new () = new SquareRootProcessModel2(null,null,null,null)
-    member internal this.Inject v = _SquareRootProcess.Value <- v
+    member internal this.Inject v = _SquareRootProcess <- v
     static member Cast (p : ICell<SquareRootProcess>) = 
         if p :? SquareRootProcessModel2 then 
             p :?> SquareRootProcessModel2
         else
             let o = new SquareRootProcessModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

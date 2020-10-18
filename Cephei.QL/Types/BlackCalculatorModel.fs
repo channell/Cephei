@@ -50,7 +50,8 @@ type BlackCalculatorModel
 (*
     Functions
 *)
-    let _BlackCalculator                           = cell (fun () -> new BlackCalculator (payoff.Value, forward.Value, stdDev.Value, discount.Value))
+    let mutable
+        _BlackCalculator                           = cell (fun () -> new BlackCalculator (payoff.Value, forward.Value, stdDev.Value, discount.Value))
     let _alpha                                     = triv (fun () -> _BlackCalculator.Value.alpha())
     let _beta                                      = triv (fun () -> _BlackCalculator.Value.beta())
     let _delta                                     (spot : ICell<double>)   
@@ -81,13 +82,14 @@ type BlackCalculatorModel
     casting 
 *)
     internal new () = new BlackCalculatorModel(null,null,null,null)
-    member internal this.Inject v = _BlackCalculator.Value <- v
+    member internal this.Inject v = _BlackCalculator <- v
     static member Cast (p : ICell<BlackCalculator>) = 
         if p :? BlackCalculatorModel then 
             p :?> BlackCalculatorModel
         else
             let o = new BlackCalculatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

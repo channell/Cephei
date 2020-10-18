@@ -39,7 +39,7 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BYRCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_code", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_empty", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_Equals", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_format", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_fractionsPerUnit", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_fractionSymbol", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_name", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_numericCode", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_rounding", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_symbol", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_ToString", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module BYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BYRCurrency_triangulationCurrency", Description="Create a BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BYRCurrency",Description = "Reference to BYRCurrency")>] 
+        ([<ExcelArgument(Name="BYRCurrency",Description = "BYRCurrency")>] 
          byrcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module BYRCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BYRCurrency_Range", Description="Create a range of BYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BYRCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BYRCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

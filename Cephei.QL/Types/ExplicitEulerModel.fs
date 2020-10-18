@@ -41,7 +41,8 @@ type ExplicitEulerModel<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _ExplicitEuler                             = cell (fun () -> new ExplicitEuler<'Operator> ())
+    let mutable
+        _ExplicitEuler                             = cell (fun () -> new ExplicitEuler<'Operator> ())
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ExplicitEuler.Value.setStep(dt.Value)
                                                                      _ExplicitEuler.Value)
@@ -76,7 +77,8 @@ type ExplicitEulerModel1<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _ExplicitEuler                             = cell (fun () -> new ExplicitEuler<'Operator> (L.Value, bcs.Value))
+    let mutable
+        _ExplicitEuler                             = cell (fun () -> new ExplicitEuler<'Operator> (L.Value, bcs.Value))
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ExplicitEuler.Value.setStep(dt.Value)
                                                                      _ExplicitEuler.Value)

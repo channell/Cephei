@@ -52,7 +52,8 @@ type RangeAccrualPricerByBgmModel
 (*
     Functions
 *)
-    let _RangeAccrualPricerByBgm                   = cell (fun () -> new RangeAccrualPricerByBgm (correlation.Value, smilesOnExpiry.Value, smilesOnPayment.Value, withSmile.Value, byCallSpread.Value))
+    let mutable
+        _RangeAccrualPricerByBgm                   = cell (fun () -> new RangeAccrualPricerByBgm (correlation.Value, smilesOnExpiry.Value, smilesOnPayment.Value, withSmile.Value, byCallSpread.Value))
     let _swapletPrice                              = triv (fun () -> _RangeAccrualPricerByBgm.Value.swapletPrice())
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _RangeAccrualPricerByBgm.Value.capletPrice(effectiveCap.Value))
@@ -79,13 +80,14 @@ type RangeAccrualPricerByBgmModel
     casting 
 *)
     internal new () = new RangeAccrualPricerByBgmModel(null,null,null,null,null)
-    member internal this.Inject v = _RangeAccrualPricerByBgm.Value <- v
+    member internal this.Inject v = _RangeAccrualPricerByBgm <- v
     static member Cast (p : ICell<RangeAccrualPricerByBgm>) = 
         if p :? RangeAccrualPricerByBgmModel then 
             p :?> RangeAccrualPricerByBgmModel
         else
             let o = new RangeAccrualPricerByBgmModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

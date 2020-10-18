@@ -56,7 +56,8 @@ type LiborModel
 (*
     Functions
 *)
-    let _Libor                                     = cell (fun () -> new Libor (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, financialCenterCalendar.Value, dayCounter.Value, h.Value))
+    let mutable
+        _Libor                                     = cell (fun () -> new Libor (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, financialCenterCalendar.Value, dayCounter.Value, h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Libor.Value.clone(h.Value))
     let _maturityDate                              (valueDate : ICell<Date>)   
@@ -111,13 +112,14 @@ type LiborModel
     casting 
 *)
     internal new () = new LiborModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _Libor.Value <- v
+    member internal this.Inject v = _Libor <- v
     static member Cast (p : ICell<Libor>) = 
         if p :? LiborModel then 
             p :?> LiborModel
         else
             let o = new LiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

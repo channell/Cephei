@@ -72,7 +72,8 @@ type AmortizingFloatingRateBondModel
 (*
     Functions
 *)
-    let _AmortizingFloatingRateBond                = cell (fun () -> withEngine pricingEngine (new AmortizingFloatingRateBond (settlementDays.Value, notionals.Value, schedule.Value, index.Value, accrualDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, issueDate.Value)))
+    let mutable
+        _AmortizingFloatingRateBond                = cell (fun () -> withEngine pricingEngine (new AmortizingFloatingRateBond (settlementDays.Value, notionals.Value, schedule.Value, index.Value, accrualDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFloatingRateBond).calendar())
@@ -126,13 +127,14 @@ type AmortizingFloatingRateBondModel
     casting 
 *)
     internal new () = new AmortizingFloatingRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AmortizingFloatingRateBond.Value <- v
+    member internal this.Inject v = _AmortizingFloatingRateBond <- v
     static member Cast (p : ICell<AmortizingFloatingRateBond>) = 
         if p :? AmortizingFloatingRateBondModel then 
             p :?> AmortizingFloatingRateBondModel
         else
             let o = new AmortizingFloatingRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

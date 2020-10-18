@@ -52,7 +52,8 @@ type Concentrating1dMesherModel
 (*
     Functions
 *)
-    let _Concentrating1dMesher                     = cell (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, tol.Value))
+    let mutable
+        _Concentrating1dMesher                     = cell (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, tol.Value))
     let _dminus                                    (index : ICell<int>)   
                                                    = triv (fun () -> _Concentrating1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
@@ -66,13 +67,14 @@ type Concentrating1dMesherModel
     casting 
 *)
     internal new () = new Concentrating1dMesherModel(null,null,null,null,null)
-    member internal this.Inject v = _Concentrating1dMesher.Value <- v
+    member internal this.Inject v = _Concentrating1dMesher <- v
     static member Cast (p : ICell<Concentrating1dMesher>) = 
         if p :? Concentrating1dMesherModel then 
             p :?> Concentrating1dMesherModel
         else
             let o = new Concentrating1dMesherModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -117,7 +119,8 @@ type Concentrating1dMesherModel1
 (*
     Functions
 *)
-    let _Concentrating1dMesher                     = cell (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, requireCPoint.Value))
+    let mutable
+        _Concentrating1dMesher                     = cell (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, requireCPoint.Value))
     let _dminus                                    (index : ICell<int>)   
                                                    = triv (fun () -> _Concentrating1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
@@ -131,13 +134,14 @@ type Concentrating1dMesherModel1
     casting 
 *)
     internal new () = new Concentrating1dMesherModel1(null,null,null,null,null)
-    member internal this.Inject v = _Concentrating1dMesher.Value <- v
+    member internal this.Inject v = _Concentrating1dMesher <- v
     static member Cast (p : ICell<Concentrating1dMesher>) = 
         if p :? Concentrating1dMesherModel1 then 
             p :?> Concentrating1dMesherModel1
         else
             let o = new Concentrating1dMesherModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

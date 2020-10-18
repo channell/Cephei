@@ -41,7 +41,8 @@ type SimpleDayCounterModel
 (*
     Functions
 *)
-    let _SimpleDayCounter                          = cell (fun () -> new SimpleDayCounter ())
+    let mutable
+        _SimpleDayCounter                          = cell (fun () -> new SimpleDayCounter ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _SimpleDayCounter.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _SimpleDayCounter.Value.dayCounter)
@@ -59,13 +60,14 @@ type SimpleDayCounterModel
     casting 
 *)
     
-    member internal this.Inject v = _SimpleDayCounter.Value <- v
+    member internal this.Inject v = _SimpleDayCounter <- v
     static member Cast (p : ICell<SimpleDayCounter>) = 
         if p :? SimpleDayCounterModel then 
             p :?> SimpleDayCounterModel
         else
             let o = new SimpleDayCounterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

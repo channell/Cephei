@@ -44,19 +44,21 @@ type BaroneAdesiWhaleyApproximationEngineModel
 (*
     Functions
 *)
-    let _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> new BaroneAdesiWhaleyApproximationEngine (Process.Value))
+    let mutable
+        _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> new BaroneAdesiWhaleyApproximationEngine (Process.Value))
     do this.Bind(_BaroneAdesiWhaleyApproximationEngine)
 (* 
     casting 
 *)
     internal new () = new BaroneAdesiWhaleyApproximationEngineModel(null)
-    member internal this.Inject v = _BaroneAdesiWhaleyApproximationEngine.Value <- v
+    member internal this.Inject v = _BaroneAdesiWhaleyApproximationEngine <- v
     static member Cast (p : ICell<BaroneAdesiWhaleyApproximationEngine>) = 
         if p :? BaroneAdesiWhaleyApproximationEngineModel then 
             p :?> BaroneAdesiWhaleyApproximationEngineModel
         else
             let o = new BaroneAdesiWhaleyApproximationEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

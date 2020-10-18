@@ -39,13 +39,13 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedDermanKaniBarrierOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "BarrierOption.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "DiscretizedDermanKaniBarrierOption")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_mandatoryTimes", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_reset", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_adjustValues", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_initialize", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_method", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_partialRollback", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_postAdjustValues", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_preAdjustValues", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_presentValue", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_rollback", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_setTime", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,11 +520,11 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_setValues", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_time", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_values", Description="Create a DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "Reference to DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDermanKaniBarrierOption",Description = "DiscretizedDermanKaniBarrierOption")>] 
          discretizeddermankanibarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedDermanKaniBarrierOption_Range", Description="Create a range of DiscretizedDermanKaniBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniBarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedDermanKaniBarrierOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

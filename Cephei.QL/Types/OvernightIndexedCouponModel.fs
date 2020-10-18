@@ -62,7 +62,8 @@ type OvernightIndexedCouponModel
 (*
     Functions
 *)
-    let _OvernightIndexedCoupon                    = cell (fun () -> new OvernightIndexedCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, overnightIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value))
+    let mutable
+        _OvernightIndexedCoupon                    = cell (fun () -> new OvernightIndexedCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, overnightIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value))
     let _dt                                        = triv (fun () -> _OvernightIndexedCoupon.Value.dt())
     let _fixingDates                               = triv (fun () -> _OvernightIndexedCoupon.Value.fixingDates())
     let _indexFixings                              = triv (fun () -> _OvernightIndexedCoupon.Value.indexFixings())
@@ -126,13 +127,14 @@ type OvernightIndexedCouponModel
     casting 
 *)
     internal new () = new OvernightIndexedCouponModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _OvernightIndexedCoupon.Value <- v
+    member internal this.Inject v = _OvernightIndexedCoupon <- v
     static member Cast (p : ICell<OvernightIndexedCoupon>) = 
         if p :? OvernightIndexedCouponModel then 
             p :?> OvernightIndexedCouponModel
         else
             let o = new OvernightIndexedCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

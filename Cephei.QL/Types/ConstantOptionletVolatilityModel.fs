@@ -52,7 +52,8 @@ type ConstantOptionletVolatilityModel
 (*
     Functions
 *)
-    let _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
+    let mutable
+        _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantOptionletVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.minStrike())
@@ -101,13 +102,14 @@ type ConstantOptionletVolatilityModel
     casting 
 *)
     internal new () = new ConstantOptionletVolatilityModel(null,null,null,null,null)
-    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    member internal this.Inject v = _ConstantOptionletVolatility <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel then 
             p :?> ConstantOptionletVolatilityModel
         else
             let o = new ConstantOptionletVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -184,7 +186,8 @@ type ConstantOptionletVolatilityModel1
 (*
     Functions
 *)
-    let _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
+    let mutable
+        _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantOptionletVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.minStrike())
@@ -233,13 +236,14 @@ type ConstantOptionletVolatilityModel1
     casting 
 *)
     internal new () = new ConstantOptionletVolatilityModel1(null,null,null,null,null)
-    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    member internal this.Inject v = _ConstantOptionletVolatility <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel1 then 
             p :?> ConstantOptionletVolatilityModel1
         else
             let o = new ConstantOptionletVolatilityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -316,7 +320,8 @@ type ConstantOptionletVolatilityModel2
 (*
     Functions
 *)
-    let _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
+    let mutable
+        _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (referenceDate.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantOptionletVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.minStrike())
@@ -365,13 +370,14 @@ type ConstantOptionletVolatilityModel2
     casting 
 *)
     internal new () = new ConstantOptionletVolatilityModel2(null,null,null,null,null)
-    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    member internal this.Inject v = _ConstantOptionletVolatility <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel2 then 
             p :?> ConstantOptionletVolatilityModel2
         else
             let o = new ConstantOptionletVolatilityModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -448,7 +454,8 @@ type ConstantOptionletVolatilityModel3
 (*
     Functions
 *)
-    let _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
+    let mutable
+        _ConstantOptionletVolatility               = cell (fun () -> new ConstantOptionletVolatility (settlementDays.Value, cal.Value, bdc.Value, vol.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantOptionletVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantOptionletVolatility.Value.minStrike())
@@ -497,13 +504,14 @@ type ConstantOptionletVolatilityModel3
     casting 
 *)
     internal new () = new ConstantOptionletVolatilityModel3(null,null,null,null,null)
-    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    member internal this.Inject v = _ConstantOptionletVolatility <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel3 then 
             p :?> ConstantOptionletVolatilityModel3
         else
             let o = new ConstantOptionletVolatilityModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -46,7 +46,8 @@ type IncChiQuareFinderModel
 (*
     Functions
 *)
-    let _IncChiQuareFinder                         = cell (fun () -> new IncChiQuareFinder (y.Value, g.Value))
+    let mutable
+        _IncChiQuareFinder                         = cell (fun () -> new IncChiQuareFinder (y.Value, g.Value))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _IncChiQuareFinder.Value.value(x.Value))
     let _derivative                                (x : ICell<double>)   
@@ -56,13 +57,14 @@ type IncChiQuareFinderModel
     casting 
 *)
     internal new () = IncChiQuareFinderModel(null,null)
-    member internal this.Inject v = _IncChiQuareFinder.Value <- v
+    member internal this.Inject v = _IncChiQuareFinder <- v
     static member Cast (p : ICell<IncChiQuareFinder>) = 
         if p :? IncChiQuareFinderModel then 
             p :?> IncChiQuareFinderModel
         else
             let o = new IncChiQuareFinderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

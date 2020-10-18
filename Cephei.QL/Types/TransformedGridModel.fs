@@ -44,7 +44,8 @@ type TransformedGridModel
 (*
     Functions
 *)
-    let _TransformedGrid                           = cell (fun () -> new TransformedGrid (grid.Value))
+    let mutable
+        _TransformedGrid                           = cell (fun () -> new TransformedGrid (grid.Value))
     let _dx                                        (i : ICell<int>)   
                                                    = triv (fun () -> _TransformedGrid.Value.dx(i.Value))
     let _dxArray                                   = triv (fun () -> _TransformedGrid.Value.dxArray())
@@ -66,13 +67,14 @@ type TransformedGridModel
     casting 
 *)
     internal new () = new TransformedGridModel(null)
-    member internal this.Inject v = _TransformedGrid.Value <- v
+    member internal this.Inject v = _TransformedGrid <- v
     static member Cast (p : ICell<TransformedGrid>) = 
         if p :? TransformedGridModel then 
             p :?> TransformedGridModel
         else
             let o = new TransformedGridModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -115,7 +117,8 @@ type TransformedGridModel1
 (*
     Functions
 *)
-    let _TransformedGrid                           = cell (fun () -> new TransformedGrid (grid.Value, func.Value))
+    let mutable
+        _TransformedGrid                           = cell (fun () -> new TransformedGrid (grid.Value, func.Value))
     let _dx                                        (i : ICell<int>)   
                                                    = triv (fun () -> _TransformedGrid.Value.dx(i.Value))
     let _dxArray                                   = triv (fun () -> _TransformedGrid.Value.dxArray())
@@ -137,13 +140,14 @@ type TransformedGridModel1
     casting 
 *)
     internal new () = new TransformedGridModel1(null,null)
-    member internal this.Inject v = _TransformedGrid.Value <- v
+    member internal this.Inject v = _TransformedGrid <- v
     static member Cast (p : ICell<TransformedGrid>) = 
         if p :? TransformedGridModel1 then 
             p :?> TransformedGridModel1
         else
             let o = new TransformedGridModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

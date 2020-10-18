@@ -50,7 +50,8 @@ type AnalyticBinaryBarrierEngine_helperModel
 (*
     Functions
 *)
-    let _AnalyticBinaryBarrierEngine_helper        = cell (fun () -> new AnalyticBinaryBarrierEngine_helper (Process.Value, payoff.Value, exercise.Value, arguments.Value))
+    let mutable
+        _AnalyticBinaryBarrierEngine_helper        = cell (fun () -> new AnalyticBinaryBarrierEngine_helper (Process.Value, payoff.Value, exercise.Value, arguments.Value))
     let _payoffAtExpiry                            (spot : ICell<double>) (variance : ICell<double>) (discount : ICell<double>)   
                                                    = triv (fun () -> _AnalyticBinaryBarrierEngine_helper.Value.payoffAtExpiry(spot.Value, variance.Value, discount.Value))
     do this.Bind(_AnalyticBinaryBarrierEngine_helper)
@@ -58,13 +59,14 @@ type AnalyticBinaryBarrierEngine_helperModel
     casting 
 *)
     internal new () = new AnalyticBinaryBarrierEngine_helperModel(null,null,null,null)
-    member internal this.Inject v = _AnalyticBinaryBarrierEngine_helper.Value <- v
+    member internal this.Inject v = _AnalyticBinaryBarrierEngine_helper <- v
     static member Cast (p : ICell<AnalyticBinaryBarrierEngine_helper>) = 
         if p :? AnalyticBinaryBarrierEngine_helperModel then 
             p :?> AnalyticBinaryBarrierEngine_helperModel
         else
             let o = new AnalyticBinaryBarrierEngine_helperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

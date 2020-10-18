@@ -82,7 +82,8 @@ type CPISwapModel
 (*
     Functions
 *)
-    let _CPISwap                                   = cell (fun () -> withEngine pricingEngine (new CPISwap (Type.Value, nominal.Value, subtractInflationNominal.Value, spread.Value, floatDayCount.Value, floatSchedule.Value, floatPaymentRoll.Value, fixingDays.Value, floatIndex.Value, fixedRate.Value, baseCPI.Value, fixedDayCount.Value, fixedSchedule.Value, fixedPaymentRoll.Value, observationLag.Value, fixedIndex.Value, observationInterpolation.Value, inflationNominal.Value)))
+    let mutable
+        _CPISwap                                   = cell (fun () -> withEngine pricingEngine (new CPISwap (Type.Value, nominal.Value, subtractInflationNominal.Value, spread.Value, floatDayCount.Value, floatSchedule.Value, floatPaymentRoll.Value, fixingDays.Value, floatIndex.Value, fixedRate.Value, baseCPI.Value, fixedDayCount.Value, fixedSchedule.Value, fixedPaymentRoll.Value, observationLag.Value, fixedIndex.Value, observationInterpolation.Value, inflationNominal.Value)))
     let _baseCPI                                   = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).baseCPI())
     let _cpiLeg                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).cpiLeg())
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).fairRate())
@@ -138,13 +139,14 @@ type CPISwapModel
     casting 
 *)
     internal new () = new CPISwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CPISwap.Value <- v
+    member internal this.Inject v = _CPISwap <- v
     static member Cast (p : ICell<CPISwap>) = 
         if p :? CPISwapModel then 
             p :?> CPISwapModel
         else
             let o = new CPISwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

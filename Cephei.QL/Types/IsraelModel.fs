@@ -61,7 +61,8 @@ type IsraelModel
 (*
     Functions
 *)
-    let _Israel                                    = cell (fun () -> new Israel (m.Value))
+    let mutable
+        _Israel                                    = cell (fun () -> new Israel (m.Value))
     let _addedHolidays                             = triv (fun () -> _Israel.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Israel.Value.addHoliday(d.Value)
@@ -98,13 +99,14 @@ type IsraelModel
     casting 
 *)
     internal new () = new IsraelModel(null)
-    member internal this.Inject v = _Israel.Value <- v
+    member internal this.Inject v = _Israel <- v
     static member Cast (p : ICell<Israel>) = 
         if p :? IsraelModel then 
             p :?> IsraelModel
         else
             let o = new IsraelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

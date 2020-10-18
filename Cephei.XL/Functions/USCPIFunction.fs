@@ -39,11 +39,11 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI1", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "USCPI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "ZeroInflationTermStructure")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "USCPI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_clone", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "ZeroInflationTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,13 +161,13 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_fixing", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="aFixingDate",Description = "Reference to aFixingDate")>] 
+        ([<ExcelArgument(Name="aFixingDate",Description = "Date")>] 
          aFixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,9 +209,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_zeroInflationTermStructure", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,15 +245,15 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_addFixing", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="fixing",Description = "Reference to fixing")>] 
+        ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_availabilityLag", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,9 +336,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_currency", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,9 +372,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_familyName", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,9 +408,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_fixingCalendar", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -444,9 +444,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_frequency", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -480,9 +480,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_interpolated", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -516,11 +516,11 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_isValidFixingDate", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,9 +558,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_name", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_region", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,9 +630,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_revised", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -666,9 +666,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_update", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -702,15 +702,15 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_addFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -756,13 +756,13 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_addFixings1", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -804,9 +804,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_allowsNativeFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -840,9 +840,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_clearFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -876,11 +876,11 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_registerWith", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -918,9 +918,9 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_timeSeries", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -954,11 +954,11 @@ module USCPIFunction =
     *)
     [<ExcelFunction(Name="_USCPI_unregisterWith", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="USCPI",Description = "Reference to USCPI")>] 
+        ([<ExcelArgument(Name="USCPI",Description = "USCPI")>] 
          uscpi : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -993,9 +993,9 @@ module USCPIFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_USCPI_Range", Description="Create a range of USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the USCPI")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

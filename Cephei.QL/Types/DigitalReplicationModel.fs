@@ -46,7 +46,8 @@ type DigitalReplicationModel
 (*
     Functions
 *)
-    let _DigitalReplication                        = cell (fun () -> new DigitalReplication (t.Value, gap.Value))
+    let mutable
+        _DigitalReplication                        = cell (fun () -> new DigitalReplication (t.Value, gap.Value))
     let _gap                                       = triv (fun () -> _DigitalReplication.Value.gap())
     let _replicationType                           = triv (fun () -> _DigitalReplication.Value.replicationType())
     do this.Bind(_DigitalReplication)
@@ -54,13 +55,14 @@ type DigitalReplicationModel
     casting 
 *)
     internal new () = new DigitalReplicationModel(null,null)
-    member internal this.Inject v = _DigitalReplication.Value <- v
+    member internal this.Inject v = _DigitalReplication <- v
     static member Cast (p : ICell<DigitalReplication>) = 
         if p :? DigitalReplicationModel then 
             p :?> DigitalReplicationModel
         else
             let o = new DigitalReplicationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

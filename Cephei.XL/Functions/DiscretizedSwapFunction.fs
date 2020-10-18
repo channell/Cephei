@@ -39,13 +39,13 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "VanillaSwap.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_mandatoryTimes", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_reset", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_adjustValues", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_initialize", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_method", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_partialRollback", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_postAdjustValues", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_preAdjustValues", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_presentValue", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_rollback", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_setTime", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,11 +520,11 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_setValues", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_time", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module DiscretizedSwapFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedSwap_values", Description="Create a DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedSwap",Description = "Reference to DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="DiscretizedSwap",Description = "DiscretizedSwap")>] 
          discretizedswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module DiscretizedSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedSwap_Range", Description="Create a range of DiscretizedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

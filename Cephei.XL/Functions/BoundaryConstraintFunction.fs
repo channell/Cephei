@@ -39,11 +39,11 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BoundaryConstraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="low",Description = "Reference to low")>] 
+        ([<ExcelArgument(Name="low",Description = "double")>] 
          low : obj)
-        ([<ExcelArgument(Name="high",Description = "Reference to high")>] 
+        ([<ExcelArgument(Name="high",Description = "double")>] 
          high : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_empty", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BoundaryConstraint",Description = "Reference to BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_lowerBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BoundaryConstraint",Description = "Reference to BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_test", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BoundaryConstraint",Description = "Reference to BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,15 +202,15 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_update", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BoundaryConstraint",Description = "Reference to BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,11 +256,11 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_upperBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BoundaryConstraint",Description = "Reference to BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -295,9 +295,9 @@ module BoundaryConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BoundaryConstraint_Range", Description="Create a range of BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

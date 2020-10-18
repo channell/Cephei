@@ -41,7 +41,8 @@ type EurexModel
 (*
     Functions
 *)
-    let _Eurex                                     = cell (fun () -> new Eurex ())
+    let mutable
+        _Eurex                                     = cell (fun () -> new Eurex ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _Eurex.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Eurex.Value.name())
@@ -50,13 +51,14 @@ type EurexModel
     casting 
 *)
     
-    member internal this.Inject v = _Eurex.Value <- v
+    member internal this.Inject v = _Eurex <- v
     static member Cast (p : ICell<Eurex>) = 
         if p :? EurexModel then 
             p :?> EurexModel
         else
             let o = new EurexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

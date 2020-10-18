@@ -39,9 +39,9 @@ module TreeFunction =
     *)
     [<ExcelFunction(Name="_Tree_columns", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tree",Description = "Reference to Tree")>] 
+        ([<ExcelArgument(Name="Tree",Description = "Tree")>] 
          tree : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module TreeFunction =
     *)
     [<ExcelFunction(Name="_Tree", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tree")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="columns",Description = "Reference to columns")>] 
+        ([<ExcelArgument(Name="columns",Description = "int")>] 
          columns : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,7 +112,7 @@ module TreeFunction =
     *)
     [<ExcelFunction(Name="_Tree1", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tree")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -140,9 +140,9 @@ module TreeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Tree_Range", Description="Create a range of Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Tree")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

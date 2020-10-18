@@ -44,20 +44,22 @@ type InterpolatingCPICapFloorEngineModel
 (*
     Functions
 *)
-    let _InterpolatingCPICapFloorEngine            = cell (fun () -> new InterpolatingCPICapFloorEngine (priceSurf.Value))
+    let mutable
+        _InterpolatingCPICapFloorEngine            = cell (fun () -> new InterpolatingCPICapFloorEngine (priceSurf.Value))
     let _name                                      = triv (fun () -> _InterpolatingCPICapFloorEngine.Value.name())
     do this.Bind(_InterpolatingCPICapFloorEngine)
 (* 
     casting 
 *)
     internal new () = new InterpolatingCPICapFloorEngineModel(null)
-    member internal this.Inject v = _InterpolatingCPICapFloorEngine.Value <- v
+    member internal this.Inject v = _InterpolatingCPICapFloorEngine <- v
     static member Cast (p : ICell<InterpolatingCPICapFloorEngine>) = 
         if p :? InterpolatingCPICapFloorEngineModel then 
             p :?> InterpolatingCPICapFloorEngineModel
         else
             let o = new InterpolatingCPICapFloorEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

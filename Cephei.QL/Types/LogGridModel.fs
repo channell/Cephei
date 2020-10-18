@@ -44,7 +44,8 @@ type LogGridModel
 (*
     Functions
 *)
-    let _LogGrid                                   = cell (fun () -> new LogGrid (grid.Value))
+    let mutable
+        _LogGrid                                   = cell (fun () -> new LogGrid (grid.Value))
     let _logGrid                                   (i : ICell<int>)   
                                                    = triv (fun () -> _LogGrid.Value.logGrid(i.Value))
     let _logGridArray                              = triv (fun () -> _LogGrid.Value.logGridArray())
@@ -69,13 +70,14 @@ type LogGridModel
     casting 
 *)
     internal new () = new LogGridModel(null)
-    member internal this.Inject v = _LogGrid.Value <- v
+    member internal this.Inject v = _LogGrid <- v
     static member Cast (p : ICell<LogGrid>) = 
         if p :? LogGridModel then 
             p :?> LogGridModel
         else
             let o = new LogGridModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

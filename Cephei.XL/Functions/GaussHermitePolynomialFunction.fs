@@ -39,11 +39,11 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial_alpha", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussHermitePolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "Reference to GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "GaussHermitePolynomial")>] 
          gausshermitepolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial_beta", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussHermitePolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "Reference to GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "GaussHermitePolynomial")>] 
          gausshermitepolynomial : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,9 +123,9 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussHermitePolynomial")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mu",Description = "Reference to mu")>] 
+        ([<ExcelArgument(Name="mu",Description = "double")>] 
          mu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,7 +160,7 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial1", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussHermitePolynomial")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,9 +191,9 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial_mu_0", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_mu_0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "Reference to GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "GaussHermitePolynomial")>] 
          gausshermitepolynomial : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,11 +227,11 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial_w", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_w
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "Reference to GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "GaussHermitePolynomial")>] 
          gausshermitepolynomial : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -269,13 +269,13 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial_value", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "Reference to GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "GaussHermitePolynomial")>] 
          gausshermitepolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,13 +317,13 @@ module GaussHermitePolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHermitePolynomial_weightedValue", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_weightedValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "Reference to GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="GaussHermitePolynomial",Description = "GaussHermitePolynomial")>] 
          gausshermitepolynomial : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -362,9 +362,9 @@ module GaussHermitePolynomialFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussHermitePolynomial_Range", Description="Create a range of GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussHermitePolynomial")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

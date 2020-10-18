@@ -41,7 +41,8 @@ type AustraliaRegionModel
 (*
     Functions
 *)
-    let _AustraliaRegion                           = cell (fun () -> new AustraliaRegion ())
+    let mutable
+        _AustraliaRegion                           = cell (fun () -> new AustraliaRegion ())
     let _code                                      = triv (fun () -> _AustraliaRegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _AustraliaRegion.Value.Equals(o.Value))
@@ -51,13 +52,14 @@ type AustraliaRegionModel
     casting 
 *)
     
-    member internal this.Inject v = _AustraliaRegion.Value <- v
+    member internal this.Inject v = _AustraliaRegion <- v
     static member Cast (p : ICell<AustraliaRegion>) = 
         if p :? AustraliaRegionModel then 
             p :?> AustraliaRegionModel
         else
             let o = new AustraliaRegionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

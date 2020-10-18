@@ -41,7 +41,8 @@ type GeneralStatisticsModel
 (*
     Functions
 *)
-    let _GeneralStatistics                         = cell (fun () -> new GeneralStatistics ())
+    let mutable
+        _GeneralStatistics                         = cell (fun () -> new GeneralStatistics ())
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _GeneralStatistics.Value.add(value.Value, weight.Value)
                                                                      _GeneralStatistics.Value)
@@ -80,13 +81,14 @@ type GeneralStatisticsModel
     casting 
 *)
     
-    member internal this.Inject v = _GeneralStatistics.Value <- v
+    member internal this.Inject v = _GeneralStatistics <- v
     static member Cast (p : ICell<GeneralStatistics>) = 
         if p :? GeneralStatisticsModel then 
             p :?> GeneralStatisticsModel
         else
             let o = new GeneralStatisticsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

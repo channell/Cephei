@@ -39,7 +39,7 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RONCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_code", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_empty", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_Equals", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_format", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_fractionsPerUnit", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_fractionSymbol", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_name", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_numericCode", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_rounding", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_symbol", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_ToString", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module RONCurrencyFunction =
     *)
     [<ExcelFunction(Name="_RONCurrency_triangulationCurrency", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RONCurrency",Description = "Reference to RONCurrency")>] 
+        ([<ExcelArgument(Name="RONCurrency",Description = "RONCurrency")>] 
          roncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module RONCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RONCurrency_Range", Description="Create a range of RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RONCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

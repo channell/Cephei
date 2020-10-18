@@ -66,7 +66,8 @@ type IborCouponModel
 (*
     Functions
 *)
-    let _IborCoupon                                = cell (fun () -> new IborCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, iborIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let mutable
+        _IborCoupon                                = cell (fun () -> new IborCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, iborIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
                                                    = triv (fun () -> _IborCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _iborIndex                                 = triv (fun () -> _IborCoupon.Value.iborIndex())
@@ -127,13 +128,14 @@ type IborCouponModel
     casting 
 *)
     internal new () = new IborCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _IborCoupon.Value <- v
+    member internal this.Inject v = _IborCoupon <- v
     static member Cast (p : ICell<IborCoupon>) = 
         if p :? IborCouponModel then 
             p :?> IborCouponModel
         else
             let o = new IborCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -216,7 +218,8 @@ type IborCouponModel1
 (*
     Functions
 *)
-    let _IborCoupon                                = cell (fun () -> new IborCoupon ())
+    let mutable
+        _IborCoupon                                = cell (fun () -> new IborCoupon ())
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
                                                    = triv (fun () -> _IborCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _iborIndex                                 = triv (fun () -> _IborCoupon.Value.iborIndex())
@@ -277,13 +280,14 @@ type IborCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _IborCoupon.Value <- v
+    member internal this.Inject v = _IborCoupon <- v
     static member Cast (p : ICell<IborCoupon>) = 
         if p :? IborCouponModel1 then 
             p :?> IborCouponModel1
         else
             let o = new IborCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

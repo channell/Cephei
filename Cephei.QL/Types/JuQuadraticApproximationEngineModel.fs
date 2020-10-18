@@ -44,19 +44,21 @@ type JuQuadraticApproximationEngineModel
 (*
     Functions
 *)
-    let _JuQuadraticApproximationEngine            = cell (fun () -> new JuQuadraticApproximationEngine (Process.Value))
+    let mutable
+        _JuQuadraticApproximationEngine            = cell (fun () -> new JuQuadraticApproximationEngine (Process.Value))
     do this.Bind(_JuQuadraticApproximationEngine)
 (* 
     casting 
 *)
     internal new () = new JuQuadraticApproximationEngineModel(null)
-    member internal this.Inject v = _JuQuadraticApproximationEngine.Value <- v
+    member internal this.Inject v = _JuQuadraticApproximationEngine <- v
     static member Cast (p : ICell<JuQuadraticApproximationEngine>) = 
         if p :? JuQuadraticApproximationEngineModel then 
             p :?> JuQuadraticApproximationEngineModel
         else
             let o = new JuQuadraticApproximationEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

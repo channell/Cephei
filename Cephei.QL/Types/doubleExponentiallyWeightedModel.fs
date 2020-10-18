@@ -41,7 +41,8 @@ type doubleExponentiallyWeightedModel
 (*
     Functions
 *)
-    let _doubleExponentiallyWeighted               = cell (fun () -> new doubleExponentiallyWeighted ())
+    let mutable
+        _doubleExponentiallyWeighted               = cell (fun () -> new doubleExponentiallyWeighted ())
     let _weight1LargeX                             (x : ICell<double>)   
                                                    = cell (fun () -> _doubleExponentiallyWeighted.Value.weight1LargeX(x.Value))
     let _weight2LargeX                             (x : ICell<double>)   
@@ -53,13 +54,14 @@ type doubleExponentiallyWeightedModel
     casting 
 *)
     
-    member internal this.Inject v = _doubleExponentiallyWeighted.Value <- v
+    member internal this.Inject v = _doubleExponentiallyWeighted <- v
     static member Cast (p : ICell<doubleExponentiallyWeighted>) = 
         if p :? doubleExponentiallyWeightedModel then 
             p :?> doubleExponentiallyWeightedModel
         else
             let o = new doubleExponentiallyWeightedModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

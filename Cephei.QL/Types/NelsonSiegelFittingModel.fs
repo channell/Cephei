@@ -46,7 +46,8 @@ type NelsonSiegelFittingModel
 (*
     Functions
 *)
-    let _NelsonSiegelFitting                       = cell (fun () -> new NelsonSiegelFitting (weights.Value, optimizationMethod.Value))
+    let mutable
+        _NelsonSiegelFitting                       = cell (fun () -> new NelsonSiegelFitting (weights.Value, optimizationMethod.Value))
     let _clone                                     = triv (fun () -> _NelsonSiegelFitting.Value.clone())
     let _size                                      = triv (fun () -> _NelsonSiegelFitting.Value.size())
     let _constrainAtZero                           = triv (fun () -> _NelsonSiegelFitting.Value.constrainAtZero())
@@ -62,13 +63,14 @@ type NelsonSiegelFittingModel
     casting 
 *)
     internal new () = new NelsonSiegelFittingModel(null,null)
-    member internal this.Inject v = _NelsonSiegelFitting.Value <- v
+    member internal this.Inject v = _NelsonSiegelFitting <- v
     static member Cast (p : ICell<NelsonSiegelFitting>) = 
         if p :? NelsonSiegelFittingModel then 
             p :?> NelsonSiegelFittingModel
         else
             let o = new NelsonSiegelFittingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

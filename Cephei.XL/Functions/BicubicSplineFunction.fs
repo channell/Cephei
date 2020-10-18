@@ -39,17 +39,17 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BicubicSpline")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="ySize",Description = "Reference to ySize")>] 
+        ([<ExcelArgument(Name="ySize",Description = "int")>] 
          ySize : obj)
-        ([<ExcelArgument(Name="zData",Description = "Reference to zData")>] 
+        ([<ExcelArgument(Name="zData",Description = "Matrix")>] 
          zData : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,13 +100,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_derivativeX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_derivativeX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,13 +148,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_derivativeXY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_derivativeXY
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,13 +196,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_derivativeY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_derivativeY
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,13 +244,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_secondDerivativeX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_secondDerivativeX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,13 +292,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_secondDerivativeY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_secondDerivativeY
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,13 +340,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_isInRange", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_isInRange
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,11 +388,11 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_locateX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_locateX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,11 +430,11 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_locateY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_locateY
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_update", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,13 +508,13 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_value1", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,15 +556,15 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_value", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,9 +610,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_xMax", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_xMin", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,9 +682,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_xValues", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_xValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,9 +718,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_yMax", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_yMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,9 +754,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_yMin", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_yMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,9 +790,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_yValues", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_yValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,9 +826,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_zData", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_zData
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,9 +862,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_allowsExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -898,11 +898,11 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_disableExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,11 +940,11 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_enableExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,9 +982,9 @@ module BicubicSplineFunction =
     *)
     [<ExcelFunction(Name="_BicubicSpline_extrapolate", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BicubicSpline",Description = "Reference to BicubicSpline")>] 
+        ([<ExcelArgument(Name="BicubicSpline",Description = "BicubicSpline")>] 
          bicubicspline : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1015,9 +1015,9 @@ module BicubicSplineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BicubicSpline_Range", Description="Create a range of BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BicubicSpline")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

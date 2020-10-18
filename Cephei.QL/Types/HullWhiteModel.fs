@@ -48,7 +48,8 @@ type HullWhiteModel
 (*
     Functions
 *)
-    let _HullWhite                                 = cell (fun () -> new HullWhite (termStructure.Value, a.Value, sigma.Value))
+    let mutable
+        _HullWhite                                 = cell (fun () -> new HullWhite (termStructure.Value, a.Value, sigma.Value))
     let _discountBondOption                        (Type : ICell<Option.Type>) (strike : ICell<double>) (maturity : ICell<double>) (bondMaturity : ICell<double>)   
                                                    = triv (fun () -> _HullWhite.Value.discountBondOption(Type.Value, strike.Value, maturity.Value, bondMaturity.Value))
     let _dynamics                                  = triv (fun () -> _HullWhite.Value.dynamics())
@@ -92,13 +93,14 @@ type HullWhiteModel
     casting 
 *)
     internal new () = new HullWhiteModel(null,null,null)
-    member internal this.Inject v = _HullWhite.Value <- v
+    member internal this.Inject v = _HullWhite <- v
     static member Cast (p : ICell<HullWhite>) = 
         if p :? HullWhiteModel then 
             p :?> HullWhiteModel
         else
             let o = new HullWhiteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -157,7 +159,8 @@ type HullWhiteModel1
 (*
     Functions
 *)
-    let _HullWhite                                 = cell (fun () -> new HullWhite (termStructure.Value))
+    let mutable
+        _HullWhite                                 = cell (fun () -> new HullWhite (termStructure.Value))
     let _discountBondOption                        (Type : ICell<Option.Type>) (strike : ICell<double>) (maturity : ICell<double>) (bondMaturity : ICell<double>)   
                                                    = triv (fun () -> _HullWhite.Value.discountBondOption(Type.Value, strike.Value, maturity.Value, bondMaturity.Value))
     let _dynamics                                  = triv (fun () -> _HullWhite.Value.dynamics())
@@ -201,13 +204,14 @@ type HullWhiteModel1
     casting 
 *)
     internal new () = new HullWhiteModel1(null)
-    member internal this.Inject v = _HullWhite.Value <- v
+    member internal this.Inject v = _HullWhite <- v
     static member Cast (p : ICell<HullWhite>) = 
         if p :? HullWhiteModel1 then 
             p :?> HullWhiteModel1
         else
             let o = new HullWhiteModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -266,7 +270,8 @@ type HullWhiteModel2
 (*
     Functions
 *)
-    let _HullWhite                                 = cell (fun () -> new HullWhite (termStructure.Value, a.Value))
+    let mutable
+        _HullWhite                                 = cell (fun () -> new HullWhite (termStructure.Value, a.Value))
     let _discountBondOption                        (Type : ICell<Option.Type>) (strike : ICell<double>) (maturity : ICell<double>) (bondMaturity : ICell<double>)   
                                                    = triv (fun () -> _HullWhite.Value.discountBondOption(Type.Value, strike.Value, maturity.Value, bondMaturity.Value))
     let _dynamics                                  = triv (fun () -> _HullWhite.Value.dynamics())
@@ -310,13 +315,14 @@ type HullWhiteModel2
     casting 
 *)
     internal new () = new HullWhiteModel2(null,null)
-    member internal this.Inject v = _HullWhite.Value <- v
+    member internal this.Inject v = _HullWhite <- v
     static member Cast (p : ICell<HullWhite>) = 
         if p :? HullWhiteModel2 then 
             p :?> HullWhiteModel2
         else
             let o = new HullWhiteModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

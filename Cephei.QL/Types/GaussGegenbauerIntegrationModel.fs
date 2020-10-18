@@ -46,7 +46,8 @@ type GaussGegenbauerIntegrationModel
 (*
     Functions
 *)
-    let _GaussGegenbauerIntegration                = cell (fun () -> new GaussGegenbauerIntegration (n.Value, lambda.Value))
+    let mutable
+        _GaussGegenbauerIntegration                = cell (fun () -> new GaussGegenbauerIntegration (n.Value, lambda.Value))
     let _order                                     = triv (fun () -> _GaussGegenbauerIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussGegenbauerIntegration.Value.value(f.Value))
@@ -57,13 +58,14 @@ type GaussGegenbauerIntegrationModel
     casting 
 *)
     internal new () = new GaussGegenbauerIntegrationModel(null,null)
-    member internal this.Inject v = _GaussGegenbauerIntegration.Value <- v
+    member internal this.Inject v = _GaussGegenbauerIntegration <- v
     static member Cast (p : ICell<GaussGegenbauerIntegration>) = 
         if p :? GaussGegenbauerIntegrationModel then 
             p :?> GaussGegenbauerIntegrationModel
         else
             let o = new GaussGegenbauerIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

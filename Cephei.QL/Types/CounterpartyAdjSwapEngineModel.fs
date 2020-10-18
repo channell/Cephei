@@ -60,19 +60,21 @@ type CounterpartyAdjSwapEngineModel
 (*
     Functions
 *)
-    let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
+    let mutable
+        _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
 *)
     internal new () = new CounterpartyAdjSwapEngineModel(null,null,null,null,null,null)
-    member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
+    member internal this.Inject v = _CounterpartyAdjSwapEngine <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel then 
             p :?> CounterpartyAdjSwapEngineModel
         else
             let o = new CounterpartyAdjSwapEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -118,19 +120,21 @@ type CounterpartyAdjSwapEngineModel1
 (*
     Functions
 *)
-    let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
+    let mutable
+        _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
 *)
     internal new () = new CounterpartyAdjSwapEngineModel1(null,null,null,null,null,null)
-    member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
+    member internal this.Inject v = _CounterpartyAdjSwapEngine <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel1 then 
             p :?> CounterpartyAdjSwapEngineModel1
         else
             let o = new CounterpartyAdjSwapEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -176,19 +180,21 @@ type CounterpartyAdjSwapEngineModel2
 (*
     Functions
 *)
-    let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
+    let mutable
+        _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
 *)
     internal new () = new CounterpartyAdjSwapEngineModel2(null,null,null,null,null,null)
-    member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
+    member internal this.Inject v = _CounterpartyAdjSwapEngine <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel2 then 
             p :?> CounterpartyAdjSwapEngineModel2
         else
             let o = new CounterpartyAdjSwapEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

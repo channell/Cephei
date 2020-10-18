@@ -39,13 +39,13 @@ module MonthlyYieldFinderFunction =
     *)
     [<ExcelFunction(Name="_MonthlyYieldFinder", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MonthlyYieldFinder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="faceAmount",Description = "Reference to faceAmount")>] 
+        ([<ExcelArgument(Name="faceAmount",Description = "double")>] 
          faceAmount : obj)
-        ([<ExcelArgument(Name="cashflows",Description = "Reference to cashflows")>] 
+        ([<ExcelArgument(Name="cashflows",Description = "CashFlow")>] 
          cashflows : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module MonthlyYieldFinderFunction =
     *)
     [<ExcelFunction(Name="_MonthlyYieldFinder_value", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonthlyYieldFinder",Description = "Reference to MonthlyYieldFinder")>] 
+        ([<ExcelArgument(Name="MonthlyYieldFinder",Description = "MonthlyYieldFinder")>] 
          monthlyyieldfinder : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,11 +130,11 @@ module MonthlyYieldFinderFunction =
     *)
     [<ExcelFunction(Name="_MonthlyYieldFinder_derivative", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonthlyYieldFinder",Description = "Reference to MonthlyYieldFinder")>] 
+        ([<ExcelArgument(Name="MonthlyYieldFinder",Description = "MonthlyYieldFinder")>] 
          monthlyyieldfinder : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -169,9 +169,9 @@ module MonthlyYieldFinderFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonthlyYieldFinder_Range", Description="Create a range of MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MonthlyYieldFinder")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

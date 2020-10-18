@@ -52,7 +52,8 @@ type HelperModel
 (*
     Functions
 *)
-    let _Helper                                    = cell (fun () -> new Helper (i.Value, xMin.Value, dx.Value, discountBondPrice.Value, tree.Value))
+    let mutable
+        _Helper                                    = cell (fun () -> new Helper (i.Value, xMin.Value, dx.Value, discountBondPrice.Value, tree.Value))
     let _value                                     (theta : ICell<double>)   
                                                    = triv (fun () -> _Helper.Value.value(theta.Value))
     let _derivative                                (x : ICell<double>)   
@@ -62,13 +63,14 @@ type HelperModel
     casting 
 *)
     internal new () = new HelperModel(null,null,null,null,null)
-    member internal this.Inject v = _Helper.Value <- v
+    member internal this.Inject v = _Helper <- v
     static member Cast (p : ICell<Helper>) = 
         if p :? HelperModel then 
             p :?> HelperModel
         else
             let o = new HelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

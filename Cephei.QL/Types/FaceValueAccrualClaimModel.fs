@@ -44,7 +44,8 @@ type FaceValueAccrualClaimModel
 (*
     Functions
 *)
-    let _FaceValueAccrualClaim                     = cell (fun () -> new FaceValueAccrualClaim (referenceSecurity.Value))
+    let mutable
+        _FaceValueAccrualClaim                     = cell (fun () -> new FaceValueAccrualClaim (referenceSecurity.Value))
     let _amount                                    (d : ICell<Date>) (notional : ICell<double>) (recoveryRate : ICell<double>)   
                                                    = triv (fun () -> _FaceValueAccrualClaim.Value.amount(d.Value, notional.Value, recoveryRate.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -60,13 +61,14 @@ type FaceValueAccrualClaimModel
     casting 
 *)
     internal new () = new FaceValueAccrualClaimModel(null)
-    member internal this.Inject v = _FaceValueAccrualClaim.Value <- v
+    member internal this.Inject v = _FaceValueAccrualClaim <- v
     static member Cast (p : ICell<FaceValueAccrualClaim>) = 
         if p :? FaceValueAccrualClaimModel then 
             p :?> FaceValueAccrualClaimModel
         else
             let o = new FaceValueAccrualClaimModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

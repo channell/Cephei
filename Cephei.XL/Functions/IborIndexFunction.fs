@@ -39,9 +39,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_businessDayConvention", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_clone", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_endOfMonth", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,15 +153,15 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_forecastFixing1", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,11 +207,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_forecastFixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -249,9 +249,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_forwardingTermStructure", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -285,25 +285,25 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex1", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="familyName",Description = "Reference to familyName")>] 
+        ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="currency",Description = "Reference to currency")>] 
+        ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
-        ([<ExcelArgument(Name="fixingCalendar",Description = "Reference to fixingCalendar")>] 
+        ([<ExcelArgument(Name="fixingCalendar",Description = "Calendar")>] 
          fixingCalendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,7 +370,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -401,11 +401,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_maturityDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,9 +443,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_currency", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,9 +479,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_dayCounter", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,9 +515,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_familyName", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,13 +551,13 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,9 +599,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixingCalendar", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -635,11 +635,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixingDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,9 +677,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixingDays", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -713,11 +713,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_isValidFixingDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,9 +755,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_name", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,11 +791,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_pastFixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_tenor", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,9 +869,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_update", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -905,11 +905,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_valueDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -947,15 +947,15 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_addFixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1001,15 +1001,15 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_addFixings", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1055,13 +1055,13 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_addFixings1", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1103,9 +1103,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_allowsNativeFixings", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,9 +1139,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_clearFixings", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1175,11 +1175,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_registerWith", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1217,9 +1217,9 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_timeSeries", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1253,11 +1253,11 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_unregisterWith", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IborIndex",Description = "Reference to IborIndex")>] 
+        ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1292,9 +1292,9 @@ module IborIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IborIndex_Range", Description="Create a range of IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IborIndex")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

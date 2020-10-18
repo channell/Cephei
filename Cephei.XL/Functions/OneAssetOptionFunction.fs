@@ -39,9 +39,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_delta", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_deltaForward", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_dividendRho", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_elasticity", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_gamma", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_isExpired", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_itmCashProbability", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,15 +291,15 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OneAssetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,9 +346,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_rho", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_strikeSensitivity", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_theta", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_thetaPerDay", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_vega", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_exercise", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_payoff", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_CASH", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,9 +634,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_errorEstimate", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -670,9 +670,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_NPV", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,11 +706,11 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_result", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,11 +748,11 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_setPricingEngine", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,9 +790,9 @@ module OneAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_OneAssetOption_valuationDate", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OneAssetOption",Description = "Reference to OneAssetOption")>] 
+        ([<ExcelArgument(Name="OneAssetOption",Description = "OneAssetOption")>] 
          oneassetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -823,9 +823,9 @@ module OneAssetOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OneAssetOption_Range", Description="Create a range of OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the OneAssetOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

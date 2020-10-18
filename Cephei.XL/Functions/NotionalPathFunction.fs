@@ -39,13 +39,13 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_addReduction", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_addReduction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NotionalPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NotionalPath",Description = "Reference to NotionalPath")>] 
+        ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
-        ([<ExcelArgument(Name="newRate",Description = "Reference to newRate")>] 
+        ([<ExcelArgument(Name="newRate",Description = "double")>] 
          newRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_loss", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_loss
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NotionalPath")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NotionalPath",Description = "Reference to NotionalPath")>] 
+        ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,7 +123,7 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NotionalPath")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,11 +154,11 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_notionalRate", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_notionalRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NotionalPath",Description = "Reference to NotionalPath")>] 
+        ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_reset", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NotionalPath",Description = "Reference to NotionalPath")>] 
+        ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module NotionalPathFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NotionalPath_Range", Description="Create a range of NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NotionalPath")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

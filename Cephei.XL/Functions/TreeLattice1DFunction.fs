@@ -39,11 +39,11 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_grid", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TreeLattice1D")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,13 +124,13 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_underlying", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,13 +172,13 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_initialize", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,13 +220,13 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_partialRollback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,11 +268,11 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_presentValue", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,13 +310,13 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_rollback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="asset",Description = "Reference to asset")>] 
+        ([<ExcelArgument(Name="asset",Description = "DiscretizedAsset")>] 
          asset : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,11 +358,11 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_statePrices", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_statePrices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,15 +400,15 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_stepback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_stepback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="values",Description = "Reference to values")>] 
+        ([<ExcelArgument(Name="values",Description = "Vector")>] 
          values : obj)
-        ([<ExcelArgument(Name="newValues",Description = "Reference to newValues")>] 
+        ([<ExcelArgument(Name="newValues",Description = "Vector")>] 
          newValues : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module TreeLattice1DFunction =
     *)
     [<ExcelFunction(Name="_TreeLattice1D_timeGrid", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_timeGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TimeGrid")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TreeLattice1D",Description = "Reference to TreeLattice1D")>] 
+        ([<ExcelArgument(Name="TreeLattice1D",Description = "TreeLattice1D")>] 
          treelattice1d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -487,9 +487,9 @@ module TreeLattice1DFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TreeLattice1D_Range", Description="Create a range of TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TreeLattice1D")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

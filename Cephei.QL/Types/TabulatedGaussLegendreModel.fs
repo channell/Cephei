@@ -44,7 +44,8 @@ type TabulatedGaussLegendreModel
 (*
     Functions
 *)
-    let _TabulatedGaussLegendre                    = cell (fun () -> new TabulatedGaussLegendre (n.Value))
+    let mutable
+        _TabulatedGaussLegendre                    = cell (fun () -> new TabulatedGaussLegendre (n.Value))
     let _order                                     = triv (fun () -> _TabulatedGaussLegendre.Value.order())
     let _order1                                    (order : ICell<int>)   
                                                    = triv (fun () -> _TabulatedGaussLegendre.Value.order(order.Value)
@@ -56,13 +57,14 @@ type TabulatedGaussLegendreModel
     casting 
 *)
     internal new () = new TabulatedGaussLegendreModel(null)
-    member internal this.Inject v = _TabulatedGaussLegendre.Value <- v
+    member internal this.Inject v = _TabulatedGaussLegendre <- v
     static member Cast (p : ICell<TabulatedGaussLegendre>) = 
         if p :? TabulatedGaussLegendreModel then 
             p :?> TabulatedGaussLegendreModel
         else
             let o = new TabulatedGaussLegendreModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

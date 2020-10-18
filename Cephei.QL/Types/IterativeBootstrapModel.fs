@@ -41,7 +41,8 @@ type IterativeBootstrapModel<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit ->
 (*
     Functions
 *)
-    let _IterativeBootstrap                        = cell (fun () -> new IterativeBootstrap<'T,'U> ())
+    let mutable
+        _IterativeBootstrap                        = cell (fun () -> new IterativeBootstrap<'T,'U> ())
     let _setup                                     (ts : ICell<'T>)   
                                                    = triv (fun () -> _IterativeBootstrap.Value.setup(ts.Value)
                                                                      _IterativeBootstrap.Value)

@@ -39,17 +39,17 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_integratedVariance", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_integratedVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmConstWrapperVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "Reference to LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "LmConstWrapperVolatilityModel")>] 
          lmconstwrappervolatilitymodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "LmConstWrapperVolatilityModel")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,9 +99,9 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmConstWrapperVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="volaModel",Description = "Reference to volaModel")>] 
+        ([<ExcelArgument(Name="volaModel",Description = "LmVolatilityModel")>] 
          volaModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,15 +136,15 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_volatility", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "Reference to LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "LmConstWrapperVolatilityModel")>] 
          lmconstwrappervolatilitymodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,13 +190,13 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_volatility1", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "Reference to LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "LmConstWrapperVolatilityModel")>] 
          lmconstwrappervolatilitymodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_parameters", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "Reference to LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "LmConstWrapperVolatilityModel")>] 
          lmconstwrappervolatilitymodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_setParams", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "Reference to LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "LmConstWrapperVolatilityModel")>] 
          lmconstwrappervolatilitymodel : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Parameter")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module LmConstWrapperVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_size", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "Reference to LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperVolatilityModel",Description = "LmConstWrapperVolatilityModel")>] 
          lmconstwrappervolatilitymodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module LmConstWrapperVolatilityModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_Range", Description="Create a range of LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LmConstWrapperVolatilityModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

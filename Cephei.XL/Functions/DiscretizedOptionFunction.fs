@@ -39,13 +39,13 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="underlying",Description = "Reference to underlying")>] 
+        ([<ExcelArgument(Name="underlying",Description = "DiscretizedAsset")>] 
          underlying : obj)
-        ([<ExcelArgument(Name="exerciseType",Description = "Reference to exerciseType")>] 
+        ([<ExcelArgument(Name="exerciseType",Description = "Exercise.Type")>] 
          exerciseType : obj)
-        ([<ExcelArgument(Name="exerciseTimes",Description = "Reference to exerciseTimes")>] 
+        ([<ExcelArgument(Name="exerciseTimes",Description = "double")>] 
          exerciseTimes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_mandatoryTimes", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_reset", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_adjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_initialize", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_method", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_partialRollback", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_postAdjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_preAdjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_presentValue", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_rollback", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_setTime", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,11 +520,11 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_setValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_time", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module DiscretizedOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedOption_values", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedOption",Description = "Reference to DiscretizedOption")>] 
+        ([<ExcelArgument(Name="DiscretizedOption",Description = "DiscretizedOption")>] 
          discretizedoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module DiscretizedOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedOption_Range", Description="Create a range of DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

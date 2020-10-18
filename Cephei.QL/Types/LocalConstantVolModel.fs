@@ -50,7 +50,8 @@ type LocalConstantVolModel
 (*
     Functions
 *)
-    let _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
+    let mutable
+        _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _LocalConstantVol.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _LocalConstantVol.Value.maxStrike())
@@ -83,13 +84,14 @@ type LocalConstantVolModel
     casting 
 *)
     internal new () = new LocalConstantVolModel(null,null,null,null)
-    member internal this.Inject v = _LocalConstantVol.Value <- v
+    member internal this.Inject v = _LocalConstantVol <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel then 
             p :?> LocalConstantVolModel
         else
             let o = new LocalConstantVolModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -145,7 +147,8 @@ type LocalConstantVolModel1
 (*
     Functions
 *)
-    let _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (referenceDate.Value, volatility.Value, dc.Value))
+    let mutable
+        _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (referenceDate.Value, volatility.Value, dc.Value))
     let _dayCounter                                = triv (fun () -> _LocalConstantVol.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _LocalConstantVol.Value.maxStrike())
@@ -178,13 +181,14 @@ type LocalConstantVolModel1
     casting 
 *)
     internal new () = new LocalConstantVolModel1(null,null,null)
-    member internal this.Inject v = _LocalConstantVol.Value <- v
+    member internal this.Inject v = _LocalConstantVol <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel1 then 
             p :?> LocalConstantVolModel1
         else
             let o = new LocalConstantVolModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -239,7 +243,8 @@ type LocalConstantVolModel2
 (*
     Functions
 *)
-    let _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (referenceDate.Value, volatility.Value, dc.Value))
+    let mutable
+        _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (referenceDate.Value, volatility.Value, dc.Value))
     let _dayCounter                                = triv (fun () -> _LocalConstantVol.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _LocalConstantVol.Value.maxStrike())
@@ -272,13 +277,14 @@ type LocalConstantVolModel2
     casting 
 *)
     internal new () = new LocalConstantVolModel2(null,null,null)
-    member internal this.Inject v = _LocalConstantVol.Value <- v
+    member internal this.Inject v = _LocalConstantVol <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel2 then 
             p :?> LocalConstantVolModel2
         else
             let o = new LocalConstantVolModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -335,7 +341,8 @@ type LocalConstantVolModel3
 (*
     Functions
 *)
-    let _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
+    let mutable
+        _LocalConstantVol                          = cell (fun () -> new LocalConstantVol (settlementDays.Value, calendar.Value, volatility.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _LocalConstantVol.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _LocalConstantVol.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _LocalConstantVol.Value.maxStrike())
@@ -368,13 +375,14 @@ type LocalConstantVolModel3
     casting 
 *)
     internal new () = new LocalConstantVolModel3(null,null,null,null)
-    member internal this.Inject v = _LocalConstantVol.Value <- v
+    member internal this.Inject v = _LocalConstantVol <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel3 then 
             p :?> LocalConstantVolModel3
         else
             let o = new LocalConstantVolModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

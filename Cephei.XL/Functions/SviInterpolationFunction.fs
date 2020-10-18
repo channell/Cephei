@@ -39,9 +39,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_a", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_b", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_endCriteria", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_expiry", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_expiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_forward", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_forward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_interpolationWeights", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_interpolationWeights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_m", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_m
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_maxError", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_rho", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,9 +363,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_rmsError", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_rmsError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,9 +399,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_sigma", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_sigma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,51 +435,51 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "double")>] 
          m : obj)
-        ([<ExcelArgument(Name="aIsFixed",Description = "Reference to aIsFixed")>] 
+        ([<ExcelArgument(Name="aIsFixed",Description = "bool")>] 
          aIsFixed : obj)
-        ([<ExcelArgument(Name="bIsFixed",Description = "Reference to bIsFixed")>] 
+        ([<ExcelArgument(Name="bIsFixed",Description = "bool")>] 
          bIsFixed : obj)
-        ([<ExcelArgument(Name="sigmaIsFixed",Description = "Reference to sigmaIsFixed")>] 
+        ([<ExcelArgument(Name="sigmaIsFixed",Description = "bool")>] 
          sigmaIsFixed : obj)
-        ([<ExcelArgument(Name="rhoIsFixed",Description = "Reference to rhoIsFixed")>] 
+        ([<ExcelArgument(Name="rhoIsFixed",Description = "bool")>] 
          rhoIsFixed : obj)
-        ([<ExcelArgument(Name="mIsFixed",Description = "Reference to mIsFixed")>] 
+        ([<ExcelArgument(Name="mIsFixed",Description = "bool")>] 
          mIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Reference to vegaWeighted")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "SviInterpolation")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "SviInterpolation")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "Reference to optMethod")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "SviInterpolation")>] 
          optMethod : obj)
-        ([<ExcelArgument(Name="errorAccept",Description = "Reference to errorAccept")>] 
+        ([<ExcelArgument(Name="errorAccept",Description = "SviInterpolation")>] 
          errorAccept : obj)
-        ([<ExcelArgument(Name="useMaxError",Description = "Reference to useMaxError")>] 
+        ([<ExcelArgument(Name="useMaxError",Description = "SviInterpolation")>] 
          useMaxError : obj)
-        ([<ExcelArgument(Name="maxGuesses",Description = "Reference to maxGuesses")>] 
+        ([<ExcelArgument(Name="maxGuesses",Description = "SviInterpolation")>] 
          maxGuesses : obj)
-        ([<ExcelArgument(Name="addParams",Description = "Reference to addParams")>] 
+        ([<ExcelArgument(Name="addParams",Description = "SviInterpolation")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,13 +598,13 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_derivative", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_empty", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,13 +682,13 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_primitive", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -730,13 +730,13 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_secondDerivative", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,9 +778,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_update", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -814,13 +814,13 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_value1", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,11 +862,11 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_value", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,9 +904,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_xMax", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,9 +940,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_xMin", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -976,9 +976,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_allowsExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1012,11 +1012,11 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_disableExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,11 +1054,11 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_enableExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1096,9 +1096,9 @@ module SviInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolation_extrapolate", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SviInterpolation",Description = "Reference to SviInterpolation")>] 
+        ([<ExcelArgument(Name="SviInterpolation",Description = "SviInterpolation")>] 
          sviinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1129,9 +1129,9 @@ module SviInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SviInterpolation_Range", Description="Create a range of SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SviInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

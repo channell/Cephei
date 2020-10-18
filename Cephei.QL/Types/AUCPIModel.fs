@@ -50,7 +50,8 @@ type AUCPIModel
 (*
     Functions
 *)
-    let _AUCPI                                     = cell (fun () -> new AUCPI (frequency.Value, revised.Value, interpolated.Value, ts.Value))
+    let mutable
+        _AUCPI                                     = cell (fun () -> new AUCPI (frequency.Value, revised.Value, interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _AUCPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -93,13 +94,14 @@ type AUCPIModel
     casting 
 *)
     internal new () = new AUCPIModel(null,null,null,null)
-    member internal this.Inject v = _AUCPI.Value <- v
+    member internal this.Inject v = _AUCPI <- v
     static member Cast (p : ICell<AUCPI>) = 
         if p :? AUCPIModel then 
             p :?> AUCPIModel
         else
             let o = new AUCPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -161,7 +163,8 @@ type AUCPIModel1
 (*
     Functions
 *)
-    let _AUCPI                                     = cell (fun () -> new AUCPI (frequency.Value, revised.Value, interpolated.Value))
+    let mutable
+        _AUCPI                                     = cell (fun () -> new AUCPI (frequency.Value, revised.Value, interpolated.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _AUCPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -204,13 +207,14 @@ type AUCPIModel1
     casting 
 *)
     internal new () = new AUCPIModel1(null,null,null)
-    member internal this.Inject v = _AUCPI.Value <- v
+    member internal this.Inject v = _AUCPI <- v
     static member Cast (p : ICell<AUCPI>) = 
         if p :? AUCPIModel1 then 
             p :?> AUCPIModel1
         else
             let o = new AUCPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

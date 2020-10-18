@@ -46,7 +46,8 @@ type YYUKRPIModel
 (*
     Functions
 *)
-    let _YYUKRPI                                   = cell (fun () -> new YYUKRPI (interpolated.Value, ts.Value))
+    let mutable
+        _YYUKRPI                                   = cell (fun () -> new YYUKRPI (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYUKRPI.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -90,13 +91,14 @@ type YYUKRPIModel
     casting 
 *)
     internal new () = new YYUKRPIModel(null,null)
-    member internal this.Inject v = _YYUKRPI.Value <- v
+    member internal this.Inject v = _YYUKRPI <- v
     static member Cast (p : ICell<YYUKRPI>) = 
         if p :? YYUKRPIModel then 
             p :?> YYUKRPIModel
         else
             let o = new YYUKRPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -153,7 +155,8 @@ type YYUKRPIModel1
 (*
     Functions
 *)
-    let _YYUKRPI                                   = cell (fun () -> new YYUKRPI (interpolated.Value))
+    let mutable
+        _YYUKRPI                                   = cell (fun () -> new YYUKRPI (interpolated.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YYUKRPI.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -197,13 +200,14 @@ type YYUKRPIModel1
     casting 
 *)
     internal new () = new YYUKRPIModel1(null)
-    member internal this.Inject v = _YYUKRPI.Value <- v
+    member internal this.Inject v = _YYUKRPI <- v
     static member Cast (p : ICell<YYUKRPI>) = 
         if p :? YYUKRPIModel1 then 
             p :?> YYUKRPIModel1
         else
             let o = new YYUKRPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

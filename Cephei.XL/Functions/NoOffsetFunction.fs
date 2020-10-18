@@ -39,11 +39,11 @@ module NoOffsetFunction =
     *)
     [<ExcelFunction(Name="_NoOffset_paymentDate", Description="Create a NoOffset",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoOffset_paymentDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NoOffset",Description = "Reference to NoOffset")>] 
+        ([<ExcelArgument(Name="NoOffset",Description = "NoOffset")>] 
          nooffset : obj)
-        ([<ExcelArgument(Name="eventDate",Description = "Reference to eventDate")>] 
+        ([<ExcelArgument(Name="eventDate",Description = "Date")>] 
          eventDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -78,9 +78,9 @@ module NoOffsetFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NoOffset_Range", Description="Create a range of NoOffset",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoOffset_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NoOffset")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

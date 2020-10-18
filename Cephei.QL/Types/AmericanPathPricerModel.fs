@@ -48,7 +48,8 @@ type AmericanPathPricerModel
 (*
     Functions
 *)
-    let _AmericanPathPricer                        = cell (fun () -> new AmericanPathPricer (payoff.Value, polynomOrder.Value, polynomType.Value))
+    let mutable
+        _AmericanPathPricer                        = cell (fun () -> new AmericanPathPricer (payoff.Value, polynomOrder.Value, polynomType.Value))
     let _basisSystem                               = triv (fun () -> _AmericanPathPricer.Value.basisSystem())
     let _state                                     (path : ICell<IPath>) (t : ICell<int>)   
                                                    = triv (fun () -> _AmericanPathPricer.Value.state(path.Value, t.Value))
@@ -59,13 +60,14 @@ type AmericanPathPricerModel
     casting 
 *)
     internal new () = new AmericanPathPricerModel(null,null,null)
-    member internal this.Inject v = _AmericanPathPricer.Value <- v
+    member internal this.Inject v = _AmericanPathPricer <- v
     static member Cast (p : ICell<AmericanPathPricer>) = 
         if p :? AmericanPathPricerModel then 
             p :?> AmericanPathPricerModel
         else
             let o = new AmericanPathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

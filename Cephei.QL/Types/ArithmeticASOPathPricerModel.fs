@@ -48,7 +48,8 @@ type ArithmeticASOPathPricerModel
 (*
     Functions
 *)
-    let _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value))
+    let mutable
+        _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value))
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
@@ -56,13 +57,14 @@ type ArithmeticASOPathPricerModel
     casting 
 *)
     internal new () = new ArithmeticASOPathPricerModel(null,null,null)
-    member internal this.Inject v = _ArithmeticASOPathPricer.Value <- v
+    member internal this.Inject v = _ArithmeticASOPathPricer <- v
     static member Cast (p : ICell<ArithmeticASOPathPricer>) = 
         if p :? ArithmeticASOPathPricerModel then 
             p :?> ArithmeticASOPathPricerModel
         else
             let o = new ArithmeticASOPathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -97,7 +99,8 @@ type ArithmeticASOPathPricerModel1
 (*
     Functions
 *)
-    let _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value, pastFixings.Value))
+    let mutable
+        _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value, pastFixings.Value))
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
@@ -105,13 +108,14 @@ type ArithmeticASOPathPricerModel1
     casting 
 *)
     internal new () = new ArithmeticASOPathPricerModel1(null,null,null,null)
-    member internal this.Inject v = _ArithmeticASOPathPricer.Value <- v
+    member internal this.Inject v = _ArithmeticASOPathPricer <- v
     static member Cast (p : ICell<ArithmeticASOPathPricer>) = 
         if p :? ArithmeticASOPathPricerModel1 then 
             p :?> ArithmeticASOPathPricerModel1
         else
             let o = new ArithmeticASOPathPricerModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -143,7 +147,8 @@ type ArithmeticASOPathPricerModel2
 (*
     Functions
 *)
-    let _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value))
+    let mutable
+        _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value))
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
@@ -151,13 +156,14 @@ type ArithmeticASOPathPricerModel2
     casting 
 *)
     internal new () = new ArithmeticASOPathPricerModel2(null,null)
-    member internal this.Inject v = _ArithmeticASOPathPricer.Value <- v
+    member internal this.Inject v = _ArithmeticASOPathPricer <- v
     static member Cast (p : ICell<ArithmeticASOPathPricer>) = 
         if p :? ArithmeticASOPathPricerModel2 then 
             p :?> ArithmeticASOPathPricerModel2
         else
             let o = new ArithmeticASOPathPricerModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

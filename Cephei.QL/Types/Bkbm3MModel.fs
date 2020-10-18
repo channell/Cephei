@@ -44,7 +44,8 @@ type Bkbm3MModel
 (*
     Functions
 *)
-    let _Bkbm3M                                    = cell (fun () -> new Bkbm3M (h.Value))
+    let mutable
+        _Bkbm3M                                    = cell (fun () -> new Bkbm3M (h.Value))
     let _businessDayConvention                     = triv (fun () -> _Bkbm3M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Bkbm3M.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type Bkbm3MModel
     casting 
 *)
     internal new () = new Bkbm3MModel(null)
-    member internal this.Inject v = _Bkbm3M.Value <- v
+    member internal this.Inject v = _Bkbm3M <- v
     static member Cast (p : ICell<Bkbm3M>) = 
         if p :? Bkbm3MModel then 
             p :?> Bkbm3MModel
         else
             let o = new Bkbm3MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -70,7 +70,8 @@ type AbcdInterpolationModel
 (*
     Functions
 *)
-    let _AbcdInterpolation                         = cell (fun () -> new AbcdInterpolation (xBegin.Value, size.Value, yBegin.Value, a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
+    let mutable
+        _AbcdInterpolation                         = cell (fun () -> new AbcdInterpolation (xBegin.Value, size.Value, yBegin.Value, a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
     let _a                                         = triv (fun () -> _AbcdInterpolation.Value.a())
     let _b                                         = triv (fun () -> _AbcdInterpolation.Value.b())
     let _c                                         = triv (fun () -> _AbcdInterpolation.Value.c())
@@ -109,13 +110,14 @@ type AbcdInterpolationModel
     casting 
 *)
     internal new () = new AbcdInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AbcdInterpolation.Value <- v
+    member internal this.Inject v = _AbcdInterpolation <- v
     static member Cast (p : ICell<AbcdInterpolation>) = 
         if p :? AbcdInterpolationModel then 
             p :?> AbcdInterpolationModel
         else
             let o = new AbcdInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

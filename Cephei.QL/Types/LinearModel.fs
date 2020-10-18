@@ -41,7 +41,8 @@ type LinearModel
 (*
     Functions
 *)
-    let _Linear                                    = cell (fun () -> new Linear ())
+    let mutable
+        _Linear                                    = cell (fun () -> new Linear ())
     let _global                                    = triv (fun () -> _Linear.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _Linear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -51,13 +52,14 @@ type LinearModel
     casting 
 *)
     
-    member internal this.Inject v = _Linear.Value <- v
+    member internal this.Inject v = _Linear <- v
     static member Cast (p : ICell<Linear>) = 
         if p :? LinearModel then 
             p :?> LinearModel
         else
             let o = new LinearModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

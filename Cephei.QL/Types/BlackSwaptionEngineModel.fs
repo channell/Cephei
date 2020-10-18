@@ -50,7 +50,8 @@ type BlackSwaptionEngineModel
 (*
     Functions
 *)
-    let _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, displacement.Value, model.Value))
+    let mutable
+        _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, displacement.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
@@ -58,13 +59,14 @@ type BlackSwaptionEngineModel
     casting 
 *)
     internal new () = new BlackSwaptionEngineModel(null,null,null,null)
-    member internal this.Inject v = _BlackSwaptionEngine.Value <- v
+    member internal this.Inject v = _BlackSwaptionEngine <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel then 
             p :?> BlackSwaptionEngineModel
         else
             let o = new BlackSwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -102,7 +104,8 @@ type BlackSwaptionEngineModel1
 (*
     Functions
 *)
-    let _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
+    let mutable
+        _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
@@ -110,13 +113,14 @@ type BlackSwaptionEngineModel1
     casting 
 *)
     internal new () = new BlackSwaptionEngineModel1(null,null,null,null,null)
-    member internal this.Inject v = _BlackSwaptionEngine.Value <- v
+    member internal this.Inject v = _BlackSwaptionEngine <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel1 then 
             p :?> BlackSwaptionEngineModel1
         else
             let o = new BlackSwaptionEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -155,7 +159,8 @@ type BlackSwaptionEngineModel2
 (*
     Functions
 *)
-    let _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
+    let mutable
+        _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
@@ -163,13 +168,14 @@ type BlackSwaptionEngineModel2
     casting 
 *)
     internal new () = new BlackSwaptionEngineModel2(null,null,null,null,null)
-    member internal this.Inject v = _BlackSwaptionEngine.Value <- v
+    member internal this.Inject v = _BlackSwaptionEngine <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel2 then 
             p :?> BlackSwaptionEngineModel2
         else
             let o = new BlackSwaptionEngineModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

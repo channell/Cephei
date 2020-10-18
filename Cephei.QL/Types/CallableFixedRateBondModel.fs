@@ -64,7 +64,8 @@ type CallableFixedRateBondModel
 (*
     Functions
 *)
-    let _CallableFixedRateBond                     = cell (fun () -> withEngine pricingEngine (new CallableFixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
+    let mutable
+        _CallableFixedRateBond                     = cell (fun () -> withEngine pricingEngine (new CallableFixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _CallableFixedRateBond).callability())
     let _cleanPriceOAS                             (oas : ICell<double>) (engineTS : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (compounding : ICell<Compounding>) (frequency : ICell<Frequency>) (settlement : ICell<Date>)   
                                                    = cell (fun () -> (withEvaluationDate _evaluationDate _CallableFixedRateBond).cleanPriceOAS(oas.Value, engineTS.Value, dayCounter.Value, compounding.Value, frequency.Value, settlement.Value))
@@ -129,13 +130,14 @@ type CallableFixedRateBondModel
     casting 
 *)
     internal new () = new CallableFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CallableFixedRateBond.Value <- v
+    member internal this.Inject v = _CallableFixedRateBond <- v
     static member Cast (p : ICell<CallableFixedRateBond>) = 
         if p :? CallableFixedRateBondModel then 
             p :?> CallableFixedRateBondModel
         else
             let o = new CallableFixedRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

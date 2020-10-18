@@ -48,7 +48,8 @@ type FdmSchemeDescModel
 (*
     Functions
 *)
-    let _FdmSchemeDesc                             = cell (fun () -> new FdmSchemeDesc (Type.Value, theta.Value, mu.Value))
+    let mutable
+        _FdmSchemeDesc                             = cell (fun () -> new FdmSchemeDesc (Type.Value, theta.Value, mu.Value))
     let _CraigSneyd                                = triv (fun () -> _FdmSchemeDesc.Value.CraigSneyd())
     let _CrankNicolson                             = triv (fun () -> _FdmSchemeDesc.Value.CrankNicolson())
     let _Douglas                                   = triv (fun () -> _FdmSchemeDesc.Value.Douglas())
@@ -68,13 +69,14 @@ type FdmSchemeDescModel
     casting 
 *)
     internal new () = new FdmSchemeDescModel(null,null,null)
-    member internal this.Inject v = _FdmSchemeDesc.Value <- v
+    member internal this.Inject v = _FdmSchemeDesc <- v
     static member Cast (p : ICell<FdmSchemeDesc>) = 
         if p :? FdmSchemeDescModel then 
             p :?> FdmSchemeDescModel
         else
             let o = new FdmSchemeDescModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type FdmSchemeDescModel1
 (*
     Functions
 *)
-    let _FdmSchemeDesc                             = cell (fun () -> new FdmSchemeDesc ())
+    let mutable
+        _FdmSchemeDesc                             = cell (fun () -> new FdmSchemeDesc ())
     let _CraigSneyd                                = triv (fun () -> _FdmSchemeDesc.Value.CraigSneyd())
     let _CrankNicolson                             = triv (fun () -> _FdmSchemeDesc.Value.CrankNicolson())
     let _Douglas                                   = triv (fun () -> _FdmSchemeDesc.Value.Douglas())
@@ -132,13 +135,14 @@ type FdmSchemeDescModel1
     casting 
 *)
     
-    member internal this.Inject v = _FdmSchemeDesc.Value <- v
+    member internal this.Inject v = _FdmSchemeDesc <- v
     static member Cast (p : ICell<FdmSchemeDesc>) = 
         if p :? FdmSchemeDescModel1 then 
             p :?> FdmSchemeDescModel1
         else
             let o = new FdmSchemeDescModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

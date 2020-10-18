@@ -39,9 +39,9 @@ module SeedGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SeedGenerator_get", Description="Create a SeedGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SeedGenerator_get
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SeedGenerator",Description = "Reference to SeedGenerator")>] 
+        ([<ExcelArgument(Name="SeedGenerator",Description = "SeedGenerator")>] 
          seedgenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -72,9 +72,9 @@ module SeedGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SeedGenerator_Range", Description="Create a range of SeedGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SeedGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SeedGenerator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -46,7 +46,8 @@ type CmsSpreadLegModel
 (*
     Functions
 *)
-    let _CmsSpreadLeg                              = cell (fun () -> new CmsSpreadLeg (schedule.Value, swapSpreadIndex.Value))
+    let mutable
+        _CmsSpreadLeg                              = cell (fun () -> new CmsSpreadLeg (schedule.Value, swapSpreadIndex.Value))
     let _value                                     = triv (fun () -> _CmsSpreadLeg.Value.value())
     let _inArrears                                 = triv (fun () -> _CmsSpreadLeg.Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
@@ -87,13 +88,14 @@ type CmsSpreadLegModel
     casting 
 *)
     internal new () = new CmsSpreadLegModel(null,null)
-    member internal this.Inject v = _CmsSpreadLeg.Value <- v
+    member internal this.Inject v = _CmsSpreadLeg <- v
     static member Cast (p : ICell<CmsSpreadLeg>) = 
         if p :? CmsSpreadLegModel then 
             p :?> CmsSpreadLegModel
         else
             let o = new CmsSpreadLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

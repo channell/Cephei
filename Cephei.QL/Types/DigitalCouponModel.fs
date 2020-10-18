@@ -62,7 +62,8 @@ type DigitalCouponModel
 (*
     Functions
 *)
-    let _DigitalCoupon                             = cell (fun () -> new DigitalCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
+    let mutable
+        _DigitalCoupon                             = cell (fun () -> new DigitalCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _callDigitalPayoff                         = triv (fun () -> _DigitalCoupon.Value.callDigitalPayoff())
     let _callOptionRate                            = triv (fun () -> _DigitalCoupon.Value.callOptionRate())
     let _callStrike                                = triv (fun () -> _DigitalCoupon.Value.callStrike())
@@ -134,13 +135,14 @@ type DigitalCouponModel
     casting 
 *)
     internal new () = new DigitalCouponModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _DigitalCoupon.Value <- v
+    member internal this.Inject v = _DigitalCoupon <- v
     static member Cast (p : ICell<DigitalCoupon>) = 
         if p :? DigitalCouponModel then 
             p :?> DigitalCouponModel
         else
             let o = new DigitalCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -232,7 +234,8 @@ type DigitalCouponModel1
 (*
     Functions
 *)
-    let _DigitalCoupon                             = cell (fun () -> new DigitalCoupon ())
+    let mutable
+        _DigitalCoupon                             = cell (fun () -> new DigitalCoupon ())
     let _callDigitalPayoff                         = triv (fun () -> _DigitalCoupon.Value.callDigitalPayoff())
     let _callOptionRate                            = triv (fun () -> _DigitalCoupon.Value.callOptionRate())
     let _callStrike                                = triv (fun () -> _DigitalCoupon.Value.callStrike())
@@ -304,13 +307,14 @@ type DigitalCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _DigitalCoupon.Value <- v
+    member internal this.Inject v = _DigitalCoupon <- v
     static member Cast (p : ICell<DigitalCoupon>) = 
         if p :? DigitalCouponModel1 then 
             p :?> DigitalCouponModel1
         else
             let o = new DigitalCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

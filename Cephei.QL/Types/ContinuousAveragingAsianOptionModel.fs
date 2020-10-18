@@ -52,7 +52,8 @@ type ContinuousAveragingAsianOptionModel
 (*
     Functions
 *)
-    let _ContinuousAveragingAsianOption            = cell (fun () -> withEngine pricingEngine (new ContinuousAveragingAsianOption (averageType.Value, payoff.Value, exercise.Value)))
+    let mutable
+        _ContinuousAveragingAsianOption            = cell (fun () -> withEngine pricingEngine (new ContinuousAveragingAsianOption (averageType.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).dividendRho())
@@ -81,13 +82,14 @@ type ContinuousAveragingAsianOptionModel
     casting 
 *)
     internal new () = new ContinuousAveragingAsianOptionModel(null,null,null,null,null)
-    member internal this.Inject v = _ContinuousAveragingAsianOption.Value <- v
+    member internal this.Inject v = _ContinuousAveragingAsianOption <- v
     static member Cast (p : ICell<ContinuousAveragingAsianOption>) = 
         if p :? ContinuousAveragingAsianOptionModel then 
             p :?> ContinuousAveragingAsianOptionModel
         else
             let o = new ContinuousAveragingAsianOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -40,15 +40,15 @@ module XABRConstraintFunction =
     (*!! generic 
     [<ExcelFunction(Name="_XABRConstraint_config", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_config
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRConstraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRConstraint",Description = "Reference to XABRConstraint")>] 
+        ([<ExcelArgument(Name="XABRConstraint",Description = "XABRConstraint")>] 
          xabrconstraint : obj)
-        ([<ExcelArgument(Name="costFunction",Description = "Reference to costFunction")>] 
+        ([<ExcelArgument(Name="costFunction",Description = "ProjectedCostFunction")>] 
          costFunction : obj)
-        ([<ExcelArgument(Name="coeff",Description = "Reference to coeff")>] 
+        ([<ExcelArgument(Name="coeff",Description = "Model")>] 
          coeff : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -95,9 +95,9 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRConstraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="impl",Description = "Reference to impl")>] 
+        ([<ExcelArgument(Name="impl",Description = "IConstraint")>] 
          impl : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -132,7 +132,7 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint1", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "XABRConstraint")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -163,9 +163,9 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint_empty", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRConstraint",Description = "Reference to XABRConstraint")>] 
+        ([<ExcelArgument(Name="XABRConstraint",Description = "XABRConstraint")>] 
          xabrconstraint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -199,11 +199,11 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint_lowerBound", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRConstraint",Description = "Reference to XABRConstraint")>] 
+        ([<ExcelArgument(Name="XABRConstraint",Description = "XABRConstraint")>] 
          xabrconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -241,11 +241,11 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint_test", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRConstraint",Description = "Reference to XABRConstraint")>] 
+        ([<ExcelArgument(Name="XABRConstraint",Description = "XABRConstraint")>] 
          xabrconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,15 +283,15 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint_update", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRConstraint",Description = "Reference to XABRConstraint")>] 
+        ([<ExcelArgument(Name="XABRConstraint",Description = "XABRConstraint")>] 
          xabrconstraint : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -337,11 +337,11 @@ module XABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_XABRConstraint_upperBound", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="XABRConstraint",Description = "Reference to XABRConstraint")>] 
+        ([<ExcelArgument(Name="XABRConstraint",Description = "XABRConstraint")>] 
          xabrconstraint : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,9 +376,9 @@ module XABRConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_XABRConstraint_Range", Description="Create a range of XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the XABRConstraint")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

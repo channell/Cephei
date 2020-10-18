@@ -46,7 +46,8 @@ type CumulativeBinomialDistributionModel
 (*
     Functions
 *)
-    let _CumulativeBinomialDistribution            = cell (fun () -> new CumulativeBinomialDistribution (p.Value, n.Value))
+    let mutable
+        _CumulativeBinomialDistribution            = cell (fun () -> new CumulativeBinomialDistribution (p.Value, n.Value))
     let _value                                     (k : ICell<int64>)   
                                                    = triv (fun () -> _CumulativeBinomialDistribution.Value.value(k.Value))
     do this.Bind(_CumulativeBinomialDistribution)
@@ -54,13 +55,14 @@ type CumulativeBinomialDistributionModel
     casting 
 *)
     internal new () = new CumulativeBinomialDistributionModel(null,null)
-    member internal this.Inject v = _CumulativeBinomialDistribution.Value <- v
+    member internal this.Inject v = _CumulativeBinomialDistribution <- v
     static member Cast (p : ICell<CumulativeBinomialDistribution>) = 
         if p :? CumulativeBinomialDistributionModel then 
             p :?> CumulativeBinomialDistributionModel
         else
             let o = new CumulativeBinomialDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bkbm")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_businessDayConvention", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_clone", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_endOfMonth", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,15 +196,15 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_forecastFixing1", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,11 +250,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_forecastFixing", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_forwardingTermStructure", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_maturityDate", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_currency", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_dayCounter", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_familyName", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,13 +478,13 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_fixing", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_fixingCalendar", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,11 +562,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_fixingDate", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,9 +604,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_fixingDays", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,11 +640,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_isValidFixingDate", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,9 +682,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_name", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,11 +718,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_pastFixing", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_tenor", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,9 +796,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_update", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,11 +832,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_valueDate", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,15 +874,15 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_addFixing", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -928,15 +928,15 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_addFixings", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,13 +982,13 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_addFixings1", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1030,9 +1030,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_allowsNativeFixings", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,9 +1066,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_clearFixings", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1102,11 +1102,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_registerWith", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1144,9 +1144,9 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_timeSeries", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1180,11 +1180,11 @@ module BkbmFunction =
     *)
     [<ExcelFunction(Name="_Bkbm_unregisterWith", Description="Create a Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bkbm",Description = "Reference to Bkbm")>] 
+        ([<ExcelArgument(Name="Bkbm",Description = "Bkbm")>] 
          bkbm : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1219,9 +1219,9 @@ module BkbmFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bkbm_Range", Description="Create a range of Bkbm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Bkbm")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

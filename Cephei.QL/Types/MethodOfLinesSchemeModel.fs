@@ -50,7 +50,8 @@ type MethodOfLinesSchemeModel
 (*
     Functions
 *)
-    let _MethodOfLinesScheme                       = cell (fun () -> new MethodOfLinesScheme (eps.Value, relInitStepSize.Value, map.Value, bcSet.Value))
+    let mutable
+        _MethodOfLinesScheme                       = cell (fun () -> new MethodOfLinesScheme (eps.Value, relInitStepSize.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _MethodOfLinesScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -64,13 +65,14 @@ type MethodOfLinesSchemeModel
     casting 
 *)
     internal new () = new MethodOfLinesSchemeModel(null,null,null,null)
-    member internal this.Inject v = _MethodOfLinesScheme.Value <- v
+    member internal this.Inject v = _MethodOfLinesScheme <- v
     static member Cast (p : ICell<MethodOfLinesScheme>) = 
         if p :? MethodOfLinesSchemeModel then 
             p :?> MethodOfLinesSchemeModel
         else
             let o = new MethodOfLinesSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -101,7 +103,8 @@ type MethodOfLinesSchemeModel1
 (*
     Functions
 *)
-    let _MethodOfLinesScheme                       = cell (fun () -> new MethodOfLinesScheme ())
+    let mutable
+        _MethodOfLinesScheme                       = cell (fun () -> new MethodOfLinesScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _MethodOfLinesScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -115,13 +118,14 @@ type MethodOfLinesSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _MethodOfLinesScheme.Value <- v
+    member internal this.Inject v = _MethodOfLinesScheme <- v
     static member Cast (p : ICell<MethodOfLinesScheme>) = 
         if p :? MethodOfLinesSchemeModel1 then 
             p :?> MethodOfLinesSchemeModel1
         else
             let o = new MethodOfLinesSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

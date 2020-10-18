@@ -39,13 +39,13 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedVanillaOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "Option.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_mandatoryTimes", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_reset", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_adjustValues", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,13 +202,13 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_initialize", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_method", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_partialRollback", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_postAdjustValues", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_preAdjustValues", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_presentValue", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_rollback", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,11 +478,11 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_setTime", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,11 +520,11 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_setValues", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_time", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module DiscretizedVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedVanillaOption_values", Description="Create a DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "Reference to DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="DiscretizedVanillaOption",Description = "DiscretizedVanillaOption")>] 
          discretizedvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module DiscretizedVanillaOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedVanillaOption_Range", Description="Create a range of DiscretizedVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedVanillaOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedVanillaOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

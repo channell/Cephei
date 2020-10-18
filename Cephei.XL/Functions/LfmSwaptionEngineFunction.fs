@@ -40,11 +40,11 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LfmSwaptionEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "LiborForwardModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,11 +84,11 @@ module LfmSwaptionEngineFunction =
     (*!!
     [<ExcelFunction(Name="_LfmSwaptionEngine_setModel", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "Reference to LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "'ModelType")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -126,11 +126,11 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_registerWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "Reference to LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -168,9 +168,9 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_reset", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "Reference to LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,11 +204,11 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_unregisterWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "Reference to LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,9 +246,9 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_update", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "Reference to LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module LfmSwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LfmSwaptionEngine_Range", Description="Create a range of LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

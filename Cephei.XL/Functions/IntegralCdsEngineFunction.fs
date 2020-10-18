@@ -40,17 +40,17 @@ module IntegralCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IntegralCdsEngine", Description="Create a IntegralCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralCdsEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IntegralCdsEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="step",Description = "Reference to step")>] 
+        ([<ExcelArgument(Name="step",Description = "Period")>] 
          step : obj)
-        ([<ExcelArgument(Name="probability",Description = "Reference to probability")>] 
+        ([<ExcelArgument(Name="probability",Description = "DefaultProbabilityTermStructure")>] 
          probability : obj)
-        ([<ExcelArgument(Name="recoveryRate",Description = "Reference to recoveryRate")>] 
+        ([<ExcelArgument(Name="recoveryRate",Description = "double")>] 
          recoveryRate : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "Reference to includeSettlementDateFlows")>] 
+        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -98,9 +98,9 @@ module IntegralCdsEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IntegralCdsEngine_Range", Description="Create a range of IntegralCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralCdsEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IntegralCdsEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

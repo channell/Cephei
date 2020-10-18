@@ -39,11 +39,11 @@ module NullEffectiveDateExceptionFunction =
     *)
     [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NullEffectiveDateException")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="message",Description = "Reference to message")>] 
+        ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
-        ([<ExcelArgument(Name="inner",Description = "Reference to inner")>] 
+        ([<ExcelArgument(Name="inner",Description = "Exception")>] 
          inner : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module NullEffectiveDateExceptionFunction =
     *)
     [<ExcelFunction(Name="_NullEffectiveDateException1", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NullEffectiveDateException")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="message",Description = "Reference to message")>] 
+        ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,7 +119,7 @@ module NullEffectiveDateExceptionFunction =
     *)
     [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NullEffectiveDateException")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module NullEffectiveDateExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NullEffectiveDateException_Range", Description="Create a range of NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NullEffectiveDateException")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

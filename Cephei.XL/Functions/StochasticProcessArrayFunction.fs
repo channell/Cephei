@@ -39,13 +39,13 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_apply", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,9 +87,9 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_correlation", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_correlation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,15 +123,15 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_covariance", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -177,13 +177,13 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_diffusion", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,13 +225,13 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_drift", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -273,17 +273,17 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_evolve", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,15 +333,15 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_expectation", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,9 +387,9 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_initialValues", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -423,11 +423,11 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_process", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_process
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StochasticProcess1D")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -465,9 +465,9 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_size", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -501,15 +501,15 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_stdDeviation", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -555,11 +555,11 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StochasticProcessArray")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="processes",Description = "Reference to processes")>] 
+        ([<ExcelArgument(Name="processes",Description = "StochasticProcess1D")>] 
          processes : obj)
-        ([<ExcelArgument(Name="correlation",Description = "Reference to correlation")>] 
+        ([<ExcelArgument(Name="correlation",Description = "Matrix")>] 
          correlation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,11 +598,11 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_time", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,9 +640,9 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_factors", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -676,11 +676,11 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_registerWith", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,11 +718,11 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_unregisterWith", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_update", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StochasticProcessArray",Description = "Reference to StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -793,9 +793,9 @@ module StochasticProcessArrayFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StochasticProcessArray_Range", Description="Create a range of StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

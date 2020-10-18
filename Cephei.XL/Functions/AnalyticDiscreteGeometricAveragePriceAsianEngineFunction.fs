@@ -39,9 +39,9 @@ module AnalyticDiscreteGeometricAveragePriceAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDiscreteGeometricAveragePriceAsianEngine", Description="Create a AnalyticDiscreteGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDiscreteGeometricAveragePriceAsianEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDiscreteGeometricAveragePriceAsianEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -74,9 +74,9 @@ module AnalyticDiscreteGeometricAveragePriceAsianEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticDiscreteGeometricAveragePriceAsianEngine_Range", Description="Create a range of AnalyticDiscreteGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDiscreteGeometricAveragePriceAsianEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AnalyticDiscreteGeometricAveragePriceAsianEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

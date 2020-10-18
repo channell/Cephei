@@ -39,17 +39,17 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackScholesMertonProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="blackVolTS",Description = "Reference to blackVolTS")>] 
+        ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "IDiscretization1D")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,15 +100,15 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess1", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackScholesMertonProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dividendTS",Description = "Reference to dividendTS")>] 
+        ([<ExcelArgument(Name="dividendTS",Description = "YieldTermStructure")>] 
          dividendTS : obj)
-        ([<ExcelArgument(Name="riskFreeTS",Description = "Reference to riskFreeTS")>] 
+        ([<ExcelArgument(Name="riskFreeTS",Description = "YieldTermStructure")>] 
          riskFreeTS : obj)
-        ([<ExcelArgument(Name="blackVolTS",Description = "Reference to blackVolTS")>] 
+        ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,13 +155,13 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_apply", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,9 +203,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_blackVolatility", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_blackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_diffusion", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,9 +287,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_dividendYield", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -323,13 +323,13 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_drift", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -371,17 +371,17 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_evolve", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "double")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -431,15 +431,15 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_expectation", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_localVolatility", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_localVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_riskFreeRate", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,9 +557,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_stateVariable", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_stateVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -593,15 +593,15 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_stdDeviation", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -647,11 +647,11 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_time", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -689,9 +689,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_update", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -725,15 +725,15 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_variance", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -779,9 +779,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_x0", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -815,9 +815,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_initialValues", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -851,9 +851,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_size", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -887,15 +887,15 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_covariance", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -941,9 +941,9 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_factors", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -977,11 +977,11 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_registerWith", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,11 +1019,11 @@ module BlackScholesMertonProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesMertonProcess_unregisterWith", Description="Create a BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "Reference to BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="BlackScholesMertonProcess",Description = "BlackScholesMertonProcess")>] 
          blackscholesmertonprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1058,9 +1058,9 @@ module BlackScholesMertonProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackScholesMertonProcess_Range", Description="Create a range of BlackScholesMertonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesMertonProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackScholesMertonProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

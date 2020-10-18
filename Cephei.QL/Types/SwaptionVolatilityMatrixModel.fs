@@ -58,7 +58,8 @@ type SwaptionVolatilityMatrixModel
 (*
     Functions
 *)
-    let _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (today.Value, optionDates.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
+    let mutable
+        _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (today.Value, optionDates.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
     let _locate                                    (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = triv (fun () -> _SwaptionVolatilityMatrix.Value.locate(optionTime.Value, swapLength.Value))
     let _locate1                                   (optionDate : ICell<Date>) (swapTenor : ICell<Period>)   
@@ -147,13 +148,14 @@ type SwaptionVolatilityMatrixModel
     casting 
 *)
     internal new () = new SwaptionVolatilityMatrixModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    member internal this.Inject v = _SwaptionVolatilityMatrix <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel then 
             p :?> SwaptionVolatilityMatrixModel
         else
             let o = new SwaptionVolatilityMatrixModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -283,7 +285,8 @@ type SwaptionVolatilityMatrixModel1
 (*
     Functions
 *)
-    let _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (referenceDate.Value, calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
+    let mutable
+        _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (referenceDate.Value, calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
     let _locate                                    (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = triv (fun () -> _SwaptionVolatilityMatrix.Value.locate(optionTime.Value, swapLength.Value))
     let _locate1                                   (optionDate : ICell<Date>) (swapTenor : ICell<Period>)   
@@ -372,13 +375,14 @@ type SwaptionVolatilityMatrixModel1
     casting 
 *)
     internal new () = new SwaptionVolatilityMatrixModel1(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    member internal this.Inject v = _SwaptionVolatilityMatrix <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel1 then 
             p :?> SwaptionVolatilityMatrixModel1
         else
             let o = new SwaptionVolatilityMatrixModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -508,7 +512,8 @@ type SwaptionVolatilityMatrixModel2
 (*
     Functions
 *)
-    let _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
+    let mutable
+        _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
     let _locate                                    (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = triv (fun () -> _SwaptionVolatilityMatrix.Value.locate(optionTime.Value, swapLength.Value))
     let _locate1                                   (optionDate : ICell<Date>) (swapTenor : ICell<Period>)   
@@ -597,13 +602,14 @@ type SwaptionVolatilityMatrixModel2
     casting 
 *)
     internal new () = new SwaptionVolatilityMatrixModel2(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    member internal this.Inject v = _SwaptionVolatilityMatrix <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel2 then 
             p :?> SwaptionVolatilityMatrixModel2
         else
             let o = new SwaptionVolatilityMatrixModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -734,7 +740,8 @@ type SwaptionVolatilityMatrixModel3
 (*
     Functions
 *)
-    let _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (referenceDate.Value, calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
+    let mutable
+        _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (referenceDate.Value, calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
     let _locate                                    (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = triv (fun () -> _SwaptionVolatilityMatrix.Value.locate(optionTime.Value, swapLength.Value))
     let _locate1                                   (optionDate : ICell<Date>) (swapTenor : ICell<Period>)   
@@ -823,13 +830,14 @@ type SwaptionVolatilityMatrixModel3
     casting 
 *)
     internal new () = new SwaptionVolatilityMatrixModel3(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    member internal this.Inject v = _SwaptionVolatilityMatrix <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel3 then 
             p :?> SwaptionVolatilityMatrixModel3
         else
             let o = new SwaptionVolatilityMatrixModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -959,7 +967,8 @@ type SwaptionVolatilityMatrixModel4
 (*
     Functions
 *)
-    let _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
+    let mutable
+        _SwaptionVolatilityMatrix                  = cell (fun () -> new SwaptionVolatilityMatrix (calendar.Value, bdc.Value, optionTenors.Value, swapTenors.Value, vols.Value, dayCounter.Value, flatExtrapolation.Value, Type.Value, shifts.Value))
     let _locate                                    (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = triv (fun () -> _SwaptionVolatilityMatrix.Value.locate(optionTime.Value, swapLength.Value))
     let _locate1                                   (optionDate : ICell<Date>) (swapTenor : ICell<Period>)   
@@ -1048,13 +1057,14 @@ type SwaptionVolatilityMatrixModel4
     casting 
 *)
     internal new () = new SwaptionVolatilityMatrixModel4(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    member internal this.Inject v = _SwaptionVolatilityMatrix <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel4 then 
             p :?> SwaptionVolatilityMatrixModel4
         else
             let o = new SwaptionVolatilityMatrixModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

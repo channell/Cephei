@@ -39,13 +39,13 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_diffusion", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "Reference to PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_discount", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "Reference to PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,13 +135,13 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_drift", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "Reference to PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_factory", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "Reference to PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,13 +225,13 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PdeConstantCoeff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,15 +274,15 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_generateOperator", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_generateOperator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "Reference to PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="tg",Description = "Reference to tg")>] 
+        ([<ExcelArgument(Name="tg",Description = "TransformedGrid")>] 
          tg : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "TridiagonalOperator")>] 
          L : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -325,9 +325,9 @@ module PdeConstantCoeffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeConstantCoeff_Range", Description="Create a range of PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

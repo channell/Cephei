@@ -52,7 +52,8 @@ type LmExtLinearExponentialVolModelModel
 (*
     Functions
 *)
-    let _LmExtLinearExponentialVolModel            = cell (fun () -> new LmExtLinearExponentialVolModel (fixingTimes.Value, a.Value, b.Value, c.Value, d.Value))
+    let mutable
+        _LmExtLinearExponentialVolModel            = cell (fun () -> new LmExtLinearExponentialVolModel (fixingTimes.Value, a.Value, b.Value, c.Value, d.Value))
     let _integratedVariance                        (i : ICell<int>) (j : ICell<int>) (u : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LmExtLinearExponentialVolModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
     let _volatility                                (i : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
@@ -69,13 +70,14 @@ type LmExtLinearExponentialVolModelModel
     casting 
 *)
     internal new () = new LmExtLinearExponentialVolModelModel(null,null,null,null,null)
-    member internal this.Inject v = _LmExtLinearExponentialVolModel.Value <- v
+    member internal this.Inject v = _LmExtLinearExponentialVolModel <- v
     static member Cast (p : ICell<LmExtLinearExponentialVolModel>) = 
         if p :? LmExtLinearExponentialVolModelModel then 
             p :?> LmExtLinearExponentialVolModelModel
         else
             let o = new LmExtLinearExponentialVolModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -54,7 +54,8 @@ type CubicModel
 (*
     Functions
 *)
-    let _Cubic                                     = cell (fun () -> new Cubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
+    let mutable
+        _Cubic                                     = cell (fun () -> new Cubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
     let _global                                    = triv (fun () -> _Cubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -64,13 +65,14 @@ type CubicModel
     casting 
 *)
     internal new () = new CubicModel(null,null,null,null,null,null)
-    member internal this.Inject v = _Cubic.Value <- v
+    member internal this.Inject v = _Cubic <- v
     static member Cast (p : ICell<Cubic>) = 
         if p :? CubicModel then 
             p :?> CubicModel
         else
             let o = new CubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -101,7 +103,8 @@ type CubicModel1
 (*
     Functions
 *)
-    let _Cubic                                     = cell (fun () -> new Cubic ())
+    let mutable
+        _Cubic                                     = cell (fun () -> new Cubic ())
     let _global                                    = triv (fun () -> _Cubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -111,13 +114,14 @@ type CubicModel1
     casting 
 *)
     
-    member internal this.Inject v = _Cubic.Value <- v
+    member internal this.Inject v = _Cubic <- v
     static member Cast (p : ICell<Cubic>) = 
         if p :? CubicModel1 then 
             p :?> CubicModel1
         else
             let o = new CubicModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

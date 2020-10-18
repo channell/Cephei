@@ -39,7 +39,7 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CYPCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_code", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_empty", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_Equals", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_format", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_fractionsPerUnit", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_fractionSymbol", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_name", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_numericCode", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_rounding", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_symbol", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_ToString", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module CYPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CYPCurrency_triangulationCurrency", Description="Create a CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CYPCurrency",Description = "Reference to CYPCurrency")>] 
+        ([<ExcelArgument(Name="CYPCurrency",Description = "CYPCurrency")>] 
          cypcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module CYPCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CYPCurrency_Range", Description="Create a range of CYPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CYPCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CYPCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,13 +39,13 @@ module NullConditionFunction =
     *)
     [<ExcelFunction(Name="_NullCondition_applyTo", Description="Create a NullCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCondition",Description = "Reference to NullCondition")>] 
+        ([<ExcelArgument(Name="NullCondition",Description = "NullCondition")>] 
          nullcondition : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module NullConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NullCondition_Range", Description="Create a range of NullCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NullCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

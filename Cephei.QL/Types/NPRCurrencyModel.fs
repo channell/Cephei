@@ -41,7 +41,8 @@ type NPRCurrencyModel
 (*
     Functions
 *)
-    let _NPRCurrency                               = cell (fun () -> new NPRCurrency ())
+    let mutable
+        _NPRCurrency                               = cell (fun () -> new NPRCurrency ())
     let _code                                      = triv (fun () -> _NPRCurrency.Value.code)
     let _empty                                     = triv (fun () -> _NPRCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type NPRCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _NPRCurrency.Value <- v
+    member internal this.Inject v = _NPRCurrency <- v
     static member Cast (p : ICell<NPRCurrency>) = 
         if p :? NPRCurrencyModel then 
             p :?> NPRCurrencyModel
         else
             let o = new NPRCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

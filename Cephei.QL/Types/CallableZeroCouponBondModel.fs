@@ -64,7 +64,8 @@ type CallableZeroCouponBondModel
 (*
     Functions
 *)
-    let _CallableZeroCouponBond                    = cell (fun () -> withEngine pricingEngine (new CallableZeroCouponBond (settlementDays.Value, faceAmount.Value, calendar.Value, maturityDate.Value, dayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
+    let mutable
+        _CallableZeroCouponBond                    = cell (fun () -> withEngine pricingEngine (new CallableZeroCouponBond (settlementDays.Value, faceAmount.Value, calendar.Value, maturityDate.Value, dayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _CallableZeroCouponBond).callability())
     let _cleanPriceOAS                             (oas : ICell<double>) (engineTS : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (compounding : ICell<Compounding>) (frequency : ICell<Frequency>) (settlement : ICell<Date>)   
                                                    = cell (fun () -> (withEvaluationDate _evaluationDate _CallableZeroCouponBond).cleanPriceOAS(oas.Value, engineTS.Value, dayCounter.Value, compounding.Value, frequency.Value, settlement.Value))
@@ -129,13 +130,14 @@ type CallableZeroCouponBondModel
     casting 
 *)
     internal new () = new CallableZeroCouponBondModel(null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CallableZeroCouponBond.Value <- v
+    member internal this.Inject v = _CallableZeroCouponBond <- v
     static member Cast (p : ICell<CallableZeroCouponBond>) = 
         if p :? CallableZeroCouponBondModel then 
             p :?> CallableZeroCouponBondModel
         else
             let o = new CallableZeroCouponBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

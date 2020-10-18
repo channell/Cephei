@@ -39,9 +39,9 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_nextPath", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_nextPath
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "Reference to SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_nextStep", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_nextStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "Reference to SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
-        ([<ExcelArgument(Name="output",Description = "Reference to output")>] 
+        ([<ExcelArgument(Name="output",Description = "double")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfFactors", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_numberOfFactors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "Reference to SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,9 +153,9 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfSteps", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_numberOfSteps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "Reference to SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -189,9 +189,9 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_orderedIndices", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_orderedIndices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "Reference to SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,17 +225,17 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="factors",Description = "Reference to factors")>] 
+        ([<ExcelArgument(Name="factors",Description = "int")>] 
          factors : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="ordering",Description = "Reference to ordering")>] 
+        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering")>] 
          ordering : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "SobolBrownianGenerator")>] 
          seed : obj)
-        ([<ExcelArgument(Name="directionIntegers",Description = "Reference to directionIntegers")>] 
+        ([<ExcelArgument(Name="directionIntegers",Description = "SobolBrownianGenerator")>] 
          directionIntegers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_transform", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "Reference to SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
-        ([<ExcelArgument(Name="variates",Description = "Reference to variates")>] 
+        ([<ExcelArgument(Name="variates",Description = "double")>] 
          variates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -325,9 +325,9 @@ module SobolBrownianGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SobolBrownianGenerator_Range", Description="Create a range of SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

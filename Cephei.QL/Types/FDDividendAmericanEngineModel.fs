@@ -50,7 +50,8 @@ type FDDividendAmericanEngineModel
 (*
     Functions
 *)
-    let _FDDividendAmericanEngine                  = cell (fun () -> new FDDividendAmericanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDDividendAmericanEngine                  = cell (fun () -> new FDDividendAmericanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDDividendAmericanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -73,13 +74,14 @@ type FDDividendAmericanEngineModel
     casting 
 *)
     internal new () = new FDDividendAmericanEngineModel(null,null,null,null)
-    member internal this.Inject v = _FDDividendAmericanEngine.Value <- v
+    member internal this.Inject v = _FDDividendAmericanEngine <- v
     static member Cast (p : ICell<FDDividendAmericanEngine>) = 
         if p :? FDDividendAmericanEngineModel then 
             p :?> FDDividendAmericanEngineModel
         else
             let o = new FDDividendAmericanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -116,7 +118,8 @@ type FDDividendAmericanEngineModel1
 (*
     Functions
 *)
-    let _FDDividendAmericanEngine                  = cell (fun () -> new FDDividendAmericanEngine ())
+    let mutable
+        _FDDividendAmericanEngine                  = cell (fun () -> new FDDividendAmericanEngine ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDDividendAmericanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -139,13 +142,14 @@ type FDDividendAmericanEngineModel1
     casting 
 *)
     
-    member internal this.Inject v = _FDDividendAmericanEngine.Value <- v
+    member internal this.Inject v = _FDDividendAmericanEngine <- v
     static member Cast (p : ICell<FDDividendAmericanEngine>) = 
         if p :? FDDividendAmericanEngineModel1 then 
             p :?> FDDividendAmericanEngineModel1
         else
             let o = new FDDividendAmericanEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type CNYCurrencyModel
 (*
     Functions
 *)
-    let _CNYCurrency                               = cell (fun () -> new CNYCurrency ())
+    let mutable
+        _CNYCurrency                               = cell (fun () -> new CNYCurrency ())
     let _code                                      = triv (fun () -> _CNYCurrency.Value.code)
     let _empty                                     = triv (fun () -> _CNYCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CNYCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _CNYCurrency.Value <- v
+    member internal this.Inject v = _CNYCurrency <- v
     static member Cast (p : ICell<CNYCurrency>) = 
         if p :? CNYCurrencyModel then 
             p :?> CNYCurrencyModel
         else
             let o = new CNYCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

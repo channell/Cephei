@@ -39,11 +39,11 @@ module PSACurveFunction =
     *)
     [<ExcelFunction(Name="_PSACurve_getCPR", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_getCPR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PSACurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PSACurve",Description = "Reference to PSACurve")>] 
+        ([<ExcelArgument(Name="PSACurve",Description = "PSACurve")>] 
          psacurve : obj)
-        ([<ExcelArgument(Name="valDate",Description = "Reference to valDate")>] 
+        ([<ExcelArgument(Name="valDate",Description = "Date")>] 
          valDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module PSACurveFunction =
     *)
     [<ExcelFunction(Name="_PSACurve_getSMM", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_getSMM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PSACurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PSACurve",Description = "Reference to PSACurve")>] 
+        ([<ExcelArgument(Name="PSACurve",Description = "PSACurve")>] 
          psacurve : obj)
-        ([<ExcelArgument(Name="valDate",Description = "Reference to valDate")>] 
+        ([<ExcelArgument(Name="valDate",Description = "Date")>] 
          valDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,11 +123,11 @@ module PSACurveFunction =
     *)
     [<ExcelFunction(Name="_PSACurve", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PSACurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="startdate",Description = "Reference to startdate")>] 
+        ([<ExcelArgument(Name="startdate",Description = "Date")>] 
          startdate : obj)
-        ([<ExcelArgument(Name="multiplier",Description = "Reference to multiplier")>] 
+        ([<ExcelArgument(Name="multiplier",Description = "double")>] 
          multiplier : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module PSACurveFunction =
     *)
     [<ExcelFunction(Name="_PSACurve1", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PSACurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="startdate",Description = "Reference to startdate")>] 
+        ([<ExcelArgument(Name="startdate",Description = "Date")>] 
          startdate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -200,9 +200,9 @@ module PSACurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PSACurve_Range", Description="Create a range of PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PSACurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

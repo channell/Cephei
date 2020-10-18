@@ -46,7 +46,8 @@ type ShiborModel
 (*
     Functions
 *)
-    let _Shibor                                    = cell (fun () -> new Shibor (tenor.Value, h.Value))
+    let mutable
+        _Shibor                                    = cell (fun () -> new Shibor (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _Shibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Shibor.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type ShiborModel
     casting 
 *)
     internal new () = new ShiborModel(null,null)
-    member internal this.Inject v = _Shibor.Value <- v
+    member internal this.Inject v = _Shibor <- v
     static member Cast (p : ICell<Shibor>) = 
         if p :? ShiborModel then 
             p :?> ShiborModel
         else
             let o = new ShiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -175,7 +177,8 @@ type ShiborModel1
 (*
     Functions
 *)
-    let _Shibor                                    = cell (fun () -> new Shibor (tenor.Value))
+    let mutable
+        _Shibor                                    = cell (fun () -> new Shibor (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _Shibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Shibor.Value.clone(forwarding.Value))
@@ -230,13 +233,14 @@ type ShiborModel1
     casting 
 *)
     internal new () = new ShiborModel1(null)
-    member internal this.Inject v = _Shibor.Value <- v
+    member internal this.Inject v = _Shibor <- v
     static member Cast (p : ICell<Shibor>) = 
         if p :? ShiborModel1 then 
             p :?> ShiborModel1
         else
             let o = new ShiborModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

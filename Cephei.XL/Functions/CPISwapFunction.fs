@@ -39,9 +39,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_baseCPI", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_baseCPI
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_cpiLeg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_cpiLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,47 +111,47 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CPISwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "CPISwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="subtractInflationNominal",Description = "Reference to subtractInflationNominal")>] 
+        ([<ExcelArgument(Name="subtractInflationNominal",Description = "bool")>] 
          subtractInflationNominal : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
-        ([<ExcelArgument(Name="floatDayCount",Description = "Reference to floatDayCount")>] 
+        ([<ExcelArgument(Name="floatDayCount",Description = "DayCounter")>] 
          floatDayCount : obj)
-        ([<ExcelArgument(Name="floatSchedule",Description = "Reference to floatSchedule")>] 
+        ([<ExcelArgument(Name="floatSchedule",Description = "Schedule")>] 
          floatSchedule : obj)
-        ([<ExcelArgument(Name="floatPaymentRoll",Description = "Reference to floatPaymentRoll")>] 
+        ([<ExcelArgument(Name="floatPaymentRoll",Description = "BusinessDayConvention")>] 
          floatPaymentRoll : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="floatIndex",Description = "Reference to floatIndex")>] 
+        ([<ExcelArgument(Name="floatIndex",Description = "IborIndex")>] 
          floatIndex : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="baseCPI",Description = "Reference to baseCPI")>] 
+        ([<ExcelArgument(Name="baseCPI",Description = "double")>] 
          baseCPI : obj)
-        ([<ExcelArgument(Name="fixedDayCount",Description = "Reference to fixedDayCount")>] 
+        ([<ExcelArgument(Name="fixedDayCount",Description = "DayCounter")>] 
          fixedDayCount : obj)
-        ([<ExcelArgument(Name="fixedSchedule",Description = "Reference to fixedSchedule")>] 
+        ([<ExcelArgument(Name="fixedSchedule",Description = "Schedule")>] 
          fixedSchedule : obj)
-        ([<ExcelArgument(Name="fixedPaymentRoll",Description = "Reference to fixedPaymentRoll")>] 
+        ([<ExcelArgument(Name="fixedPaymentRoll",Description = "BusinessDayConvention")>] 
          fixedPaymentRoll : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="fixedIndex",Description = "Reference to fixedIndex")>] 
+        ([<ExcelArgument(Name="fixedIndex",Description = "ZeroInflationIndex")>] 
          fixedIndex : obj)
-        ([<ExcelArgument(Name="observationInterpolation",Description = "Reference to observationInterpolation")>] 
+        ([<ExcelArgument(Name="observationInterpolation",Description = "CPISwap")>] 
          observationInterpolation : obj)
-        ([<ExcelArgument(Name="inflationNominal",Description = "Reference to inflationNominal")>] 
+        ([<ExcelArgument(Name="inflationNominal",Description = "double")>] 
          inflationNominal : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,9 +262,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fairRate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fairRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,9 +298,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fairSpread", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fairSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixedDayCount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedDayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixedIndex", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixedLegNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixedPaymentRoll", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedPaymentRoll
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixedRate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixedSchedule", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedSchedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_fixingDays", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,9 +586,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_floatDayCount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatDayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,9 +622,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_floatIndex", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -658,9 +658,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_floatLeg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_floatLegNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatLegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -730,9 +730,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_floatPaymentRoll", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatPaymentRoll
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,9 +766,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_floatSchedule", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatSchedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,9 +802,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_inflationNominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_inflationNominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -838,9 +838,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_nominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,9 +874,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_observationInterpolation", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_observationInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -910,9 +910,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_observationLag", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_spread", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,9 +982,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_subtractInflationNominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_subtractInflationNominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,9 +1018,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_type", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,11 +1054,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_endDiscounts", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1097,9 +1097,9 @@ module CPISwapFunction =
     (*!!
     [<ExcelFunction(Name="_CPISwap_engine", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1134,9 +1134,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_isExpired", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1170,11 +1170,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_leg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1212,11 +1212,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_legBPS", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1254,11 +1254,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_legNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1296,9 +1296,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_maturityDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1332,9 +1332,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_npvDateDiscount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1368,11 +1368,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_payer", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1410,9 +1410,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_startDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1446,11 +1446,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_startDiscounts", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1488,9 +1488,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_CASH", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1524,9 +1524,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_errorEstimate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1560,9 +1560,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_NPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1596,11 +1596,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_result", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1638,11 +1638,11 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_setPricingEngine", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1680,9 +1680,9 @@ module CPISwapFunction =
     *)
     [<ExcelFunction(Name="_CPISwap_valuationDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPISwap",Description = "Reference to CPISwap")>] 
+        ([<ExcelArgument(Name="CPISwap",Description = "CPISwap")>] 
          cpiswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1713,9 +1713,9 @@ module CPISwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CPISwap_Range", Description="Create a range of CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CPISwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

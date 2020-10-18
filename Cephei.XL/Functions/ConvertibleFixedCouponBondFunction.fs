@@ -39,33 +39,33 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConvertibleFixedCouponBond")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="conversionRatio",Description = "Reference to conversionRatio")>] 
+        ([<ExcelArgument(Name="conversionRatio",Description = "double")>] 
          conversionRatio : obj)
-        ([<ExcelArgument(Name="dividends",Description = "Reference to dividends")>] 
+        ([<ExcelArgument(Name="dividends",Description = "DividendSchedule")>] 
          dividends : obj)
-        ([<ExcelArgument(Name="callability",Description = "Reference to callability")>] 
+        ([<ExcelArgument(Name="callability",Description = "CallabilitySchedule")>] 
          callability : obj)
-        ([<ExcelArgument(Name="creditSpread",Description = "Reference to creditSpread")>] 
+        ([<ExcelArgument(Name="creditSpread",Description = "Quote")>] 
          creditSpread : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="coupons",Description = "Reference to coupons")>] 
+        ([<ExcelArgument(Name="coupons",Description = "double")>] 
          coupons : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="redemption",Description = "Reference to redemption")>] 
+        ([<ExcelArgument(Name="redemption",Description = "ConvertibleFixedCouponBond")>] 
          redemption : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_callability", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_callability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_conversionRatio", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_conversionRatio
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_creditSpread", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_creditSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_dividends", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_dividends
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,11 +292,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_accruedAmount", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_calendar", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_cashflows", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_cleanPrice", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,19 +442,19 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_cleanPrice1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,19 +508,19 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_dirtyPrice1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+        ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_dirtyPrice", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,9 +610,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_isExpired", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_issueDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,11 +682,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_isTradable", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,9 +724,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_maturityDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,11 +760,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_nextCashFlowDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,11 +802,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_nextCouponRate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -844,11 +844,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_notional", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -886,9 +886,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_notionals", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -922,11 +922,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_previousCashFlowDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -964,11 +964,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_previousCouponRate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1006,9 +1006,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_redemption", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1042,9 +1042,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_redemptions", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1078,11 +1078,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1120,9 +1120,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementDays", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1156,11 +1156,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementValue", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1198,9 +1198,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementValue1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1234,9 +1234,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_startDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1270,23 +1270,23 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_yield1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+        ([<ExcelArgument(Name="cleanPrice",Description = "double")>] 
          cleanPrice : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+        ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1348,19 +1348,19 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_yield", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1414,9 +1414,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_CASH", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1450,9 +1450,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_errorEstimate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1486,9 +1486,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_NPV", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1522,11 +1522,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_result", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1564,11 +1564,11 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_setPricingEngine", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1606,9 +1606,9 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_valuationDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "Reference to ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1639,9 +1639,9 @@ module ConvertibleFixedCouponBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_Range", Description="Create a range of ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

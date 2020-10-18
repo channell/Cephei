@@ -44,7 +44,8 @@ type MinBasketPayoffModel
 (*
     Functions
 *)
-    let _MinBasketPayoff                           = cell (fun () -> new MinBasketPayoff (p.Value))
+    let mutable
+        _MinBasketPayoff                           = cell (fun () -> new MinBasketPayoff (p.Value))
     let _accumulate                                (a : ICell<Vector>)   
                                                    = triv (fun () -> _MinBasketPayoff.Value.accumulate(a.Value))
     let _basePayoff                                = triv (fun () -> _MinBasketPayoff.Value.basePayoff())
@@ -62,13 +63,14 @@ type MinBasketPayoffModel
     casting 
 *)
     internal new () = new MinBasketPayoffModel(null)
-    member internal this.Inject v = _MinBasketPayoff.Value <- v
+    member internal this.Inject v = _MinBasketPayoff <- v
     static member Cast (p : ICell<MinBasketPayoff>) = 
         if p :? MinBasketPayoffModel then 
             p :?> MinBasketPayoffModel
         else
             let o = new MinBasketPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

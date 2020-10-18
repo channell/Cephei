@@ -41,11 +41,11 @@ module CeilingTruncationFunction =
     *)
     [<ExcelFunction(Name="_CeilingTruncation", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CeilingTruncation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
-        ([<ExcelArgument(Name="digit",Description = "Reference to digit")>] 
+        ([<ExcelArgument(Name="digit",Description = "int")>] 
          digit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module CeilingTruncationFunction =
     *)
     [<ExcelFunction(Name="_CeilingTruncation1", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CeilingTruncation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module CeilingTruncationFunction =
     *)
     [<ExcelFunction(Name="_CeilingTruncation_Digit", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Digit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CeilingTruncation",Description = "Reference to CeilingTruncation")>] 
+        ([<ExcelArgument(Name="CeilingTruncation",Description = "CeilingTruncation")>] 
          ceilingtruncation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -157,9 +157,9 @@ module CeilingTruncationFunction =
     *)
     [<ExcelFunction(Name="_CeilingTruncation_getType", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CeilingTruncation",Description = "Reference to CeilingTruncation")>] 
+        ([<ExcelArgument(Name="CeilingTruncation",Description = "CeilingTruncation")>] 
          ceilingtruncation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module CeilingTruncationFunction =
     *)
     [<ExcelFunction(Name="_CeilingTruncation_Precision", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Precision
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CeilingTruncation",Description = "Reference to CeilingTruncation")>] 
+        ([<ExcelArgument(Name="CeilingTruncation",Description = "CeilingTruncation")>] 
          ceilingtruncation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,11 +229,11 @@ module CeilingTruncationFunction =
     *)
     [<ExcelFunction(Name="_CeilingTruncation_Round", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Round
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CeilingTruncation",Description = "Reference to CeilingTruncation")>] 
+        ([<ExcelArgument(Name="CeilingTruncation",Description = "CeilingTruncation")>] 
          ceilingtruncation : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module CeilingTruncationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CeilingTruncation_Range", Description="Create a range of CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CeilingTruncation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

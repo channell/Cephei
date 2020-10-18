@@ -41,7 +41,8 @@ type SettingsModel
 (*
     Functions
 *)
-    let _Settings                                  = cell (fun () -> new Settings ())
+    let mutable
+        _Settings                                  = cell (fun () -> new Settings ())
     let _lowerRateBound_                           = cell (fun () -> _Settings.Value.lowerRateBound_)
     let _priceThreshold_                           = cell (fun () -> _Settings.Value.priceThreshold_)
     let _stdDevs_                                  = cell (fun () -> _Settings.Value.stdDevs_)
@@ -61,13 +62,14 @@ type SettingsModel
     casting 
 *)
     
-    member internal this.Inject v = _Settings.Value <- v
+    member internal this.Inject v = _Settings <- v
     static member Cast (p : ICell<Settings>) = 
         if p :? SettingsModel then 
             p :?> SettingsModel
         else
             let o = new SettingsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

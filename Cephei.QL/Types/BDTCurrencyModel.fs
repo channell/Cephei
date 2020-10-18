@@ -41,7 +41,8 @@ type BDTCurrencyModel
 (*
     Functions
 *)
-    let _BDTCurrency                               = cell (fun () -> new BDTCurrency ())
+    let mutable
+        _BDTCurrency                               = cell (fun () -> new BDTCurrency ())
     let _code                                      = triv (fun () -> _BDTCurrency.Value.code)
     let _empty                                     = triv (fun () -> _BDTCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type BDTCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _BDTCurrency.Value <- v
+    member internal this.Inject v = _BDTCurrency <- v
     static member Cast (p : ICell<BDTCurrency>) = 
         if p :? BDTCurrencyModel then 
             p :?> BDTCurrencyModel
         else
             let o = new BDTCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

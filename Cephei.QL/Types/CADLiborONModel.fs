@@ -44,7 +44,8 @@ type CADLiborONModel
 (*
     Functions
 *)
-    let _CADLiborON                                = cell (fun () -> new CADLiborON (h.Value))
+    let mutable
+        _CADLiborON                                = cell (fun () -> new CADLiborON (h.Value))
     let _businessDayConvention                     = triv (fun () -> _CADLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _CADLiborON.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type CADLiborONModel
     casting 
 *)
     internal new () = new CADLiborONModel(null)
-    member internal this.Inject v = _CADLiborON.Value <- v
+    member internal this.Inject v = _CADLiborON <- v
     static member Cast (p : ICell<CADLiborON>) = 
         if p :? CADLiborONModel then 
             p :?> CADLiborONModel
         else
             let o = new CADLiborONModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type CADLiborONModel1
 (*
     Functions
 *)
-    let _CADLiborON                                = cell (fun () -> new CADLiborON ())
+    let mutable
+        _CADLiborON                                = cell (fun () -> new CADLiborON ())
     let _businessDayConvention                     = triv (fun () -> _CADLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _CADLiborON.Value.clone(forwarding.Value))
@@ -224,13 +227,14 @@ type CADLiborONModel1
     casting 
 *)
     
-    member internal this.Inject v = _CADLiborON.Value <- v
+    member internal this.Inject v = _CADLiborON <- v
     static member Cast (p : ICell<CADLiborON>) = 
         if p :? CADLiborONModel1 then 
             p :?> CADLiborONModel1
         else
             let o = new CADLiborONModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

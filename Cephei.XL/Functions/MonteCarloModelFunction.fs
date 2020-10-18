@@ -39,11 +39,11 @@ module MonteCarloModelFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloModel_addSamples", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_addSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MonteCarloModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonteCarloModel",Description = "Reference to MonteCarloModel")>] 
+        ([<ExcelArgument(Name="MonteCarloModel",Description = "MonteCarloModel")>] 
          montecarlomodel : obj)
-        ([<ExcelArgument(Name="samples",Description = "Reference to samples")>] 
+        ([<ExcelArgument(Name="samples",Description = "int")>] 
          samples : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,21 +81,21 @@ module MonteCarloModelFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloModel", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MonteCarloModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="pathGenerator",Description = "Reference to pathGenerator")>] 
+        ([<ExcelArgument(Name="pathGenerator",Description = "IRNG")>] 
          pathGenerator : obj)
-        ([<ExcelArgument(Name="pathPricer",Description = "Reference to pathPricer")>] 
+        ([<ExcelArgument(Name="pathPricer",Description = "IPath")>] 
          pathPricer : obj)
-        ([<ExcelArgument(Name="sampleAccumulator",Description = "Reference to sampleAccumulator")>] 
+        ([<ExcelArgument(Name="sampleAccumulator",Description = "'S")>] 
          sampleAccumulator : obj)
-        ([<ExcelArgument(Name="antitheticVariate",Description = "Reference to antitheticVariate")>] 
+        ([<ExcelArgument(Name="antitheticVariate",Description = "bool")>] 
          antitheticVariate : obj)
-        ([<ExcelArgument(Name="cvPathPricer",Description = "Reference to cvPathPricer")>] 
+        ([<ExcelArgument(Name="cvPathPricer",Description = "MonteCarloModel")>] 
          cvPathPricer : obj)
-        ([<ExcelArgument(Name="cvOptionValue",Description = "Reference to cvOptionValue")>] 
+        ([<ExcelArgument(Name="cvOptionValue",Description = "MonteCarloModel")>] 
          cvOptionValue : obj)
-        ([<ExcelArgument(Name="cvPathGenerator",Description = "Reference to cvPathGenerator")>] 
+        ([<ExcelArgument(Name="cvPathGenerator",Description = "MonteCarloModel")>] 
          cvPathGenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module MonteCarloModelFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloModel_sampleAccumulator", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_sampleAccumulator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonteCarloModel",Description = "Reference to MonteCarloModel")>] 
+        ([<ExcelArgument(Name="MonteCarloModel",Description = "MonteCarloModel")>] 
          montecarlomodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -187,9 +187,9 @@ module MonteCarloModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonteCarloModel_Range", Description="Create a range of MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MonteCarloModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

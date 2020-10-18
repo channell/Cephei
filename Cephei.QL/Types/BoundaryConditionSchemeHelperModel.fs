@@ -44,7 +44,8 @@ type BoundaryConditionSchemeHelperModel
 (*
     Functions
 *)
-    let _BoundaryConditionSchemeHelper             = cell (fun () -> new BoundaryConditionSchemeHelper (bcSet.Value))
+    let mutable
+        _BoundaryConditionSchemeHelper             = cell (fun () -> new BoundaryConditionSchemeHelper (bcSet.Value))
     let _applyAfterApplying                        (a : ICell<Vector>)   
                                                    = triv (fun () -> _BoundaryConditionSchemeHelper.Value.applyAfterApplying(a.Value)
                                                                      _BoundaryConditionSchemeHelper.Value)
@@ -65,13 +66,14 @@ type BoundaryConditionSchemeHelperModel
     casting 
 *)
     internal new () = new BoundaryConditionSchemeHelperModel(null)
-    member internal this.Inject v = _BoundaryConditionSchemeHelper.Value <- v
+    member internal this.Inject v = _BoundaryConditionSchemeHelper <- v
     static member Cast (p : ICell<BoundaryConditionSchemeHelper>) = 
         if p :? BoundaryConditionSchemeHelperModel then 
             p :?> BoundaryConditionSchemeHelperModel
         else
             let o = new BoundaryConditionSchemeHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

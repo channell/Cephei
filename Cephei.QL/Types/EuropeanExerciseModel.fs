@@ -44,7 +44,8 @@ type EuropeanExerciseModel
 (*
     Functions
 *)
-    let _EuropeanExercise                          = cell (fun () -> new EuropeanExercise (date.Value))
+    let mutable
+        _EuropeanExercise                          = cell (fun () -> new EuropeanExercise (date.Value))
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _EuropeanExercise.Value.date(index.Value))
     let _dates                                     = triv (fun () -> _EuropeanExercise.Value.dates())
@@ -55,13 +56,14 @@ type EuropeanExerciseModel
     casting 
 *)
     internal new () = new EuropeanExerciseModel(null)
-    member internal this.Inject v = _EuropeanExercise.Value <- v
+    member internal this.Inject v = _EuropeanExercise <- v
     static member Cast (p : ICell<EuropeanExercise>) = 
         if p :? EuropeanExerciseModel then 
             p :?> EuropeanExerciseModel
         else
             let o = new EuropeanExerciseModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

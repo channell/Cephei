@@ -39,11 +39,11 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_addTimesTo", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_addTimesTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Swaption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_blackPrice", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_blackPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Swaption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,9 +123,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_modelValue", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_modelValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Swaption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,9 +159,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_swaption", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_swaption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Swaption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,37 +195,37 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Period")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="length",Description = "Reference to length")>] 
+        ([<ExcelArgument(Name="length",Description = "Period")>] 
          length : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="fixedLegTenor",Description = "Reference to fixedLegTenor")>] 
+        ([<ExcelArgument(Name="fixedLegTenor",Description = "Period")>] 
          fixedLegTenor : obj)
-        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "Reference to fixedLegDayCounter")>] 
+        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)
-        ([<ExcelArgument(Name="floatingLegDayCounter",Description = "Reference to floatingLegDayCounter")>] 
+        ([<ExcelArgument(Name="floatingLegDayCounter",Description = "DayCounter")>] 
          floatingLegDayCounter : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "Reference to errorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType")>] 
          errorType : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "SwaptionHelper")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "SwaptionHelper")>] 
          shift : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,37 +316,37 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper1", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exerciseDate",Description = "Reference to exerciseDate")>] 
+        ([<ExcelArgument(Name="exerciseDate",Description = "Date")>] 
          exerciseDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="fixedLegTenor",Description = "Reference to fixedLegTenor")>] 
+        ([<ExcelArgument(Name="fixedLegTenor",Description = "Period")>] 
          fixedLegTenor : obj)
-        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "Reference to fixedLegDayCounter")>] 
+        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)
-        ([<ExcelArgument(Name="floatingLegDayCounter",Description = "Reference to floatingLegDayCounter")>] 
+        ([<ExcelArgument(Name="floatingLegDayCounter",Description = "DayCounter")>] 
          floatingLegDayCounter : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "Reference to errorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType")>] 
          errorType : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "SwaptionHelper")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "SwaptionHelper")>] 
          shift : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -437,37 +437,37 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper2", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exerciseDate",Description = "Reference to exerciseDate")>] 
+        ([<ExcelArgument(Name="exerciseDate",Description = "Date")>] 
          exerciseDate : obj)
-        ([<ExcelArgument(Name="length",Description = "Reference to length")>] 
+        ([<ExcelArgument(Name="length",Description = "Period")>] 
          length : obj)
-        ([<ExcelArgument(Name="volatility",Description = "Reference to volatility")>] 
+        ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="fixedLegTenor",Description = "Reference to fixedLegTenor")>] 
+        ([<ExcelArgument(Name="fixedLegTenor",Description = "Period")>] 
          fixedLegTenor : obj)
-        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "Reference to fixedLegDayCounter")>] 
+        ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)
-        ([<ExcelArgument(Name="floatingLegDayCounter",Description = "Reference to floatingLegDayCounter")>] 
+        ([<ExcelArgument(Name="floatingLegDayCounter",Description = "DayCounter")>] 
          floatingLegDayCounter : obj)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "Reference to errorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType")>] 
          errorType : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "SwaptionHelper")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "SwaptionHelper")>] 
          shift : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,9 +558,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_underlyingSwap", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_underlyingSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_calibrationError", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_calibrationError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,19 +630,19 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_impliedVolatility", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -696,9 +696,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_marketValue", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_marketValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -732,11 +732,11 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_setPricingEngine", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
-        ([<ExcelArgument(Name="engine",Description = "Reference to engine")>] 
+        ([<ExcelArgument(Name="engine",Description = "IPricingEngine")>] 
          engine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -774,9 +774,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_volatility", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -810,9 +810,9 @@ module SwaptionHelperFunction =
     *)
     [<ExcelFunction(Name="_SwaptionHelper_volatilityType", Description="Create a SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SwaptionHelper",Description = "Reference to SwaptionHelper")>] 
+        ([<ExcelArgument(Name="SwaptionHelper",Description = "SwaptionHelper")>] 
          swaptionhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -843,9 +843,9 @@ module SwaptionHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SwaptionHelper_Range", Description="Create a range of SwaptionHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SwaptionHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

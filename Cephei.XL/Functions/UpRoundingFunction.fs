@@ -39,11 +39,11 @@ module UpRoundingFunction =
     *)
     [<ExcelFunction(Name="_UpRounding1", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "UpRounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
-        ([<ExcelArgument(Name="digit",Description = "Reference to digit")>] 
+        ([<ExcelArgument(Name="digit",Description = "int")>] 
          digit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module UpRoundingFunction =
     *)
     [<ExcelFunction(Name="_UpRounding", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "UpRounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module UpRoundingFunction =
     *)
     [<ExcelFunction(Name="_UpRounding_Digit", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_Digit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UpRounding",Description = "Reference to UpRounding")>] 
+        ([<ExcelArgument(Name="UpRounding",Description = "UpRounding")>] 
          uprounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,9 +155,9 @@ module UpRoundingFunction =
     *)
     [<ExcelFunction(Name="_UpRounding_getType", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UpRounding",Description = "Reference to UpRounding")>] 
+        ([<ExcelArgument(Name="UpRounding",Description = "UpRounding")>] 
          uprounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,9 +191,9 @@ module UpRoundingFunction =
     *)
     [<ExcelFunction(Name="_UpRounding_Precision", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_Precision
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UpRounding",Description = "Reference to UpRounding")>] 
+        ([<ExcelArgument(Name="UpRounding",Description = "UpRounding")>] 
          uprounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,11 +227,11 @@ module UpRoundingFunction =
     *)
     [<ExcelFunction(Name="_UpRounding_Round", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_Round
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UpRounding",Description = "Reference to UpRounding")>] 
+        ([<ExcelArgument(Name="UpRounding",Description = "UpRounding")>] 
          uprounding : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -266,9 +266,9 @@ module UpRoundingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_UpRounding_Range", Description="Create a range of UpRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UpRounding_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the UpRounding")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

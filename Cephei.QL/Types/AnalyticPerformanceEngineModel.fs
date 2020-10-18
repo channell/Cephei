@@ -44,19 +44,21 @@ type AnalyticPerformanceEngineModel
 (*
     Functions
 *)
-    let _AnalyticPerformanceEngine                 = cell (fun () -> new AnalyticPerformanceEngine (Process.Value))
+    let mutable
+        _AnalyticPerformanceEngine                 = cell (fun () -> new AnalyticPerformanceEngine (Process.Value))
     do this.Bind(_AnalyticPerformanceEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticPerformanceEngineModel(null)
-    member internal this.Inject v = _AnalyticPerformanceEngine.Value <- v
+    member internal this.Inject v = _AnalyticPerformanceEngine <- v
     static member Cast (p : ICell<AnalyticPerformanceEngine>) = 
         if p :? AnalyticPerformanceEngineModel then 
             p :?> AnalyticPerformanceEngineModel
         else
             let o = new AnalyticPerformanceEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

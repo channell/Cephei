@@ -39,13 +39,13 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashOrNothingPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="cashPayoff",Description = "Reference to cashPayoff")>] 
+        ([<ExcelArgument(Name="cashPayoff",Description = "double")>] 
          cashPayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_cashPayoff", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_cashPayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_description", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_name", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_value", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_strike", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_optionType", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,11 +310,11 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_accept", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "Reference to CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module CashOrNothingPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CashOrNothingPayoff_Range", Description="Create a range of CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

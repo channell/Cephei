@@ -52,19 +52,21 @@ type BinomialBarrierEngineModel
 (*
     Functions
 *)
-    let _BinomialBarrierEngine                     = cell (fun () -> new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
+    let mutable
+        _BinomialBarrierEngine                     = cell (fun () -> new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
     do this.Bind(_BinomialBarrierEngine)
 (* 
     casting 
 *)
     internal new () = new BinomialBarrierEngineModel(null,null,null,null,null)
-    member internal this.Inject v = _BinomialBarrierEngine.Value <- v
+    member internal this.Inject v = _BinomialBarrierEngine <- v
     static member Cast (p : ICell<BinomialBarrierEngine>) = 
         if p :? BinomialBarrierEngineModel then 
             p :?> BinomialBarrierEngineModel
         else
             let o = new BinomialBarrierEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

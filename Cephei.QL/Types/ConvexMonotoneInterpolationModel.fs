@@ -58,7 +58,8 @@ type ConvexMonotoneInterpolationModel
 (*
     Functions
 *)
-    let _ConvexMonotoneInterpolation               = cell (fun () -> new ConvexMonotoneInterpolation (xBegin.Value, size.Value, yBegin.Value, quadraticity.Value, monotonicity.Value, forcePositive.Value, flatFinalPeriod.Value, preExistingHelpers.Value))
+    let mutable
+        _ConvexMonotoneInterpolation               = cell (fun () -> new ConvexMonotoneInterpolation (xBegin.Value, size.Value, yBegin.Value, quadraticity.Value, monotonicity.Value, forcePositive.Value, flatFinalPeriod.Value, preExistingHelpers.Value))
     let _getExistingHelpers                        = triv (fun () -> _ConvexMonotoneInterpolation.Value.getExistingHelpers())
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _ConvexMonotoneInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
@@ -88,13 +89,14 @@ type ConvexMonotoneInterpolationModel
     casting 
 *)
     internal new () = new ConvexMonotoneInterpolationModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConvexMonotoneInterpolation.Value <- v
+    member internal this.Inject v = _ConvexMonotoneInterpolation <- v
     static member Cast (p : ICell<ConvexMonotoneInterpolation>) = 
         if p :? ConvexMonotoneInterpolationModel then 
             p :?> ConvexMonotoneInterpolationModel
         else
             let o = new ConvexMonotoneInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -159,7 +161,8 @@ type ConvexMonotoneInterpolationModel1
 (*
     Functions
 *)
-    let _ConvexMonotoneInterpolation               = cell (fun () -> new ConvexMonotoneInterpolation (xBegin.Value, size.Value, yBegin.Value, quadraticity.Value, monotonicity.Value, forcePositive.Value, flatFinalPeriod.Value))
+    let mutable
+        _ConvexMonotoneInterpolation               = cell (fun () -> new ConvexMonotoneInterpolation (xBegin.Value, size.Value, yBegin.Value, quadraticity.Value, monotonicity.Value, forcePositive.Value, flatFinalPeriod.Value))
     let _getExistingHelpers                        = triv (fun () -> _ConvexMonotoneInterpolation.Value.getExistingHelpers())
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _ConvexMonotoneInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
@@ -189,13 +192,14 @@ type ConvexMonotoneInterpolationModel1
     casting 
 *)
     internal new () = new ConvexMonotoneInterpolationModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConvexMonotoneInterpolation.Value <- v
+    member internal this.Inject v = _ConvexMonotoneInterpolation <- v
     static member Cast (p : ICell<ConvexMonotoneInterpolation>) = 
         if p :? ConvexMonotoneInterpolationModel1 then 
             p :?> ConvexMonotoneInterpolationModel1
         else
             let o = new ConvexMonotoneInterpolationModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

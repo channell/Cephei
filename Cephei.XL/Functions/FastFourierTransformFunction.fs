@@ -39,9 +39,9 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FastFourierTransform")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="order",Description = "Reference to order")>] 
+        ([<ExcelArgument(Name="order",Description = "int")>] 
          order : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,17 +76,17 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform_inverse_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_inverse_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FastFourierTransform",Description = "Reference to FastFourierTransform")>] 
+        ([<ExcelArgument(Name="FastFourierTransform",Description = "FastFourierTransform")>] 
          fastfouriertransform : obj)
-        ([<ExcelArgument(Name="input",Description = "Reference to input")>] 
+        ([<ExcelArgument(Name="input",Description = "System.Numerics.Complex")>] 
          input : obj)
-        ([<ExcelArgument(Name="inputBeg",Description = "Reference to inputBeg")>] 
+        ([<ExcelArgument(Name="inputBeg",Description = "int")>] 
          inputBeg : obj)
-        ([<ExcelArgument(Name="inputEnd",Description = "Reference to inputEnd")>] 
+        ([<ExcelArgument(Name="inputEnd",Description = "int")>] 
          inputEnd : obj)
-        ([<ExcelArgument(Name="output",Description = "Reference to output")>] 
+        ([<ExcelArgument(Name="output",Description = "System.Numerics.Complex")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform_output_size", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_output_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FastFourierTransform",Description = "Reference to FastFourierTransform")>] 
+        ([<ExcelArgument(Name="FastFourierTransform",Description = "FastFourierTransform")>] 
          fastfouriertransform : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,17 +172,17 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FastFourierTransform",Description = "Reference to FastFourierTransform")>] 
+        ([<ExcelArgument(Name="FastFourierTransform",Description = "FastFourierTransform")>] 
          fastfouriertransform : obj)
-        ([<ExcelArgument(Name="input",Description = "Reference to input")>] 
+        ([<ExcelArgument(Name="input",Description = "System.Numerics.Complex")>] 
          input : obj)
-        ([<ExcelArgument(Name="inputBeg",Description = "Reference to inputBeg")>] 
+        ([<ExcelArgument(Name="inputBeg",Description = "int")>] 
          inputBeg : obj)
-        ([<ExcelArgument(Name="inputEnd",Description = "Reference to inputEnd")>] 
+        ([<ExcelArgument(Name="inputEnd",Description = "int")>] 
          inputEnd : obj)
-        ([<ExcelArgument(Name="output",Description = "Reference to output")>] 
+        ([<ExcelArgument(Name="output",Description = "System.Numerics.Complex")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module FastFourierTransformFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FastFourierTransform_Range", Description="Create a range of FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FastFourierTransform")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

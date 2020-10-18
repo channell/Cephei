@@ -39,9 +39,9 @@ module AnalyticContinuousFixedLookbackEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticContinuousFixedLookbackEngine", Description="Create a AnalyticContinuousFixedLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousFixedLookbackEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticContinuousFixedLookbackEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module AnalyticContinuousFixedLookbackEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticContinuousFixedLookbackEngine_Range", Description="Create a range of AnalyticContinuousFixedLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousFixedLookbackEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AnalyticContinuousFixedLookbackEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

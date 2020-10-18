@@ -44,19 +44,21 @@ type AnalyticCliquetEngineModel
 (*
     Functions
 *)
-    let _AnalyticCliquetEngine                     = cell (fun () -> new AnalyticCliquetEngine (Process.Value))
+    let mutable
+        _AnalyticCliquetEngine                     = cell (fun () -> new AnalyticCliquetEngine (Process.Value))
     do this.Bind(_AnalyticCliquetEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticCliquetEngineModel(null)
-    member internal this.Inject v = _AnalyticCliquetEngine.Value <- v
+    member internal this.Inject v = _AnalyticCliquetEngine <- v
     static member Cast (p : ICell<AnalyticCliquetEngine>) = 
         if p :? AnalyticCliquetEngineModel then 
             p :?> AnalyticCliquetEngineModel
         else
             let o = new AnalyticCliquetEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

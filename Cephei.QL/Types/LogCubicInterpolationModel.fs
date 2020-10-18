@@ -60,7 +60,8 @@ type LogCubicInterpolationModel
 (*
     Functions
 *)
-    let _LogCubicInterpolation                     = cell (fun () -> new LogCubicInterpolation (xBegin.Value, size.Value, yBegin.Value, da.Value, monotonic.Value, leftC.Value, leftConditionValue.Value, rightC.Value, rightConditionValue.Value))
+    let mutable
+        _LogCubicInterpolation                     = cell (fun () -> new LogCubicInterpolation (xBegin.Value, size.Value, yBegin.Value, da.Value, monotonic.Value, leftC.Value, leftConditionValue.Value, rightC.Value, rightConditionValue.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _LogCubicInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _LogCubicInterpolation.Value.empty())
@@ -89,13 +90,14 @@ type LogCubicInterpolationModel
     casting 
 *)
     internal new () = new LogCubicInterpolationModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _LogCubicInterpolation.Value <- v
+    member internal this.Inject v = _LogCubicInterpolation <- v
     static member Cast (p : ICell<LogCubicInterpolation>) = 
         if p :? LogCubicInterpolationModel then 
             p :?> LogCubicInterpolationModel
         else
             let o = new LogCubicInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

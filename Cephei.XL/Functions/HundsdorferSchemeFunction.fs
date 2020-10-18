@@ -39,15 +39,15 @@ module HundsdorferSchemeFunction =
     *)
     [<ExcelFunction(Name="_HundsdorferScheme_factory", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HundsdorferScheme",Description = "Reference to HundsdorferScheme")>] 
+        ([<ExcelArgument(Name="HundsdorferScheme",Description = "HundsdorferScheme")>] 
          hundsdorferscheme : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "Object")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalInputs",Description = "Reference to additionalInputs")>] 
+        ([<ExcelArgument(Name="additionalInputs",Description = "IMixedScheme")>] 
          additionalInputs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,15 +93,15 @@ module HundsdorferSchemeFunction =
     *)
     [<ExcelFunction(Name="_HundsdorferScheme", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HundsdorferScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "HundsdorferScheme")>] 
          theta : obj)
-        ([<ExcelArgument(Name="mu",Description = "Reference to mu")>] 
+        ([<ExcelArgument(Name="mu",Description = "double")>] 
          mu : obj)
-        ([<ExcelArgument(Name="map",Description = "Reference to map")>] 
+        ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "Reference to bcSet")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "HundsdorferScheme")>] 
          bcSet : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,7 +148,7 @@ module HundsdorferSchemeFunction =
     *)
     [<ExcelFunction(Name="_HundsdorferScheme1", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HundsdorferScheme")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,11 +179,11 @@ module HundsdorferSchemeFunction =
     *)
     [<ExcelFunction(Name="_HundsdorferScheme_setStep", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HundsdorferScheme",Description = "Reference to HundsdorferScheme")>] 
+        ([<ExcelArgument(Name="HundsdorferScheme",Description = "HundsdorferScheme")>] 
          hundsdorferscheme : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,15 +221,15 @@ module HundsdorferSchemeFunction =
     *)
     [<ExcelFunction(Name="_HundsdorferScheme_step", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HundsdorferScheme",Description = "Reference to HundsdorferScheme")>] 
+        ([<ExcelArgument(Name="HundsdorferScheme",Description = "HundsdorferScheme")>] 
          hundsdorferscheme : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -272,9 +272,9 @@ module HundsdorferSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HundsdorferScheme_Range", Description="Create a range of HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HundsdorferScheme")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

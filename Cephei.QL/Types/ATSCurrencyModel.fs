@@ -41,7 +41,8 @@ type ATSCurrencyModel
 (*
     Functions
 *)
-    let _ATSCurrency                               = cell (fun () -> new ATSCurrency ())
+    let mutable
+        _ATSCurrency                               = cell (fun () -> new ATSCurrency ())
     let _code                                      = triv (fun () -> _ATSCurrency.Value.code)
     let _empty                                     = triv (fun () -> _ATSCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type ATSCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _ATSCurrency.Value <- v
+    member internal this.Inject v = _ATSCurrency <- v
     static member Cast (p : ICell<ATSCurrency>) = 
         if p :? ATSCurrencyModel then 
             p :?> ATSCurrencyModel
         else
             let o = new ATSCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

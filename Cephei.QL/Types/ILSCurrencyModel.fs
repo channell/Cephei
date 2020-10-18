@@ -41,7 +41,8 @@ type ILSCurrencyModel
 (*
     Functions
 *)
-    let _ILSCurrency                               = cell (fun () -> new ILSCurrency ())
+    let mutable
+        _ILSCurrency                               = cell (fun () -> new ILSCurrency ())
     let _code                                      = triv (fun () -> _ILSCurrency.Value.code)
     let _empty                                     = triv (fun () -> _ILSCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type ILSCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _ILSCurrency.Value <- v
+    member internal this.Inject v = _ILSCurrency <- v
     static member Cast (p : ICell<ILSCurrency>) = 
         if p :? ILSCurrencyModel then 
             p :?> ILSCurrencyModel
         else
             let o = new ILSCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

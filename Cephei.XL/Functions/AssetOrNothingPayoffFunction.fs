@@ -39,11 +39,11 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AssetOrNothingPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff_name", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "Reference to AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "AssetOrNothingPayoff")>] 
          assetornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff_value", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "Reference to AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "AssetOrNothingPayoff")>] 
          assetornothingpayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff_description", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "Reference to AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "AssetOrNothingPayoff")>] 
          assetornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff_strike", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "Reference to AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "AssetOrNothingPayoff")>] 
          assetornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff_optionType", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "Reference to AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "AssetOrNothingPayoff")>] 
          assetornothingpayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,11 +268,11 @@ module AssetOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_AssetOrNothingPayoff_accept", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "Reference to AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="AssetOrNothingPayoff",Description = "AssetOrNothingPayoff")>] 
          assetornothingpayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -307,9 +307,9 @@ module AssetOrNothingPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AssetOrNothingPayoff_Range", Description="Create a range of AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AssetOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

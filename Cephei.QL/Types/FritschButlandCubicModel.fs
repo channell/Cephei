@@ -48,7 +48,8 @@ type FritschButlandCubicModel
 (*
     Functions
 *)
-    let _FritschButlandCubic                       = cell (fun () -> new FritschButlandCubic (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _FritschButlandCubic                       = cell (fun () -> new FritschButlandCubic (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _FritschButlandCubic.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _FritschButlandCubic.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _FritschButlandCubic.Value.cCoefficients())
@@ -80,13 +81,14 @@ type FritschButlandCubicModel
     casting 
 *)
     internal new () = new FritschButlandCubicModel(null,null,null)
-    member internal this.Inject v = _FritschButlandCubic.Value <- v
+    member internal this.Inject v = _FritschButlandCubic <- v
     static member Cast (p : ICell<FritschButlandCubic>) = 
         if p :? FritschButlandCubicModel then 
             p :?> FritschButlandCubicModel
         else
             let o = new FritschButlandCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

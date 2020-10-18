@@ -60,7 +60,8 @@ type FxSwapRateHelperModel
 (*
     Functions
 *)
-    let _FxSwapRateHelper                          = cell (fun () -> new FxSwapRateHelper (fwdPoint.Value, spotFx.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, isFxBaseCurrencyCollateralCurrency.Value, coll.Value))
+    let mutable
+        _FxSwapRateHelper                          = cell (fun () -> new FxSwapRateHelper (fwdPoint.Value, spotFx.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, isFxBaseCurrencyCollateralCurrency.Value, coll.Value))
     let _businessDayConvention                     = triv (fun () -> _FxSwapRateHelper.Value.businessDayConvention())
     let _calendar                                  = triv (fun () -> _FxSwapRateHelper.Value.calendar())
     let _endOfMonth                                = triv (fun () -> _FxSwapRateHelper.Value.endOfMonth())
@@ -94,13 +95,14 @@ type FxSwapRateHelperModel
     casting 
 *)
     internal new () = new FxSwapRateHelperModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FxSwapRateHelper.Value <- v
+    member internal this.Inject v = _FxSwapRateHelper <- v
     static member Cast (p : ICell<FxSwapRateHelper>) = 
         if p :? FxSwapRateHelperModel then 
             p :?> FxSwapRateHelperModel
         else
             let o = new FxSwapRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

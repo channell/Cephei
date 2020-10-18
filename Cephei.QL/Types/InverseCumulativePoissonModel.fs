@@ -41,7 +41,8 @@ type InverseCumulativePoissonModel
 (*
     Functions
 *)
-    let _InverseCumulativePoisson                  = cell (fun () -> new InverseCumulativePoisson ())
+    let mutable
+        _InverseCumulativePoisson                  = cell (fun () -> new InverseCumulativePoisson ())
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
     do this.Bind(_InverseCumulativePoisson)
@@ -49,13 +50,14 @@ type InverseCumulativePoissonModel
     casting 
 *)
     
-    member internal this.Inject v = _InverseCumulativePoisson.Value <- v
+    member internal this.Inject v = _InverseCumulativePoisson <- v
     static member Cast (p : ICell<InverseCumulativePoisson>) = 
         if p :? InverseCumulativePoissonModel then 
             p :?> InverseCumulativePoissonModel
         else
             let o = new InverseCumulativePoissonModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -81,7 +83,8 @@ type InverseCumulativePoissonModel1
 (*
     Functions
 *)
-    let _InverseCumulativePoisson                  = cell (fun () -> new InverseCumulativePoisson (lambda.Value))
+    let mutable
+        _InverseCumulativePoisson                  = cell (fun () -> new InverseCumulativePoisson (lambda.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
     do this.Bind(_InverseCumulativePoisson)
@@ -89,13 +92,14 @@ type InverseCumulativePoissonModel1
     casting 
 *)
     internal new () = new InverseCumulativePoissonModel1(null)
-    member internal this.Inject v = _InverseCumulativePoisson.Value <- v
+    member internal this.Inject v = _InverseCumulativePoisson <- v
     static member Cast (p : ICell<InverseCumulativePoisson>) = 
         if p :? InverseCumulativePoissonModel1 then 
             p :?> InverseCumulativePoissonModel1
         else
             let o = new InverseCumulativePoissonModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

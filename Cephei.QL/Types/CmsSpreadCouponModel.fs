@@ -66,7 +66,8 @@ type CmsSpreadCouponModel
 (*
     Functions
 *)
-    let _CmsSpreadCoupon                           = cell (fun () -> new CmsSpreadCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let mutable
+        _CmsSpreadCoupon                           = cell (fun () -> new CmsSpreadCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _swapSpreadIndex                           = triv (fun () -> _CmsSpreadCoupon.Value.swapSpreadIndex())
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _CmsSpreadCoupon.Value.accruedAmount(d.Value))
@@ -127,13 +128,14 @@ type CmsSpreadCouponModel
     casting 
 *)
     internal new () = new CmsSpreadCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CmsSpreadCoupon.Value <- v
+    member internal this.Inject v = _CmsSpreadCoupon <- v
     static member Cast (p : ICell<CmsSpreadCoupon>) = 
         if p :? CmsSpreadCouponModel then 
             p :?> CmsSpreadCouponModel
         else
             let o = new CmsSpreadCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -216,7 +218,8 @@ type CmsSpreadCouponModel1
 (*
     Functions
 *)
-    let _CmsSpreadCoupon                           = cell (fun () -> new CmsSpreadCoupon ())
+    let mutable
+        _CmsSpreadCoupon                           = cell (fun () -> new CmsSpreadCoupon ())
     let _swapSpreadIndex                           = triv (fun () -> _CmsSpreadCoupon.Value.swapSpreadIndex())
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _CmsSpreadCoupon.Value.accruedAmount(d.Value))
@@ -277,13 +280,14 @@ type CmsSpreadCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _CmsSpreadCoupon.Value <- v
+    member internal this.Inject v = _CmsSpreadCoupon <- v
     static member Cast (p : ICell<CmsSpreadCoupon>) = 
         if p :? CmsSpreadCouponModel1 then 
             p :?> CmsSpreadCouponModel1
         else
             let o = new CmsSpreadCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

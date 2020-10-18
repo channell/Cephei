@@ -39,17 +39,17 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "MixedLinearParabolic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xEnd",Description = "Reference to xEnd")>] 
+        ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="behavior",Description = "Reference to behavior")>] 
+        ([<ExcelArgument(Name="behavior",Description = "MixedLinearParabolic")>] 
          behavior : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,13 +100,13 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_derivative", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_empty", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,13 +184,13 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_primitive", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,13 +232,13 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_secondDerivative", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,9 +280,9 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_update", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,13 +316,13 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_value1", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,11 +364,11 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_value", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_xMax", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_xMin", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_allowsExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,11 +514,11 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_disableExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,11 +556,11 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_enableExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module MixedLinearParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearParabolic_extrapolate", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "Reference to MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="MixedLinearParabolic",Description = "MixedLinearParabolic")>] 
          mixedlinearparabolic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,9 +631,9 @@ module MixedLinearParabolicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MixedLinearParabolic_Range", Description="Create a range of MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the MixedLinearParabolic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

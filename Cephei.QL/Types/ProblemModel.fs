@@ -48,7 +48,8 @@ type ProblemModel
 (*
     Functions
 *)
-    let _Problem                                   = cell (fun () -> new Problem (costFunction.Value, Constraint.Value, initialValue.Value))
+    let mutable
+        _Problem                                   = cell (fun () -> new Problem (costFunction.Value, Constraint.Value, initialValue.Value))
     let _constraint                                = triv (fun () -> _Problem.Value.CONSTRAINT())
     let _costFunction                              = triv (fun () -> _Problem.Value.costFunction())
     let _currentValue                              = triv (fun () -> _Problem.Value.currentValue())
@@ -81,13 +82,14 @@ type ProblemModel
     casting 
 *)
     internal new () = new ProblemModel(null,null,null)
-    member internal this.Inject v = _Problem.Value <- v
+    member internal this.Inject v = _Problem <- v
     static member Cast (p : ICell<Problem>) = 
         if p :? ProblemModel then 
             p :?> ProblemModel
         else
             let o = new ProblemModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

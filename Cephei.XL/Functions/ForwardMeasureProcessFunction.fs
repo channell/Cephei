@@ -39,13 +39,13 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_diffusion", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_drift", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_getForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_getForwardMeasureTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,9 +171,9 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_initialValues", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,11 +207,11 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_setForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_setForwardMeasureTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -249,9 +249,9 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_size", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -285,13 +285,13 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_apply", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,15 +333,15 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_covariance", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,17 +387,17 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_evolve", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -447,15 +447,15 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_expectation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -501,9 +501,9 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_factors", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -537,11 +537,11 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_registerWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -579,15 +579,15 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_stdDeviation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -633,11 +633,11 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_time", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -675,11 +675,11 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_unregisterWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -717,9 +717,9 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_update", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "Reference to ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -750,9 +750,9 @@ module ForwardMeasureProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardMeasureProcess_Range", Description="Create a range of ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardMeasureProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

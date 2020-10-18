@@ -44,7 +44,8 @@ type TiborModel
 (*
     Functions
 *)
-    let _Tibor                                     = cell (fun () -> new Tibor (tenor.Value))
+    let mutable
+        _Tibor                                     = cell (fun () -> new Tibor (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _Tibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Tibor.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type TiborModel
     casting 
 *)
     internal new () = new TiborModel(null)
-    member internal this.Inject v = _Tibor.Value <- v
+    member internal this.Inject v = _Tibor <- v
     static member Cast (p : ICell<Tibor>) = 
         if p :? TiborModel then 
             p :?> TiborModel
         else
             let o = new TiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -174,7 +176,8 @@ type TiborModel1
 (*
     Functions
 *)
-    let _Tibor                                     = cell (fun () -> new Tibor (tenor.Value, h.Value))
+    let mutable
+        _Tibor                                     = cell (fun () -> new Tibor (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _Tibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Tibor.Value.clone(forwarding.Value))
@@ -229,13 +232,14 @@ type TiborModel1
     casting 
 *)
     internal new () = new TiborModel1(null,null)
-    member internal this.Inject v = _Tibor.Value <- v
+    member internal this.Inject v = _Tibor <- v
     static member Cast (p : ICell<Tibor>) = 
         if p :? TiborModel1 then 
             p :?> TiborModel1
         else
             let o = new TiborModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

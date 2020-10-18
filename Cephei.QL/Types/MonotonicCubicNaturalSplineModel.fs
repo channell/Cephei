@@ -48,7 +48,8 @@ type MonotonicCubicNaturalSplineModel
 (*
     Functions
 *)
-    let _MonotonicCubicNaturalSpline               = cell (fun () -> new MonotonicCubicNaturalSpline (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _MonotonicCubicNaturalSpline               = cell (fun () -> new MonotonicCubicNaturalSpline (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _MonotonicCubicNaturalSpline.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _MonotonicCubicNaturalSpline.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _MonotonicCubicNaturalSpline.Value.cCoefficients())
@@ -80,13 +81,14 @@ type MonotonicCubicNaturalSplineModel
     casting 
 *)
     internal new () = new MonotonicCubicNaturalSplineModel(null,null,null)
-    member internal this.Inject v = _MonotonicCubicNaturalSpline.Value <- v
+    member internal this.Inject v = _MonotonicCubicNaturalSpline <- v
     static member Cast (p : ICell<MonotonicCubicNaturalSpline>) = 
         if p :? MonotonicCubicNaturalSplineModel then 
             p :?> MonotonicCubicNaturalSplineModel
         else
             let o = new MonotonicCubicNaturalSplineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

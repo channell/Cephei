@@ -50,7 +50,8 @@ type BiCGStabModel
 (*
     Functions
 *)
-    let _BiCGStab                                  = cell (fun () -> new BiCGStab (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
+    let mutable
+        _BiCGStab                                  = cell (fun () -> new BiCGStab (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
                                                    = triv (fun () -> _BiCGStab.Value.solve(b.Value, x0.Value))
     do this.Bind(_BiCGStab)
@@ -58,13 +59,14 @@ type BiCGStabModel
     casting 
 *)
     internal new () = new BiCGStabModel(null,null,null,null)
-    member internal this.Inject v = _BiCGStab.Value <- v
+    member internal this.Inject v = _BiCGStab <- v
     static member Cast (p : ICell<BiCGStab>) = 
         if p :? BiCGStabModel then 
             p :?> BiCGStabModel
         else
             let o = new BiCGStabModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

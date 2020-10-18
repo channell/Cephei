@@ -39,9 +39,9 @@ module DownRoundingFunction =
     *)
     [<ExcelFunction(Name="_DownRounding1", Description="Create a DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DownRounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module DownRoundingFunction =
     *)
     [<ExcelFunction(Name="_DownRounding", Description="Create a DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DownRounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
+        ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
-        ([<ExcelArgument(Name="digit",Description = "Reference to digit")>] 
+        ([<ExcelArgument(Name="digit",Description = "int")>] 
          digit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module DownRoundingFunction =
     *)
     [<ExcelFunction(Name="_DownRounding_Digit", Description="Create a DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_Digit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DownRounding",Description = "Reference to DownRounding")>] 
+        ([<ExcelArgument(Name="DownRounding",Description = "DownRounding")>] 
          downrounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,9 +155,9 @@ module DownRoundingFunction =
     *)
     [<ExcelFunction(Name="_DownRounding_getType", Description="Create a DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DownRounding",Description = "Reference to DownRounding")>] 
+        ([<ExcelArgument(Name="DownRounding",Description = "DownRounding")>] 
          downrounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,9 +191,9 @@ module DownRoundingFunction =
     *)
     [<ExcelFunction(Name="_DownRounding_Precision", Description="Create a DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_Precision
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DownRounding",Description = "Reference to DownRounding")>] 
+        ([<ExcelArgument(Name="DownRounding",Description = "DownRounding")>] 
          downrounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,11 +227,11 @@ module DownRoundingFunction =
     *)
     [<ExcelFunction(Name="_DownRounding_Round", Description="Create a DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_Round
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DownRounding",Description = "Reference to DownRounding")>] 
+        ([<ExcelArgument(Name="DownRounding",Description = "DownRounding")>] 
          downrounding : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -266,9 +266,9 @@ module DownRoundingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DownRounding_Range", Description="Create a range of DownRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DownRounding_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DownRounding")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

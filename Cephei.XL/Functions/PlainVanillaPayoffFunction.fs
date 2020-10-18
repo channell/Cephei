@@ -39,9 +39,9 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff_name", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PlainVanillaPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "Reference to PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "PlainVanillaPayoff")>] 
          plainvanillapayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PlainVanillaPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff_value", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "Reference to PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "PlainVanillaPayoff")>] 
          plainvanillapayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff_description", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "Reference to PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "PlainVanillaPayoff")>] 
          plainvanillapayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff_strike", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "Reference to PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "PlainVanillaPayoff")>] 
          plainvanillapayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff_optionType", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "Reference to PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "PlainVanillaPayoff")>] 
          plainvanillapayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,11 +268,11 @@ module PlainVanillaPayoffFunction =
     *)
     [<ExcelFunction(Name="_PlainVanillaPayoff_accept", Description="Create a PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "Reference to PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="PlainVanillaPayoff",Description = "PlainVanillaPayoff")>] 
          plainvanillapayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -307,9 +307,9 @@ module PlainVanillaPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PlainVanillaPayoff_Range", Description="Create a range of PlainVanillaPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PlainVanillaPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PlainVanillaPayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

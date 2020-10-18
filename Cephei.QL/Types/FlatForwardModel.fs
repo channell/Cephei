@@ -48,7 +48,8 @@ type FlatForwardModel
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -88,13 +89,14 @@ type FlatForwardModel
     casting 
 *)
     internal new () = new FlatForwardModel(null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel then 
             p :?> FlatForwardModel
         else
             let o = new FlatForwardModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -158,7 +160,8 @@ type FlatForwardModel1
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -198,13 +201,14 @@ type FlatForwardModel1
     casting 
 *)
     internal new () = new FlatForwardModel1(null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel1 then 
             p :?> FlatForwardModel1
         else
             let o = new FlatForwardModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -273,7 +277,8 @@ type FlatForwardModel2
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -313,13 +318,14 @@ type FlatForwardModel2
     casting 
 *)
     internal new () = new FlatForwardModel2(null,null,null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel2 then 
             p :?> FlatForwardModel2
         else
             let o = new FlatForwardModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -388,7 +394,8 @@ type FlatForwardModel3
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -428,13 +435,14 @@ type FlatForwardModel3
     casting 
 *)
     internal new () = new FlatForwardModel3(null,null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel3 then 
             p :?> FlatForwardModel3
         else
             let o = new FlatForwardModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -500,7 +508,8 @@ type FlatForwardModel4
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -540,13 +549,14 @@ type FlatForwardModel4
     casting 
 *)
     internal new () = new FlatForwardModel4(null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel4 then 
             p :?> FlatForwardModel4
         else
             let o = new FlatForwardModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -615,7 +625,8 @@ type FlatForwardModel5
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -655,13 +666,14 @@ type FlatForwardModel5
     casting 
 *)
     internal new () = new FlatForwardModel5(null,null,null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel5 then 
             p :?> FlatForwardModel5
         else
             let o = new FlatForwardModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -730,7 +742,8 @@ type FlatForwardModel6
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -770,13 +783,14 @@ type FlatForwardModel6
     casting 
 *)
     internal new () = new FlatForwardModel6(null,null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel6 then 
             p :?> FlatForwardModel6
         else
             let o = new FlatForwardModel6 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -844,7 +858,8 @@ type FlatForwardModel7
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -884,13 +899,14 @@ type FlatForwardModel7
     casting 
 *)
     internal new () = new FlatForwardModel7(null,null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel7 then 
             p :?> FlatForwardModel7
         else
             let o = new FlatForwardModel7 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -956,7 +972,8 @@ type FlatForwardModel8
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -996,13 +1013,14 @@ type FlatForwardModel8
     casting 
 *)
     internal new () = new FlatForwardModel8(null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel8 then 
             p :?> FlatForwardModel8
         else
             let o = new FlatForwardModel8 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -1065,7 +1083,8 @@ type FlatForwardModel9
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -1105,13 +1124,14 @@ type FlatForwardModel9
     casting 
 *)
     internal new () = new FlatForwardModel9(null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel9 then 
             p :?> FlatForwardModel9
         else
             let o = new FlatForwardModel9 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -1177,7 +1197,8 @@ type FlatForwardModel10
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -1217,13 +1238,14 @@ type FlatForwardModel10
     casting 
 *)
     internal new () = new FlatForwardModel10(null,null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel10 then 
             p :?> FlatForwardModel10
         else
             let o = new FlatForwardModel10 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -1289,7 +1311,8 @@ type FlatForwardModel11
 (*
     Functions
 *)
-    let _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))
+    let mutable
+        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))
     let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
                                                    = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
@@ -1329,13 +1352,14 @@ type FlatForwardModel11
     casting 
 *)
     internal new () = new FlatForwardModel11(null,null,null,null)
-    member internal this.Inject v = _FlatForward.Value <- v
+    member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel11 then 
             p :?> FlatForwardModel11
         else
             let o = new FlatForwardModel11 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

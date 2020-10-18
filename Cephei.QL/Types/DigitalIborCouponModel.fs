@@ -41,7 +41,8 @@ type DigitalIborCouponModel
 (*
     Functions
 *)
-    let _DigitalIborCoupon                         = cell (fun () -> new DigitalIborCoupon ())
+    let mutable
+        _DigitalIborCoupon                         = cell (fun () -> new DigitalIborCoupon ())
     let _factory                                   (underlying : ICell<IborCoupon>) (callStrike : ICell<Nullable<double>>) (callPosition : ICell<Position.Type>) (isCallATMIncluded : ICell<bool>) (callDigitalPayoff : ICell<Nullable<double>>) (putStrike : ICell<Nullable<double>>) (putPosition : ICell<Position.Type>) (isPutATMIncluded : ICell<bool>) (putDigitalPayoff : ICell<Nullable<double>>) (replication : ICell<DigitalReplication>)   
                                                    = triv (fun () -> _DigitalIborCoupon.Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _callDigitalPayoff                         = triv (fun () -> _DigitalIborCoupon.Value.callDigitalPayoff())
@@ -113,13 +114,14 @@ type DigitalIborCouponModel
     casting 
 *)
     
-    member internal this.Inject v = _DigitalIborCoupon.Value <- v
+    member internal this.Inject v = _DigitalIborCoupon <- v
     static member Cast (p : ICell<DigitalIborCoupon>) = 
         if p :? DigitalIborCouponModel then 
             p :?> DigitalIborCouponModel
         else
             let o = new DigitalIborCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -222,7 +224,8 @@ type DigitalIborCouponModel1
 (*
     Functions
 *)
-    let _DigitalIborCoupon                         = cell (fun () -> new DigitalIborCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
+    let mutable
+        _DigitalIborCoupon                         = cell (fun () -> new DigitalIborCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _factory                                   (underlying : ICell<IborCoupon>) (callStrike : ICell<Nullable<double>>) (callPosition : ICell<Position.Type>) (isCallATMIncluded : ICell<bool>) (callDigitalPayoff : ICell<Nullable<double>>) (putStrike : ICell<Nullable<double>>) (putPosition : ICell<Position.Type>) (isPutATMIncluded : ICell<bool>) (putDigitalPayoff : ICell<Nullable<double>>) (replication : ICell<DigitalReplication>)   
                                                    = triv (fun () -> _DigitalIborCoupon.Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _callDigitalPayoff                         = triv (fun () -> _DigitalIborCoupon.Value.callDigitalPayoff())
@@ -294,13 +297,14 @@ type DigitalIborCouponModel1
     casting 
 *)
     internal new () = new DigitalIborCouponModel1(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _DigitalIborCoupon.Value <- v
+    member internal this.Inject v = _DigitalIborCoupon <- v
     static member Cast (p : ICell<DigitalIborCoupon>) = 
         if p :? DigitalIborCouponModel1 then 
             p :?> DigitalIborCouponModel1
         else
             let o = new DigitalIborCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

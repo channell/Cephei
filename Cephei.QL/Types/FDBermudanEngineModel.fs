@@ -50,7 +50,8 @@ type FDBermudanEngineModel
 (*
     Functions
 *)
-    let _FDBermudanEngine                          = cell (fun () -> new FDBermudanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDBermudanEngine                          = cell (fun () -> new FDBermudanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _FDBermudanEngine.Value.registerWith(handler.Value)
                                                                      _FDBermudanEngine.Value)
@@ -76,13 +77,14 @@ type FDBermudanEngineModel
     casting 
 *)
     internal new () = new FDBermudanEngineModel(null,null,null,null)
-    member internal this.Inject v = _FDBermudanEngine.Value <- v
+    member internal this.Inject v = _FDBermudanEngine <- v
     static member Cast (p : ICell<FDBermudanEngine>) = 
         if p :? FDBermudanEngineModel then 
             p :?> FDBermudanEngineModel
         else
             let o = new FDBermudanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

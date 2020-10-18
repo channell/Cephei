@@ -44,7 +44,8 @@ type SteepestDescentModel
 (*
     Functions
 *)
-    let _SteepestDescent                           = cell (fun () -> new SteepestDescent (lineSearch.Value))
+    let mutable
+        _SteepestDescent                           = cell (fun () -> new SteepestDescent (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _SteepestDescent.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_SteepestDescent)
@@ -52,13 +53,14 @@ type SteepestDescentModel
     casting 
 *)
     internal new () = new SteepestDescentModel(null)
-    member internal this.Inject v = _SteepestDescent.Value <- v
+    member internal this.Inject v = _SteepestDescent <- v
     static member Cast (p : ICell<SteepestDescent>) = 
         if p :? SteepestDescentModel then 
             p :?> SteepestDescentModel
         else
             let o = new SteepestDescentModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

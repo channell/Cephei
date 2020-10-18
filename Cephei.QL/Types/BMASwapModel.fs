@@ -66,7 +66,8 @@ type BMASwapModel
 (*
     Functions
 *)
-    let _BMASwap                                   = cell (fun () -> withEngine pricingEngine (new BMASwap (Type.Value, nominal.Value, liborSchedule.Value, liborFraction.Value, liborSpread.Value, liborIndex.Value, liborDayCount.Value, bmaSchedule.Value, bmaIndex.Value, bmaDayCount.Value)))
+    let mutable
+        _BMASwap                                   = cell (fun () -> withEngine pricingEngine (new BMASwap (Type.Value, nominal.Value, liborSchedule.Value, liborFraction.Value, liborSpread.Value, liborIndex.Value, liborDayCount.Value, bmaSchedule.Value, bmaIndex.Value, bmaDayCount.Value)))
     let _bmaLeg                                    = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).bmaLeg())
     let _bmaLegBPS                                 = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).bmaLegBPS())
     let _bmaLegNPV                                 = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).bmaLegNPV())
@@ -110,13 +111,14 @@ type BMASwapModel
     casting 
 *)
     internal new () = new BMASwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _BMASwap.Value <- v
+    member internal this.Inject v = _BMASwap <- v
     static member Cast (p : ICell<BMASwap>) = 
         if p :? BMASwapModel then 
             p :?> BMASwapModel
         else
             let o = new BMASwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

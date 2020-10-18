@@ -39,9 +39,9 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
     *)
     [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP", Description="Create a BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionWe04DP_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BivariateCumulativeNormalDistributionWe04DP")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,13 +76,13 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
     *)
     [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP_value", Description="Create a BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionWe04DP_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BivariateCumulativeNormalDistributionWe04DP",Description = "Reference to BivariateCumulativeNormalDistributionWe04DP")>] 
+        ([<ExcelArgument(Name="BivariateCumulativeNormalDistributionWe04DP",Description = "BivariateCumulativeNormalDistributionWe04DP")>] 
          bivariatecumulativenormaldistributionwe04dp : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP_Range", Description="Create a range of BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionWe04DP_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BivariateCumulativeNormalDistributionWe04DP")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_isValid", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LastFixingQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LastFixingQuote",Description = "Reference to LastFixingQuote")>] 
+        ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LastFixingQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "Index")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_referenceDate", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LastFixingQuote",Description = "Reference to LastFixingQuote")>] 
+        ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_update", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LastFixingQuote",Description = "Reference to LastFixingQuote")>] 
+        ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_value", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LastFixingQuote",Description = "Reference to LastFixingQuote")>] 
+        ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,11 +220,11 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_registerWith", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LastFixingQuote",Description = "Reference to LastFixingQuote")>] 
+        ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,11 +262,11 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_unregisterWith", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LastFixingQuote",Description = "Reference to LastFixingQuote")>] 
+        ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -301,9 +301,9 @@ module LastFixingQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LastFixingQuote_Range", Description="Create a range of LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LastFixingQuote")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

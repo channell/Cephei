@@ -60,7 +60,8 @@ type CPICashFlowModel
 (*
     Functions
 *)
-    let _CPICashFlow                               = cell (fun () -> new CPICashFlow (notional.Value, index.Value, baseDate.Value, baseFixing.Value, fixingDate.Value, paymentDate.Value, growthOnly.Value, interpolation.Value, frequency.Value))
+    let mutable
+        _CPICashFlow                               = cell (fun () -> new CPICashFlow (notional.Value, index.Value, baseDate.Value, baseFixing.Value, fixingDate.Value, paymentDate.Value, growthOnly.Value, interpolation.Value, frequency.Value))
     let _amount                                    = triv (fun () -> _CPICashFlow.Value.amount())
     let _baseDate                                  = triv (fun () -> _CPICashFlow.Value.baseDate())
     let _baseFixing                                = triv (fun () -> _CPICashFlow.Value.baseFixing())
@@ -94,13 +95,14 @@ type CPICashFlowModel
     casting 
 *)
     internal new () = new CPICashFlowModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CPICashFlow.Value <- v
+    member internal this.Inject v = _CPICashFlow <- v
     static member Cast (p : ICell<CPICashFlow>) = 
         if p :? CPICashFlowModel then 
             p :?> CPICashFlowModel
         else
             let o = new CPICashFlowModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

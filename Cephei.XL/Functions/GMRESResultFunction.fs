@@ -39,9 +39,9 @@ module GMRESResultFunction =
     *)
     [<ExcelFunction(Name="_GMRESResult_Errors", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_Errors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GMRESResult")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GMRESResult",Description = "Reference to GMRESResult")>] 
+        ([<ExcelArgument(Name="GMRESResult",Description = "GMRESResult")>] 
          gmresresult : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module GMRESResultFunction =
     *)
     [<ExcelFunction(Name="_GMRESResult", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GMRESResult")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "double")>] 
          e : obj)
-        ([<ExcelArgument(Name="xx",Description = "Reference to xx")>] 
+        ([<ExcelArgument(Name="xx",Description = "Vector")>] 
          xx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module GMRESResultFunction =
     *)
     [<ExcelFunction(Name="_GMRESResult_X", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_X
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GMRESResult",Description = "Reference to GMRESResult")>] 
+        ([<ExcelArgument(Name="GMRESResult",Description = "GMRESResult")>] 
          gmresresult : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -151,9 +151,9 @@ module GMRESResultFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GMRESResult_Range", Description="Create a range of GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GMRESResult")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -44,7 +44,8 @@ type OdeFctWrapperModel
 (*
     Functions
 *)
-    let _OdeFctWrapper                             = cell (fun () -> new OdeFctWrapper (ode1d.Value))
+    let mutable
+        _OdeFctWrapper                             = cell (fun () -> new OdeFctWrapper (ode1d.Value))
     let _value                                     (x : ICell<double>) (y : ICell<Generic.List<double>>)   
                                                    = cell (fun () -> _OdeFctWrapper.Value.value(x.Value, y.Value))
     do this.Bind(_OdeFctWrapper)
@@ -52,13 +53,14 @@ type OdeFctWrapperModel
     casting 
 *)
     internal new () = OdeFctWrapperModel(null)
-    member internal this.Inject v = _OdeFctWrapper.Value <- v
+    member internal this.Inject v = _OdeFctWrapper <- v
     static member Cast (p : ICell<OdeFctWrapper>) = 
         if p :? OdeFctWrapperModel then 
             p :?> OdeFctWrapperModel
         else
             let o = new OdeFctWrapperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

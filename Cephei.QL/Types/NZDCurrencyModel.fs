@@ -41,7 +41,8 @@ type NZDCurrencyModel
 (*
     Functions
 *)
-    let _NZDCurrency                               = cell (fun () -> new NZDCurrency ())
+    let mutable
+        _NZDCurrency                               = cell (fun () -> new NZDCurrency ())
     let _code                                      = triv (fun () -> _NZDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _NZDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type NZDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _NZDCurrency.Value <- v
+    member internal this.Inject v = _NZDCurrency <- v
     static member Cast (p : ICell<NZDCurrency>) = 
         if p :? NZDCurrencyModel then 
             p :?> NZDCurrencyModel
         else
             let o = new NZDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

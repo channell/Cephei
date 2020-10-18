@@ -44,20 +44,22 @@ type AnalyticDigitalAmericanKOEngineModel
 (*
     Functions
 *)
-    let _AnalyticDigitalAmericanKOEngine           = cell (fun () -> new AnalyticDigitalAmericanKOEngine (engine.Value))
+    let mutable
+        _AnalyticDigitalAmericanKOEngine           = cell (fun () -> new AnalyticDigitalAmericanKOEngine (engine.Value))
     let _knock_in                                  = triv (fun () -> _AnalyticDigitalAmericanKOEngine.Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanKOEngine)
 (* 
     casting 
 *)
     internal new () = new AnalyticDigitalAmericanKOEngineModel(null)
-    member internal this.Inject v = _AnalyticDigitalAmericanKOEngine.Value <- v
+    member internal this.Inject v = _AnalyticDigitalAmericanKOEngine <- v
     static member Cast (p : ICell<AnalyticDigitalAmericanKOEngine>) = 
         if p :? AnalyticDigitalAmericanKOEngineModel then 
             p :?> AnalyticDigitalAmericanKOEngineModel
         else
             let o = new AnalyticDigitalAmericanKOEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

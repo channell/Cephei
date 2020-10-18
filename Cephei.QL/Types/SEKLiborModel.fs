@@ -44,7 +44,8 @@ type SEKLiborModel
 (*
     Functions
 *)
-    let _SEKLibor                                  = cell (fun () -> new SEKLibor (tenor.Value))
+    let mutable
+        _SEKLibor                                  = cell (fun () -> new SEKLibor (tenor.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _SEKLibor.Value.clone(h.Value))
     let _maturityDate                              (valueDate : ICell<Date>)   
@@ -99,13 +100,14 @@ type SEKLiborModel
     casting 
 *)
     internal new () = new SEKLiborModel(null)
-    member internal this.Inject v = _SEKLibor.Value <- v
+    member internal this.Inject v = _SEKLibor <- v
     static member Cast (p : ICell<SEKLibor>) = 
         if p :? SEKLiborModel then 
             p :?> SEKLiborModel
         else
             let o = new SEKLiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -174,7 +176,8 @@ type SEKLiborModel1
 (*
     Functions
 *)
-    let _SEKLibor                                  = cell (fun () -> new SEKLibor (tenor.Value, h.Value))
+    let mutable
+        _SEKLibor                                  = cell (fun () -> new SEKLibor (tenor.Value, h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _SEKLibor.Value.clone(h.Value))
     let _maturityDate                              (valueDate : ICell<Date>)   
@@ -229,13 +232,14 @@ type SEKLiborModel1
     casting 
 *)
     internal new () = new SEKLiborModel1(null,null)
-    member internal this.Inject v = _SEKLibor.Value <- v
+    member internal this.Inject v = _SEKLibor <- v
     static member Cast (p : ICell<SEKLibor>) = 
         if p :? SEKLiborModel1 then 
             p :?> SEKLiborModel1
         else
             let o = new SEKLiborModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

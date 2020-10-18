@@ -66,7 +66,8 @@ type MCBarrierEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> '
 (*
     Functions
 *)
-    let _MCBarrierEngine                           = cell (fun () -> new MCBarrierEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, isBiased.Value, seed.Value))
+    let mutable
+        _MCBarrierEngine                           = cell (fun () -> new MCBarrierEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, isBiased.Value, seed.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _MCBarrierEngine.Value.registerWith(handler.Value)
                                                                      _MCBarrierEngine.Value)

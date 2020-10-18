@@ -44,7 +44,8 @@ type SimplexModel
 (*
     Functions
 *)
-    let _Simplex                                   = cell (fun () -> new Simplex (lambda.Value))
+    let mutable
+        _Simplex                                   = cell (fun () -> new Simplex (lambda.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _Simplex.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_Simplex)
@@ -52,13 +53,14 @@ type SimplexModel
     casting 
 *)
     internal new () = new SimplexModel(null)
-    member internal this.Inject v = _Simplex.Value <- v
+    member internal this.Inject v = _Simplex <- v
     static member Cast (p : ICell<Simplex>) = 
         if p :? SimplexModel then 
             p :?> SimplexModel
         else
             let o = new SimplexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

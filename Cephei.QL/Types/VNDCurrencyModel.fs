@@ -41,7 +41,8 @@ type VNDCurrencyModel
 (*
     Functions
 *)
-    let _VNDCurrency                               = cell (fun () -> new VNDCurrency ())
+    let mutable
+        _VNDCurrency                               = cell (fun () -> new VNDCurrency ())
     let _code                                      = triv (fun () -> _VNDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _VNDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type VNDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _VNDCurrency.Value <- v
+    member internal this.Inject v = _VNDCurrency <- v
     static member Cast (p : ICell<VNDCurrency>) = 
         if p :? VNDCurrencyModel then 
             p :?> VNDCurrencyModel
         else
             let o = new VNDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

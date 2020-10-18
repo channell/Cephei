@@ -46,7 +46,8 @@ type TreeLattice1DModel<'T when 'T :> IGenericLattice>
 (*
     Functions
 *)
-    let _TreeLattice1D                             = cell (fun () -> new TreeLattice1D<'T> (timeGrid.Value, n.Value))
+    let mutable
+        _TreeLattice1D                             = cell (fun () -> new TreeLattice1D<'T> (timeGrid.Value, n.Value))
     let _grid                                      (t : ICell<double>)   
                                                    = triv (fun () -> _TreeLattice1D.Value.grid(t.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   

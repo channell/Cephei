@@ -46,7 +46,8 @@ type StochasticProcessArrayModel
 (*
     Functions
 *)
-    let _StochasticProcessArray                    = cell (fun () -> new StochasticProcessArray (processes.Value, correlation.Value))
+    let mutable
+        _StochasticProcessArray                    = cell (fun () -> new StochasticProcessArray (processes.Value, correlation.Value))
     let _apply                                     (x0 : ICell<Vector>) (dx : ICell<Vector>)   
                                                    = triv (fun () -> _StochasticProcessArray.Value.apply(x0.Value, dx.Value))
     let _correlation                               = triv (fun () -> _StochasticProcessArray.Value.correlation())
@@ -82,13 +83,14 @@ type StochasticProcessArrayModel
     casting 
 *)
     internal new () = new StochasticProcessArrayModel(null,null)
-    member internal this.Inject v = _StochasticProcessArray.Value <- v
+    member internal this.Inject v = _StochasticProcessArray <- v
     static member Cast (p : ICell<StochasticProcessArray>) = 
         if p :? StochasticProcessArrayModel then 
             p :?> StochasticProcessArrayModel
         else
             let o = new StochasticProcessArrayModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

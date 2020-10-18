@@ -50,7 +50,8 @@ type SimplePolynomialFittingModel
 (*
     Functions
 *)
-    let _SimplePolynomialFitting                   = cell (fun () -> new SimplePolynomialFitting (degree.Value, constrainAtZero.Value, weights.Value, optimizationMethod.Value))
+    let mutable
+        _SimplePolynomialFitting                   = cell (fun () -> new SimplePolynomialFitting (degree.Value, constrainAtZero.Value, weights.Value, optimizationMethod.Value))
     let _clone                                     = triv (fun () -> _SimplePolynomialFitting.Value.clone())
     let _size                                      = triv (fun () -> _SimplePolynomialFitting.Value.size())
     let _constrainAtZero                           = triv (fun () -> _SimplePolynomialFitting.Value.constrainAtZero())
@@ -66,13 +67,14 @@ type SimplePolynomialFittingModel
     casting 
 *)
     internal new () = new SimplePolynomialFittingModel(null,null,null,null)
-    member internal this.Inject v = _SimplePolynomialFitting.Value <- v
+    member internal this.Inject v = _SimplePolynomialFitting <- v
     static member Cast (p : ICell<SimplePolynomialFitting>) = 
         if p :? SimplePolynomialFittingModel then 
             p :?> SimplePolynomialFittingModel
         else
             let o = new SimplePolynomialFittingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

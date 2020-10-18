@@ -41,7 +41,8 @@ type PTECurrencyModel
 (*
     Functions
 *)
-    let _PTECurrency                               = cell (fun () -> new PTECurrency ())
+    let mutable
+        _PTECurrency                               = cell (fun () -> new PTECurrency ())
     let _code                                      = triv (fun () -> _PTECurrency.Value.code)
     let _empty                                     = triv (fun () -> _PTECurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type PTECurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _PTECurrency.Value <- v
+    member internal this.Inject v = _PTECurrency <- v
     static member Cast (p : ICell<PTECurrency>) = 
         if p :? PTECurrencyModel then 
             p :?> PTECurrencyModel
         else
             let o = new PTECurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

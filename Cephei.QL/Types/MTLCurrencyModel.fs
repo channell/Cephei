@@ -41,7 +41,8 @@ type MTLCurrencyModel
 (*
     Functions
 *)
-    let _MTLCurrency                               = cell (fun () -> new MTLCurrency ())
+    let mutable
+        _MTLCurrency                               = cell (fun () -> new MTLCurrency ())
     let _code                                      = triv (fun () -> _MTLCurrency.Value.code)
     let _empty                                     = triv (fun () -> _MTLCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type MTLCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _MTLCurrency.Value <- v
+    member internal this.Inject v = _MTLCurrency <- v
     static member Cast (p : ICell<MTLCurrency>) = 
         if p :? MTLCurrencyModel then 
             p :?> MTLCurrencyModel
         else
             let o = new MTLCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

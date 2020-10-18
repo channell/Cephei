@@ -25,7 +25,7 @@ namespace Cephei.Cell
             /// <summary>
             /// Access the functions for this cell for cloning
             /// </summary>
-            FSharpFunc<Unit, T> Function { get; }
+            FSharpFunc<Unit, T> Function { get; set; }
         }
     }
 }

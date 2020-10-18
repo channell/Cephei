@@ -39,9 +39,9 @@ module TabulatedGaussLegendreFunction =
     *)
     [<ExcelFunction(Name="_TabulatedGaussLegendre_order", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TabulatedGaussLegendre")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "Reference to TabulatedGaussLegendre")>] 
+        ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "TabulatedGaussLegendre")>] 
          tabulatedgausslegendre : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module TabulatedGaussLegendreFunction =
     *)
     [<ExcelFunction(Name="_TabulatedGaussLegendre_order1", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_order1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TabulatedGaussLegendre")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "Reference to TabulatedGaussLegendre")>] 
+        ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "TabulatedGaussLegendre")>] 
          tabulatedgausslegendre : obj)
-        ([<ExcelArgument(Name="order",Description = "Reference to order")>] 
+        ([<ExcelArgument(Name="order",Description = "int")>] 
          order : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module TabulatedGaussLegendreFunction =
     *)
     [<ExcelFunction(Name="_TabulatedGaussLegendre", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TabulatedGaussLegendre")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "TabulatedGaussLegendre")>] 
          n : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,11 +154,11 @@ module TabulatedGaussLegendreFunction =
     *)
     [<ExcelFunction(Name="_TabulatedGaussLegendre_value", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "Reference to TabulatedGaussLegendre")>] 
+        ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "TabulatedGaussLegendre")>] 
          tabulatedgausslegendre : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module TabulatedGaussLegendreFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TabulatedGaussLegendre_Range", Description="Create a range of TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TabulatedGaussLegendre")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

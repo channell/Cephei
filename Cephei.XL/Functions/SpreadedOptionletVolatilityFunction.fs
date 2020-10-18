@@ -39,9 +39,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_businessDayConvention", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_calendar", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_dayCounter", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_maxDate", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_maxStrike", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_maxTime", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_minStrike", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_referenceDate", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_settlementDays", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,11 +363,11 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="baseVol",Description = "Reference to baseVol")>] 
+        ([<ExcelArgument(Name="baseVol",Description = "OptionletVolatilityStructure")>] 
          baseVol : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,15 +406,15 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_blackVariance", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,15 +460,15 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_blackVariance2", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,15 +514,15 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_blackVariance1", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,9 +568,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_displacement", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,13 +604,13 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_smileSection", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,13 +652,13 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_smileSection2", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_smileSection2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,13 +700,13 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_smileSection1", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,15 +748,15 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatility2", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,15 +802,15 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatility1", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -856,15 +856,15 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatility", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -910,9 +910,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatilityType", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,11 +946,11 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_optionDateFromTenor", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -988,11 +988,11 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_timeFromReference", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1030,9 +1030,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_update", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,9 +1066,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_allowsExtrapolation", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1102,11 +1102,11 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_disableExtrapolation", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1144,11 +1144,11 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_enableExtrapolation", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1186,9 +1186,9 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_extrapolate", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "Reference to SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1219,9 +1219,9 @@ module SpreadedOptionletVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_Range", Description="Create a range of SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

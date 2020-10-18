@@ -39,9 +39,9 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BrownianBridge")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="timeGrid",Description = "Reference to timeGrid")>] 
+        ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge1", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BrownianBridge")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "Reference to times")>] 
+        ([<ExcelArgument(Name="times",Description = "double")>] 
          times : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,9 +113,9 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge2", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BrownianBridge")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -150,9 +150,9 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge_size", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BrownianBridge",Description = "Reference to BrownianBridge")>] 
+        ([<ExcelArgument(Name="BrownianBridge",Description = "BrownianBridge")>] 
          brownianbridge : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,9 +186,9 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge_times", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BrownianBridge",Description = "Reference to BrownianBridge")>] 
+        ([<ExcelArgument(Name="BrownianBridge",Description = "BrownianBridge")>] 
          brownianbridge : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,13 +222,13 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge_transform", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BrownianBridge",Description = "Reference to BrownianBridge")>] 
+        ([<ExcelArgument(Name="BrownianBridge",Description = "BrownianBridge")>] 
          brownianbridge : obj)
-        ([<ExcelArgument(Name="Begin",Description = "Reference to Begin")>] 
+        ([<ExcelArgument(Name="Begin",Description = "double")>] 
          Begin : obj)
-        ([<ExcelArgument(Name="output",Description = "Reference to output")>] 
+        ([<ExcelArgument(Name="output",Description = "double")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,9 +267,9 @@ module BrownianBridgeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BrownianBridge_Range", Description="Create a range of BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BrownianBridge")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Bibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_businessDayConvention", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_clone", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_endOfMonth", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,15 +196,15 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_forecastFixing1", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,11 +250,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_forecastFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_forwardingTermStructure", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_maturityDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,9 +370,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_currency", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,9 +406,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_dayCounter", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_familyName", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,13 +478,13 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_fixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_fixingCalendar", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,11 +562,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_fixingDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,9 +604,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_fixingDays", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,11 +640,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_isValidFixingDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,9 +682,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_name", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,11 +718,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_pastFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_tenor", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,9 +796,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_update", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,11 +832,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_valueDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,15 +874,15 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_addFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -928,15 +928,15 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_addFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,13 +982,13 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_addFixings1", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1030,9 +1030,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_allowsNativeFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,9 +1066,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_clearFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1102,11 +1102,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_registerWith", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1144,9 +1144,9 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_timeSeries", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1180,11 +1180,11 @@ module BiborFunction =
     *)
     [<ExcelFunction(Name="_Bibor_unregisterWith", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bibor",Description = "Reference to Bibor")>] 
+        ([<ExcelArgument(Name="Bibor",Description = "Bibor")>] 
          bibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1219,9 +1219,9 @@ module BiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bibor_Range", Description="Create a range of Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Bibor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

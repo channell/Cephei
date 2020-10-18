@@ -48,7 +48,8 @@ type GapPayoffModel
 (*
     Functions
 *)
-    let _GapPayoff                                 = cell (fun () -> new GapPayoff (Type.Value, strike.Value, secondStrike.Value))
+    let mutable
+        _GapPayoff                                 = cell (fun () -> new GapPayoff (Type.Value, strike.Value, secondStrike.Value))
     let _description                               = triv (fun () -> _GapPayoff.Value.description())
     let _name                                      = triv (fun () -> _GapPayoff.Value.name())
     let _secondStrike                              = triv (fun () -> _GapPayoff.Value.secondStrike())
@@ -64,13 +65,14 @@ type GapPayoffModel
     casting 
 *)
     internal new () = new GapPayoffModel(null,null,null)
-    member internal this.Inject v = _GapPayoff.Value <- v
+    member internal this.Inject v = _GapPayoff <- v
     static member Cast (p : ICell<GapPayoff>) = 
         if p :? GapPayoffModel then 
             p :?> GapPayoffModel
         else
             let o = new GapPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDoubleBarrierBinaryEngineHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "CashOrNothingPayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "DoubleBarrierOption.Arguments")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,19 +88,19 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticDoubleBarrierBinaryEngineHelper",Description = "Reference to AnalyticDoubleBarrierBinaryEngineHelper")>] 
+        ([<ExcelArgument(Name="AnalyticDoubleBarrierBinaryEngineHelper",Description = "AnalyticDoubleBarrierBinaryEngineHelper")>] 
          analyticdoublebarrierbinaryenginehelper : obj)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="variance",Description = "Reference to variance")>] 
+        ([<ExcelArgument(Name="variance",Description = "double")>] 
          variance : obj)
-        ([<ExcelArgument(Name="barrierType",Description = "Reference to barrierType")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "DoubleBarrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="maxIteration",Description = "Reference to maxIteration")>] 
+        ([<ExcelArgument(Name="maxIteration",Description = "Helper.Range.fromModelList")>] 
          maxIteration : obj)
-        ([<ExcelArgument(Name="requiredConvergence",Description = "Reference to requiredConvergence")>] 
+        ([<ExcelArgument(Name="requiredConvergence",Description = "Helper.Range.fromModelList")>] 
          requiredConvergence : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,19 +154,19 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AnalyticDoubleBarrierBinaryEngineHelper",Description = "Reference to AnalyticDoubleBarrierBinaryEngineHelper")>] 
+        ([<ExcelArgument(Name="AnalyticDoubleBarrierBinaryEngineHelper",Description = "AnalyticDoubleBarrierBinaryEngineHelper")>] 
          analyticdoublebarrierbinaryenginehelper : obj)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="variance",Description = "Reference to variance")>] 
+        ([<ExcelArgument(Name="variance",Description = "double")>] 
          variance : obj)
-        ([<ExcelArgument(Name="barrierType",Description = "Reference to barrierType")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "DoubleBarrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="maxIteration",Description = "Reference to maxIteration")>] 
+        ([<ExcelArgument(Name="maxIteration",Description = "Helper.Range.fromModelList")>] 
          maxIteration : obj)
-        ([<ExcelArgument(Name="requiredConvergence",Description = "Reference to requiredConvergence")>] 
+        ([<ExcelArgument(Name="requiredConvergence",Description = "Helper.Range.fromModelList")>] 
          requiredConvergence : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,9 +217,9 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AnalyticDoubleBarrierBinaryEngineHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

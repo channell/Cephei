@@ -40,9 +40,9 @@ module DiscountingBondEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingBondEngine_discountCurve", Description="Create a DiscountingBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBondEngine_discountCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscountingBondEngine",Description = "Reference to DiscountingBondEngine")>] 
+        ([<ExcelArgument(Name="DiscountingBondEngine",Description = "DiscountingBondEngine")>] 
          discountingbondengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module DiscountingBondEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingBondEngine", Description="Create a DiscountingBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBondEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscountingBondEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "Reference to includeSettlementDateFlows")>] 
+        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -116,9 +116,9 @@ module DiscountingBondEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscountingBondEngine_Range", Description="Create a range of DiscountingBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBondEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscountingBondEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

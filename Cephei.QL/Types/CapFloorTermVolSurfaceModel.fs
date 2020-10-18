@@ -56,7 +56,8 @@ type CapFloorTermVolSurfaceModel
 (*
     Functions
 *)
-    let _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
@@ -95,13 +96,14 @@ type CapFloorTermVolSurfaceModel
     casting 
 *)
     internal new () = new CapFloorTermVolSurfaceModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel then 
             p :?> CapFloorTermVolSurfaceModel
         else
             let o = new CapFloorTermVolSurfaceModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -174,7 +176,8 @@ type CapFloorTermVolSurfaceModel1
 (*
     Functions
 *)
-    let _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
@@ -213,13 +216,14 @@ type CapFloorTermVolSurfaceModel1
     casting 
 *)
     internal new () = new CapFloorTermVolSurfaceModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel1 then 
             p :?> CapFloorTermVolSurfaceModel1
         else
             let o = new CapFloorTermVolSurfaceModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -292,7 +296,8 @@ type CapFloorTermVolSurfaceModel2
 (*
     Functions
 *)
-    let _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
@@ -331,13 +336,14 @@ type CapFloorTermVolSurfaceModel2
     casting 
 *)
     internal new () = new CapFloorTermVolSurfaceModel2(null,null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel2 then 
             p :?> CapFloorTermVolSurfaceModel2
         else
             let o = new CapFloorTermVolSurfaceModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -410,7 +416,8 @@ type CapFloorTermVolSurfaceModel3
 (*
     Functions
 *)
-    let _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
+    let mutable
+        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
@@ -449,13 +456,14 @@ type CapFloorTermVolSurfaceModel3
     casting 
 *)
     internal new () = new CapFloorTermVolSurfaceModel3(null,null,null,null,null,null,null)
-    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel3 then 
             p :?> CapFloorTermVolSurfaceModel3
         else
             let o = new CapFloorTermVolSurfaceModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

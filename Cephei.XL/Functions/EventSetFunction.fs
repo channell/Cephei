@@ -39,13 +39,13 @@ module EventSetFunction =
     *)
     [<ExcelFunction(Name="_EventSet", Description="Create a EventSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSet_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EventSet")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="events",Description = "Reference to events")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
          events : obj)
-        ([<ExcelArgument(Name="eventsStart",Description = "Reference to eventsStart")>] 
+        ([<ExcelArgument(Name="eventsStart",Description = "Date")>] 
          eventsStart : obj)
-        ([<ExcelArgument(Name="eventsEnd",Description = "Reference to eventsEnd")>] 
+        ([<ExcelArgument(Name="eventsEnd",Description = "Date")>] 
          eventsEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,13 +88,13 @@ module EventSetFunction =
     *)
     [<ExcelFunction(Name="_EventSet_newSimulation", Description="Create a EventSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSet_newSimulation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CatSimulation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EventSet",Description = "Reference to EventSet")>] 
+        ([<ExcelArgument(Name="EventSet",Description = "EventSet")>] 
          eventset : obj)
-        ([<ExcelArgument(Name="start",Description = "Reference to start")>] 
+        ([<ExcelArgument(Name="start",Description = "Date")>] 
          start : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "Date")>] 
          End : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module EventSetFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EventSet_Range", Description="Create a range of EventSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSet_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EventSet")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

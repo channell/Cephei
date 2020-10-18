@@ -40,25 +40,25 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="bondHelpers",Description = "Reference to bondHelpers")>] 
+        ([<ExcelArgument(Name="bondHelpers",Description = "BondHelper")>] 
          bondHelpers : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="fittingMethod",Description = "Reference to fittingMethod")>] 
+        ([<ExcelArgument(Name="fittingMethod",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          fittingMethod : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "FittedBondDiscountCurve")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "FittedBondDiscountCurve")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "FittedBondDiscountCurve")>] 
          guess : obj)
-        ([<ExcelArgument(Name="simplexLambda",Description = "Reference to simplexLambda")>] 
+        ([<ExcelArgument(Name="simplexLambda",Description = "FittedBondDiscountCurve")>] 
          simplexLambda : obj)
-        ([<ExcelArgument(Name="maxStationaryStateIterations",Description = "Reference to maxStationaryStateIterations")>] 
+        ([<ExcelArgument(Name="maxStationaryStateIterations",Description = "FittedBondDiscountCurve")>] 
          maxStationaryStateIterations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,27 +125,27 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bondHelpers",Description = "Reference to bondHelpers")>] 
+        ([<ExcelArgument(Name="bondHelpers",Description = "BondHelper")>] 
          bondHelpers : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="fittingMethod",Description = "Reference to fittingMethod")>] 
+        ([<ExcelArgument(Name="fittingMethod",Description = "FittedBondDiscountCurve.FittingMethod")>] 
          fittingMethod : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "FittedBondDiscountCurve")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "FittedBondDiscountCurve")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "FittedBondDiscountCurve")>] 
          guess : obj)
-        ([<ExcelArgument(Name="simplexLambda",Description = "Reference to simplexLambda")>] 
+        ([<ExcelArgument(Name="simplexLambda",Description = "FittedBondDiscountCurve")>] 
          simplexLambda : obj)
-        ([<ExcelArgument(Name="maxStationaryStateIterations",Description = "Reference to maxStationaryStateIterations")>] 
+        ([<ExcelArgument(Name="maxStationaryStateIterations",Description = "FittedBondDiscountCurve")>] 
          maxStationaryStateIterations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -216,9 +216,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_maxDate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -252,9 +252,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_numberOfBonds", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_numberOfBonds
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -288,13 +288,13 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_discount", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,13 +336,13 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_discount1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_discount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -384,21 +384,21 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -456,21 +456,21 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_forwardRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -528,19 +528,19 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate2", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_forwardRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_jumpDates", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,9 +630,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_jumpTimes", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -666,9 +666,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_update", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -702,19 +702,19 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_zeroRate1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_zeroRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -768,17 +768,17 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_zeroRate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -828,9 +828,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_calendar", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -864,9 +864,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_dayCounter", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -900,9 +900,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_maxTime", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -936,9 +936,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_referenceDate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -972,9 +972,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_settlementDays", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1008,11 +1008,11 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_timeFromReference", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1050,9 +1050,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_allowsExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1086,11 +1086,11 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_disableExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1128,11 +1128,11 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_enableExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1170,9 +1170,9 @@ module FittedBondDiscountCurveFunction =
     *)
     [<ExcelFunction(Name="_FittedBondDiscountCurve_extrapolate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "Reference to FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="FittedBondDiscountCurve",Description = "FittedBondDiscountCurve")>] 
          fittedbonddiscountcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1203,9 +1203,9 @@ module FittedBondDiscountCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FittedBondDiscountCurve_Range", Description="Create a range of FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FittedBondDiscountCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type IntegrationModel
 (*
     Functions
 *)
-    let _Integration                               = cell (fun () -> new Integration ())
+    let mutable
+        _Integration                               = cell (fun () -> new Integration ())
     let _calculate                                 (c_inf : ICell<double>) (f : ICell<Func<double,double>>)   
                                                    = cell (fun () -> _Integration.Value.calculate(c_inf.Value, f.Value))
     let _isAdaptiveIntegration                     = cell (fun () -> _Integration.Value.isAdaptiveIntegration())
@@ -51,13 +52,14 @@ type IntegrationModel
     casting 
 *)
     
-    member internal this.Inject v = _Integration.Value <- v
+    member internal this.Inject v = _Integration <- v
     static member Cast (p : ICell<Integration>) = 
         if p :? IntegrationModel then 
             p :?> IntegrationModel
         else
             let o = new IntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

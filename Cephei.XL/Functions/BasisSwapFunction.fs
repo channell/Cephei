@@ -39,33 +39,33 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "BasisSwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="float1Schedule",Description = "Reference to float1Schedule")>] 
+        ([<ExcelArgument(Name="float1Schedule",Description = "Schedule")>] 
          float1Schedule : obj)
-        ([<ExcelArgument(Name="iborIndex1",Description = "Reference to iborIndex1")>] 
+        ([<ExcelArgument(Name="iborIndex1",Description = "IborIndex")>] 
          iborIndex1 : obj)
-        ([<ExcelArgument(Name="spread1",Description = "Reference to spread1")>] 
+        ([<ExcelArgument(Name="spread1",Description = "double")>] 
          spread1 : obj)
-        ([<ExcelArgument(Name="float1DayCount",Description = "Reference to float1DayCount")>] 
+        ([<ExcelArgument(Name="float1DayCount",Description = "DayCounter")>] 
          float1DayCount : obj)
-        ([<ExcelArgument(Name="float2Schedule",Description = "Reference to float2Schedule")>] 
+        ([<ExcelArgument(Name="float2Schedule",Description = "Schedule")>] 
          float2Schedule : obj)
-        ([<ExcelArgument(Name="iborIndex2",Description = "Reference to iborIndex2")>] 
+        ([<ExcelArgument(Name="iborIndex2",Description = "IborIndex")>] 
          iborIndex2 : obj)
-        ([<ExcelArgument(Name="spread2",Description = "Reference to spread2")>] 
+        ([<ExcelArgument(Name="spread2",Description = "double")>] 
          spread2 : obj)
-        ([<ExcelArgument(Name="float2DayCount",Description = "Reference to float2DayCount")>] 
+        ([<ExcelArgument(Name="float2DayCount",Description = "DayCounter")>] 
          float2DayCount : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,31 +148,31 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "BasisSwap.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="float1Schedule",Description = "Reference to float1Schedule")>] 
+        ([<ExcelArgument(Name="float1Schedule",Description = "Schedule")>] 
          float1Schedule : obj)
-        ([<ExcelArgument(Name="iborIndex1",Description = "Reference to iborIndex1")>] 
+        ([<ExcelArgument(Name="iborIndex1",Description = "IborIndex")>] 
          iborIndex1 : obj)
-        ([<ExcelArgument(Name="spread1",Description = "Reference to spread1")>] 
+        ([<ExcelArgument(Name="spread1",Description = "double")>] 
          spread1 : obj)
-        ([<ExcelArgument(Name="float1DayCount",Description = "Reference to float1DayCount")>] 
+        ([<ExcelArgument(Name="float1DayCount",Description = "DayCounter")>] 
          float1DayCount : obj)
-        ([<ExcelArgument(Name="float2Schedule",Description = "Reference to float2Schedule")>] 
+        ([<ExcelArgument(Name="float2Schedule",Description = "Schedule")>] 
          float2Schedule : obj)
-        ([<ExcelArgument(Name="iborIndex2",Description = "Reference to iborIndex2")>] 
+        ([<ExcelArgument(Name="iborIndex2",Description = "IborIndex")>] 
          iborIndex2 : obj)
-        ([<ExcelArgument(Name="spread2",Description = "Reference to spread2")>] 
+        ([<ExcelArgument(Name="spread2",Description = "double")>] 
          spread2 : obj)
-        ([<ExcelArgument(Name="float2DayCount",Description = "Reference to float2DayCount")>] 
+        ([<ExcelArgument(Name="float2DayCount",Description = "DayCounter")>] 
          float2DayCount : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,9 +251,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_fairLongSpread", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_fairLongSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,9 +287,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_fairShortSpread", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_fairShortSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -323,9 +323,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating1Leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1Leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,9 +359,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating1LegBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1LegBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,9 +395,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating1LegNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1LegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -431,9 +431,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating1Schedule", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1Schedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -467,9 +467,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating2Leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2Leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -503,9 +503,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating2LegBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2LegBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -539,9 +539,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating2LegNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2LegNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -575,9 +575,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_floating2Schedule", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2Schedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -611,9 +611,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_iborIndex1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_iborIndex1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -647,9 +647,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_iborIndex2", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_iborIndex2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,9 +683,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_nominal", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_spread1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_spread1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,9 +755,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_spread2", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_spread2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,9 +791,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_swapType", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_swapType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -827,11 +827,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_endDiscounts", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -870,9 +870,9 @@ module BasisSwapFunction =
     (*!!
     [<ExcelFunction(Name="_BasisSwap_engine", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -907,9 +907,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_isExpired", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -943,11 +943,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -985,11 +985,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_legBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1027,11 +1027,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_legNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1069,9 +1069,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_maturityDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1105,9 +1105,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_npvDateDiscount", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1141,11 +1141,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_payer", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1183,9 +1183,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_startDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1219,11 +1219,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_startDiscounts", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1261,9 +1261,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_CASH", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1297,9 +1297,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_errorEstimate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1333,9 +1333,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_NPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1369,11 +1369,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_result", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1411,11 +1411,11 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_setPricingEngine", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1453,9 +1453,9 @@ module BasisSwapFunction =
     *)
     [<ExcelFunction(Name="_BasisSwap_valuationDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BasisSwap",Description = "Reference to BasisSwap")>] 
+        ([<ExcelArgument(Name="BasisSwap",Description = "BasisSwap")>] 
          basisswap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1486,9 +1486,9 @@ module BasisSwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BasisSwap_Range", Description="Create a range of BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BasisSwap")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

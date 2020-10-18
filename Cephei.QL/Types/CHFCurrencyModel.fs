@@ -41,7 +41,8 @@ type CHFCurrencyModel
 (*
     Functions
 *)
-    let _CHFCurrency                               = cell (fun () -> new CHFCurrency ())
+    let mutable
+        _CHFCurrency                               = cell (fun () -> new CHFCurrency ())
     let _code                                      = triv (fun () -> _CHFCurrency.Value.code)
     let _empty                                     = triv (fun () -> _CHFCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CHFCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _CHFCurrency.Value <- v
+    member internal this.Inject v = _CHFCurrency <- v
     static member Cast (p : ICell<CHFCurrency>) = 
         if p :? CHFCurrencyModel then 
             p :?> CHFCurrencyModel
         else
             let o = new CHFCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

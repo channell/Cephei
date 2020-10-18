@@ -41,7 +41,8 @@ type PdeBSMModel
 (*
     Functions
 *)
-    let _PdeBSM                                    = cell (fun () -> new PdeBSM ())
+    let mutable
+        _PdeBSM                                    = cell (fun () -> new PdeBSM ())
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _PdeBSM.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
@@ -58,13 +59,14 @@ type PdeBSMModel
     casting 
 *)
     
-    member internal this.Inject v = _PdeBSM.Value <- v
+    member internal this.Inject v = _PdeBSM <- v
     static member Cast (p : ICell<PdeBSM>) = 
         if p :? PdeBSMModel then 
             p :?> PdeBSMModel
         else
             let o = new PdeBSMModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type PdeBSMModel1
 (*
     Functions
 *)
-    let _PdeBSM                                    = cell (fun () -> new PdeBSM (Process.Value))
+    let mutable
+        _PdeBSM                                    = cell (fun () -> new PdeBSM (Process.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _PdeBSM.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
@@ -115,13 +118,14 @@ type PdeBSMModel1
     casting 
 *)
     internal new () = new PdeBSMModel1(null)
-    member internal this.Inject v = _PdeBSM.Value <- v
+    member internal this.Inject v = _PdeBSM <- v
     static member Cast (p : ICell<PdeBSM>) = 
         if p :? PdeBSMModel1 then 
             p :?> PdeBSMModel1
         else
             let o = new PdeBSMModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

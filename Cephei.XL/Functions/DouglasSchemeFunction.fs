@@ -39,13 +39,13 @@ module DouglasSchemeFunction =
     *)
     [<ExcelFunction(Name="_DouglasScheme", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DouglasScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "DouglasScheme")>] 
          theta : obj)
-        ([<ExcelArgument(Name="map",Description = "Reference to map")>] 
+        ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "Reference to bcSet")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "DouglasScheme")>] 
          bcSet : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module DouglasSchemeFunction =
     *)
     [<ExcelFunction(Name="_DouglasScheme1", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DouglasScheme")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,15 +119,15 @@ module DouglasSchemeFunction =
     *)
     [<ExcelFunction(Name="_DouglasScheme_factory", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DouglasScheme",Description = "Reference to DouglasScheme")>] 
+        ([<ExcelArgument(Name="DouglasScheme",Description = "DouglasScheme")>] 
          douglasscheme : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "Object")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalInputs",Description = "Reference to additionalInputs")>] 
+        ([<ExcelArgument(Name="additionalInputs",Description = "IMixedScheme")>] 
          additionalInputs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,11 +173,11 @@ module DouglasSchemeFunction =
     *)
     [<ExcelFunction(Name="_DouglasScheme_setStep", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DouglasScheme",Description = "Reference to DouglasScheme")>] 
+        ([<ExcelArgument(Name="DouglasScheme",Description = "DouglasScheme")>] 
          douglasscheme : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -215,15 +215,15 @@ module DouglasSchemeFunction =
     *)
     [<ExcelFunction(Name="_DouglasScheme_step", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DouglasScheme",Description = "Reference to DouglasScheme")>] 
+        ([<ExcelArgument(Name="DouglasScheme",Description = "DouglasScheme")>] 
          douglasscheme : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -266,9 +266,9 @@ module DouglasSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DouglasScheme_Range", Description="Create a range of DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DouglasScheme")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

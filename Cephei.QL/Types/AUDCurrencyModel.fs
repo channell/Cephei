@@ -41,7 +41,8 @@ type AUDCurrencyModel
 (*
     Functions
 *)
-    let _AUDCurrency                               = cell (fun () -> new AUDCurrency ())
+    let mutable
+        _AUDCurrency                               = cell (fun () -> new AUDCurrency ())
     let _code                                      = triv (fun () -> _AUDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _AUDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type AUDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _AUDCurrency.Value <- v
+    member internal this.Inject v = _AUDCurrency <- v
     static member Cast (p : ICell<AUDCurrency>) = 
         if p :? AUDCurrencyModel then 
             p :?> AUDCurrencyModel
         else
             let o = new AUDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

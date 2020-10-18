@@ -39,9 +39,9 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_dimension", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "Reference to RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_factory", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "Reference to RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,9 +123,9 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_lastSequence", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "Reference to RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,9 +159,9 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_nextInt32Sequence", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_nextInt32Sequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "Reference to RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,9 +195,9 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_nextSequence", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "Reference to RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -231,11 +231,11 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator1", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="rng",Description = "Reference to rng")>] 
+        ([<ExcelArgument(Name="rng",Description = "'RNG")>] 
          rng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -314,9 +314,9 @@ module RandomSequenceGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RandomSequenceGenerator_Range", Description="Create a range of RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type MonthlyYieldFinderModel
 (*
     Functions
 *)
-    let _MonthlyYieldFinder                        = cell (fun () -> new MonthlyYieldFinder (faceAmount.Value, cashflows.Value, settlement.Value))
+    let mutable
+        _MonthlyYieldFinder                        = cell (fun () -> new MonthlyYieldFinder (faceAmount.Value, cashflows.Value, settlement.Value))
     let _value                                     (Yield : ICell<double>)   
                                                    = triv (fun () -> _MonthlyYieldFinder.Value.value(Yield.Value))
     let _derivative                                (x : ICell<double>)   
@@ -58,13 +59,14 @@ type MonthlyYieldFinderModel
     casting 
 *)
     internal new () = new MonthlyYieldFinderModel(null,null,null)
-    member internal this.Inject v = _MonthlyYieldFinder.Value <- v
+    member internal this.Inject v = _MonthlyYieldFinder <- v
     static member Cast (p : ICell<MonthlyYieldFinder>) = 
         if p :? MonthlyYieldFinderModel then 
             p :?> MonthlyYieldFinderModel
         else
             let o = new MonthlyYieldFinderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

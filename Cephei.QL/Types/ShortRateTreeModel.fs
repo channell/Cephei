@@ -48,7 +48,8 @@ type ShortRateTreeModel
 (*
     Functions
 *)
-    let _ShortRateTree                             = cell (fun () -> new ShortRateTree (tree1.Value, tree2.Value, dynamics.Value))
+    let mutable
+        _ShortRateTree                             = cell (fun () -> new ShortRateTree (tree1.Value, tree2.Value, dynamics.Value))
     let _discount                                  (i : ICell<int>) (index : ICell<int>)   
                                                    = cell (fun () -> _ShortRateTree.Value.discount(i.Value, index.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
@@ -83,13 +84,14 @@ type ShortRateTreeModel
     casting 
 *)
     internal new () = ShortRateTreeModel(null,null,null)
-    member internal this.Inject v = _ShortRateTree.Value <- v
+    member internal this.Inject v = _ShortRateTree <- v
     static member Cast (p : ICell<ShortRateTree>) = 
         if p :? ShortRateTreeModel then 
             p :?> ShortRateTreeModel
         else
             let o = new ShortRateTreeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

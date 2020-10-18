@@ -44,7 +44,8 @@ type ChiSquareDistributionModel
 (*
     Functions
 *)
-    let _ChiSquareDistribution                     = cell (fun () -> new ChiSquareDistribution (df.Value))
+    let mutable
+        _ChiSquareDistribution                     = cell (fun () -> new ChiSquareDistribution (df.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _ChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_ChiSquareDistribution)
@@ -52,13 +53,14 @@ type ChiSquareDistributionModel
     casting 
 *)
     internal new () = new ChiSquareDistributionModel(null)
-    member internal this.Inject v = _ChiSquareDistribution.Value <- v
+    member internal this.Inject v = _ChiSquareDistribution <- v
     static member Cast (p : ICell<ChiSquareDistribution>) = 
         if p :? ChiSquareDistributionModel then 
             p :?> ChiSquareDistributionModel
         else
             let o = new ChiSquareDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module BlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCapFloorEngine1", Description="Create a BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "OptionletVolatilityStructure")>] 
          vol : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "BlackCapFloorEngine")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,15 +88,15 @@ module BlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCapFloorEngine2", Description="Create a BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "BlackCapFloorEngine")>] 
          dc : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "BlackCapFloorEngine")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,15 +143,15 @@ module BlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCapFloorEngine", Description="Create a BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "BlackCapFloorEngine")>] 
          dc : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "BlackCapFloorEngine")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -199,9 +199,9 @@ module BlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCapFloorEngine_displacement", Description="Create a BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackCapFloorEngine",Description = "Reference to BlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="BlackCapFloorEngine",Description = "BlackCapFloorEngine")>] 
          blackcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,9 +235,9 @@ module BlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCapFloorEngine_termStructure", Description="Create a BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackCapFloorEngine",Description = "Reference to BlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="BlackCapFloorEngine",Description = "BlackCapFloorEngine")>] 
          blackcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -271,9 +271,9 @@ module BlackCapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCapFloorEngine_volatility", Description="Create a BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletVolatilityStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackCapFloorEngine",Description = "Reference to BlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="BlackCapFloorEngine",Description = "BlackCapFloorEngine")>] 
          blackcapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module BlackCapFloorEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackCapFloorEngine_Range", Description="Create a range of BlackCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCapFloorEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackCapFloorEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

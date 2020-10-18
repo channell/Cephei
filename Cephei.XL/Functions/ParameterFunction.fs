@@ -39,9 +39,9 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_constraint", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_implementation", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_implementation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Parameter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,7 +111,7 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Parameter")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,9 +142,9 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_parameters", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,13 +178,13 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_setParam", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_setParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,9 +226,9 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_size", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,11 +262,11 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_testParams", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_testParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,11 +304,11 @@ module ParameterFunction =
     *)
     [<ExcelFunction(Name="_Parameter_value", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Parameter",Description = "Reference to Parameter")>] 
+        ([<ExcelArgument(Name="Parameter",Description = "Parameter")>] 
          parameter : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -343,9 +343,9 @@ module ParameterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Parameter_Range", Description="Create a range of Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Parameter")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

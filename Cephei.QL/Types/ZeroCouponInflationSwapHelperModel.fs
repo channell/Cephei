@@ -56,7 +56,8 @@ type ZeroCouponInflationSwapHelperModel
 (*
     Functions
 *)
-    let _ZeroCouponInflationSwapHelper             = cell (fun () -> new ZeroCouponInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, zii.Value))
+    let mutable
+        _ZeroCouponInflationSwapHelper             = cell (fun () -> new ZeroCouponInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, zii.Value))
     let _impliedQuote                              = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.impliedQuote())
     let _setTermStructure                          (z : ICell<ZeroInflationTermStructure>)   
                                                    = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.setTermStructure(z.Value)
@@ -83,13 +84,14 @@ type ZeroCouponInflationSwapHelperModel
     casting 
 *)
     internal new () = new ZeroCouponInflationSwapHelperModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ZeroCouponInflationSwapHelper.Value <- v
+    member internal this.Inject v = _ZeroCouponInflationSwapHelper <- v
     static member Cast (p : ICell<ZeroCouponInflationSwapHelper>) = 
         if p :? ZeroCouponInflationSwapHelperModel then 
             p :?> ZeroCouponInflationSwapHelperModel
         else
             let o = new ZeroCouponInflationSwapHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

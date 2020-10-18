@@ -39,9 +39,9 @@ module DoublingConvergenceStepsFunction =
     *)
     [<ExcelFunction(Name="_DoublingConvergenceSteps_initialSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_initialSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DoublingConvergenceSteps",Description = "Reference to DoublingConvergenceSteps")>] 
+        ([<ExcelArgument(Name="DoublingConvergenceSteps",Description = "DoublingConvergenceSteps")>] 
          doublingconvergencesteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module DoublingConvergenceStepsFunction =
     *)
     [<ExcelFunction(Name="_DoublingConvergenceSteps_nextSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_nextSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DoublingConvergenceSteps",Description = "Reference to DoublingConvergenceSteps")>] 
+        ([<ExcelArgument(Name="DoublingConvergenceSteps",Description = "DoublingConvergenceSteps")>] 
          doublingconvergencesteps : obj)
-        ([<ExcelArgument(Name="current",Description = "Reference to current")>] 
+        ([<ExcelArgument(Name="current",Description = "int")>] 
          current : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -114,9 +114,9 @@ module DoublingConvergenceStepsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DoublingConvergenceSteps_Range", Description="Create a range of DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DoublingConvergenceSteps")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg_dimension", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolRsg",Description = "Reference to SobolRsg")>] 
+        ([<ExcelArgument(Name="SobolRsg",Description = "SobolRsg")>] 
          sobolrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg_factory", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolRsg",Description = "Reference to SobolRsg")>] 
+        ([<ExcelArgument(Name="SobolRsg",Description = "SobolRsg")>] 
          sobolrsg : obj)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module SobolRsgFunction =
     (*!! Sample not supported by helper
     [<ExcelFunction(Name="_SobolRsg_lastSequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolRsg",Description = "Reference to SobolRsg")>] 
+        ([<ExcelArgument(Name="SobolRsg",Description = "SobolRsg")>] 
          sobolrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,9 +161,9 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg_nextInt32Sequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_nextInt32Sequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolRsg",Description = "Reference to SobolRsg")>] 
+        ([<ExcelArgument(Name="SobolRsg",Description = "SobolRsg")>] 
          sobolrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -198,9 +198,9 @@ module SobolRsgFunction =
     (*!! Sample not supported by Helper
     [<ExcelFunction(Name="_SobolRsg_nextSequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolRsg",Description = "Reference to SobolRsg")>] 
+        ([<ExcelArgument(Name="SobolRsg",Description = "SobolRsg")>] 
          sobolrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,11 +235,11 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg_skipTo", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_skipTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SobolRsg",Description = "Reference to SobolRsg")>] 
+        ([<ExcelArgument(Name="SobolRsg",Description = "SobolRsg")>] 
          sobolrsg : obj)
-        ([<ExcelArgument(Name="skip",Description = "Reference to skip")>] 
+        ([<ExcelArgument(Name="skip",Description = "uint64")>] 
          skip : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -277,13 +277,13 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg2", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
-        ([<ExcelArgument(Name="directionIntegers",Description = "Reference to directionIntegers")>] 
+        ([<ExcelArgument(Name="directionIntegers",Description = "SobolRsg.DirectionIntegers")>] 
          directionIntegers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -326,11 +326,11 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg3", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -369,9 +369,9 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,7 +406,7 @@ module SobolRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolRsg1", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SobolRsg")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -434,9 +434,9 @@ module SobolRsgFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SobolRsg_Range", Description="Create a range of SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SobolRsg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

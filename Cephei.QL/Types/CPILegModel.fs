@@ -50,7 +50,8 @@ type CPILegModel
 (*
     Functions
 *)
-    let _CPILeg                                    = cell (fun () -> new CPILeg (schedule.Value, index.Value, baseCPI.Value, observationLag.Value))
+    let mutable
+        _CPILeg                                    = cell (fun () -> new CPILeg (schedule.Value, index.Value, baseCPI.Value, observationLag.Value))
     let _value                                     = triv (fun () -> _CPILeg.Value.value())
     let _withCaps                                  (cap : ICell<double>)   
                                                    = triv (fun () -> _CPILeg.Value.withCaps(cap.Value))
@@ -93,13 +94,14 @@ type CPILegModel
     casting 
 *)
     internal new () = new CPILegModel(null,null,null,null)
-    member internal this.Inject v = _CPILeg.Value <- v
+    member internal this.Inject v = _CPILeg <- v
     static member Cast (p : ICell<CPILeg>) = 
         if p :? CPILegModel then 
             p :?> CPILegModel
         else
             let o = new CPILegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

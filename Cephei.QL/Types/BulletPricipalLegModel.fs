@@ -44,7 +44,8 @@ type BulletPricipalLegModel
 (*
     Functions
 *)
-    let _BulletPricipalLeg                         = cell (fun () -> new BulletPricipalLeg (schedule.Value))
+    let mutable
+        _BulletPricipalLeg                         = cell (fun () -> new BulletPricipalLeg (schedule.Value))
     let _value                                     = triv (fun () -> _BulletPricipalLeg.Value.value())
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _BulletPricipalLeg.Value.withNotionals(notionals.Value))
@@ -61,13 +62,14 @@ type BulletPricipalLegModel
     casting 
 *)
     internal new () = new BulletPricipalLegModel(null)
-    member internal this.Inject v = _BulletPricipalLeg.Value <- v
+    member internal this.Inject v = _BulletPricipalLeg <- v
     static member Cast (p : ICell<BulletPricipalLeg>) = 
         if p :? BulletPricipalLegModel then 
             p :?> BulletPricipalLegModel
         else
             let o = new BulletPricipalLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

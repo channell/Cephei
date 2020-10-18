@@ -48,7 +48,8 @@ type CubicSplineOvershootingMinimization1Model
 (*
     Functions
 *)
-    let _CubicSplineOvershootingMinimization1      = cell (fun () -> new CubicSplineOvershootingMinimization1 (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _CubicSplineOvershootingMinimization1      = cell (fun () -> new CubicSplineOvershootingMinimization1 (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _CubicSplineOvershootingMinimization1.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _CubicSplineOvershootingMinimization1.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _CubicSplineOvershootingMinimization1.Value.cCoefficients())
@@ -80,13 +81,14 @@ type CubicSplineOvershootingMinimization1Model
     casting 
 *)
     internal new () = new CubicSplineOvershootingMinimization1Model(null,null,null)
-    member internal this.Inject v = _CubicSplineOvershootingMinimization1.Value <- v
+    member internal this.Inject v = _CubicSplineOvershootingMinimization1 <- v
     static member Cast (p : ICell<CubicSplineOvershootingMinimization1>) = 
         if p :? CubicSplineOvershootingMinimization1Model then 
             p :?> CubicSplineOvershootingMinimization1Model
         else
             let o = new CubicSplineOvershootingMinimization1Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

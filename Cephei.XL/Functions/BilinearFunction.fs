@@ -39,19 +39,19 @@ module BilinearFunction =
     *)
     [<ExcelFunction(Name="_Bilinear_interpolate", Description="Create a Bilinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bilinear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation2D")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bilinear",Description = "Reference to Bilinear")>] 
+        ([<ExcelArgument(Name="Bilinear",Description = "Bilinear")>] 
          bilinear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="xSize",Description = "Reference to xSize")>] 
+        ([<ExcelArgument(Name="xSize",Description = "int")>] 
          xSize : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="ySize",Description = "Reference to ySize")>] 
+        ([<ExcelArgument(Name="ySize",Description = "int")>] 
          ySize : obj)
-        ([<ExcelArgument(Name="zData",Description = "Reference to zData")>] 
+        ([<ExcelArgument(Name="zData",Description = "Matrix")>] 
          zData : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -102,9 +102,9 @@ module BilinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bilinear_Range", Description="Create a range of Bilinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bilinear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Bilinear")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

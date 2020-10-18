@@ -39,19 +39,19 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DividendVanillaOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="dividendDates",Description = "Reference to dividendDates")>] 
+        ([<ExcelArgument(Name="dividendDates",Description = "Date")>] 
          dividendDates : obj)
-        ([<ExcelArgument(Name="dividends",Description = "Reference to dividends")>] 
+        ([<ExcelArgument(Name="dividends",Description = "double")>] 
          dividends : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,21 +106,21 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_impliedVolatility", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "Exercise")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "Exercise")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "Exercise")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "Exercise")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_delta", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_deltaForward", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_dividendRho", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_elasticity", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,9 +322,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_gamma", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,9 +358,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_isExpired", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_itmCashProbability", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_rho", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_strikeSensitivity", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,9 +502,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_theta", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,9 +538,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_thetaPerDay", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_vega", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,9 +610,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_exercise", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_payoff", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,9 +682,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_CASH", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,9 +718,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_errorEstimate", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,9 +754,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_NPV", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,11 +790,11 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_result", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,11 +832,11 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_setPricingEngine", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -874,9 +874,9 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_valuationDate", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DividendVanillaOption",Description = "Reference to DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -907,9 +907,9 @@ module DividendVanillaOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DividendVanillaOption_Range", Description="Create a range of DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

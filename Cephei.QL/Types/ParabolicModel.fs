@@ -48,7 +48,8 @@ type ParabolicModel
 (*
     Functions
 *)
-    let _Parabolic                                 = cell (fun () -> new Parabolic (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _Parabolic                                 = cell (fun () -> new Parabolic (xBegin.Value, size.Value, yBegin.Value))
     let _aCoefficients                             = triv (fun () -> _Parabolic.Value.aCoefficients())
     let _bCoefficients                             = triv (fun () -> _Parabolic.Value.bCoefficients())
     let _cCoefficients                             = triv (fun () -> _Parabolic.Value.cCoefficients())
@@ -80,13 +81,14 @@ type ParabolicModel
     casting 
 *)
     internal new () = new ParabolicModel(null,null,null)
-    member internal this.Inject v = _Parabolic.Value <- v
+    member internal this.Inject v = _Parabolic <- v
     static member Cast (p : ICell<Parabolic>) = 
         if p :? ParabolicModel then 
             p :?> ParabolicModel
         else
             let o = new ParabolicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,7 +50,8 @@ type GMRESModel
 (*
     Functions
 *)
-    let _GMRES                                     = cell (fun () -> new GMRES (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
+    let mutable
+        _GMRES                                     = cell (fun () -> new GMRES (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
                                                    = triv (fun () -> _GMRES.Value.solve(b.Value, x0.Value))
     let _solveWithRestart                          (restart : ICell<int>) (b : ICell<Vector>) (x0 : ICell<Vector>)   
@@ -60,13 +61,14 @@ type GMRESModel
     casting 
 *)
     internal new () = new GMRESModel(null,null,null,null)
-    member internal this.Inject v = _GMRES.Value <- v
+    member internal this.Inject v = _GMRES <- v
     static member Cast (p : ICell<GMRES>) = 
         if p :? GMRESModel then 
             p :?> GMRESModel
         else
             let o = new GMRESModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

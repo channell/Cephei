@@ -39,7 +39,7 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NZDCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_code", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_empty", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_Equals", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_format", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_fractionsPerUnit", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_fractionSymbol", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_name", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_numericCode", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_rounding", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_symbol", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_ToString", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module NZDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NZDCurrency_triangulationCurrency", Description="Create a NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NZDCurrency",Description = "Reference to NZDCurrency")>] 
+        ([<ExcelArgument(Name="NZDCurrency",Description = "NZDCurrency")>] 
          nzdcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module NZDCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NZDCurrency_Range", Description="Create a range of NZDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NZDCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

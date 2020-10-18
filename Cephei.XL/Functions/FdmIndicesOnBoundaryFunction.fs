@@ -39,13 +39,13 @@ module FdmIndicesOnBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmIndicesOnBoundary", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmIndicesOnBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="layout",Description = "Reference to layout")>] 
+        ([<ExcelArgument(Name="layout",Description = "FdmLinearOpLayout")>] 
          layout : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
-        ([<ExcelArgument(Name="side",Description = "Reference to side")>] 
+        ([<ExcelArgument(Name="side",Description = ".Side")>] 
          side : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module FdmIndicesOnBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmIndicesOnBoundary_getIndices", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_getIndices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmIndicesOnBoundary",Description = "Reference to FdmIndicesOnBoundary")>] 
+        ([<ExcelArgument(Name="FdmIndicesOnBoundary",Description = "FdmIndicesOnBoundary")>] 
          fdmindicesonboundary : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module FdmIndicesOnBoundaryFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmIndicesOnBoundary_Range", Description="Create a range of FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmIndicesOnBoundary")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

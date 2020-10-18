@@ -12,8 +12,8 @@ open System
 
 module Diag =
 
-    [<ExcelFunction(Name="_dependancies", Description="get the cell dependancies",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true, IsMacroType = true)>]
-    let Dependancies () : obj[,]=
+    [<ExcelFunction(Name="_dependencies", Description="get the cell dependencies",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true, IsMacroType = true)>]
+    let dependencies () : obj[,]=
 
         Model.dependancyMatrix ()
 

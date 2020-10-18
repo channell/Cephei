@@ -40,13 +40,13 @@ module NinePointLinearOpFunction =
     (*!! duplicate Add function 
     [<ExcelFunction(Name="_NinePointLinearOp_add", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,11 +89,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_apply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,11 +131,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_applyTo", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,9 +173,9 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_Clone", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,11 +209,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_identity", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,9 +251,9 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_isTimeDependent", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,11 +287,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_mult", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_mult
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,13 +329,13 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_multiply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="D",Description = "Reference to D")>] 
+        ([<ExcelArgument(Name="D",Description = "IOperator")>] 
          D : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -377,9 +377,9 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "NinePointLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -414,13 +414,13 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp1", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="d0",Description = "Reference to d0")>] 
+        ([<ExcelArgument(Name="d0",Description = "int")>] 
          d0 : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "int")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -463,11 +463,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_setTime", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_size", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -541,11 +541,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_solveFor", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -583,13 +583,13 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_subtract", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -631,11 +631,11 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_swap", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
-        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+        ([<ExcelArgument(Name="m",Description = "NinePointLinearOp")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -673,9 +673,9 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_toMatrix", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NinePointLinearOp",Description = "Reference to NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,9 +706,9 @@ module NinePointLinearOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NinePointLinearOp_Range", Description="Create a range of NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

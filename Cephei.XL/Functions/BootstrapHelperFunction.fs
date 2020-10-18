@@ -39,9 +39,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BootstrapHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="quote",Description = "Reference to quote")>] 
+        ([<ExcelArgument(Name="quote",Description = "double")>] 
          quote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper1", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BootstrapHelper")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,9 +107,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper2", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BootstrapHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="quote",Description = "Reference to quote")>] 
+        ([<ExcelArgument(Name="quote",Description = "Quote")>] 
          quote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -144,9 +144,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_earliestDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -180,9 +180,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_impliedQuote", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -216,9 +216,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_latestDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -252,9 +252,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_latestRelevantDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -288,9 +288,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_maturityDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -324,9 +324,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_pillarDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -360,9 +360,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_quote", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -396,9 +396,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_quoteError", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -432,9 +432,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_quoteIsValid", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -468,9 +468,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_quoteValue", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -504,11 +504,11 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_registerWith", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -546,11 +546,11 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_setTermStructure", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "'TS")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -588,11 +588,11 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_unregisterWith", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,9 +630,9 @@ module BootstrapHelperFunction =
     *)
     [<ExcelFunction(Name="_BootstrapHelper_update", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BootstrapHelper",Description = "Reference to BootstrapHelper")>] 
+        ([<ExcelArgument(Name="BootstrapHelper",Description = "BootstrapHelper")>] 
          bootstraphelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -663,9 +663,9 @@ module BootstrapHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BootstrapHelper_Range", Description="Create a range of BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BootstrapHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

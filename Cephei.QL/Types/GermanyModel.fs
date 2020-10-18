@@ -109,7 +109,8 @@ type GermanyModel
 (*
     Functions
 *)
-    let _Germany                                   = cell (fun () -> new Germany (m.Value))
+    let mutable
+        _Germany                                   = cell (fun () -> new Germany (m.Value))
     let _addedHolidays                             = triv (fun () -> _Germany.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Germany.Value.addHoliday(d.Value)
@@ -146,13 +147,14 @@ type GermanyModel
     casting 
 *)
     internal new () = new GermanyModel(null)
-    member internal this.Inject v = _Germany.Value <- v
+    member internal this.Inject v = _Germany <- v
     static member Cast (p : ICell<Germany>) = 
         if p :? GermanyModel then 
             p :?> GermanyModel
         else
             let o = new GermanyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -268,7 +270,8 @@ type GermanyModel1
 (*
     Functions
 *)
-    let _Germany                                   = cell (fun () -> new Germany ())
+    let mutable
+        _Germany                                   = cell (fun () -> new Germany ())
     let _addedHolidays                             = triv (fun () -> _Germany.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Germany.Value.addHoliday(d.Value)
@@ -305,13 +308,14 @@ type GermanyModel1
     casting 
 *)
     
-    member internal this.Inject v = _Germany.Value <- v
+    member internal this.Inject v = _Germany <- v
     static member Cast (p : ICell<Germany>) = 
         if p :? GermanyModel1 then 
             p :?> GermanyModel1
         else
             let o = new GermanyModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

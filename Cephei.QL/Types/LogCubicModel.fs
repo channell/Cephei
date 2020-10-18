@@ -54,7 +54,8 @@ type LogCubicModel
 (*
     Functions
 *)
-    let _LogCubic                                  = cell (fun () -> new LogCubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
+    let mutable
+        _LogCubic                                  = cell (fun () -> new LogCubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
     let _global                                    = triv (fun () -> _LogCubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -64,13 +65,14 @@ type LogCubicModel
     casting 
 *)
     internal new () = new LogCubicModel(null,null,null,null,null,null)
-    member internal this.Inject v = _LogCubic.Value <- v
+    member internal this.Inject v = _LogCubic <- v
     static member Cast (p : ICell<LogCubic>) = 
         if p :? LogCubicModel then 
             p :?> LogCubicModel
         else
             let o = new LogCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -101,7 +103,8 @@ type LogCubicModel1
 (*
     Functions
 *)
-    let _LogCubic                                  = cell (fun () -> new LogCubic ())
+    let mutable
+        _LogCubic                                  = cell (fun () -> new LogCubic ())
     let _global                                    = triv (fun () -> _LogCubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -111,13 +114,14 @@ type LogCubicModel1
     casting 
 *)
     
-    member internal this.Inject v = _LogCubic.Value <- v
+    member internal this.Inject v = _LogCubic <- v
     static member Cast (p : ICell<LogCubic>) = 
         if p :? LogCubicModel1 then 
             p :?> LogCubicModel1
         else
             let o = new LogCubicModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

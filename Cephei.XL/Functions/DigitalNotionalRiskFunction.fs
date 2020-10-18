@@ -39,11 +39,11 @@ module DigitalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_DigitalNotionalRisk", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalNotionalRisk")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="paymentOffset",Description = "Reference to paymentOffset")>] 
+        ([<ExcelArgument(Name="paymentOffset",Description = "EventPaymentOffset")>] 
          paymentOffset : obj)
-        ([<ExcelArgument(Name="threshold",Description = "Reference to threshold")>] 
+        ([<ExcelArgument(Name="threshold",Description = "double")>] 
          threshold : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,13 +82,13 @@ module DigitalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_DigitalNotionalRisk_updatePath", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_updatePath
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalNotionalRisk",Description = "Reference to DigitalNotionalRisk")>] 
+        ([<ExcelArgument(Name="DigitalNotionalRisk",Description = "DigitalNotionalRisk")>] 
          digitalnotionalrisk : obj)
-        ([<ExcelArgument(Name="events",Description = "Reference to events")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
          events : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "NotionalPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -127,9 +127,9 @@ module DigitalNotionalRiskFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DigitalNotionalRisk_Range", Description="Create a range of DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DigitalNotionalRisk")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

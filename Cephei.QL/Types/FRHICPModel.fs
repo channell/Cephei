@@ -46,7 +46,8 @@ type FRHICPModel
 (*
     Functions
 *)
-    let _FRHICP                                    = cell (fun () -> new FRHICP (interpolated.Value, ts.Value))
+    let mutable
+        _FRHICP                                    = cell (fun () -> new FRHICP (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _FRHICP.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -89,13 +90,14 @@ type FRHICPModel
     casting 
 *)
     internal new () = new FRHICPModel(null,null)
-    member internal this.Inject v = _FRHICP.Value <- v
+    member internal this.Inject v = _FRHICP <- v
     static member Cast (p : ICell<FRHICP>) = 
         if p :? FRHICPModel then 
             p :?> FRHICPModel
         else
             let o = new FRHICPModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -151,7 +153,8 @@ type FRHICPModel1
 (*
     Functions
 *)
-    let _FRHICP                                    = cell (fun () -> new FRHICP (interpolated.Value))
+    let mutable
+        _FRHICP                                    = cell (fun () -> new FRHICP (interpolated.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _FRHICP.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -194,13 +197,14 @@ type FRHICPModel1
     casting 
 *)
     internal new () = new FRHICPModel1(null)
-    member internal this.Inject v = _FRHICP.Value <- v
+    member internal this.Inject v = _FRHICP <- v
     static member Cast (p : ICell<FRHICP>) = 
         if p :? FRHICPModel1 then 
             p :?> FRHICPModel1
         else
             let o = new FRHICPModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

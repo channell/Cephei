@@ -39,17 +39,17 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CliquetOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "PercentageStrikePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "EuropeanExercise")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="resetDates",Description = "Reference to resetDates")>] 
+        ([<ExcelArgument(Name="resetDates",Description = "Date")>] 
          resetDates : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,9 +100,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_delta", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_deltaForward", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_dividendRho", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,9 +208,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_elasticity", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_gamma", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,9 +280,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_isExpired", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_itmCashProbability", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,9 +352,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_rho", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,9 +388,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_strikeSensitivity", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,9 +424,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_theta", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -460,9 +460,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_thetaPerDay", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,9 +496,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_vega", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,9 +532,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_exercise", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,9 +568,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_payoff", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,9 +604,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_CASH", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,9 +640,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_errorEstimate", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -676,9 +676,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_NPV", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -712,11 +712,11 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_result", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,11 +754,11 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_setPricingEngine", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,9 +796,9 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_valuationDate", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CliquetOption",Description = "Reference to CliquetOption")>] 
+        ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -829,9 +829,9 @@ module CliquetOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CliquetOption_Range", Description="Create a range of CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CliquetOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

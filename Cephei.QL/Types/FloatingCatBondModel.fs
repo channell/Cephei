@@ -90,7 +90,8 @@ type FloatingCatBondModel
 (*
     Functions
 *)
-    let _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine (new FloatingCatBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, iborIndex.Value, accrualDayCounter.Value, notionalRisk.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
+    let mutable
+        _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine (new FloatingCatBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, iborIndex.Value, accrualDayCounter.Value, notionalRisk.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
     let _exhaustionProbability                     = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).exhaustionProbability())
     let _expectedLoss                              = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).expectedLoss())
     let _lossProbability                           = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).lossProbability())
@@ -147,13 +148,14 @@ type FloatingCatBondModel
     casting 
 *)
     internal new () = new FloatingCatBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingCatBond.Value <- v
+    member internal this.Inject v = _FloatingCatBond <- v
     static member Cast (p : ICell<FloatingCatBond>) = 
         if p :? FloatingCatBondModel then 
             p :?> FloatingCatBondModel
         else
             let o = new FloatingCatBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -283,7 +285,8 @@ type FloatingCatBondModel1
 (*
     Functions
 *)
-    let _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine (new FloatingCatBond (settlementDays.Value, faceAmount.Value, schedule.Value, iborIndex.Value, paymentDayCounter.Value, notionalRisk.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
+    let mutable
+        _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine (new FloatingCatBond (settlementDays.Value, faceAmount.Value, schedule.Value, iborIndex.Value, paymentDayCounter.Value, notionalRisk.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
     let _exhaustionProbability                     = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).exhaustionProbability())
     let _expectedLoss                              = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).expectedLoss())
     let _lossProbability                           = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).lossProbability())
@@ -340,13 +343,14 @@ type FloatingCatBondModel1
     casting 
 *)
     internal new () = new FloatingCatBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FloatingCatBond.Value <- v
+    member internal this.Inject v = _FloatingCatBond <- v
     static member Cast (p : ICell<FloatingCatBond>) = 
         if p :? FloatingCatBondModel1 then 
             p :?> FloatingCatBondModel1
         else
             let o = new FloatingCatBondModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

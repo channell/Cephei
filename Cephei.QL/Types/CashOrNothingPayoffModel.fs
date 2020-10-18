@@ -48,7 +48,8 @@ type CashOrNothingPayoffModel
 (*
     Functions
 *)
-    let _CashOrNothingPayoff                       = cell (fun () -> new CashOrNothingPayoff (Type.Value, strike.Value, cashPayoff.Value))
+    let mutable
+        _CashOrNothingPayoff                       = cell (fun () -> new CashOrNothingPayoff (Type.Value, strike.Value, cashPayoff.Value))
     let _cashPayoff                                = triv (fun () -> _CashOrNothingPayoff.Value.cashPayoff())
     let _description                               = triv (fun () -> _CashOrNothingPayoff.Value.description())
     let _name                                      = triv (fun () -> _CashOrNothingPayoff.Value.name())
@@ -64,13 +65,14 @@ type CashOrNothingPayoffModel
     casting 
 *)
     internal new () = new CashOrNothingPayoffModel(null,null,null)
-    member internal this.Inject v = _CashOrNothingPayoff.Value <- v
+    member internal this.Inject v = _CashOrNothingPayoff <- v
     static member Cast (p : ICell<CashOrNothingPayoff>) = 
         if p :? CashOrNothingPayoffModel then 
             p :?> CashOrNothingPayoffModel
         else
             let o = new CashOrNothingPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,7 +50,8 @@ type KernelInterpolationModel
 (*
     Functions
 *)
-    let _KernelInterpolation                       = cell (fun () -> new KernelInterpolation (xBegin.Value, size.Value, yBegin.Value, kernel.Value))
+    let mutable
+        _KernelInterpolation                       = cell (fun () -> new KernelInterpolation (xBegin.Value, size.Value, yBegin.Value, kernel.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _KernelInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _KernelInterpolation.Value.empty())
@@ -79,13 +80,14 @@ type KernelInterpolationModel
     casting 
 *)
     internal new () = new KernelInterpolationModel(null,null,null,null)
-    member internal this.Inject v = _KernelInterpolation.Value <- v
+    member internal this.Inject v = _KernelInterpolation <- v
     static member Cast (p : ICell<KernelInterpolation>) = 
         if p :? KernelInterpolationModel then 
             p :?> KernelInterpolationModel
         else
             let o = new KernelInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

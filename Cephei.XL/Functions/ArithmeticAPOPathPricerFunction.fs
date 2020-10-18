@@ -39,13 +39,13 @@ module ArithmeticAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticAPOPathPricer", Description="Create a ArithmeticAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticAPOPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticAPOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,15 +88,15 @@ module ArithmeticAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticAPOPathPricer1", Description="Create a ArithmeticAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticAPOPathPricer_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticAPOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="runningSum",Description = "Reference to runningSum")>] 
+        ([<ExcelArgument(Name="runningSum",Description = "double")>] 
          runningSum : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,17 +143,17 @@ module ArithmeticAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticAPOPathPricer2", Description="Create a ArithmeticAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticAPOPathPricer_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticAPOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="runningSum",Description = "Reference to runningSum")>] 
+        ([<ExcelArgument(Name="runningSum",Description = "double")>] 
          runningSum : obj)
-        ([<ExcelArgument(Name="pastFixings",Description = "Reference to pastFixings")>] 
+        ([<ExcelArgument(Name="pastFixings",Description = "int")>] 
          pastFixings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,11 +204,11 @@ module ArithmeticAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticAPOPathPricer_value", Description="Create a ArithmeticAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticAPOPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ArithmeticAPOPathPricer",Description = "Reference to ArithmeticAPOPathPricer")>] 
+        ([<ExcelArgument(Name="ArithmeticAPOPathPricer",Description = "ArithmeticAPOPathPricer")>] 
          arithmeticapopathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,11 +246,11 @@ module ArithmeticAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_ArithmeticAPOPathPricer_value1", Description="Create a ArithmeticAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticAPOPathPricer_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ArithmeticAPOPathPricer",Description = "Reference to ArithmeticAPOPathPricer")>] 
+        ([<ExcelArgument(Name="ArithmeticAPOPathPricer",Description = "ArithmeticAPOPathPricer")>] 
          arithmeticapopathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "Path")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -285,9 +285,9 @@ module ArithmeticAPOPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ArithmeticAPOPathPricer_Range", Description="Create a range of ArithmeticAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticAPOPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ArithmeticAPOPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

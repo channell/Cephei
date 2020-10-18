@@ -44,7 +44,8 @@ type LeastSquareFunctionModel
 (*
     Functions
 *)
-    let _LeastSquareFunction                       = cell (fun () -> new LeastSquareFunction (lsp.Value))
+    let mutable
+        _LeastSquareFunction                       = cell (fun () -> new LeastSquareFunction (lsp.Value))
     let _gradient                                  (grad_f : ICell<Vector>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LeastSquareFunction.Value.gradient(ref grad_f.Value, x.Value)
                                                                      _LeastSquareFunction.Value)
@@ -65,13 +66,14 @@ type LeastSquareFunctionModel
     casting 
 *)
     internal new () = new LeastSquareFunctionModel(null)
-    member internal this.Inject v = _LeastSquareFunction.Value <- v
+    member internal this.Inject v = _LeastSquareFunction <- v
     static member Cast (p : ICell<LeastSquareFunction>) = 
         if p :? LeastSquareFunctionModel then 
             p :?> LeastSquareFunctionModel
         else
             let o = new LeastSquareFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

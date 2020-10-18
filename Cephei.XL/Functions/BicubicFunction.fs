@@ -39,19 +39,19 @@ module BicubicFunction =
     *)
     [<ExcelFunction(Name="_Bicubic_interpolate", Description="Create a Bicubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bicubic_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation2D")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Bicubic",Description = "Reference to Bicubic")>] 
+        ([<ExcelArgument(Name="Bicubic",Description = "Bicubic")>] 
          bicubic : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="ySize",Description = "Reference to ySize")>] 
+        ([<ExcelArgument(Name="ySize",Description = "int")>] 
          ySize : obj)
-        ([<ExcelArgument(Name="zData",Description = "Reference to zData")>] 
+        ([<ExcelArgument(Name="zData",Description = "Matrix")>] 
          zData : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -102,9 +102,9 @@ module BicubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bicubic_Range", Description="Create a range of Bicubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bicubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Bicubic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

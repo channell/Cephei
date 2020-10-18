@@ -41,7 +41,8 @@ type IncrementalStatisticsModel
 (*
     Functions
 *)
-    let _IncrementalStatistics                     = cell (fun () -> new IncrementalStatistics ())
+    let mutable
+        _IncrementalStatistics                     = cell (fun () -> new IncrementalStatistics ())
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _IncrementalStatistics.Value.add(value.Value, weight.Value)
                                                                      _IncrementalStatistics.Value)
@@ -77,13 +78,14 @@ type IncrementalStatisticsModel
     casting 
 *)
     
-    member internal this.Inject v = _IncrementalStatistics.Value <- v
+    member internal this.Inject v = _IncrementalStatistics <- v
     static member Cast (p : ICell<IncrementalStatistics>) = 
         if p :? IncrementalStatisticsModel then 
             p :?> IncrementalStatisticsModel
         else
             let o = new IncrementalStatisticsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module AmericanPathPricerFunction =
     *)
     [<ExcelFunction(Name="_AmericanPathPricer", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="polynomOrder",Description = "Reference to polynomOrder")>] 
+        ([<ExcelArgument(Name="polynomOrder",Description = "int")>] 
          polynomOrder : obj)
-        ([<ExcelArgument(Name="polynomType",Description = "Reference to polynomType")>] 
+        ([<ExcelArgument(Name="polynomType",Description = "LsmBasisSystem.PolynomType")>] 
          polynomType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,9 +88,9 @@ module AmericanPathPricerFunction =
     *)
     [<ExcelFunction(Name="_AmericanPathPricer_basisSystem", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_basisSystem
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPathPricer",Description = "Reference to AmericanPathPricer")>] 
+        ([<ExcelArgument(Name="AmericanPathPricer",Description = "AmericanPathPricer")>] 
          americanpathpricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,13 +124,13 @@ module AmericanPathPricerFunction =
     *)
     [<ExcelFunction(Name="_AmericanPathPricer_state", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_state
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPathPricer",Description = "Reference to AmericanPathPricer")>] 
+        ([<ExcelArgument(Name="AmericanPathPricer",Description = "AmericanPathPricer")>] 
          americanpathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "int")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,13 +172,13 @@ module AmericanPathPricerFunction =
     *)
     [<ExcelFunction(Name="_AmericanPathPricer_value", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPathPricer",Description = "Reference to AmericanPathPricer")>] 
+        ([<ExcelArgument(Name="AmericanPathPricer",Description = "AmericanPathPricer")>] 
          americanpathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "int")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,9 +217,9 @@ module AmericanPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanPathPricer_Range", Description="Create a range of AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AmericanPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -70,7 +70,8 @@ type CappedFlooredCmsCouponModel
 (*
     Functions
 *)
-    let _CappedFlooredCmsCoupon                    = cell (fun () -> new CappedFlooredCmsCoupon (nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let mutable
+        _CappedFlooredCmsCoupon                    = cell (fun () -> new CappedFlooredCmsCoupon (nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (cap : ICell<Nullable<double>>) (floor : ICell<Nullable<double>>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
                                                    = triv (fun () -> _CappedFlooredCmsCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _cap                                       = triv (fun () -> _CappedFlooredCmsCoupon.Value.cap())
@@ -136,13 +137,14 @@ type CappedFlooredCmsCouponModel
     casting 
 *)
     internal new () = new CappedFlooredCmsCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CappedFlooredCmsCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredCmsCoupon <- v
     static member Cast (p : ICell<CappedFlooredCmsCoupon>) = 
         if p :? CappedFlooredCmsCouponModel then 
             p :?> CappedFlooredCmsCouponModel
         else
             let o = new CappedFlooredCmsCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -232,7 +234,8 @@ type CappedFlooredCmsCouponModel1
 (*
     Functions
 *)
-    let _CappedFlooredCmsCoupon                    = cell (fun () -> new CappedFlooredCmsCoupon ())
+    let mutable
+        _CappedFlooredCmsCoupon                    = cell (fun () -> new CappedFlooredCmsCoupon ())
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (cap : ICell<Nullable<double>>) (floor : ICell<Nullable<double>>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
                                                    = triv (fun () -> _CappedFlooredCmsCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
     let _cap                                       = triv (fun () -> _CappedFlooredCmsCoupon.Value.cap())
@@ -298,13 +301,14 @@ type CappedFlooredCmsCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _CappedFlooredCmsCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredCmsCoupon <- v
     static member Cast (p : ICell<CappedFlooredCmsCoupon>) = 
         if p :? CappedFlooredCmsCouponModel1 then 
             p :?> CappedFlooredCmsCouponModel1
         else
             let o = new CappedFlooredCmsCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

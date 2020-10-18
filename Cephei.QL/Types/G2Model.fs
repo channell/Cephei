@@ -50,7 +50,8 @@ type G2Model
 (*
     Functions
 *)
-    let _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value, b.Value))
+    let mutable
+        _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value, b.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _G2.Value.discount(t.Value))
     let _discountBond                              (now : ICell<double>) (maturity : ICell<double>) (factors : ICell<Vector>)   
@@ -92,13 +93,14 @@ type G2Model
     casting 
 *)
     internal new () = new G2Model(null,null,null,null)
-    member internal this.Inject v = _G2.Value <- v
+    member internal this.Inject v = _G2 <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model then 
             p :?> G2Model
         else
             let o = new G2Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -156,7 +158,8 @@ type G2Model1
 (*
     Functions
 *)
-    let _G2                                        = cell (fun () -> new G2 (termStructure.Value))
+    let mutable
+        _G2                                        = cell (fun () -> new G2 (termStructure.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _G2.Value.discount(t.Value))
     let _discountBond                              (now : ICell<double>) (maturity : ICell<double>) (factors : ICell<Vector>)   
@@ -198,13 +201,14 @@ type G2Model1
     casting 
 *)
     internal new () = new G2Model1(null)
-    member internal this.Inject v = _G2.Value <- v
+    member internal this.Inject v = _G2 <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model1 then 
             p :?> G2Model1
         else
             let o = new G2Model1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -263,7 +267,8 @@ type G2Model2
 (*
     Functions
 *)
-    let _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value))
+    let mutable
+        _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _G2.Value.discount(t.Value))
     let _discountBond                              (now : ICell<double>) (maturity : ICell<double>) (factors : ICell<Vector>)   
@@ -305,13 +310,14 @@ type G2Model2
     casting 
 *)
     internal new () = new G2Model2(null,null,null)
-    member internal this.Inject v = _G2.Value <- v
+    member internal this.Inject v = _G2 <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model2 then 
             p :?> G2Model2
         else
             let o = new G2Model2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -376,7 +382,8 @@ type G2Model3
 (*
     Functions
 *)
-    let _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value, b.Value, eta.Value))
+    let mutable
+        _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value, b.Value, eta.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _G2.Value.discount(t.Value))
     let _discountBond                              (now : ICell<double>) (maturity : ICell<double>) (factors : ICell<Vector>)   
@@ -418,13 +425,14 @@ type G2Model3
     casting 
 *)
     internal new () = new G2Model3(null,null,null,null,null)
-    member internal this.Inject v = _G2.Value <- v
+    member internal this.Inject v = _G2 <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model3 then 
             p :?> G2Model3
         else
             let o = new G2Model3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -493,7 +501,8 @@ type G2Model4
 (*
     Functions
 *)
-    let _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value, b.Value, eta.Value, rho.Value))
+    let mutable
+        _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value, sigma.Value, b.Value, eta.Value, rho.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _G2.Value.discount(t.Value))
     let _discountBond                              (now : ICell<double>) (maturity : ICell<double>) (factors : ICell<Vector>)   
@@ -535,13 +544,14 @@ type G2Model4
     casting 
 *)
     internal new () = new G2Model4(null,null,null,null,null,null)
-    member internal this.Inject v = _G2.Value <- v
+    member internal this.Inject v = _G2 <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model4 then 
             p :?> G2Model4
         else
             let o = new G2Model4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -603,7 +613,8 @@ type G2Model5
 (*
     Functions
 *)
-    let _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value))
+    let mutable
+        _G2                                        = cell (fun () -> new G2 (termStructure.Value, a.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _G2.Value.discount(t.Value))
     let _discountBond                              (now : ICell<double>) (maturity : ICell<double>) (factors : ICell<Vector>)   
@@ -645,13 +656,14 @@ type G2Model5
     casting 
 *)
     internal new () = new G2Model5(null,null)
-    member internal this.Inject v = _G2.Value <- v
+    member internal this.Inject v = _G2 <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model5 then 
             p :?> G2Model5
         else
             let o = new G2Model5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

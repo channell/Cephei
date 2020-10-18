@@ -52,7 +52,8 @@ type CrankNicolsonSchemeModel
 (*
     Functions
 *)
-    let _CrankNicolsonScheme                       = cell (fun () -> new CrankNicolsonScheme (theta.Value, map.Value, bcSet.Value, relTol.Value, solverType.Value))
+    let mutable
+        _CrankNicolsonScheme                       = cell (fun () -> new CrankNicolsonScheme (theta.Value, map.Value, bcSet.Value, relTol.Value, solverType.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _CrankNicolsonScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _numberOfIterations                        = triv (fun () -> _CrankNicolsonScheme.Value.numberOfIterations())
@@ -67,13 +68,14 @@ type CrankNicolsonSchemeModel
     casting 
 *)
     internal new () = new CrankNicolsonSchemeModel(null,null,null,null,null)
-    member internal this.Inject v = _CrankNicolsonScheme.Value <- v
+    member internal this.Inject v = _CrankNicolsonScheme <- v
     static member Cast (p : ICell<CrankNicolsonScheme>) = 
         if p :? CrankNicolsonSchemeModel then 
             p :?> CrankNicolsonSchemeModel
         else
             let o = new CrankNicolsonSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -106,7 +108,8 @@ type CrankNicolsonSchemeModel1
 (*
     Functions
 *)
-    let _CrankNicolsonScheme                       = cell (fun () -> new CrankNicolsonScheme ())
+    let mutable
+        _CrankNicolsonScheme                       = cell (fun () -> new CrankNicolsonScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _CrankNicolsonScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _numberOfIterations                        = triv (fun () -> _CrankNicolsonScheme.Value.numberOfIterations())
@@ -121,13 +124,14 @@ type CrankNicolsonSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _CrankNicolsonScheme.Value <- v
+    member internal this.Inject v = _CrankNicolsonScheme <- v
     static member Cast (p : ICell<CrankNicolsonScheme>) = 
         if p :? CrankNicolsonSchemeModel1 then 
             p :?> CrankNicolsonSchemeModel1
         else
             let o = new CrankNicolsonSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

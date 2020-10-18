@@ -48,7 +48,8 @@ type DiscretizedBarrierOptionModel
 (*
     Functions
 *)
-    let _DiscretizedBarrierOption                  = cell (fun () -> new DiscretizedBarrierOption (args.Value, Process.Value, grid.Value))
+    let mutable
+        _DiscretizedBarrierOption                  = cell (fun () -> new DiscretizedBarrierOption (args.Value, Process.Value, grid.Value))
     let _checkBarrier                              (optvalues : ICell<Vector>) (grid : ICell<Vector>)   
                                                    = triv (fun () -> _DiscretizedBarrierOption.Value.checkBarrier(optvalues.Value, grid.Value)
                                                                      _DiscretizedBarrierOption.Value)
@@ -87,13 +88,14 @@ type DiscretizedBarrierOptionModel
     casting 
 *)
     internal new () = new DiscretizedBarrierOptionModel(null,null,null)
-    member internal this.Inject v = _DiscretizedBarrierOption.Value <- v
+    member internal this.Inject v = _DiscretizedBarrierOption <- v
     static member Cast (p : ICell<DiscretizedBarrierOption>) = 
         if p :? DiscretizedBarrierOptionModel then 
             p :?> DiscretizedBarrierOptionModel
         else
             let o = new DiscretizedBarrierOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,21 +39,21 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaPremiumAdjustedSolverClass")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ot",Description = "Reference to ot")>] 
+        ([<ExcelArgument(Name="ot",Description = "Option.Type")>] 
          ot : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType")>] 
          dt : obj)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="dDiscount",Description = "Reference to dDiscount")>] 
+        ([<ExcelArgument(Name="dDiscount",Description = "double")>] 
          dDiscount : obj)
-        ([<ExcelArgument(Name="fDiscount",Description = "Reference to fDiscount")>] 
+        ([<ExcelArgument(Name="fDiscount",Description = "double")>] 
          fDiscount : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="delta",Description = "Reference to delta")>] 
+        ([<ExcelArgument(Name="delta",Description = "double")>] 
          delta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_value", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedSolverClass",Description = "Reference to BlackDeltaPremiumAdjustedSolverClass")>] 
+        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedSolverClass",Description = "BlackDeltaPremiumAdjustedSolverClass")>] 
          blackdeltapremiumadjustedsolverclass : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,11 +154,11 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_derivative", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedSolverClass",Description = "Reference to BlackDeltaPremiumAdjustedSolverClass")>] 
+        ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedSolverClass",Description = "BlackDeltaPremiumAdjustedSolverClass")>] 
          blackdeltapremiumadjustedsolverclass : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -193,9 +193,9 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackDeltaPremiumAdjustedSolverClass")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

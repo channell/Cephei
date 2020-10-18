@@ -54,7 +54,8 @@ type PiecewiseYoYInflationCurveModel
 (*
     Functions
 *)
-    let _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve (dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
+    let mutable
+        _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve (dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseYoYInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseYoYInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseYoYInflationCurve.Value.Clone())
@@ -144,13 +145,14 @@ type PiecewiseYoYInflationCurveModel
     casting 
 *)
     internal new () = new PiecewiseYoYInflationCurveModel(null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYoYInflationCurve <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel then 
             p :?> PiecewiseYoYInflationCurveModel
         else
             let o = new PiecewiseYoYInflationCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -270,7 +272,8 @@ type PiecewiseYoYInflationCurveModel1
 (*
     Functions
 *)
-    let _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve (referenceDate.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
+    let mutable
+        _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve (referenceDate.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseYoYInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseYoYInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseYoYInflationCurve.Value.Clone())
@@ -360,13 +363,14 @@ type PiecewiseYoYInflationCurveModel1
     casting 
 *)
     internal new () = new PiecewiseYoYInflationCurveModel1(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYoYInflationCurve <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel1 then 
             p :?> PiecewiseYoYInflationCurveModel1
         else
             let o = new PiecewiseYoYInflationCurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -488,7 +492,8 @@ type PiecewiseYoYInflationCurveModel2
 (*
     Functions
 *)
-    let _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve (settlementDays.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
+    let mutable
+        _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve (settlementDays.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseYoYInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseYoYInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseYoYInflationCurve.Value.Clone())
@@ -578,13 +583,14 @@ type PiecewiseYoYInflationCurveModel2
     casting 
 *)
     internal new () = new PiecewiseYoYInflationCurveModel2(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYoYInflationCurve <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel2 then 
             p :?> PiecewiseYoYInflationCurveModel2
         else
             let o = new PiecewiseYoYInflationCurveModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -689,7 +695,8 @@ type PiecewiseYoYInflationCurveModel3
 (*
     Functions
 *)
-    let _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve ())
+    let mutable
+        _PiecewiseYoYInflationCurve                = cell (fun () -> new PiecewiseYoYInflationCurve ())
     let _accuracy_                                 = triv (fun () -> _PiecewiseYoYInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseYoYInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseYoYInflationCurve.Value.Clone())
@@ -779,13 +786,14 @@ type PiecewiseYoYInflationCurveModel3
     casting 
 *)
     
-    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseYoYInflationCurve <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel3 then 
             p :?> PiecewiseYoYInflationCurveModel3
         else
             let o = new PiecewiseYoYInflationCurveModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type USDLiborONModel
 (*
     Functions
 *)
-    let _USDLiborON                                = cell (fun () -> new USDLiborON ())
+    let mutable
+        _USDLiborON                                = cell (fun () -> new USDLiborON ())
     let _businessDayConvention                     = triv (fun () -> _USDLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _USDLiborON.Value.clone(forwarding.Value))
@@ -96,13 +97,14 @@ type USDLiborONModel
     casting 
 *)
     
-    member internal this.Inject v = _USDLiborON.Value <- v
+    member internal this.Inject v = _USDLiborON <- v
     static member Cast (p : ICell<USDLiborON>) = 
         if p :? USDLiborONModel then 
             p :?> USDLiborONModel
         else
             let o = new USDLiborONModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -168,7 +170,8 @@ type USDLiborONModel1
 (*
     Functions
 *)
-    let _USDLiborON                                = cell (fun () -> new USDLiborON (h.Value))
+    let mutable
+        _USDLiborON                                = cell (fun () -> new USDLiborON (h.Value))
     let _businessDayConvention                     = triv (fun () -> _USDLiborON.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _USDLiborON.Value.clone(forwarding.Value))
@@ -223,13 +226,14 @@ type USDLiborONModel1
     casting 
 *)
     internal new () = new USDLiborONModel1(null)
-    member internal this.Inject v = _USDLiborON.Value <- v
+    member internal this.Inject v = _USDLiborON <- v
     static member Cast (p : ICell<USDLiborON>) = 
         if p :? USDLiborONModel1 then 
             p :?> USDLiborONModel1
         else
             let o = new USDLiborONModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

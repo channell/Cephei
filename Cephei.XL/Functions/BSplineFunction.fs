@@ -39,13 +39,13 @@ module BSplineFunction =
     *)
     [<ExcelFunction(Name="_BSpline", Description="Create a BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BSpline")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "int")>] 
          p : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="knots",Description = "Reference to knots")>] 
+        ([<ExcelArgument(Name="knots",Description = "double")>] 
          knots : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,13 +88,13 @@ module BSplineFunction =
     *)
     [<ExcelFunction(Name="_BSpline_value", Description="Create a BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BSpline",Description = "Reference to BSpline")>] 
+        ([<ExcelArgument(Name="BSpline",Description = "BSpline")>] 
          bspline : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module BSplineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BSpline_Range", Description="Create a range of BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BSpline")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

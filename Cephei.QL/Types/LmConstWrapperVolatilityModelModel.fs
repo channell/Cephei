@@ -44,7 +44,8 @@ type LmConstWrapperVolatilityModelModel
 (*
     Functions
 *)
-    let _LmConstWrapperVolatilityModel             = cell (fun () -> new LmConstWrapperVolatilityModel (volaModel.Value))
+    let mutable
+        _LmConstWrapperVolatilityModel             = cell (fun () -> new LmConstWrapperVolatilityModel (volaModel.Value))
     let _integratedVariance                        (i : ICell<int>) (j : ICell<int>) (u : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LmConstWrapperVolatilityModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
     let _volatility                                (i : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
@@ -61,13 +62,14 @@ type LmConstWrapperVolatilityModelModel
     casting 
 *)
     internal new () = new LmConstWrapperVolatilityModelModel(null)
-    member internal this.Inject v = _LmConstWrapperVolatilityModel.Value <- v
+    member internal this.Inject v = _LmConstWrapperVolatilityModel <- v
     static member Cast (p : ICell<LmConstWrapperVolatilityModel>) = 
         if p :? LmConstWrapperVolatilityModelModel then 
             p :?> LmConstWrapperVolatilityModelModel
         else
             let o = new LmConstWrapperVolatilityModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

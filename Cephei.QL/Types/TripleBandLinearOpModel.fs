@@ -44,7 +44,8 @@ type TripleBandLinearOpModel
 (*
     Functions
 *)
-    let _TripleBandLinearOp                        = cell (fun () -> new TripleBandLinearOp (m.Value))
+    let mutable
+        _TripleBandLinearOp                        = cell (fun () -> new TripleBandLinearOp (m.Value))
     let _add                                       (m : ICell<TripleBandLinearOp>)   
                                                    = triv (fun () -> _TripleBandLinearOp.Value.add(m.Value))
     let _add1                                      (u : ICell<Vector>)   
@@ -87,13 +88,14 @@ type TripleBandLinearOpModel
     casting 
 *)
     internal new () = new TripleBandLinearOpModel(null)
-    member internal this.Inject v = _TripleBandLinearOp.Value <- v
+    member internal this.Inject v = _TripleBandLinearOp <- v
     static member Cast (p : ICell<TripleBandLinearOp>) = 
         if p :? TripleBandLinearOpModel then 
             p :?> TripleBandLinearOpModel
         else
             let o = new TripleBandLinearOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -154,7 +156,8 @@ type TripleBandLinearOpModel1
 (*
     Functions
 *)
-    let _TripleBandLinearOp                        = cell (fun () -> new TripleBandLinearOp (direction.Value, mesher.Value))
+    let mutable
+        _TripleBandLinearOp                        = cell (fun () -> new TripleBandLinearOp (direction.Value, mesher.Value))
     let _add                                       (m : ICell<TripleBandLinearOp>)   
                                                    = triv (fun () -> _TripleBandLinearOp.Value.add(m.Value))
     let _add1                                      (u : ICell<Vector>)   
@@ -197,13 +200,14 @@ type TripleBandLinearOpModel1
     casting 
 *)
     internal new () = new TripleBandLinearOpModel1(null,null)
-    member internal this.Inject v = _TripleBandLinearOp.Value <- v
+    member internal this.Inject v = _TripleBandLinearOp <- v
     static member Cast (p : ICell<TripleBandLinearOp>) = 
         if p :? TripleBandLinearOpModel1 then 
             p :?> TripleBandLinearOpModel1
         else
             let o = new TripleBandLinearOpModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

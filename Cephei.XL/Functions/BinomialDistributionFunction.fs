@@ -39,11 +39,11 @@ module BinomialDistributionFunction =
     *)
     [<ExcelFunction(Name="_BinomialDistribution", Description="Create a BinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "double")>] 
          p : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,11 +82,11 @@ module BinomialDistributionFunction =
     *)
     [<ExcelFunction(Name="_BinomialDistribution_value", Description="Create a BinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BinomialDistribution",Description = "Reference to BinomialDistribution")>] 
+        ([<ExcelArgument(Name="BinomialDistribution",Description = "BinomialDistribution")>] 
          binomialdistribution : obj)
-        ([<ExcelArgument(Name="k",Description = "Reference to k")>] 
+        ([<ExcelArgument(Name="k",Description = "int")>] 
          k : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module BinomialDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BinomialDistribution_Range", Description="Create a range of BinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BinomialDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

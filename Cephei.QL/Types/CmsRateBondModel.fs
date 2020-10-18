@@ -74,7 +74,8 @@ type CmsRateBondModel
 (*
     Functions
 *)
-    let _CmsRateBond                               = cell (fun () -> withEngine pricingEngine (new CmsRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
+    let mutable
+        _CmsRateBond                               = cell (fun () -> withEngine pricingEngine (new CmsRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CmsRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CmsRateBond).calendar())
@@ -128,13 +129,14 @@ type CmsRateBondModel
     casting 
 *)
     internal new () = new CmsRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CmsRateBond.Value <- v
+    member internal this.Inject v = _CmsRateBond <- v
     static member Cast (p : ICell<CmsRateBond>) = 
         if p :? CmsRateBondModel then 
             p :?> CmsRateBondModel
         else
             let o = new CmsRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

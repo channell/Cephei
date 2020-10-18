@@ -52,7 +52,8 @@ type FraRateHelperModel
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -79,13 +80,14 @@ type FraRateHelperModel
     casting 
 *)
     internal new () = new FraRateHelperModel(null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel then 
             p :?> FraRateHelperModel
         else
             let o = new FraRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -139,7 +141,8 @@ type FraRateHelperModel1
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -166,13 +169,14 @@ type FraRateHelperModel1
     casting 
 *)
     internal new () = new FraRateHelperModel1(null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel1 then 
             p :?> FraRateHelperModel1
         else
             let o = new FraRateHelperModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -236,7 +240,8 @@ type FraRateHelperModel2
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -263,13 +268,14 @@ type FraRateHelperModel2
     casting 
 *)
     internal new () = new FraRateHelperModel2(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel2 then 
             p :?> FraRateHelperModel2
         else
             let o = new FraRateHelperModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -338,7 +344,8 @@ type FraRateHelperModel3
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -365,13 +372,14 @@ type FraRateHelperModel3
     casting 
 *)
     internal new () = new FraRateHelperModel3(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel3 then 
             p :?> FraRateHelperModel3
         else
             let o = new FraRateHelperModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -430,7 +438,8 @@ type FraRateHelperModel4
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -457,13 +466,14 @@ type FraRateHelperModel4
     casting 
 *)
     internal new () = new FraRateHelperModel4(null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel4 then 
             p :?> FraRateHelperModel4
         else
             let o = new FraRateHelperModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -517,7 +527,8 @@ type FraRateHelperModel5
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -544,13 +555,14 @@ type FraRateHelperModel5
     casting 
 *)
     internal new () = new FraRateHelperModel5(null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel5 then 
             p :?> FraRateHelperModel5
         else
             let o = new FraRateHelperModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -614,7 +626,8 @@ type FraRateHelperModel6
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -641,13 +654,14 @@ type FraRateHelperModel6
     casting 
 *)
     internal new () = new FraRateHelperModel6(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel6 then 
             p :?> FraRateHelperModel6
         else
             let o = new FraRateHelperModel6 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -716,7 +730,8 @@ type FraRateHelperModel7
 (*
     Functions
 *)
-    let _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
     let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
@@ -743,13 +758,14 @@ type FraRateHelperModel7
     casting 
 *)
     internal new () = new FraRateHelperModel7(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FraRateHelper.Value <- v
+    member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel7 then 
             p :?> FraRateHelperModel7
         else
             let o = new FraRateHelperModel7 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

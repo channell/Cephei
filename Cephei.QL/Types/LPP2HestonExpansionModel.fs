@@ -54,7 +54,8 @@ type LPP2HestonExpansionModel
 (*
     Functions
 *)
-    let _LPP2HestonExpansion                       = cell (fun () -> new LPP2HestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
+    let mutable
+        _LPP2HestonExpansion                       = cell (fun () -> new LPP2HestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
     let _impliedVolatility                         (strike : ICell<double>) (forward : ICell<double>)   
                                                    = triv (fun () -> _LPP2HestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
     do this.Bind(_LPP2HestonExpansion)
@@ -62,13 +63,14 @@ type LPP2HestonExpansionModel
     casting 
 *)
     internal new () = new LPP2HestonExpansionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _LPP2HestonExpansion.Value <- v
+    member internal this.Inject v = _LPP2HestonExpansion <- v
     static member Cast (p : ICell<LPP2HestonExpansion>) = 
         if p :? LPP2HestonExpansionModel then 
             p :?> LPP2HestonExpansionModel
         else
             let o = new LPP2HestonExpansionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_bcSet", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_bcSet
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmInnerValueCalculator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_calculator", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_calculator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmInnerValueCalculator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_condition", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_condition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmStepConditionComposite")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_dampingSteps", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_dampingSteps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesher")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_maturity", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_maturity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesher")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_mesher", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_mesher
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesher")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_timeSteps", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_timeSteps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSolverDesc",Description = "Reference to FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -288,9 +288,9 @@ module FdmSolverDescFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmSolverDesc_Range", Description="Create a range of FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmSolverDesc")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,37 +39,37 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CPICapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="baseCPI",Description = "Reference to baseCPI")>] 
+        ([<ExcelArgument(Name="baseCPI",Description = "double")>] 
          baseCPI : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "Date")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="fixCalendar",Description = "Reference to fixCalendar")>] 
+        ([<ExcelArgument(Name="fixCalendar",Description = "Calendar")>] 
          fixCalendar : obj)
-        ([<ExcelArgument(Name="fixConvention",Description = "Reference to fixConvention")>] 
+        ([<ExcelArgument(Name="fixConvention",Description = "BusinessDayConvention")>] 
          fixConvention : obj)
-        ([<ExcelArgument(Name="payCalendar",Description = "Reference to payCalendar")>] 
+        ([<ExcelArgument(Name="payCalendar",Description = "Calendar")>] 
          payCalendar : obj)
-        ([<ExcelArgument(Name="payConvention",Description = "Reference to payConvention")>] 
+        ([<ExcelArgument(Name="payConvention",Description = "BusinessDayConvention")>] 
          payConvention : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="infIndex",Description = "Reference to infIndex")>] 
+        ([<ExcelArgument(Name="infIndex",Description = "ZeroInflationIndex")>] 
          infIndex : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="observationInterpolation",Description = "Reference to observationInterpolation")>] 
+        ([<ExcelArgument(Name="observationInterpolation",Description = "CPICapFloor")>] 
          observationInterpolation : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_fixingDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_inflationIndex", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_inflationIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_isExpired", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_nominal", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_observationLag", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,9 +340,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_payDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_payDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,9 +376,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_strike", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,9 +412,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_type", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,9 +448,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_CASH", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,9 +484,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_errorEstimate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,9 +520,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_NPV", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,11 +556,11 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_result", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,11 +598,11 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_setPricingEngine", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,9 +640,9 @@ module CPICapFloorFunction =
     *)
     [<ExcelFunction(Name="_CPICapFloor_valuationDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICapFloor",Description = "Reference to CPICapFloor")>] 
+        ([<ExcelArgument(Name="CPICapFloor",Description = "CPICapFloor")>] 
          cpicapfloor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -673,9 +673,9 @@ module CPICapFloorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CPICapFloor_Range", Description="Create a range of CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CPICapFloor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

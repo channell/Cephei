@@ -46,7 +46,8 @@ type GenericTimeSetterModel<'PdeClass when 'PdeClass :> PdeSecondOrderParabolic 
 (*
     Functions
 *)
-    let _GenericTimeSetter                         = cell (fun () -> new GenericTimeSetter<'PdeClass> (grid.Value, Process.Value))
+    let mutable
+        _GenericTimeSetter                         = cell (fun () -> new GenericTimeSetter<'PdeClass> (grid.Value, Process.Value))
     let _setTime                                   (t : ICell<double>) (L : ICell<IOperator>)   
                                                    = triv (fun () -> _GenericTimeSetter.Value.setTime(t.Value, L.Value)
                                                                      _GenericTimeSetter.Value)

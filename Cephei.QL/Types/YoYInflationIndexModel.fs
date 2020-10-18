@@ -60,7 +60,8 @@ type YoYInflationIndexModel
 (*
     Functions
 *)
-    let _YoYInflationIndex                         = cell (fun () -> new YoYInflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, ratio.Value, frequency.Value, availabilityLag.Value, currency.Value, yoyInflation.Value))
+    let mutable
+        _YoYInflationIndex                         = cell (fun () -> new YoYInflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, ratio.Value, frequency.Value, availabilityLag.Value, currency.Value, yoyInflation.Value))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
                                                    = triv (fun () -> _YoYInflationIndex.Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -104,13 +105,14 @@ type YoYInflationIndexModel
     casting 
 *)
     internal new () = new YoYInflationIndexModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _YoYInflationIndex.Value <- v
+    member internal this.Inject v = _YoYInflationIndex <- v
     static member Cast (p : ICell<YoYInflationIndex>) = 
         if p :? YoYInflationIndexModel then 
             p :?> YoYInflationIndexModel
         else
             let o = new YoYInflationIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

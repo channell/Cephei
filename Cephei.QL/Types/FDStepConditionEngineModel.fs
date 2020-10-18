@@ -50,7 +50,8 @@ type FDStepConditionEngineModel
 (*
     Functions
 *)
-    let _FDStepConditionEngine                     = cell (fun () -> new FDStepConditionEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDStepConditionEngine                     = cell (fun () -> new FDStepConditionEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDStepConditionEngine.Value.calculate(r.Value)
                                                                      _FDStepConditionEngine.Value)
@@ -69,13 +70,14 @@ type FDStepConditionEngineModel
     casting 
 *)
     internal new () = new FDStepConditionEngineModel(null,null,null,null)
-    member internal this.Inject v = _FDStepConditionEngine.Value <- v
+    member internal this.Inject v = _FDStepConditionEngine <- v
     static member Cast (p : ICell<FDStepConditionEngine>) = 
         if p :? FDStepConditionEngineModel then 
             p :?> FDStepConditionEngineModel
         else
             let o = new FDStepConditionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -110,7 +112,8 @@ type FDStepConditionEngineModel1
 (*
     Functions
 *)
-    let _FDStepConditionEngine                     = cell (fun () -> new FDStepConditionEngine ())
+    let mutable
+        _FDStepConditionEngine                     = cell (fun () -> new FDStepConditionEngine ())
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
                                                    = triv (fun () -> _FDStepConditionEngine.Value.calculate(r.Value)
                                                                      _FDStepConditionEngine.Value)
@@ -129,13 +132,14 @@ type FDStepConditionEngineModel1
     casting 
 *)
     
-    member internal this.Inject v = _FDStepConditionEngine.Value <- v
+    member internal this.Inject v = _FDStepConditionEngine <- v
     static member Cast (p : ICell<FDStepConditionEngine>) = 
         if p :? FDStepConditionEngineModel1 then 
             p :?> FDStepConditionEngineModel1
         else
             let o = new FDStepConditionEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DZero")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "double")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -83,13 +83,13 @@ module DZeroFunction =
     (*!! dupliucate add function
     [<ExcelFunction(Name="_DZero_add", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -132,11 +132,11 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_applyTo", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -174,9 +174,9 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_Clone", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -210,9 +210,9 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_diagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -246,11 +246,11 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_identity", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -288,9 +288,9 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_isTimeDependent", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -324,9 +324,9 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_lowerDiagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -360,13 +360,13 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_multiply", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,13 +408,13 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_setFirstRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -456,13 +456,13 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_setLastRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -504,17 +504,17 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_setMidRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -564,15 +564,15 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_setMidRows", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="valA",Description = "Reference to valA")>] 
+        ([<ExcelArgument(Name="valA",Description = "double")>] 
          valA : obj)
-        ([<ExcelArgument(Name="valB",Description = "Reference to valB")>] 
+        ([<ExcelArgument(Name="valB",Description = "double")>] 
          valB : obj)
-        ([<ExcelArgument(Name="valC",Description = "Reference to valC")>] 
+        ([<ExcelArgument(Name="valC",Description = "double")>] 
          valC : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -618,11 +618,11 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_setTime", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -660,9 +660,9 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_size", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -696,11 +696,11 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_solveFor", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -738,13 +738,13 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_SOR", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
-        ([<ExcelArgument(Name="tol",Description = "Reference to tol")>] 
+        ([<ExcelArgument(Name="tol",Description = "double")>] 
          tol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -786,13 +786,13 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_subtract", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -834,9 +834,9 @@ module DZeroFunction =
     *)
     [<ExcelFunction(Name="_DZero_upperDiagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DZero",Description = "Reference to DZero")>] 
+        ([<ExcelArgument(Name="DZero",Description = "DZero")>] 
          dzero : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -867,9 +867,9 @@ module DZeroFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DZero_Range", Description="Create a range of DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DZero")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

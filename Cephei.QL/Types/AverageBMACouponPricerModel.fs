@@ -41,7 +41,8 @@ type AverageBMACouponPricerModel
 (*
     Functions
 *)
-    let _AverageBMACouponPricer                    = cell (fun () -> new AverageBMACouponPricer ())
+    let mutable
+        _AverageBMACouponPricer                    = cell (fun () -> new AverageBMACouponPricer ())
     let _capletPrice                               (d : ICell<double>)   
                                                    = triv (fun () -> _AverageBMACouponPricer.Value.capletPrice(d.Value))
     let _capletRate                                (d : ICell<double>)   
@@ -68,13 +69,14 @@ type AverageBMACouponPricerModel
     casting 
 *)
     
-    member internal this.Inject v = _AverageBMACouponPricer.Value <- v
+    member internal this.Inject v = _AverageBMACouponPricer <- v
     static member Cast (p : ICell<AverageBMACouponPricer>) = 
         if p :? AverageBMACouponPricerModel then 
             p :?> AverageBMACouponPricerModel
         else
             let o = new AverageBMACouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

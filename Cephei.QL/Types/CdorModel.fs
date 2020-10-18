@@ -46,7 +46,8 @@ type CdorModel
 (*
     Functions
 *)
-    let _Cdor                                      = cell (fun () -> new Cdor (tenor.Value, h.Value))
+    let mutable
+        _Cdor                                      = cell (fun () -> new Cdor (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _Cdor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Cdor.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type CdorModel
     casting 
 *)
     internal new () = new CdorModel(null,null)
-    member internal this.Inject v = _Cdor.Value <- v
+    member internal this.Inject v = _Cdor <- v
     static member Cast (p : ICell<Cdor>) = 
         if p :? CdorModel then 
             p :?> CdorModel
         else
             let o = new CdorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -175,7 +177,8 @@ type CdorModel1
 (*
     Functions
 *)
-    let _Cdor                                      = cell (fun () -> new Cdor (tenor.Value))
+    let mutable
+        _Cdor                                      = cell (fun () -> new Cdor (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _Cdor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Cdor.Value.clone(forwarding.Value))
@@ -230,13 +233,14 @@ type CdorModel1
     casting 
 *)
     internal new () = new CdorModel1(null)
-    member internal this.Inject v = _Cdor.Value <- v
+    member internal this.Inject v = _Cdor <- v
     static member Cast (p : ICell<Cdor>) = 
         if p :? CdorModel1 then 
             p :?> CdorModel1
         else
             let o = new CdorModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

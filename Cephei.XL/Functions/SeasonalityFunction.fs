@@ -39,15 +39,15 @@ module SeasonalityFunction =
     *)
     [<ExcelFunction(Name="_Seasonality_correctYoYRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_correctYoYRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Seasonality",Description = "Reference to Seasonality")>] 
+        ([<ExcelArgument(Name="Seasonality",Description = "Seasonality")>] 
          seasonality : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,15 +93,15 @@ module SeasonalityFunction =
     *)
     [<ExcelFunction(Name="_Seasonality_correctZeroRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_correctZeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Seasonality",Description = "Reference to Seasonality")>] 
+        ([<ExcelArgument(Name="Seasonality",Description = "Seasonality")>] 
          seasonality : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,11 +147,11 @@ module SeasonalityFunction =
     *)
     [<ExcelFunction(Name="_Seasonality_isConsistent", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_isConsistent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Seasonality",Description = "Reference to Seasonality")>] 
+        ([<ExcelArgument(Name="Seasonality",Description = "Seasonality")>] 
          seasonality : obj)
-        ([<ExcelArgument(Name="iTS",Description = "Reference to iTS")>] 
+        ([<ExcelArgument(Name="iTS",Description = "InflationTermStructure")>] 
          iTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,9 +186,9 @@ module SeasonalityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Seasonality_Range", Description="Create a range of Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Seasonality")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

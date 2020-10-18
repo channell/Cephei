@@ -48,7 +48,8 @@ type eqn3Model
 (*
     Functions
 *)
-    let _eqn3                                      = cell (fun () -> new eqn3 (h.Value, k.Value, Asr.Value))
+    let mutable
+        _eqn3                                      = cell (fun () -> new eqn3 (h.Value, k.Value, Asr.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _eqn3.Value.value(x.Value))
     do this.Bind(_eqn3)
@@ -56,13 +57,14 @@ type eqn3Model
     casting 
 *)
     internal new () = new eqn3Model(null,null,null)
-    member internal this.Inject v = _eqn3.Value <- v
+    member internal this.Inject v = _eqn3 <- v
     static member Cast (p : ICell<eqn3>) = 
         if p :? eqn3Model then 
             p :?> eqn3Model
         else
             let o = new eqn3Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

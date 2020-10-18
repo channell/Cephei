@@ -44,7 +44,8 @@ type FedFundsModel
 (*
     Functions
 *)
-    let _FedFunds                                  = cell (fun () -> new FedFunds (h.Value))
+    let mutable
+        _FedFunds                                  = cell (fun () -> new FedFunds (h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _FedFunds.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _FedFunds.Value.businessDayConvention())
@@ -99,13 +100,14 @@ type FedFundsModel
     casting 
 *)
     internal new () = new FedFundsModel(null)
-    member internal this.Inject v = _FedFunds.Value <- v
+    member internal this.Inject v = _FedFunds <- v
     static member Cast (p : ICell<FedFunds>) = 
         if p :? FedFundsModel then 
             p :?> FedFundsModel
         else
             let o = new FedFundsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

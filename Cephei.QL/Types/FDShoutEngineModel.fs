@@ -50,7 +50,8 @@ type FDShoutEngineModel
 (*
     Functions
 *)
-    let _FDShoutEngine                             = cell (fun () -> new FDShoutEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDShoutEngine                             = cell (fun () -> new FDShoutEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -73,13 +74,14 @@ type FDShoutEngineModel
     casting 
 *)
     internal new () = new FDShoutEngineModel(null,null,null,null)
-    member internal this.Inject v = _FDShoutEngine.Value <- v
+    member internal this.Inject v = _FDShoutEngine <- v
     static member Cast (p : ICell<FDShoutEngine>) = 
         if p :? FDShoutEngineModel then 
             p :?> FDShoutEngineModel
         else
             let o = new FDShoutEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -116,7 +118,8 @@ type FDShoutEngineModel1
 (*
     Functions
 *)
-    let _FDShoutEngine                             = cell (fun () -> new FDShoutEngine ())
+    let mutable
+        _FDShoutEngine                             = cell (fun () -> new FDShoutEngine ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -139,13 +142,14 @@ type FDShoutEngineModel1
     casting 
 *)
     
-    member internal this.Inject v = _FDShoutEngine.Value <- v
+    member internal this.Inject v = _FDShoutEngine <- v
     static member Cast (p : ICell<FDShoutEngine>) = 
         if p :? FDShoutEngineModel1 then 
             p :?> FDShoutEngineModel1
         else
             let o = new FDShoutEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

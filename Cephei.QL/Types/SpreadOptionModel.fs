@@ -50,7 +50,8 @@ type SpreadOptionModel
 (*
     Functions
 *)
-    let _SpreadOption                              = cell (fun () -> withEngine pricingEngine (new SpreadOption (payoff.Value, exercise.Value)))
+    let mutable
+        _SpreadOption                              = cell (fun () -> withEngine pricingEngine (new SpreadOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).delta())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).dividendRho())
     let _gamma                                     = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).gamma())
@@ -74,13 +75,14 @@ type SpreadOptionModel
     casting 
 *)
     internal new () = new SpreadOptionModel(null,null,null,null)
-    member internal this.Inject v = _SpreadOption.Value <- v
+    member internal this.Inject v = _SpreadOption <- v
     static member Cast (p : ICell<SpreadOption>) = 
         if p :? SpreadOptionModel then 
             p :?> SpreadOptionModel
         else
             let o = new SpreadOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

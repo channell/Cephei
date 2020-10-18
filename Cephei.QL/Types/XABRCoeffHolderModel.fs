@@ -52,7 +52,8 @@ type XABRCoeffHolderModel<'Model when 'Model :> IModel and 'Model : (new : unit 
 (*
     Functions
 *)
-    let _XABRCoeffHolder                           = cell (fun () -> new XABRCoeffHolder<'Model> (t.Value, forward.Value, _params.Value, paramIsFixed.Value, addParams.Value))
+    let mutable
+        _XABRCoeffHolder                           = cell (fun () -> new XABRCoeffHolder<'Model> (t.Value, forward.Value, _params.Value, paramIsFixed.Value, addParams.Value))
     let _addParams_                                = triv (fun () -> _XABRCoeffHolder.Value.addParams_)
     let _error_                                    = triv (fun () -> _XABRCoeffHolder.Value.error_)
     let _forward_                                  = triv (fun () -> _XABRCoeffHolder.Value.forward_)

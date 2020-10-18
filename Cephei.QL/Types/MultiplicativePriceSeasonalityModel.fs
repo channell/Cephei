@@ -48,7 +48,8 @@ type MultiplicativePriceSeasonalityModel
 (*
     Functions
 *)
-    let _MultiplicativePriceSeasonality            = cell (fun () -> new MultiplicativePriceSeasonality (seasonalityBaseDate.Value, frequency.Value, seasonalityFactors.Value))
+    let mutable
+        _MultiplicativePriceSeasonality            = cell (fun () -> new MultiplicativePriceSeasonality (seasonalityBaseDate.Value, frequency.Value, seasonalityFactors.Value))
     let _correctYoYRate                            (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
                                                    = triv (fun () -> _MultiplicativePriceSeasonality.Value.correctYoYRate(d.Value, r.Value, iTS.Value))
     let _correctZeroRate                           (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
@@ -68,13 +69,14 @@ type MultiplicativePriceSeasonalityModel
     casting 
 *)
     internal new () = new MultiplicativePriceSeasonalityModel(null,null,null)
-    member internal this.Inject v = _MultiplicativePriceSeasonality.Value <- v
+    member internal this.Inject v = _MultiplicativePriceSeasonality <- v
     static member Cast (p : ICell<MultiplicativePriceSeasonality>) = 
         if p :? MultiplicativePriceSeasonalityModel then 
             p :?> MultiplicativePriceSeasonalityModel
         else
             let o = new MultiplicativePriceSeasonalityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -111,7 +113,8 @@ type MultiplicativePriceSeasonalityModel1
 (*
     Functions
 *)
-    let _MultiplicativePriceSeasonality            = cell (fun () -> new MultiplicativePriceSeasonality ())
+    let mutable
+        _MultiplicativePriceSeasonality            = cell (fun () -> new MultiplicativePriceSeasonality ())
     let _correctYoYRate                            (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
                                                    = triv (fun () -> _MultiplicativePriceSeasonality.Value.correctYoYRate(d.Value, r.Value, iTS.Value))
     let _correctZeroRate                           (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
@@ -131,13 +134,14 @@ type MultiplicativePriceSeasonalityModel1
     casting 
 *)
     
-    member internal this.Inject v = _MultiplicativePriceSeasonality.Value <- v
+    member internal this.Inject v = _MultiplicativePriceSeasonality <- v
     static member Cast (p : ICell<MultiplicativePriceSeasonality>) = 
         if p :? MultiplicativePriceSeasonalityModel1 then 
             p :?> MultiplicativePriceSeasonalityModel1
         else
             let o = new MultiplicativePriceSeasonalityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

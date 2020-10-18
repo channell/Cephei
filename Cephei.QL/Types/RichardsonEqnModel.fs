@@ -52,7 +52,8 @@ type RichardsonEqnModel
 (*
     Functions
 *)
-    let _RichardsonEqn                             = cell (fun () -> new RichardsonEqn (fh.Value, ft.Value, fs.Value, t.Value, s.Value))
+    let mutable
+        _RichardsonEqn                             = cell (fun () -> new RichardsonEqn (fh.Value, ft.Value, fs.Value, t.Value, s.Value))
     let _value                                     (k : ICell<double>)   
                                                    = triv (fun () -> _RichardsonEqn.Value.value(k.Value))
     let _derivative                                (x : ICell<double>)   
@@ -62,13 +63,14 @@ type RichardsonEqnModel
     casting 
 *)
     internal new () = new RichardsonEqnModel(null,null,null,null,null)
-    member internal this.Inject v = _RichardsonEqn.Value <- v
+    member internal this.Inject v = _RichardsonEqn <- v
     static member Cast (p : ICell<RichardsonEqn>) = 
         if p :? RichardsonEqnModel then 
             p :?> RichardsonEqnModel
         else
             let o = new RichardsonEqnModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,7 +50,8 @@ type HaltonRsgModel
 (*
     Functions
 *)
-    let _HaltonRsg                                 = cell (fun () -> new HaltonRsg (dimensionality.Value, seed.Value, randomStart.Value, randomShift.Value))
+    let mutable
+        _HaltonRsg                                 = cell (fun () -> new HaltonRsg (dimensionality.Value, seed.Value, randomStart.Value, randomShift.Value))
     let _dimension                                 = triv (fun () -> _HaltonRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _HaltonRsg.Value.factory(dimensionality.Value, seed.Value))
@@ -61,13 +62,14 @@ type HaltonRsgModel
     casting 
 *)
     internal new () = new HaltonRsgModel(null,null,null,null)
-    member internal this.Inject v = _HaltonRsg.Value <- v
+    member internal this.Inject v = _HaltonRsg <- v
     static member Cast (p : ICell<HaltonRsg>) = 
         if p :? HaltonRsgModel then 
             p :?> HaltonRsgModel
         else
             let o = new HaltonRsgModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

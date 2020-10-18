@@ -46,19 +46,21 @@ type MaxNumberFuncEvalExceededModel
 (*
     Functions
 *)
-    let _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value, inner.Value))
+    let mutable
+        _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value, inner.Value))
     do this.Bind(_MaxNumberFuncEvalExceeded)
 (* 
     casting 
 *)
     internal new () = new MaxNumberFuncEvalExceededModel(null,null)
-    member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
+    member internal this.Inject v = _MaxNumberFuncEvalExceeded <- v
     static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
         if p :? MaxNumberFuncEvalExceededModel then 
             p :?> MaxNumberFuncEvalExceededModel
         else
             let o = new MaxNumberFuncEvalExceededModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -84,19 +86,21 @@ type MaxNumberFuncEvalExceededModel1
 (*
     Functions
 *)
-    let _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value))
+    let mutable
+        _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value))
     do this.Bind(_MaxNumberFuncEvalExceeded)
 (* 
     casting 
 *)
     internal new () = new MaxNumberFuncEvalExceededModel1(null)
-    member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
+    member internal this.Inject v = _MaxNumberFuncEvalExceeded <- v
     static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
         if p :? MaxNumberFuncEvalExceededModel1 then 
             p :?> MaxNumberFuncEvalExceededModel1
         else
             let o = new MaxNumberFuncEvalExceededModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -118,19 +122,21 @@ type MaxNumberFuncEvalExceededModel2
 (*
     Functions
 *)
-    let _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded ())
+    let mutable
+        _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded ())
     do this.Bind(_MaxNumberFuncEvalExceeded)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
+    member internal this.Inject v = _MaxNumberFuncEvalExceeded <- v
     static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
         if p :? MaxNumberFuncEvalExceededModel2 then 
             p :?> MaxNumberFuncEvalExceededModel2
         else
             let o = new MaxNumberFuncEvalExceededModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

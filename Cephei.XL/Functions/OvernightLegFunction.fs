@@ -39,11 +39,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="overnightIndex",Description = "Reference to overnightIndex")>] 
+        ([<ExcelArgument(Name="overnightIndex",Description = "OvernightIndex")>] 
          overnightIndex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_value", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withGearings", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "Reference to gearings")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withGearings1", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double")>] 
          gearing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,11 +202,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withNotionals", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withNotionals1", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withPaymentAdjustment", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withPaymentDayCounter", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,11 +370,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withSpreads1", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Reference to spreads")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,11 +412,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withSpreads", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightLeg",Description = "Reference to OvernightLeg")>] 
+        ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -451,9 +451,9 @@ module OvernightLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OvernightLeg_Range", Description="Create a range of OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the OvernightLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

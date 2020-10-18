@@ -41,7 +41,8 @@ type FdmZeroInnerValueModel
 (*
     Functions
 *)
-    let _FdmZeroInnerValue                         = cell (fun () -> new FdmZeroInnerValue ())
+    let mutable
+        _FdmZeroInnerValue                         = cell (fun () -> new FdmZeroInnerValue ())
     let _avgInnerValue                             (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmZeroInnerValue.Value.avgInnerValue(iter.Value, t.Value))
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
@@ -51,13 +52,14 @@ type FdmZeroInnerValueModel
     casting 
 *)
     
-    member internal this.Inject v = _FdmZeroInnerValue.Value <- v
+    member internal this.Inject v = _FdmZeroInnerValue <- v
     static member Cast (p : ICell<FdmZeroInnerValue>) = 
         if p :? FdmZeroInnerValueModel then 
             p :?> FdmZeroInnerValueModel
         else
             let o = new FdmZeroInnerValueModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

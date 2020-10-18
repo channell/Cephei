@@ -41,7 +41,8 @@ type InverseCumulativeNormalModel
 (*
     Functions
 *)
-    let _InverseCumulativeNormal                   = cell (fun () -> new InverseCumulativeNormal ())
+    let mutable
+        _InverseCumulativeNormal                   = cell (fun () -> new InverseCumulativeNormal ())
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_InverseCumulativeNormal)
@@ -49,13 +50,14 @@ type InverseCumulativeNormalModel
     casting 
 *)
     
-    member internal this.Inject v = _InverseCumulativeNormal.Value <- v
+    member internal this.Inject v = _InverseCumulativeNormal <- v
     static member Cast (p : ICell<InverseCumulativeNormal>) = 
         if p :? InverseCumulativeNormalModel then 
             p :?> InverseCumulativeNormalModel
         else
             let o = new InverseCumulativeNormalModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -83,7 +85,8 @@ type InverseCumulativeNormalModel1
 (*
     Functions
 *)
-    let _InverseCumulativeNormal                   = cell (fun () -> new InverseCumulativeNormal (average.Value, sigma.Value))
+    let mutable
+        _InverseCumulativeNormal                   = cell (fun () -> new InverseCumulativeNormal (average.Value, sigma.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_InverseCumulativeNormal)
@@ -91,13 +94,14 @@ type InverseCumulativeNormalModel1
     casting 
 *)
     internal new () = new InverseCumulativeNormalModel1(null,null)
-    member internal this.Inject v = _InverseCumulativeNormal.Value <- v
+    member internal this.Inject v = _InverseCumulativeNormal <- v
     static member Cast (p : ICell<InverseCumulativeNormal>) = 
         if p :? InverseCumulativeNormalModel1 then 
             p :?> InverseCumulativeNormalModel1
         else
             let o = new InverseCumulativeNormalModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

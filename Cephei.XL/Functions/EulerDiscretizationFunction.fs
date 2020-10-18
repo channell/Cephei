@@ -39,17 +39,17 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_covariance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EulerDiscretization",Description = "Reference to EulerDiscretization")>] 
+        ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,17 +99,17 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_diffusion", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EulerDiscretization",Description = "Reference to EulerDiscretization")>] 
+        ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,17 +159,17 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_diffusion1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_diffusion1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EulerDiscretization",Description = "Reference to EulerDiscretization")>] 
+        ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,17 +219,17 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_drift1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_drift1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EulerDiscretization",Description = "Reference to EulerDiscretization")>] 
+        ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,17 +279,17 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_drift", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EulerDiscretization",Description = "Reference to EulerDiscretization")>] 
+        ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -339,17 +339,17 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_variance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EulerDiscretization",Description = "Reference to EulerDiscretization")>] 
+        ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -396,9 +396,9 @@ module EulerDiscretizationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EulerDiscretization_Range", Description="Create a range of EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EulerDiscretization")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

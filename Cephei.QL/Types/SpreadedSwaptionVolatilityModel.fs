@@ -46,7 +46,8 @@ type SpreadedSwaptionVolatilityModel
 (*
     Functions
 *)
-    let _SpreadedSwaptionVolatility                = cell (fun () -> new SpreadedSwaptionVolatility (baseVol.Value, spread.Value))
+    let mutable
+        _SpreadedSwaptionVolatility                = cell (fun () -> new SpreadedSwaptionVolatility (baseVol.Value, spread.Value))
     let _calendar                                  = triv (fun () -> _SpreadedSwaptionVolatility.Value.calendar())
     let _dayCounter                                = triv (fun () -> _SpreadedSwaptionVolatility.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _SpreadedSwaptionVolatility.Value.maxDate())
@@ -124,13 +125,14 @@ type SpreadedSwaptionVolatilityModel
     casting 
 *)
     internal new () = new SpreadedSwaptionVolatilityModel(null,null)
-    member internal this.Inject v = _SpreadedSwaptionVolatility.Value <- v
+    member internal this.Inject v = _SpreadedSwaptionVolatility <- v
     static member Cast (p : ICell<SpreadedSwaptionVolatility>) = 
         if p :? SpreadedSwaptionVolatilityModel then 
             p :?> SpreadedSwaptionVolatilityModel
         else
             let o = new SpreadedSwaptionVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -58,7 +58,8 @@ type MixedLinearCubicModel
 (*
     Functions
 *)
-    let _MixedLinearCubic                          = cell (fun () -> new MixedLinearCubic (n.Value, behavior.Value, da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
+    let mutable
+        _MixedLinearCubic                          = cell (fun () -> new MixedLinearCubic (n.Value, behavior.Value, da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
     let _global                                    = triv (fun () -> _MixedLinearCubic.Value.GLOBAL)
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _MixedLinearCubic.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
@@ -68,13 +69,14 @@ type MixedLinearCubicModel
     casting 
 *)
     internal new () = new MixedLinearCubicModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _MixedLinearCubic.Value <- v
+    member internal this.Inject v = _MixedLinearCubic <- v
     static member Cast (p : ICell<MixedLinearCubic>) = 
         if p :? MixedLinearCubicModel then 
             p :?> MixedLinearCubicModel
         else
             let o = new MixedLinearCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

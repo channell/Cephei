@@ -46,20 +46,22 @@ type DiscountingBondEngineModel
 (*
     Functions
 *)
-    let _DiscountingBondEngine                     = cell (fun () -> new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))
+    let mutable
+        _DiscountingBondEngine                     = cell (fun () -> new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))
     let _discountCurve                             = triv (fun () -> _DiscountingBondEngine.Value.discountCurve())
     do this.Bind(_DiscountingBondEngine)
 (* 
     casting 
 *)
     internal new () = new DiscountingBondEngineModel(null,null)
-    member internal this.Inject v = _DiscountingBondEngine.Value <- v
+    member internal this.Inject v = _DiscountingBondEngine <- v
     static member Cast (p : ICell<DiscountingBondEngine>) = 
         if p :? DiscountingBondEngineModel then 
             p :?> DiscountingBondEngineModel
         else
             let o = new DiscountingBondEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type SGDCurrencyModel
 (*
     Functions
 *)
-    let _SGDCurrency                               = cell (fun () -> new SGDCurrency ())
+    let mutable
+        _SGDCurrency                               = cell (fun () -> new SGDCurrency ())
     let _code                                      = triv (fun () -> _SGDCurrency.Value.code)
     let _empty                                     = triv (fun () -> _SGDCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type SGDCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _SGDCurrency.Value <- v
+    member internal this.Inject v = _SGDCurrency <- v
     static member Cast (p : ICell<SGDCurrency>) = 
         if p :? SGDCurrencyModel then 
             p :?> SGDCurrencyModel
         else
             let o = new SGDCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

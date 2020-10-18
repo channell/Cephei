@@ -39,9 +39,9 @@ module CumulativeGammaDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeGammaDistribution", Description="Create a CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeGammaDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CumulativeGammaDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module CumulativeGammaDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeGammaDistribution_value", Description="Create a CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeGammaDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CumulativeGammaDistribution",Description = "Reference to CumulativeGammaDistribution")>] 
+        ([<ExcelArgument(Name="CumulativeGammaDistribution",Description = "CumulativeGammaDistribution")>] 
          cumulativegammadistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -115,9 +115,9 @@ module CumulativeGammaDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CumulativeGammaDistribution_Range", Description="Create a range of CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeGammaDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CumulativeGammaDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

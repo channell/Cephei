@@ -39,19 +39,19 @@ module FordeHestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_FordeHestonExpansion", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FordeHestonExpansion")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="kappa",Description = "Reference to kappa")>] 
+        ([<ExcelArgument(Name="kappa",Description = "double")>] 
          kappa : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "double")>] 
          theta : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="v0",Description = "Reference to v0")>] 
+        ([<ExcelArgument(Name="v0",Description = "double")>] 
          v0 : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="term",Description = "Reference to term")>] 
+        ([<ExcelArgument(Name="term",Description = "double")>] 
          term : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,13 +106,13 @@ module FordeHestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_FordeHestonExpansion_impliedVolatility", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FordeHestonExpansion",Description = "Reference to FordeHestonExpansion")>] 
+        ([<ExcelArgument(Name="FordeHestonExpansion",Description = "FordeHestonExpansion")>] 
          fordehestonexpansion : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -151,9 +151,9 @@ module FordeHestonExpansionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FordeHestonExpansion_Range", Description="Create a range of FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FordeHestonExpansion")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

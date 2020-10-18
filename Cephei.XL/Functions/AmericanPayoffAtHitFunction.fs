@@ -39,17 +39,17 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanPayoffAtHit")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="dividendDiscount",Description = "Reference to dividendDiscount")>] 
+        ([<ExcelArgument(Name="dividendDiscount",Description = "double")>] 
          dividendDiscount : obj)
-        ([<ExcelArgument(Name="variance",Description = "Reference to variance")>] 
+        ([<ExcelArgument(Name="variance",Description = "double")>] 
          variance : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,9 +100,9 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_delta", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "Reference to AmericanPayoffAtHit")>] 
+        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_gamma", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "Reference to AmericanPayoffAtHit")>] 
+        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,11 +172,11 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_rho", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "Reference to AmericanPayoffAtHit")>] 
+        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_value", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "Reference to AmericanPayoffAtHit")>] 
+        ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -247,9 +247,9 @@ module AmericanPayoffAtHitFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanPayoffAtHit_Range", Description="Create a range of AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AmericanPayoffAtHit")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

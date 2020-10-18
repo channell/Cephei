@@ -39,11 +39,11 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_discount", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,17 +81,17 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_discountBond1", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discountBond1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="T2",Description = "Reference to T2")>] 
+        ([<ExcelArgument(Name="T2",Description = "double")>] 
          T2 : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -141,15 +141,15 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_discountBond", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discountBond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="now",Description = "Reference to now")>] 
+        ([<ExcelArgument(Name="now",Description = "double")>] 
          now : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="factors",Description = "Reference to factors")>] 
+        ([<ExcelArgument(Name="factors",Description = "Vector")>] 
          factors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,17 +195,17 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_discountBondOption", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discountBondOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="bondMaturity",Description = "Reference to bondMaturity")>] 
+        ([<ExcelArgument(Name="bondMaturity",Description = "double")>] 
          bondMaturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_dynamics", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_dynamics
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,11 +291,11 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G25", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,17 +334,17 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G23", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="eta",Description = "Reference to eta")>] 
+        ([<ExcelArgument(Name="eta",Description = "double")>] 
          eta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,13 +395,13 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G22", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -444,15 +444,15 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -499,19 +499,19 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G24", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="eta",Description = "Reference to eta")>] 
+        ([<ExcelArgument(Name="eta",Description = "double")>] 
          eta : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -566,9 +566,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G21", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "G2")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -603,17 +603,17 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_swaption", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_swaption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Swaption.Arguments")>] 
          arguments : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="range",Description = "Reference to range")>] 
+        ([<ExcelArgument(Name="range",Description = "double")>] 
          range : obj)
-        ([<ExcelArgument(Name="intervals",Description = "Reference to intervals")>] 
+        ([<ExcelArgument(Name="intervals",Description = "int")>] 
          intervals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -663,9 +663,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_termStructure", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -699,9 +699,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_termStructure_", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_termStructure_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -735,11 +735,11 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_tree", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_tree
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -777,21 +777,21 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_calibrate", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_calibrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="instruments",Description = "Reference to instruments")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
          instruments : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="additionalConstraint",Description = "Reference to additionalConstraint")>] 
+        ([<ExcelArgument(Name="additionalConstraint",Description = "Constraint")>] 
          additionalConstraint : obj)
-        ([<ExcelArgument(Name="weights",Description = "Reference to weights")>] 
+        ([<ExcelArgument(Name="weights",Description = "double")>] 
          weights : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "Reference to fixParameters")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "bool")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -849,9 +849,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_constraint", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -885,9 +885,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_endCriteria", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -921,9 +921,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_notifyObservers", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_notifyObservers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -957,9 +957,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_parameters", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -993,11 +993,11 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_registerWith", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1035,11 +1035,11 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_setParams", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1077,11 +1077,11 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_unregisterWith", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1119,9 +1119,9 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_update", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1155,13 +1155,13 @@ module G2Function =
     *)
     [<ExcelFunction(Name="_G2_value", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="G2",Description = "Reference to G2")>] 
+        ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
-        ([<ExcelArgument(Name="instruments",Description = "Reference to instruments")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
          instruments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1200,9 +1200,9 @@ module G2Function =
             "<WIZ>"
     [<ExcelFunction(Name="_G2_Range", Description="Create a range of G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the G2")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

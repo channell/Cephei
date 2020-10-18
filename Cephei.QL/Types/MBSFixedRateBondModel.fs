@@ -72,7 +72,8 @@ type MBSFixedRateBondModel
 (*
     Functions
 *)
-    let _MBSFixedRateBond                          = cell (fun () -> withEngine pricingEngine (new MBSFixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, bondTenor.Value, originalLength.Value, sinkingFrequency.Value, WACRate.Value, PassThroughRate.Value, accrualDayCounter.Value, prepayModel.Value, paymentConvention.Value, issueDate.Value)))
+    let mutable
+        _MBSFixedRateBond                          = cell (fun () -> withEngine pricingEngine (new MBSFixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, bondTenor.Value, originalLength.Value, sinkingFrequency.Value, WACRate.Value, PassThroughRate.Value, accrualDayCounter.Value, prepayModel.Value, paymentConvention.Value, issueDate.Value)))
     let _BondEquivalentYield                       = triv (fun () -> (withEvaluationDate _evaluationDate _MBSFixedRateBond).BondEquivalentYield())
     let _BondFactors                               = triv (fun () -> (withEvaluationDate _evaluationDate _MBSFixedRateBond).BondFactors())
     let _expectedCashflows                         = triv (fun () -> (withEvaluationDate _evaluationDate _MBSFixedRateBond).expectedCashflows())
@@ -134,13 +135,14 @@ type MBSFixedRateBondModel
     casting 
 *)
     internal new () = new MBSFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _MBSFixedRateBond.Value <- v
+    member internal this.Inject v = _MBSFixedRateBond <- v
     static member Cast (p : ICell<MBSFixedRateBond>) = 
         if p :? MBSFixedRateBondModel then 
             p :?> MBSFixedRateBondModel
         else
             let o = new MBSFixedRateBondModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

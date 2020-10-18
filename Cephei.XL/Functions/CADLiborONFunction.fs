@@ -39,9 +39,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CADLiborON")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CADLiborON")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,9 +107,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_businessDayConvention", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,11 +143,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_clone", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,9 +185,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_endOfMonth", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,15 +221,15 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_forecastFixing1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,11 +275,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_forecastFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,9 +317,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_forwardingTermStructure", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -353,11 +353,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_maturityDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -395,9 +395,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_currency", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -431,9 +431,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_dayCounter", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -467,9 +467,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_familyName", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -503,13 +503,13 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_fixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,9 +551,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_fixingCalendar", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -587,11 +587,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_fixingDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -629,9 +629,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_fixingDays", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -665,11 +665,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_isValidFixingDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -707,9 +707,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_name", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -743,11 +743,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_pastFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -785,9 +785,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_tenor", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -821,9 +821,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_update", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,11 +857,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_valueDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -899,15 +899,15 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_addFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -953,15 +953,15 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_addFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1007,13 +1007,13 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_addFixings1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1055,9 +1055,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_allowsNativeFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1091,9 +1091,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_clearFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1127,11 +1127,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_registerWith", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1169,9 +1169,9 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_timeSeries", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1205,11 +1205,11 @@ module CADLiborONFunction =
     *)
     [<ExcelFunction(Name="_CADLiborON_unregisterWith", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CADLiborON",Description = "Reference to CADLiborON")>] 
+        ([<ExcelArgument(Name="CADLiborON",Description = "CADLiborON")>] 
          cadliboron : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1244,9 +1244,9 @@ module CADLiborONFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CADLiborON_Range", Description="Create a range of CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CADLiborON")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme_apply", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "Reference to TrBDF2Scheme")>] 
+        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "TrBDF2Scheme")>] 
          trbdf2scheme : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,15 +81,15 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme_factory", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "Reference to TrBDF2Scheme")>] 
+        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "TrBDF2Scheme")>] 
          trbdf2scheme : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "Object")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalInputs",Description = "Reference to additionalInputs")>] 
+        ([<ExcelArgument(Name="additionalInputs",Description = "IMixedScheme")>] 
          additionalInputs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme_numberOfIterations", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrBDF2Scheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "Reference to TrBDF2Scheme")>] 
+        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "TrBDF2Scheme")>] 
          trbdf2scheme : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,11 +171,11 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme_setStep", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrBDF2Scheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "Reference to TrBDF2Scheme")>] 
+        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "TrBDF2Scheme")>] 
          trbdf2scheme : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,15 +213,15 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme_step", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrBDF2Scheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "Reference to TrBDF2Scheme")>] 
+        ([<ExcelArgument(Name="TrBDF2Scheme",Description = "TrBDF2Scheme")>] 
          trbdf2scheme : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "TrBDF2Scheme")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,19 +267,19 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrBDF2Scheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="map",Description = "Reference to map")>] 
+        ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="trapezoidalScheme",Description = "Reference to trapezoidalScheme")>] 
+        ([<ExcelArgument(Name="trapezoidalScheme",Description = "'TrapezoidalScheme")>] 
          trapezoidalScheme : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "Reference to bcSet")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "TrBDF2Scheme")>] 
          bcSet : obj)
-        ([<ExcelArgument(Name="relTol",Description = "Reference to relTol")>] 
+        ([<ExcelArgument(Name="relTol",Description = "TrBDF2Scheme")>] 
          relTol : obj)
-        ([<ExcelArgument(Name="solverType",Description = "Reference to solverType")>] 
+        ([<ExcelArgument(Name="solverType",Description = "TrBDF2Scheme")>] 
          solverType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,7 +334,7 @@ module TrBDF2SchemeFunction =
     *)
     [<ExcelFunction(Name="_TrBDF2Scheme1", Description="Create a TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TrBDF2Scheme")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -362,9 +362,9 @@ module TrBDF2SchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TrBDF2Scheme_Range", Description="Create a range of TrBDF2Scheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrBDF2Scheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TrBDF2Scheme")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

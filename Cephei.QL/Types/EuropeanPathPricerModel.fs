@@ -48,7 +48,8 @@ type EuropeanPathPricerModel
 (*
     Functions
 *)
-    let _EuropeanPathPricer                        = cell (fun () -> new EuropeanPathPricer (Type.Value, strike.Value, discount.Value))
+    let mutable
+        _EuropeanPathPricer                        = cell (fun () -> new EuropeanPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (path : ICell<IPath>)   
                                                    = triv (fun () -> _EuropeanPathPricer.Value.value(path.Value))
     do this.Bind(_EuropeanPathPricer)
@@ -56,13 +57,14 @@ type EuropeanPathPricerModel
     casting 
 *)
     internal new () = new EuropeanPathPricerModel(null,null,null)
-    member internal this.Inject v = _EuropeanPathPricer.Value <- v
+    member internal this.Inject v = _EuropeanPathPricer <- v
     static member Cast (p : ICell<EuropeanPathPricer>) = 
         if p :? EuropeanPathPricerModel then 
             p :?> EuropeanPathPricerModel
         else
             let o = new EuropeanPathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

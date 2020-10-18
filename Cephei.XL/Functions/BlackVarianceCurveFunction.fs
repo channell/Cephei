@@ -39,17 +39,17 @@ module BlackVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_BlackVarianceCurve", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVarianceCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="blackVolCurve",Description = "Reference to blackVolCurve")>] 
+        ([<ExcelArgument(Name="blackVolCurve",Description = "double")>] 
          blackVolCurve : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="forceMonotoneVariance",Description = "Reference to forceMonotoneVariance")>] 
+        ([<ExcelArgument(Name="forceMonotoneVariance",Description = "bool")>] 
          forceMonotoneVariance : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,9 +100,9 @@ module BlackVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_BlackVarianceCurve_dayCounter", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "Reference to BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "BlackVarianceCurve")>] 
          blackvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module BlackVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_BlackVarianceCurve_maxDate", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "Reference to BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "BlackVarianceCurve")>] 
          blackvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module BlackVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_BlackVarianceCurve_maxStrike", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "Reference to BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "BlackVarianceCurve")>] 
          blackvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,9 +208,9 @@ module BlackVarianceCurveFunction =
     *)
     [<ExcelFunction(Name="_BlackVarianceCurve_minStrike", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "Reference to BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "BlackVarianceCurve")>] 
          blackvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module BlackVarianceCurveFunction =
     (*!!
     [<ExcelFunction(Name="_BlackVarianceCurve_setInterpolation", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_setInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "Reference to BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "BlackVarianceCurve")>] 
          blackvariancecurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,11 +283,11 @@ module BlackVarianceCurveFunction =
     (*!!
     [<ExcelFunction(Name="_BlackVarianceCurve_setInterpolation", Description="Create a BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_setInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "Reference to BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="BlackVarianceCurve",Description = "BlackVarianceCurve")>] 
          blackvariancecurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolator")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -323,9 +323,9 @@ module BlackVarianceCurveFunction =
             *)
     [<ExcelFunction(Name="_BlackVarianceCurve_Range", Description="Create a range of BlackVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackVarianceCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

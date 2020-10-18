@@ -46,7 +46,8 @@ type LfmSwaptionEngineModel
 (*
     Functions
 *)
-    let _LfmSwaptionEngine                         = cell (fun () -> new LfmSwaptionEngine (model.Value, discountCurve.Value))
+    let mutable
+        _LfmSwaptionEngine                         = cell (fun () -> new LfmSwaptionEngine (model.Value, discountCurve.Value))
     let _setModel                                  (model : ICell<Handle<LiborForwardModel>>)   
                                                    = triv (fun () -> _LfmSwaptionEngine.Value.setModel(model.Value)
                                                                      _LfmSwaptionEngine.Value)
@@ -65,13 +66,14 @@ type LfmSwaptionEngineModel
     casting 
 *)
     internal new () = new LfmSwaptionEngineModel(null,null)
-    member internal this.Inject v = _LfmSwaptionEngine.Value <- v
+    member internal this.Inject v = _LfmSwaptionEngine <- v
     static member Cast (p : ICell<LfmSwaptionEngine>) = 
         if p :? LfmSwaptionEngineModel then 
             p :?> LfmSwaptionEngineModel
         else
             let o = new LfmSwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

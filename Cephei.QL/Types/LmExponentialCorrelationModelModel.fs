@@ -46,7 +46,8 @@ type LmExponentialCorrelationModelModel
 (*
     Functions
 *)
-    let _LmExponentialCorrelationModel             = cell (fun () -> new LmExponentialCorrelationModel (size.Value, rho.Value))
+    let mutable
+        _LmExponentialCorrelationModel             = cell (fun () -> new LmExponentialCorrelationModel (size.Value, rho.Value))
     let _correlation                               (i : ICell<int>) (j : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LmExponentialCorrelationModel.Value.correlation(i.Value, j.Value, t.Value, x.Value))
     let _correlation1                              (t : ICell<double>) (x : ICell<Vector>)   
@@ -65,13 +66,14 @@ type LmExponentialCorrelationModelModel
     casting 
 *)
     internal new () = new LmExponentialCorrelationModelModel(null,null)
-    member internal this.Inject v = _LmExponentialCorrelationModel.Value <- v
+    member internal this.Inject v = _LmExponentialCorrelationModel <- v
     static member Cast (p : ICell<LmExponentialCorrelationModel>) = 
         if p :? LmExponentialCorrelationModelModel then 
             p :?> LmExponentialCorrelationModelModel
         else
             let o = new LmExponentialCorrelationModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

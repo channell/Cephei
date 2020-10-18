@@ -41,7 +41,8 @@ type ForwardRateModel
 (*
     Functions
 *)
-    let _ForwardRate                               = cell (fun () -> new ForwardRate ())
+    let mutable
+        _ForwardRate                               = cell (fun () -> new ForwardRate ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _ForwardRate.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type ForwardRateModel
     casting 
 *)
     
-    member internal this.Inject v = _ForwardRate.Value <- v
+    member internal this.Inject v = _ForwardRate <- v
     static member Cast (p : ICell<ForwardRate>) = 
         if p :? ForwardRateModel then 
             p :?> ForwardRateModel
         else
             let o = new ForwardRateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

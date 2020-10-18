@@ -77,7 +77,8 @@ type UnitedKingdomModel
 (*
     Functions
 *)
-    let _UnitedKingdom                             = cell (fun () -> new UnitedKingdom ())
+    let mutable
+        _UnitedKingdom                             = cell (fun () -> new UnitedKingdom ())
     let _addedHolidays                             = triv (fun () -> _UnitedKingdom.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _UnitedKingdom.Value.addHoliday(d.Value)
@@ -114,13 +115,14 @@ type UnitedKingdomModel
     casting 
 *)
     
-    member internal this.Inject v = _UnitedKingdom.Value <- v
+    member internal this.Inject v = _UnitedKingdom <- v
     static member Cast (p : ICell<UnitedKingdom>) = 
         if p :? UnitedKingdomModel then 
             p :?> UnitedKingdomModel
         else
             let o = new UnitedKingdomModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -209,7 +211,8 @@ type UnitedKingdomModel1
 (*
     Functions
 *)
-    let _UnitedKingdom                             = cell (fun () -> new UnitedKingdom (m.Value))
+    let mutable
+        _UnitedKingdom                             = cell (fun () -> new UnitedKingdom (m.Value))
     let _addedHolidays                             = triv (fun () -> _UnitedKingdom.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _UnitedKingdom.Value.addHoliday(d.Value)
@@ -246,13 +249,14 @@ type UnitedKingdomModel1
     casting 
 *)
     internal new () = new UnitedKingdomModel1(null)
-    member internal this.Inject v = _UnitedKingdom.Value <- v
+    member internal this.Inject v = _UnitedKingdom <- v
     static member Cast (p : ICell<UnitedKingdom>) = 
         if p :? UnitedKingdomModel1 then 
             p :?> UnitedKingdomModel1
         else
             let o = new UnitedKingdomModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

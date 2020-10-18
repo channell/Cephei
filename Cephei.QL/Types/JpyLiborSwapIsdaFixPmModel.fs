@@ -46,7 +46,8 @@ type JpyLiborSwapIsdaFixPmModel
 (*
     Functions
 *)
-    let _JpyLiborSwapIsdaFixPm                     = cell (fun () -> new JpyLiborSwapIsdaFixPm (tenor.Value, h.Value))
+    let mutable
+        _JpyLiborSwapIsdaFixPm                     = cell (fun () -> new JpyLiborSwapIsdaFixPm (tenor.Value, h.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _JpyLiborSwapIsdaFixPm.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -108,13 +109,14 @@ type JpyLiborSwapIsdaFixPmModel
     casting 
 *)
     internal new () = new JpyLiborSwapIsdaFixPmModel(null,null)
-    member internal this.Inject v = _JpyLiborSwapIsdaFixPm.Value <- v
+    member internal this.Inject v = _JpyLiborSwapIsdaFixPm <- v
     static member Cast (p : ICell<JpyLiborSwapIsdaFixPm>) = 
         if p :? JpyLiborSwapIsdaFixPmModel then 
             p :?> JpyLiborSwapIsdaFixPmModel
         else
             let o = new JpyLiborSwapIsdaFixPmModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -189,7 +191,8 @@ type JpyLiborSwapIsdaFixPmModel1
 (*
     Functions
 *)
-    let _JpyLiborSwapIsdaFixPm                     = cell (fun () -> new JpyLiborSwapIsdaFixPm (tenor.Value))
+    let mutable
+        _JpyLiborSwapIsdaFixPm                     = cell (fun () -> new JpyLiborSwapIsdaFixPm (tenor.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _JpyLiborSwapIsdaFixPm.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -251,13 +254,14 @@ type JpyLiborSwapIsdaFixPmModel1
     casting 
 *)
     internal new () = new JpyLiborSwapIsdaFixPmModel1(null)
-    member internal this.Inject v = _JpyLiborSwapIsdaFixPm.Value <- v
+    member internal this.Inject v = _JpyLiborSwapIsdaFixPm <- v
     static member Cast (p : ICell<JpyLiborSwapIsdaFixPm>) = 
         if p :? JpyLiborSwapIsdaFixPmModel1 then 
             p :?> JpyLiborSwapIsdaFixPmModel1
         else
             let o = new JpyLiborSwapIsdaFixPmModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

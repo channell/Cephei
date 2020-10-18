@@ -44,7 +44,8 @@ type GaussLegendreIntegrationModel
 (*
     Functions
 *)
-    let _GaussLegendreIntegration                  = cell (fun () -> new GaussLegendreIntegration (n.Value))
+    let mutable
+        _GaussLegendreIntegration                  = cell (fun () -> new GaussLegendreIntegration (n.Value))
     let _order                                     = triv (fun () -> _GaussLegendreIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussLegendreIntegration.Value.value(f.Value))
@@ -55,13 +56,14 @@ type GaussLegendreIntegrationModel
     casting 
 *)
     internal new () = new GaussLegendreIntegrationModel(null)
-    member internal this.Inject v = _GaussLegendreIntegration.Value <- v
+    member internal this.Inject v = _GaussLegendreIntegration <- v
     static member Cast (p : ICell<GaussLegendreIntegration>) = 
         if p :? GaussLegendreIntegrationModel then 
             p :?> GaussLegendreIntegrationModel
         else
             let o = new GaussLegendreIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

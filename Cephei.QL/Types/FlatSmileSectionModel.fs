@@ -54,7 +54,8 @@ type FlatSmileSectionModel
 (*
     Functions
 *)
-    let _FlatSmileSection                          = cell (fun () -> new FlatSmileSection (exerciseTime.Value, vol.Value, dc.Value, atmLevel.Value, Type.Value, shift.Value))
+    let mutable
+        _FlatSmileSection                          = cell (fun () -> new FlatSmileSection (exerciseTime.Value, vol.Value, dc.Value, atmLevel.Value, Type.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _FlatSmileSection.Value.atmLevel())
     let _maxStrike                                 = triv (fun () -> _FlatSmileSection.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _FlatSmileSection.Value.minStrike())
@@ -85,13 +86,14 @@ type FlatSmileSectionModel
     casting 
 *)
     internal new () = new FlatSmileSectionModel(null,null,null,null,null,null)
-    member internal this.Inject v = _FlatSmileSection.Value <- v
+    member internal this.Inject v = _FlatSmileSection <- v
     static member Cast (p : ICell<FlatSmileSection>) = 
         if p :? FlatSmileSectionModel then 
             p :?> FlatSmileSectionModel
         else
             let o = new FlatSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -157,7 +159,8 @@ type FlatSmileSectionModel1
 (*
     Functions
 *)
-    let _FlatSmileSection                          = cell (fun () -> new FlatSmileSection (d.Value, vol.Value, dc.Value, referenceDate.Value, atmLevel.Value, Type.Value, shift.Value))
+    let mutable
+        _FlatSmileSection                          = cell (fun () -> new FlatSmileSection (d.Value, vol.Value, dc.Value, referenceDate.Value, atmLevel.Value, Type.Value, shift.Value))
     let _atmLevel                                  = triv (fun () -> _FlatSmileSection.Value.atmLevel())
     let _maxStrike                                 = triv (fun () -> _FlatSmileSection.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _FlatSmileSection.Value.minStrike())
@@ -188,13 +191,14 @@ type FlatSmileSectionModel1
     casting 
 *)
     internal new () = new FlatSmileSectionModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FlatSmileSection.Value <- v
+    member internal this.Inject v = _FlatSmileSection <- v
     static member Cast (p : ICell<FlatSmileSection>) = 
         if p :? FlatSmileSectionModel1 then 
             p :?> FlatSmileSectionModel1
         else
             let o = new FlatSmileSectionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

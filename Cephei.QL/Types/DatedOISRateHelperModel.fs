@@ -50,7 +50,8 @@ type DatedOISRateHelperModel
 (*
     Functions
 *)
-    let _DatedOISRateHelper                        = cell (fun () -> new DatedOISRateHelper (startDate.Value, endDate.Value, fixedRate.Value, overnightIndex.Value))
+    let mutable
+        _DatedOISRateHelper                        = cell (fun () -> new DatedOISRateHelper (startDate.Value, endDate.Value, fixedRate.Value, overnightIndex.Value))
     let _impliedQuote                              = triv (fun () -> _DatedOISRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _DatedOISRateHelper.Value.setTermStructure(t.Value)
@@ -77,13 +78,14 @@ type DatedOISRateHelperModel
     casting 
 *)
     internal new () = new DatedOISRateHelperModel(null,null,null,null)
-    member internal this.Inject v = _DatedOISRateHelper.Value <- v
+    member internal this.Inject v = _DatedOISRateHelper <- v
     static member Cast (p : ICell<DatedOISRateHelper>) = 
         if p :? DatedOISRateHelperModel then 
             p :?> DatedOISRateHelperModel
         else
             let o = new DatedOISRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

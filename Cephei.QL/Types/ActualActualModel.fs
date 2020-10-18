@@ -41,7 +41,8 @@ type ActualActualModel
 (*
     Functions
 *)
-    let _ActualActual                              = cell (fun () -> new ActualActual ())
+    let mutable
+        _ActualActual                              = cell (fun () -> new ActualActual ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _ActualActual.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _ActualActual.Value.dayCounter)
@@ -59,13 +60,14 @@ type ActualActualModel
     casting 
 *)
     
-    member internal this.Inject v = _ActualActual.Value <- v
+    member internal this.Inject v = _ActualActual <- v
     static member Cast (p : ICell<ActualActual>) = 
         if p :? ActualActualModel then 
             p :?> ActualActualModel
         else
             let o = new ActualActualModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -103,7 +105,8 @@ type ActualActualModel1
 (*
     Functions
 *)
-    let _ActualActual                              = cell (fun () -> new ActualActual (c.Value, schedule.Value))
+    let mutable
+        _ActualActual                              = cell (fun () -> new ActualActual (c.Value, schedule.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _ActualActual.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _ActualActual.Value.dayCounter)
@@ -121,13 +124,14 @@ type ActualActualModel1
     casting 
 *)
     internal new () = new ActualActualModel1(null,null)
-    member internal this.Inject v = _ActualActual.Value <- v
+    member internal this.Inject v = _ActualActual <- v
     static member Cast (p : ICell<ActualActual>) = 
         if p :? ActualActualModel1 then 
             p :?> ActualActualModel1
         else
             let o = new ActualActualModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

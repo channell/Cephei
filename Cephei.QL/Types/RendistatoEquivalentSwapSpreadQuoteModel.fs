@@ -44,7 +44,8 @@ type RendistatoEquivalentSwapSpreadQuoteModel
 (*
     Functions
 *)
-    let _RendistatoEquivalentSwapSpreadQuote       = cell (fun () -> new RendistatoEquivalentSwapSpreadQuote (r.Value))
+    let mutable
+        _RendistatoEquivalentSwapSpreadQuote       = cell (fun () -> new RendistatoEquivalentSwapSpreadQuote (r.Value))
     let _isValid                                   = triv (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.isValid())
     let _value                                     = triv (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.value())
     let _registerWith                              (handler : ICell<Callback>)   
@@ -58,13 +59,14 @@ type RendistatoEquivalentSwapSpreadQuoteModel
     casting 
 *)
     internal new () = new RendistatoEquivalentSwapSpreadQuoteModel(null)
-    member internal this.Inject v = _RendistatoEquivalentSwapSpreadQuote.Value <- v
+    member internal this.Inject v = _RendistatoEquivalentSwapSpreadQuote <- v
     static member Cast (p : ICell<RendistatoEquivalentSwapSpreadQuote>) = 
         if p :? RendistatoEquivalentSwapSpreadQuoteModel then 
             p :?> RendistatoEquivalentSwapSpreadQuoteModel
         else
             let o = new RendistatoEquivalentSwapSpreadQuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

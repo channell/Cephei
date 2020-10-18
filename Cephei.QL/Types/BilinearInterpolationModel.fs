@@ -52,7 +52,8 @@ type BilinearInterpolationModel
 (*
     Functions
 *)
-    let _BilinearInterpolation                     = cell (fun () -> new BilinearInterpolation (xBegin.Value, xSize.Value, yBegin.Value, ySize.Value, zData.Value))
+    let mutable
+        _BilinearInterpolation                     = cell (fun () -> new BilinearInterpolation (xBegin.Value, xSize.Value, yBegin.Value, ySize.Value, zData.Value))
     let _isInRange                                 (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _BilinearInterpolation.Value.isInRange(x.Value, y.Value))
     let _locateX                                   (x : ICell<double>)   
@@ -85,13 +86,14 @@ type BilinearInterpolationModel
     casting 
 *)
     internal new () = new BilinearInterpolationModel(null,null,null,null,null)
-    member internal this.Inject v = _BilinearInterpolation.Value <- v
+    member internal this.Inject v = _BilinearInterpolation <- v
     static member Cast (p : ICell<BilinearInterpolation>) = 
         if p :? BilinearInterpolationModel then 
             p :?> BilinearInterpolationModel
         else
             let o = new BilinearInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

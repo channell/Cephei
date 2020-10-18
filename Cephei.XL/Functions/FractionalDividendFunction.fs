@@ -39,11 +39,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_amount1", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_amount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FractionalDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="underlying",Description = "Reference to underlying")>] 
+        ([<ExcelArgument(Name="underlying",Description = "double")>] 
          underlying : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_amount", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FractionalDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,13 +117,13 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FractionalDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,11 +166,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend1", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FractionalDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,9 +209,9 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_nominal", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_rate", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_date", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,11 +317,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_CompareTo", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,11 +359,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_Equals", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -401,9 +401,9 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_exCouponDate", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -437,13 +437,13 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_hasOccurred", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,11 +485,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_tradingExCoupon", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -527,11 +527,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_accept", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,11 +569,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_registerWith", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -611,11 +611,11 @@ module FractionalDividendFunction =
     *)
     [<ExcelFunction(Name="_FractionalDividend_unregisterWith", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FractionalDividend",Description = "Reference to FractionalDividend")>] 
+        ([<ExcelArgument(Name="FractionalDividend",Description = "FractionalDividend")>] 
          fractionaldividend : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -650,9 +650,9 @@ module FractionalDividendFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FractionalDividend_Range", Description="Create a range of FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FractionalDividend")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

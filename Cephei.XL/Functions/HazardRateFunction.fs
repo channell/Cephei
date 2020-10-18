@@ -39,13 +39,13 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_discountImpl", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_forwardImpl", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,17 +135,17 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_guess", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,11 +195,11 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_initialDate", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "DefaultProbabilityTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_initialValue", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "DefaultProbabilityTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_maxIterations", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,17 +315,17 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_maxValueAfter", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,17 +375,17 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_minValueAfter", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,15 +435,15 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_updateGuess", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="rate",Description = "Reference to rate")>] 
+        ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,13 +489,13 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_zeroYieldImpl", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HazardRate",Description = "Reference to HazardRate")>] 
+        ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -534,9 +534,9 @@ module HazardRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HazardRate_Range", Description="Create a range of HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HazardRate")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

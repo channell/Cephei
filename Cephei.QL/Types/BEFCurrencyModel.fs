@@ -41,7 +41,8 @@ type BEFCurrencyModel
 (*
     Functions
 *)
-    let _BEFCurrency                               = cell (fun () -> new BEFCurrency ())
+    let mutable
+        _BEFCurrency                               = cell (fun () -> new BEFCurrency ())
     let _code                                      = triv (fun () -> _BEFCurrency.Value.code)
     let _empty                                     = triv (fun () -> _BEFCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type BEFCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _BEFCurrency.Value <- v
+    member internal this.Inject v = _BEFCurrency <- v
     static member Cast (p : ICell<BEFCurrency>) = 
         if p :? BEFCurrencyModel then 
             p :?> BEFCurrencyModel
         else
             let o = new BEFCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

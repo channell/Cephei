@@ -50,7 +50,8 @@ type ShoutConditionModel
 (*
     Functions
 *)
-    let _ShoutCondition                            = cell (fun () -> new ShoutCondition (Type.Value, strike.Value, resTime.Value, rate.Value))
+    let mutable
+        _ShoutCondition                            = cell (fun () -> new ShoutCondition (Type.Value, strike.Value, resTime.Value, rate.Value))
     let _applyTo                                   (a : ICell<Vector>) (t : ICell<double>)   
                                                    = triv (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
                                                                      _ShoutCondition.Value)
@@ -59,13 +60,14 @@ type ShoutConditionModel
     casting 
 *)
     internal new () = new ShoutConditionModel(null,null,null,null)
-    member internal this.Inject v = _ShoutCondition.Value <- v
+    member internal this.Inject v = _ShoutCondition <- v
     static member Cast (p : ICell<ShoutCondition>) = 
         if p :? ShoutConditionModel then 
             p :?> ShoutConditionModel
         else
             let o = new ShoutConditionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -99,7 +101,8 @@ type ShoutConditionModel1
 (*
     Functions
 *)
-    let _ShoutCondition                            = cell (fun () -> new ShoutCondition (intrinsicValues.Value, resTime.Value, rate.Value))
+    let mutable
+        _ShoutCondition                            = cell (fun () -> new ShoutCondition (intrinsicValues.Value, resTime.Value, rate.Value))
     let _applyTo                                   (a : ICell<Vector>) (t : ICell<double>)   
                                                    = triv (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
                                                                      _ShoutCondition.Value)
@@ -108,13 +111,14 @@ type ShoutConditionModel1
     casting 
 *)
     internal new () = new ShoutConditionModel1(null,null,null)
-    member internal this.Inject v = _ShoutCondition.Value <- v
+    member internal this.Inject v = _ShoutCondition <- v
     static member Cast (p : ICell<ShoutCondition>) = 
         if p :? ShoutConditionModel1 then 
             p :?> ShoutConditionModel1
         else
             let o = new ShoutConditionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

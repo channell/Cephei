@@ -46,7 +46,8 @@ type AmericanConditionModel
 (*
     Functions
 *)
-    let _AmericanCondition                         = cell (fun () -> new AmericanCondition (Type.Value, strike.Value))
+    let mutable
+        _AmericanCondition                         = cell (fun () -> new AmericanCondition (Type.Value, strike.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
                                                                      _AmericanCondition.Value)
@@ -55,13 +56,14 @@ type AmericanConditionModel
     casting 
 *)
     internal new () = new AmericanConditionModel(null,null)
-    member internal this.Inject v = _AmericanCondition.Value <- v
+    member internal this.Inject v = _AmericanCondition <- v
     static member Cast (p : ICell<AmericanCondition>) = 
         if p :? AmericanConditionModel then 
             p :?> AmericanConditionModel
         else
             let o = new AmericanConditionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -89,7 +91,8 @@ type AmericanConditionModel1
 (*
     Functions
 *)
-    let _AmericanCondition                         = cell (fun () -> new AmericanCondition (intrinsicValues.Value))
+    let mutable
+        _AmericanCondition                         = cell (fun () -> new AmericanCondition (intrinsicValues.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
                                                                      _AmericanCondition.Value)
@@ -98,13 +101,14 @@ type AmericanConditionModel1
     casting 
 *)
     internal new () = new AmericanConditionModel1(null)
-    member internal this.Inject v = _AmericanCondition.Value <- v
+    member internal this.Inject v = _AmericanCondition <- v
     static member Cast (p : ICell<AmericanCondition>) = 
         if p :? AmericanConditionModel1 then 
             p :?> AmericanConditionModel1
         else
             let o = new AmericanConditionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

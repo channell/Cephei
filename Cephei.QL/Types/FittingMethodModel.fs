@@ -41,7 +41,8 @@ type FittingMethodModel
 (*
     Functions
 *)
-    let _FittingMethod                             = cell (fun () -> new FittingMethod ())
+    let mutable
+        _FittingMethod                             = cell (fun () -> new FittingMethod ())
     let _clone                                     = cell (fun () -> _FittingMethod.Value.clone())
     let _constrainAtZero                           = cell (fun () -> _FittingMethod.Value.constrainAtZero())
     let _discount                                  (x : ICell<Vector>) (t : ICell<double>)   
@@ -57,13 +58,14 @@ type FittingMethodModel
     casting 
 *)
     
-    member internal this.Inject v = _FittingMethod.Value <- v
+    member internal this.Inject v = _FittingMethod <- v
     static member Cast (p : ICell<FittingMethod>) = 
         if p :? FittingMethodModel then 
             p :?> FittingMethodModel
         else
             let o = new FittingMethodModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -39,13 +39,13 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_diffusion", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="UnnamedParameter1",Description = "Reference to UnnamedParameter1")>] 
+        ([<ExcelArgument(Name="UnnamedParameter1",Description = "double")>] 
          UnnamedParameter1 : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_drift", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="UnnamedParameter1",Description = "Reference to UnnamedParameter1")>] 
+        ([<ExcelArgument(Name="UnnamedParameter1",Description = "double")>] 
          UnnamedParameter1 : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,15 +135,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess2", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,17 +190,17 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="disc",Description = "Reference to disc")>] 
+        ([<ExcelArgument(Name="disc",Description = "IDiscretization1D")>] 
          disc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,13 +251,13 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_x0", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,13 +336,13 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_apply1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_apply1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -384,13 +384,13 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_apply", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -432,17 +432,17 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_evolve", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -492,17 +492,17 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_evolve1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_evolve1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "double")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -552,15 +552,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_expectation", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -606,15 +606,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_expectation1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_expectation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -660,9 +660,9 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_initialValues", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -696,9 +696,9 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_size", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -732,15 +732,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_stdDeviation", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -786,15 +786,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_stdDeviation1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_stdDeviation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -840,15 +840,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_variance", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -894,15 +894,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_variance1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_variance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -948,15 +948,15 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_covariance", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1002,9 +1002,9 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_factors", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1038,11 +1038,11 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_registerWith", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1080,11 +1080,11 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_time", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1122,11 +1122,11 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_unregisterWith", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1164,9 +1164,9 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_update", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SquareRootProcess",Description = "Reference to SquareRootProcess")>] 
+        ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1197,9 +1197,9 @@ module SquareRootProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SquareRootProcess_Range", Description="Create a range of SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SquareRootProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

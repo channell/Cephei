@@ -48,7 +48,8 @@ type LogLinearInterpolationModel
 (*
     Functions
 *)
-    let _LogLinearInterpolation                    = cell (fun () -> new LogLinearInterpolation (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _LogLinearInterpolation                    = cell (fun () -> new LogLinearInterpolation (xBegin.Value, size.Value, yBegin.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _LogLinearInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _LogLinearInterpolation.Value.empty())
@@ -77,13 +78,14 @@ type LogLinearInterpolationModel
     casting 
 *)
     internal new () = new LogLinearInterpolationModel(null,null,null)
-    member internal this.Inject v = _LogLinearInterpolation.Value <- v
+    member internal this.Inject v = _LogLinearInterpolation <- v
     static member Cast (p : ICell<LogLinearInterpolation>) = 
         if p :? LogLinearInterpolationModel then 
             p :?> LogLinearInterpolationModel
         else
             let o = new LogLinearInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type BackwardFlatInterpolationModel
 (*
     Functions
 *)
-    let _BackwardFlatInterpolation                 = cell (fun () -> new BackwardFlatInterpolation (xBegin.Value, size.Value, yBegin.Value))
+    let mutable
+        _BackwardFlatInterpolation                 = cell (fun () -> new BackwardFlatInterpolation (xBegin.Value, size.Value, yBegin.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _BackwardFlatInterpolation.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _BackwardFlatInterpolation.Value.empty())
@@ -77,13 +78,14 @@ type BackwardFlatInterpolationModel
     casting 
 *)
     internal new () = new BackwardFlatInterpolationModel(null,null,null)
-    member internal this.Inject v = _BackwardFlatInterpolation.Value <- v
+    member internal this.Inject v = _BackwardFlatInterpolation <- v
     static member Cast (p : ICell<BackwardFlatInterpolation>) = 
         if p :? BackwardFlatInterpolationModel then 
             p :?> BackwardFlatInterpolationModel
         else
             let o = new BackwardFlatInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

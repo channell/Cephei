@@ -39,9 +39,9 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_currency", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Money",Description = "Reference to Money")>] 
+        ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_Equals", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Money",Description = "Reference to Money")>] 
+        ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money1", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="currency",Description = "Reference to currency")>] 
+        ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,7 +160,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,11 +191,11 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money2", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="currency",Description = "Reference to currency")>] 
+        ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -234,9 +234,9 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_rounded", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_rounded
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Money",Description = "Reference to Money")>] 
+        ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -270,9 +270,9 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_ToString", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Money",Description = "Reference to Money")>] 
+        ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -306,9 +306,9 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_value", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Money",Description = "Reference to Money")>] 
+        ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -339,9 +339,9 @@ module MoneyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Money_Range", Description="Create a range of Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Money")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

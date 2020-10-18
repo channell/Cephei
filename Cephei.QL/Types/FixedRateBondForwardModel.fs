@@ -69,7 +69,8 @@ type FixedRateBondForwardModel
 (*
     Functions
 *)
-    let _FixedRateBondForward                      = cell (fun () -> withEngine pricingEngine (new FixedRateBondForward (valueDate.Value, maturityDate.Value, Type.Value, strike.Value, settlementDays.Value, dayCounter.Value, calendar.Value, businessDayConvention.Value, fixedCouponBond.Value, discountCurve.Value, incomeDiscountCurve.Value)))
+    let mutable
+        _FixedRateBondForward                      = cell (fun () -> withEngine pricingEngine (new FixedRateBondForward (valueDate.Value, maturityDate.Value, Type.Value, strike.Value, settlementDays.Value, dayCounter.Value, calendar.Value, businessDayConvention.Value, fixedCouponBond.Value, discountCurve.Value, incomeDiscountCurve.Value)))
     let _cleanForwardPrice                         = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBondForward).cleanForwardPrice())
     let _forwardPrice                              = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBondForward).forwardPrice())
     let _spotIncome                                (incomeDiscountCurve : ICell<Handle<YieldTermStructure>>)   
@@ -94,13 +95,14 @@ type FixedRateBondForwardModel
     casting 
 *)
     internal new () = new FixedRateBondForwardModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateBondForward.Value <- v
+    member internal this.Inject v = _FixedRateBondForward <- v
     static member Cast (p : ICell<FixedRateBondForward>) = 
         if p :? FixedRateBondForwardModel then 
             p :?> FixedRateBondForwardModel
         else
             let o = new FixedRateBondForwardModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,17 +39,17 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_correlation", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_correlation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,13 +99,13 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_correlation1", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_correlation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_isTimeIndependent", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_isTimeIndependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmExponentialCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmExponentialCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,13 +226,13 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_pseudoSqrt", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_pseudoSqrt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_factors", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_parameters", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,11 +346,11 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_setParams", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Parameter")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,9 +388,9 @@ module LmExponentialCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_size", Description="Create a LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "Reference to LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmExponentialCorrelationModel",Description = "LmExponentialCorrelationModel")>] 
          lmexponentialcorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -421,9 +421,9 @@ module LmExponentialCorrelationModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LmExponentialCorrelationModel_Range", Description="Create a range of LmExponentialCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExponentialCorrelationModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LmExponentialCorrelationModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

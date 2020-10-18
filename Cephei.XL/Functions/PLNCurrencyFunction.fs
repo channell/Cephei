@@ -39,7 +39,7 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PLNCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_code", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_empty", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_Equals", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_format", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_fractionsPerUnit", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_fractionSymbol", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_name", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_numericCode", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_rounding", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_symbol", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_ToString", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module PLNCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PLNCurrency_triangulationCurrency", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PLNCurrency",Description = "Reference to PLNCurrency")>] 
+        ([<ExcelArgument(Name="PLNCurrency",Description = "PLNCurrency")>] 
          plncurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module PLNCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PLNCurrency_Range", Description="Create a range of PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PLNCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

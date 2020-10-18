@@ -54,7 +54,8 @@ type OvernightIndexModel
 (*
     Functions
 *)
-    let _OvernightIndex                            = cell (fun () -> new OvernightIndex (familyName.Value, settlementDays.Value, currency.Value, fixingCalendar.Value, dayCounter.Value, h.Value))
+    let mutable
+        _OvernightIndex                            = cell (fun () -> new OvernightIndex (familyName.Value, settlementDays.Value, currency.Value, fixingCalendar.Value, dayCounter.Value, h.Value))
     let _clone                                     (h : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _OvernightIndex.Value.clone(h.Value))
     let _businessDayConvention                     = triv (fun () -> _OvernightIndex.Value.businessDayConvention())
@@ -109,13 +110,14 @@ type OvernightIndexModel
     casting 
 *)
     internal new () = new OvernightIndexModel(null,null,null,null,null,null)
-    member internal this.Inject v = _OvernightIndex.Value <- v
+    member internal this.Inject v = _OvernightIndex <- v
     static member Cast (p : ICell<OvernightIndex>) = 
         if p :? OvernightIndexModel then 
             p :?> OvernightIndexModel
         else
             let o = new OvernightIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

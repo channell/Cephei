@@ -46,7 +46,8 @@ type GaussLaguerreIntegrationModel
 (*
     Functions
 *)
-    let _GaussLaguerreIntegration                  = cell (fun () -> new GaussLaguerreIntegration (n.Value, s.Value))
+    let mutable
+        _GaussLaguerreIntegration                  = cell (fun () -> new GaussLaguerreIntegration (n.Value, s.Value))
     let _order                                     = triv (fun () -> _GaussLaguerreIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _GaussLaguerreIntegration.Value.value(f.Value))
@@ -57,13 +58,14 @@ type GaussLaguerreIntegrationModel
     casting 
 *)
     internal new () = new GaussLaguerreIntegrationModel(null,null)
-    member internal this.Inject v = _GaussLaguerreIntegration.Value <- v
+    member internal this.Inject v = _GaussLaguerreIntegration <- v
     static member Cast (p : ICell<GaussLaguerreIntegration>) = 
         if p :? GaussLaguerreIntegrationModel then 
             p :?> GaussLaguerreIntegrationModel
         else
             let o = new GaussLaguerreIntegrationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

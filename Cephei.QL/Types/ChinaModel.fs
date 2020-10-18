@@ -58,7 +58,8 @@ type ChinaModel
 (*
     Functions
 *)
-    let _China                                     = cell (fun () -> new China (market.Value))
+    let mutable
+        _China                                     = cell (fun () -> new China (market.Value))
     let _addedHolidays                             = triv (fun () -> _China.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _China.Value.addHoliday(d.Value)
@@ -95,13 +96,14 @@ type ChinaModel
     casting 
 *)
     internal new () = new ChinaModel(null)
-    member internal this.Inject v = _China.Value <- v
+    member internal this.Inject v = _China <- v
     static member Cast (p : ICell<China>) = 
         if p :? ChinaModel then 
             p :?> ChinaModel
         else
             let o = new ChinaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

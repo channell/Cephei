@@ -46,7 +46,8 @@ type AmericanExerciseModel
 (*
     Functions
 *)
-    let _AmericanExercise                          = cell (fun () -> new AmericanExercise (latest.Value, payoffAtExpiry.Value))
+    let mutable
+        _AmericanExercise                          = cell (fun () -> new AmericanExercise (latest.Value, payoffAtExpiry.Value))
     let _payoffAtExpiry                            = triv (fun () -> _AmericanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _AmericanExercise.Value.date(index.Value))
@@ -58,13 +59,14 @@ type AmericanExerciseModel
     casting 
 *)
     internal new () = new AmericanExerciseModel(null,null)
-    member internal this.Inject v = _AmericanExercise.Value <- v
+    member internal this.Inject v = _AmericanExercise <- v
     static member Cast (p : ICell<AmericanExercise>) = 
         if p :? AmericanExerciseModel then 
             p :?> AmericanExerciseModel
         else
             let o = new AmericanExerciseModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -100,7 +102,8 @@ type AmericanExerciseModel1
 (*
     Functions
 *)
-    let _AmericanExercise                          = cell (fun () -> new AmericanExercise (earliestDate.Value, latestDate.Value, payoffAtExpiry.Value))
+    let mutable
+        _AmericanExercise                          = cell (fun () -> new AmericanExercise (earliestDate.Value, latestDate.Value, payoffAtExpiry.Value))
     let _payoffAtExpiry                            = triv (fun () -> _AmericanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _AmericanExercise.Value.date(index.Value))
@@ -112,13 +115,14 @@ type AmericanExerciseModel1
     casting 
 *)
     internal new () = new AmericanExerciseModel1(null,null,null)
-    member internal this.Inject v = _AmericanExercise.Value <- v
+    member internal this.Inject v = _AmericanExercise <- v
     static member Cast (p : ICell<AmericanExercise>) = 
         if p :? AmericanExerciseModel1 then 
             p :?> AmericanExerciseModel1
         else
             let o = new AmericanExerciseModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

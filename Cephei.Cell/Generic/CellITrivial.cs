@@ -58,10 +58,10 @@ namespace Cephei.Cell.Generic
         {
         }
 
-        public virtual void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+        public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (Change != null)
-                Change(eventType, root, epoch, session);
+                Change(eventType, root, this, epoch, session);
         }
 
         /// <see cref="ICell.HasFunction"/>
@@ -110,21 +110,30 @@ namespace Cephei.Cell.Generic
             {
                 return _func;
             }
+            set
+            {
+                _func = value;
+            }
         }
 
-        public void Clone(ICell source)
+        public void Merge(ICell source, Model model)
         {
-            foreach (var d in source.Dependants)
-            {
-                Change += d.OnChange;
-            }
-            if (source.GetType() == this.GetType())
+            if (source != this)
             {
                 var c = (ICell<T>)source;
+                var f = _func;
                 _func = c.Function;
+                c.Function = f;
             }
-            if (Change != null)
-                Change(CellEvent.Link, this, DateTime.Now, null);
+            if (source != this) source.Dispose();
+
+            // handle update of current while this cell is being constructed
+            if (Parent is Model m)
+            {
+                var cur = m[this.Mnemonic];
+                if (cur != this && cur.GetType() == this.GetType())
+                    cur.Merge(this, model);
+            }
         }
 
         #region observable
@@ -158,7 +167,7 @@ namespace Cephei.Cell.Generic
 
         public ICell ToCell()
         {
-            return new Cell<T>(_func, Mnemonic);
+            return Cell.CreateFast<T>(_func, Mnemonic);
         }
         #endregion
         public void Notify(ICell listener)
@@ -167,7 +176,8 @@ namespace Cephei.Cell.Generic
             foreach (var v in Dependants)
                 if (v == listener)
                     return;
-            Change += listener.OnChange;
+            if (listener != null)
+                Change += listener.OnChange;
         }
 
         public void UnNotify(ICell listener)

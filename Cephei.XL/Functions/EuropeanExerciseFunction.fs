@@ -39,9 +39,9 @@ module EuropeanExerciseFunction =
     *)
     [<ExcelFunction(Name="_EuropeanExercise", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EuropeanExercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module EuropeanExerciseFunction =
     *)
     [<ExcelFunction(Name="_EuropeanExercise_date", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanExercise",Description = "Reference to EuropeanExercise")>] 
+        ([<ExcelArgument(Name="EuropeanExercise",Description = "EuropeanExercise")>] 
          europeanexercise : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,9 +118,9 @@ module EuropeanExerciseFunction =
     *)
     [<ExcelFunction(Name="_EuropeanExercise_dates", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanExercise",Description = "Reference to EuropeanExercise")>] 
+        ([<ExcelArgument(Name="EuropeanExercise",Description = "EuropeanExercise")>] 
          europeanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module EuropeanExerciseFunction =
     *)
     [<ExcelFunction(Name="_EuropeanExercise_lastDate", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_lastDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanExercise",Description = "Reference to EuropeanExercise")>] 
+        ([<ExcelArgument(Name="EuropeanExercise",Description = "EuropeanExercise")>] 
          europeanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module EuropeanExerciseFunction =
     *)
     [<ExcelFunction(Name="_EuropeanExercise_type", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanExercise",Description = "Reference to EuropeanExercise")>] 
+        ([<ExcelArgument(Name="EuropeanExercise",Description = "EuropeanExercise")>] 
          europeanexercise : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module EuropeanExerciseFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EuropeanExercise_Range", Description="Create a range of EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EuropeanExercise")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

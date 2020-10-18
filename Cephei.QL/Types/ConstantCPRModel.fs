@@ -44,7 +44,8 @@ type ConstantCPRModel
 (*
     Functions
 *)
-    let _ConstantCPR                               = cell (fun () -> new ConstantCPR (cpr.Value))
+    let mutable
+        _ConstantCPR                               = cell (fun () -> new ConstantCPR (cpr.Value))
     let _getCPR                                    (valDate : ICell<Date>)   
                                                    = triv (fun () -> _ConstantCPR.Value.getCPR(valDate.Value))
     let _getSMM                                    (valDate : ICell<Date>)   
@@ -54,13 +55,14 @@ type ConstantCPRModel
     casting 
 *)
     internal new () = new ConstantCPRModel(null)
-    member internal this.Inject v = _ConstantCPR.Value <- v
+    member internal this.Inject v = _ConstantCPR <- v
     static member Cast (p : ICell<ConstantCPR>) = 
         if p :? ConstantCPRModel then 
             p :?> ConstantCPRModel
         else
             let o = new ConstantCPRModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -46,7 +46,8 @@ type ConstantDefaultIntensityModel
 (*
     Functions
 *)
-    let _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value, recovery.Value))
+    let mutable
+        _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value, recovery.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
@@ -56,13 +57,14 @@ type ConstantDefaultIntensityModel
     casting 
 *)
     internal new () = new ConstantDefaultIntensityModel(null,null)
-    member internal this.Inject v = _ConstantDefaultIntensity.Value <- v
+    member internal this.Inject v = _ConstantDefaultIntensity <- v
     static member Cast (p : ICell<ConstantDefaultIntensity>) = 
         if p :? ConstantDefaultIntensityModel then 
             p :?> ConstantDefaultIntensityModel
         else
             let o = new ConstantDefaultIntensityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -92,7 +94,8 @@ type ConstantDefaultIntensityModel1
 (*
     Functions
 *)
-    let _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value))
+    let mutable
+        _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
@@ -102,13 +105,14 @@ type ConstantDefaultIntensityModel1
     casting 
 *)
     internal new () = new ConstantDefaultIntensityModel1(null)
-    member internal this.Inject v = _ConstantDefaultIntensity.Value <- v
+    member internal this.Inject v = _ConstantDefaultIntensity <- v
     static member Cast (p : ICell<ConstantDefaultIntensity>) = 
         if p :? ConstantDefaultIntensityModel1 then 
             p :?> ConstantDefaultIntensityModel1
         else
             let o = new ConstantDefaultIntensityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

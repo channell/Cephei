@@ -52,7 +52,8 @@ type BlackScholesCalculatorModel
 (*
     Functions
 *)
-    let _BlackScholesCalculator                    = cell (fun () -> new BlackScholesCalculator (payoff.Value, spot.Value, growth.Value, stdDev.Value, discount.Value))
+    let mutable
+        _BlackScholesCalculator                    = cell (fun () -> new BlackScholesCalculator (payoff.Value, spot.Value, growth.Value, stdDev.Value, discount.Value))
     let _delta                                     = triv (fun () -> _BlackScholesCalculator.Value.delta())
     let _elasticity                                = triv (fun () -> _BlackScholesCalculator.Value.elasticity())
     let _gamma                                     = triv (fun () -> _BlackScholesCalculator.Value.gamma())
@@ -80,13 +81,14 @@ type BlackScholesCalculatorModel
     casting 
 *)
     internal new () = new BlackScholesCalculatorModel(null,null,null,null,null)
-    member internal this.Inject v = _BlackScholesCalculator.Value <- v
+    member internal this.Inject v = _BlackScholesCalculator <- v
     static member Cast (p : ICell<BlackScholesCalculator>) = 
         if p :? BlackScholesCalculatorModel then 
             p :?> BlackScholesCalculatorModel
         else
             let o = new BlackScholesCalculatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

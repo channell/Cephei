@@ -52,7 +52,8 @@ type PenaltyFunctionModel<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T
 (*
     Functions
 *)
-    let _PenaltyFunction                           = cell (fun () -> new PenaltyFunction<'T,'U> (curve.Value, initialIndex.Value, rateHelpers.Value, start.Value, End.Value))
+    let mutable
+        _PenaltyFunction                           = cell (fun () -> new PenaltyFunction<'T,'U> (curve.Value, initialIndex.Value, rateHelpers.Value, start.Value, End.Value))
     let _value                                     (x : ICell<Vector>)   
                                                    = triv (fun () -> _PenaltyFunction.Value.value(x.Value))
     let _values                                    (x : ICell<Vector>)   

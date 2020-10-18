@@ -55,7 +55,8 @@ type NorwayModel
 (*
     Functions
 *)
-    let _Norway                                    = cell (fun () -> new Norway ())
+    let mutable
+        _Norway                                    = cell (fun () -> new Norway ())
     let _addedHolidays                             = triv (fun () -> _Norway.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Norway.Value.addHoliday(d.Value)
@@ -92,13 +93,14 @@ type NorwayModel
     casting 
 *)
     
-    member internal this.Inject v = _Norway.Value <- v
+    member internal this.Inject v = _Norway <- v
     static member Cast (p : ICell<Norway>) = 
         if p :? NorwayModel then 
             p :?> NorwayModel
         else
             let o = new NorwayModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

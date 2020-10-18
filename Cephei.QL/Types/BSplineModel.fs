@@ -48,7 +48,8 @@ type BSplineModel
 (*
     Functions
 *)
-    let _BSpline                                   = cell (fun () -> new BSpline (p.Value, n.Value, knots.Value))
+    let mutable
+        _BSpline                                   = cell (fun () -> new BSpline (p.Value, n.Value, knots.Value))
     let _value                                     (i : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _BSpline.Value.value(i.Value, x.Value))
     do this.Bind(_BSpline)
@@ -56,13 +57,14 @@ type BSplineModel
     casting 
 *)
     internal new () = new BSplineModel(null,null,null)
-    member internal this.Inject v = _BSpline.Value <- v
+    member internal this.Inject v = _BSpline <- v
     static member Cast (p : ICell<BSpline>) = 
         if p :? BSplineModel then 
             p :?> BSplineModel
         else
             let o = new BSplineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

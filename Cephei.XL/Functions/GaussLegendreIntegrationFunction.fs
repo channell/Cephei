@@ -39,9 +39,9 @@ module GaussLegendreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendreIntegration", Description="Create a GaussLegendreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendreIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussLegendreIntegration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,9 +76,9 @@ module GaussLegendreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendreIntegration_order", Description="Create a GaussLegendreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendreIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "Reference to GaussLegendreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "GaussLegendreIntegration")>] 
          gausslegendreintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module GaussLegendreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendreIntegration_value", Description="Create a GaussLegendreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendreIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "Reference to GaussLegendreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "GaussLegendreIntegration")>] 
          gausslegendreintegration : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module GaussLegendreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendreIntegration_weights", Description="Create a GaussLegendreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendreIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "Reference to GaussLegendreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "GaussLegendreIntegration")>] 
          gausslegendreintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,9 +190,9 @@ module GaussLegendreIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussLegendreIntegration_x", Description="Create a GaussLegendreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendreIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "Reference to GaussLegendreIntegration")>] 
+        ([<ExcelArgument(Name="GaussLegendreIntegration",Description = "GaussLegendreIntegration")>] 
          gausslegendreintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module GaussLegendreIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussLegendreIntegration_Range", Description="Create a range of GaussLegendreIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendreIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussLegendreIntegration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

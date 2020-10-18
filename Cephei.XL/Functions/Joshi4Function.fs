@@ -39,17 +39,17 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_factory", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Joshi4")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Joshi4",Description = "Reference to Joshi4")>] 
+        ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,15 +99,15 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Joshi4")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "double")>] 
          End : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi41", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Joshi4")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,15 +185,15 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_probability", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Joshi4",Description = "Reference to Joshi4")>] 
+        ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,13 +239,13 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_underlying", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Joshi4",Description = "Reference to Joshi4")>] 
+        ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,15 +287,15 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_descendant", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Joshi4",Description = "Reference to Joshi4")>] 
+        ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "int")>] 
          x : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
-        ([<ExcelArgument(Name="branch",Description = "Reference to branch")>] 
+        ([<ExcelArgument(Name="branch",Description = "int")>] 
          branch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,11 +341,11 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_size", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Joshi4",Description = "Reference to Joshi4")>] 
+        ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_columns", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Joshi4",Description = "Reference to Joshi4")>] 
+        ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,9 +416,9 @@ module Joshi4Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Joshi4_Range", Description="Create a range of Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Joshi4")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

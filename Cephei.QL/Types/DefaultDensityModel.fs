@@ -41,7 +41,8 @@ type DefaultDensityModel
 (*
     Functions
 *)
-    let _DefaultDensity                            = cell (fun () -> new DefaultDensity ())
+    let mutable
+        _DefaultDensity                            = cell (fun () -> new DefaultDensity ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _DefaultDensity.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type DefaultDensityModel
     casting 
 *)
     
-    member internal this.Inject v = _DefaultDensity.Value <- v
+    member internal this.Inject v = _DefaultDensity <- v
     static member Cast (p : ICell<DefaultDensity>) = 
         if p :? DefaultDensityModel then 
             p :?> DefaultDensityModel
         else
             let o = new DefaultDensityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

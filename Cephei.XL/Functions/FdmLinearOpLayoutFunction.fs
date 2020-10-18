@@ -39,9 +39,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_begin", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_begin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_dim", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_dim
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_end", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_end
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpLayout")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dim",Description = "Reference to dim")>] 
+        ([<ExcelArgument(Name="dim",Description = "int")>] 
          dim : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,11 +184,11 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_index", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
-        ([<ExcelArgument(Name="coordinates",Description = "Reference to coordinates")>] 
+        ([<ExcelArgument(Name="coordinates",Description = "int")>] 
          coordinates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,15 +226,15 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_iter_neighbourhood", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_iter_neighbourhood
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
-        ([<ExcelArgument(Name="iterator",Description = "Reference to iterator")>] 
+        ([<ExcelArgument(Name="iterator",Description = "FdmLinearOpIterator")>] 
          iterator : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="offset",Description = "Reference to offset")>] 
+        ([<ExcelArgument(Name="offset",Description = "int")>] 
          offset : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,19 +280,19 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_neighbourhood", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_neighbourhood
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
-        ([<ExcelArgument(Name="iterator",Description = "Reference to iterator")>] 
+        ([<ExcelArgument(Name="iterator",Description = "FdmLinearOpIterator")>] 
          iterator : obj)
-        ([<ExcelArgument(Name="i1",Description = "Reference to i1")>] 
+        ([<ExcelArgument(Name="i1",Description = "int")>] 
          i1 : obj)
-        ([<ExcelArgument(Name="offset1",Description = "Reference to offset1")>] 
+        ([<ExcelArgument(Name="offset1",Description = "int")>] 
          offset1 : obj)
-        ([<ExcelArgument(Name="i2",Description = "Reference to i2")>] 
+        ([<ExcelArgument(Name="i2",Description = "int")>] 
          i2 : obj)
-        ([<ExcelArgument(Name="offset2",Description = "Reference to offset2")>] 
+        ([<ExcelArgument(Name="offset2",Description = "int")>] 
          offset2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,15 +346,15 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_neighbourhood1", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_neighbourhood1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
-        ([<ExcelArgument(Name="iterator",Description = "Reference to iterator")>] 
+        ([<ExcelArgument(Name="iterator",Description = "FdmLinearOpIterator")>] 
          iterator : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="offset",Description = "Reference to offset")>] 
+        ([<ExcelArgument(Name="offset",Description = "int")>] 
          offset : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_size", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_spacing", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_spacing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "Reference to FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -469,9 +469,9 @@ module FdmLinearOpLayoutFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmLinearOpLayout_Range", Description="Create a range of FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

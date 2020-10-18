@@ -41,7 +41,8 @@ type TRYCurrencyModel
 (*
     Functions
 *)
-    let _TRYCurrency                               = cell (fun () -> new TRYCurrency ())
+    let mutable
+        _TRYCurrency                               = cell (fun () -> new TRYCurrency ())
     let _code                                      = triv (fun () -> _TRYCurrency.Value.code)
     let _empty                                     = triv (fun () -> _TRYCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type TRYCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _TRYCurrency.Value <- v
+    member internal this.Inject v = _TRYCurrency <- v
     static member Cast (p : ICell<TRYCurrency>) = 
         if p :? TRYCurrencyModel then 
             p :?> TRYCurrencyModel
         else
             let o = new TRYCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

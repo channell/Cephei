@@ -48,7 +48,8 @@ type LiborForwardModelModel
 (*
     Functions
 *)
-    let _LiborForwardModel                         = cell (fun () -> new LiborForwardModel (Process.Value, volaModel.Value, corrModel.Value))
+    let mutable
+        _LiborForwardModel                         = cell (fun () -> new LiborForwardModel (Process.Value, volaModel.Value, corrModel.Value))
     let _discount                                  (t : ICell<double>)   
                                                    = triv (fun () -> _LiborForwardModel.Value.discount(t.Value))
     let _discountBond                              (t : ICell<double>) (maturity : ICell<double>) (v : ICell<Vector>)   
@@ -86,13 +87,14 @@ type LiborForwardModelModel
     casting 
 *)
     internal new () = new LiborForwardModelModel(null,null,null)
-    member internal this.Inject v = _LiborForwardModel.Value <- v
+    member internal this.Inject v = _LiborForwardModel <- v
     static member Cast (p : ICell<LiborForwardModel>) = 
         if p :? LiborForwardModelModel then 
             p :?> LiborForwardModelModel
         else
             let o = new LiborForwardModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

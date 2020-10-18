@@ -56,7 +56,8 @@ type ConvexMonotone4MinHelperModel
 (*
     Functions
 *)
-    let _ConvexMonotone4MinHelper                  = cell (fun () -> new ConvexMonotone4MinHelper (xPrev.Value, xNext.Value, gPrev.Value, gNext.Value, fAverage.Value, eta4.Value, prevPrimitive.Value))
+    let mutable
+        _ConvexMonotone4MinHelper                  = cell (fun () -> new ConvexMonotone4MinHelper (xPrev.Value, xNext.Value, gPrev.Value, gNext.Value, fAverage.Value, eta4.Value, prevPrimitive.Value))
     let _primitive                                 (x : ICell<double>)   
                                                    = triv (fun () -> _ConvexMonotone4MinHelper.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
@@ -67,13 +68,14 @@ type ConvexMonotone4MinHelperModel
     casting 
 *)
     internal new () = new ConvexMonotone4MinHelperModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _ConvexMonotone4MinHelper.Value <- v
+    member internal this.Inject v = _ConvexMonotone4MinHelper <- v
     static member Cast (p : ICell<ConvexMonotone4MinHelper>) = 
         if p :? ConvexMonotone4MinHelperModel then 
             p :?> ConvexMonotone4MinHelperModel
         else
             let o = new ConvexMonotone4MinHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

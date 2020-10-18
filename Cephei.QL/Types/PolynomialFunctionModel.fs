@@ -44,7 +44,8 @@ type PolynomialFunctionModel
 (*
     Functions
 *)
-    let _PolynomialFunction                        = cell (fun () -> new PolynomialFunction (coeff.Value))
+    let mutable
+        _PolynomialFunction                        = cell (fun () -> new PolynomialFunction (coeff.Value))
     let _coefficients                              = triv (fun () -> _PolynomialFunction.Value.coefficients())
     let _definiteDerivativeCoefficients            (t : ICell<double>) (t2 : ICell<double>)   
                                                    = triv (fun () -> _PolynomialFunction.Value.definiteDerivativeCoefficients(t.Value, t2.Value))
@@ -66,13 +67,14 @@ type PolynomialFunctionModel
     casting 
 *)
     internal new () = new PolynomialFunctionModel(null)
-    member internal this.Inject v = _PolynomialFunction.Value <- v
+    member internal this.Inject v = _PolynomialFunction <- v
     static member Cast (p : ICell<PolynomialFunction>) = 
         if p :? PolynomialFunctionModel then 
             p :?> PolynomialFunctionModel
         else
             let o = new PolynomialFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

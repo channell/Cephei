@@ -39,17 +39,17 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_correlation1", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_correlation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,13 +99,13 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_correlation", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_correlation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_factors", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmConstWrapperCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_isTimeIndependent", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_isTimeIndependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmConstWrapperCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmConstWrapperCorrelationModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="corrModel",Description = "Reference to corrModel")>] 
+        ([<ExcelArgument(Name="corrModel",Description = "LmCorrelationModel")>] 
          corrModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,13 +256,13 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_pseudoSqrt", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_pseudoSqrt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Matrix")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_parameters", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,11 +340,11 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_setParams", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Parameter")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module LmConstWrapperCorrelationModelFunction =
     *)
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_size", Description="Create a LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "Reference to LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="LmConstWrapperCorrelationModel",Description = "LmConstWrapperCorrelationModel")>] 
          lmconstwrappercorrelationmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -415,9 +415,9 @@ module LmConstWrapperCorrelationModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LmConstWrapperCorrelationModel_Range", Description="Create a range of LmConstWrapperCorrelationModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperCorrelationModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LmConstWrapperCorrelationModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

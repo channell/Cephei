@@ -52,7 +52,8 @@ type MixedLinearFritschButlandCubicModel
 (*
     Functions
 *)
-    let _MixedLinearFritschButlandCubic            = cell (fun () -> new MixedLinearFritschButlandCubic (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
+    let mutable
+        _MixedLinearFritschButlandCubic            = cell (fun () -> new MixedLinearFritschButlandCubic (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _MixedLinearFritschButlandCubic.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _MixedLinearFritschButlandCubic.Value.empty())
@@ -81,13 +82,14 @@ type MixedLinearFritschButlandCubicModel
     casting 
 *)
     internal new () = new MixedLinearFritschButlandCubicModel(null,null,null,null,null)
-    member internal this.Inject v = _MixedLinearFritschButlandCubic.Value <- v
+    member internal this.Inject v = _MixedLinearFritschButlandCubic <- v
     static member Cast (p : ICell<MixedLinearFritschButlandCubic>) = 
         if p :? MixedLinearFritschButlandCubicModel then 
             p :?> MixedLinearFritschButlandCubicModel
         else
             let o = new MixedLinearFritschButlandCubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

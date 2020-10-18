@@ -46,7 +46,8 @@ type SimpleCashFlowModel
 (*
     Functions
 *)
-    let _SimpleCashFlow                            = cell (fun () -> new SimpleCashFlow (amount.Value, date.Value))
+    let mutable
+        _SimpleCashFlow                            = cell (fun () -> new SimpleCashFlow (amount.Value, date.Value))
     let _amount                                    = triv (fun () -> _SimpleCashFlow.Value.amount())
     let _date                                      = triv (fun () -> _SimpleCashFlow.Value.date())
     let _CompareTo                                 (cf : ICell<CashFlow>)   
@@ -72,13 +73,14 @@ type SimpleCashFlowModel
     casting 
 *)
     internal new () = new SimpleCashFlowModel(null,null)
-    member internal this.Inject v = _SimpleCashFlow.Value <- v
+    member internal this.Inject v = _SimpleCashFlow <- v
     static member Cast (p : ICell<SimpleCashFlow>) = 
         if p :? SimpleCashFlowModel then 
             p :?> SimpleCashFlowModel
         else
             let o = new SimpleCashFlowModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

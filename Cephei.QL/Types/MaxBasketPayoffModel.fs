@@ -44,7 +44,8 @@ type MaxBasketPayoffModel
 (*
     Functions
 *)
-    let _MaxBasketPayoff                           = cell (fun () -> new MaxBasketPayoff (p.Value))
+    let mutable
+        _MaxBasketPayoff                           = cell (fun () -> new MaxBasketPayoff (p.Value))
     let _accumulate                                (a : ICell<Vector>)   
                                                    = triv (fun () -> _MaxBasketPayoff.Value.accumulate(a.Value))
     let _basePayoff                                = triv (fun () -> _MaxBasketPayoff.Value.basePayoff())
@@ -62,13 +63,14 @@ type MaxBasketPayoffModel
     casting 
 *)
     internal new () = new MaxBasketPayoffModel(null)
-    member internal this.Inject v = _MaxBasketPayoff.Value <- v
+    member internal this.Inject v = _MaxBasketPayoff <- v
     static member Cast (p : ICell<MaxBasketPayoff>) = 
         if p :? MaxBasketPayoffModel then 
             p :?> MaxBasketPayoffModel
         else
             let o = new MaxBasketPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

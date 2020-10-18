@@ -44,7 +44,8 @@ type PdeShortRateModel
 (*
     Functions
 *)
-    let _PdeShortRate                              = cell (fun () -> new PdeShortRate (d.Value))
+    let mutable
+        _PdeShortRate                              = cell (fun () -> new PdeShortRate (d.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _PdeShortRate.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
@@ -61,13 +62,14 @@ type PdeShortRateModel
     casting 
 *)
     internal new () = new PdeShortRateModel(null)
-    member internal this.Inject v = _PdeShortRate.Value <- v
+    member internal this.Inject v = _PdeShortRate <- v
     static member Cast (p : ICell<PdeShortRate>) = 
         if p :? PdeShortRateModel then 
             p :?> PdeShortRateModel
         else
             let o = new PdeShortRateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -99,7 +101,8 @@ type PdeShortRateModel1
 (*
     Functions
 *)
-    let _PdeShortRate                              = cell (fun () -> new PdeShortRate ())
+    let mutable
+        _PdeShortRate                              = cell (fun () -> new PdeShortRate ())
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _PdeShortRate.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
@@ -116,13 +119,14 @@ type PdeShortRateModel1
     casting 
 *)
     
-    member internal this.Inject v = _PdeShortRate.Value <- v
+    member internal this.Inject v = _PdeShortRate <- v
     static member Cast (p : ICell<PdeShortRate>) = 
         if p :? PdeShortRateModel1 then 
             p :?> PdeShortRateModel1
         else
             let o = new PdeShortRateModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

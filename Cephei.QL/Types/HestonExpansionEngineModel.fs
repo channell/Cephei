@@ -46,7 +46,8 @@ type HestonExpansionEngineModel
 (*
     Functions
 *)
-    let _HestonExpansionEngine                     = cell (fun () -> new HestonExpansionEngine (model.Value, formula.Value))
+    let mutable
+        _HestonExpansionEngine                     = cell (fun () -> new HestonExpansionEngine (model.Value, formula.Value))
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
                                                    = triv (fun () -> _HestonExpansionEngine.Value.setModel(model.Value)
                                                                      _HestonExpansionEngine.Value)
@@ -65,13 +66,14 @@ type HestonExpansionEngineModel
     casting 
 *)
     internal new () = new HestonExpansionEngineModel(null,null)
-    member internal this.Inject v = _HestonExpansionEngine.Value <- v
+    member internal this.Inject v = _HestonExpansionEngine <- v
     static member Cast (p : ICell<HestonExpansionEngine>) = 
         if p :? HestonExpansionEngineModel then 
             p :?> HestonExpansionEngineModel
         else
             let o = new HestonExpansionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

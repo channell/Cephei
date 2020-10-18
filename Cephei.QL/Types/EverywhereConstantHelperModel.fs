@@ -48,7 +48,8 @@ type EverywhereConstantHelperModel
 (*
     Functions
 *)
-    let _EverywhereConstantHelper                  = cell (fun () -> new EverywhereConstantHelper (value.Value, prevPrimitive.Value, xPrev.Value))
+    let mutable
+        _EverywhereConstantHelper                  = cell (fun () -> new EverywhereConstantHelper (value.Value, prevPrimitive.Value, xPrev.Value))
     let _fNext                                     = triv (fun () -> _EverywhereConstantHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
                                                    = triv (fun () -> _EverywhereConstantHelper.Value.primitive(x.Value))
@@ -59,13 +60,14 @@ type EverywhereConstantHelperModel
     casting 
 *)
     internal new () = new EverywhereConstantHelperModel(null,null,null)
-    member internal this.Inject v = _EverywhereConstantHelper.Value <- v
+    member internal this.Inject v = _EverywhereConstantHelper <- v
     static member Cast (p : ICell<EverywhereConstantHelper>) = 
         if p :? EverywhereConstantHelperModel then 
             p :?> EverywhereConstantHelperModel
         else
             let o = new EverywhereConstantHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

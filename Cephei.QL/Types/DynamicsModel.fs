@@ -48,7 +48,8 @@ type DynamicsModel
 (*
     Functions
 *)
-    let _Dynamics                                  = cell (fun () -> new Dynamics (fitting.Value, a.Value, sigma.Value))
+    let mutable
+        _Dynamics                                  = cell (fun () -> new Dynamics (fitting.Value, a.Value, sigma.Value))
     let _shortRate                                 (t : ICell<double>) (x : ICell<double>)   
                                                    = cell (fun () -> _Dynamics.Value.shortRate(t.Value, x.Value))
     let _variable                                  (t : ICell<double>) (r : ICell<double>)   
@@ -59,13 +60,14 @@ type DynamicsModel
     casting 
 *)
     internal new () = DynamicsModel(null,null,null)
-    member internal this.Inject v = _Dynamics.Value <- v
+    member internal this.Inject v = _Dynamics <- v
     static member Cast (p : ICell<Dynamics>) = 
         if p :? DynamicsModel then 
             p :?> DynamicsModel
         else
             let o = new DynamicsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

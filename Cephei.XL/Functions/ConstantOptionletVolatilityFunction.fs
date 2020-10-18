@@ -39,17 +39,17 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,17 +100,17 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility3", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,17 +161,17 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility1", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,17 +222,17 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility2", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantOptionletVolatility")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="vol",Description = "Reference to vol")>] 
+        ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_maxDate", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -319,9 +319,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_maxStrike", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,9 +355,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_minStrike", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -391,15 +391,15 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_blackVariance", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -445,15 +445,15 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_blackVariance2", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -499,15 +499,15 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_blackVariance1", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -553,9 +553,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_displacement", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -589,13 +589,13 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_smileSection", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -637,13 +637,13 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_smileSection2", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_smileSection2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -685,13 +685,13 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_smileSection1", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="extr",Description = "Reference to extr")>] 
+        ([<ExcelArgument(Name="extr",Description = "bool")>] 
          extr : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -733,15 +733,15 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_volatility2", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTime",Description = "Reference to optionTime")>] 
+        ([<ExcelArgument(Name="optionTime",Description = "double")>] 
          optionTime : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -787,15 +787,15 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_volatility1", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -841,15 +841,15 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_volatility", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="optionTenor",Description = "Reference to optionTenor")>] 
+        ([<ExcelArgument(Name="optionTenor",Description = "Period")>] 
          optionTenor : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -895,9 +895,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_volatilityType", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -931,9 +931,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_businessDayConvention", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -967,11 +967,11 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_optionDateFromTenor", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1009,9 +1009,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_calendar", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1045,9 +1045,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_dayCounter", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1081,9 +1081,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_maxTime", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1117,9 +1117,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_referenceDate", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1153,9 +1153,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_settlementDays", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1189,11 +1189,11 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_timeFromReference", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1231,9 +1231,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_update", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1267,9 +1267,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_allowsExtrapolation", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1303,11 +1303,11 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_disableExtrapolation", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1345,11 +1345,11 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_enableExtrapolation", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1387,9 +1387,9 @@ module ConstantOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantOptionletVolatility_extrapolate", Description="Create a ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "Reference to ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="ConstantOptionletVolatility",Description = "ConstantOptionletVolatility")>] 
          constantoptionletvolatility : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1420,9 +1420,9 @@ module ConstantOptionletVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantOptionletVolatility_Range", Description="Create a range of ConstantOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantOptionletVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConstantOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

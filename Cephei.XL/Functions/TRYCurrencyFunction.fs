@@ -39,7 +39,7 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TRYCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_code", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_empty", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_Equals", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_format", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_fractionsPerUnit", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_fractionSymbol", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_name", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_numericCode", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_rounding", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_symbol", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_ToString", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module TRYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TRYCurrency_triangulationCurrency", Description="Create a TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TRYCurrency",Description = "Reference to TRYCurrency")>] 
+        ([<ExcelArgument(Name="TRYCurrency",Description = "TRYCurrency")>] 
          trycurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module TRYCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TRYCurrency_Range", Description="Create a range of TRYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRYCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TRYCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

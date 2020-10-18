@@ -50,7 +50,8 @@ type FdmBackwardSolverModel
 (*
     Functions
 *)
-    let _FdmBackwardSolver                         = cell (fun () -> new FdmBackwardSolver (map.Value, bcSet.Value, condition.Value, schemeDesc.Value))
+    let mutable
+        _FdmBackwardSolver                         = cell (fun () -> new FdmBackwardSolver (map.Value, bcSet.Value, condition.Value, schemeDesc.Value))
     let _rollback                                  (a : ICell<Object>) (from : ICell<double>) (To : ICell<double>) (steps : ICell<int>) (dampingSteps : ICell<int>)   
                                                    = triv (fun () -> _FdmBackwardSolver.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value, dampingSteps.Value)
                                                                      _FdmBackwardSolver.Value)
@@ -59,13 +60,14 @@ type FdmBackwardSolverModel
     casting 
 *)
     internal new () = new FdmBackwardSolverModel(null,null,null,null)
-    member internal this.Inject v = _FdmBackwardSolver.Value <- v
+    member internal this.Inject v = _FdmBackwardSolver <- v
     static member Cast (p : ICell<FdmBackwardSolver>) = 
         if p :? FdmBackwardSolverModel then 
             p :?> FdmBackwardSolverModel
         else
             let o = new FdmBackwardSolverModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

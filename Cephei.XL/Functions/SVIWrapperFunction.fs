@@ -39,15 +39,15 @@ module SVIWrapperFunction =
     *)
     [<ExcelFunction(Name="_SVIWrapper", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SVIWrapper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="param",Description = "Reference to param")>] 
+        ([<ExcelArgument(Name="param",Description = "double")>] 
          param : obj)
-        ([<ExcelArgument(Name="addParams",Description = "Reference to addParams")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,11 +94,11 @@ module SVIWrapperFunction =
     *)
     [<ExcelFunction(Name="_SVIWrapper_volatility", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SVIWrapper",Description = "Reference to SVIWrapper")>] 
+        ([<ExcelArgument(Name="SVIWrapper",Description = "SVIWrapper")>] 
          sviwrapper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module SVIWrapperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SVIWrapper_Range", Description="Create a range of SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SVIWrapper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

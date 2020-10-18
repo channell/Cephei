@@ -48,7 +48,8 @@ type ProjectedCostFunctionModel
 (*
     Functions
 *)
-    let _ProjectedCostFunction                     = cell (fun () -> new ProjectedCostFunction (costFunction.Value, parametersValues.Value, parametersFreedoms.Value))
+    let mutable
+        _ProjectedCostFunction                     = cell (fun () -> new ProjectedCostFunction (costFunction.Value, parametersValues.Value, parametersFreedoms.Value))
     let _include                                   (projectedParameters : ICell<Vector>)   
                                                    = triv (fun () -> _ProjectedCostFunction.Value.INCLUDE(projectedParameters.Value))
     let _project                                   (parameters : ICell<Vector>)   
@@ -73,13 +74,14 @@ type ProjectedCostFunctionModel
     casting 
 *)
     internal new () = new ProjectedCostFunctionModel(null,null,null)
-    member internal this.Inject v = _ProjectedCostFunction.Value <- v
+    member internal this.Inject v = _ProjectedCostFunction <- v
     static member Cast (p : ICell<ProjectedCostFunction>) = 
         if p :? ProjectedCostFunctionModel then 
             p :?> ProjectedCostFunctionModel
         else
             let o = new ProjectedCostFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

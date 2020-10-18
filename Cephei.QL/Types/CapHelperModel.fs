@@ -62,7 +62,8 @@ type CapHelperModel
 (*
     Functions
 *)
-    let _CapHelper                                 = cell (fun () -> withEngine pricingEngine (new CapHelper (length.Value, volatility.Value, index.Value, fixedLegFrequency.Value, fixedLegDayCounter.Value, includeFirstSwaplet.Value, termStructure.Value, errorType.Value)))
+    let mutable
+        _CapHelper                                 = cell (fun () -> withEngine pricingEngine (new CapHelper (length.Value, volatility.Value, index.Value, fixedLegFrequency.Value, fixedLegDayCounter.Value, includeFirstSwaplet.Value, termStructure.Value, errorType.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CapHelper).addTimesTo(times.Value)
                                                                      _CapHelper.Value)
@@ -83,13 +84,14 @@ type CapHelperModel
     casting 
 *)
     internal new () = new CapHelperModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CapHelper.Value <- v
+    member internal this.Inject v = _CapHelper <- v
     static member Cast (p : ICell<CapHelper>) = 
         if p :? CapHelperModel then 
             p :?> CapHelperModel
         else
             let o = new CapHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

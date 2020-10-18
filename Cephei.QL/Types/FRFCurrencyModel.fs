@@ -41,7 +41,8 @@ type FRFCurrencyModel
 (*
     Functions
 *)
-    let _FRFCurrency                               = cell (fun () -> new FRFCurrency ())
+    let mutable
+        _FRFCurrency                               = cell (fun () -> new FRFCurrency ())
     let _code                                      = triv (fun () -> _FRFCurrency.Value.code)
     let _empty                                     = triv (fun () -> _FRFCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type FRFCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _FRFCurrency.Value <- v
+    member internal this.Inject v = _FRFCurrency <- v
     static member Cast (p : ICell<FRFCurrency>) = 
         if p :? FRFCurrencyModel then 
             p :?> FRFCurrencyModel
         else
             let o = new FRFCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

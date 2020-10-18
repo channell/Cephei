@@ -39,21 +39,21 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_calibrate", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_calibrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CalibratedModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
-        ([<ExcelArgument(Name="instruments",Description = "Reference to instruments")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
          instruments : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="additionalConstraint",Description = "Reference to additionalConstraint")>] 
+        ([<ExcelArgument(Name="additionalConstraint",Description = "CalibratedModel")>] 
          additionalConstraint : obj)
-        ([<ExcelArgument(Name="weights",Description = "Reference to weights")>] 
+        ([<ExcelArgument(Name="weights",Description = "CalibratedModel")>] 
          weights : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "Reference to fixParameters")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "CalibratedModel")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CalibratedModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="nArguments",Description = "Reference to nArguments")>] 
+        ([<ExcelArgument(Name="nArguments",Description = "int")>] 
          nArguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_constraint", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_endCriteria", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_notifyObservers", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_notifyObservers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_parameters", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,11 +292,11 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_registerWith", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,11 +334,11 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_setParams", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,11 +376,11 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_unregisterWith", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_update", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,13 +454,13 @@ module CalibratedModelFunction =
     *)
     [<ExcelFunction(Name="_CalibratedModel_value", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CalibratedModel",Description = "Reference to CalibratedModel")>] 
+        ([<ExcelArgument(Name="CalibratedModel",Description = "CalibratedModel")>] 
          calibratedmodel : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
-        ([<ExcelArgument(Name="instruments",Description = "Reference to instruments")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
          instruments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -499,9 +499,9 @@ module CalibratedModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CalibratedModel_Range", Description="Create a range of CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CalibratedModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

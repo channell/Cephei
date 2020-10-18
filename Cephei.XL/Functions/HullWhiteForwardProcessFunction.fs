@@ -39,9 +39,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_a", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_alpha", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,13 +117,13 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_B", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_B
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="T2",Description = "Reference to T2")>] 
+        ([<ExcelArgument(Name="T2",Description = "double")>] 
          T2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,13 +165,13 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_diffusion", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,13 +213,13 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_drift", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -261,15 +261,15 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_expectation", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,13 +315,13 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhiteForwardProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,15 +364,15 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_M_T", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_M_T
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="T2",Description = "Reference to T2")>] 
+        ([<ExcelArgument(Name="T2",Description = "double")>] 
          T2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_sigma", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_sigma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,15 +454,15 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_stdDeviation", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,15 +508,15 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_variance", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_x0", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_getForwardMeasureTime", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_getForwardMeasureTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,11 +634,11 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_setForwardMeasureTime", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_setForwardMeasureTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -676,13 +676,13 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_apply1", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_apply1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,13 +724,13 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_apply", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -772,17 +772,17 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_evolve", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,17 +832,17 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_evolve1", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_evolve1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "double")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -892,9 +892,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_initialValues", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -928,9 +928,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_size", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -964,15 +964,15 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_covariance", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,9 +1018,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_factors", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,11 +1054,11 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_registerWith", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1096,11 +1096,11 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_time", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1138,11 +1138,11 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_unregisterWith", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1180,9 +1180,9 @@ module HullWhiteForwardProcessFunction =
     *)
     [<ExcelFunction(Name="_HullWhiteForwardProcess_update", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "Reference to HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="HullWhiteForwardProcess",Description = "HullWhiteForwardProcess")>] 
          hullwhiteforwardprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1213,9 +1213,9 @@ module HullWhiteForwardProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HullWhiteForwardProcess_Range", Description="Create a range of HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HullWhiteForwardProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

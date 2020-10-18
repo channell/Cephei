@@ -41,7 +41,8 @@ type DKKCurrencyModel
 (*
     Functions
 *)
-    let _DKKCurrency                               = cell (fun () -> new DKKCurrency ())
+    let mutable
+        _DKKCurrency                               = cell (fun () -> new DKKCurrency ())
     let _code                                      = triv (fun () -> _DKKCurrency.Value.code)
     let _empty                                     = triv (fun () -> _DKKCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type DKKCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _DKKCurrency.Value <- v
+    member internal this.Inject v = _DKKCurrency <- v
     static member Cast (p : ICell<DKKCurrency>) = 
         if p :? DKKCurrencyModel then 
             p :?> DKKCurrencyModel
         else
             let o = new DKKCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

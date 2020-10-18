@@ -39,9 +39,9 @@ module ForwardFlatFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlat_global", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlat",Description = "Reference to ForwardFlat")>] 
+        ([<ExcelArgument(Name="ForwardFlat",Description = "ForwardFlat")>] 
          forwardflat : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module ForwardFlatFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlat_interpolate", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlat",Description = "Reference to ForwardFlat")>] 
+        ([<ExcelArgument(Name="ForwardFlat",Description = "ForwardFlat")>] 
          forwardflat : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,9 +129,9 @@ module ForwardFlatFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlat_requiredPoints", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardFlat",Description = "Reference to ForwardFlat")>] 
+        ([<ExcelArgument(Name="ForwardFlat",Description = "ForwardFlat")>] 
          forwardflat : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -162,9 +162,9 @@ module ForwardFlatFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardFlat_Range", Description="Create a range of ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardFlat")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

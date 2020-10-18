@@ -40,13 +40,13 @@ module StatsHolderFunction =
     (*!! duplicate add function
     [<ExcelFunction(Name="_StatsHolder_add", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="weight",Description = "Reference to weight")>] 
+        ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,13 +89,13 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_addSequence", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_addSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="weight",Description = "Reference to weight")>] 
+        ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -137,9 +137,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_errorEstimate", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,13 +173,13 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_expectationValue", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_expectationValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = ",double")>] 
          f : obj)
-        ([<ExcelArgument(Name="inRange",Description = "Reference to inRange")>] 
+        ([<ExcelArgument(Name="inRange",Description = ",bool")>] 
          inRange : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,9 +221,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_kurtosis", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_kurtosis
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,9 +257,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_max", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_max
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,9 +293,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_mean", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_mean
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,9 +329,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_min", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_min
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,11 +365,11 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_percentile", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_percentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
-        ([<ExcelArgument(Name="percent",Description = "Reference to percent")>] 
+        ([<ExcelArgument(Name="percent",Description = "double")>] 
          percent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_reset", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,9 +443,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_samples", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_samples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,9 +479,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_skewness", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_skewness
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,9 +515,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_standardDeviation", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_standardDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -551,7 +551,7 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder1", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -582,11 +582,11 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StatsHolder")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mean",Description = "Reference to mean")>] 
+        ([<ExcelArgument(Name="mean",Description = "double")>] 
          mean : obj)
-        ([<ExcelArgument(Name="standardDeviation",Description = "Reference to standardDeviation")>] 
+        ([<ExcelArgument(Name="standardDeviation",Description = "double")>] 
          standardDeviation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -625,9 +625,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_variance", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -661,9 +661,9 @@ module StatsHolderFunction =
     *)
     [<ExcelFunction(Name="_StatsHolder_weightSum", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_weightSum
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="StatsHolder",Description = "Reference to StatsHolder")>] 
+        ([<ExcelArgument(Name="StatsHolder",Description = "StatsHolder")>] 
          statsholder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,9 +694,9 @@ module StatsHolderFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StatsHolder_Range", Description="Create a range of StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the StatsHolder")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

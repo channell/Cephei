@@ -39,13 +39,13 @@ module EuropeanPathPricerFunction =
     *)
     [<ExcelFunction(Name="_EuropeanPathPricer", Description="Create a EuropeanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EuropeanPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module EuropeanPathPricerFunction =
     *)
     [<ExcelFunction(Name="_EuropeanPathPricer_value", Description="Create a EuropeanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EuropeanPathPricer",Description = "Reference to EuropeanPathPricer")>] 
+        ([<ExcelArgument(Name="EuropeanPathPricer",Description = "EuropeanPathPricer")>] 
          europeanpathpricer : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "IPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -127,9 +127,9 @@ module EuropeanPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EuropeanPathPricer_Range", Description="Create a range of EuropeanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EuropeanPathPricer")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

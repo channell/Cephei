@@ -44,7 +44,8 @@ type MonomialFctModel
 (*
     Functions
 *)
-    let _MonomialFct                               = cell (fun () -> new MonomialFct (order.Value))
+    let mutable
+        _MonomialFct                               = cell (fun () -> new MonomialFct (order.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _MonomialFct.Value.value(x.Value))
     do this.Bind(_MonomialFct)
@@ -52,13 +53,14 @@ type MonomialFctModel
     casting 
 *)
     internal new () = new MonomialFctModel(null)
-    member internal this.Inject v = _MonomialFct.Value <- v
+    member internal this.Inject v = _MonomialFct <- v
     static member Cast (p : ICell<MonomialFct>) = 
         if p :? MonomialFctModel then 
             p :?> MonomialFctModel
         else
             let o = new MonomialFctModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

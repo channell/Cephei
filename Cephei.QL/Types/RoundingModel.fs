@@ -48,7 +48,8 @@ type RoundingModel
 (*
     Functions
 *)
-    let _Rounding                                  = cell (fun () -> new Rounding (precision.Value, Type.Value, digit.Value))
+    let mutable
+        _Rounding                                  = cell (fun () -> new Rounding (precision.Value, Type.Value, digit.Value))
     let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
     let _getType                                   = triv (fun () -> _Rounding.Value.getType)
     let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
@@ -59,13 +60,14 @@ type RoundingModel
     casting 
 *)
     internal new () = new RoundingModel(null,null,null)
-    member internal this.Inject v = _Rounding.Value <- v
+    member internal this.Inject v = _Rounding <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel then 
             p :?> RoundingModel
         else
             let o = new RoundingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -94,7 +96,8 @@ type RoundingModel1
 (*
     Functions
 *)
-    let _Rounding                                  = cell (fun () -> new Rounding ())
+    let mutable
+        _Rounding                                  = cell (fun () -> new Rounding ())
     let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
     let _getType                                   = triv (fun () -> _Rounding.Value.getType)
     let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
@@ -105,13 +108,14 @@ type RoundingModel1
     casting 
 *)
     
-    member internal this.Inject v = _Rounding.Value <- v
+    member internal this.Inject v = _Rounding <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel1 then 
             p :?> RoundingModel1
         else
             let o = new RoundingModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -142,7 +146,8 @@ type RoundingModel2
 (*
     Functions
 *)
-    let _Rounding                                  = cell (fun () -> new Rounding (precision.Value, Type.Value))
+    let mutable
+        _Rounding                                  = cell (fun () -> new Rounding (precision.Value, Type.Value))
     let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
     let _getType                                   = triv (fun () -> _Rounding.Value.getType)
     let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
@@ -153,13 +158,14 @@ type RoundingModel2
     casting 
 *)
     internal new () = new RoundingModel2(null,null)
-    member internal this.Inject v = _Rounding.Value <- v
+    member internal this.Inject v = _Rounding <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel2 then 
             p :?> RoundingModel2
         else
             let o = new RoundingModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -190,7 +196,8 @@ type RoundingModel3
 (*
     Functions
 *)
-    let _Rounding                                  = cell (fun () -> new Rounding (precision.Value))
+    let mutable
+        _Rounding                                  = cell (fun () -> new Rounding (precision.Value))
     let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
     let _getType                                   = triv (fun () -> _Rounding.Value.getType)
     let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
@@ -201,13 +208,14 @@ type RoundingModel3
     casting 
 *)
     internal new () = new RoundingModel3(null)
-    member internal this.Inject v = _Rounding.Value <- v
+    member internal this.Inject v = _Rounding <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel3 then 
             p :?> RoundingModel3
         else
             let o = new RoundingModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

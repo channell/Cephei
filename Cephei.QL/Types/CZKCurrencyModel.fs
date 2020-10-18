@@ -41,7 +41,8 @@ type CZKCurrencyModel
 (*
     Functions
 *)
-    let _CZKCurrency                               = cell (fun () -> new CZKCurrency ())
+    let mutable
+        _CZKCurrency                               = cell (fun () -> new CZKCurrency ())
     let _code                                      = triv (fun () -> _CZKCurrency.Value.code)
     let _empty                                     = triv (fun () -> _CZKCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CZKCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _CZKCurrency.Value <- v
+    member internal this.Inject v = _CZKCurrency <- v
     static member Cast (p : ICell<CZKCurrency>) = 
         if p :? CZKCurrencyModel then 
             p :?> CZKCurrencyModel
         else
             let o = new CZKCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

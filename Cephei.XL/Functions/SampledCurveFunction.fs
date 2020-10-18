@@ -39,9 +39,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_Clone", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_empty", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_firstDerivativeAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_firstDerivativeAtCenter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_grid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,11 +183,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_gridValue", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_gridValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,13 +225,13 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_regrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_regrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="new_grid",Description = "Reference to new_grid")>] 
+        ([<ExcelArgument(Name="new_grid",Description = "Vector")>] 
          new_grid : obj)
-        ([<ExcelArgument(Name="func",Description = "Reference to func")>] 
+        ([<ExcelArgument(Name="func",Description = "double,double")>] 
          func : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -273,11 +273,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_regrid1", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_regrid1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="new_grid",Description = "Reference to new_grid")>] 
+        ([<ExcelArgument(Name="new_grid",Description = "Vector")>] 
          new_grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,13 +315,13 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_regridLogGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_regridLogGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="min",Description = "Reference to min")>] 
+        ([<ExcelArgument(Name="min",Description = "double")>] 
          min : obj)
-        ([<ExcelArgument(Name="max",Description = "Reference to max")>] 
+        ([<ExcelArgument(Name="max",Description = "double")>] 
          max : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,11 +363,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_sample", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_sample
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -405,9 +405,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve1", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="gridSize",Description = "Reference to gridSize")>] 
+        ([<ExcelArgument(Name="gridSize",Description = "int")>] 
          gridSize : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,11 +479,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_scaleGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_scaleGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_secondDerivativeAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_secondDerivativeAtCenter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,11 +557,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_setGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="g",Description = "Reference to g")>] 
+        ([<ExcelArgument(Name="g",Description = "Vector")>] 
          g : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,13 +599,13 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_setLogGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setLogGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="min",Description = "Reference to min")>] 
+        ([<ExcelArgument(Name="min",Description = "double")>] 
          min : obj)
-        ([<ExcelArgument(Name="max",Description = "Reference to max")>] 
+        ([<ExcelArgument(Name="max",Description = "double")>] 
          max : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -647,13 +647,13 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_setValue", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -695,11 +695,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_setValues", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="g",Description = "Reference to g")>] 
+        ([<ExcelArgument(Name="g",Description = "Vector")>] 
          g : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -737,11 +737,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_shiftGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_shiftGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -779,9 +779,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_size", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -815,11 +815,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_transform", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double,double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -857,11 +857,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_transformGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_transformGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double,double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -899,11 +899,11 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_value", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -941,9 +941,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_valueAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_valueAtCenter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -977,9 +977,9 @@ module SampledCurveFunction =
     *)
     [<ExcelFunction(Name="_SampledCurve_values", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SampledCurve",Description = "Reference to SampledCurve")>] 
+        ([<ExcelArgument(Name="SampledCurve",Description = "SampledCurve")>] 
          sampledcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1010,9 +1010,9 @@ module SampledCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SampledCurve_Range", Description="Create a range of SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SampledCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

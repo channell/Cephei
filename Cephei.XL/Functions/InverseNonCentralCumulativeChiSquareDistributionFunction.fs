@@ -39,15 +39,15 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution", Description="Create a InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseNonCentralCumulativeChiSquareDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseNonCentralCumulativeChiSquareDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="df",Description = "Reference to df")>] 
+        ([<ExcelArgument(Name="df",Description = "double")>] 
          df : obj)
-        ([<ExcelArgument(Name="ncp",Description = "Reference to ncp")>] 
+        ([<ExcelArgument(Name="ncp",Description = "double")>] 
          ncp : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "InverseNonCentralCumulativeChiSquareDistribution")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "InverseNonCentralCumulativeChiSquareDistribution")>] 
          accuracy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,11 +94,11 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution_value", Description="Create a InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseNonCentralCumulativeChiSquareDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseNonCentralCumulativeChiSquareDistribution",Description = "Reference to InverseNonCentralCumulativeChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="InverseNonCentralCumulativeChiSquareDistribution",Description = "InverseNonCentralCumulativeChiSquareDistribution")>] 
          inversenoncentralcumulativechisquaredistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution_Range", Description="Create a range of InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseNonCentralCumulativeChiSquareDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InverseNonCentralCumulativeChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

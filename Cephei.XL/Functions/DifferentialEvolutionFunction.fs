@@ -39,9 +39,9 @@ module DifferentialEvolutionFunction =
     *)
     [<ExcelFunction(Name="_DifferentialEvolution_configuration", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_configuration
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DifferentialEvolution.Configuration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DifferentialEvolution",Description = "Reference to DifferentialEvolution")>] 
+        ([<ExcelArgument(Name="DifferentialEvolution",Description = "DifferentialEvolution")>] 
          differentialevolution : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module DifferentialEvolutionFunction =
     *)
     [<ExcelFunction(Name="_DifferentialEvolution", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DifferentialEvolution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="configuration",Description = "Reference to configuration")>] 
+        ([<ExcelArgument(Name="configuration",Description = "DifferentialEvolution")>] 
          configuration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,13 +112,13 @@ module DifferentialEvolutionFunction =
     *)
     [<ExcelFunction(Name="_DifferentialEvolution_minimize", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DifferentialEvolution",Description = "Reference to DifferentialEvolution")>] 
+        ([<ExcelArgument(Name="DifferentialEvolution",Description = "DifferentialEvolution")>] 
          differentialevolution : obj)
-        ([<ExcelArgument(Name="P",Description = "Reference to P")>] 
+        ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -157,9 +157,9 @@ module DifferentialEvolutionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DifferentialEvolution_Range", Description="Create a range of DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DifferentialEvolution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

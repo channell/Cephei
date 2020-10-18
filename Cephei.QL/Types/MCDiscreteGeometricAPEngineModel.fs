@@ -60,7 +60,8 @@ type MCDiscreteGeometricAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new
 (*
     Functions
 *)
-    let _MCDiscreteGeometricAPEngine               = cell (fun () -> new MCDiscreteGeometricAPEngine<'RNG,'S> (Process.Value, maxTimeStepPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+    let mutable
+        _MCDiscreteGeometricAPEngine               = cell (fun () -> new MCDiscreteGeometricAPEngine<'RNG,'S> (Process.Value, maxTimeStepPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.registerWith(handler.Value)
                                                                      _MCDiscreteGeometricAPEngine.Value)

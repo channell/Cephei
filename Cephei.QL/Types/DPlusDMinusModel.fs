@@ -46,7 +46,8 @@ type DPlusDMinusModel
 (*
     Functions
 *)
-    let _DPlusDMinus                               = cell (fun () -> new DPlusDMinus (gridPoints.Value, h.Value))
+    let mutable
+        _DPlusDMinus                               = cell (fun () -> new DPlusDMinus (gridPoints.Value, h.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _DPlusDMinus.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -87,13 +88,14 @@ type DPlusDMinusModel
     casting 
 *)
     internal new () = new DPlusDMinusModel(null,null)
-    member internal this.Inject v = _DPlusDMinus.Value <- v
+    member internal this.Inject v = _DPlusDMinus <- v
     static member Cast (p : ICell<DPlusDMinus>) = 
         if p :? DPlusDMinusModel then 
             p :?> DPlusDMinusModel
         else
             let o = new DPlusDMinusModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -52,7 +52,8 @@ type MixedLinearParabolicModel
 (*
     Functions
 *)
-    let _MixedLinearParabolic                      = cell (fun () -> new MixedLinearParabolic (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
+    let mutable
+        _MixedLinearParabolic                      = cell (fun () -> new MixedLinearParabolic (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _MixedLinearParabolic.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _MixedLinearParabolic.Value.empty())
@@ -81,13 +82,14 @@ type MixedLinearParabolicModel
     casting 
 *)
     internal new () = new MixedLinearParabolicModel(null,null,null,null,null)
-    member internal this.Inject v = _MixedLinearParabolic.Value <- v
+    member internal this.Inject v = _MixedLinearParabolic <- v
     static member Cast (p : ICell<MixedLinearParabolic>) = 
         if p :? MixedLinearParabolicModel then 
             p :?> MixedLinearParabolicModel
         else
             let o = new MixedLinearParabolicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

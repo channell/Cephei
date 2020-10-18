@@ -39,9 +39,9 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_isValid", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoEquivalentSwapLengthQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "Reference to RendistatoEquivalentSwapLengthQuote")>] 
+        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "RendistatoEquivalentSwapLengthQuote")>] 
          rendistatoequivalentswaplengthquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoEquivalentSwapLengthQuote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "RendistatoCalculator")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,9 +112,9 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_value", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "Reference to RendistatoEquivalentSwapLengthQuote")>] 
+        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "RendistatoEquivalentSwapLengthQuote")>] 
          rendistatoequivalentswaplengthquote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,11 +148,11 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_registerWith", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "Reference to RendistatoEquivalentSwapLengthQuote")>] 
+        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "RendistatoEquivalentSwapLengthQuote")>] 
          rendistatoequivalentswaplengthquote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,11 +190,11 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_unregisterWith", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "Reference to RendistatoEquivalentSwapLengthQuote")>] 
+        ([<ExcelArgument(Name="RendistatoEquivalentSwapLengthQuote",Description = "RendistatoEquivalentSwapLengthQuote")>] 
          rendistatoequivalentswaplengthquote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_Range", Description="Create a range of RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RendistatoEquivalentSwapLengthQuote")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

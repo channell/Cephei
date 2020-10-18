@@ -44,7 +44,8 @@ type DifferentialEvolutionModel
 (*
     Functions
 *)
-    let _DifferentialEvolution                     = cell (fun () -> new DifferentialEvolution (configuration.Value))
+    let mutable
+        _DifferentialEvolution                     = cell (fun () -> new DifferentialEvolution (configuration.Value))
     let _configuration                             = triv (fun () -> _DifferentialEvolution.Value.configuration())
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _DifferentialEvolution.Value.minimize(P.Value, endCriteria.Value))
@@ -53,13 +54,14 @@ type DifferentialEvolutionModel
     casting 
 *)
     internal new () = new DifferentialEvolutionModel(null)
-    member internal this.Inject v = _DifferentialEvolution.Value <- v
+    member internal this.Inject v = _DifferentialEvolution <- v
     static member Cast (p : ICell<DifferentialEvolution>) = 
         if p :? DifferentialEvolutionModel then 
             p :?> DifferentialEvolutionModel
         else
             let o = new DifferentialEvolutionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

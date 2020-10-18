@@ -44,7 +44,8 @@ type ConstantParameterModel
 (*
     Functions
 *)
-    let _ConstantParameter                         = cell (fun () -> new ConstantParameter (Constraint.Value))
+    let mutable
+        _ConstantParameter                         = cell (fun () -> new ConstantParameter (Constraint.Value))
     let _constraint                                = triv (fun () -> _ConstantParameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _ConstantParameter.Value.implementation())
     let _parameters                                = triv (fun () -> _ConstantParameter.Value.parameters())
@@ -61,13 +62,14 @@ type ConstantParameterModel
     casting 
 *)
     internal new () = new ConstantParameterModel(null)
-    member internal this.Inject v = _ConstantParameter.Value <- v
+    member internal this.Inject v = _ConstantParameter <- v
     static member Cast (p : ICell<ConstantParameter>) = 
         if p :? ConstantParameterModel then 
             p :?> ConstantParameterModel
         else
             let o = new ConstantParameterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -104,7 +106,8 @@ type ConstantParameterModel1
 (*
     Functions
 *)
-    let _ConstantParameter                         = cell (fun () -> new ConstantParameter (value.Value, Constraint.Value))
+    let mutable
+        _ConstantParameter                         = cell (fun () -> new ConstantParameter (value.Value, Constraint.Value))
     let _constraint                                = triv (fun () -> _ConstantParameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _ConstantParameter.Value.implementation())
     let _parameters                                = triv (fun () -> _ConstantParameter.Value.parameters())
@@ -121,13 +124,14 @@ type ConstantParameterModel1
     casting 
 *)
     internal new () = new ConstantParameterModel1(null,null)
-    member internal this.Inject v = _ConstantParameter.Value <- v
+    member internal this.Inject v = _ConstantParameter <- v
     static member Cast (p : ICell<ConstantParameter>) = 
         if p :? ConstantParameterModel1 then 
             p :?> ConstantParameterModel1
         else
             let o = new ConstantParameterModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

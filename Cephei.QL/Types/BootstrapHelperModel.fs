@@ -41,7 +41,8 @@ type BootstrapHelperModel<'TS>
 (*
     Functions
 *)
-    let _BootstrapHelper                           = cell (fun () -> new BootstrapHelper<'TS> ())
+    let mutable
+        _BootstrapHelper                           = cell (fun () -> new BootstrapHelper<'TS> ())
     let _earliestDate                              = triv (fun () -> _BootstrapHelper.Value.earliestDate())
     let _impliedQuote                              = triv (fun () -> _BootstrapHelper.Value.impliedQuote())
     let _latestDate                                = triv (fun () -> _BootstrapHelper.Value.latestDate())
@@ -102,7 +103,8 @@ type BootstrapHelperModel1<'TS>
 (*
     Functions
 *)
-    let _BootstrapHelper                           = cell (fun () -> new BootstrapHelper<'TS> (quote.Value))
+    let mutable
+        _BootstrapHelper                           = cell (fun () -> new BootstrapHelper<'TS> (quote.Value))
     let _earliestDate                              = triv (fun () -> _BootstrapHelper.Value.earliestDate())
     let _impliedQuote                              = triv (fun () -> _BootstrapHelper.Value.impliedQuote())
     let _latestDate                                = triv (fun () -> _BootstrapHelper.Value.latestDate())
@@ -164,7 +166,8 @@ type BootstrapHelperModel2<'TS>
 (*
     Functions
 *)
-    let _BootstrapHelper                           = cell (fun () -> new BootstrapHelper<'TS> (quote.Value))
+    let mutable
+        _BootstrapHelper                           = cell (fun () -> new BootstrapHelper<'TS> (quote.Value))
     let _earliestDate                              = triv (fun () -> _BootstrapHelper.Value.earliestDate())
     let _impliedQuote                              = triv (fun () -> _BootstrapHelper.Value.impliedQuote())
     let _latestDate                                = triv (fun () -> _BootstrapHelper.Value.latestDate())

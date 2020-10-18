@@ -44,7 +44,8 @@ type FlatExtrapolator2DModel
 (*
     Functions
 *)
-    let _FlatExtrapolator2D                        = cell (fun () -> new FlatExtrapolator2D (decoratedInterpolation.Value))
+    let mutable
+        _FlatExtrapolator2D                        = cell (fun () -> new FlatExtrapolator2D (decoratedInterpolation.Value))
     let _isInRange                                 (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _FlatExtrapolator2D.Value.isInRange(x.Value, y.Value))
     let _locateX                                   (x : ICell<double>)   
@@ -77,13 +78,14 @@ type FlatExtrapolator2DModel
     casting 
 *)
     internal new () = new FlatExtrapolator2DModel(null)
-    member internal this.Inject v = _FlatExtrapolator2D.Value <- v
+    member internal this.Inject v = _FlatExtrapolator2D <- v
     static member Cast (p : ICell<FlatExtrapolator2D>) = 
         if p :? FlatExtrapolator2DModel then 
             p :?> FlatExtrapolator2DModel
         else
             let o = new FlatExtrapolator2DModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

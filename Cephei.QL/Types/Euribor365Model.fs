@@ -46,7 +46,8 @@ type Euribor365Model
 (*
     Functions
 *)
-    let _Euribor365                                = cell (fun () -> new Euribor365 (tenor.Value, h.Value))
+    let mutable
+        _Euribor365                                = cell (fun () -> new Euribor365 (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor365.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor365.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type Euribor365Model
     casting 
 *)
     internal new () = new Euribor365Model(null,null)
-    member internal this.Inject v = _Euribor365.Value <- v
+    member internal this.Inject v = _Euribor365 <- v
     static member Cast (p : ICell<Euribor365>) = 
         if p :? Euribor365Model then 
             p :?> Euribor365Model
         else
             let o = new Euribor365Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -175,7 +177,8 @@ type Euribor365Model1
 (*
     Functions
 *)
-    let _Euribor365                                = cell (fun () -> new Euribor365 (tenor.Value))
+    let mutable
+        _Euribor365                                = cell (fun () -> new Euribor365 (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor365.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor365.Value.clone(forwarding.Value))
@@ -230,13 +233,14 @@ type Euribor365Model1
     casting 
 *)
     internal new () = new Euribor365Model1(null)
-    member internal this.Inject v = _Euribor365.Value <- v
+    member internal this.Inject v = _Euribor365 <- v
     static member Cast (p : ICell<Euribor365>) = 
         if p :? Euribor365Model1 then 
             p :?> Euribor365Model1
         else
             let o = new Euribor365Model1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

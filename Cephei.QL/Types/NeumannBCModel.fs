@@ -46,7 +46,8 @@ type NeumannBCModel
 (*
     Functions
 *)
-    let _NeumannBC                                 = cell (fun () -> new NeumannBC (value.Value, side.Value))
+    let mutable
+        _NeumannBC                                 = cell (fun () -> new NeumannBC (value.Value, side.Value))
     let _applyAfterApplying                        (u : ICell<Vector>)   
                                                    = triv (fun () -> _NeumannBC.Value.applyAfterApplying(u.Value)
                                                                      _NeumannBC.Value)
@@ -67,13 +68,14 @@ type NeumannBCModel
     casting 
 *)
     internal new () = new NeumannBCModel(null,null)
-    member internal this.Inject v = _NeumannBC.Value <- v
+    member internal this.Inject v = _NeumannBC <- v
     static member Cast (p : ICell<NeumannBC>) = 
         if p :? NeumannBCModel then 
             p :?> NeumannBCModel
         else
             let o = new NeumannBCModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

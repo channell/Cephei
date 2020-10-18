@@ -41,7 +41,8 @@ type TrigeorgisModel
 (*
     Functions
 *)
-    let _Trigeorgis                                = cell (fun () -> new Trigeorgis ())
+    let mutable
+        _Trigeorgis                                = cell (fun () -> new Trigeorgis ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _Trigeorgis.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
@@ -58,13 +59,14 @@ type TrigeorgisModel
     casting 
 *)
     
-    member internal this.Inject v = _Trigeorgis.Value <- v
+    member internal this.Inject v = _Trigeorgis <- v
     static member Cast (p : ICell<Trigeorgis>) = 
         if p :? TrigeorgisModel then 
             p :?> TrigeorgisModel
         else
             let o = new TrigeorgisModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -105,7 +107,8 @@ type TrigeorgisModel1
 (*
     Functions
 *)
-    let _Trigeorgis                                = cell (fun () -> new Trigeorgis (Process.Value, End.Value, steps.Value, strike.Value))
+    let mutable
+        _Trigeorgis                                = cell (fun () -> new Trigeorgis (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
                                                    = triv (fun () -> _Trigeorgis.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
@@ -122,13 +125,14 @@ type TrigeorgisModel1
     casting 
 *)
     internal new () = new TrigeorgisModel1(null,null,null,null)
-    member internal this.Inject v = _Trigeorgis.Value <- v
+    member internal this.Inject v = _Trigeorgis <- v
     static member Cast (p : ICell<Trigeorgis>) = 
         if p :? TrigeorgisModel1 then 
             p :?> TrigeorgisModel1
         else
             let o = new TrigeorgisModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

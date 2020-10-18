@@ -41,7 +41,8 @@ type PKRCurrencyModel
 (*
     Functions
 *)
-    let _PKRCurrency                               = cell (fun () -> new PKRCurrency ())
+    let mutable
+        _PKRCurrency                               = cell (fun () -> new PKRCurrency ())
     let _code                                      = triv (fun () -> _PKRCurrency.Value.code)
     let _empty                                     = triv (fun () -> _PKRCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type PKRCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _PKRCurrency.Value <- v
+    member internal this.Inject v = _PKRCurrency <- v
     static member Cast (p : ICell<PKRCurrency>) = 
         if p :? PKRCurrencyModel then 
             p :?> PKRCurrencyModel
         else
             let o = new PKRCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

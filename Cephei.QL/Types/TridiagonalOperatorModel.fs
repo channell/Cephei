@@ -41,7 +41,8 @@ type TridiagonalOperatorModel
 (*
     Functions
 *)
-    let _TridiagonalOperator                       = cell (fun () -> new TridiagonalOperator ())
+    let mutable
+        _TridiagonalOperator                       = cell (fun () -> new TridiagonalOperator ())
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _TridiagonalOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -82,13 +83,14 @@ type TridiagonalOperatorModel
     casting 
 *)
     
-    member internal this.Inject v = _TridiagonalOperator.Value <- v
+    member internal this.Inject v = _TridiagonalOperator <- v
     static member Cast (p : ICell<TridiagonalOperator>) = 
         if p :? TridiagonalOperatorModel then 
             p :?> TridiagonalOperatorModel
         else
             let o = new TridiagonalOperatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -146,7 +148,8 @@ type TridiagonalOperatorModel1
 (*
     Functions
 *)
-    let _TridiagonalOperator                       = cell (fun () -> new TridiagonalOperator (low.Value, mid.Value, high.Value))
+    let mutable
+        _TridiagonalOperator                       = cell (fun () -> new TridiagonalOperator (low.Value, mid.Value, high.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _TridiagonalOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -187,13 +190,14 @@ type TridiagonalOperatorModel1
     casting 
 *)
     internal new () = new TridiagonalOperatorModel1(null,null,null)
-    member internal this.Inject v = _TridiagonalOperator.Value <- v
+    member internal this.Inject v = _TridiagonalOperator <- v
     static member Cast (p : ICell<TridiagonalOperator>) = 
         if p :? TridiagonalOperatorModel1 then 
             p :?> TridiagonalOperatorModel1
         else
             let o = new TridiagonalOperatorModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -250,7 +254,8 @@ type TridiagonalOperatorModel2
 (*
     Functions
 *)
-    let _TridiagonalOperator                       = cell (fun () -> new TridiagonalOperator (size.Value))
+    let mutable
+        _TridiagonalOperator                       = cell (fun () -> new TridiagonalOperator (size.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _TridiagonalOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -291,13 +296,14 @@ type TridiagonalOperatorModel2
     casting 
 *)
     internal new () = new TridiagonalOperatorModel2(null)
-    member internal this.Inject v = _TridiagonalOperator.Value <- v
+    member internal this.Inject v = _TridiagonalOperator <- v
     static member Cast (p : ICell<TridiagonalOperator>) = 
         if p :? TridiagonalOperatorModel2 then 
             p :?> TridiagonalOperatorModel2
         else
             let o = new TridiagonalOperatorModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,17 +39,17 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_integratedVariance", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_integratedVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmLinearExponentialVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "Reference to LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "LmLinearExponentialVolatilityModel")>] 
          lmlinearexponentialvolatilitymodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "LmLinearExponentialVolatilityModel")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,17 +99,17 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmLinearExponentialVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="fixingTimes",Description = "Reference to fixingTimes")>] 
+        ([<ExcelArgument(Name="fixingTimes",Description = "double")>] 
          fixingTimes : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "double")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,15 +160,15 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_volatility", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "Reference to LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "LmLinearExponentialVolatilityModel")>] 
          lmlinearexponentialvolatilitymodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,13 +214,13 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_volatility1", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "Reference to LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "LmLinearExponentialVolatilityModel")>] 
          lmlinearexponentialvolatilitymodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,9 +262,9 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_parameters", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "Reference to LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "LmLinearExponentialVolatilityModel")>] 
          lmlinearexponentialvolatilitymodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,11 +298,11 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_setParams", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "Reference to LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "LmLinearExponentialVolatilityModel")>] 
          lmlinearexponentialvolatilitymodel : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Parameter")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,9 +340,9 @@ module LmLinearExponentialVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_size", Description="Create a LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "Reference to LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmLinearExponentialVolatilityModel",Description = "LmLinearExponentialVolatilityModel")>] 
          lmlinearexponentialvolatilitymodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -373,9 +373,9 @@ module LmLinearExponentialVolatilityModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LmLinearExponentialVolatilityModel_Range", Description="Create a range of LmLinearExponentialVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmLinearExponentialVolatilityModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LmLinearExponentialVolatilityModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

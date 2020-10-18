@@ -44,7 +44,8 @@ type HestonModelModel
 (*
     Functions
 *)
-    let _HestonModel                               = cell (fun () -> new HestonModel (Process.Value))
+    let mutable
+        _HestonModel                               = cell (fun () -> new HestonModel (Process.Value))
     let _kappa                                     = triv (fun () -> _HestonModel.Value.kappa())
     let _process                                   = triv (fun () -> _HestonModel.Value.PROCESS())
     let _rho                                       = triv (fun () -> _HestonModel.Value.rho())
@@ -77,13 +78,14 @@ type HestonModelModel
     casting 
 *)
     internal new () = new HestonModelModel(null)
-    member internal this.Inject v = _HestonModel.Value <- v
+    member internal this.Inject v = _HestonModel <- v
     static member Cast (p : ICell<HestonModel>) = 
         if p :? HestonModelModel then 
             p :?> HestonModelModel
         else
             let o = new HestonModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_convexityAdjustment", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,17 +75,17 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper1", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
-        ([<ExcelArgument(Name="iborStartDate",Description = "Reference to iborStartDate")>] 
+        ([<ExcelArgument(Name="iborStartDate",Description = "Date")>] 
          iborStartDate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "IborIndex")>] 
          i : obj)
-        ([<ExcelArgument(Name="convAdj",Description = "Reference to convAdj")>] 
+        ([<ExcelArgument(Name="convAdj",Description = "FuturesRateHelper")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,17 +136,17 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper2", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "Quote")>] 
          price : obj)
-        ([<ExcelArgument(Name="iborStartDate",Description = "Reference to iborStartDate")>] 
+        ([<ExcelArgument(Name="iborStartDate",Description = "Date")>] 
          iborStartDate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "IborIndex")>] 
          i : obj)
-        ([<ExcelArgument(Name="convAdj",Description = "Reference to convAdj")>] 
+        ([<ExcelArgument(Name="convAdj",Description = "Quote")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,19 +197,19 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper3", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
-        ([<ExcelArgument(Name="iborStartDate",Description = "Reference to iborStartDate")>] 
+        ([<ExcelArgument(Name="iborStartDate",Description = "Date")>] 
          iborStartDate : obj)
-        ([<ExcelArgument(Name="iborEndDate",Description = "Reference to iborEndDate")>] 
+        ([<ExcelArgument(Name="iborEndDate",Description = "Date")>] 
          iborEndDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="convAdj",Description = "Reference to convAdj")>] 
+        ([<ExcelArgument(Name="convAdj",Description = "FuturesRateHelper")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -264,19 +264,19 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper4", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "Quote")>] 
          price : obj)
-        ([<ExcelArgument(Name="iborStartDate",Description = "Reference to iborStartDate")>] 
+        ([<ExcelArgument(Name="iborStartDate",Description = "Date")>] 
          iborStartDate : obj)
-        ([<ExcelArgument(Name="iborEndDate",Description = "Reference to iborEndDate")>] 
+        ([<ExcelArgument(Name="iborEndDate",Description = "Date")>] 
          iborEndDate : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="convAdj",Description = "Reference to convAdj")>] 
+        ([<ExcelArgument(Name="convAdj",Description = "Quote")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -331,25 +331,25 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper5", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
-        ([<ExcelArgument(Name="iborStartDate",Description = "Reference to iborStartDate")>] 
+        ([<ExcelArgument(Name="iborStartDate",Description = "Date")>] 
          iborStartDate : obj)
-        ([<ExcelArgument(Name="lengthInMonths",Description = "Reference to lengthInMonths")>] 
+        ([<ExcelArgument(Name="lengthInMonths",Description = "int")>] 
          lengthInMonths : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="convexityAdjustment",Description = "Reference to convexityAdjustment")>] 
+        ([<ExcelArgument(Name="convexityAdjustment",Description = "FuturesRateHelper")>] 
          convexityAdjustment : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -416,25 +416,25 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FuturesRateHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "Quote")>] 
          price : obj)
-        ([<ExcelArgument(Name="iborStartDate",Description = "Reference to iborStartDate")>] 
+        ([<ExcelArgument(Name="iborStartDate",Description = "Date")>] 
          iborStartDate : obj)
-        ([<ExcelArgument(Name="lengthInMonths",Description = "Reference to lengthInMonths")>] 
+        ([<ExcelArgument(Name="lengthInMonths",Description = "int")>] 
          lengthInMonths : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="convAdj",Description = "Reference to convAdj")>] 
+        ([<ExcelArgument(Name="convAdj",Description = "Quote")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -501,9 +501,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_impliedQuote", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -537,9 +537,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_earliestDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -573,9 +573,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_latestDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -609,9 +609,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_latestRelevantDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -645,9 +645,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_maturityDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -681,9 +681,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_pillarDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -717,9 +717,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_quote", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -753,9 +753,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_quoteError", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -789,9 +789,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_quoteIsValid", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -825,9 +825,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_quoteValue", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -861,11 +861,11 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_registerWith", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,11 +904,11 @@ module FuturesRateHelperFunction =
     (*generiuc 
     [<ExcelFunction(Name="_FuturesRateHelper_setTermStructure", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "'TS")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -947,11 +947,11 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_unregisterWith", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -989,9 +989,9 @@ module FuturesRateHelperFunction =
     *)
     [<ExcelFunction(Name="_FuturesRateHelper_update", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FuturesRateHelper",Description = "Reference to FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="FuturesRateHelper",Description = "FuturesRateHelper")>] 
          futuresratehelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1022,9 +1022,9 @@ module FuturesRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FuturesRateHelper_Range", Description="Create a range of FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FuturesRateHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

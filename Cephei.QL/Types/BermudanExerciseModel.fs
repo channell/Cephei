@@ -44,7 +44,8 @@ type BermudanExerciseModel
 (*
     Functions
 *)
-    let _BermudanExercise                          = cell (fun () -> new BermudanExercise (dates.Value))
+    let mutable
+        _BermudanExercise                          = cell (fun () -> new BermudanExercise (dates.Value))
     let _payoffAtExpiry                            = triv (fun () -> _BermudanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _BermudanExercise.Value.date(index.Value))
@@ -56,13 +57,14 @@ type BermudanExerciseModel
     casting 
 *)
     internal new () = new BermudanExerciseModel(null)
-    member internal this.Inject v = _BermudanExercise.Value <- v
+    member internal this.Inject v = _BermudanExercise <- v
     static member Cast (p : ICell<BermudanExercise>) = 
         if p :? BermudanExerciseModel then 
             p :?> BermudanExerciseModel
         else
             let o = new BermudanExerciseModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -95,7 +97,8 @@ type BermudanExerciseModel1
 (*
     Functions
 *)
-    let _BermudanExercise                          = cell (fun () -> new BermudanExercise (dates.Value, payoffAtExpiry.Value))
+    let mutable
+        _BermudanExercise                          = cell (fun () -> new BermudanExercise (dates.Value, payoffAtExpiry.Value))
     let _payoffAtExpiry                            = triv (fun () -> _BermudanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
                                                    = triv (fun () -> _BermudanExercise.Value.date(index.Value))
@@ -107,13 +110,14 @@ type BermudanExerciseModel1
     casting 
 *)
     internal new () = new BermudanExerciseModel1(null,null)
-    member internal this.Inject v = _BermudanExercise.Value <- v
+    member internal this.Inject v = _BermudanExercise <- v
     static member Cast (p : ICell<BermudanExercise>) = 
         if p :? BermudanExerciseModel1 then 
             p :?> BermudanExerciseModel1
         else
             let o = new BermudanExerciseModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

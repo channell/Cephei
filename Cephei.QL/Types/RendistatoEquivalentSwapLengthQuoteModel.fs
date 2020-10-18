@@ -44,7 +44,8 @@ type RendistatoEquivalentSwapLengthQuoteModel
 (*
     Functions
 *)
-    let _RendistatoEquivalentSwapLengthQuote       = cell (fun () -> new RendistatoEquivalentSwapLengthQuote (r.Value))
+    let mutable
+        _RendistatoEquivalentSwapLengthQuote       = cell (fun () -> new RendistatoEquivalentSwapLengthQuote (r.Value))
     let _isValid                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.isValid())
     let _value                                     = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.value())
     let _registerWith                              (handler : ICell<Callback>)   
@@ -58,13 +59,14 @@ type RendistatoEquivalentSwapLengthQuoteModel
     casting 
 *)
     internal new () = new RendistatoEquivalentSwapLengthQuoteModel(null)
-    member internal this.Inject v = _RendistatoEquivalentSwapLengthQuote.Value <- v
+    member internal this.Inject v = _RendistatoEquivalentSwapLengthQuote <- v
     static member Cast (p : ICell<RendistatoEquivalentSwapLengthQuote>) = 
         if p :? RendistatoEquivalentSwapLengthQuoteModel then 
             p :?> RendistatoEquivalentSwapLengthQuoteModel
         else
             let o = new RendistatoEquivalentSwapLengthQuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

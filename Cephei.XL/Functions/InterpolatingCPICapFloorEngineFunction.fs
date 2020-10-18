@@ -40,9 +40,9 @@ module InterpolatingCPICapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_InterpolatingCPICapFloorEngine", Description="Create a InterpolatingCPICapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatingCPICapFloorEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatingCPICapFloorEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="priceSurf",Description = "Reference to priceSurf")>] 
+        ([<ExcelArgument(Name="priceSurf",Description = "CPICapFloorTermPriceSurface")>] 
          priceSurf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -77,9 +77,9 @@ module InterpolatingCPICapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_InterpolatingCPICapFloorEngine_name", Description="Create a InterpolatingCPICapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatingCPICapFloorEngine_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatingCPICapFloorEngine",Description = "Reference to InterpolatingCPICapFloorEngine")>] 
+        ([<ExcelArgument(Name="InterpolatingCPICapFloorEngine",Description = "InterpolatingCPICapFloorEngine")>] 
          interpolatingcpicapfloorengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -110,9 +110,9 @@ module InterpolatingCPICapFloorEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatingCPICapFloorEngine_Range", Description="Create a range of InterpolatingCPICapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatingCPICapFloorEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatingCPICapFloorEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

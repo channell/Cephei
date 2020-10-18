@@ -46,7 +46,8 @@ type UKRPIModel
 (*
     Functions
 *)
-    let _UKRPI                                     = cell (fun () -> new UKRPI (interpolated.Value, ts.Value))
+    let mutable
+        _UKRPI                                     = cell (fun () -> new UKRPI (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _UKRPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -89,13 +90,14 @@ type UKRPIModel
     casting 
 *)
     internal new () = new UKRPIModel(null,null)
-    member internal this.Inject v = _UKRPI.Value <- v
+    member internal this.Inject v = _UKRPI <- v
     static member Cast (p : ICell<UKRPI>) = 
         if p :? UKRPIModel then 
             p :?> UKRPIModel
         else
             let o = new UKRPIModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -151,7 +153,8 @@ type UKRPIModel1
 (*
     Functions
 *)
-    let _UKRPI                                     = cell (fun () -> new UKRPI (interpolated.Value))
+    let mutable
+        _UKRPI                                     = cell (fun () -> new UKRPI (interpolated.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _UKRPI.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -194,13 +197,14 @@ type UKRPIModel1
     casting 
 *)
     internal new () = new UKRPIModel1(null)
-    member internal this.Inject v = _UKRPI.Value <- v
+    member internal this.Inject v = _UKRPI <- v
     static member Cast (p : ICell<UKRPI>) = 
         if p :? UKRPIModel1 then 
             p :?> UKRPIModel1
         else
             let o = new UKRPIModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

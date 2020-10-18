@@ -48,7 +48,8 @@ type BiCGStabResultModel
 (*
     Functions
 *)
-    let _BiCGStabResult                            = cell (fun () -> new BiCGStabResult (i.Value, e.Value, xx.Value))
+    let mutable
+        _BiCGStabResult                            = cell (fun () -> new BiCGStabResult (i.Value, e.Value, xx.Value))
     let _Error                                     = triv (fun () -> _BiCGStabResult.Value.Error)
     let _Iterations                                = triv (fun () -> _BiCGStabResult.Value.Iterations)
     let _X                                         = triv (fun () -> _BiCGStabResult.Value.X)
@@ -57,13 +58,14 @@ type BiCGStabResultModel
     casting 
 *)
     internal new () = new BiCGStabResultModel(null,null,null)
-    member internal this.Inject v = _BiCGStabResult.Value <- v
+    member internal this.Inject v = _BiCGStabResult <- v
     static member Cast (p : ICell<BiCGStabResult>) = 
         if p :? BiCGStabResultModel then 
             p :?> BiCGStabResultModel
         else
             let o = new BiCGStabResultModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

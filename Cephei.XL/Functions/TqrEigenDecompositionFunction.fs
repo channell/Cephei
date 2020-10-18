@@ -39,9 +39,9 @@ module TqrEigenDecompositionFunction =
     *)
     [<ExcelFunction(Name="_TqrEigenDecomposition_eigenvalues", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_eigenvalues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TqrEigenDecomposition",Description = "Reference to TqrEigenDecomposition")>] 
+        ([<ExcelArgument(Name="TqrEigenDecomposition",Description = "TqrEigenDecomposition")>] 
          tqreigendecomposition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module TqrEigenDecompositionFunction =
     *)
     [<ExcelFunction(Name="_TqrEigenDecomposition_eigenvectors", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_eigenvectors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TqrEigenDecomposition",Description = "Reference to TqrEigenDecomposition")>] 
+        ([<ExcelArgument(Name="TqrEigenDecomposition",Description = "TqrEigenDecomposition")>] 
          tqreigendecomposition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module TqrEigenDecompositionFunction =
     *)
     [<ExcelFunction(Name="_TqrEigenDecomposition_iterations", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_iterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TqrEigenDecomposition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TqrEigenDecomposition",Description = "Reference to TqrEigenDecomposition")>] 
+        ([<ExcelArgument(Name="TqrEigenDecomposition",Description = "TqrEigenDecomposition")>] 
          tqreigendecomposition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,15 +147,15 @@ module TqrEigenDecompositionFunction =
     *)
     [<ExcelFunction(Name="_TqrEigenDecomposition", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TqrEigenDecomposition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="diag",Description = "Reference to diag")>] 
+        ([<ExcelArgument(Name="diag",Description = "Vector")>] 
          diag : obj)
-        ([<ExcelArgument(Name="sub",Description = "Reference to sub")>] 
+        ([<ExcelArgument(Name="sub",Description = "Vector")>] 
          sub : obj)
-        ([<ExcelArgument(Name="calc",Description = "Reference to calc")>] 
+        ([<ExcelArgument(Name="calc",Description = "TqrEigenDecomposition")>] 
          calc : obj)
-        ([<ExcelArgument(Name="strategy",Description = "Reference to strategy")>] 
+        ([<ExcelArgument(Name="strategy",Description = "TqrEigenDecomposition")>] 
          strategy : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -199,9 +199,9 @@ module TqrEigenDecompositionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TqrEigenDecomposition_Range", Description="Create a range of TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TqrEigenDecomposition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

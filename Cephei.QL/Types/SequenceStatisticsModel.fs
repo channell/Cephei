@@ -44,7 +44,8 @@ type SequenceStatisticsModel
 (*
     Functions
 *)
-    let _SequenceStatistics                        = cell (fun () -> new SequenceStatistics (dimension.Value))
+    let mutable
+        _SequenceStatistics                        = cell (fun () -> new SequenceStatistics (dimension.Value))
     let _add                                       (Begin : ICell<Generic.List<double>>) (weight : ICell<double>)   
                                                    = triv (fun () -> _SequenceStatistics.Value.add(Begin.Value, weight.Value)
                                                                      _SequenceStatistics.Value)
@@ -102,13 +103,14 @@ type SequenceStatisticsModel
     casting 
 *)
     internal new () = new SequenceStatisticsModel(null)
-    member internal this.Inject v = _SequenceStatistics.Value <- v
+    member internal this.Inject v = _SequenceStatistics <- v
     static member Cast (p : ICell<SequenceStatistics>) = 
         if p :? SequenceStatisticsModel then 
             p :?> SequenceStatisticsModel
         else
             let o = new SequenceStatisticsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

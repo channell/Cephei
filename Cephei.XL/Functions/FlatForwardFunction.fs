@@ -39,15 +39,15 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward4", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,17 +94,17 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward10", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create10
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,13 +155,13 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward9", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create9
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,15 +204,15 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward8", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create8
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,17 +259,17 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward7", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create7
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -320,15 +320,15 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,15 +375,15 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward11", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create11
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,19 +430,19 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward5", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -497,13 +497,13 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -546,17 +546,17 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward3", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -607,19 +607,19 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward2", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -674,17 +674,17 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward6", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create6
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FlatForward")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="compounding",Description = "Reference to compounding")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding")>] 
          compounding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -735,9 +735,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_maxDate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -771,13 +771,13 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_discount", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,13 +819,13 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_discount1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_discount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -867,21 +867,21 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_forwardRate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -939,21 +939,21 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_forwardRate1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_forwardRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1011,19 +1011,19 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_forwardRate2", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_forwardRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1077,9 +1077,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_jumpDates", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1113,9 +1113,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_jumpTimes", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1149,9 +1149,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_update", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1185,19 +1185,19 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_zeroRate1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_zeroRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1251,17 +1251,17 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_zeroRate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1311,9 +1311,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_calendar", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1347,9 +1347,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_dayCounter", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1383,9 +1383,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_maxTime", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1419,9 +1419,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_referenceDate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1455,9 +1455,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_settlementDays", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1491,11 +1491,11 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_timeFromReference", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1533,9 +1533,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_allowsExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1569,11 +1569,11 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_disableExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1611,11 +1611,11 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_enableExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1653,9 +1653,9 @@ module FlatForwardFunction =
     *)
     [<ExcelFunction(Name="_FlatForward_extrapolate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FlatForward",Description = "Reference to FlatForward")>] 
+        ([<ExcelArgument(Name="FlatForward",Description = "FlatForward")>] 
          flatforward : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1686,9 +1686,9 @@ module FlatForwardFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FlatForward_Range", Description="Create a range of FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FlatForward")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

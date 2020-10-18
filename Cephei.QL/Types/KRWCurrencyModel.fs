@@ -41,7 +41,8 @@ type KRWCurrencyModel
 (*
     Functions
 *)
-    let _KRWCurrency                               = cell (fun () -> new KRWCurrency ())
+    let mutable
+        _KRWCurrency                               = cell (fun () -> new KRWCurrency ())
     let _code                                      = triv (fun () -> _KRWCurrency.Value.code)
     let _empty                                     = triv (fun () -> _KRWCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type KRWCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _KRWCurrency.Value <- v
+    member internal this.Inject v = _KRWCurrency <- v
     static member Cast (p : ICell<KRWCurrency>) = 
         if p :? KRWCurrencyModel then 
             p :?> KRWCurrencyModel
         else
             let o = new KRWCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

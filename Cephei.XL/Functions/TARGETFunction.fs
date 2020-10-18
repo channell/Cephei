@@ -50,7 +50,7 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "TARGET")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_addedHolidays", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_addHoliday", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,13 +159,13 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_adjust", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -207,19 +207,19 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_advance1", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "Reference to unit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -273,17 +273,17 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_advance", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,17 +333,17 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_businessDaysBetween", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "Date")>] 
          from : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
-        ([<ExcelArgument(Name="includeFirst",Description = "Reference to includeFirst")>] 
+        ([<ExcelArgument(Name="includeFirst",Description = "bool")>] 
          includeFirst : obj)
-        ([<ExcelArgument(Name="includeLast",Description = "Reference to includeLast")>] 
+        ([<ExcelArgument(Name="includeLast",Description = "bool")>] 
          includeLast : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -393,9 +393,9 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_calendar", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -429,9 +429,9 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_empty", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -465,11 +465,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_endOfMonth", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -507,11 +507,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_Equals", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -549,11 +549,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_isBusinessDay", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -591,11 +591,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_isEndOfMonth", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -633,11 +633,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_isHoliday", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -675,11 +675,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_isWeekend", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="w",Description = "Reference to w")>] 
+        ([<ExcelArgument(Name="w",Description = "DayOfWeek")>] 
          w : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_name", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,9 +755,9 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_removedHolidays", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -791,11 +791,11 @@ module TARGETFunction =
     *)
     [<ExcelFunction(Name="_TARGET_removeHoliday", Description="Create a TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="TARGET",Description = "Reference to TARGET")>] 
+        ([<ExcelArgument(Name="TARGET",Description = "TARGET")>] 
          target : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -830,9 +830,9 @@ module TARGETFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TARGET_Range", Description="Create a range of TARGET",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TARGET_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TARGET")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

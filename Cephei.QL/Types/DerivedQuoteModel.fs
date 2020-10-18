@@ -46,7 +46,8 @@ type DerivedQuoteModel
 (*
     Functions
 *)
-    let _DerivedQuote                              = cell (fun () -> new DerivedQuote (element.Value, f.Value))
+    let mutable
+        _DerivedQuote                              = cell (fun () -> new DerivedQuote (element.Value, f.Value))
     let _isValid                                   = triv (fun () -> _DerivedQuote.Value.isValid())
     let _update                                    = triv (fun () -> _DerivedQuote.Value.update()
                                                                      _DerivedQuote.Value)
@@ -62,13 +63,14 @@ type DerivedQuoteModel
     casting 
 *)
     internal new () = new DerivedQuoteModel(null,null)
-    member internal this.Inject v = _DerivedQuote.Value <- v
+    member internal this.Inject v = _DerivedQuote <- v
     static member Cast (p : ICell<DerivedQuote>) = 
         if p :? DerivedQuoteModel then 
             p :?> DerivedQuoteModel
         else
             let o = new DerivedQuoteModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

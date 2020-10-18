@@ -39,11 +39,11 @@ module GaussGegenbauerIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerIntegration", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussGegenbauerIntegration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="lambda",Description = "Reference to lambda")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module GaussGegenbauerIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerIntegration_order", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "Reference to GaussGegenbauerIntegration")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "GaussGegenbauerIntegration")>] 
          gaussgegenbauerintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module GaussGegenbauerIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerIntegration_value", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "Reference to GaussGegenbauerIntegration")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "GaussGegenbauerIntegration")>] 
          gaussgegenbauerintegration : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module GaussGegenbauerIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerIntegration_weights", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "Reference to GaussGegenbauerIntegration")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "GaussGegenbauerIntegration")>] 
          gaussgegenbauerintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module GaussGegenbauerIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussGegenbauerIntegration_x", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "Reference to GaussGegenbauerIntegration")>] 
+        ([<ExcelArgument(Name="GaussGegenbauerIntegration",Description = "GaussGegenbauerIntegration")>] 
          gaussgegenbauerintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module GaussGegenbauerIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussGegenbauerIntegration_Range", Description="Create a range of GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussGegenbauerIntegration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

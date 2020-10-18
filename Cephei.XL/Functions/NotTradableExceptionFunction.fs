@@ -39,11 +39,11 @@ module NotTradableExceptionFunction =
     *)
     [<ExcelFunction(Name="_NotTradableException", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NotTradableException")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="message",Description = "Reference to message")>] 
+        ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
-        ([<ExcelArgument(Name="inner",Description = "Reference to inner")>] 
+        ([<ExcelArgument(Name="inner",Description = "Exception")>] 
          inner : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module NotTradableExceptionFunction =
     *)
     [<ExcelFunction(Name="_NotTradableException1", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NotTradableException")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="message",Description = "Reference to message")>] 
+        ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,7 +119,7 @@ module NotTradableExceptionFunction =
     *)
     [<ExcelFunction(Name="_NotTradableException2", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NotTradableException")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module NotTradableExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NotTradableException_Range", Description="Create a range of NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NotTradableException")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

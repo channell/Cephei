@@ -46,7 +46,8 @@ type PricipalLegModel
 (*
     Functions
 *)
-    let _PricipalLeg                               = cell (fun () -> new PricipalLeg (schedule.Value, paymentDayCounter.Value))
+    let mutable
+        _PricipalLeg                               = cell (fun () -> new PricipalLeg (schedule.Value, paymentDayCounter.Value))
     let _value                                     = triv (fun () -> _PricipalLeg.Value.value())
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _PricipalLeg.Value.withNotionals(notionals.Value))
@@ -63,13 +64,14 @@ type PricipalLegModel
     casting 
 *)
     internal new () = new PricipalLegModel(null,null)
-    member internal this.Inject v = _PricipalLeg.Value <- v
+    member internal this.Inject v = _PricipalLeg <- v
     static member Cast (p : ICell<PricipalLeg>) = 
         if p :? PricipalLegModel then 
             p :?> PricipalLegModel
         else
             let o = new PricipalLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

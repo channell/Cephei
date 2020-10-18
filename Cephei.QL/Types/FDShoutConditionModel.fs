@@ -50,7 +50,8 @@ type FDShoutConditionModel<'baseEngine when 'baseEngine :> FDConditionEngineTemp
 (*
     Functions
 *)
-    let _FDShoutCondition                          = cell (fun () -> new FDShoutCondition<'baseEngine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDShoutCondition                          = cell (fun () -> new FDShoutCondition<'baseEngine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDShoutCondition.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
@@ -97,7 +98,8 @@ type FDShoutConditionModel1<'baseEngine when 'baseEngine :> FDConditionEngineTem
 (*
     Functions
 *)
-    let _FDShoutCondition                          = cell (fun () -> new FDShoutCondition<'baseEngine> ())
+    let mutable
+        _FDShoutCondition                          = cell (fun () -> new FDShoutCondition<'baseEngine> ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDShoutCondition.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   

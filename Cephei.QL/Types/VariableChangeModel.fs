@@ -50,7 +50,8 @@ type VariableChangeModel
 (*
     Functions
 *)
-    let _VariableChange                            = cell (fun () -> new VariableChange (f.Value, a.Value, b.Value, k.Value))
+    let mutable
+        _VariableChange                            = cell (fun () -> new VariableChange (f.Value, a.Value, b.Value, k.Value))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _VariableChange.Value.value(x.Value))
     do this.Bind(_VariableChange)
@@ -58,13 +59,14 @@ type VariableChangeModel
     casting 
 *)
     internal new () = VariableChangeModel(null,null,null,null)
-    member internal this.Inject v = _VariableChange.Value <- v
+    member internal this.Inject v = _VariableChange <- v
     static member Cast (p : ICell<VariableChange>) = 
         if p :? VariableChangeModel then 
             p :?> VariableChangeModel
         else
             let o = new VariableChangeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -48,7 +48,8 @@ type PdeConstantCoeffModel<'PdeClass when 'PdeClass :> PdeSecondOrderParabolic a
 (*
     Functions
 *)
-    let _PdeConstantCoeff                          = cell (fun () -> new PdeConstantCoeff<'PdeClass> (Process.Value, t.Value, x.Value))
+    let mutable
+        _PdeConstantCoeff                          = cell (fun () -> new PdeConstantCoeff<'PdeClass> (Process.Value, t.Value, x.Value))
     let _diffusion                                 (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _PdeConstantCoeff.Value.diffusion(x.Value, y.Value))
     let _discount                                  (x : ICell<double>) (y : ICell<double>)   

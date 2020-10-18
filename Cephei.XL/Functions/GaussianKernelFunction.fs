@@ -39,11 +39,11 @@ module GaussianKernelFunction =
     *)
     [<ExcelFunction(Name="_GaussianKernel_derivative", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussianKernel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussianKernel",Description = "Reference to GaussianKernel")>] 
+        ([<ExcelArgument(Name="GaussianKernel",Description = "GaussianKernel")>] 
          gaussiankernel : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module GaussianKernelFunction =
     *)
     [<ExcelFunction(Name="_GaussianKernel", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussianKernel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="average",Description = "Reference to average")>] 
+        ([<ExcelArgument(Name="average",Description = "double")>] 
          average : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,11 +124,11 @@ module GaussianKernelFunction =
     *)
     [<ExcelFunction(Name="_GaussianKernel_primitive", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussianKernel",Description = "Reference to GaussianKernel")>] 
+        ([<ExcelArgument(Name="GaussianKernel",Description = "GaussianKernel")>] 
          gaussiankernel : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,11 +166,11 @@ module GaussianKernelFunction =
     *)
     [<ExcelFunction(Name="_GaussianKernel_value", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussianKernel",Description = "Reference to GaussianKernel")>] 
+        ([<ExcelArgument(Name="GaussianKernel",Description = "GaussianKernel")>] 
          gaussiankernel : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -205,9 +205,9 @@ module GaussianKernelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussianKernel_Range", Description="Create a range of GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussianKernel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

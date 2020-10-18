@@ -46,7 +46,8 @@ type RangeAccrualLegModel
 (*
     Functions
 *)
-    let _RangeAccrualLeg                           = cell (fun () -> new RangeAccrualLeg (schedule.Value, index.Value))
+    let mutable
+        _RangeAccrualLeg                           = cell (fun () -> new RangeAccrualLeg (schedule.Value, index.Value))
     let _Leg                                       = triv (fun () -> _RangeAccrualLeg.Value.Leg())
     let _withFixingDays                            (fixingDays : ICell<int>)   
                                                    = triv (fun () -> _RangeAccrualLeg.Value.withFixingDays(fixingDays.Value))
@@ -85,13 +86,14 @@ type RangeAccrualLegModel
     casting 
 *)
     internal new () = new RangeAccrualLegModel(null,null)
-    member internal this.Inject v = _RangeAccrualLeg.Value <- v
+    member internal this.Inject v = _RangeAccrualLeg <- v
     static member Cast (p : ICell<RangeAccrualLeg>) = 
         if p :? RangeAccrualLegModel then 
             p :?> RangeAccrualLegModel
         else
             let o = new RangeAccrualLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski1", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackKarasinski")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,13 +76,13 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackKarasinski")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termStructure",Description = "Reference to termStructure")>] 
+        ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,9 +125,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_dynamics", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_dynamics
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,9 +161,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_termStructure", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_termStructure_", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_termStructure_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,11 +233,11 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_tree", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_tree
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,21 +275,21 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_calibrate", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_calibrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
-        ([<ExcelArgument(Name="instruments",Description = "Reference to instruments")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
          instruments : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="additionalConstraint",Description = "Reference to additionalConstraint")>] 
+        ([<ExcelArgument(Name="additionalConstraint",Description = "Constraint")>] 
          additionalConstraint : obj)
-        ([<ExcelArgument(Name="weights",Description = "Reference to weights")>] 
+        ([<ExcelArgument(Name="weights",Description = "double")>] 
          weights : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "Reference to fixParameters")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "bool")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -347,9 +347,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_constraint", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_endCriteria", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -419,9 +419,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_notifyObservers", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_notifyObservers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -455,9 +455,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_parameters", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -491,11 +491,11 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_registerWith", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -533,11 +533,11 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_setParams", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -575,11 +575,11 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_unregisterWith", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -617,9 +617,9 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_update", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -653,13 +653,13 @@ module BlackKarasinskiFunction =
     *)
     [<ExcelFunction(Name="_BlackKarasinski_value", Description="Create a BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackKarasinski",Description = "Reference to BlackKarasinski")>] 
+        ([<ExcelArgument(Name="BlackKarasinski",Description = "BlackKarasinski")>] 
          blackkarasinski : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
-        ([<ExcelArgument(Name="instruments",Description = "Reference to instruments")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
          instruments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -698,9 +698,9 @@ module BlackKarasinskiFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackKarasinski_Range", Description="Create a range of BlackKarasinski",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackKarasinski_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackKarasinski")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

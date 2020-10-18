@@ -39,7 +39,7 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NullCalendar")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_addedHolidays", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,11 +106,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_addHoliday", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,13 +148,13 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_adjust", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,19 +196,19 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_advance1", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "Reference to unit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,17 +262,17 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_advance", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
          c : obj)
-        ([<ExcelArgument(Name="endOfMonth",Description = "Reference to endOfMonth")>] 
+        ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,17 +322,17 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_businessDaysBetween", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "Date")>] 
          from : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "Date")>] 
          To : obj)
-        ([<ExcelArgument(Name="includeFirst",Description = "Reference to includeFirst")>] 
+        ([<ExcelArgument(Name="includeFirst",Description = "bool")>] 
          includeFirst : obj)
-        ([<ExcelArgument(Name="includeLast",Description = "Reference to includeLast")>] 
+        ([<ExcelArgument(Name="includeLast",Description = "bool")>] 
          includeLast : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_calendar", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_empty", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,11 +454,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_endOfMonth", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,11 +496,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_Equals", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,11 +538,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_isBusinessDay", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,11 +580,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_isEndOfMonth", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,11 +622,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_isHoliday", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,11 +664,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_isWeekend", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="w",Description = "Reference to w")>] 
+        ([<ExcelArgument(Name="w",Description = "DayOfWeek")>] 
          w : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -708,9 +708,9 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_name", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -744,9 +744,9 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_removedHolidays", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -780,11 +780,11 @@ module NullCalendarFunction =
     *)
     [<ExcelFunction(Name="_NullCalendar_removeHoliday", Description="Create a NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NullCalendar",Description = "Reference to NullCalendar")>] 
+        ([<ExcelArgument(Name="NullCalendar",Description = "NullCalendar")>] 
          nullcalendar : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,9 +819,9 @@ module NullCalendarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NullCalendar_Range", Description="Create a range of NullCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullCalendar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NullCalendar")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

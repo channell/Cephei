@@ -40,15 +40,15 @@ module DiscountingSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingSwapEngine", Description="Create a DiscountingSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingSwapEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscountingSwapEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "Reference to includeSettlementDateFlows")>] 
+        ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
-        ([<ExcelArgument(Name="settlementDate",Description = "Reference to settlementDate")>] 
+        ([<ExcelArgument(Name="settlementDate",Description = "DiscountingSwapEngine")>] 
          settlementDate : obj)
-        ([<ExcelArgument(Name="npvDate",Description = "Reference to npvDate")>] 
+        ([<ExcelArgument(Name="npvDate",Description = "DiscountingSwapEngine")>] 
          npvDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -92,9 +92,9 @@ module DiscountingSwapEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscountingSwapEngine_Range", Description="Create a range of DiscountingSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingSwapEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscountingSwapEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

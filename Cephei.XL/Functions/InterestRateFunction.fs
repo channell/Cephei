@@ -39,11 +39,11 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_compoundFactor", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_compoundFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,17 +81,17 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_compoundFactor1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_compoundFactor1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="refStart",Description = "Reference to refStart")>] 
+        ([<ExcelArgument(Name="refStart",Description = "DayCounter")>] 
          refStart : obj)
-        ([<ExcelArgument(Name="refEnd",Description = "Reference to refEnd")>] 
+        ([<ExcelArgument(Name="refEnd",Description = "DayCounter")>] 
          refEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -141,9 +141,9 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_compounding", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_compounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -177,9 +177,9 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_dayCounter", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,17 +213,17 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_discountFactor", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_discountFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="refStart",Description = "Reference to refStart")>] 
+        ([<ExcelArgument(Name="refStart",Description = "InterestRate")>] 
          refStart : obj)
-        ([<ExcelArgument(Name="refEnd",Description = "Reference to refEnd")>] 
+        ([<ExcelArgument(Name="refEnd",Description = "InterestRate")>] 
          refEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -273,11 +273,11 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_discountFactor1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_discountFactor1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,23 +315,23 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_equivalentRate", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_equivalentRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="resultDC",Description = "Reference to resultDC")>] 
+        ([<ExcelArgument(Name="resultDC",Description = "DayCounter")>] 
          resultDC : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="refStart",Description = "Reference to refStart")>] 
+        ([<ExcelArgument(Name="refStart",Description = "InterestRate")>] 
          refStart : obj)
-        ([<ExcelArgument(Name="refEnd",Description = "Reference to refEnd")>] 
+        ([<ExcelArgument(Name="refEnd",Description = "InterestRate")>] 
          refEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -393,15 +393,15 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_equivalentRate1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_equivalentRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -447,9 +447,9 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_frequency", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -483,15 +483,15 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,7 +538,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,9 +569,9 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_rate", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -605,9 +605,9 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_ToString", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,9 +641,9 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_value", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterestRate",Description = "Reference to InterestRate")>] 
+        ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -674,9 +674,9 @@ module InterestRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterestRate_Range", Description="Create a range of InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterestRate")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

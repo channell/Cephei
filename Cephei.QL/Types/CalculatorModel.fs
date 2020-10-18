@@ -44,7 +44,8 @@ type CalculatorModel
 (*
     Functions
 *)
-    let _Calculator                                = cell (fun () -> new Calculator (black.Value))
+    let mutable
+        _Calculator                                = cell (fun () -> new Calculator (black.Value))
     let _visit                                     (o : ICell<Object>)   
                                                    = cell (fun () -> _Calculator.Value.visit(o.Value)
                                                                      _Calculator.Value)
@@ -68,13 +69,14 @@ type CalculatorModel
     casting 
 *)
     internal new () = CalculatorModel(null)
-    member internal this.Inject v = _Calculator.Value <- v
+    member internal this.Inject v = _Calculator <- v
     static member Cast (p : ICell<Calculator>) = 
         if p :? CalculatorModel then 
             p :?> CalculatorModel
         else
             let o = new CalculatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

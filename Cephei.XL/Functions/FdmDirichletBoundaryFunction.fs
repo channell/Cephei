@@ -39,13 +39,13 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary_applyAfterApplying1", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_applyAfterApplying1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDirichletBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "Reference to FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "FdmDirichletBoundary")>] 
          fdmdirichletboundary : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,11 +87,11 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary_applyAfterApplying", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_applyAfterApplying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDirichletBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "Reference to FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "FdmDirichletBoundary")>] 
          fdmdirichletboundary : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,11 +129,11 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary_applyAfterSolving", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_applyAfterSolving
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDirichletBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "Reference to FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "FdmDirichletBoundary")>] 
          fdmdirichletboundary : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -171,11 +171,11 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary_applyBeforeApplying", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_applyBeforeApplying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDirichletBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "Reference to FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "FdmDirichletBoundary")>] 
          fdmdirichletboundary : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -213,13 +213,13 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary_applyBeforeSolving", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_applyBeforeSolving
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDirichletBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "Reference to FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "FdmDirichletBoundary")>] 
          fdmdirichletboundary : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "IOperator")>] 
          o : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -261,15 +261,15 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmDirichletBoundary")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
-        ([<ExcelArgument(Name="valueOnBoundary",Description = "Reference to valueOnBoundary")>] 
+        ([<ExcelArgument(Name="valueOnBoundary",Description = "double")>] 
          valueOnBoundary : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
-        ([<ExcelArgument(Name="side",Description = "Reference to side")>] 
+        ([<ExcelArgument(Name="side",Description = ".Side")>] 
          side : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,11 +316,11 @@ module FdmDirichletBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmDirichletBoundary_setTime", Description="Create a FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "Reference to FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="FdmDirichletBoundary",Description = "FdmDirichletBoundary")>] 
          fdmdirichletboundary : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,9 +355,9 @@ module FdmDirichletBoundaryFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmDirichletBoundary_Range", Description="Create a range of FdmDirichletBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDirichletBoundary_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmDirichletBoundary")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

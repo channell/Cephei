@@ -39,13 +39,13 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_discountImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_forwardImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,17 +135,17 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_guess", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,11 +195,11 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_initialDate", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_initialValue", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_maxIterations", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,17 +315,17 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_maxValueAfter", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,17 +375,17 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_minValueAfter", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,15 +435,15 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_updateGuess", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discountMnemonic : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,13 +489,13 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_zeroYieldImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Discount",Description = "Reference to Discount")>] 
+        ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -534,9 +534,9 @@ module DiscountFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Discount_Range", Description="Create a range of Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Discount")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

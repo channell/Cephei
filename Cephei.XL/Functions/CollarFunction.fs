@@ -39,17 +39,17 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Collar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="floatingLeg",Description = "Reference to floatingLeg")>] 
+        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
          floatingLeg : obj)
-        ([<ExcelArgument(Name="capRates",Description = "Reference to capRates")>] 
+        ([<ExcelArgument(Name="capRates",Description = "double")>] 
          capRates : obj)
-        ([<ExcelArgument(Name="floorRates",Description = "Reference to floorRates")>] 
+        ([<ExcelArgument(Name="floorRates",Description = "double")>] 
          floorRates : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,11 +100,11 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_atmRate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_atmRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,9 +142,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_capRates", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_capRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_floatingLeg", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_floorRates", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_floorRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_getType", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,27 +286,27 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_impliedVolatility", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "double")>] 
          guess : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,19 +376,19 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_impliedVolatility1", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_impliedVolatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="discountCurve",Description = "Reference to discountCurve")>] 
+        ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
-        ([<ExcelArgument(Name="guess",Description = "Reference to guess")>] 
+        ([<ExcelArgument(Name="guess",Description = "double")>] 
          guess : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_isExpired", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_lastFloatingRateCoupon", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_lastFloatingRateCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_maturityDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,11 +550,11 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_optionlet", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_optionlet
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,9 +592,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_startDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -628,9 +628,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_CASH", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,9 +664,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_errorEstimate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,9 +700,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_NPV", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -736,11 +736,11 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_result", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,11 +778,11 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_setPricingEngine", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,9 +820,9 @@ module CollarFunction =
     *)
     [<ExcelFunction(Name="_Collar_valuationDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Collar",Description = "Reference to Collar")>] 
+        ([<ExcelArgument(Name="Collar",Description = "Collar")>] 
          collar : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -853,9 +853,9 @@ module CollarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Collar_Range", Description="Create a range of Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Collar")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

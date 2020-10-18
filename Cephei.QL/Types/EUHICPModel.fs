@@ -44,7 +44,8 @@ type EUHICPModel
 (*
     Functions
 *)
-    let _EUHICP                                    = cell (fun () -> new EUHICP (interpolated.Value))
+    let mutable
+        _EUHICP                                    = cell (fun () -> new EUHICP (interpolated.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _EUHICP.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -87,13 +88,14 @@ type EUHICPModel
     casting 
 *)
     internal new () = new EUHICPModel(null)
-    member internal this.Inject v = _EUHICP.Value <- v
+    member internal this.Inject v = _EUHICP <- v
     static member Cast (p : ICell<EUHICP>) = 
         if p :? EUHICPModel then 
             p :?> EUHICPModel
         else
             let o = new EUHICPModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -150,7 +152,8 @@ type EUHICPModel1
 (*
     Functions
 *)
-    let _EUHICP                                    = cell (fun () -> new EUHICP (interpolated.Value, ts.Value))
+    let mutable
+        _EUHICP                                    = cell (fun () -> new EUHICP (interpolated.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _EUHICP.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -193,13 +196,14 @@ type EUHICPModel1
     casting 
 *)
     internal new () = new EUHICPModel1(null,null)
-    member internal this.Inject v = _EUHICP.Value <- v
+    member internal this.Inject v = _EUHICP <- v
     static member Cast (p : ICell<EUHICP>) = 
         if p :? EUHICPModel1 then 
             p :?> EUHICPModel1
         else
             let o = new EUHICPModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

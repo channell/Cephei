@@ -69,7 +69,8 @@ type IndiaModel
 (*
     Functions
 *)
-    let _India                                     = cell (fun () -> new India ())
+    let mutable
+        _India                                     = cell (fun () -> new India ())
     let _addedHolidays                             = triv (fun () -> _India.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _India.Value.addHoliday(d.Value)
@@ -106,13 +107,14 @@ type IndiaModel
     casting 
 *)
     
-    member internal this.Inject v = _India.Value <- v
+    member internal this.Inject v = _India <- v
     static member Cast (p : ICell<India>) = 
         if p :? IndiaModel then 
             p :?> IndiaModel
         else
             let o = new IndiaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

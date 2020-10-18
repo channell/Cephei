@@ -46,7 +46,8 @@ type EuriborModel
 (*
     Functions
 *)
-    let _Euribor                                   = cell (fun () -> new Euribor (tenor.Value, h.Value))
+    let mutable
+        _Euribor                                   = cell (fun () -> new Euribor (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type EuriborModel
     casting 
 *)
     internal new () = new EuriborModel(null,null)
-    member internal this.Inject v = _Euribor.Value <- v
+    member internal this.Inject v = _Euribor <- v
     static member Cast (p : ICell<Euribor>) = 
         if p :? EuriborModel then 
             p :?> EuriborModel
         else
             let o = new EuriborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -175,7 +177,8 @@ type EuriborModel1
 (*
     Functions
 *)
-    let _Euribor                                   = cell (fun () -> new Euribor (tenor.Value))
+    let mutable
+        _Euribor                                   = cell (fun () -> new Euribor (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor.Value.clone(forwarding.Value))
@@ -230,13 +233,14 @@ type EuriborModel1
     casting 
 *)
     internal new () = new EuriborModel1(null)
-    member internal this.Inject v = _Euribor.Value <- v
+    member internal this.Inject v = _Euribor <- v
     static member Cast (p : ICell<Euribor>) = 
         if p :? EuriborModel1 then 
             p :?> EuriborModel1
         else
             let o = new EuriborModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

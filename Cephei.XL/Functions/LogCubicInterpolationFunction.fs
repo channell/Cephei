@@ -39,25 +39,25 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LogCubicInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="da",Description = "Reference to da")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
          da : obj)
-        ([<ExcelArgument(Name="monotonic",Description = "Reference to monotonic")>] 
+        ([<ExcelArgument(Name="monotonic",Description = "bool")>] 
          monotonic : obj)
-        ([<ExcelArgument(Name="leftC",Description = "Reference to leftC")>] 
+        ([<ExcelArgument(Name="leftC",Description = "CubicInterpolation.BoundaryCondition")>] 
          leftC : obj)
-        ([<ExcelArgument(Name="leftConditionValue",Description = "Reference to leftConditionValue")>] 
+        ([<ExcelArgument(Name="leftConditionValue",Description = "double")>] 
          leftConditionValue : obj)
-        ([<ExcelArgument(Name="rightC",Description = "Reference to rightC")>] 
+        ([<ExcelArgument(Name="rightC",Description = "CubicInterpolation.BoundaryCondition")>] 
          rightC : obj)
-        ([<ExcelArgument(Name="rightConditionValue",Description = "Reference to rightConditionValue")>] 
+        ([<ExcelArgument(Name="rightConditionValue",Description = "double")>] 
          rightConditionValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,13 +124,13 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_derivative", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_empty", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,13 +208,13 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_primitive", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,13 +256,13 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_secondDerivative", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_update", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,13 +340,13 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_value1", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,11 +388,11 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_value", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_xMax", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_xMin", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,9 +502,9 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_allowsExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,11 +538,11 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_disableExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,11 +580,11 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_enableExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,9 +622,9 @@ module LogCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogCubicInterpolation_extrapolate", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "Reference to LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="LogCubicInterpolation",Description = "LogCubicInterpolation")>] 
          logcubicinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -655,9 +655,9 @@ module LogCubicInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LogCubicInterpolation_Range", Description="Create a range of LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LogCubicInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

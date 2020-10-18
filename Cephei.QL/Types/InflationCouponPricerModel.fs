@@ -41,7 +41,8 @@ type InflationCouponPricerModel
 (*
     Functions
 *)
-    let _InflationCouponPricer                     = cell (fun () -> new InflationCouponPricer ())
+    let mutable
+        _InflationCouponPricer                     = cell (fun () -> new InflationCouponPricer ())
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _InflationCouponPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -68,13 +69,14 @@ type InflationCouponPricerModel
     casting 
 *)
     
-    member internal this.Inject v = _InflationCouponPricer.Value <- v
+    member internal this.Inject v = _InflationCouponPricer <- v
     static member Cast (p : ICell<InflationCouponPricer>) = 
         if p :? InflationCouponPricerModel then 
             p :?> InflationCouponPricerModel
         else
             let o = new InflationCouponPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

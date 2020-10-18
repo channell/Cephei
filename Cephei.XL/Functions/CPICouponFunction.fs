@@ -39,9 +39,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_adjustedFixing", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CPICoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_baseCPI", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_baseCPI
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CPICoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,37 +111,37 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CPICoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="baseCPI",Description = "Reference to baseCPI")>] 
+        ([<ExcelArgument(Name="baseCPI",Description = "double")>] 
          baseCPI : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "ZeroInflationIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="observationInterpolation",Description = "Reference to observationInterpolation")>] 
+        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType")>] 
          observationInterpolation : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "CPICoupon")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "CPICoupon")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "CPICoupon")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="exCouponDate",Description = "Reference to exCouponDate")>] 
+        ([<ExcelArgument(Name="exCouponDate",Description = "CPICoupon")>] 
          exCouponDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_cpiIndex", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_cpiIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_fixedRate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_fixedRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_indexFixing", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,11 +340,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_indexObservation", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_indexObservation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="onDate",Description = "Reference to onDate")>] 
+        ([<ExcelArgument(Name="onDate",Description = "Date")>] 
          onDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_observationInterpolation", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_observationInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_spread", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,11 +454,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accruedAmount", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,9 +496,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_amount", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,9 +532,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_dayCounter", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,9 +568,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_fixingDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,9 +604,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_fixingDays", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -640,9 +640,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_index", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -676,9 +676,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_observationLag", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -712,11 +712,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_price", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="discountingCurve",Description = "Reference to discountingCurve")>] 
+        ([<ExcelArgument(Name="discountingCurve",Description = "YieldTermStructure")>] 
          discountingCurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -754,9 +754,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_pricer", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InflationCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -790,9 +790,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_rate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,11 +826,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_setPricer", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="pricer",Description = "Reference to pricer")>] 
+        ([<ExcelArgument(Name="pricer",Description = "InflationCouponPricer")>] 
          pricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -868,9 +868,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_update", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,9 +904,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualDays", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,9 +940,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualEndDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -976,9 +976,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualPeriod", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1012,9 +1012,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualStartDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1048,11 +1048,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accruedDays", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1090,11 +1090,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accruedPeriod", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1132,9 +1132,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_date", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1168,9 +1168,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_exCouponDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1204,9 +1204,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_nominal", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1240,9 +1240,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_referencePeriodEnd", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1276,9 +1276,9 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_referencePeriodStart", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1312,11 +1312,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_CompareTo", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1354,11 +1354,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_Equals", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1396,13 +1396,13 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_hasOccurred", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1444,11 +1444,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_tradingExCoupon", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1486,11 +1486,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accept", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1528,11 +1528,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_registerWith", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1570,11 +1570,11 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_unregisterWith", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CPICoupon",Description = "Reference to CPICoupon")>] 
+        ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1609,9 +1609,9 @@ module CPICouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CPICoupon_Range", Description="Create a range of CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CPICoupon")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor1", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Tibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,9 +119,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_businessDayConvention", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,11 +155,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_clone", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,9 +197,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_endOfMonth", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -233,15 +233,15 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_forecastFixing1", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -287,11 +287,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_forecastFixing", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,9 +329,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_forwardingTermStructure", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -365,11 +365,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_maturityDate", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_currency", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,9 +443,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_dayCounter", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -479,9 +479,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_familyName", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -515,13 +515,13 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_fixing", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_fixingCalendar", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -599,11 +599,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_fixingDate", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,9 +641,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_fixingDays", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -677,11 +677,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_isValidFixingDate", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,9 +719,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_name", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -755,11 +755,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_pastFixing", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,9 +797,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_tenor", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -833,9 +833,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_update", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -869,11 +869,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_valueDate", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,15 +911,15 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_addFixing", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,15 +965,15 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_addFixings", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,13 +1019,13 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_addFixings1", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1067,9 +1067,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_allowsNativeFixings", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1103,9 +1103,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_clearFixings", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,11 +1139,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_registerWith", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1181,9 +1181,9 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_timeSeries", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1217,11 +1217,11 @@ module TiborFunction =
     *)
     [<ExcelFunction(Name="_Tibor_unregisterWith", Description="Create a Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Tibor",Description = "Reference to Tibor")>] 
+        ([<ExcelArgument(Name="Tibor",Description = "Tibor")>] 
          tibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1256,9 +1256,9 @@ module TiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Tibor_Range", Description="Create a range of Tibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Tibor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

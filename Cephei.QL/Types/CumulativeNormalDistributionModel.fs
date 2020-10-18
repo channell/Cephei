@@ -41,7 +41,8 @@ type CumulativeNormalDistributionModel
 (*
     Functions
 *)
-    let _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution ())
+    let mutable
+        _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution ())
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
     let _value                                     (z : ICell<double>)   
@@ -51,13 +52,14 @@ type CumulativeNormalDistributionModel
     casting 
 *)
     
-    member internal this.Inject v = _CumulativeNormalDistribution.Value <- v
+    member internal this.Inject v = _CumulativeNormalDistribution <- v
     static member Cast (p : ICell<CumulativeNormalDistribution>) = 
         if p :? CumulativeNormalDistributionModel then 
             p :?> CumulativeNormalDistributionModel
         else
             let o = new CumulativeNormalDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -87,7 +89,8 @@ type CumulativeNormalDistributionModel1
 (*
     Functions
 *)
-    let _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution (average.Value, sigma.Value))
+    let mutable
+        _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
     let _value                                     (z : ICell<double>)   
@@ -97,13 +100,14 @@ type CumulativeNormalDistributionModel1
     casting 
 *)
     internal new () = new CumulativeNormalDistributionModel1(null,null)
-    member internal this.Inject v = _CumulativeNormalDistribution.Value <- v
+    member internal this.Inject v = _CumulativeNormalDistribution <- v
     static member Cast (p : ICell<CumulativeNormalDistribution>) = 
         if p :? CumulativeNormalDistributionModel1 then 
             p :?> CumulativeNormalDistributionModel1
         else
             let o = new CumulativeNormalDistributionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

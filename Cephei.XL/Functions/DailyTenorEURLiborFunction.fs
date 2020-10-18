@@ -39,9 +39,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor2", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DailyTenorEURLibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DailyTenorEURLibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,7 +119,7 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DailyTenorEURLibor")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -150,9 +150,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_businessDayConvention", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,11 +186,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_clone", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -228,9 +228,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_endOfMonth", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -264,15 +264,15 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_forecastFixing1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -318,11 +318,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_forecastFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -360,9 +360,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_forwardingTermStructure", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -396,11 +396,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_maturityDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -438,9 +438,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_currency", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -474,9 +474,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_dayCounter", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -510,9 +510,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_familyName", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -546,13 +546,13 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_fixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_fixingCalendar", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,11 +630,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_fixingDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -672,9 +672,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_fixingDays", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -708,11 +708,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_isValidFixingDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -750,9 +750,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_name", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -786,11 +786,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_pastFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -828,9 +828,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_tenor", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -864,9 +864,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_update", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -900,11 +900,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_valueDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -942,15 +942,15 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_addFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -996,15 +996,15 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_addFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1050,13 +1050,13 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_addFixings1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1098,9 +1098,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_allowsNativeFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1134,9 +1134,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_clearFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1170,11 +1170,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_registerWith", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1212,9 +1212,9 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_timeSeries", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1248,11 +1248,11 @@ module DailyTenorEURLiborFunction =
     *)
     [<ExcelFunction(Name="_DailyTenorEURLibor_unregisterWith", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "Reference to DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="DailyTenorEURLibor",Description = "DailyTenorEURLibor")>] 
          dailytenoreurlibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1287,9 +1287,9 @@ module DailyTenorEURLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DailyTenorEURLibor_Range", Description="Create a range of DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DailyTenorEURLibor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

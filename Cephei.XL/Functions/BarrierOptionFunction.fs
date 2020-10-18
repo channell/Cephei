@@ -39,21 +39,21 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BarrierOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="barrierType",Description = "Reference to barrierType")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="barrier",Description = "Reference to barrier")>] 
+        ([<ExcelArgument(Name="barrier",Description = "double")>] 
          barrier : obj)
-        ([<ExcelArgument(Name="rebate",Description = "Reference to rebate")>] 
+        ([<ExcelArgument(Name="rebate",Description = "double")>] 
          rebate : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,21 +112,21 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_impliedVolatility", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
-        ([<ExcelArgument(Name="targetValue",Description = "Reference to targetValue")>] 
+        ([<ExcelArgument(Name="targetValue",Description = "double")>] 
          targetValue : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "Exercise")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "Exercise")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Reference to minVol")>] 
+        ([<ExcelArgument(Name="minVol",Description = "Exercise")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Reference to maxVol")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "Exercise")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_delta", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_deltaForward", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_dividendRho", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_elasticity", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_gamma", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_isExpired", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_itmCashProbability", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_rho", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_strikeSensitivity", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,9 +508,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_theta", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_thetaPerDay", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,9 +580,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_vega", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,9 +616,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_exercise", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,9 +652,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_payoff", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -688,9 +688,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_CASH", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,9 +724,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_errorEstimate", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,9 +760,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_NPV", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -796,11 +796,11 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_result", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -838,11 +838,11 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_setPricingEngine", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -880,9 +880,9 @@ module BarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_BarrierOption_valuationDate", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BarrierOption",Description = "Reference to BarrierOption")>] 
+        ([<ExcelArgument(Name="BarrierOption",Description = "BarrierOption")>] 
          barrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -913,9 +913,9 @@ module BarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BarrierOption_Range", Description="Create a range of BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BarrierOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

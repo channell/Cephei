@@ -39,13 +39,13 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB2", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EurLiborSwapIsdaFixB")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
-        ([<ExcelArgument(Name="discounting",Description = "Reference to discounting")>] 
+        ([<ExcelArgument(Name="discounting",Description = "YieldTermStructure")>] 
          discounting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,11 +88,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EurLiborSwapIsdaFixB")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,9 +131,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB1", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "EurLiborSwapIsdaFixB")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -168,11 +168,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_clone", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -210,13 +210,13 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_clone1", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_clone1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
-        ([<ExcelArgument(Name="discounting",Description = "Reference to discounting")>] 
+        ([<ExcelArgument(Name="discounting",Description = "YieldTermStructure")>] 
          discounting : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -258,11 +258,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_clone2", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_clone2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="forwarding",Description = "Reference to forwarding")>] 
+        ([<ExcelArgument(Name="forwarding",Description = "YieldTermStructure")>] 
          forwarding : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_discountingTermStructure", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_discountingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,9 +336,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_exogenousDiscount", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_exogenousDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,9 +372,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_fixedLegConvention", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_fixedLegConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,9 +408,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_fixedLegTenor", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_fixedLegTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -444,11 +444,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_forecastFixing", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -486,9 +486,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_forwardingTermStructure", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -522,9 +522,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_iborIndex", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,11 +558,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_maturityDate", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -600,11 +600,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_underlyingSwap", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_underlyingSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -642,9 +642,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_currency", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -678,9 +678,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_dayCounter", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -714,9 +714,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_familyName", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -750,13 +750,13 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_fixing", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -798,9 +798,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_fixingCalendar", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -834,11 +834,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_fixingDate", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -876,9 +876,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_fixingDays", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -912,11 +912,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_isValidFixingDate", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -954,9 +954,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_name", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -990,11 +990,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_pastFixing", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1032,9 +1032,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_tenor", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1068,9 +1068,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_update", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1104,11 +1104,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_valueDate", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1146,15 +1146,15 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_addFixing", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1200,15 +1200,15 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_addFixings", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1254,13 +1254,13 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_addFixings1", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1302,9 +1302,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_allowsNativeFixings", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1338,9 +1338,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_clearFixings", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1374,11 +1374,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_registerWith", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1416,9 +1416,9 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_timeSeries", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1452,11 +1452,11 @@ module EurLiborSwapIsdaFixBFunction =
     *)
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_unregisterWith", Description="Create a EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "Reference to EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="EurLiborSwapIsdaFixB",Description = "EurLiborSwapIsdaFixB")>] 
          eurliborswapisdafixb : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1491,9 +1491,9 @@ module EurLiborSwapIsdaFixBFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EurLiborSwapIsdaFixB_Range", Description="Create a range of EurLiborSwapIsdaFixB",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EurLiborSwapIsdaFixB_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the EurLiborSwapIsdaFixB")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,25 +39,25 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CommercialPaper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="fixedSchedule",Description = "Reference to fixedSchedule")>] 
+        ([<ExcelArgument(Name="fixedSchedule",Description = "Schedule")>] 
          fixedSchedule : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "Reference to fixedRate")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="fixedDayCount",Description = "Reference to fixedDayCount")>] 
+        ([<ExcelArgument(Name="fixedDayCount",Description = "DayCounter")>] 
          fixedDayCount : obj)
-        ([<ExcelArgument(Name="principalSchedule",Description = "Reference to principalSchedule")>] 
+        ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_fixedLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_fixedLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_principalLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_isExpired", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_CASH", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_errorEstimate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_NPV", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,11 +340,11 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_result", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,11 +382,11 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_setPricingEngine", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,9 +424,9 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_valuationDate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CommercialPaper",Description = "Reference to CommercialPaper")>] 
+        ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -457,9 +457,9 @@ module CommercialPaperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CommercialPaper_Range", Description="Create a range of CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CommercialPaper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

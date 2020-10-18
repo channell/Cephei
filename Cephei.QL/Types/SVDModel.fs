@@ -44,7 +44,8 @@ type SVDModel
 (*
     Functions
 *)
-    let _SVD                                       = cell (fun () -> new SVD (M.Value))
+    let mutable
+        _SVD                                       = cell (fun () -> new SVD (M.Value))
     let _cond                                      = triv (fun () -> _SVD.Value.cond())
     let _norm2                                     = triv (fun () -> _SVD.Value.norm2())
     let _rank                                      = triv (fun () -> _SVD.Value.rank())
@@ -59,13 +60,14 @@ type SVDModel
     casting 
 *)
     internal new () = new SVDModel(null)
-    member internal this.Inject v = _SVD.Value <- v
+    member internal this.Inject v = _SVD <- v
     static member Cast (p : ICell<SVD>) = 
         if p :? SVDModel then 
             p :?> SVDModel
         else
             let o = new SVDModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

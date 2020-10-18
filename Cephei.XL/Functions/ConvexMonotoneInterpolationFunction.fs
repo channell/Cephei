@@ -39,23 +39,23 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConvexMonotoneInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="quadraticity",Description = "Reference to quadraticity")>] 
+        ([<ExcelArgument(Name="quadraticity",Description = "double")>] 
          quadraticity : obj)
-        ([<ExcelArgument(Name="monotonicity",Description = "Reference to monotonicity")>] 
+        ([<ExcelArgument(Name="monotonicity",Description = "double")>] 
          monotonicity : obj)
-        ([<ExcelArgument(Name="forcePositive",Description = "Reference to forcePositive")>] 
+        ([<ExcelArgument(Name="forcePositive",Description = "bool")>] 
          forcePositive : obj)
-        ([<ExcelArgument(Name="flatFinalPeriod",Description = "Reference to flatFinalPeriod")>] 
+        ([<ExcelArgument(Name="flatFinalPeriod",Description = "bool")>] 
          flatFinalPeriod : obj)
-        ([<ExcelArgument(Name="preExistingHelpers",Description = "Reference to preExistingHelpers")>] 
+        ([<ExcelArgument(Name="preExistingHelpers",Description = "double,ISectionHelper")>] 
          preExistingHelpers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,21 +118,21 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation1", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConvexMonotoneInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="quadraticity",Description = "Reference to quadraticity")>] 
+        ([<ExcelArgument(Name="quadraticity",Description = "double")>] 
          quadraticity : obj)
-        ([<ExcelArgument(Name="monotonicity",Description = "Reference to monotonicity")>] 
+        ([<ExcelArgument(Name="monotonicity",Description = "double")>] 
          monotonicity : obj)
-        ([<ExcelArgument(Name="forcePositive",Description = "Reference to forcePositive")>] 
+        ([<ExcelArgument(Name="forcePositive",Description = "bool")>] 
          forcePositive : obj)
-        ([<ExcelArgument(Name="flatFinalPeriod",Description = "Reference to flatFinalPeriod")>] 
+        ([<ExcelArgument(Name="flatFinalPeriod",Description = "bool")>] 
          flatFinalPeriod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,9 +191,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_getExistingHelpers", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_getExistingHelpers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,13 +227,13 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_derivative", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -275,9 +275,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_empty", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -311,13 +311,13 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_primitive", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -359,13 +359,13 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_secondDerivative", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -407,9 +407,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_update", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,13 +443,13 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_value1", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -491,11 +491,11 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_value", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -533,9 +533,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_xMax", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,9 +569,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_xMin", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -605,9 +605,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_allowsExtrapolation", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,11 +641,11 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_disableExtrapolation", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,11 +683,11 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_enableExtrapolation", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -725,9 +725,9 @@ module ConvexMonotoneInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_extrapolate", Description="Create a ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "Reference to ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="ConvexMonotoneInterpolation",Description = "ConvexMonotoneInterpolation")>] 
          convexmonotoneinterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -758,9 +758,9 @@ module ConvexMonotoneInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvexMonotoneInterpolation_Range", Description="Create a range of ConvexMonotoneInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotoneInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConvexMonotoneInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

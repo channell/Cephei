@@ -52,7 +52,8 @@ type MixedLinearCubicNaturalSplineModel
 (*
     Functions
 *)
-    let _MixedLinearCubicNaturalSpline             = cell (fun () -> new MixedLinearCubicNaturalSpline (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
+    let mutable
+        _MixedLinearCubicNaturalSpline             = cell (fun () -> new MixedLinearCubicNaturalSpline (xBegin.Value, xEnd.Value, yBegin.Value, n.Value, behavior.Value))
     let _derivative                                (x : ICell<double>) (allowExtrapolation : ICell<bool>)   
                                                    = triv (fun () -> _MixedLinearCubicNaturalSpline.Value.derivative(x.Value, allowExtrapolation.Value))
     let _empty                                     = triv (fun () -> _MixedLinearCubicNaturalSpline.Value.empty())
@@ -81,13 +82,14 @@ type MixedLinearCubicNaturalSplineModel
     casting 
 *)
     internal new () = new MixedLinearCubicNaturalSplineModel(null,null,null,null,null)
-    member internal this.Inject v = _MixedLinearCubicNaturalSpline.Value <- v
+    member internal this.Inject v = _MixedLinearCubicNaturalSpline <- v
     static member Cast (p : ICell<MixedLinearCubicNaturalSpline>) = 
         if p :? MixedLinearCubicNaturalSplineModel then 
             p :?> MixedLinearCubicNaturalSplineModel
         else
             let o = new MixedLinearCubicNaturalSplineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

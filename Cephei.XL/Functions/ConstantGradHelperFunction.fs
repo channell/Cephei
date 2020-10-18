@@ -39,17 +39,17 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantGradHelper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="fPrev",Description = "Reference to fPrev")>] 
+        ([<ExcelArgument(Name="fPrev",Description = "double")>] 
          fPrev : obj)
-        ([<ExcelArgument(Name="prevPrimitive",Description = "Reference to prevPrimitive")>] 
+        ([<ExcelArgument(Name="prevPrimitive",Description = "double")>] 
          prevPrimitive : obj)
-        ([<ExcelArgument(Name="xPrev",Description = "Reference to xPrev")>] 
+        ([<ExcelArgument(Name="xPrev",Description = "double")>] 
          xPrev : obj)
-        ([<ExcelArgument(Name="xNext",Description = "Reference to xNext")>] 
+        ([<ExcelArgument(Name="xNext",Description = "double")>] 
          xNext : obj)
-        ([<ExcelArgument(Name="fNext",Description = "Reference to fNext")>] 
+        ([<ExcelArgument(Name="fNext",Description = "double")>] 
          fNext : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,9 +100,9 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper_fNext", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantGradHelper",Description = "Reference to ConstantGradHelper")>] 
+        ([<ExcelArgument(Name="ConstantGradHelper",Description = "ConstantGradHelper")>] 
          constantgradhelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,11 +136,11 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper_primitive", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantGradHelper",Description = "Reference to ConstantGradHelper")>] 
+        ([<ExcelArgument(Name="ConstantGradHelper",Description = "ConstantGradHelper")>] 
          constantgradhelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,11 +178,11 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper_value", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConstantGradHelper",Description = "Reference to ConstantGradHelper")>] 
+        ([<ExcelArgument(Name="ConstantGradHelper",Description = "ConstantGradHelper")>] 
          constantgradhelper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,9 +217,9 @@ module ConstantGradHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantGradHelper_Range", Description="Create a range of ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConstantGradHelper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

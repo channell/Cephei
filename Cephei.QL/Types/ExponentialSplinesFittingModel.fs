@@ -48,7 +48,8 @@ type ExponentialSplinesFittingModel
 (*
     Functions
 *)
-    let _ExponentialSplinesFitting                 = cell (fun () -> new ExponentialSplinesFitting (constrainAtZero.Value, weights.Value, optimizationMethod.Value))
+    let mutable
+        _ExponentialSplinesFitting                 = cell (fun () -> new ExponentialSplinesFitting (constrainAtZero.Value, weights.Value, optimizationMethod.Value))
     let _clone                                     = triv (fun () -> _ExponentialSplinesFitting.Value.clone())
     let _size                                      = triv (fun () -> _ExponentialSplinesFitting.Value.size())
     let _constrainAtZero                           = triv (fun () -> _ExponentialSplinesFitting.Value.constrainAtZero())
@@ -64,13 +65,14 @@ type ExponentialSplinesFittingModel
     casting 
 *)
     internal new () = new ExponentialSplinesFittingModel(null,null,null)
-    member internal this.Inject v = _ExponentialSplinesFitting.Value <- v
+    member internal this.Inject v = _ExponentialSplinesFitting <- v
     static member Cast (p : ICell<ExponentialSplinesFitting>) = 
         if p :? ExponentialSplinesFittingModel then 
             p :?> ExponentialSplinesFittingModel
         else
             let o = new ExponentialSplinesFittingModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_checkBarrier", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_checkBarrier
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedDoubleBarrierOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="optvalues",Description = "Reference to optvalues")>] 
+        ([<ExcelArgument(Name="optvalues",Description = "Vector")>] 
          optvalues : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "DiscretizedDoubleBarrierOption")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedDoubleBarrierOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "DoubleBarrierOption.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "DiscretizedDoubleBarrierOption")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_mandatoryTimes", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,11 +172,11 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_reset", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_vanilla", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_vanilla
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_adjustValues", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,13 +286,13 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_initialize", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,9 +334,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_method", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,11 +370,11 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_partialRollback", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,9 +412,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_postAdjustValues", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,9 +448,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_preAdjustValues", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,9 +484,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_presentValue", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,11 +520,11 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_rollback", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,11 +562,11 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_setTime", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,11 +604,11 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_setValues", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_time", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,9 +682,9 @@ module DiscretizedDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_values", Description="Create a DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "Reference to DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="DiscretizedDoubleBarrierOption",Description = "DiscretizedDoubleBarrierOption")>] 
          discretizeddoublebarrieroption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -715,9 +715,9 @@ module DiscretizedDoubleBarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedDoubleBarrierOption_Range", Description="Create a range of DiscretizedDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDoubleBarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

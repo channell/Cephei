@@ -39,9 +39,9 @@ module HaltonRsgFunction =
     *)
     [<ExcelFunction(Name="_HaltonRsg_dimension", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HaltonRsg",Description = "Reference to HaltonRsg")>] 
+        ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module HaltonRsgFunction =
     *)
     [<ExcelFunction(Name="_HaltonRsg_factory", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HaltonRsg",Description = "Reference to HaltonRsg")>] 
+        ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "IRNG")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,15 +123,15 @@ module HaltonRsgFunction =
     *)
     [<ExcelFunction(Name="_HaltonRsg", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "HaltonRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "HaltonRsg")>] 
          seed : obj)
-        ([<ExcelArgument(Name="randomStart",Description = "Reference to randomStart")>] 
+        ([<ExcelArgument(Name="randomStart",Description = "HaltonRsg")>] 
          randomStart : obj)
-        ([<ExcelArgument(Name="randomShift",Description = "Reference to randomShift")>] 
+        ([<ExcelArgument(Name="randomShift",Description = "HaltonRsg")>] 
          randomShift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,9 +179,9 @@ module HaltonRsgFunction =
     (*!! sample not supported by Helper
     [<ExcelFunction(Name="_HaltonRsg_lastSequence", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HaltonRsg",Description = "Reference to HaltonRsg")>] 
+        ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,9 +217,9 @@ module HaltonRsgFunction =
     (*!! sample not supported by Helper
     [<ExcelFunction(Name="_HaltonRsg_nextSequence", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="HaltonRsg",Description = "Reference to HaltonRsg")>] 
+        ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,9 +251,9 @@ module HaltonRsgFunction =
             *)
     [<ExcelFunction(Name="_HaltonRsg_Range", Description="Create a range of HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the HaltonRsg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

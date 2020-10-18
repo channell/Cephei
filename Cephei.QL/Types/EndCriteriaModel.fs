@@ -52,7 +52,8 @@ type EndCriteriaModel
 (*
     Functions
 *)
-    let _EndCriteria                               = cell (fun () -> new EndCriteria (maxIterations.Value, maxStationaryStateIterations.Value, rootEpsilon.Value, functionEpsilon.Value, gradientNormEpsilon.Value))
+    let mutable
+        _EndCriteria                               = cell (fun () -> new EndCriteria (maxIterations.Value, maxStationaryStateIterations.Value, rootEpsilon.Value, functionEpsilon.Value, gradientNormEpsilon.Value))
     let _checkMaxIterations                        (iteration : ICell<int>) (ecType : ICell<EndCriteria.Type>)   
                                                    = triv (fun () -> _EndCriteria.Value.checkMaxIterations(iteration.Value, ref ecType.Value))
     let _checkStationaryFunctionAccuracy           (f : ICell<double>) (positiveOptimization : ICell<bool>) (ecType : ICell<EndCriteria.Type>)   
@@ -75,13 +76,14 @@ type EndCriteriaModel
     casting 
 *)
     internal new () = new EndCriteriaModel(null,null,null,null,null)
-    member internal this.Inject v = _EndCriteria.Value <- v
+    member internal this.Inject v = _EndCriteria <- v
     static member Cast (p : ICell<EndCriteria>) = 
         if p :? EndCriteriaModel then 
             p :?> EndCriteriaModel
         else
             let o = new EndCriteriaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

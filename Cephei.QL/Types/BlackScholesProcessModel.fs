@@ -50,7 +50,8 @@ type BlackScholesProcessModel
 (*
     Functions
 *)
-    let _BlackScholesProcess                       = cell (fun () -> new BlackScholesProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value, d.Value))
+    let mutable
+        _BlackScholesProcess                       = cell (fun () -> new BlackScholesProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value, d.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _BlackScholesProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _BlackScholesProcess.Value.blackVolatility())
@@ -91,13 +92,14 @@ type BlackScholesProcessModel
     casting 
 *)
     internal new () = new BlackScholesProcessModel(null,null,null,null)
-    member internal this.Inject v = _BlackScholesProcess.Value <- v
+    member internal this.Inject v = _BlackScholesProcess <- v
     static member Cast (p : ICell<BlackScholesProcess>) = 
         if p :? BlackScholesProcessModel then 
             p :?> BlackScholesProcessModel
         else
             let o = new BlackScholesProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -161,7 +163,8 @@ type BlackScholesProcessModel1
 (*
     Functions
 *)
-    let _BlackScholesProcess                       = cell (fun () -> new BlackScholesProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value))
+    let mutable
+        _BlackScholesProcess                       = cell (fun () -> new BlackScholesProcess (x0.Value, riskFreeTS.Value, blackVolTS.Value))
     let _apply                                     (x0 : ICell<double>) (dx : ICell<double>)   
                                                    = triv (fun () -> _BlackScholesProcess.Value.apply(x0.Value, dx.Value))
     let _blackVolatility                           = triv (fun () -> _BlackScholesProcess.Value.blackVolatility())
@@ -202,13 +205,14 @@ type BlackScholesProcessModel1
     casting 
 *)
     internal new () = new BlackScholesProcessModel1(null,null,null)
-    member internal this.Inject v = _BlackScholesProcess.Value <- v
+    member internal this.Inject v = _BlackScholesProcess <- v
     static member Cast (p : ICell<BlackScholesProcess>) = 
         if p :? BlackScholesProcessModel1 then 
             p :?> BlackScholesProcessModel1
         else
             let o = new BlackScholesProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

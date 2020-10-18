@@ -50,7 +50,8 @@ type FDEngineAdapterModel<'Base, 'Engine when 'Base :> FDConditionEngineTemplate
 (*
     Functions
 *)
-    let _FDEngineAdapter                           = cell (fun () -> new FDEngineAdapter<'Base,'Engine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDEngineAdapter                           = cell (fun () -> new FDEngineAdapter<'Base,'Engine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _FDEngineAdapter.Value.registerWith(handler.Value)
                                                                      _FDEngineAdapter.Value)
@@ -103,7 +104,8 @@ type FDEngineAdapterModel1<'Base, 'Engine when 'Base :> FDConditionEngineTemplat
 (*
     Functions
 *)
-    let _FDEngineAdapter                           = cell (fun () -> new FDEngineAdapter<'Base,'Engine> ())
+    let mutable
+        _FDEngineAdapter                           = cell (fun () -> new FDEngineAdapter<'Base,'Engine> ())
     let _registerWith                              (handler : ICell<Callback>)   
                                                    = triv (fun () -> _FDEngineAdapter.Value.registerWith(handler.Value)
                                                                      _FDEngineAdapter.Value)

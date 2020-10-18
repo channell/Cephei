@@ -46,7 +46,8 @@ type BinomialDistributionModel
 (*
     Functions
 *)
-    let _BinomialDistribution                      = cell (fun () -> new BinomialDistribution (p.Value, n.Value))
+    let mutable
+        _BinomialDistribution                      = cell (fun () -> new BinomialDistribution (p.Value, n.Value))
     let _value                                     (k : ICell<int>)   
                                                    = triv (fun () -> _BinomialDistribution.Value.value(k.Value))
     do this.Bind(_BinomialDistribution)
@@ -54,13 +55,14 @@ type BinomialDistributionModel
     casting 
 *)
     internal new () = new BinomialDistributionModel(null,null)
-    member internal this.Inject v = _BinomialDistribution.Value <- v
+    member internal this.Inject v = _BinomialDistribution <- v
     static member Cast (p : ICell<BinomialDistribution>) = 
         if p :? BinomialDistributionModel then 
             p :?> BinomialDistributionModel
         else
             let o = new BinomialDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

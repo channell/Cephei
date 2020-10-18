@@ -39,17 +39,17 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NumericalDifferentiation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="orderOfDerivative",Description = "Reference to orderOfDerivative")>] 
+        ([<ExcelArgument(Name="orderOfDerivative",Description = "int")>] 
          orderOfDerivative : obj)
-        ([<ExcelArgument(Name="stepSize",Description = "Reference to stepSize")>] 
+        ([<ExcelArgument(Name="stepSize",Description = "double")>] 
          stepSize : obj)
-        ([<ExcelArgument(Name="steps",Description = "Reference to steps")>] 
+        ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="scheme",Description = "Reference to scheme")>] 
+        ([<ExcelArgument(Name="scheme",Description = "NumericalDifferentiation.Scheme")>] 
          scheme : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,13 +100,13 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation1", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NumericalDifferentiation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="orderOfDerivative",Description = "Reference to orderOfDerivative")>] 
+        ([<ExcelArgument(Name="orderOfDerivative",Description = "int")>] 
          orderOfDerivative : obj)
-        ([<ExcelArgument(Name="x_offsets",Description = "Reference to x_offsets")>] 
+        ([<ExcelArgument(Name="x_offsets",Description = "Vector")>] 
          x_offsets : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,9 +149,9 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation_offsets", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_offsets
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NumericalDifferentiation",Description = "Reference to NumericalDifferentiation")>] 
+        ([<ExcelArgument(Name="NumericalDifferentiation",Description = "NumericalDifferentiation")>] 
          numericaldifferentiation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,11 +185,11 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation_value", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NumericalDifferentiation",Description = "Reference to NumericalDifferentiation")>] 
+        ([<ExcelArgument(Name="NumericalDifferentiation",Description = "NumericalDifferentiation")>] 
          numericaldifferentiation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,9 +227,9 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation_weights", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NumericalDifferentiation",Description = "Reference to NumericalDifferentiation")>] 
+        ([<ExcelArgument(Name="NumericalDifferentiation",Description = "NumericalDifferentiation")>] 
          numericaldifferentiation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module NumericalDifferentiationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NumericalDifferentiation_Range", Description="Create a range of NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NumericalDifferentiation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

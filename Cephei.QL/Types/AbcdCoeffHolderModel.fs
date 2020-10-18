@@ -58,7 +58,8 @@ type AbcdCoeffHolderModel
 (*
     Functions
 *)
-    let _AbcdCoeffHolder                           = cell (fun () -> new AbcdCoeffHolder (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value))
+    let mutable
+        _AbcdCoeffHolder                           = cell (fun () -> new AbcdCoeffHolder (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value))
     let _a_                                        = triv (fun () -> _AbcdCoeffHolder.Value.a_)
     let _abcdEndCriteria_                          = triv (fun () -> _AbcdCoeffHolder.Value.abcdEndCriteria_)
     let _aIsFixed_                                 = triv (fun () -> _AbcdCoeffHolder.Value.aIsFixed_)
@@ -76,13 +77,14 @@ type AbcdCoeffHolderModel
     casting 
 *)
     internal new () = new AbcdCoeffHolderModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _AbcdCoeffHolder.Value <- v
+    member internal this.Inject v = _AbcdCoeffHolder <- v
     static member Cast (p : ICell<AbcdCoeffHolder>) = 
         if p :? AbcdCoeffHolderModel then 
             p :?> AbcdCoeffHolderModel
         else
             let o = new AbcdCoeffHolderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -52,7 +52,8 @@ type ConstantCapFloorTermVolatilityModel
 (*
     Functions
 *)
-    let _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (settlementDays.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
+    let mutable
+        _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (settlementDays.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.minStrike())
@@ -87,13 +88,14 @@ type ConstantCapFloorTermVolatilityModel
     casting 
 *)
     internal new () = new ConstantCapFloorTermVolatilityModel(null,null,null,null,null)
-    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    member internal this.Inject v = _ConstantCapFloorTermVolatility <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel then 
             p :?> ConstantCapFloorTermVolatilityModel
         else
             let o = new ConstantCapFloorTermVolatilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -156,7 +158,8 @@ type ConstantCapFloorTermVolatilityModel1
 (*
     Functions
 *)
-    let _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (referenceDate.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
+    let mutable
+        _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (referenceDate.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.minStrike())
@@ -191,13 +194,14 @@ type ConstantCapFloorTermVolatilityModel1
     casting 
 *)
     internal new () = new ConstantCapFloorTermVolatilityModel1(null,null,null,null,null)
-    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    member internal this.Inject v = _ConstantCapFloorTermVolatility <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel1 then 
             p :?> ConstantCapFloorTermVolatilityModel1
         else
             let o = new ConstantCapFloorTermVolatilityModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -260,7 +264,8 @@ type ConstantCapFloorTermVolatilityModel2
 (*
     Functions
 *)
-    let _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (settlementDays.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
+    let mutable
+        _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (settlementDays.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.minStrike())
@@ -295,13 +300,14 @@ type ConstantCapFloorTermVolatilityModel2
     casting 
 *)
     internal new () = new ConstantCapFloorTermVolatilityModel2(null,null,null,null,null)
-    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    member internal this.Inject v = _ConstantCapFloorTermVolatility <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel2 then 
             p :?> ConstantCapFloorTermVolatilityModel2
         else
             let o = new ConstantCapFloorTermVolatilityModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -364,7 +370,8 @@ type ConstantCapFloorTermVolatilityModel3
 (*
     Functions
 *)
-    let _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (referenceDate.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
+    let mutable
+        _ConstantCapFloorTermVolatility            = cell (fun () -> new ConstantCapFloorTermVolatility (referenceDate.Value, cal.Value, bdc.Value, volatility.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ConstantCapFloorTermVolatility.Value.minStrike())
@@ -399,13 +406,14 @@ type ConstantCapFloorTermVolatilityModel3
     casting 
 *)
     internal new () = new ConstantCapFloorTermVolatilityModel3(null,null,null,null,null)
-    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    member internal this.Inject v = _ConstantCapFloorTermVolatility <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel3 then 
             p :?> ConstantCapFloorTermVolatilityModel3
         else
             let o = new ConstantCapFloorTermVolatilityModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type XetraModel
 (*
     Functions
 *)
-    let _Xetra                                     = cell (fun () -> new Xetra ())
+    let mutable
+        _Xetra                                     = cell (fun () -> new Xetra ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _Xetra.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Xetra.Value.name())
@@ -50,13 +51,14 @@ type XetraModel
     casting 
 *)
     
-    member internal this.Inject v = _Xetra.Value <- v
+    member internal this.Inject v = _Xetra <- v
     static member Cast (p : ICell<Xetra>) = 
         if p :? XetraModel then 
             p :?> XetraModel
         else
             let o = new XetraModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

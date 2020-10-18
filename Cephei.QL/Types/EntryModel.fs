@@ -48,7 +48,8 @@ type EntryModel
 (*
     Functions
 *)
-    let _Entry                                     = cell (fun () -> new Entry (r.Value, s.Value, e.Value))
+    let mutable
+        _Entry                                     = cell (fun () -> new Entry (r.Value, s.Value, e.Value))
     let _endDate                                   = cell (fun () -> _Entry.Value.endDate)
     let _rate                                      = cell (fun () -> _Entry.Value.rate)
     let _startDate                                 = cell (fun () -> _Entry.Value.startDate)
@@ -57,13 +58,14 @@ type EntryModel
     casting 
 *)
     internal new () = EntryModel(null,null,null)
-    member internal this.Inject v = _Entry.Value <- v
+    member internal this.Inject v = _Entry <- v
     static member Cast (p : ICell<Entry>) = 
         if p :? EntryModel then 
             p :?> EntryModel
         else
             let o = new EntryModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

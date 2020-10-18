@@ -41,7 +41,8 @@ type ESPCurrencyModel
 (*
     Functions
 *)
-    let _ESPCurrency                               = cell (fun () -> new ESPCurrency ())
+    let mutable
+        _ESPCurrency                               = cell (fun () -> new ESPCurrency ())
     let _code                                      = triv (fun () -> _ESPCurrency.Value.code)
     let _empty                                     = triv (fun () -> _ESPCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type ESPCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _ESPCurrency.Value <- v
+    member internal this.Inject v = _ESPCurrency <- v
     static member Cast (p : ICell<ESPCurrency>) = 
         if p :? ESPCurrencyModel then 
             p :?> ESPCurrencyModel
         else
             let o = new ESPCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

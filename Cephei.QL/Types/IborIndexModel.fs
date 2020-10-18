@@ -41,7 +41,8 @@ type IborIndexModel
 (*
     Functions
 *)
-    let _IborIndex                                 = cell (fun () -> new IborIndex ())
+    let mutable
+        _IborIndex                                 = cell (fun () -> new IborIndex ())
     let _businessDayConvention                     = triv (fun () -> _IborIndex.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _IborIndex.Value.clone(forwarding.Value))
@@ -96,13 +97,14 @@ type IborIndexModel
     casting 
 *)
     
-    member internal this.Inject v = _IborIndex.Value <- v
+    member internal this.Inject v = _IborIndex <- v
     static member Cast (p : ICell<IborIndex>) = 
         if p :? IborIndexModel then 
             p :?> IborIndexModel
         else
             let o = new IborIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -184,7 +186,8 @@ type IborIndexModel1
 (*
     Functions
 *)
-    let _IborIndex                                 = cell (fun () -> new IborIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, fixingCalendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, h.Value))
+    let mutable
+        _IborIndex                                 = cell (fun () -> new IborIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, fixingCalendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _IborIndex.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _IborIndex.Value.clone(forwarding.Value))
@@ -239,13 +242,14 @@ type IborIndexModel1
     casting 
 *)
     internal new () = new IborIndexModel1(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _IborIndex.Value <- v
+    member internal this.Inject v = _IborIndex <- v
     static member Cast (p : ICell<IborIndex>) = 
         if p :? IborIndexModel1 then 
             p :?> IborIndexModel1
         else
             let o = new IborIndexModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

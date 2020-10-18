@@ -62,7 +62,8 @@ type SwaptionPricingFunctionModel
 (*
     Functions
 *)
-    let _SwaptionPricingFunction                   = cell (fun () -> new SwaptionPricingFunction (a.Value, sigma.Value, b.Value, eta.Value, rho.Value, w.Value, start.Value, payTimes.Value, fixedRate.Value, model.Value))
+    let mutable
+        _SwaptionPricingFunction                   = cell (fun () -> new SwaptionPricingFunction (a.Value, sigma.Value, b.Value, eta.Value, rho.Value, w.Value, start.Value, payTimes.Value, fixedRate.Value, model.Value))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _SwaptionPricingFunction.Value.value(x.Value))
     do this.Bind(_SwaptionPricingFunction)
@@ -70,13 +71,14 @@ type SwaptionPricingFunctionModel
     casting 
 *)
     internal new () = SwaptionPricingFunctionModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwaptionPricingFunction.Value <- v
+    member internal this.Inject v = _SwaptionPricingFunction <- v
     static member Cast (p : ICell<SwaptionPricingFunction>) = 
         if p :? SwaptionPricingFunctionModel then 
             p :?> SwaptionPricingFunctionModel
         else
             let o = new SwaptionPricingFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

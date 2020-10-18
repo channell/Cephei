@@ -39,9 +39,9 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="impl",Description = "Reference to impl")>] 
+        ([<ExcelArgument(Name="impl",Description = "IConstraint")>] 
          impl : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint1", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,9 +107,9 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint_empty", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          constrainT : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -143,11 +143,11 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint_lowerBound", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          constrainT : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,11 +185,11 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint_test", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          constrainT : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,15 +227,15 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint_update", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          constrainT : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Vector")>] 
          p : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,11 +281,11 @@ module ConstraintFunction =
     *)
     [<ExcelFunction(Name="_Constraint_upperBound", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Constraint",Description = "Reference to Constraint")>] 
+        ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          constrainT : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -320,9 +320,9 @@ module ConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Constraint_Range", Description="Create a range of Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Constraint")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

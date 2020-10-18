@@ -39,9 +39,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_baseDate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_Clone", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_data", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_data_", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_dates", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_dates_", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_forwards", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_forwards
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,27 +291,27 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="lag",Description = "Reference to lag")>] 
+        ([<ExcelArgument(Name="lag",Description = "Period")>] 
          lag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
-        ([<ExcelArgument(Name="dates",Description = "Reference to dates")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date")>] 
          dates : obj)
-        ([<ExcelArgument(Name="rates",Description = "Reference to rates")>] 
+        ([<ExcelArgument(Name="rates",Description = "double")>] 
          rates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "Reference to interpolator")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroInflationCurve")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -382,9 +382,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_interpolation_", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_interpolator_", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_maxDate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_maxDate_", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,9 +526,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_nodes", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,9 +562,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_rates", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_rates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -598,9 +598,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_setupInterpolation", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,9 +634,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_times", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -670,9 +670,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_times_", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,17 +706,17 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_zeroRate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -766,15 +766,15 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_zeroRate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,13 +820,13 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_zeroRate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -868,11 +868,11 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_zeroRate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -910,9 +910,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_baseRate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_baseRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -946,9 +946,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_frequency", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,9 +982,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_hasSeasonality", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_hasSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1018,9 +1018,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_indexIsInterpolated", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_indexIsInterpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,9 +1054,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_nominalTermStructure", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_nominalTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1090,9 +1090,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_observationLag", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1126,9 +1126,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_seasonality", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_seasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Seasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1162,11 +1162,11 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_setSeasonality", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_setSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="seasonality",Description = "Reference to seasonality")>] 
+        ([<ExcelArgument(Name="seasonality",Description = "Seasonality")>] 
          seasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1204,9 +1204,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_calendar", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1240,9 +1240,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_dayCounter", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1276,9 +1276,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_maxTime", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1312,9 +1312,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_referenceDate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1348,9 +1348,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_settlementDays", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1384,11 +1384,11 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_timeFromReference", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1426,9 +1426,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_update", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1462,9 +1462,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_allowsExtrapolation", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1498,11 +1498,11 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_disableExtrapolation", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1540,11 +1540,11 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_enableExtrapolation", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1582,9 +1582,9 @@ module InterpolatedZeroInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_extrapolate", Description="Create a InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "Reference to InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="InterpolatedZeroInflationCurve",Description = "InterpolatedZeroInflationCurve")>] 
          interpolatedzeroinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1615,9 +1615,9 @@ module InterpolatedZeroInflationCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedZeroInflationCurve_Range", Description="Create a range of InterpolatedZeroInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroInflationCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InterpolatedZeroInflationCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type VEBCurrencyModel
 (*
     Functions
 *)
-    let _VEBCurrency                               = cell (fun () -> new VEBCurrency ())
+    let mutable
+        _VEBCurrency                               = cell (fun () -> new VEBCurrency ())
     let _code                                      = triv (fun () -> _VEBCurrency.Value.code)
     let _empty                                     = triv (fun () -> _VEBCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type VEBCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _VEBCurrency.Value <- v
+    member internal this.Inject v = _VEBCurrency <- v
     static member Cast (p : ICell<VEBCurrency>) = 
         if p :? VEBCurrencyModel then 
             p :?> VEBCurrencyModel
         else
             let o = new VEBCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

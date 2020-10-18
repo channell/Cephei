@@ -44,7 +44,8 @@ type GaussHermitePolynomialModel
 (*
     Functions
 *)
-    let _GaussHermitePolynomial                    = cell (fun () -> new GaussHermitePolynomial (mu.Value))
+    let mutable
+        _GaussHermitePolynomial                    = cell (fun () -> new GaussHermitePolynomial (mu.Value))
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussHermitePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -61,13 +62,14 @@ type GaussHermitePolynomialModel
     casting 
 *)
     internal new () = new GaussHermitePolynomialModel(null)
-    member internal this.Inject v = _GaussHermitePolynomial.Value <- v
+    member internal this.Inject v = _GaussHermitePolynomial <- v
     static member Cast (p : ICell<GaussHermitePolynomial>) = 
         if p :? GaussHermitePolynomialModel then 
             p :?> GaussHermitePolynomialModel
         else
             let o = new GaussHermitePolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -100,7 +102,8 @@ type GaussHermitePolynomialModel1
 (*
     Functions
 *)
-    let _GaussHermitePolynomial                    = cell (fun () -> new GaussHermitePolynomial ())
+    let mutable
+        _GaussHermitePolynomial                    = cell (fun () -> new GaussHermitePolynomial ())
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussHermitePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -117,13 +120,14 @@ type GaussHermitePolynomialModel1
     casting 
 *)
     
-    member internal this.Inject v = _GaussHermitePolynomial.Value <- v
+    member internal this.Inject v = _GaussHermitePolynomial <- v
     static member Cast (p : ICell<GaussHermitePolynomial>) = 
         if p :? GaussHermitePolynomialModel1 then 
             p :?> GaussHermitePolynomialModel1
         else
             let o = new GaussHermitePolynomialModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

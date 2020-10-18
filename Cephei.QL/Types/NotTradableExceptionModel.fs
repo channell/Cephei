@@ -46,19 +46,21 @@ type NotTradableExceptionModel
 (*
     Functions
 *)
-    let _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value, inner.Value))
+    let mutable
+        _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value, inner.Value))
     do this.Bind(_NotTradableException)
 (* 
     casting 
 *)
     internal new () = new NotTradableExceptionModel(null,null)
-    member internal this.Inject v = _NotTradableException.Value <- v
+    member internal this.Inject v = _NotTradableException <- v
     static member Cast (p : ICell<NotTradableException>) = 
         if p :? NotTradableExceptionModel then 
             p :?> NotTradableExceptionModel
         else
             let o = new NotTradableExceptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -84,19 +86,21 @@ type NotTradableExceptionModel1
 (*
     Functions
 *)
-    let _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value))
+    let mutable
+        _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value))
     do this.Bind(_NotTradableException)
 (* 
     casting 
 *)
     internal new () = new NotTradableExceptionModel1(null)
-    member internal this.Inject v = _NotTradableException.Value <- v
+    member internal this.Inject v = _NotTradableException <- v
     static member Cast (p : ICell<NotTradableException>) = 
         if p :? NotTradableExceptionModel1 then 
             p :?> NotTradableExceptionModel1
         else
             let o = new NotTradableExceptionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -118,19 +122,21 @@ type NotTradableExceptionModel2
 (*
     Functions
 *)
-    let _NotTradableException                      = cell (fun () -> new NotTradableException ())
+    let mutable
+        _NotTradableException                      = cell (fun () -> new NotTradableException ())
     do this.Bind(_NotTradableException)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _NotTradableException.Value <- v
+    member internal this.Inject v = _NotTradableException <- v
     static member Cast (p : ICell<NotTradableException>) = 
         if p :? NotTradableExceptionModel2 then 
             p :?> NotTradableExceptionModel2
         else
             let o = new NotTradableExceptionModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

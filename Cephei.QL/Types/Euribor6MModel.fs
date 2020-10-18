@@ -44,7 +44,8 @@ type Euribor6MModel
 (*
     Functions
 *)
-    let _Euribor6M                                 = cell (fun () -> new Euribor6M (h.Value))
+    let mutable
+        _Euribor6M                                 = cell (fun () -> new Euribor6M (h.Value))
     let _businessDayConvention                     = triv (fun () -> _Euribor6M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor6M.Value.clone(forwarding.Value))
@@ -99,13 +100,14 @@ type Euribor6MModel
     casting 
 *)
     internal new () = new Euribor6MModel(null)
-    member internal this.Inject v = _Euribor6M.Value <- v
+    member internal this.Inject v = _Euribor6M <- v
     static member Cast (p : ICell<Euribor6M>) = 
         if p :? Euribor6MModel then 
             p :?> Euribor6MModel
         else
             let o = new Euribor6MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -169,7 +171,8 @@ type Euribor6MModel1
 (*
     Functions
 *)
-    let _Euribor6M                                 = cell (fun () -> new Euribor6M ())
+    let mutable
+        _Euribor6M                                 = cell (fun () -> new Euribor6M ())
     let _businessDayConvention                     = triv (fun () -> _Euribor6M.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Euribor6M.Value.clone(forwarding.Value))
@@ -224,13 +227,14 @@ type Euribor6MModel1
     casting 
 *)
     
-    member internal this.Inject v = _Euribor6M.Value <- v
+    member internal this.Inject v = _Euribor6M <- v
     static member Cast (p : ICell<Euribor6M>) = 
         if p :? Euribor6MModel1 then 
             p :?> Euribor6MModel1
         else
             let o = new Euribor6MModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

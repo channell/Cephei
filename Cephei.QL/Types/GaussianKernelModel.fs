@@ -46,7 +46,8 @@ type GaussianKernelModel
 (*
     Functions
 *)
-    let _GaussianKernel                            = cell (fun () -> new GaussianKernel (average.Value, sigma.Value))
+    let mutable
+        _GaussianKernel                            = cell (fun () -> new GaussianKernel (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _GaussianKernel.Value.derivative(x.Value))
     let _primitive                                 (x : ICell<double>)   
@@ -58,13 +59,14 @@ type GaussianKernelModel
     casting 
 *)
     internal new () = new GaussianKernelModel(null,null)
-    member internal this.Inject v = _GaussianKernel.Value <- v
+    member internal this.Inject v = _GaussianKernel <- v
     static member Cast (p : ICell<GaussianKernel>) = 
         if p :? GaussianKernelModel then 
             p :?> GaussianKernelModel
         else
             let o = new GaussianKernelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

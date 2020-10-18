@@ -44,7 +44,8 @@ type Fdm1dMesherModel
 (*
     Functions
 *)
-    let _Fdm1dMesher                               = cell (fun () -> new Fdm1dMesher (size.Value))
+    let mutable
+        _Fdm1dMesher                               = cell (fun () -> new Fdm1dMesher (size.Value))
     let _dminus                                    (index : ICell<int>)   
                                                    = triv (fun () -> _Fdm1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
@@ -58,13 +59,14 @@ type Fdm1dMesherModel
     casting 
 *)
     internal new () = new Fdm1dMesherModel(null)
-    member internal this.Inject v = _Fdm1dMesher.Value <- v
+    member internal this.Inject v = _Fdm1dMesher <- v
     static member Cast (p : ICell<Fdm1dMesher>) = 
         if p :? Fdm1dMesherModel then 
             p :?> Fdm1dMesherModel
         else
             let o = new Fdm1dMesherModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type LiborForwardModelProcessModel
 (*
     Functions
 *)
-    let _LiborForwardModelProcess                  = cell (fun () -> new LiborForwardModelProcess (size.Value, index.Value, disc.Value))
+    let mutable
+        _LiborForwardModelProcess                  = cell (fun () -> new LiborForwardModelProcess (size.Value, index.Value, disc.Value))
     let _accrualEndTimes                           = triv (fun () -> _LiborForwardModelProcess.Value.accrualEndTimes())
     let _accrualPeriod_                            = triv (fun () -> _LiborForwardModelProcess.Value.accrualPeriod_)
     let _accrualStartTimes                         = triv (fun () -> _LiborForwardModelProcess.Value.accrualStartTimes())
@@ -105,13 +106,14 @@ type LiborForwardModelProcessModel
     casting 
 *)
     internal new () = new LiborForwardModelProcessModel(null,null,null)
-    member internal this.Inject v = _LiborForwardModelProcess.Value <- v
+    member internal this.Inject v = _LiborForwardModelProcess <- v
     static member Cast (p : ICell<LiborForwardModelProcess>) = 
         if p :? LiborForwardModelProcessModel then 
             p :?> LiborForwardModelProcessModel
         else
             let o = new LiborForwardModelProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -187,7 +189,8 @@ type LiborForwardModelProcessModel1
 (*
     Functions
 *)
-    let _LiborForwardModelProcess                  = cell (fun () -> new LiborForwardModelProcess (size.Value, index.Value))
+    let mutable
+        _LiborForwardModelProcess                  = cell (fun () -> new LiborForwardModelProcess (size.Value, index.Value))
     let _accrualEndTimes                           = triv (fun () -> _LiborForwardModelProcess.Value.accrualEndTimes())
     let _accrualPeriod_                            = triv (fun () -> _LiborForwardModelProcess.Value.accrualPeriod_)
     let _accrualStartTimes                         = triv (fun () -> _LiborForwardModelProcess.Value.accrualStartTimes())
@@ -244,13 +247,14 @@ type LiborForwardModelProcessModel1
     casting 
 *)
     internal new () = new LiborForwardModelProcessModel1(null,null)
-    member internal this.Inject v = _LiborForwardModelProcess.Value <- v
+    member internal this.Inject v = _LiborForwardModelProcess <- v
     static member Cast (p : ICell<LiborForwardModelProcess>) = 
         if p :? LiborForwardModelProcessModel1 then 
             p :?> LiborForwardModelProcessModel1
         else
             let o = new LiborForwardModelProcessModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

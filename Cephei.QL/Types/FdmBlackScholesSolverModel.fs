@@ -56,7 +56,8 @@ type FdmBlackScholesSolverModel
 (*
     Functions
 *)
-    let _FdmBlackScholesSolver                     = cell (fun () -> new FdmBlackScholesSolver (Process.Value, strike.Value, solverDesc.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, quantoHelper.Value))
+    let mutable
+        _FdmBlackScholesSolver                     = cell (fun () -> new FdmBlackScholesSolver (Process.Value, strike.Value, solverDesc.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, quantoHelper.Value))
     let _deltaAt                                   (s : ICell<double>)   
                                                    = triv (fun () -> _FdmBlackScholesSolver.Value.deltaAt(s.Value))
     let _gammaAt                                   (s : ICell<double>)   
@@ -70,13 +71,14 @@ type FdmBlackScholesSolverModel
     casting 
 *)
     internal new () = new FdmBlackScholesSolverModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdmBlackScholesSolver.Value <- v
+    member internal this.Inject v = _FdmBlackScholesSolver <- v
     static member Cast (p : ICell<FdmBlackScholesSolver>) = 
         if p :? FdmBlackScholesSolverModel then 
             p :?> FdmBlackScholesSolverModel
         else
             let o = new FdmBlackScholesSolverModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

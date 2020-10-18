@@ -41,7 +41,8 @@ type CurrencyModel
 (*
     Functions
 *)
-    let _Currency                                  = cell (fun () -> new Currency ())
+    let mutable
+        _Currency                                  = cell (fun () -> new Currency ())
     let _code                                      = triv (fun () -> _Currency.Value.code)
     let _empty                                     = triv (fun () -> _Currency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _Currency.Value <- v
+    member internal this.Inject v = _Currency <- v
     static member Cast (p : ICell<Currency>) = 
         if p :? CurrencyModel then 
             p :?> CurrencyModel
         else
             let o = new CurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -117,7 +119,8 @@ type CurrencyModel1
 (*
     Functions
 *)
-    let _Currency                                  = cell (fun () -> new Currency (name.Value, code.Value, numericCode.Value, symbol.Value, fractionSymbol.Value, fractionsPerUnit.Value, rounding.Value, formatString.Value))
+    let mutable
+        _Currency                                  = cell (fun () -> new Currency (name.Value, code.Value, numericCode.Value, symbol.Value, fractionSymbol.Value, fractionsPerUnit.Value, rounding.Value, formatString.Value))
     let _code                                      = triv (fun () -> _Currency.Value.code)
     let _empty                                     = triv (fun () -> _Currency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -136,13 +139,14 @@ type CurrencyModel1
     casting 
 *)
     internal new () = new CurrencyModel1(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _Currency.Value <- v
+    member internal this.Inject v = _Currency <- v
     static member Cast (p : ICell<Currency>) = 
         if p :? CurrencyModel1 then 
             p :?> CurrencyModel1
         else
             let o = new CurrencyModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -203,7 +207,8 @@ type CurrencyModel2
 (*
     Functions
 *)
-    let _Currency                                  = cell (fun () -> new Currency (name.Value, code.Value, numericCode.Value, symbol.Value, fractionSymbol.Value, fractionsPerUnit.Value, rounding.Value, formatString.Value, triangulationCurrency.Value))
+    let mutable
+        _Currency                                  = cell (fun () -> new Currency (name.Value, code.Value, numericCode.Value, symbol.Value, fractionSymbol.Value, fractionsPerUnit.Value, rounding.Value, formatString.Value, triangulationCurrency.Value))
     let _code                                      = triv (fun () -> _Currency.Value.code)
     let _empty                                     = triv (fun () -> _Currency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -222,13 +227,14 @@ type CurrencyModel2
     casting 
 *)
     internal new () = new CurrencyModel2(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _Currency.Value <- v
+    member internal this.Inject v = _Currency <- v
     static member Cast (p : ICell<Currency>) = 
         if p :? CurrencyModel2 then 
             p :?> CurrencyModel2
         else
             let o = new CurrencyModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

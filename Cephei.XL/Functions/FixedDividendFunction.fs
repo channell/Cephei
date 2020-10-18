@@ -39,11 +39,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_amount1", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_amount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_amount", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FixedDividend")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="amount",Description = "Reference to amount")>] 
+        ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_date", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_CompareTo", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,11 +238,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_Equals", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,9 +280,9 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_exCouponDate", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,13 +316,13 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_hasOccurred", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,11 +364,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_tradingExCoupon", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,11 +406,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_accept", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,11 +448,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_registerWith", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,11 +490,11 @@ module FixedDividendFunction =
     *)
     [<ExcelFunction(Name="_FixedDividend_unregisterWith", Description="Create a FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FixedDividend",Description = "Reference to FixedDividend")>] 
+        ([<ExcelArgument(Name="FixedDividend",Description = "FixedDividend")>] 
          fixeddividend : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -529,9 +529,9 @@ module FixedDividendFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedDividend_Range", Description="Create a range of FixedDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedDividend_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FixedDividend")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

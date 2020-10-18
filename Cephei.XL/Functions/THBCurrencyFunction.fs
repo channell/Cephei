@@ -39,7 +39,7 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "THBCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_code", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_empty", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_Equals", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_format", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_fractionsPerUnit", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_fractionSymbol", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_name", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_numericCode", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_rounding", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_symbol", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_ToString", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module THBCurrencyFunction =
     *)
     [<ExcelFunction(Name="_THBCurrency_triangulationCurrency", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="THBCurrency",Description = "Reference to THBCurrency")>] 
+        ([<ExcelArgument(Name="THBCurrency",Description = "THBCurrency")>] 
          thbcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module THBCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_THBCurrency_Range", Description="Create a range of THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the THBCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

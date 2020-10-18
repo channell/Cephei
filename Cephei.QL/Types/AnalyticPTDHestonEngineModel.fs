@@ -48,7 +48,8 @@ type AnalyticPTDHestonEngineModel
 (*
     Functions
 *)
-    let _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
+    let mutable
+        _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
     let _setModel                                  (model : ICell<Handle<PiecewiseTimeDependentHestonModel>>)   
                                                    = triv (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
@@ -67,13 +68,14 @@ type AnalyticPTDHestonEngineModel
     casting 
 *)
     internal new () = new AnalyticPTDHestonEngineModel(null,null,null)
-    member internal this.Inject v = _AnalyticPTDHestonEngine.Value <- v
+    member internal this.Inject v = _AnalyticPTDHestonEngine <- v
     static member Cast (p : ICell<AnalyticPTDHestonEngine>) = 
         if p :? AnalyticPTDHestonEngineModel then 
             p :?> AnalyticPTDHestonEngineModel
         else
             let o = new AnalyticPTDHestonEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -110,7 +112,8 @@ type AnalyticPTDHestonEngineModel1
 (*
     Functions
 *)
-    let _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, integrationOrder.Value))
+    let mutable
+        _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, integrationOrder.Value))
     let _setModel                                  (model : ICell<Handle<PiecewiseTimeDependentHestonModel>>)   
                                                    = triv (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
@@ -129,13 +132,14 @@ type AnalyticPTDHestonEngineModel1
     casting 
 *)
     internal new () = new AnalyticPTDHestonEngineModel1(null,null)
-    member internal this.Inject v = _AnalyticPTDHestonEngine.Value <- v
+    member internal this.Inject v = _AnalyticPTDHestonEngine <- v
     static member Cast (p : ICell<AnalyticPTDHestonEngine>) = 
         if p :? AnalyticPTDHestonEngineModel1 then 
             p :?> AnalyticPTDHestonEngineModel1
         else
             let o = new AnalyticPTDHestonEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

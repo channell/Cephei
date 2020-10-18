@@ -41,7 +41,8 @@ type Actual365NoLeapModel
 (*
     Functions
 *)
-    let _Actual365NoLeap                           = cell (fun () -> new Actual365NoLeap ())
+    let mutable
+        _Actual365NoLeap                           = cell (fun () -> new Actual365NoLeap ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Actual365NoLeap.Value.dayCount(d1.Value, d2.Value))
     let _dayCounter                                = triv (fun () -> _Actual365NoLeap.Value.dayCounter)
@@ -59,13 +60,14 @@ type Actual365NoLeapModel
     casting 
 *)
     
-    member internal this.Inject v = _Actual365NoLeap.Value <- v
+    member internal this.Inject v = _Actual365NoLeap <- v
     static member Cast (p : ICell<Actual365NoLeap>) = 
         if p :? Actual365NoLeapModel then 
             p :?> Actual365NoLeapModel
         else
             let o = new Actual365NoLeapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

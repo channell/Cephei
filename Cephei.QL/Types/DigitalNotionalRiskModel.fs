@@ -46,7 +46,8 @@ type DigitalNotionalRiskModel
 (*
     Functions
 *)
-    let _DigitalNotionalRisk                       = cell (fun () -> new DigitalNotionalRisk (paymentOffset.Value, threshold.Value))
+    let mutable
+        _DigitalNotionalRisk                       = cell (fun () -> new DigitalNotionalRisk (paymentOffset.Value, threshold.Value))
     let _updatePath                                (events : ICell<Generic.List<KeyValuePair<Date,double>>>) (path : ICell<NotionalPath>)   
                                                    = triv (fun () -> _DigitalNotionalRisk.Value.updatePath(events.Value, path.Value)
                                                                      _DigitalNotionalRisk.Value)
@@ -55,13 +56,14 @@ type DigitalNotionalRiskModel
     casting 
 *)
     internal new () = new DigitalNotionalRiskModel(null,null)
-    member internal this.Inject v = _DigitalNotionalRisk.Value <- v
+    member internal this.Inject v = _DigitalNotionalRisk <- v
     static member Cast (p : ICell<DigitalNotionalRisk>) = 
         if p :? DigitalNotionalRiskModel then 
             p :?> DigitalNotionalRiskModel
         else
             let o = new DigitalNotionalRiskModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

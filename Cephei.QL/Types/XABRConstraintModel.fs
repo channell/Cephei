@@ -44,7 +44,8 @@ type XABRConstraintModel
 (*
     Functions
 *)
-    let _XABRConstraint                            = cell (fun () -> new XABRConstraint (impl.Value))
+    let mutable
+        _XABRConstraint                            = cell (fun () -> new XABRConstraint (impl.Value))
     let _config                                    (costFunction : ICell<ProjectedCostFunction>) (coeff : ICell<XABRCoeffHolder<'Model>>) (forward : ICell<double>)   
                                                    = triv (fun () -> _XABRConstraint.Value.config(costFunction.Value, coeff.Value, forward.Value)
                                                                      _XABRConstraint.Value)
@@ -62,13 +63,14 @@ type XABRConstraintModel
     casting 
 *)
     internal new () = new XABRConstraintModel(null)
-    member internal this.Inject v = _XABRConstraint.Value <- v
+    member internal this.Inject v = _XABRConstraint <- v
     static member Cast (p : ICell<XABRConstraint>) = 
         if p :? XABRConstraintModel then 
             p :?> XABRConstraintModel
         else
             let o = new XABRConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -101,7 +103,8 @@ type XABRConstraintModel1
 (*
     Functions
 *)
-    let _XABRConstraint                            = cell (fun () -> new XABRConstraint ())
+    let mutable
+        _XABRConstraint                            = cell (fun () -> new XABRConstraint ())
     let _config                                    (costFunction : ICell<ProjectedCostFunction>) (coeff : ICell<XABRCoeffHolder<'Model>>) (forward : ICell<double>)   
                                                    = triv (fun () -> _XABRConstraint.Value.config(costFunction.Value, coeff.Value, forward.Value)
                                                                      _XABRConstraint.Value)
@@ -119,13 +122,14 @@ type XABRConstraintModel1
     casting 
 *)
     
-    member internal this.Inject v = _XABRConstraint.Value <- v
+    member internal this.Inject v = _XABRConstraint <- v
     static member Cast (p : ICell<XABRConstraint>) = 
         if p :? XABRConstraintModel1 then 
             p :?> XABRConstraintModel1
         else
             let o = new XABRConstraintModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

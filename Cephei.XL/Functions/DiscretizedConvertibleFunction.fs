@@ -39,11 +39,11 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_addCoupon", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_addCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_adjustedGrid", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_adjustedGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,13 +117,13 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_applyCallability", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_applyCallability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="convertible",Description = "Reference to convertible")>] 
+        ([<ExcelArgument(Name="convertible",Description = "bool")>] 
          convertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,9 +165,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_applyConvertibility", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_applyConvertibility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,9 +201,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_conversionProbability", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_conversionProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,13 +237,13 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedConvertible")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="args",Description = "Reference to args")>] 
+        ([<ExcelArgument(Name="args",Description = "ConvertibleBond.option.Arguments")>] 
          args : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "Reference to grid")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_dividendValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_dividendValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,9 +322,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_mandatoryTimes", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,9 +358,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_process", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_process
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,11 +394,11 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_reset", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_spreadAdjustedRate", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_spreadAdjustedRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_adjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -508,13 +508,13 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_initialize", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "Lattice")>] 
          Method : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,9 +556,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_method", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,11 +592,11 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_partialRollback", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,9 +634,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_postAdjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -670,9 +670,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_preAdjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,9 +706,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_presentValue", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,11 +742,11 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_rollback", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="To",Description = "Reference to To")>] 
+        ([<ExcelArgument(Name="To",Description = "double")>] 
          To : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -784,11 +784,11 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_setTime", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -826,11 +826,11 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_setValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -868,9 +868,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_time", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,9 +904,9 @@ module DiscretizedConvertibleFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedConvertible_values", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "Reference to DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="DiscretizedConvertible",Description = "DiscretizedConvertible")>] 
          discretizedconvertible : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -937,9 +937,9 @@ module DiscretizedConvertibleFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedConvertible_Range", Description="Create a range of DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DiscretizedConvertible")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

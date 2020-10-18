@@ -39,9 +39,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_CraigSneyd", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_CraigSneyd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_CrankNicolson", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_CrankNicolson
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_Douglas", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_Douglas
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_ExplicitEuler", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_ExplicitEuler
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,13 +183,13 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "FdmSchemeDesc.FdmSchemeType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "double")>] 
          theta : obj)
-        ([<ExcelArgument(Name="mu",Description = "Reference to mu")>] 
+        ([<ExcelArgument(Name="mu",Description = "double")>] 
          mu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,7 +232,7 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc1", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -263,9 +263,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_Hundsdorfer", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_Hundsdorfer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -299,9 +299,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_ImplicitEuler", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_ImplicitEuler
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -335,13 +335,13 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_MethodOfLines", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_MethodOfLines
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
-        ([<ExcelArgument(Name="eps",Description = "Reference to eps")>] 
+        ([<ExcelArgument(Name="eps",Description = "FdmSchemeDesc")>] 
          eps : obj)
-        ([<ExcelArgument(Name="relInitStepSize",Description = "Reference to relInitStepSize")>] 
+        ([<ExcelArgument(Name="relInitStepSize",Description = "FdmSchemeDesc")>] 
          relInitStepSize : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -383,9 +383,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_ModifiedCraigSneyd", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_ModifiedCraigSneyd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -419,9 +419,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_ModifiedHundsdorfer", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_ModifiedHundsdorfer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -455,9 +455,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_mu", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_mu
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -491,9 +491,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_theta", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -527,9 +527,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_TrBDF2", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_TrBDF2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -563,9 +563,9 @@ module FdmSchemeDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSchemeDesc_type", Description="Create a FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "Reference to FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="FdmSchemeDesc",Description = "FdmSchemeDesc")>] 
          fdmschemedesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -596,9 +596,9 @@ module FdmSchemeDescFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmSchemeDesc_Range", Description="Create a range of FdmSchemeDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSchemeDesc_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmSchemeDesc")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

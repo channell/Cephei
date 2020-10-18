@@ -41,7 +41,8 @@ type RangeAccrualPricerModel
 (*
     Functions
 *)
-    let _RangeAccrualPricer                        = cell (fun () -> new RangeAccrualPricer ())
+    let mutable
+        _RangeAccrualPricer                        = cell (fun () -> new RangeAccrualPricer ())
     let _capletPrice                               (effectiveCap : ICell<double>)   
                                                    = triv (fun () -> _RangeAccrualPricer.Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
@@ -68,13 +69,14 @@ type RangeAccrualPricerModel
     casting 
 *)
     
-    member internal this.Inject v = _RangeAccrualPricer.Value <- v
+    member internal this.Inject v = _RangeAccrualPricer <- v
     static member Cast (p : ICell<RangeAccrualPricer>) = 
         if p :? RangeAccrualPricerModel then 
             p :?> RangeAccrualPricerModel
         else
             let o = new RangeAccrualPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -48,7 +48,8 @@ type FdmHullWhiteSolverModel
 (*
     Functions
 *)
-    let _FdmHullWhiteSolver                        = cell (fun () -> new FdmHullWhiteSolver (model.Value, solverDesc.Value, schemeDesc.Value))
+    let mutable
+        _FdmHullWhiteSolver                        = cell (fun () -> new FdmHullWhiteSolver (model.Value, solverDesc.Value, schemeDesc.Value))
     let _deltaAt                                   (s : ICell<double>)   
                                                    = triv (fun () -> _FdmHullWhiteSolver.Value.deltaAt(s.Value))
     let _gammaAt                                   (s : ICell<double>)   
@@ -62,13 +63,14 @@ type FdmHullWhiteSolverModel
     casting 
 *)
     internal new () = new FdmHullWhiteSolverModel(null,null,null)
-    member internal this.Inject v = _FdmHullWhiteSolver.Value <- v
+    member internal this.Inject v = _FdmHullWhiteSolver <- v
     static member Cast (p : ICell<FdmHullWhiteSolver>) = 
         if p :? FdmHullWhiteSolverModel then 
             p :?> FdmHullWhiteSolverModel
         else
             let o = new FdmHullWhiteSolverModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

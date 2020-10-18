@@ -41,7 +41,8 @@ type UAHCurrencyModel
 (*
     Functions
 *)
-    let _UAHCurrency                               = cell (fun () -> new UAHCurrency ())
+    let mutable
+        _UAHCurrency                               = cell (fun () -> new UAHCurrency ())
     let _code                                      = triv (fun () -> _UAHCurrency.Value.code)
     let _empty                                     = triv (fun () -> _UAHCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type UAHCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _UAHCurrency.Value <- v
+    member internal this.Inject v = _UAHCurrency <- v
     static member Cast (p : ICell<UAHCurrency>) = 
         if p :? UAHCurrencyModel then 
             p :?> UAHCurrencyModel
         else
             let o = new UAHCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

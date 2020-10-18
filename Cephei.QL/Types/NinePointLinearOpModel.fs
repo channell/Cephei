@@ -44,7 +44,8 @@ type NinePointLinearOpModel
 (*
     Functions
 *)
-    let _NinePointLinearOp                         = cell (fun () -> new NinePointLinearOp (m.Value))
+    let mutable
+        _NinePointLinearOp                         = cell (fun () -> new NinePointLinearOp (m.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _NinePointLinearOp.Value.add(A.Value, B.Value))
     let _apply                                     (r : ICell<Vector>)   
@@ -76,13 +77,14 @@ type NinePointLinearOpModel
     casting 
 *)
     internal new () = new NinePointLinearOpModel(null)
-    member internal this.Inject v = _NinePointLinearOp.Value <- v
+    member internal this.Inject v = _NinePointLinearOp <- v
     static member Cast (p : ICell<NinePointLinearOp>) = 
         if p :? NinePointLinearOpModel then 
             p :?> NinePointLinearOpModel
         else
             let o = new NinePointLinearOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -135,7 +137,8 @@ type NinePointLinearOpModel1
 (*
     Functions
 *)
-    let _NinePointLinearOp                         = cell (fun () -> new NinePointLinearOp (d0.Value, d1.Value, mesher.Value))
+    let mutable
+        _NinePointLinearOp                         = cell (fun () -> new NinePointLinearOp (d0.Value, d1.Value, mesher.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _NinePointLinearOp.Value.add(A.Value, B.Value))
     let _apply                                     (r : ICell<Vector>)   
@@ -167,13 +170,14 @@ type NinePointLinearOpModel1
     casting 
 *)
     internal new () = new NinePointLinearOpModel1(null,null,null)
-    member internal this.Inject v = _NinePointLinearOp.Value <- v
+    member internal this.Inject v = _NinePointLinearOp <- v
     static member Cast (p : ICell<NinePointLinearOp>) = 
         if p :? NinePointLinearOpModel1 then 
             p :?> NinePointLinearOpModel1
         else
             let o = new NinePointLinearOpModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

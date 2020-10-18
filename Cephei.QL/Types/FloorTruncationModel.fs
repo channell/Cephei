@@ -46,7 +46,8 @@ type FloorTruncationModel
 (*
     Functions
 *)
-    let _FloorTruncation                           = cell (fun () -> new FloorTruncation (precision.Value, digit.Value))
+    let mutable
+        _FloorTruncation                           = cell (fun () -> new FloorTruncation (precision.Value, digit.Value))
     let _Digit                                     = triv (fun () -> _FloorTruncation.Value.Digit)
     let _getType                                   = triv (fun () -> _FloorTruncation.Value.getType)
     let _Precision                                 = triv (fun () -> _FloorTruncation.Value.Precision)
@@ -57,13 +58,14 @@ type FloorTruncationModel
     casting 
 *)
     internal new () = new FloorTruncationModel(null,null)
-    member internal this.Inject v = _FloorTruncation.Value <- v
+    member internal this.Inject v = _FloorTruncation <- v
     static member Cast (p : ICell<FloorTruncation>) = 
         if p :? FloorTruncationModel then 
             p :?> FloorTruncationModel
         else
             let o = new FloorTruncationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -94,7 +96,8 @@ type FloorTruncationModel1
 (*
     Functions
 *)
-    let _FloorTruncation                           = cell (fun () -> new FloorTruncation (precision.Value))
+    let mutable
+        _FloorTruncation                           = cell (fun () -> new FloorTruncation (precision.Value))
     let _Digit                                     = triv (fun () -> _FloorTruncation.Value.Digit)
     let _getType                                   = triv (fun () -> _FloorTruncation.Value.getType)
     let _Precision                                 = triv (fun () -> _FloorTruncation.Value.Precision)
@@ -105,13 +108,14 @@ type FloorTruncationModel1
     casting 
 *)
     internal new () = new FloorTruncationModel1(null)
-    member internal this.Inject v = _FloorTruncation.Value <- v
+    member internal this.Inject v = _FloorTruncation <- v
     static member Cast (p : ICell<FloorTruncation>) = 
         if p :? FloorTruncationModel1 then 
             p :?> FloorTruncationModel1
         else
             let o = new FloorTruncationModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

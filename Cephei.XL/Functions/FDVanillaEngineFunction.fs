@@ -40,9 +40,9 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine_ensureStrikeInGrid", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDVanillaEngine",Description = "Reference to FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="FDVanillaEngine",Description = "FDVanillaEngine")>] 
          fdvanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,17 +76,17 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine_factory", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDVanillaEngine",Description = "Reference to FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="FDVanillaEngine",Description = "FDVanillaEngine")>] 
          fdvanillaengine : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,7 +136,7 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine1", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,15 +167,15 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,9 +222,9 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine_getResidualTime", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDVanillaEngine",Description = "Reference to FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="FDVanillaEngine",Description = "FDVanillaEngine")>] 
          fdvanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -258,9 +258,9 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine_grid", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDVanillaEngine",Description = "Reference to FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="FDVanillaEngine",Description = "FDVanillaEngine")>] 
          fdvanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -294,9 +294,9 @@ module FDVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FDVanillaEngine_intrinsicValues_", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDVanillaEngine",Description = "Reference to FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="FDVanillaEngine",Description = "FDVanillaEngine")>] 
          fdvanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module FDVanillaEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDVanillaEngine_Range", Description="Create a range of FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

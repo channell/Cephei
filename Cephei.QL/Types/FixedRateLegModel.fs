@@ -44,7 +44,8 @@ type FixedRateLegModel
 (*
     Functions
 *)
-    let _FixedRateLeg                              = cell (fun () -> new FixedRateLeg (schedule.Value))
+    let mutable
+        _FixedRateLeg                              = cell (fun () -> new FixedRateLeg (schedule.Value))
     let _value                                     = triv (fun () -> _FixedRateLeg.Value.value())
     let _withCouponRates                           (couponRate : ICell<double>) (paymentDayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>)   
                                                    = triv (fun () -> _FixedRateLeg.Value.withCouponRates(couponRate.Value, paymentDayCounter.Value, comp.Value, freq.Value))
@@ -81,13 +82,14 @@ type FixedRateLegModel
     casting 
 *)
     internal new () = new FixedRateLegModel(null)
-    member internal this.Inject v = _FixedRateLeg.Value <- v
+    member internal this.Inject v = _FixedRateLeg <- v
     static member Cast (p : ICell<FixedRateLeg>) = 
         if p :? FixedRateLegModel then 
             p :?> FixedRateLegModel
         else
             let o = new FixedRateLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

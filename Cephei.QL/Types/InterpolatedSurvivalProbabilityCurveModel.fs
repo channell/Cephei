@@ -56,7 +56,8 @@ type InterpolatedSurvivalProbabilityCurveModel<'Interpolator when 'Interpolator 
 (*
     Functions
 *)
-    let _InterpolatedSurvivalProbabilityCurve      = cell (fun () -> new InterpolatedSurvivalProbabilityCurve<'Interpolator> (dates.Value, probabilities.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value))
+    let mutable
+        _InterpolatedSurvivalProbabilityCurve      = cell (fun () -> new InterpolatedSurvivalProbabilityCurve<'Interpolator> (dates.Value, probabilities.Value, dayCounter.Value, calendar.Value, jumps.Value, jumpDates.Value, interpolator.Value))
     let _Clone                                     = triv (fun () -> _InterpolatedSurvivalProbabilityCurve.Value.Clone())
     let _data                                      = triv (fun () -> _InterpolatedSurvivalProbabilityCurve.Value.data())
     let _data_                                     = triv (fun () -> _InterpolatedSurvivalProbabilityCurve.Value.data_)

@@ -39,9 +39,9 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_clearHistories", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_clearHistories
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_clearHistory", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_clearHistory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_getHistory", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_getHistory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,11 +159,11 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_hasHistory", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_hasHistory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,9 +201,9 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_histories", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_histories
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_notifier", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_notifier
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,13 +279,13 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_setHistory", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_setHistory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
-        ([<ExcelArgument(Name="history",Description = "Reference to history")>] 
+        ([<ExcelArgument(Name="history",Description = "double")>] 
          history : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,13 +327,13 @@ module IndexManagerFunction =
     *)
     [<ExcelFunction(Name="_IndexManager_tryGetHistory", Description="Create a IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_tryGetHistory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="IndexManager",Description = "Reference to IndexManager")>] 
+        ([<ExcelArgument(Name="IndexManager",Description = "IndexManager")>] 
          indexmanager : obj)
-        ([<ExcelArgument(Name="name",Description = "Reference to name")>] 
+        ([<ExcelArgument(Name="name",Description = "string")>] 
          name : obj)
-        ([<ExcelArgument(Name="history",Description = "Reference to history")>] 
+        ([<ExcelArgument(Name="history",Description = "double")>] 
          history : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,9 +372,9 @@ module IndexManagerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IndexManager_Range", Description="Create a range of IndexManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexManager_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IndexManager")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

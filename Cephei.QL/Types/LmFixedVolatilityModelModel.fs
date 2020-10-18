@@ -46,7 +46,8 @@ type LmFixedVolatilityModelModel
 (*
     Functions
 *)
-    let _LmFixedVolatilityModel                    = cell (fun () -> new LmFixedVolatilityModel (volatilities.Value, startTimes.Value))
+    let mutable
+        _LmFixedVolatilityModel                    = cell (fun () -> new LmFixedVolatilityModel (volatilities.Value, startTimes.Value))
     let _volatility                                (i : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LmFixedVolatilityModel.Value.volatility(i.Value, t.Value, x.Value))
     let _volatility1                               (t : ICell<double>) (x : ICell<Vector>)   
@@ -63,13 +64,14 @@ type LmFixedVolatilityModelModel
     casting 
 *)
     internal new () = new LmFixedVolatilityModelModel(null,null)
-    member internal this.Inject v = _LmFixedVolatilityModel.Value <- v
+    member internal this.Inject v = _LmFixedVolatilityModel <- v
     static member Cast (p : ICell<LmFixedVolatilityModel>) = 
         if p :? LmFixedVolatilityModelModel then 
             p :?> LmFixedVolatilityModelModel
         else
             let o = new LmFixedVolatilityModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

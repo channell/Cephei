@@ -41,7 +41,8 @@ type GaussHyperbolicPolynomialModel
 (*
     Functions
 *)
-    let _GaussHyperbolicPolynomial                 = cell (fun () -> new GaussHyperbolicPolynomial ())
+    let mutable
+        _GaussHyperbolicPolynomial                 = cell (fun () -> new GaussHyperbolicPolynomial ())
     let _alpha                                     (i : ICell<int>)   
                                                    = triv (fun () -> _GaussHyperbolicPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
@@ -58,13 +59,14 @@ type GaussHyperbolicPolynomialModel
     casting 
 *)
     
-    member internal this.Inject v = _GaussHyperbolicPolynomial.Value <- v
+    member internal this.Inject v = _GaussHyperbolicPolynomial <- v
     static member Cast (p : ICell<GaussHyperbolicPolynomial>) = 
         if p :? GaussHyperbolicPolynomialModel then 
             p :?> GaussHyperbolicPolynomialModel
         else
             let o = new GaussHyperbolicPolynomialModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

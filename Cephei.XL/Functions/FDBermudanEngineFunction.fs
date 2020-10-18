@@ -40,15 +40,15 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDBermudanEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "FDBermudanEngine")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "FDBermudanEngine")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "FDBermudanEngine")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -95,11 +95,11 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_registerWith", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -137,9 +137,9 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_reset", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,11 +173,11 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_unregisterWith", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -215,9 +215,9 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_update", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -251,11 +251,11 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_setStepCondition", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
-        ([<ExcelArgument(Name="impl",Description = "Reference to impl")>] 
+        ([<ExcelArgument(Name="impl",Description = "Vector")>] 
          impl : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,9 +293,9 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_ensureStrikeInGrid", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -329,17 +329,17 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_factory", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "FDVanillaEngine")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "FDVanillaEngine")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "FDVanillaEngine")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -389,9 +389,9 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_getResidualTime", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -425,9 +425,9 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_grid", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -461,9 +461,9 @@ module FDBermudanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDBermudanEngine_intrinsicValues_", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDBermudanEngine",Description = "Reference to FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="FDBermudanEngine",Description = "FDBermudanEngine")>] 
          fdbermudanengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -494,9 +494,9 @@ module FDBermudanEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDBermudanEngine_Range", Description="Create a range of FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FDBermudanEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

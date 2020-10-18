@@ -46,7 +46,8 @@ type GMRESResultModel
 (*
     Functions
 *)
-    let _GMRESResult                               = cell (fun () -> new GMRESResult (e.Value, xx.Value))
+    let mutable
+        _GMRESResult                               = cell (fun () -> new GMRESResult (e.Value, xx.Value))
     let _Errors                                    = triv (fun () -> _GMRESResult.Value.Errors)
     let _X                                         = triv (fun () -> _GMRESResult.Value.X)
     do this.Bind(_GMRESResult)
@@ -54,13 +55,14 @@ type GMRESResultModel
     casting 
 *)
     internal new () = new GMRESResultModel(null,null)
-    member internal this.Inject v = _GMRESResult.Value <- v
+    member internal this.Inject v = _GMRESResult <- v
     static member Cast (p : ICell<GMRESResult>) = 
         if p :? GMRESResultModel then 
             p :?> GMRESResultModel
         else
             let o = new GMRESResultModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

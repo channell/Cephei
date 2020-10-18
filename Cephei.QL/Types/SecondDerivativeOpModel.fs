@@ -46,7 +46,8 @@ type SecondDerivativeOpModel
 (*
     Functions
 *)
-    let _SecondDerivativeOp                        = cell (fun () -> new SecondDerivativeOp (direction.Value, mesher.Value))
+    let mutable
+        _SecondDerivativeOp                        = cell (fun () -> new SecondDerivativeOp (direction.Value, mesher.Value))
     let _add                                       (m : ICell<TripleBandLinearOp>)   
                                                    = triv (fun () -> _SecondDerivativeOp.Value.add(m.Value))
     let _add1                                      (u : ICell<Vector>)   
@@ -89,13 +90,14 @@ type SecondDerivativeOpModel
     casting 
 *)
     internal new () = new SecondDerivativeOpModel(null,null)
-    member internal this.Inject v = _SecondDerivativeOp.Value <- v
+    member internal this.Inject v = _SecondDerivativeOp <- v
     static member Cast (p : ICell<SecondDerivativeOp>) = 
         if p :? SecondDerivativeOpModel then 
             p :?> SecondDerivativeOpModel
         else
             let o = new SecondDerivativeOpModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -155,7 +157,8 @@ type SecondDerivativeOpModel1
 (*
     Functions
 *)
-    let _SecondDerivativeOp                        = cell (fun () -> new SecondDerivativeOp (rhs.Value))
+    let mutable
+        _SecondDerivativeOp                        = cell (fun () -> new SecondDerivativeOp (rhs.Value))
     let _add                                       (m : ICell<TripleBandLinearOp>)   
                                                    = triv (fun () -> _SecondDerivativeOp.Value.add(m.Value))
     let _add1                                      (u : ICell<Vector>)   
@@ -198,13 +201,14 @@ type SecondDerivativeOpModel1
     casting 
 *)
     internal new () = new SecondDerivativeOpModel1(null)
-    member internal this.Inject v = _SecondDerivativeOp.Value <- v
+    member internal this.Inject v = _SecondDerivativeOp <- v
     static member Cast (p : ICell<SecondDerivativeOp>) = 
         if p :? SecondDerivativeOpModel1 then 
             p :?> SecondDerivativeOpModel1
         else
             let o = new SecondDerivativeOpModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

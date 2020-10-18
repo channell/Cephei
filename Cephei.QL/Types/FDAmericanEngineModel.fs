@@ -41,7 +41,8 @@ type FDAmericanEngineModel
 (*
     Functions
 *)
-    let _FDAmericanEngine                          = cell (fun () -> new FDAmericanEngine ())
+    let mutable
+        _FDAmericanEngine                          = cell (fun () -> new FDAmericanEngine ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDAmericanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -64,13 +65,14 @@ type FDAmericanEngineModel
     casting 
 *)
     
-    member internal this.Inject v = _FDAmericanEngine.Value <- v
+    member internal this.Inject v = _FDAmericanEngine <- v
     static member Cast (p : ICell<FDAmericanEngine>) = 
         if p :? FDAmericanEngineModel then 
             p :?> FDAmericanEngineModel
         else
             let o = new FDAmericanEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -112,7 +114,8 @@ type FDAmericanEngineModel1
 (*
     Functions
 *)
-    let _FDAmericanEngine                          = cell (fun () -> new FDAmericanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDAmericanEngine                          = cell (fun () -> new FDAmericanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
                                                    = triv (fun () -> _FDAmericanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
@@ -135,13 +138,14 @@ type FDAmericanEngineModel1
     casting 
 *)
     internal new () = new FDAmericanEngineModel1(null,null,null,null)
-    member internal this.Inject v = _FDAmericanEngine.Value <- v
+    member internal this.Inject v = _FDAmericanEngine <- v
     static member Cast (p : ICell<FDAmericanEngine>) = 
         if p :? FDAmericanEngineModel1 then 
             p :?> FDAmericanEngineModel1
         else
             let o = new FDAmericanEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

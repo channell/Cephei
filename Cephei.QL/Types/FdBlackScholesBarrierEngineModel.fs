@@ -56,19 +56,21 @@ type FdBlackScholesBarrierEngineModel
 (*
     Functions
 *)
-    let _FdBlackScholesBarrierEngine               = cell (fun () -> new FdBlackScholesBarrierEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
+    let mutable
+        _FdBlackScholesBarrierEngine               = cell (fun () -> new FdBlackScholesBarrierEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
     do this.Bind(_FdBlackScholesBarrierEngine)
 (* 
     casting 
 *)
     internal new () = new FdBlackScholesBarrierEngineModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdBlackScholesBarrierEngine.Value <- v
+    member internal this.Inject v = _FdBlackScholesBarrierEngine <- v
     static member Cast (p : ICell<FdBlackScholesBarrierEngine>) = 
         if p :? FdBlackScholesBarrierEngineModel then 
             p :?> FdBlackScholesBarrierEngineModel
         else
             let o = new FdBlackScholesBarrierEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

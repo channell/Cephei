@@ -39,9 +39,9 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_description", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GapPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GapPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="secondStrike",Description = "Reference to secondStrike")>] 
+        ([<ExcelArgument(Name="secondStrike",Description = "double")>] 
          secondStrike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_name", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_secondStrike", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_secondStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_value", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
-        ([<ExcelArgument(Name="price",Description = "Reference to price")>] 
+        ([<ExcelArgument(Name="price",Description = "double")>] 
          price : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_strike", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_optionType", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,11 +310,11 @@ module GapPayoffFunction =
     *)
     [<ExcelFunction(Name="_GapPayoff_accept", Description="Create a GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GapPayoff",Description = "Reference to GapPayoff")>] 
+        ([<ExcelArgument(Name="GapPayoff",Description = "GapPayoff")>] 
          gappayoff : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module GapPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GapPayoff_Range", Description="Create a range of GapPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GapPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GapPayoff")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PricipalLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="paymentDayCounter",Description = "Reference to paymentDayCounter")>] 
+        ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg_value", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricipalLeg",Description = "Reference to PricipalLeg")>] 
+        ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg_withNotionals", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricipalLeg",Description = "Reference to PricipalLeg")>] 
+        ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg_withNotionals1", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricipalLeg",Description = "Reference to PricipalLeg")>] 
+        ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,11 +202,11 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg_withPaymentAdjustment", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricipalLeg",Description = "Reference to PricipalLeg")>] 
+        ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg_withPaymentDayCounter", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricipalLeg",Description = "Reference to PricipalLeg")>] 
+        ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module PricipalLegFunction =
     *)
     [<ExcelFunction(Name="_PricipalLeg_withSign", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withSign
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PricipalLeg",Description = "Reference to PricipalLeg")>] 
+        ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
-        ([<ExcelArgument(Name="sign",Description = "Reference to sign")>] 
+        ([<ExcelArgument(Name="sign",Description = "int")>] 
          sign : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -325,9 +325,9 @@ module PricipalLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PricipalLeg_Range", Description="Create a range of PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PricipalLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

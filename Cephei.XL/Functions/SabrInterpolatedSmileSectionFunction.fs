@@ -39,9 +39,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_alpha", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_atmLevel", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_atmLevel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_beta", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_endCriteria", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_maxError", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_maxStrike", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_minStrike", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,9 +291,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_nu", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_nu
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -327,9 +327,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_rho", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -363,9 +363,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_rmsError", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_rmsError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -399,45 +399,45 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection1", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="hasFloatingStrikes",Description = "Reference to hasFloatingStrikes")>] 
+        ([<ExcelArgument(Name="hasFloatingStrikes",Description = "bool")>] 
          hasFloatingStrikes : obj)
-        ([<ExcelArgument(Name="atmVolatility",Description = "Reference to atmVolatility")>] 
+        ([<ExcelArgument(Name="atmVolatility",Description = "double")>] 
          atmVolatility : obj)
-        ([<ExcelArgument(Name="volHandles",Description = "Reference to volHandles")>] 
+        ([<ExcelArgument(Name="volHandles",Description = "double")>] 
          volHandles : obj)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
-        ([<ExcelArgument(Name="nu",Description = "Reference to nu")>] 
+        ([<ExcelArgument(Name="nu",Description = "double")>] 
          nu : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="isAlphaFixed",Description = "Reference to isAlphaFixed")>] 
+        ([<ExcelArgument(Name="isAlphaFixed",Description = "bool")>] 
          isAlphaFixed : obj)
-        ([<ExcelArgument(Name="isBetaFixed",Description = "Reference to isBetaFixed")>] 
+        ([<ExcelArgument(Name="isBetaFixed",Description = "bool")>] 
          isBetaFixed : obj)
-        ([<ExcelArgument(Name="isNuFixed",Description = "Reference to isNuFixed")>] 
+        ([<ExcelArgument(Name="isNuFixed",Description = "bool")>] 
          isNuFixed : obj)
-        ([<ExcelArgument(Name="isRhoFixed",Description = "Reference to isRhoFixed")>] 
+        ([<ExcelArgument(Name="isRhoFixed",Description = "bool")>] 
          isRhoFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Reference to vegaWeighted")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "SabrInterpolatedSmileSection")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "SabrInterpolatedSmileSection")>] 
          dc : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "SabrInterpolatedSmileSection")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -545,45 +545,45 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SabrInterpolatedSmileSection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="optionDate",Description = "Reference to optionDate")>] 
+        ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="hasFloatingStrikes",Description = "Reference to hasFloatingStrikes")>] 
+        ([<ExcelArgument(Name="hasFloatingStrikes",Description = "bool")>] 
          hasFloatingStrikes : obj)
-        ([<ExcelArgument(Name="atmVolatility",Description = "Reference to atmVolatility")>] 
+        ([<ExcelArgument(Name="atmVolatility",Description = "Quote")>] 
          atmVolatility : obj)
-        ([<ExcelArgument(Name="volHandles",Description = "Reference to volHandles")>] 
+        ([<ExcelArgument(Name="volHandles",Description = "Quote")>] 
          volHandles : obj)
-        ([<ExcelArgument(Name="alpha",Description = "Reference to alpha")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="beta",Description = "Reference to beta")>] 
+        ([<ExcelArgument(Name="beta",Description = "double")>] 
          beta : obj)
-        ([<ExcelArgument(Name="nu",Description = "Reference to nu")>] 
+        ([<ExcelArgument(Name="nu",Description = "double")>] 
          nu : obj)
-        ([<ExcelArgument(Name="rho",Description = "Reference to rho")>] 
+        ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
-        ([<ExcelArgument(Name="isAlphaFixed",Description = "Reference to isAlphaFixed")>] 
+        ([<ExcelArgument(Name="isAlphaFixed",Description = "bool")>] 
          isAlphaFixed : obj)
-        ([<ExcelArgument(Name="isBetaFixed",Description = "Reference to isBetaFixed")>] 
+        ([<ExcelArgument(Name="isBetaFixed",Description = "bool")>] 
          isBetaFixed : obj)
-        ([<ExcelArgument(Name="isNuFixed",Description = "Reference to isNuFixed")>] 
+        ([<ExcelArgument(Name="isNuFixed",Description = "bool")>] 
          isNuFixed : obj)
-        ([<ExcelArgument(Name="isRhoFixed",Description = "Reference to isRhoFixed")>] 
+        ([<ExcelArgument(Name="isRhoFixed",Description = "bool")>] 
          isRhoFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Reference to vegaWeighted")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "SabrInterpolatedSmileSection")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="Method",Description = "Reference to Method")>] 
+        ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "SabrInterpolatedSmileSection")>] 
          dc : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "SabrInterpolatedSmileSection")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -690,9 +690,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_update", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -726,9 +726,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_dayCounter", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -762,15 +762,15 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_density", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_density
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="gap",Description = "Reference to gap")>] 
+        ([<ExcelArgument(Name="gap",Description = "double")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -816,17 +816,17 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_digitalOptionPrice", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_digitalOptionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="gap",Description = "Reference to gap")>] 
+        ([<ExcelArgument(Name="gap",Description = "double")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -876,9 +876,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_exerciseDate", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_exerciseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -912,9 +912,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_exerciseTime", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_exerciseTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -948,15 +948,15 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_optionPrice", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_optionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1002,9 +1002,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_referenceDate", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1038,9 +1038,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_shift", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_shift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1074,11 +1074,11 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_variance", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1116,13 +1116,13 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_vega", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1164,15 +1164,15 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_volatility", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "Reference to volatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="shift",Description = "Reference to shift")>] 
+        ([<ExcelArgument(Name="shift",Description = "Helper.Range.fromModelList")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1218,11 +1218,11 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_volatility1", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1260,9 +1260,9 @@ module SabrInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_volatilityType", Description="Create a SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "Reference to SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="SabrInterpolatedSmileSection",Description = "SabrInterpolatedSmileSection")>] 
          sabrinterpolatedsmilesection : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1293,9 +1293,9 @@ module SabrInterpolatedSmileSectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SabrInterpolatedSmileSection_Range", Description="Create a range of SabrInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SabrInterpolatedSmileSection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SabrInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -44,7 +44,8 @@ type LineSearchBasedMethodModel
 (*
     Functions
 *)
-    let _LineSearchBasedMethod                     = cell (fun () -> new LineSearchBasedMethod (lineSearch.Value))
+    let mutable
+        _LineSearchBasedMethod                     = cell (fun () -> new LineSearchBasedMethod (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _LineSearchBasedMethod.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LineSearchBasedMethod)
@@ -52,13 +53,14 @@ type LineSearchBasedMethodModel
     casting 
 *)
     internal new () = new LineSearchBasedMethodModel(null)
-    member internal this.Inject v = _LineSearchBasedMethod.Value <- v
+    member internal this.Inject v = _LineSearchBasedMethod <- v
     static member Cast (p : ICell<LineSearchBasedMethod>) = 
         if p :? LineSearchBasedMethodModel then 
             p :?> LineSearchBasedMethodModel
         else
             let o = new LineSearchBasedMethodModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module ConjugateGradientFunction =
     *)
     [<ExcelFunction(Name="_ConjugateGradient", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ConjugateGradient")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "Reference to lineSearch")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "ConjugateGradient")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,13 +76,13 @@ module ConjugateGradientFunction =
     *)
     [<ExcelFunction(Name="_ConjugateGradient_minimize", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ConjugateGradient",Description = "Reference to ConjugateGradient")>] 
+        ([<ExcelArgument(Name="ConjugateGradient",Description = "ConjugateGradient")>] 
          conjugategradient : obj)
-        ([<ExcelArgument(Name="P",Description = "Reference to P")>] 
+        ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Reference to endCriteria")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,9 +121,9 @@ module ConjugateGradientFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConjugateGradient_Range", Description="Create a range of ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ConjugateGradient")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

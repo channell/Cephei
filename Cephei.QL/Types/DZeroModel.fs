@@ -46,7 +46,8 @@ type DZeroModel
 (*
     Functions
 *)
-    let _DZero                                     = cell (fun () -> new DZero (gridPoints.Value, h.Value))
+    let mutable
+        _DZero                                     = cell (fun () -> new DZero (gridPoints.Value, h.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _DZero.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -87,13 +88,14 @@ type DZeroModel
     casting 
 *)
     internal new () = new DZeroModel(null,null)
-    member internal this.Inject v = _DZero.Value <- v
+    member internal this.Inject v = _DZero <- v
     static member Cast (p : ICell<DZero>) = 
         if p :? DZeroModel then 
             p :?> DZeroModel
         else
             let o = new DZeroModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -41,7 +41,8 @@ type BicubicModel
 (*
     Functions
 *)
-    let _Bicubic                                   = cell (fun () -> new Bicubic ())
+    let mutable
+        _Bicubic                                   = cell (fun () -> new Bicubic ())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>) (ySize : ICell<int>) (zData : ICell<Matrix>)   
                                                    = triv (fun () -> _Bicubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value))
     do this.Bind(_Bicubic)
@@ -49,13 +50,14 @@ type BicubicModel
     casting 
 *)
     
-    member internal this.Inject v = _Bicubic.Value <- v
+    member internal this.Inject v = _Bicubic <- v
     static member Cast (p : ICell<Bicubic>) = 
         if p :? BicubicModel then 
             p :?> BicubicModel
         else
             let o = new BicubicModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

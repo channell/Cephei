@@ -41,7 +41,8 @@ type EURLibor10MModel
 (*
     Functions
 *)
-    let _EURLibor10M                               = cell (fun () -> new EURLibor10M ())
+    let mutable
+        _EURLibor10M                               = cell (fun () -> new EURLibor10M ())
     let _maturityDate                              (valueDate : ICell<Date>)   
                                                    = triv (fun () -> _EURLibor10M.Value.maturityDate(valueDate.Value))
     let _valueDate                                 (fixingDate : ICell<Date>)   
@@ -96,13 +97,14 @@ type EURLibor10MModel
     casting 
 *)
     
-    member internal this.Inject v = _EURLibor10M.Value <- v
+    member internal this.Inject v = _EURLibor10M <- v
     static member Cast (p : ICell<EURLibor10M>) = 
         if p :? EURLibor10MModel then 
             p :?> EURLibor10MModel
         else
             let o = new EURLibor10MModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -168,7 +170,8 @@ type EURLibor10MModel1
 (*
     Functions
 *)
-    let _EURLibor10M                               = cell (fun () -> new EURLibor10M (h.Value))
+    let mutable
+        _EURLibor10M                               = cell (fun () -> new EURLibor10M (h.Value))
     let _maturityDate                              (valueDate : ICell<Date>)   
                                                    = triv (fun () -> _EURLibor10M.Value.maturityDate(valueDate.Value))
     let _valueDate                                 (fixingDate : ICell<Date>)   
@@ -223,13 +226,14 @@ type EURLibor10MModel1
     casting 
 *)
     internal new () = new EURLibor10MModel1(null)
-    member internal this.Inject v = _EURLibor10M.Value <- v
+    member internal this.Inject v = _EURLibor10M <- v
     static member Cast (p : ICell<EURLibor10M>) = 
         if p :? EURLibor10MModel1 then 
             p :?> EURLibor10MModel1
         else
             let o = new EURLibor10MModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

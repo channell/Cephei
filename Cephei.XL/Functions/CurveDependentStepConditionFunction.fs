@@ -39,13 +39,13 @@ module CurveDependentStepConditionFunction =
     *)
     [<ExcelFunction(Name="_CurveDependentStepCondition_applyTo", Description="Create a CurveDependentStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CurveDependentStepCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CurveDependentStepCondition",Description = "Reference to CurveDependentStepCondition")>] 
+        ([<ExcelArgument(Name="CurveDependentStepCondition",Description = "CurveDependentStepCondition")>] 
          curvedependentstepcondition : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module CurveDependentStepConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CurveDependentStepCondition_Range", Description="Create a range of CurveDependentStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CurveDependentStepCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CurveDependentStepCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

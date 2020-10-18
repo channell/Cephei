@@ -61,7 +61,8 @@ type BotswanaModel
 (*
     Functions
 *)
-    let _Botswana                                  = cell (fun () -> new Botswana ())
+    let mutable
+        _Botswana                                  = cell (fun () -> new Botswana ())
     let _addedHolidays                             = triv (fun () -> _Botswana.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _Botswana.Value.addHoliday(d.Value)
@@ -98,13 +99,14 @@ type BotswanaModel
     casting 
 *)
     
-    member internal this.Inject v = _Botswana.Value <- v
+    member internal this.Inject v = _Botswana <- v
     static member Cast (p : ICell<Botswana>) = 
         if p :? BotswanaModel then 
             p :?> BotswanaModel
         else
             let o = new BotswanaModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

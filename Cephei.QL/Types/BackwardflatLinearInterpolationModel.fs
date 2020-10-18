@@ -52,7 +52,8 @@ type BackwardflatLinearInterpolationModel
 (*
     Functions
 *)
-    let _BackwardflatLinearInterpolation           = cell (fun () -> new BackwardflatLinearInterpolation (xBegin.Value, xEnd.Value, yBegin.Value, yEnd.Value, zData.Value))
+    let mutable
+        _BackwardflatLinearInterpolation           = cell (fun () -> new BackwardflatLinearInterpolation (xBegin.Value, xEnd.Value, yBegin.Value, yEnd.Value, zData.Value))
     let _isInRange                                 (x : ICell<double>) (y : ICell<double>)   
                                                    = triv (fun () -> _BackwardflatLinearInterpolation.Value.isInRange(x.Value, y.Value))
     let _locateX                                   (x : ICell<double>)   
@@ -85,13 +86,14 @@ type BackwardflatLinearInterpolationModel
     casting 
 *)
     internal new () = new BackwardflatLinearInterpolationModel(null,null,null,null,null)
-    member internal this.Inject v = _BackwardflatLinearInterpolation.Value <- v
+    member internal this.Inject v = _BackwardflatLinearInterpolation <- v
     static member Cast (p : ICell<BackwardflatLinearInterpolation>) = 
         if p :? BackwardflatLinearInterpolationModel then 
             p :?> BackwardflatLinearInterpolationModel
         else
             let o = new BackwardflatLinearInterpolationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -50,7 +50,8 @@ type CraigSneydSchemeModel
 (*
     Functions
 *)
-    let _CraigSneydScheme                          = cell (fun () -> new CraigSneydScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
+    let mutable
+        _CraigSneydScheme                          = cell (fun () -> new CraigSneydScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _CraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -64,13 +65,14 @@ type CraigSneydSchemeModel
     casting 
 *)
     internal new () = new CraigSneydSchemeModel(null,null,null,null)
-    member internal this.Inject v = _CraigSneydScheme.Value <- v
+    member internal this.Inject v = _CraigSneydScheme <- v
     static member Cast (p : ICell<CraigSneydScheme>) = 
         if p :? CraigSneydSchemeModel then 
             p :?> CraigSneydSchemeModel
         else
             let o = new CraigSneydSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -101,7 +103,8 @@ type CraigSneydSchemeModel1
 (*
     Functions
 *)
-    let _CraigSneydScheme                          = cell (fun () -> new CraigSneydScheme ())
+    let mutable
+        _CraigSneydScheme                          = cell (fun () -> new CraigSneydScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _CraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -115,13 +118,14 @@ type CraigSneydSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _CraigSneydScheme.Value <- v
+    member internal this.Inject v = _CraigSneydScheme <- v
     static member Cast (p : ICell<CraigSneydScheme>) = 
         if p :? CraigSneydSchemeModel1 then 
             p :?> CraigSneydSchemeModel1
         else
             let o = new CraigSneydSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

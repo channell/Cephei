@@ -50,7 +50,8 @@ type BlackStyleSwaptionEngineModel<'Spec when 'Spec :> ISwaptionEngineSpec and '
 (*
     Functions
 *)
-    let _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))
+    let mutable
+        _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
@@ -89,7 +90,8 @@ type BlackStyleSwaptionEngineModel1<'Spec when 'Spec :> ISwaptionEngineSpec and 
 (*
     Functions
 *)
-    let _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
+    let mutable
+        _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
@@ -129,7 +131,8 @@ type BlackStyleSwaptionEngineModel2<'Spec when 'Spec :> ISwaptionEngineSpec and 
 (*
     Functions
 *)
-    let _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
+    let mutable
+        _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
     let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)

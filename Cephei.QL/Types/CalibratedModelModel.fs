@@ -44,7 +44,8 @@ type CalibratedModelModel
 (*
     Functions
 *)
-    let _CalibratedModel                           = cell (fun () -> new CalibratedModel (nArguments.Value))
+    let mutable
+        _CalibratedModel                           = cell (fun () -> new CalibratedModel (nArguments.Value))
     let _calibrate                                 (instruments : ICell<Generic.List<CalibrationHelper>>) (Method : ICell<OptimizationMethod>) (endCriteria : ICell<EndCriteria>) (additionalConstraint : ICell<Constraint>) (weights : ICell<Generic.List<double>>) (fixParameters : ICell<Generic.List<bool>>)   
                                                    = triv (fun () -> _CalibratedModel.Value.calibrate(instruments.Value, Method.Value, endCriteria.Value, additionalConstraint.Value, weights.Value, fixParameters.Value)
                                                                      _CalibratedModel.Value)
@@ -71,13 +72,14 @@ type CalibratedModelModel
     casting 
 *)
     internal new () = new CalibratedModelModel(null)
-    member internal this.Inject v = _CalibratedModel.Value <- v
+    member internal this.Inject v = _CalibratedModel <- v
     static member Cast (p : ICell<CalibratedModel>) = 
         if p :? CalibratedModelModel then 
             p :?> CalibratedModelModel
         else
             let o = new CalibratedModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

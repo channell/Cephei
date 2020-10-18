@@ -52,7 +52,8 @@ type FdmDividendHandlerModel
 (*
     Functions
 *)
-    let _FdmDividendHandler                        = cell (fun () -> new FdmDividendHandler (schedule.Value, mesher.Value, referenceDate.Value, dayCounter.Value, equityDirection.Value))
+    let mutable
+        _FdmDividendHandler                        = cell (fun () -> new FdmDividendHandler (schedule.Value, mesher.Value, referenceDate.Value, dayCounter.Value, equityDirection.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmDividendHandler.Value.applyTo(o.Value, t.Value)
                                                                      _FdmDividendHandler.Value)
@@ -64,13 +65,14 @@ type FdmDividendHandlerModel
     casting 
 *)
     internal new () = new FdmDividendHandlerModel(null,null,null,null,null)
-    member internal this.Inject v = _FdmDividendHandler.Value <- v
+    member internal this.Inject v = _FdmDividendHandler <- v
     static member Cast (p : ICell<FdmDividendHandler>) = 
         if p :? FdmDividendHandlerModel then 
             p :?> FdmDividendHandlerModel
         else
             let o = new FdmDividendHandlerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

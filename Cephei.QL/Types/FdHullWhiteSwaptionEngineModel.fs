@@ -54,7 +54,8 @@ type FdHullWhiteSwaptionEngineModel
 (*
     Functions
 *)
-    let _FdHullWhiteSwaptionEngine                 = cell (fun () -> new FdHullWhiteSwaptionEngine (model.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, invEps.Value, schemeDesc.Value))
+    let mutable
+        _FdHullWhiteSwaptionEngine                 = cell (fun () -> new FdHullWhiteSwaptionEngine (model.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, invEps.Value, schemeDesc.Value))
     let _setModel                                  (model : ICell<Handle<HullWhite>>)   
                                                    = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.setModel(model.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
@@ -73,13 +74,14 @@ type FdHullWhiteSwaptionEngineModel
     casting 
 *)
     internal new () = new FdHullWhiteSwaptionEngineModel(null,null,null,null,null,null)
-    member internal this.Inject v = _FdHullWhiteSwaptionEngine.Value <- v
+    member internal this.Inject v = _FdHullWhiteSwaptionEngine <- v
     static member Cast (p : ICell<FdHullWhiteSwaptionEngine>) = 
         if p :? FdHullWhiteSwaptionEngineModel then 
             p :?> FdHullWhiteSwaptionEngineModel
         else
             let o = new FdHullWhiteSwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

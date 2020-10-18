@@ -39,9 +39,9 @@ module GammaDistributionFunction =
     *)
     [<ExcelFunction(Name="_GammaDistribution", Description="Create a GammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GammaDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GammaDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module GammaDistributionFunction =
     *)
     [<ExcelFunction(Name="_GammaDistribution_value", Description="Create a GammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GammaDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GammaDistribution",Description = "Reference to GammaDistribution")>] 
+        ([<ExcelArgument(Name="GammaDistribution",Description = "GammaDistribution")>] 
          gammadistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -115,9 +115,9 @@ module GammaDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GammaDistribution_Range", Description="Create a range of GammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GammaDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GammaDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "UKRPI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="ts",Description = "Reference to ts")>] 
+        ([<ExcelArgument(Name="ts",Description = "ZeroInflationTermStructure")>] 
          ts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI1", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "UKRPI")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="interpolated",Description = "Reference to interpolated")>] 
+        ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_clone", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "ZeroInflationTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,13 +161,13 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_fixing", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="aFixingDate",Description = "Reference to aFixingDate")>] 
+        ([<ExcelArgument(Name="aFixingDate",Description = "Date")>] 
          aFixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,9 +209,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_zeroInflationTermStructure", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,15 +245,15 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_addFixing", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="fixing",Description = "Reference to fixing")>] 
+        ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_availabilityLag", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,9 +336,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_currency", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,9 +372,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_familyName", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,9 +408,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_fixingCalendar", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -444,9 +444,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_frequency", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -480,9 +480,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_interpolated", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -516,11 +516,11 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_isValidFixingDate", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,9 +558,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_name", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_region", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -630,9 +630,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_revised", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -666,9 +666,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_update", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -702,15 +702,15 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_addFixings", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -756,13 +756,13 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_addFixings1", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -804,9 +804,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_allowsNativeFixings", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -840,9 +840,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_clearFixings", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -876,11 +876,11 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_registerWith", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -918,9 +918,9 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_timeSeries", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -954,11 +954,11 @@ module UKRPIFunction =
     *)
     [<ExcelFunction(Name="_UKRPI_unregisterWith", Description="Create a UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="UKRPI",Description = "Reference to UKRPI")>] 
+        ([<ExcelArgument(Name="UKRPI",Description = "UKRPI")>] 
          ukrpi : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -993,9 +993,9 @@ module UKRPIFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_UKRPI_Range", Description="Create a range of UKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UKRPI_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the UKRPI")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

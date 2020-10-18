@@ -41,7 +41,8 @@ type NullParameterModel
 (*
     Functions
 *)
-    let _NullParameter                             = cell (fun () -> new NullParameter ())
+    let mutable
+        _NullParameter                             = cell (fun () -> new NullParameter ())
     let _constraint                                = triv (fun () -> _NullParameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _NullParameter.Value.implementation())
     let _parameters                                = triv (fun () -> _NullParameter.Value.parameters())
@@ -58,13 +59,14 @@ type NullParameterModel
     casting 
 *)
     
-    member internal this.Inject v = _NullParameter.Value <- v
+    member internal this.Inject v = _NullParameter <- v
     static member Cast (p : ICell<NullParameter>) = 
         if p :? NullParameterModel then 
             p :?> NullParameterModel
         else
             let o = new NullParameterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

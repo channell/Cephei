@@ -39,11 +39,11 @@ module NormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_NormalDistribution_derivative", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NormalDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NormalDistribution",Description = "Reference to NormalDistribution")>] 
+        ([<ExcelArgument(Name="NormalDistribution",Description = "NormalDistribution")>] 
          normaldistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module NormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_NormalDistribution1", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NormalDistribution")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="average",Description = "Reference to average")>] 
+        ([<ExcelArgument(Name="average",Description = "double")>] 
          average : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,7 +124,7 @@ module NormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_NormalDistribution", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "NormalDistribution")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,11 +155,11 @@ module NormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_NormalDistribution_value", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="NormalDistribution",Description = "Reference to NormalDistribution")>] 
+        ([<ExcelArgument(Name="NormalDistribution",Description = "NormalDistribution")>] 
          normaldistribution : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -194,9 +194,9 @@ module NormalDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NormalDistribution_Range", Description="Create a range of NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the NormalDistribution")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

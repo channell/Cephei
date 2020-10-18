@@ -46,7 +46,8 @@ type DailyTenorEURLiborModel
 (*
     Functions
 *)
-    let _DailyTenorEURLibor                        = cell (fun () -> new DailyTenorEURLibor (settlementDays.Value, h.Value))
+    let mutable
+        _DailyTenorEURLibor                        = cell (fun () -> new DailyTenorEURLibor (settlementDays.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _DailyTenorEURLibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _DailyTenorEURLibor.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type DailyTenorEURLiborModel
     casting 
 *)
     internal new () = new DailyTenorEURLiborModel(null,null)
-    member internal this.Inject v = _DailyTenorEURLibor.Value <- v
+    member internal this.Inject v = _DailyTenorEURLibor <- v
     static member Cast (p : ICell<DailyTenorEURLibor>) = 
         if p :? DailyTenorEURLiborModel then 
             p :?> DailyTenorEURLiborModel
         else
             let o = new DailyTenorEURLiborModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -172,7 +174,8 @@ type DailyTenorEURLiborModel1
 (*
     Functions
 *)
-    let _DailyTenorEURLibor                        = cell (fun () -> new DailyTenorEURLibor ())
+    let mutable
+        _DailyTenorEURLibor                        = cell (fun () -> new DailyTenorEURLibor ())
     let _businessDayConvention                     = triv (fun () -> _DailyTenorEURLibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _DailyTenorEURLibor.Value.clone(forwarding.Value))
@@ -227,13 +230,14 @@ type DailyTenorEURLiborModel1
     casting 
 *)
     
-    member internal this.Inject v = _DailyTenorEURLibor.Value <- v
+    member internal this.Inject v = _DailyTenorEURLibor <- v
     static member Cast (p : ICell<DailyTenorEURLibor>) = 
         if p :? DailyTenorEURLiborModel1 then 
             p :?> DailyTenorEURLiborModel1
         else
             let o = new DailyTenorEURLiborModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -299,7 +303,8 @@ type DailyTenorEURLiborModel2
 (*
     Functions
 *)
-    let _DailyTenorEURLibor                        = cell (fun () -> new DailyTenorEURLibor (settlementDays.Value))
+    let mutable
+        _DailyTenorEURLibor                        = cell (fun () -> new DailyTenorEURLibor (settlementDays.Value))
     let _businessDayConvention                     = triv (fun () -> _DailyTenorEURLibor.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _DailyTenorEURLibor.Value.clone(forwarding.Value))
@@ -354,13 +359,14 @@ type DailyTenorEURLiborModel2
     casting 
 *)
     internal new () = new DailyTenorEURLiborModel2(null)
-    member internal this.Inject v = _DailyTenorEURLibor.Value <- v
+    member internal this.Inject v = _DailyTenorEURLibor <- v
     static member Cast (p : ICell<DailyTenorEURLibor>) = 
         if p :? DailyTenorEURLiborModel2 then 
             p :?> DailyTenorEURLiborModel2
         else
             let o = new DailyTenorEURLiborModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

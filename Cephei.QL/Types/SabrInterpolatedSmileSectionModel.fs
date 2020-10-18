@@ -81,7 +81,8 @@ type SabrInterpolatedSmileSectionModel
 (*
     Functions
 *)
-    let _SabrInterpolatedSmileSection              = cell (fun () -> new SabrInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, alpha.Value, beta.Value, nu.Value, rho.Value, isAlphaFixed.Value, isBetaFixed.Value, isNuFixed.Value, isRhoFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value, shift.Value))
+    let mutable
+        _SabrInterpolatedSmileSection              = cell (fun () -> new SabrInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, alpha.Value, beta.Value, nu.Value, rho.Value, isAlphaFixed.Value, isBetaFixed.Value, isNuFixed.Value, isRhoFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value, shift.Value))
     let _alpha                                     = triv (fun () -> _SabrInterpolatedSmileSection.Value.alpha())
     let _atmLevel                                  = triv (fun () -> _SabrInterpolatedSmileSection.Value.atmLevel())
     let _beta                                      = triv (fun () -> _SabrInterpolatedSmileSection.Value.beta())
@@ -119,13 +120,14 @@ type SabrInterpolatedSmileSectionModel
     casting 
 *)
     internal new () = new SabrInterpolatedSmileSectionModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SabrInterpolatedSmileSection.Value <- v
+    member internal this.Inject v = _SabrInterpolatedSmileSection <- v
     static member Cast (p : ICell<SabrInterpolatedSmileSection>) = 
         if p :? SabrInterpolatedSmileSectionModel then 
             p :?> SabrInterpolatedSmileSectionModel
         else
             let o = new SabrInterpolatedSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -235,7 +237,8 @@ type SabrInterpolatedSmileSectionModel1
 (*
     Functions
 *)
-    let _SabrInterpolatedSmileSection              = cell (fun () -> new SabrInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, alpha.Value, beta.Value, nu.Value, rho.Value, isAlphaFixed.Value, isBetaFixed.Value, isNuFixed.Value, isRhoFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value, shift.Value))
+    let mutable
+        _SabrInterpolatedSmileSection              = cell (fun () -> new SabrInterpolatedSmileSection (optionDate.Value, forward.Value, strikes.Value, hasFloatingStrikes.Value, atmVolatility.Value, volHandles.Value, alpha.Value, beta.Value, nu.Value, rho.Value, isAlphaFixed.Value, isBetaFixed.Value, isNuFixed.Value, isRhoFixed.Value, vegaWeighted.Value, endCriteria.Value, Method.Value, dc.Value, shift.Value))
     let _alpha                                     = triv (fun () -> _SabrInterpolatedSmileSection.Value.alpha())
     let _atmLevel                                  = triv (fun () -> _SabrInterpolatedSmileSection.Value.atmLevel())
     let _beta                                      = triv (fun () -> _SabrInterpolatedSmileSection.Value.beta())
@@ -273,13 +276,14 @@ type SabrInterpolatedSmileSectionModel1
     casting 
 *)
     internal new () = new SabrInterpolatedSmileSectionModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SabrInterpolatedSmileSection.Value <- v
+    member internal this.Inject v = _SabrInterpolatedSmileSection <- v
     static member Cast (p : ICell<SabrInterpolatedSmileSection>) = 
         if p :? SabrInterpolatedSmileSectionModel1 then 
             p :?> SabrInterpolatedSmileSectionModel1
         else
             let o = new SabrInterpolatedSmileSectionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

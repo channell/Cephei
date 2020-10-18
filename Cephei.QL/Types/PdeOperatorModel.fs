@@ -46,7 +46,8 @@ type PdeOperatorModel<'PdeClass when 'PdeClass :> PdeSecondOrderParabolic and 'P
 (*
     Functions
 *)
-    let _PdeOperator                               = cell (fun () -> new PdeOperator<'PdeClass> (grid.Value, Process.Value))
+    let mutable
+        _PdeOperator                               = cell (fun () -> new PdeOperator<'PdeClass> (grid.Value, Process.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _PdeOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   
@@ -140,7 +141,8 @@ type PdeOperatorModel1<'PdeClass when 'PdeClass :> PdeSecondOrderParabolic and '
 (*
     Functions
 *)
-    let _PdeOperator                               = cell (fun () -> new PdeOperator<'PdeClass> (grid.Value, Process.Value, residualTime.Value))
+    let mutable
+        _PdeOperator                               = cell (fun () -> new PdeOperator<'PdeClass> (grid.Value, Process.Value, residualTime.Value))
     let _add                                       (A : ICell<IOperator>) (B : ICell<IOperator>)   
                                                    = triv (fun () -> _PdeOperator.Value.add(A.Value, B.Value))
     let _applyTo                                   (v : ICell<Vector>)   

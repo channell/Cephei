@@ -44,7 +44,8 @@ type SobolRsgModel
 (*
     Functions
 *)
-    let _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value))
+    let mutable
+        _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value))
     let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
@@ -59,13 +60,14 @@ type SobolRsgModel
     casting 
 *)
     internal new () = new SobolRsgModel(null)
-    member internal this.Inject v = _SobolRsg.Value <- v
+    member internal this.Inject v = _SobolRsg <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel then 
             p :?> SobolRsgModel
         else
             let o = new SobolRsgModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -95,7 +97,8 @@ type SobolRsgModel1
 (*
     Functions
 *)
-    let _SobolRsg                                  = cell (fun () -> new SobolRsg ())
+    let mutable
+        _SobolRsg                                  = cell (fun () -> new SobolRsg ())
     let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
@@ -110,13 +113,14 @@ type SobolRsgModel1
     casting 
 *)
     
-    member internal this.Inject v = _SobolRsg.Value <- v
+    member internal this.Inject v = _SobolRsg <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel1 then 
             p :?> SobolRsgModel1
         else
             let o = new SobolRsgModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -152,7 +156,8 @@ type SobolRsgModel2
 (*
     Functions
 *)
-    let _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value, seed.Value, directionIntegers.Value))
+    let mutable
+        _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value, seed.Value, directionIntegers.Value))
     let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
@@ -167,13 +172,14 @@ type SobolRsgModel2
     casting 
 *)
     internal new () = new SobolRsgModel2(null,null,null)
-    member internal this.Inject v = _SobolRsg.Value <- v
+    member internal this.Inject v = _SobolRsg <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel2 then 
             p :?> SobolRsgModel2
         else
             let o = new SobolRsgModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -210,7 +216,8 @@ type SobolRsgModel3
 (*
     Functions
 *)
-    let _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value, seed.Value))
+    let mutable
+        _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value, seed.Value))
     let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
                                                    = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
@@ -225,13 +232,14 @@ type SobolRsgModel3
     casting 
 *)
     internal new () = new SobolRsgModel3(null,null)
-    member internal this.Inject v = _SobolRsg.Value <- v
+    member internal this.Inject v = _SobolRsg <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel3 then 
             p :?> SobolRsgModel3
         else
             let o = new SobolRsgModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_accuracy_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_accuracy_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_baseDate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_Clone", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_data", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_data_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_dates", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,9 +255,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_dates_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -291,13 +291,13 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_discountImpl", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -339,13 +339,13 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_forwardImpl", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -387,9 +387,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_forwards", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_forwards
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -423,17 +423,17 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_guess", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -483,11 +483,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_initialDate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YoYInflationTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -525,9 +525,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_initialDate1", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_initialDate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -561,9 +561,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_initialValue1", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_initialValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -597,11 +597,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_initialValue", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YoYInflationTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -639,9 +639,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_instruments_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_instruments_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -675,9 +675,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_interpolation_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -711,9 +711,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_interpolator_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -747,9 +747,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_maxDate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -783,9 +783,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_maxDate_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,9 +819,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_maxIterations", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -855,17 +855,17 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_maxValueAfter", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -915,17 +915,17 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_minValueAfter", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -975,9 +975,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_moving_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_moving_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1011,9 +1011,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_nodes", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1047,7 +1047,7 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve3", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1078,19 +1078,19 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="baseZeroRate",Description = "Reference to baseZeroRate")>] 
+        ([<ExcelArgument(Name="baseZeroRate",Description = "double")>] 
          baseZeroRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1145,23 +1145,23 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve1", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="baseZeroRate",Description = "Reference to baseZeroRate")>] 
+        ([<ExcelArgument(Name="baseZeroRate",Description = "double")>] 
          baseZeroRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1224,23 +1224,23 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve2", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYoYInflationCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="baseZeroRate",Description = "Reference to baseZeroRate")>] 
+        ([<ExcelArgument(Name="baseZeroRate",Description = "double")>] 
          baseZeroRate : obj)
-        ([<ExcelArgument(Name="observationLag",Description = "Reference to observationLag")>] 
+        ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Reference to frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="indexIsInterpolated",Description = "Reference to indexIsInterpolated")>] 
+        ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="yTS",Description = "Reference to yTS")>] 
+        ([<ExcelArgument(Name="yTS",Description = "YieldTermStructure")>] 
          yTS : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1303,9 +1303,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_rates", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_rates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1339,11 +1339,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_registerWith", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "YoYInflationTermStructure")>] 
          helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1381,11 +1381,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_setTermStructure", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "YoYInflationTermStructure")>] 
          helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1423,9 +1423,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_setupInterpolation", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1459,9 +1459,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_times", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1495,9 +1495,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_times_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1531,9 +1531,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_traits_", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_traits_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1567,15 +1567,15 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_updateGuess", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1621,13 +1621,13 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_zeroYieldImpl", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1669,17 +1669,17 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_yoyRate1", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_yoyRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1729,15 +1729,15 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_yoyRate3", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_yoyRate3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
-        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "Reference to forceLinearInterpolation")>] 
+        ([<ExcelArgument(Name="forceLinearInterpolation",Description = "bool")>] 
          forceLinearInterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1783,13 +1783,13 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_yoyRate2", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_yoyRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="instObsLag",Description = "Reference to instObsLag")>] 
+        ([<ExcelArgument(Name="instObsLag",Description = "Period")>] 
          instObsLag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1831,11 +1831,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_yoyRate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_yoyRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1873,9 +1873,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_baseRate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_baseRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1909,9 +1909,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_frequency", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1945,9 +1945,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_hasSeasonality", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_hasSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1981,9 +1981,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_indexIsInterpolated", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_indexIsInterpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2017,9 +2017,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_nominalTermStructure", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_nominalTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2053,9 +2053,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_observationLag", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2089,9 +2089,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_seasonality", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_seasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Seasonality")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2125,11 +2125,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_setSeasonality", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_setSeasonality
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="seasonality",Description = "Reference to seasonality")>] 
+        ([<ExcelArgument(Name="seasonality",Description = "Seasonality")>] 
          seasonality : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2167,9 +2167,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_calendar", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2203,9 +2203,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_dayCounter", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2239,9 +2239,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_maxTime", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2275,9 +2275,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_referenceDate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2311,9 +2311,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_settlementDays", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2347,11 +2347,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_timeFromReference", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2389,9 +2389,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_update", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2425,9 +2425,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_allowsExtrapolation", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2461,11 +2461,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_disableExtrapolation", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2503,11 +2503,11 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_enableExtrapolation", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2545,9 +2545,9 @@ module PiecewiseYoYInflationCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_extrapolate", Description="Create a PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "Reference to PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYoYInflationCurve",Description = "PiecewiseYoYInflationCurve")>] 
          piecewiseyoyinflationcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2578,9 +2578,9 @@ module PiecewiseYoYInflationCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PiecewiseYoYInflationCurve_Range", Description="Create a range of PiecewiseYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYoYInflationCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PiecewiseYoYInflationCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

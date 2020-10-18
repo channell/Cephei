@@ -41,7 +41,8 @@ type GenericRiskStatisticsModel<'Stat when 'Stat :> IGeneralStatistics and 'Stat
 (*
     Functions
 *)
-    let _GenericRiskStatistics                     = cell (fun () -> new GenericRiskStatistics<'Stat> ())
+    let mutable
+        _GenericRiskStatistics                     = cell (fun () -> new GenericRiskStatistics<'Stat> ())
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _GenericRiskStatistics.Value.add(value.Value, weight.Value)
                                                                      _GenericRiskStatistics.Value)

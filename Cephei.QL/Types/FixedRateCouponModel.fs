@@ -60,7 +60,8 @@ type FixedRateCouponModel
 (*
     Functions
 *)
-    let _FixedRateCoupon                           = cell (fun () -> new FixedRateCoupon (paymentDate.Value, nominal.Value, interestRate.Value, accrualStartDate.Value, accrualEndDate.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value, amount.Value))
+    let mutable
+        _FixedRateCoupon                           = cell (fun () -> new FixedRateCoupon (paymentDate.Value, nominal.Value, interestRate.Value, accrualStartDate.Value, accrualEndDate.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value, amount.Value))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _FixedRateCoupon.Value.accruedAmount(d.Value))
     let _amount                                    = triv (fun () -> _FixedRateCoupon.Value.amount())
@@ -102,13 +103,14 @@ type FixedRateCouponModel
     casting 
 *)
     internal new () = new FixedRateCouponModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateCoupon.Value <- v
+    member internal this.Inject v = _FixedRateCoupon <- v
     static member Cast (p : ICell<FixedRateCoupon>) = 
         if p :? FixedRateCouponModel then 
             p :?> FixedRateCouponModel
         else
             let o = new FixedRateCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -190,7 +192,8 @@ type FixedRateCouponModel1
 (*
     Functions
 *)
-    let _FixedRateCoupon                           = cell (fun () -> new FixedRateCoupon (paymentDate.Value, nominal.Value, rate.Value, dayCounter.Value, accrualStartDate.Value, accrualEndDate.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value))
+    let mutable
+        _FixedRateCoupon                           = cell (fun () -> new FixedRateCoupon (paymentDate.Value, nominal.Value, rate.Value, dayCounter.Value, accrualStartDate.Value, accrualEndDate.Value, refPeriodStart.Value, refPeriodEnd.Value, exCouponDate.Value))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> _FixedRateCoupon.Value.accruedAmount(d.Value))
     let _amount                                    = triv (fun () -> _FixedRateCoupon.Value.amount())
@@ -232,13 +235,14 @@ type FixedRateCouponModel1
     casting 
 *)
     internal new () = new FixedRateCouponModel1(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FixedRateCoupon.Value <- v
+    member internal this.Inject v = _FixedRateCoupon <- v
     static member Cast (p : ICell<FixedRateCoupon>) = 
         if p :? FixedRateCouponModel1 then 
             p :?> FixedRateCouponModel1
         else
             let o = new FixedRateCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

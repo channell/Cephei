@@ -58,7 +58,8 @@ type PiecewiseZeroInflationCurveModel
 (*
     Functions
 *)
-    let _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve (referenceDate.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
+    let mutable
+        _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve (referenceDate.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseZeroInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseZeroInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseZeroInflationCurve.Value.Clone())
@@ -148,13 +149,14 @@ type PiecewiseZeroInflationCurveModel
     casting 
 *)
     internal new () = new PiecewiseZeroInflationCurveModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseZeroInflationCurve <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel then 
             p :?> PiecewiseZeroInflationCurveModel
         else
             let o = new PiecewiseZeroInflationCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -276,7 +278,8 @@ type PiecewiseZeroInflationCurveModel1
 (*
     Functions
 *)
-    let _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve (settlementDays.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
+    let mutable
+        _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve (settlementDays.Value, calendar.Value, dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseZeroInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseZeroInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseZeroInflationCurve.Value.Clone())
@@ -366,13 +369,14 @@ type PiecewiseZeroInflationCurveModel1
     casting 
 *)
     internal new () = new PiecewiseZeroInflationCurveModel1(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseZeroInflationCurve <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel1 then 
             p :?> PiecewiseZeroInflationCurveModel1
         else
             let o = new PiecewiseZeroInflationCurveModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -490,7 +494,8 @@ type PiecewiseZeroInflationCurveModel2
 (*
     Functions
 *)
-    let _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve (dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
+    let mutable
+        _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve (dayCounter.Value, baseZeroRate.Value, observationLag.Value, frequency.Value, indexIsInterpolated.Value, yTS.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseZeroInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseZeroInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseZeroInflationCurve.Value.Clone())
@@ -580,13 +585,14 @@ type PiecewiseZeroInflationCurveModel2
     casting 
 *)
     internal new () = new PiecewiseZeroInflationCurveModel2(null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseZeroInflationCurve <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel2 then 
             p :?> PiecewiseZeroInflationCurveModel2
         else
             let o = new PiecewiseZeroInflationCurveModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -689,7 +695,8 @@ type PiecewiseZeroInflationCurveModel3
 (*
     Functions
 *)
-    let _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve ())
+    let mutable
+        _PiecewiseZeroInflationCurve               = cell (fun () -> new PiecewiseZeroInflationCurve ())
     let _accuracy_                                 = triv (fun () -> _PiecewiseZeroInflationCurve.Value.accuracy_)
     let _baseDate                                  = triv (fun () -> _PiecewiseZeroInflationCurve.Value.baseDate())
     let _Clone                                     = triv (fun () -> _PiecewiseZeroInflationCurve.Value.Clone())
@@ -779,13 +786,14 @@ type PiecewiseZeroInflationCurveModel3
     casting 
 *)
     
-    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    member internal this.Inject v = _PiecewiseZeroInflationCurve <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel3 then 
             p :?> PiecewiseZeroInflationCurveModel3
         else
             let o = new PiecewiseZeroInflationCurveModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

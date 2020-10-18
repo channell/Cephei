@@ -44,7 +44,8 @@ type CumulativeGammaDistributionModel
 (*
     Functions
 *)
-    let _CumulativeGammaDistribution               = cell (fun () -> new CumulativeGammaDistribution (a.Value))
+    let mutable
+        _CumulativeGammaDistribution               = cell (fun () -> new CumulativeGammaDistribution (a.Value))
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _CumulativeGammaDistribution.Value.value(x.Value))
     do this.Bind(_CumulativeGammaDistribution)
@@ -52,13 +53,14 @@ type CumulativeGammaDistributionModel
     casting 
 *)
     internal new () = new CumulativeGammaDistributionModel(null)
-    member internal this.Inject v = _CumulativeGammaDistribution.Value <- v
+    member internal this.Inject v = _CumulativeGammaDistribution <- v
     static member Cast (p : ICell<CumulativeGammaDistribution>) = 
         if p :? CumulativeGammaDistributionModel then 
             p :?> CumulativeGammaDistributionModel
         else
             let o = new CumulativeGammaDistributionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

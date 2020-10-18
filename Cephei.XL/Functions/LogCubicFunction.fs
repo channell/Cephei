@@ -39,9 +39,9 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic_global", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubic",Description = "Reference to LogCubic")>] 
+        ([<ExcelArgument(Name="LogCubic",Description = "LogCubic")>] 
          logcubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic_interpolate", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubic",Description = "Reference to LogCubic")>] 
+        ([<ExcelArgument(Name="LogCubic",Description = "LogCubic")>] 
          logcubic : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,19 +129,19 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LogCubic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="da",Description = "Reference to da")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
          da : obj)
-        ([<ExcelArgument(Name="monotonic",Description = "Reference to monotonic")>] 
+        ([<ExcelArgument(Name="monotonic",Description = "bool")>] 
          monotonic : obj)
-        ([<ExcelArgument(Name="leftCondition",Description = "Reference to leftCondition")>] 
+        ([<ExcelArgument(Name="leftCondition",Description = "CubicInterpolation.BoundaryCondition")>] 
          leftCondition : obj)
-        ([<ExcelArgument(Name="leftConditionValue",Description = "Reference to leftConditionValue")>] 
+        ([<ExcelArgument(Name="leftConditionValue",Description = "double")>] 
          leftConditionValue : obj)
-        ([<ExcelArgument(Name="rightCondition",Description = "Reference to rightCondition")>] 
+        ([<ExcelArgument(Name="rightCondition",Description = "CubicInterpolation.BoundaryCondition")>] 
          rightCondition : obj)
-        ([<ExcelArgument(Name="rightConditionValue",Description = "Reference to rightConditionValue")>] 
+        ([<ExcelArgument(Name="rightConditionValue",Description = "double")>] 
          rightConditionValue : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,7 +196,7 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic1", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LogCubic")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,9 +227,9 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic_requiredPoints", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LogCubic",Description = "Reference to LogCubic")>] 
+        ([<ExcelArgument(Name="LogCubic",Description = "LogCubic")>] 
          logcubic : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module LogCubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LogCubic_Range", Description="Create a range of LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LogCubic")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

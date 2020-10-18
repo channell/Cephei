@@ -48,7 +48,8 @@ type GeometricBrownianMotionProcessModel
 (*
     Functions
 *)
-    let _GeometricBrownianMotionProcess            = cell (fun () -> new GeometricBrownianMotionProcess (initialValue.Value, mue.Value, sigma.Value))
+    let mutable
+        _GeometricBrownianMotionProcess            = cell (fun () -> new GeometricBrownianMotionProcess (initialValue.Value, mue.Value, sigma.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
                                                    = triv (fun () -> _GeometricBrownianMotionProcess.Value.diffusion(t.Value, x.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<double>)   
@@ -94,13 +95,14 @@ type GeometricBrownianMotionProcessModel
     casting 
 *)
     internal new () = new GeometricBrownianMotionProcessModel(null,null,null)
-    member internal this.Inject v = _GeometricBrownianMotionProcess.Value <- v
+    member internal this.Inject v = _GeometricBrownianMotionProcess <- v
     static member Cast (p : ICell<GeometricBrownianMotionProcess>) = 
         if p :? GeometricBrownianMotionProcessModel then 
             p :?> GeometricBrownianMotionProcessModel
         else
             let o = new GeometricBrownianMotionProcessModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

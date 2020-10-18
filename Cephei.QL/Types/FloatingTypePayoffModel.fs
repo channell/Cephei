@@ -44,7 +44,8 @@ type FloatingTypePayoffModel
 (*
     Functions
 *)
-    let _FloatingTypePayoff                        = cell (fun () -> new FloatingTypePayoff (Type.Value))
+    let mutable
+        _FloatingTypePayoff                        = cell (fun () -> new FloatingTypePayoff (Type.Value))
     let _name                                      = triv (fun () -> _FloatingTypePayoff.Value.name())
     let _value                                     (k : ICell<double>)   
                                                    = triv (fun () -> _FloatingTypePayoff.Value.value(k.Value))
@@ -58,13 +59,14 @@ type FloatingTypePayoffModel
     casting 
 *)
     internal new () = new FloatingTypePayoffModel(null)
-    member internal this.Inject v = _FloatingTypePayoff.Value <- v
+    member internal this.Inject v = _FloatingTypePayoff <- v
     static member Cast (p : ICell<FloatingTypePayoff>) = 
         if p :? FloatingTypePayoffModel then 
             p :?> FloatingTypePayoffModel
         else
             let o = new FloatingTypePayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

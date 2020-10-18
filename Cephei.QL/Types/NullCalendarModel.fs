@@ -41,7 +41,8 @@ type NullCalendarModel
 (*
     Functions
 *)
-    let _NullCalendar                              = cell (fun () -> new NullCalendar ())
+    let mutable
+        _NullCalendar                              = cell (fun () -> new NullCalendar ())
     let _addedHolidays                             = triv (fun () -> _NullCalendar.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _NullCalendar.Value.addHoliday(d.Value)
@@ -78,13 +79,14 @@ type NullCalendarModel
     casting 
 *)
     
-    member internal this.Inject v = _NullCalendar.Value <- v
+    member internal this.Inject v = _NullCalendar <- v
     static member Cast (p : ICell<NullCalendar>) = 
         if p :? NullCalendarModel then 
             p :?> NullCalendarModel
         else
             let o = new NullCalendarModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

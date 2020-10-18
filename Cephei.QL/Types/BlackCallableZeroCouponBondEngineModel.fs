@@ -46,19 +46,21 @@ type BlackCallableZeroCouponBondEngineModel
 (*
     Functions
 *)
-    let _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))
+    let mutable
+        _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 (* 
     casting 
 *)
     internal new () = new BlackCallableZeroCouponBondEngineModel(null,null)
-    member internal this.Inject v = _BlackCallableZeroCouponBondEngine.Value <- v
+    member internal this.Inject v = _BlackCallableZeroCouponBondEngine <- v
     static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
         if p :? BlackCallableZeroCouponBondEngineModel then 
             p :?> BlackCallableZeroCouponBondEngineModel
         else
             let o = new BlackCallableZeroCouponBondEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -86,19 +88,21 @@ type BlackCallableZeroCouponBondEngineModel1
 (*
     Functions
 *)
-    let _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))
+    let mutable
+        _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 (* 
     casting 
 *)
     internal new () = new BlackCallableZeroCouponBondEngineModel1(null,null)
-    member internal this.Inject v = _BlackCallableZeroCouponBondEngine.Value <- v
+    member internal this.Inject v = _BlackCallableZeroCouponBondEngine <- v
     static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
         if p :? BlackCallableZeroCouponBondEngineModel1 then 
             p :?> BlackCallableZeroCouponBondEngineModel1
         else
             let o = new BlackCallableZeroCouponBondEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

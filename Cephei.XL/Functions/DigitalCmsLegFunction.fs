@@ -39,11 +39,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "SwapIndex")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,11 +82,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_inArrears1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_inArrears1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_inArrears", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_inArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_value", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withCallATM", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallATM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,11 +232,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withCallATM1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallATM1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withCallPayoffs1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallPayoffs1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="payoffs",Description = "Reference to payoffs")>] 
+        ([<ExcelArgument(Name="payoffs",Description = "double")>] 
          payoffs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,11 +316,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withCallPayoffs", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallPayoffs
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "double")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,11 +358,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withCallStrikes1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallStrikes1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,11 +400,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withCallStrikes", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,11 +442,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withFixingDays1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,11 +484,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withFixingDays", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,11 +526,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withGearings", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "Reference to gearings")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,11 +568,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withGearings1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double")>] 
          gearing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withLongCallOption", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withLongCallOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,11 +652,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withLongPutOption", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withLongPutOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,11 +694,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withNotionals1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -736,11 +736,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withNotionals", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,11 +778,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPaymentAdjustment", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,11 +820,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPaymentDayCounter", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,11 +862,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPutATM", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutATM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,9 +904,9 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPutATM1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutATM1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,11 +940,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPutPayoffs", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutPayoffs
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="payoffs",Description = "Reference to payoffs")>] 
+        ([<ExcelArgument(Name="payoffs",Description = "double")>] 
          payoffs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,11 +982,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPutPayoffs1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutPayoffs1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "double")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1024,11 +1024,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPutStrikes", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,11 +1066,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withPutStrikes1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutStrikes1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1108,11 +1108,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withReplication", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withReplication
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="replication",Description = "Reference to replication")>] 
+        ([<ExcelArgument(Name="replication",Description = "DigitalReplication")>] 
          replication : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1150,9 +1150,9 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withReplication1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withReplication1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1186,11 +1186,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withSpreads1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Reference to spreads")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1228,11 +1228,11 @@ module DigitalCmsLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalCmsLeg_withSpreads", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCmsLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "Reference to DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="DigitalCmsLeg",Description = "DigitalCmsLeg")>] 
          digitalcmsleg : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1267,9 +1267,9 @@ module DigitalCmsLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DigitalCmsLeg_Range", Description="Create a range of DigitalCmsLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCmsLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DigitalCmsLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

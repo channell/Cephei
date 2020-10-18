@@ -60,7 +60,8 @@ type PiecewiseTimeDependentHestonModelModel
 (*
     Functions
 *)
-    let _PiecewiseTimeDependentHestonModel         = cell (fun () -> new PiecewiseTimeDependentHestonModel (riskFreeRate.Value, dividendYield.Value, s0.Value, v0.Value, theta.Value, kappa.Value, sigma.Value, rho.Value, timeGrid.Value))
+    let mutable
+        _PiecewiseTimeDependentHestonModel         = cell (fun () -> new PiecewiseTimeDependentHestonModel (riskFreeRate.Value, dividendYield.Value, s0.Value, v0.Value, theta.Value, kappa.Value, sigma.Value, rho.Value, timeGrid.Value))
     let _dividendYield                             = triv (fun () -> _PiecewiseTimeDependentHestonModel.Value.dividendYield())
     let _kappa                                     (t : ICell<double>)   
                                                    = triv (fun () -> _PiecewiseTimeDependentHestonModel.Value.kappa(t.Value))
@@ -100,13 +101,14 @@ type PiecewiseTimeDependentHestonModelModel
     casting 
 *)
     internal new () = new PiecewiseTimeDependentHestonModelModel(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _PiecewiseTimeDependentHestonModel.Value <- v
+    member internal this.Inject v = _PiecewiseTimeDependentHestonModel <- v
     static member Cast (p : ICell<PiecewiseTimeDependentHestonModel>) = 
         if p :? PiecewiseTimeDependentHestonModelModel then 
             p :?> PiecewiseTimeDependentHestonModelModel
         else
             let o = new PiecewiseTimeDependentHestonModelModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

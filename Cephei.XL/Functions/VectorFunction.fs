@@ -39,9 +39,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_Clone", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
+        ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_empty", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
+        ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,11 +111,11 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_Equals", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
+        ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,11 +153,11 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_Equals1", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Equals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
+        ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
-        ([<ExcelArgument(Name="other",Description = "Reference to other")>] 
+        ([<ExcelArgument(Name="other",Description = "Vector")>] 
          other : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,9 +195,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_size", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
+        ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -231,13 +231,13 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_swap", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
+        ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
-        ([<ExcelArgument(Name="i1",Description = "Reference to i1")>] 
+        ([<ExcelArgument(Name="i1",Description = "int")>] 
          i1 : obj)
-        ([<ExcelArgument(Name="i2",Description = "Reference to i2")>] 
+        ([<ExcelArgument(Name="i2",Description = "int")>] 
          i2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector1", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "double")>] 
          from : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,7 +316,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -347,9 +347,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector4", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -384,11 +384,11 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector5", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -427,9 +427,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector2", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+        ([<ExcelArgument(Name="from",Description = "Vector")>] 
          from : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -464,13 +464,13 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector3", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+        ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
-        ([<ExcelArgument(Name="increment",Description = "Reference to increment")>] 
+        ([<ExcelArgument(Name="increment",Description = "double")>] 
          increment : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -510,9 +510,9 @@ module VectorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Vector_Range", Description="Create a range of Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Vector")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

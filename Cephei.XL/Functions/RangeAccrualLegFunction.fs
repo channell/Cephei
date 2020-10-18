@@ -39,9 +39,9 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_Leg", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_Leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withFixingDays", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withFixingDays1", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,11 +202,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withGearings", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "Reference to gearings")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withGearings1", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double")>] 
          gearing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withLowerTriggers", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withLowerTriggers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="triggers",Description = "Reference to triggers")>] 
+        ([<ExcelArgument(Name="triggers",Description = "double")>] 
          triggers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,11 +328,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withLowerTriggers1", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withLowerTriggers1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="trigger",Description = "Reference to trigger")>] 
+        ([<ExcelArgument(Name="trigger",Description = "double")>] 
          trigger : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,11 +370,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withNotionals1", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,11 +412,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withNotionals", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,11 +454,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withObservationConvention", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withObservationConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -496,11 +496,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withObservationTenor", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withObservationTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,11 +538,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withPaymentAdjustment", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,11 +580,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withPaymentDayCounter", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -622,11 +622,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withSpreads", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Reference to spreads")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,11 +664,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withSpreads1", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,11 +706,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withUpperTriggers1", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withUpperTriggers1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="triggers",Description = "Reference to triggers")>] 
+        ([<ExcelArgument(Name="triggers",Description = "double")>] 
          triggers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,11 +748,11 @@ module RangeAccrualLegFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualLeg_withUpperTriggers", Description="Create a RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_withUpperTriggers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "Reference to RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="trigger",Description = "Reference to trigger")>] 
+        ([<ExcelArgument(Name="trigger",Description = "double")>] 
          trigger : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -787,9 +787,9 @@ module RangeAccrualLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RangeAccrualLeg_Range", Description="Create a range of RangeAccrualLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the RangeAccrualLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

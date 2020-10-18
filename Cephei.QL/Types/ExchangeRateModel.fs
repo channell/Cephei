@@ -48,7 +48,8 @@ type ExchangeRateModel
 (*
     Functions
 *)
-    let _ExchangeRate                              = cell (fun () -> new ExchangeRate (source.Value, target.Value, rate.Value))
+    let mutable
+        _ExchangeRate                              = cell (fun () -> new ExchangeRate (source.Value, target.Value, rate.Value))
     let _exchange                                  (amount : ICell<Money>)   
                                                    = triv (fun () -> _ExchangeRate.Value.exchange(amount.Value))
     let _HasValue                                  = triv (fun () -> _ExchangeRate.Value.HasValue)
@@ -61,13 +62,14 @@ type ExchangeRateModel
     casting 
 *)
     internal new () = new ExchangeRateModel(null,null,null)
-    member internal this.Inject v = _ExchangeRate.Value <- v
+    member internal this.Inject v = _ExchangeRate <- v
     static member Cast (p : ICell<ExchangeRate>) = 
         if p :? ExchangeRateModel then 
             p :?> ExchangeRateModel
         else
             let o = new ExchangeRateModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type ExchangeRateModel1
 (*
     Functions
 *)
-    let _ExchangeRate                              = cell (fun () -> new ExchangeRate ())
+    let mutable
+        _ExchangeRate                              = cell (fun () -> new ExchangeRate ())
     let _exchange                                  (amount : ICell<Money>)   
                                                    = triv (fun () -> _ExchangeRate.Value.exchange(amount.Value))
     let _HasValue                                  = triv (fun () -> _ExchangeRate.Value.HasValue)
@@ -111,13 +114,14 @@ type ExchangeRateModel1
     casting 
 *)
     
-    member internal this.Inject v = _ExchangeRate.Value <- v
+    member internal this.Inject v = _ExchangeRate <- v
     static member Cast (p : ICell<ExchangeRate>) = 
         if p :? ExchangeRateModel1 then 
             p :?> ExchangeRateModel1
         else
             let o = new ExchangeRateModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

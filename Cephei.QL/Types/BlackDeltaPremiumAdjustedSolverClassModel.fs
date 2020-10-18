@@ -56,7 +56,8 @@ type BlackDeltaPremiumAdjustedSolverClassModel
 (*
     Functions
 *)
-    let _BlackDeltaPremiumAdjustedSolverClass      = cell (fun () -> new BlackDeltaPremiumAdjustedSolverClass (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value, delta.Value))
+    let mutable
+        _BlackDeltaPremiumAdjustedSolverClass      = cell (fun () -> new BlackDeltaPremiumAdjustedSolverClass (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value, delta.Value))
     let _value                                     (strike : ICell<double>)   
                                                    = triv (fun () -> _BlackDeltaPremiumAdjustedSolverClass.Value.value(strike.Value))
     let _derivative                                (x : ICell<double>)   
@@ -66,13 +67,14 @@ type BlackDeltaPremiumAdjustedSolverClassModel
     casting 
 *)
     internal new () = new BlackDeltaPremiumAdjustedSolverClassModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _BlackDeltaPremiumAdjustedSolverClass.Value <- v
+    member internal this.Inject v = _BlackDeltaPremiumAdjustedSolverClass <- v
     static member Cast (p : ICell<BlackDeltaPremiumAdjustedSolverClass>) = 
         if p :? BlackDeltaPremiumAdjustedSolverClassModel then 
             p :?> BlackDeltaPremiumAdjustedSolverClassModel
         else
             let o = new BlackDeltaPremiumAdjustedSolverClassModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

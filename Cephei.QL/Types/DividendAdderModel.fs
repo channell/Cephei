@@ -44,7 +44,8 @@ type DividendAdderModel
 (*
     Functions
 *)
-    let _DividendAdder                             = cell (fun () -> new DividendAdder (d.Value))
+    let mutable
+        _DividendAdder                             = cell (fun () -> new DividendAdder (d.Value))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _DividendAdder.Value.value(x.Value))
     do this.Bind(_DividendAdder)
@@ -52,13 +53,14 @@ type DividendAdderModel
     casting 
 *)
     internal new () = DividendAdderModel(null)
-    member internal this.Inject v = _DividendAdder.Value <- v
+    member internal this.Inject v = _DividendAdder <- v
     static member Cast (p : ICell<DividendAdder>) = 
         if p :? DividendAdderModel then 
             p :?> DividendAdderModel
         else
             let o = new DividendAdderModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

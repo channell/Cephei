@@ -41,7 +41,8 @@ type ZARegionModel
 (*
     Functions
 *)
-    let _ZARegion                                  = cell (fun () -> new ZARegion ())
+    let mutable
+        _ZARegion                                  = cell (fun () -> new ZARegion ())
     let _code                                      = triv (fun () -> _ZARegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
                                                    = triv (fun () -> _ZARegion.Value.Equals(o.Value))
@@ -51,13 +52,14 @@ type ZARegionModel
     casting 
 *)
     
-    member internal this.Inject v = _ZARegion.Value <- v
+    member internal this.Inject v = _ZARegion <- v
     static member Cast (p : ICell<ZARegion>) = 
         if p :? ZARegionModel then 
             p :?> ZARegionModel
         else
             let o = new ZARegionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

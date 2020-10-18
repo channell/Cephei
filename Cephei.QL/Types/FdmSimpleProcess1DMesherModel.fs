@@ -54,7 +54,8 @@ type FdmSimpleProcess1DMesherModel
 (*
     Functions
 *)
-    let _FdmSimpleProcess1DMesher                  = cell (fun () -> new FdmSimpleProcess1DMesher (size.Value, Process.Value, maturity.Value, tAvgSteps.Value, epsilon.Value, mandatoryPoint.Value))
+    let mutable
+        _FdmSimpleProcess1DMesher                  = cell (fun () -> new FdmSimpleProcess1DMesher (size.Value, Process.Value, maturity.Value, tAvgSteps.Value, epsilon.Value, mandatoryPoint.Value))
     let _dminus                                    (index : ICell<int>)   
                                                    = triv (fun () -> _FdmSimpleProcess1DMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
@@ -68,13 +69,14 @@ type FdmSimpleProcess1DMesherModel
     casting 
 *)
     internal new () = new FdmSimpleProcess1DMesherModel(null,null,null,null,null,null)
-    member internal this.Inject v = _FdmSimpleProcess1DMesher.Value <- v
+    member internal this.Inject v = _FdmSimpleProcess1DMesher <- v
     static member Cast (p : ICell<FdmSimpleProcess1DMesher>) = 
         if p :? FdmSimpleProcess1DMesherModel then 
             p :?> FdmSimpleProcess1DMesherModel
         else
             let o = new FdmSimpleProcess1DMesherModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

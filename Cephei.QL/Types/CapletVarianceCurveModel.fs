@@ -50,7 +50,8 @@ type CapletVarianceCurveModel
 (*
     Functions
 *)
-    let _CapletVarianceCurve                       = cell (fun () -> new CapletVarianceCurve (referenceDate.Value, dates.Value, capletVolCurve.Value, dayCounter.Value))
+    let mutable
+        _CapletVarianceCurve                       = cell (fun () -> new CapletVarianceCurve (referenceDate.Value, dates.Value, capletVolCurve.Value, dayCounter.Value))
     let _dayCounter                                = triv (fun () -> _CapletVarianceCurve.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _CapletVarianceCurve.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _CapletVarianceCurve.Value.maxStrike())
@@ -99,13 +100,14 @@ type CapletVarianceCurveModel
     casting 
 *)
     internal new () = new CapletVarianceCurveModel(null,null,null,null)
-    member internal this.Inject v = _CapletVarianceCurve.Value <- v
+    member internal this.Inject v = _CapletVarianceCurve <- v
     static member Cast (p : ICell<CapletVarianceCurve>) = 
         if p :? CapletVarianceCurveModel then 
             p :?> CapletVarianceCurveModel
         else
             let o = new CapletVarianceCurveModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

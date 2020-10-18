@@ -46,7 +46,8 @@ type UniformGridMesherModel
 (*
     Functions
 *)
-    let _UniformGridMesher                         = cell (fun () -> new UniformGridMesher (layout.Value, boundaries.Value))
+    let mutable
+        _UniformGridMesher                         = cell (fun () -> new UniformGridMesher (layout.Value, boundaries.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _UniformGridMesher.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -61,13 +62,14 @@ type UniformGridMesherModel
     casting 
 *)
     internal new () = new UniformGridMesherModel(null,null)
-    member internal this.Inject v = _UniformGridMesher.Value <- v
+    member internal this.Inject v = _UniformGridMesher <- v
     static member Cast (p : ICell<UniformGridMesher>) = 
         if p :? UniformGridMesherModel then 
             p :?> UniformGridMesherModel
         else
             let o = new UniformGridMesherModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

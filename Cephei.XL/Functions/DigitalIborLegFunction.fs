@@ -39,11 +39,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="schedule",Description = "Reference to schedule")>] 
+        ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,11 +82,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_inArrears1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_inArrears1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_inArrears", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_inArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_value", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,11 +196,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withCallATM", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallATM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withCallATM1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallATM1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withCallPayoffs1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallPayoffs1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "double")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,11 +316,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withCallPayoffs", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallPayoffs
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="payoffs",Description = "Reference to payoffs")>] 
+        ([<ExcelArgument(Name="payoffs",Description = "double")>] 
          payoffs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,11 +358,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withCallStrikes1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallStrikes1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,11 +400,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withCallStrikes", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,11 +442,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withFixingDays", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,11 +484,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withFixingDays1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,11 +526,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withGearings", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "Reference to gearings")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,11 +568,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withGearings1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double")>] 
          gearing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,11 +610,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withLongCallOption", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withLongCallOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -652,11 +652,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withLongPutOption", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withLongPutOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -694,11 +694,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withNotionals", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "Reference to notionals")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -736,11 +736,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withNotionals1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="notional",Description = "Reference to notional")>] 
+        ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,11 +778,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPaymentAdjustment", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "Reference to convention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,11 +820,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPaymentDayCounter", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -862,11 +862,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPutATM", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutATM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="flag",Description = "Reference to flag")>] 
+        ([<ExcelArgument(Name="flag",Description = "bool")>] 
          flag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -904,9 +904,9 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPutATM1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutATM1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -940,11 +940,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPutPayoffs", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutPayoffs
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="payoffs",Description = "Reference to payoffs")>] 
+        ([<ExcelArgument(Name="payoffs",Description = "double")>] 
          payoffs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -982,11 +982,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPutPayoffs1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutPayoffs1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "double")>] 
          payoff : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1024,11 +1024,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPutStrikes1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutStrikes1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1066,11 +1066,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withPutStrikes", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1108,11 +1108,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withReplication1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withReplication1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="replication",Description = "Reference to replication")>] 
+        ([<ExcelArgument(Name="replication",Description = "DigitalReplication")>] 
          replication : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1150,9 +1150,9 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withReplication", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withReplication
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1186,11 +1186,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withSpreads", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Reference to spreads")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1228,11 +1228,11 @@ module DigitalIborLegFunction =
     *)
     [<ExcelFunction(Name="_DigitalIborLeg_withSpreads1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalIborLeg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="DigitalIborLeg",Description = "Reference to DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "double")>] 
          spread : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1267,9 +1267,9 @@ module DigitalIborLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DigitalIborLeg_Range", Description="Create a range of DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the DigitalIborLeg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

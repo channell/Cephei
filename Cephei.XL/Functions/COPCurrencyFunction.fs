@@ -39,7 +39,7 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "COPCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_code", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_empty", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_Equals", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_format", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_fractionsPerUnit", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_fractionSymbol", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_name", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_numericCode", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_rounding", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_symbol", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_ToString", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module COPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_COPCurrency_triangulationCurrency", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="COPCurrency",Description = "Reference to COPCurrency")>] 
+        ([<ExcelArgument(Name="COPCurrency",Description = "COPCurrency")>] 
          copcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module COPCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_COPCurrency_Range", Description="Create a range of COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the COPCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -62,7 +62,8 @@ type BasisSwapHelperModel
 (*
     Functions
 *)
-    let _BasisSwapHelper                           = cell (fun () -> new BasisSwapHelper (spreadQuote.Value, settlementDays.Value, swapTenor.Value, settlementCalendar.Value, rollConvention.Value, shortIndex.Value, longIndex.Value, discount.Value, eom.Value, spreadOnShort.Value))
+    let mutable
+        _BasisSwapHelper                           = cell (fun () -> new BasisSwapHelper (spreadQuote.Value, settlementDays.Value, swapTenor.Value, settlementCalendar.Value, rollConvention.Value, shortIndex.Value, longIndex.Value, discount.Value, eom.Value, spreadOnShort.Value))
     let _impliedQuote                              = triv (fun () -> _BasisSwapHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> _BasisSwapHelper.Value.setTermStructure(t.Value)
@@ -90,13 +91,14 @@ type BasisSwapHelperModel
     casting 
 *)
     internal new () = new BasisSwapHelperModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _BasisSwapHelper.Value <- v
+    member internal this.Inject v = _BasisSwapHelper <- v
     static member Cast (p : ICell<BasisSwapHelper>) = 
         if p :? BasisSwapHelperModel then 
             p :?> BasisSwapHelperModel
         else
             let o = new BasisSwapHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

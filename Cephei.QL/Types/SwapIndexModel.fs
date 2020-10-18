@@ -62,7 +62,8 @@ type SwapIndexModel
 (*
     Functions
 *)
-    let _SwapIndex                                 = cell (fun () -> new SwapIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, calendar.Value, fixedLegTenor.Value, fixedLegConvention.Value, fixedLegDayCounter.Value, iborIndex.Value, discountingTermStructure.Value))
+    let mutable
+        _SwapIndex                                 = cell (fun () -> new SwapIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, calendar.Value, fixedLegTenor.Value, fixedLegConvention.Value, fixedLegDayCounter.Value, iborIndex.Value, discountingTermStructure.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _SwapIndex.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -124,13 +125,14 @@ type SwapIndexModel
     casting 
 *)
     internal new () = new SwapIndexModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwapIndex.Value <- v
+    member internal this.Inject v = _SwapIndex <- v
     static member Cast (p : ICell<SwapIndex>) = 
         if p :? SwapIndexModel then 
             p :?> SwapIndexModel
         else
             let o = new SwapIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -229,7 +231,8 @@ type SwapIndexModel1
 (*
     Functions
 *)
-    let _SwapIndex                                 = cell (fun () -> new SwapIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, calendar.Value, fixedLegTenor.Value, fixedLegConvention.Value, fixedLegDayCounter.Value, iborIndex.Value))
+    let mutable
+        _SwapIndex                                 = cell (fun () -> new SwapIndex (familyName.Value, tenor.Value, settlementDays.Value, currency.Value, calendar.Value, fixedLegTenor.Value, fixedLegConvention.Value, fixedLegDayCounter.Value, iborIndex.Value))
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _SwapIndex.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -291,13 +294,14 @@ type SwapIndexModel1
     casting 
 *)
     internal new () = new SwapIndexModel1(null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwapIndex.Value <- v
+    member internal this.Inject v = _SwapIndex <- v
     static member Cast (p : ICell<SwapIndex>) = 
         if p :? SwapIndexModel1 then 
             p :?> SwapIndexModel1
         else
             let o = new SwapIndexModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -376,7 +380,8 @@ type SwapIndexModel2
 (*
     Functions
 *)
-    let _SwapIndex                                 = cell (fun () -> new SwapIndex ())
+    let mutable
+        _SwapIndex                                 = cell (fun () -> new SwapIndex ())
     let _clone                                     (tenor : ICell<Period>)   
                                                    = triv (fun () -> _SwapIndex.Value.clone(tenor.Value))
     let _clone1                                    (forwarding : ICell<Handle<YieldTermStructure>>) (discounting : ICell<Handle<YieldTermStructure>>)   
@@ -438,13 +443,14 @@ type SwapIndexModel2
     casting 
 *)
     
-    member internal this.Inject v = _SwapIndex.Value <- v
+    member internal this.Inject v = _SwapIndex <- v
     static member Cast (p : ICell<SwapIndex>) = 
         if p :? SwapIndexModel2 then 
             p :?> SwapIndexModel2
         else
             let o = new SwapIndexModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

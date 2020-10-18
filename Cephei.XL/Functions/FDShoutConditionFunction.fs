@@ -39,17 +39,17 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition_factory", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDShoutCondition",Description = "Reference to FDShoutCondition")>] 
+        ([<ExcelArgument(Name="FDShoutCondition",Description = "FDShoutCondition")>] 
          fdshoutcondition : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,15 +99,15 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDShoutCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "Reference to gridPoints")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "Reference to timeDependent")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition1", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FDShoutCondition")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,11 +186,11 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition_setStepCondition", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDShoutCondition",Description = "Reference to FDShoutCondition")>] 
+        ([<ExcelArgument(Name="FDShoutCondition",Description = "FDShoutCondition")>] 
          fdshoutcondition : obj)
-        ([<ExcelArgument(Name="impl",Description = "Reference to impl")>] 
+        ([<ExcelArgument(Name="impl",Description = "Vector")>] 
          impl : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -228,9 +228,9 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition_ensureStrikeInGrid", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDShoutCondition",Description = "Reference to FDShoutCondition")>] 
+        ([<ExcelArgument(Name="FDShoutCondition",Description = "FDShoutCondition")>] 
          fdshoutcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -264,9 +264,9 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition_getResidualTime", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDShoutCondition",Description = "Reference to FDShoutCondition")>] 
+        ([<ExcelArgument(Name="FDShoutCondition",Description = "FDShoutCondition")>] 
          fdshoutcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -300,9 +300,9 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition_grid", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDShoutCondition",Description = "Reference to FDShoutCondition")>] 
+        ([<ExcelArgument(Name="FDShoutCondition",Description = "FDShoutCondition")>] 
          fdshoutcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -336,9 +336,9 @@ module FDShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_FDShoutCondition_intrinsicValues_", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FDShoutCondition",Description = "Reference to FDShoutCondition")>] 
+        ([<ExcelArgument(Name="FDShoutCondition",Description = "FDShoutCondition")>] 
          fdshoutcondition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -369,9 +369,9 @@ module FDShoutConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDShoutCondition_Range", Description="Create a range of FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FDShoutCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

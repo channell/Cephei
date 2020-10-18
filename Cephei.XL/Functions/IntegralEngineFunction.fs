@@ -40,9 +40,9 @@ module IntegralEngineFunction =
     *)
     [<ExcelFunction(Name="_IntegralEngine", Description="Create a IntegralEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IntegralEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -74,9 +74,9 @@ module IntegralEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IntegralEngine_Range", Description="Create a range of IntegralEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the IntegralEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -50,7 +50,8 @@ type SwapModel
 (*
     Functions
 *)
-    let _Swap                                      = cell (fun () -> withEngine pricingEngine (new Swap (legs.Value, payer.Value)))
+    let mutable
+        _Swap                                      = cell (fun () -> withEngine pricingEngine (new Swap (legs.Value, payer.Value)))
     let _endDiscounts                              (j : ICell<int>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).endDiscounts(j.Value))
     let _engine                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).engine)
@@ -82,13 +83,14 @@ type SwapModel
     casting 
 *)
     internal new () = new SwapModel(null,null,null,null)
-    member internal this.Inject v = _Swap.Value <- v
+    member internal this.Inject v = _Swap <- v
     static member Cast (p : ICell<Swap>) = 
         if p :? SwapModel then 
             p :?> SwapModel
         else
             let o = new SwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -147,7 +149,8 @@ type SwapModel1
 (*
     Functions
 *)
-    let _Swap                                      = cell (fun () -> withEngine pricingEngine (new Swap (firstLeg.Value, secondLeg.Value)))
+    let mutable
+        _Swap                                      = cell (fun () -> withEngine pricingEngine (new Swap (firstLeg.Value, secondLeg.Value)))
     let _endDiscounts                              (j : ICell<int>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).endDiscounts(j.Value))
     let _engine                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).engine)
@@ -179,13 +182,14 @@ type SwapModel1
     casting 
 *)
     internal new () = new SwapModel1(null,null,null,null)
-    member internal this.Inject v = _Swap.Value <- v
+    member internal this.Inject v = _Swap <- v
     static member Cast (p : ICell<Swap>) = 
         if p :? SwapModel1 then 
             p :?> SwapModel1
         else
             let o = new SwapModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

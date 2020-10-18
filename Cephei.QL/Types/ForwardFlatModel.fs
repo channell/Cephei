@@ -41,7 +41,8 @@ type ForwardFlatModel
 (*
     Functions
 *)
-    let _ForwardFlat                               = cell (fun () -> new ForwardFlat ())
+    let mutable
+        _ForwardFlat                               = cell (fun () -> new ForwardFlat ())
     let _global                                    = triv (fun () -> _ForwardFlat.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _ForwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
@@ -51,13 +52,14 @@ type ForwardFlatModel
     casting 
 *)
     
-    member internal this.Inject v = _ForwardFlat.Value <- v
+    member internal this.Inject v = _ForwardFlat <- v
     static member Cast (p : ICell<ForwardFlat>) = 
         if p :? ForwardFlatModel then 
             p :?> ForwardFlatModel
         else
             let o = new ForwardFlatModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,15 +39,15 @@ module SABRWrapperFunction =
     *)
     [<ExcelFunction(Name="_SABRWrapper", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SABRWrapper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="param",Description = "Reference to param")>] 
+        ([<ExcelArgument(Name="param",Description = "double")>] 
          param : obj)
-        ([<ExcelArgument(Name="addParams",Description = "Reference to addParams")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,11 +94,11 @@ module SABRWrapperFunction =
     *)
     [<ExcelFunction(Name="_SABRWrapper_volatility", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SABRWrapper",Description = "Reference to SABRWrapper")>] 
+        ([<ExcelArgument(Name="SABRWrapper",Description = "SABRWrapper")>] 
          sabrwrapper : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module SABRWrapperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SABRWrapper_Range", Description="Create a range of SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SABRWrapper")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

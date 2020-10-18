@@ -39,7 +39,7 @@ module ExplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ExplicitEulerScheme1", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExplicitEulerScheme")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,11 +70,11 @@ module ExplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ExplicitEulerScheme", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ExplicitEulerScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="map",Description = "Reference to map")>] 
+        ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "Reference to bcSet")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "ExplicitEulerScheme")>] 
          bcSet : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,15 +113,15 @@ module ExplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ExplicitEulerScheme_factory", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExplicitEulerScheme",Description = "Reference to ExplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="ExplicitEulerScheme",Description = "ExplicitEulerScheme")>] 
          expliciteulerscheme : obj)
-        ([<ExcelArgument(Name="L",Description = "Reference to L")>] 
+        ([<ExcelArgument(Name="L",Description = "Object")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "Reference to bcs")>] 
+        ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalInputs",Description = "Reference to additionalInputs")>] 
+        ([<ExcelArgument(Name="additionalInputs",Description = "IMixedScheme")>] 
          additionalInputs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,11 +167,11 @@ module ExplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ExplicitEulerScheme_setStep", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExplicitEulerScheme",Description = "Reference to ExplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="ExplicitEulerScheme",Description = "ExplicitEulerScheme")>] 
          expliciteulerscheme : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,15 +209,15 @@ module ExplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ExplicitEulerScheme_step", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ExplicitEulerScheme",Description = "Reference to ExplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="ExplicitEulerScheme",Description = "ExplicitEulerScheme")>] 
          expliciteulerscheme : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Reference to theta")>] 
+        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module ExplicitEulerSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ExplicitEulerScheme_Range", Description="Create a range of ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ExplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

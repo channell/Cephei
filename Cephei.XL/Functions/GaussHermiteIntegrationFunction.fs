@@ -39,11 +39,11 @@ module GaussHermiteIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHermiteIntegration", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GaussHermiteIntegration")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="n",Description = "Reference to n")>] 
+        ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="mu",Description = "Reference to mu")>] 
+        ([<ExcelArgument(Name="mu",Description = "GaussHermiteIntegration")>] 
          mu : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module GaussHermiteIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHermiteIntegration_order", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "Reference to GaussHermiteIntegration")>] 
+        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "GaussHermiteIntegration")>] 
          gausshermiteintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,11 +118,11 @@ module GaussHermiteIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHermiteIntegration_value", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "Reference to GaussHermiteIntegration")>] 
+        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "GaussHermiteIntegration")>] 
          gausshermiteintegration : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module GaussHermiteIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHermiteIntegration_weights", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "Reference to GaussHermiteIntegration")>] 
+        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "GaussHermiteIntegration")>] 
          gausshermiteintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module GaussHermiteIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHermiteIntegration_x", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "Reference to GaussHermiteIntegration")>] 
+        ([<ExcelArgument(Name="GaussHermiteIntegration",Description = "GaussHermiteIntegration")>] 
          gausshermiteintegration : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module GaussHermiteIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussHermiteIntegration_Range", Description="Create a range of GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GaussHermiteIntegration")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

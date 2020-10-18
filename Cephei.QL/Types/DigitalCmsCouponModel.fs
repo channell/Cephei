@@ -62,7 +62,8 @@ type DigitalCmsCouponModel
 (*
     Functions
 *)
-    let _DigitalCmsCoupon                          = cell (fun () -> new DigitalCmsCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
+    let mutable
+        _DigitalCmsCoupon                          = cell (fun () -> new DigitalCmsCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _factory                                   (underlying : ICell<CmsCoupon>) (callStrike : ICell<Nullable<double>>) (callPosition : ICell<Position.Type>) (isCallATMIncluded : ICell<bool>) (callDigitalPayoff : ICell<Nullable<double>>) (putStrike : ICell<Nullable<double>>) (putPosition : ICell<Position.Type>) (isPutATMIncluded : ICell<bool>) (putDigitalPayoff : ICell<Nullable<double>>) (replication : ICell<DigitalReplication>)   
                                                    = triv (fun () -> _DigitalCmsCoupon.Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _callDigitalPayoff                         = triv (fun () -> _DigitalCmsCoupon.Value.callDigitalPayoff())
@@ -134,13 +135,14 @@ type DigitalCmsCouponModel
     casting 
 *)
     internal new () = new DigitalCmsCouponModel(null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _DigitalCmsCoupon.Value <- v
+    member internal this.Inject v = _DigitalCmsCoupon <- v
     static member Cast (p : ICell<DigitalCmsCoupon>) = 
         if p :? DigitalCmsCouponModel then 
             p :?> DigitalCmsCouponModel
         else
             let o = new DigitalCmsCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -232,7 +234,8 @@ type DigitalCmsCouponModel1
 (*
     Functions
 *)
-    let _DigitalCmsCoupon                          = cell (fun () -> new DigitalCmsCoupon ())
+    let mutable
+        _DigitalCmsCoupon                          = cell (fun () -> new DigitalCmsCoupon ())
     let _factory                                   (underlying : ICell<CmsCoupon>) (callStrike : ICell<Nullable<double>>) (callPosition : ICell<Position.Type>) (isCallATMIncluded : ICell<bool>) (callDigitalPayoff : ICell<Nullable<double>>) (putStrike : ICell<Nullable<double>>) (putPosition : ICell<Position.Type>) (isPutATMIncluded : ICell<bool>) (putDigitalPayoff : ICell<Nullable<double>>) (replication : ICell<DigitalReplication>)   
                                                    = triv (fun () -> _DigitalCmsCoupon.Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
     let _callDigitalPayoff                         = triv (fun () -> _DigitalCmsCoupon.Value.callDigitalPayoff())
@@ -304,13 +307,14 @@ type DigitalCmsCouponModel1
     casting 
 *)
     
-    member internal this.Inject v = _DigitalCmsCoupon.Value <- v
+    member internal this.Inject v = _DigitalCmsCoupon <- v
     static member Cast (p : ICell<DigitalCmsCoupon>) = 
         if p :? DigitalCmsCouponModel1 then 
             p :?> DigitalCmsCouponModel1
         else
             let o = new DigitalCmsCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

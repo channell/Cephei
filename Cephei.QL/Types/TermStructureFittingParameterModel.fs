@@ -44,7 +44,8 @@ type TermStructureFittingParameterModel
 (*
     Functions
 *)
-    let _TermStructureFittingParameter             = cell (fun () -> new TermStructureFittingParameter (impl.Value))
+    let mutable
+        _TermStructureFittingParameter             = cell (fun () -> new TermStructureFittingParameter (impl.Value))
     let _constraint                                = triv (fun () -> _TermStructureFittingParameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _TermStructureFittingParameter.Value.implementation())
     let _parameters                                = triv (fun () -> _TermStructureFittingParameter.Value.parameters())
@@ -61,13 +62,14 @@ type TermStructureFittingParameterModel
     casting 
 *)
     internal new () = new TermStructureFittingParameterModel(null)
-    member internal this.Inject v = _TermStructureFittingParameter.Value <- v
+    member internal this.Inject v = _TermStructureFittingParameter <- v
     static member Cast (p : ICell<TermStructureFittingParameter>) = 
         if p :? TermStructureFittingParameterModel then 
             p :?> TermStructureFittingParameterModel
         else
             let o = new TermStructureFittingParameterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -102,7 +104,8 @@ type TermStructureFittingParameterModel1
 (*
     Functions
 *)
-    let _TermStructureFittingParameter             = cell (fun () -> new TermStructureFittingParameter (term.Value))
+    let mutable
+        _TermStructureFittingParameter             = cell (fun () -> new TermStructureFittingParameter (term.Value))
     let _constraint                                = triv (fun () -> _TermStructureFittingParameter.Value.CONSTRAINT())
     let _implementation                            = triv (fun () -> _TermStructureFittingParameter.Value.implementation())
     let _parameters                                = triv (fun () -> _TermStructureFittingParameter.Value.parameters())
@@ -119,13 +122,14 @@ type TermStructureFittingParameterModel1
     casting 
 *)
     internal new () = new TermStructureFittingParameterModel1(null)
-    member internal this.Inject v = _TermStructureFittingParameter.Value <- v
+    member internal this.Inject v = _TermStructureFittingParameter <- v
     static member Cast (p : ICell<TermStructureFittingParameter>) = 
         if p :? TermStructureFittingParameterModel1 then 
             p :?> TermStructureFittingParameterModel1
         else
             let o = new TermStructureFittingParameterModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

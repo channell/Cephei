@@ -52,7 +52,8 @@ type NumericalDifferentiationModel
 (*
     Functions
 *)
-    let _NumericalDifferentiation                  = cell (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, stepSize.Value, steps.Value, scheme.Value))
+    let mutable
+        _NumericalDifferentiation                  = cell (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, stepSize.Value, steps.Value, scheme.Value))
     let _offsets                                   = triv (fun () -> _NumericalDifferentiation.Value.offsets())
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _NumericalDifferentiation.Value.value(x.Value))
@@ -62,13 +63,14 @@ type NumericalDifferentiationModel
     casting 
 *)
     internal new () = new NumericalDifferentiationModel(null,null,null,null,null)
-    member internal this.Inject v = _NumericalDifferentiation.Value <- v
+    member internal this.Inject v = _NumericalDifferentiation <- v
     static member Cast (p : ICell<NumericalDifferentiation>) = 
         if p :? NumericalDifferentiationModel then 
             p :?> NumericalDifferentiationModel
         else
             let o = new NumericalDifferentiationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -105,7 +107,8 @@ type NumericalDifferentiationModel1
 (*
     Functions
 *)
-    let _NumericalDifferentiation                  = cell (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, x_offsets.Value))
+    let mutable
+        _NumericalDifferentiation                  = cell (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, x_offsets.Value))
     let _offsets                                   = triv (fun () -> _NumericalDifferentiation.Value.offsets())
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _NumericalDifferentiation.Value.value(x.Value))
@@ -115,13 +118,14 @@ type NumericalDifferentiationModel1
     casting 
 *)
     internal new () = new NumericalDifferentiationModel1(null,null,null)
-    member internal this.Inject v = _NumericalDifferentiation.Value <- v
+    member internal this.Inject v = _NumericalDifferentiation <- v
     static member Cast (p : ICell<NumericalDifferentiation>) = 
         if p :? NumericalDifferentiationModel1 then 
             p :?> NumericalDifferentiationModel1
         else
             let o = new NumericalDifferentiationModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

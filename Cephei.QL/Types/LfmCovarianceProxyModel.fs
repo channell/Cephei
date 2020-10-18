@@ -46,7 +46,8 @@ type LfmCovarianceProxyModel
 (*
     Functions
 *)
-    let _LfmCovarianceProxy                        = cell (fun () -> new LfmCovarianceProxy (volaModel.Value, corrModel.Value))
+    let mutable
+        _LfmCovarianceProxy                        = cell (fun () -> new LfmCovarianceProxy (volaModel.Value, corrModel.Value))
     let _correlationModel                          = triv (fun () -> _LfmCovarianceProxy.Value.correlationModel())
     let _corrModel                                 = triv (fun () -> _LfmCovarianceProxy.Value.corrModel)
     let _corrModel_                                = triv (fun () -> _LfmCovarianceProxy.Value.corrModel_)
@@ -70,13 +71,14 @@ type LfmCovarianceProxyModel
     casting 
 *)
     internal new () = new LfmCovarianceProxyModel(null,null)
-    member internal this.Inject v = _LfmCovarianceProxy.Value <- v
+    member internal this.Inject v = _LfmCovarianceProxy <- v
     static member Cast (p : ICell<LfmCovarianceProxy>) = 
         if p :? LfmCovarianceProxyModel then 
             p :?> LfmCovarianceProxyModel
         else
             let o = new LfmCovarianceProxyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

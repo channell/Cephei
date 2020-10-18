@@ -39,9 +39,9 @@ module InverseCumulativeRsgFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRsg_dimension", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "Reference to InverseCumulativeRsg")>] 
+        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "InverseCumulativeRsg")>] 
          inversecumulativersg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module InverseCumulativeRsgFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRsg_factory", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "Reference to InverseCumulativeRsg")>] 
+        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "InverseCumulativeRsg")>] 
          inversecumulativersg : obj)
-        ([<ExcelArgument(Name="dimensionality",Description = "Reference to dimensionality")>] 
+        ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "Reference to seed")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,9 +123,9 @@ module InverseCumulativeRsgFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRsg", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativeRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="uniformSequenceGenerator",Description = "Reference to uniformSequenceGenerator")>] 
+        ([<ExcelArgument(Name="uniformSequenceGenerator",Description = "'USG")>] 
          uniformSequenceGenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,11 +160,11 @@ module InverseCumulativeRsgFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRsg1", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativeRsg")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="uniformSequenceGenerator",Description = "Reference to uniformSequenceGenerator")>] 
+        ([<ExcelArgument(Name="uniformSequenceGenerator",Description = "'USG")>] 
          uniformSequenceGenerator : obj)
-        ([<ExcelArgument(Name="inverseCumulative",Description = "Reference to inverseCumulative")>] 
+        ([<ExcelArgument(Name="inverseCumulative",Description = "'IC")>] 
          inverseCumulative : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,9 +203,9 @@ module InverseCumulativeRsgFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRsg_lastSequence", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "Reference to InverseCumulativeRsg")>] 
+        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "InverseCumulativeRsg")>] 
          inversecumulativersg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,9 +239,9 @@ module InverseCumulativeRsgFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRsg_nextSequence", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "Reference to InverseCumulativeRsg")>] 
+        ([<ExcelArgument(Name="InverseCumulativeRsg",Description = "InverseCumulativeRsg")>] 
          inversecumulativersg : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -272,9 +272,9 @@ module InverseCumulativeRsgFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseCumulativeRsg_Range", Description="Create a range of InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InverseCumulativeRsg")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

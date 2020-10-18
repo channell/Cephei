@@ -50,7 +50,8 @@ type AnalyticH1HWEngineModel
 (*
     Functions
 *)
-    let _AnalyticH1HWEngine                        = cell (fun () -> new AnalyticH1HWEngine (model.Value, hullWhiteModel.Value, rhoSr.Value, integrationOrder.Value))
+    let mutable
+        _AnalyticH1HWEngine                        = cell (fun () -> new AnalyticH1HWEngine (model.Value, hullWhiteModel.Value, rhoSr.Value, integrationOrder.Value))
     let _update                                    = triv (fun () -> _AnalyticH1HWEngine.Value.update()
                                                                      _AnalyticH1HWEngine.Value)
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticH1HWEngine.Value.numberOfEvaluations())
@@ -70,13 +71,14 @@ type AnalyticH1HWEngineModel
     casting 
 *)
     internal new () = new AnalyticH1HWEngineModel(null,null,null,null)
-    member internal this.Inject v = _AnalyticH1HWEngine.Value <- v
+    member internal this.Inject v = _AnalyticH1HWEngine <- v
     static member Cast (p : ICell<AnalyticH1HWEngine>) = 
         if p :? AnalyticH1HWEngineModel then 
             p :?> AnalyticH1HWEngineModel
         else
             let o = new AnalyticH1HWEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -121,7 +123,8 @@ type AnalyticH1HWEngineModel1
 (*
     Functions
 *)
-    let _AnalyticH1HWEngine                        = cell (fun () -> new AnalyticH1HWEngine (model.Value, hullWhiteModel.Value, rhoSr.Value, relTolerance.Value, maxEvaluations.Value))
+    let mutable
+        _AnalyticH1HWEngine                        = cell (fun () -> new AnalyticH1HWEngine (model.Value, hullWhiteModel.Value, rhoSr.Value, relTolerance.Value, maxEvaluations.Value))
     let _update                                    = triv (fun () -> _AnalyticH1HWEngine.Value.update()
                                                                      _AnalyticH1HWEngine.Value)
     let _numberOfEvaluations                       = triv (fun () -> _AnalyticH1HWEngine.Value.numberOfEvaluations())
@@ -141,13 +144,14 @@ type AnalyticH1HWEngineModel1
     casting 
 *)
     internal new () = new AnalyticH1HWEngineModel1(null,null,null,null,null)
-    member internal this.Inject v = _AnalyticH1HWEngine.Value <- v
+    member internal this.Inject v = _AnalyticH1HWEngine <- v
     static member Cast (p : ICell<AnalyticH1HWEngine>) = 
         if p :? AnalyticH1HWEngineModel1 then 
             p :?> AnalyticH1HWEngineModel1
         else
             let o = new AnalyticH1HWEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

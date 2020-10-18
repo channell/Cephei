@@ -70,7 +70,8 @@ type CappedFlooredYoYInflationCouponModel
 (*
     Functions
 *)
-    let _CappedFlooredYoYInflationCoupon           = cell (fun () -> new CappedFlooredYoYInflationCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, observationLag.Value, dayCounter.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value))
+    let mutable
+        _CappedFlooredYoYInflationCoupon           = cell (fun () -> new CappedFlooredYoYInflationCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, observationLag.Value, dayCounter.Value, gearing.Value, spread.Value, cap.Value, floor.Value, refPeriodStart.Value, refPeriodEnd.Value))
     let _cap                                       = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.cap())
     let _effectiveCap                              = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.effectiveCap())
     let _effectiveFloor                            = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.effectiveFloor())
@@ -134,13 +135,14 @@ type CappedFlooredYoYInflationCouponModel
     casting 
 *)
     internal new () = new CappedFlooredYoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CappedFlooredYoYInflationCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredYoYInflationCoupon <- v
     static member Cast (p : ICell<CappedFlooredYoYInflationCoupon>) = 
         if p :? CappedFlooredYoYInflationCouponModel then 
             p :?> CappedFlooredYoYInflationCouponModel
         else
             let o = new CappedFlooredYoYInflationCouponModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -235,7 +237,8 @@ type CappedFlooredYoYInflationCouponModel1
 (*
     Functions
 *)
-    let _CappedFlooredYoYInflationCoupon           = cell (fun () -> new CappedFlooredYoYInflationCoupon (underlying.Value, cap.Value, floor.Value))
+    let mutable
+        _CappedFlooredYoYInflationCoupon           = cell (fun () -> new CappedFlooredYoYInflationCoupon (underlying.Value, cap.Value, floor.Value))
     let _cap                                       = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.cap())
     let _effectiveCap                              = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.effectiveCap())
     let _effectiveFloor                            = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.effectiveFloor())
@@ -299,13 +302,14 @@ type CappedFlooredYoYInflationCouponModel1
     casting 
 *)
     internal new () = new CappedFlooredYoYInflationCouponModel1(null,null,null)
-    member internal this.Inject v = _CappedFlooredYoYInflationCoupon.Value <- v
+    member internal this.Inject v = _CappedFlooredYoYInflationCoupon <- v
     static member Cast (p : ICell<CappedFlooredYoYInflationCoupon>) = 
         if p :? CappedFlooredYoYInflationCouponModel1 then 
             p :?> CappedFlooredYoYInflationCouponModel1
         else
             let o = new CappedFlooredYoYInflationCouponModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

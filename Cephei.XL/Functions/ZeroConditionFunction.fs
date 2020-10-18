@@ -39,13 +39,13 @@ module ZeroConditionFunction =
     *)
     [<ExcelFunction(Name="_ZeroCondition_applyTo", Description="Create a ZeroCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZeroCondition",Description = "Reference to ZeroCondition")>] 
+        ([<ExcelArgument(Name="ZeroCondition",Description = "ZeroCondition")>] 
          zerocondition : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "Object")>] 
          a : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,9 +84,9 @@ module ZeroConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroCondition_Range", Description="Create a range of ZeroCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ZeroCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

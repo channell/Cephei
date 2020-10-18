@@ -52,7 +52,8 @@ type ZeroSpreadedTermStructureModel
 (*
     Functions
 *)
-    let _ZeroSpreadedTermStructure                 = cell (fun () -> new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))
+    let mutable
+        _ZeroSpreadedTermStructure                 = cell (fun () -> new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))
     let _calendar                                  = triv (fun () -> _ZeroSpreadedTermStructure.Value.calendar())
     let _dayCounter                                = triv (fun () -> _ZeroSpreadedTermStructure.Value.dayCounter())
     let _maxDate                                   = triv (fun () -> _ZeroSpreadedTermStructure.Value.maxDate())
@@ -64,13 +65,14 @@ type ZeroSpreadedTermStructureModel
     casting 
 *)
     internal new () = new ZeroSpreadedTermStructureModel(null,null,null,null,null)
-    member internal this.Inject v = _ZeroSpreadedTermStructure.Value <- v
+    member internal this.Inject v = _ZeroSpreadedTermStructure <- v
     static member Cast (p : ICell<ZeroSpreadedTermStructure>) = 
         if p :? ZeroSpreadedTermStructureModel then 
             p :?> ZeroSpreadedTermStructureModel
         else
             let o = new ZeroSpreadedTermStructureModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

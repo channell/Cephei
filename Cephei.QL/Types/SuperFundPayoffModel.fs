@@ -46,7 +46,8 @@ type SuperFundPayoffModel
 (*
     Functions
 *)
-    let _SuperFundPayoff                           = cell (fun () -> new SuperFundPayoff (strike.Value, secondStrike.Value))
+    let mutable
+        _SuperFundPayoff                           = cell (fun () -> new SuperFundPayoff (strike.Value, secondStrike.Value))
     let _name                                      = triv (fun () -> _SuperFundPayoff.Value.name())
     let _secondStrike                              = triv (fun () -> _SuperFundPayoff.Value.secondStrike())
     let _value                                     (price : ICell<double>)   
@@ -62,13 +63,14 @@ type SuperFundPayoffModel
     casting 
 *)
     internal new () = new SuperFundPayoffModel(null,null)
-    member internal this.Inject v = _SuperFundPayoff.Value <- v
+    member internal this.Inject v = _SuperFundPayoff <- v
     static member Cast (p : ICell<SuperFundPayoff>) = 
         if p :? SuperFundPayoffModel then 
             p :?> SuperFundPayoffModel
         else
             let o = new SuperFundPayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

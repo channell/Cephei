@@ -41,7 +41,8 @@ type CADCurrencyModel
 (*
     Functions
 *)
-    let _CADCurrency                               = cell (fun () -> new CADCurrency ())
+    let mutable
+        _CADCurrency                               = cell (fun () -> new CADCurrency ())
     let _code                                      = triv (fun () -> _CADCurrency.Value.code)
     let _empty                                     = triv (fun () -> _CADCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type CADCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _CADCurrency.Value <- v
+    member internal this.Inject v = _CADCurrency <- v
     static member Cast (p : ICell<CADCurrency>) = 
         if p :? CADCurrencyModel then 
             p :?> CADCurrencyModel
         else
             let o = new CADCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,11 +39,11 @@ module BinomialConvertibleEngineFunction =
     *)
     [<ExcelFunction(Name="_BinomialConvertibleEngine", Description="Create a BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialConvertibleEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialConvertibleEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "Reference to timeSteps")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -80,9 +80,9 @@ module BinomialConvertibleEngineFunction =
 
     [<ExcelFunction(Name="_BinomialConvertibleEngine_Range", Description="Create a range of BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialConvertibleEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BinomialConvertibleEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

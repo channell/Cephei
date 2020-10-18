@@ -40,13 +40,13 @@ module StulzEngineFunction =
     *)
     [<ExcelFunction(Name="_StulzEngine", Description="Create a StulzEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StulzEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "StulzEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="process1",Description = "Reference to process1")>] 
+        ([<ExcelArgument(Name="process1",Description = "GeneralizedBlackScholesProcess")>] 
          process1 : obj)
-        ([<ExcelArgument(Name="process2",Description = "Reference to process2")>] 
+        ([<ExcelArgument(Name="process2",Description = "GeneralizedBlackScholesProcess")>] 
          process2 : obj)
-        ([<ExcelArgument(Name="correlation",Description = "Reference to correlation")>] 
+        ([<ExcelArgument(Name="correlation",Description = "double")>] 
          correlation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -86,9 +86,9 @@ module StulzEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StulzEngine_Range", Description="Create a range of StulzEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StulzEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the StulzEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

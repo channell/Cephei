@@ -41,7 +41,8 @@ type SeasonalityModel
 (*
     Functions
 *)
-    let _Seasonality                               = cell (fun () -> new Seasonality ())
+    let mutable
+        _Seasonality                               = cell (fun () -> new Seasonality ())
     let _correctYoYRate                            (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
                                                    = triv (fun () -> _Seasonality.Value.correctYoYRate(d.Value, r.Value, iTS.Value))
     let _correctZeroRate                           (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
@@ -53,13 +54,14 @@ type SeasonalityModel
     casting 
 *)
     
-    member internal this.Inject v = _Seasonality.Value <- v
+    member internal this.Inject v = _Seasonality <- v
     static member Cast (p : ICell<Seasonality>) = 
         if p :? SeasonalityModel then 
             p :?> SeasonalityModel
         else
             let o = new SeasonalityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

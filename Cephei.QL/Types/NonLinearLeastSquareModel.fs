@@ -50,7 +50,8 @@ type NonLinearLeastSquareModel
 (*
     Functions
 *)
-    let _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value, om.Value))
+    let mutable
+        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value, om.Value))
     let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
     let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
@@ -64,13 +65,14 @@ type NonLinearLeastSquareModel
     casting 
 *)
     internal new () = new NonLinearLeastSquareModel(null,null,null,null)
-    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    member internal this.Inject v = _NonLinearLeastSquare <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel then 
             p :?> NonLinearLeastSquareModel
         else
             let o = new NonLinearLeastSquareModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -107,7 +109,8 @@ type NonLinearLeastSquareModel1
 (*
     Functions
 *)
-    let _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value))
+    let mutable
+        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value))
     let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
     let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
@@ -121,13 +124,14 @@ type NonLinearLeastSquareModel1
     casting 
 *)
     internal new () = new NonLinearLeastSquareModel1(null,null)
-    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    member internal this.Inject v = _NonLinearLeastSquare <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel1 then 
             p :?> NonLinearLeastSquareModel1
         else
             let o = new NonLinearLeastSquareModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -164,7 +168,8 @@ type NonLinearLeastSquareModel2
 (*
     Functions
 *)
-    let _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value))
+    let mutable
+        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value))
     let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
     let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
@@ -178,13 +183,14 @@ type NonLinearLeastSquareModel2
     casting 
 *)
     internal new () = new NonLinearLeastSquareModel2(null,null,null)
-    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    member internal this.Inject v = _NonLinearLeastSquare <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel2 then 
             p :?> NonLinearLeastSquareModel2
         else
             let o = new NonLinearLeastSquareModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -218,7 +224,8 @@ type NonLinearLeastSquareModel3
 (*
     Functions
 *)
-    let _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value))
+    let mutable
+        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value))
     let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
     let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
@@ -232,13 +239,14 @@ type NonLinearLeastSquareModel3
     casting 
 *)
     internal new () = new NonLinearLeastSquareModel3(null)
-    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    member internal this.Inject v = _NonLinearLeastSquare <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel3 then 
             p :?> NonLinearLeastSquareModel3
         else
             let o = new NonLinearLeastSquareModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -68,7 +68,8 @@ type InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D when 'Interpol
 (*
     Functions
 *)
-    let _InterpolatedCPICapFloorTermPriceSurface   = cell (fun () -> new InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D> (nominal.Value, startRate.Value, observationLag.Value, cal.Value, bdc.Value, dc.Value, zii.Value, yts.Value, cStrikes.Value, fStrikes.Value, cfMaturities.Value, cPrice.Value, fPrice.Value))
+    let mutable
+        _InterpolatedCPICapFloorTermPriceSurface   = cell (fun () -> new InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D> (nominal.Value, startRate.Value, observationLag.Value, cal.Value, bdc.Value, dc.Value, zii.Value, yts.Value, cStrikes.Value, fStrikes.Value, cfMaturities.Value, cPrice.Value, fPrice.Value))
     let _capPrice                                  (d : ICell<Date>) (k : ICell<double>)   
                                                    = triv (fun () -> _InterpolatedCPICapFloorTermPriceSurface.Value.capPrice(d.Value, k.Value))
     let _floorPrice                                (d : ICell<Date>) (k : ICell<double>)   

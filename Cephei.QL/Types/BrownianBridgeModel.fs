@@ -44,7 +44,8 @@ type BrownianBridgeModel
 (*
     Functions
 *)
-    let _BrownianBridge                            = cell (fun () -> new BrownianBridge (timeGrid.Value))
+    let mutable
+        _BrownianBridge                            = cell (fun () -> new BrownianBridge (timeGrid.Value))
     let _size                                      = triv (fun () -> _BrownianBridge.Value.size())
     let _times                                     = triv (fun () -> _BrownianBridge.Value.times())
     let _transform                                 (Begin : ICell<Generic.List<double>>) (output : ICell<Generic.List<double>>)   
@@ -55,13 +56,14 @@ type BrownianBridgeModel
     casting 
 *)
     internal new () = new BrownianBridgeModel(null)
-    member internal this.Inject v = _BrownianBridge.Value <- v
+    member internal this.Inject v = _BrownianBridge <- v
     static member Cast (p : ICell<BrownianBridge>) = 
         if p :? BrownianBridgeModel then 
             p :?> BrownianBridgeModel
         else
             let o = new BrownianBridgeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -90,7 +92,8 @@ type BrownianBridgeModel1
 (*
     Functions
 *)
-    let _BrownianBridge                            = cell (fun () -> new BrownianBridge (times.Value))
+    let mutable
+        _BrownianBridge                            = cell (fun () -> new BrownianBridge (times.Value))
     let _size                                      = triv (fun () -> _BrownianBridge.Value.size())
     let _times                                     = triv (fun () -> _BrownianBridge.Value.times())
     let _transform                                 (Begin : ICell<Generic.List<double>>) (output : ICell<Generic.List<double>>)   
@@ -101,13 +104,14 @@ type BrownianBridgeModel1
     casting 
 *)
     internal new () = new BrownianBridgeModel1(null)
-    member internal this.Inject v = _BrownianBridge.Value <- v
+    member internal this.Inject v = _BrownianBridge <- v
     static member Cast (p : ICell<BrownianBridge>) = 
         if p :? BrownianBridgeModel1 then 
             p :?> BrownianBridgeModel1
         else
             let o = new BrownianBridgeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -136,7 +140,8 @@ type BrownianBridgeModel2
 (*
     Functions
 *)
-    let _BrownianBridge                            = cell (fun () -> new BrownianBridge (steps.Value))
+    let mutable
+        _BrownianBridge                            = cell (fun () -> new BrownianBridge (steps.Value))
     let _size                                      = triv (fun () -> _BrownianBridge.Value.size())
     let _times                                     = triv (fun () -> _BrownianBridge.Value.times())
     let _transform                                 (Begin : ICell<Generic.List<double>>) (output : ICell<Generic.List<double>>)   
@@ -147,13 +152,14 @@ type BrownianBridgeModel2
     casting 
 *)
     internal new () = new BrownianBridgeModel2(null)
-    member internal this.Inject v = _BrownianBridge.Value <- v
+    member internal this.Inject v = _BrownianBridge <- v
     static member Cast (p : ICell<BrownianBridge>) = 
         if p :? BrownianBridgeModel2 then 
             p :?> BrownianBridgeModel2
         else
             let o = new BrownianBridgeModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

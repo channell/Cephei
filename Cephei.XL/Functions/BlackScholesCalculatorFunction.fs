@@ -39,17 +39,17 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "BlackScholesCalculator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="growth",Description = "Reference to growth")>] 
+        ([<ExcelArgument(Name="growth",Description = "double")>] 
          growth : obj)
-        ([<ExcelArgument(Name="stdDev",Description = "Reference to stdDev")>] 
+        ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,9 +100,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_delta", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,9 +136,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_elasticity", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -172,9 +172,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_gamma", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,11 +208,11 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_theta", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,11 +250,11 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_thetaPerDay", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_alpha", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_beta", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_deltaForward", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,11 +400,11 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_dividendRho", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -442,9 +442,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_elasticityForward", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_elasticityForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_gammaForward", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_gammaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_itmAssetProbability", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_itmAssetProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_itmCashProbability", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,11 +586,11 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_rho", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -628,9 +628,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_strikeSensitivity", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,9 +664,9 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_value", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,11 +700,11 @@ module BlackScholesCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesCalculator_vega", Description="Create a BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "Reference to BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="BlackScholesCalculator",Description = "BlackScholesCalculator")>] 
          blackscholescalculator : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -739,9 +739,9 @@ module BlackScholesCalculatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackScholesCalculator_Range", Description="Create a range of BlackScholesCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesCalculator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BlackScholesCalculator")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

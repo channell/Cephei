@@ -50,7 +50,8 @@ type FDDividendEngineMerton73Model
 (*
     Functions
 *)
-    let _FDDividendEngineMerton73                  = cell (fun () -> new FDDividendEngineMerton73 (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDDividendEngineMerton73                  = cell (fun () -> new FDDividendEngineMerton73 (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDDividendEngineMerton73.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
@@ -71,13 +72,14 @@ type FDDividendEngineMerton73Model
     casting 
 *)
     internal new () = new FDDividendEngineMerton73Model(null,null,null,null)
-    member internal this.Inject v = _FDDividendEngineMerton73.Value <- v
+    member internal this.Inject v = _FDDividendEngineMerton73 <- v
     static member Cast (p : ICell<FDDividendEngineMerton73>) = 
         if p :? FDDividendEngineMerton73Model then 
             p :?> FDDividendEngineMerton73Model
         else
             let o = new FDDividendEngineMerton73Model ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -114,7 +116,8 @@ type FDDividendEngineMerton73Model1
 (*
     Functions
 *)
-    let _FDDividendEngineMerton73                  = cell (fun () -> new FDDividendEngineMerton73 ())
+    let mutable
+        _FDDividendEngineMerton73                  = cell (fun () -> new FDDividendEngineMerton73 ())
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDDividendEngineMerton73.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
@@ -135,13 +138,14 @@ type FDDividendEngineMerton73Model1
     casting 
 *)
     
-    member internal this.Inject v = _FDDividendEngineMerton73.Value <- v
+    member internal this.Inject v = _FDDividendEngineMerton73 <- v
     static member Cast (p : ICell<FDDividendEngineMerton73>) = 
         if p :? FDDividendEngineMerton73Model1 then 
             p :?> FDDividendEngineMerton73Model1
         else
             let o = new FDDividendEngineMerton73Model1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

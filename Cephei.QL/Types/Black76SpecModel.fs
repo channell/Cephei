@@ -41,7 +41,8 @@ type Black76SpecModel
 (*
     Functions
 *)
-    let _Black76Spec                               = cell (fun () -> new Black76Spec ())
+    let mutable
+        _Black76Spec                               = cell (fun () -> new Black76Spec ())
     let _type                                      = triv (fun () -> _Black76Spec.Value.TYPE())
     let _value                                     (Type : ICell<Option.Type>) (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
                                                    = triv (fun () -> _Black76Spec.Value.value(Type.Value, strike.Value, atmForward.Value, stdDev.Value, annuity.Value, displacement.Value))
@@ -52,13 +53,14 @@ type Black76SpecModel
     casting 
 *)
     
-    member internal this.Inject v = _Black76Spec.Value <- v
+    member internal this.Inject v = _Black76Spec <- v
     static member Cast (p : ICell<Black76Spec>) = 
         if p :? Black76SpecModel then 
             p :?> Black76SpecModel
         else
             let o = new Black76SpecModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

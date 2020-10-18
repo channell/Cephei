@@ -48,7 +48,8 @@ type LoanModel
 (*
     Functions
 *)
-    let _Loan                                      = cell (fun () -> withEngine pricingEngine (new Loan (legs.Value)))
+    let mutable
+        _Loan                                      = cell (fun () -> withEngine pricingEngine (new Loan (legs.Value)))
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).CASH())
     let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).errorEstimate())
@@ -64,13 +65,14 @@ type LoanModel
     casting 
 *)
     internal new () = new LoanModel(null,null,null)
-    member internal this.Inject v = _Loan.Value <- v
+    member internal this.Inject v = _Loan <- v
     static member Cast (p : ICell<Loan>) = 
         if p :? LoanModel then 
             p :?> LoanModel
         else
             let o = new LoanModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

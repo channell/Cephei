@@ -46,7 +46,8 @@ type OvernightLegModel
 (*
     Functions
 *)
-    let _OvernightLeg                              = cell (fun () -> new OvernightLeg (schedule.Value, overnightIndex.Value))
+    let mutable
+        _OvernightLeg                              = cell (fun () -> new OvernightLeg (schedule.Value, overnightIndex.Value))
     let _value                                     = triv (fun () -> _OvernightLeg.Value.value())
     let _withGearings                              (gearings : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _OvernightLeg.Value.withGearings(gearings.Value))
@@ -69,13 +70,14 @@ type OvernightLegModel
     casting 
 *)
     internal new () = new OvernightLegModel(null,null)
-    member internal this.Inject v = _OvernightLeg.Value <- v
+    member internal this.Inject v = _OvernightLeg <- v
     static member Cast (p : ICell<OvernightLeg>) = 
         if p :? OvernightLegModel then 
             p :?> OvernightLegModel
         else
             let o = new OvernightLegModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

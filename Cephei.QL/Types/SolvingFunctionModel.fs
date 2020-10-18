@@ -46,7 +46,8 @@ type SolvingFunctionModel
 (*
     Functions
 *)
-    let _SolvingFunction                           = cell (fun () -> new SolvingFunction (lambda.Value, Bb.Value))
+    let mutable
+        _SolvingFunction                           = cell (fun () -> new SolvingFunction (lambda.Value, Bb.Value))
     let _value                                     (y : ICell<double>)   
                                                    = cell (fun () -> _SolvingFunction.Value.value(y.Value))
     let _derivative                                (x : ICell<double>)   
@@ -56,13 +57,14 @@ type SolvingFunctionModel
     casting 
 *)
     internal new () = SolvingFunctionModel(null,null)
-    member internal this.Inject v = _SolvingFunction.Value <- v
+    member internal this.Inject v = _SolvingFunction <- v
     static member Cast (p : ICell<SolvingFunction>) = 
         if p :? SolvingFunctionModel then 
             p :?> SolvingFunctionModel
         else
             let o = new SolvingFunctionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

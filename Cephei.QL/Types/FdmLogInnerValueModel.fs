@@ -48,7 +48,8 @@ type FdmLogInnerValueModel
 (*
     Functions
 *)
-    let _FdmLogInnerValue                          = cell (fun () -> new FdmLogInnerValue (payoff.Value, mesher.Value, direction.Value))
+    let mutable
+        _FdmLogInnerValue                          = cell (fun () -> new FdmLogInnerValue (payoff.Value, mesher.Value, direction.Value))
     let _avgInnerValue                             (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmLogInnerValue.Value.avgInnerValue(iter.Value, t.Value))
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
@@ -58,13 +59,14 @@ type FdmLogInnerValueModel
     casting 
 *)
     internal new () = new FdmLogInnerValueModel(null,null,null)
-    member internal this.Inject v = _FdmLogInnerValue.Value <- v
+    member internal this.Inject v = _FdmLogInnerValue <- v
     static member Cast (p : ICell<FdmLogInnerValue>) = 
         if p :? FdmLogInnerValueModel then 
             p :?> FdmLogInnerValueModel
         else
             let o = new FdmLogInnerValueModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

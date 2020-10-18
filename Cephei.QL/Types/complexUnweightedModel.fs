@@ -41,7 +41,8 @@ type complexUnweightedModel
 (*
     Functions
 *)
-    let _complexUnweighted                         = cell (fun () -> new complexUnweighted ())
+    let mutable
+        _complexUnweighted                         = cell (fun () -> new complexUnweighted ())
     let _weight1LargeX                             (x : ICell<Complex>)   
                                                    = cell (fun () -> _complexUnweighted.Value.weight1LargeX(x.Value))
     let _weight2LargeX                             (x : ICell<Complex>)   
@@ -53,13 +54,14 @@ type complexUnweightedModel
     casting 
 *)
     
-    member internal this.Inject v = _complexUnweighted.Value <- v
+    member internal this.Inject v = _complexUnweighted <- v
     static member Cast (p : ICell<complexUnweighted>) = 
         if p :? complexUnweightedModel then 
             p :?> complexUnweightedModel
         else
             let o = new complexUnweightedModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

@@ -39,7 +39,7 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ARSCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_code", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_empty", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_Equals", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_format", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_fractionsPerUnit", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_fractionSymbol", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_name", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_numericCode", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_rounding", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_symbol", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_ToString", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module ARSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ARSCurrency_triangulationCurrency", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ARSCurrency",Description = "Reference to ARSCurrency")>] 
+        ([<ExcelArgument(Name="ARSCurrency",Description = "ARSCurrency")>] 
          arscurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module ARSCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ARSCurrency_Range", Description="Create a range of ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ARSCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

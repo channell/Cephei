@@ -39,9 +39,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_accuracy_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_accuracy_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_Clone", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_data", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_data_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_dates", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -219,9 +219,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_dates_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -255,13 +255,13 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_discountImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -303,13 +303,13 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -351,17 +351,17 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_guess", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -411,9 +411,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_initialDate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialDate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -447,11 +447,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_initialDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,11 +489,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_initialValue1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -531,9 +531,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_initialValue", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -567,9 +567,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_instruments_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_instruments_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -603,9 +603,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_interpolation_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -639,9 +639,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_interpolator_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -675,9 +675,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_maxDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -711,9 +711,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_maxDate_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -747,9 +747,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_maxIterations", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -783,17 +783,17 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_maxValueAfter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -843,17 +843,17 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_minValueAfter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="first",Description = "Reference to first")>] 
+        ([<ExcelArgument(Name="first",Description = "int")>] 
          first : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -903,9 +903,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_moving_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_moving_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -939,9 +939,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_nodes", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -975,7 +975,7 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1006,17 +1006,17 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "PiecewiseYieldCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "PiecewiseYieldCurve")>] 
          jumpDates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1067,17 +1067,17 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve2", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseYieldCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="referenceDate",Description = "Reference to referenceDate")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="cal",Description = "Reference to cal")>] 
+        ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="jumps",Description = "Reference to jumps")>] 
+        ([<ExcelArgument(Name="jumps",Description = "PiecewiseYieldCurve")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "Reference to jumpDates")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "PiecewiseYieldCurve")>] 
          jumpDates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1128,11 +1128,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_registerWith", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "YieldTermStructure")>] 
          helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1170,11 +1170,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_setTermStructure", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="helper",Description = "Reference to helper")>] 
+        ([<ExcelArgument(Name="helper",Description = "YieldTermStructure")>] 
          helper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1212,9 +1212,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_setupInterpolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1248,9 +1248,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_times", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1284,9 +1284,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_times_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1320,9 +1320,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_traits_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_traits_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1356,15 +1356,15 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_updateGuess", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1410,13 +1410,13 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroYieldImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1458,13 +1458,13 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_discount", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1506,13 +1506,13 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_discount1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_discount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1554,21 +1554,21 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1626,21 +1626,21 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1698,19 +1698,19 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate2", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1764,9 +1764,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_jumpDates", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1800,9 +1800,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_jumpTimes", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1836,9 +1836,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_update", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1872,19 +1872,19 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroRate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_zeroRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1938,17 +1938,17 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroRate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
          freq : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1998,9 +1998,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_calendar", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2034,9 +2034,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_dayCounter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2070,9 +2070,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_maxTime", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2106,9 +2106,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_referenceDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2142,9 +2142,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_settlementDays", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2178,11 +2178,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_timeFromReference", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2220,9 +2220,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_allowsExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2256,11 +2256,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_disableExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2298,11 +2298,11 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_enableExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2340,9 +2340,9 @@ module PiecewiseYieldCurveFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseYieldCurve_extrapolate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "Reference to PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="PiecewiseYieldCurve",Description = "PiecewiseYieldCurve")>] 
          piecewiseyieldcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -2373,9 +2373,9 @@ module PiecewiseYieldCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PiecewiseYieldCurve_Range", Description="Create a range of PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PiecewiseYieldCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

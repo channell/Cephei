@@ -39,9 +39,9 @@ module LinearFunction =
     *)
     [<ExcelFunction(Name="_Linear_global", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Linear",Description = "Reference to Linear")>] 
+        ([<ExcelArgument(Name="Linear",Description = "Linear")>] 
          linear : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,15 +75,15 @@ module LinearFunction =
     *)
     [<ExcelFunction(Name="_Linear_interpolate", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Linear",Description = "Reference to Linear")>] 
+        ([<ExcelArgument(Name="Linear",Description = "Linear")>] 
          linear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,9 +129,9 @@ module LinearFunction =
     *)
     [<ExcelFunction(Name="_Linear_requiredPoints", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Linear",Description = "Reference to Linear")>] 
+        ([<ExcelArgument(Name="Linear",Description = "Linear")>] 
          linear : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -162,9 +162,9 @@ module LinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Linear_Range", Description="Create a range of Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Linear")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

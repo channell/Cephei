@@ -39,7 +39,7 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ZARCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_code", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_empty", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_Equals", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_format", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_fractionsPerUnit", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_fractionSymbol", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_name", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_numericCode", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_rounding", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_symbol", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_ToString", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module ZARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ZARCurrency_triangulationCurrency", Description="Create a ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ZARCurrency",Description = "Reference to ZARCurrency")>] 
+        ([<ExcelArgument(Name="ZARCurrency",Description = "ZARCurrency")>] 
          zarcurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module ZARCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZARCurrency_Range", Description="Create a range of ZARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ZARCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

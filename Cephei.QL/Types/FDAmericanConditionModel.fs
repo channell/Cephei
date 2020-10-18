@@ -41,7 +41,8 @@ type FDAmericanConditionModel<'baseEngine when 'baseEngine :> FDConditionEngineT
 (*
     Functions
 *)
-    let _FDAmericanCondition                       = cell (fun () -> new FDAmericanCondition<'baseEngine> ())
+    let mutable
+        _FDAmericanCondition                       = cell (fun () -> new FDAmericanCondition<'baseEngine> ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDAmericanCondition.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
@@ -93,7 +94,8 @@ type FDAmericanConditionModel1<'baseEngine when 'baseEngine :> FDConditionEngine
 (*
     Functions
 *)
-    let _FDAmericanCondition                       = cell (fun () -> new FDAmericanCondition<'baseEngine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let mutable
+        _FDAmericanCondition                       = cell (fun () -> new FDAmericanCondition<'baseEngine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
                                                    = triv (fun () -> _FDAmericanCondition.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   

@@ -39,11 +39,11 @@ module ProjectionFunction =
     *)
     [<ExcelFunction(Name="_Projection_include", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_include
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Projection",Description = "Reference to Projection")>] 
+        ([<ExcelArgument(Name="Projection",Description = "Projection")>] 
          projection : obj)
-        ([<ExcelArgument(Name="projectedParameters",Description = "Reference to projectedParameters")>] 
+        ([<ExcelArgument(Name="projectedParameters",Description = "Vector")>] 
          projectedParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module ProjectionFunction =
     *)
     [<ExcelFunction(Name="_Projection_project", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_project
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Projection",Description = "Reference to Projection")>] 
+        ([<ExcelArgument(Name="Projection",Description = "Projection")>] 
          projection : obj)
-        ([<ExcelArgument(Name="parameters",Description = "Reference to parameters")>] 
+        ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,11 +123,11 @@ module ProjectionFunction =
     *)
     [<ExcelFunction(Name="_Projection", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Projection")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="parameterValues",Description = "Reference to parameterValues")>] 
+        ([<ExcelArgument(Name="parameterValues",Description = "Vector")>] 
          parameterValues : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "Reference to fixParameters")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "Projection")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -163,9 +163,9 @@ module ProjectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Projection_Range", Description="Create a range of Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Projection")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

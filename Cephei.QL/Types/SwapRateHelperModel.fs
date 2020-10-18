@@ -68,7 +68,8 @@ type SwapRateHelperModel
 (*
     Functions
 *)
-    let _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))
     let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
     let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
@@ -98,13 +99,14 @@ type SwapRateHelperModel
     casting 
 *)
     internal new () = new SwapRateHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwapRateHelper.Value <- v
+    member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel then 
             p :?> SwapRateHelperModel
         else
             let o = new SwapRateHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -173,7 +175,8 @@ type SwapRateHelperModel1
 (*
     Functions
 *)
-    let _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))
     let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
     let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
@@ -203,13 +206,14 @@ type SwapRateHelperModel1
     casting 
 *)
     internal new () = new SwapRateHelperModel1(null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwapRateHelper.Value <- v
+    member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel1 then 
             p :?> SwapRateHelperModel1
         else
             let o = new SwapRateHelperModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -284,7 +288,8 @@ type SwapRateHelperModel2
 (*
     Functions
 *)
-    let _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))
     let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
     let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
@@ -314,13 +319,14 @@ type SwapRateHelperModel2
     casting 
 *)
     internal new () = new SwapRateHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwapRateHelper.Value <- v
+    member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel2 then 
             p :?> SwapRateHelperModel2
         else
             let o = new SwapRateHelperModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -389,7 +395,8 @@ type SwapRateHelperModel3
 (*
     Functions
 *)
-    let _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))
+    let mutable
+        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))
     let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
     let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
@@ -419,13 +426,14 @@ type SwapRateHelperModel3
     casting 
 *)
     internal new () = new SwapRateHelperModel3(null,null,null,null,null,null,null)
-    member internal this.Inject v = _SwapRateHelper.Value <- v
+    member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel3 then 
             p :?> SwapRateHelperModel3
         else
             let o = new SwapRateHelperModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_floatingLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,27 +75,27 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLoan")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="floatingSchedule",Description = "Reference to floatingSchedule")>] 
+        ([<ExcelArgument(Name="floatingSchedule",Description = "Schedule")>] 
          floatingSchedule : obj)
-        ([<ExcelArgument(Name="floatingSpread",Description = "Reference to floatingSpread")>] 
+        ([<ExcelArgument(Name="floatingSpread",Description = "double")>] 
          floatingSpread : obj)
-        ([<ExcelArgument(Name="floatingDayCount",Description = "Reference to floatingDayCount")>] 
+        ([<ExcelArgument(Name="floatingDayCount",Description = "DayCounter")>] 
          floatingDayCount : obj)
-        ([<ExcelArgument(Name="principalSchedule",Description = "Reference to principalSchedule")>] 
+        ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "Reference to paymentConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,9 +166,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_principalLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,9 +202,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_isExpired", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,9 +238,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_CASH", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,9 +274,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_errorEstimate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,9 +310,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_NPV", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,11 +346,11 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_result", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -388,11 +388,11 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_setPricingEngine", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_valuationDate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingLoan",Description = "Reference to FloatingLoan")>] 
+        ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -463,9 +463,9 @@ module FloatingLoanFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FloatingLoan_Range", Description="Create a range of FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FloatingLoan")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

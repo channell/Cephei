@@ -39,9 +39,9 @@ module InverseCumulativePoissonFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativePoisson1", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativePoisson")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lambda",Description = "Reference to lambda")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module InverseCumulativePoissonFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativePoisson", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativePoisson")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,11 +107,11 @@ module InverseCumulativePoissonFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativePoisson_value", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativePoisson",Description = "Reference to InverseCumulativePoisson")>] 
+        ([<ExcelArgument(Name="InverseCumulativePoisson",Description = "InverseCumulativePoisson")>] 
          inversecumulativepoisson : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -146,9 +146,9 @@ module InverseCumulativePoissonFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseCumulativePoisson_Range", Description="Create a range of InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InverseCumulativePoisson")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

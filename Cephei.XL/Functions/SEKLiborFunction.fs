@@ -39,11 +39,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor1", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SEKLibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,9 +82,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SEKLibor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,11 +119,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_clone", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,11 +161,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_maturityDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,11 +203,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_valueDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -245,9 +245,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_businessDayConvention", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,9 +281,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_endOfMonth", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -317,15 +317,15 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_forecastFixing1", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -371,11 +371,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_forecastFixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -413,9 +413,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_forwardingTermStructure", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,9 +449,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_currency", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_dayCounter", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -521,9 +521,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_familyName", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -557,13 +557,13 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -605,9 +605,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixingCalendar", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -641,11 +641,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixingDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,9 +683,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixingDays", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,11 +719,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_isValidFixingDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -761,9 +761,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_name", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,11 +797,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_pastFixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -839,9 +839,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_tenor", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -875,9 +875,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_update", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,15 +911,15 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_addFixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -965,15 +965,15 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_addFixings", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,13 +1019,13 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_addFixings1", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1067,9 +1067,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_allowsNativeFixings", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1103,9 +1103,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_clearFixings", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,11 +1139,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_registerWith", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1181,9 +1181,9 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_timeSeries", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1217,11 +1217,11 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_unregisterWith", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SEKLibor",Description = "Reference to SEKLibor")>] 
+        ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1256,9 +1256,9 @@ module SEKLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SEKLibor_Range", Description="Create a range of SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SEKLibor")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

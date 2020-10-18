@@ -39,9 +39,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_capFloorPrices", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_capFloorPrices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_capFloorVolatilities", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_capFloorVolatilities
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletPrices", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletPrices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,25 +147,25 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OptionletStripper1")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="termVolSurface",Description = "Reference to termVolSurface")>] 
+        ([<ExcelArgument(Name="termVolSurface",Description = "CapFloorTermVolSurface")>] 
          termVolSurface : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="switchStrike",Description = "Reference to switchStrike")>] 
+        ([<ExcelArgument(Name="switchStrike",Description = "double")>] 
          switchStrike : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "OptionletStripper1")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxIter",Description = "Reference to maxIter")>] 
+        ([<ExcelArgument(Name="maxIter",Description = "OptionletStripper1")>] 
          maxIter : obj)
-        ([<ExcelArgument(Name="discount",Description = "Reference to discount")>] 
+        ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
          Type : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Reference to displacement")>] 
+        ([<ExcelArgument(Name="displacement",Description = "OptionletStripper1")>] 
          displacement : obj)
-        ([<ExcelArgument(Name="dontThrow",Description = "Reference to dontThrow")>] 
+        ([<ExcelArgument(Name="dontThrow",Description = "OptionletStripper1")>] 
          dontThrow : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,9 +232,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_switchStrike", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_switchStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_atmOptionletRates", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_atmOptionletRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_businessDayConvention", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,9 +340,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_calendar", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,9 +376,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_dayCounter", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,9 +412,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_displacement", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -448,9 +448,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_iborIndex", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -484,9 +484,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletAccrualPeriods", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletAccrualPeriods
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -520,9 +520,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletFixingDates", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletFixingDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -556,9 +556,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletFixingTenors", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletFixingTenors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,9 +592,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletFixingTimes", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletFixingTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -628,9 +628,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletMaturities", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletMaturities
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,9 +664,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletPaymentDates", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletPaymentDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -700,11 +700,11 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletStrikes", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,11 +742,11 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_optionletVolatilities", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_optionletVolatilities
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -784,9 +784,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_settlementDays", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,9 +820,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_termVolSurface", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_termVolSurface
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -856,9 +856,9 @@ module OptionletStripper1Function =
     *)
     [<ExcelFunction(Name="_OptionletStripper1_volatilityType", Description="Create a OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OptionletStripper1",Description = "Reference to OptionletStripper1")>] 
+        ([<ExcelArgument(Name="OptionletStripper1",Description = "OptionletStripper1")>] 
          optionletstripper1 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -889,9 +889,9 @@ module OptionletStripper1Function =
             "<WIZ>"
     [<ExcelFunction(Name="_OptionletStripper1_Range", Description="Create a range of OptionletStripper1",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper1_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the OptionletStripper1")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

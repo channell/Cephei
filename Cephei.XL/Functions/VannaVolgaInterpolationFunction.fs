@@ -39,21 +39,21 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "VannaVolgaInterpolation")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "Reference to xBegin")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
          xBegin : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "Reference to yBegin")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="spot",Description = "Reference to spot")>] 
+        ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
-        ([<ExcelArgument(Name="dDiscount",Description = "Reference to dDiscount")>] 
+        ([<ExcelArgument(Name="dDiscount",Description = "double")>] 
          dDiscount : obj)
-        ([<ExcelArgument(Name="fDiscount",Description = "Reference to fDiscount")>] 
+        ([<ExcelArgument(Name="fDiscount",Description = "double")>] 
          fDiscount : obj)
-        ([<ExcelArgument(Name="T",Description = "Reference to T")>] 
+        ([<ExcelArgument(Name="T",Description = "double")>] 
          T : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,13 +112,13 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_derivative", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_empty", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,13 +196,13 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_primitive", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,13 +244,13 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_secondDerivative", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_update", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,13 +328,13 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_value1", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="allowExtrapolation",Description = "Reference to allowExtrapolation")>] 
+        ([<ExcelArgument(Name="allowExtrapolation",Description = "bool")>] 
          allowExtrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,11 +376,11 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_value", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,9 +418,9 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_xMax", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,9 +454,9 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_xMin", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,9 +490,9 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_allowsExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -526,11 +526,11 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_disableExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,11 +568,11 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_enableExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,9 +610,9 @@ module VannaVolgaInterpolationFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaInterpolation_extrapolate", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "VannaVolgaInterpolation")>] 
          vannavolgainterpolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -643,9 +643,9 @@ module VannaVolgaInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VannaVolgaInterpolation_Range", Description="Create a range of VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the VannaVolgaInterpolation")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,31 +39,31 @@ module FdmBlackScholesMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesMesher", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBlackScholesMesher")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="maturity",Description = "Reference to maturity")>] 
+        ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="xMinConstraint",Description = "Reference to xMinConstraint")>] 
+        ([<ExcelArgument(Name="xMinConstraint",Description = "double")>] 
          xMinConstraint : obj)
-        ([<ExcelArgument(Name="xMaxConstraint",Description = "Reference to xMaxConstraint")>] 
+        ([<ExcelArgument(Name="xMaxConstraint",Description = "double")>] 
          xMaxConstraint : obj)
-        ([<ExcelArgument(Name="eps",Description = "Reference to eps")>] 
+        ([<ExcelArgument(Name="eps",Description = "FdmBlackScholesMesher")>] 
          eps : obj)
-        ([<ExcelArgument(Name="scaleFactor",Description = "Reference to scaleFactor")>] 
+        ([<ExcelArgument(Name="scaleFactor",Description = "FdmBlackScholesMesher")>] 
          scaleFactor : obj)
-        ([<ExcelArgument(Name="cPoint",Description = "Reference to cPoint")>] 
+        ([<ExcelArgument(Name="cPoint",Description = "FdmBlackScholesMesher")>] 
          cPoint : obj)
-        ([<ExcelArgument(Name="dividendSchedule",Description = "Reference to dividendSchedule")>] 
+        ([<ExcelArgument(Name="dividendSchedule",Description = "FdmBlackScholesMesher")>] 
          dividendSchedule : obj)
-        ([<ExcelArgument(Name="fdmQuantoHelper",Description = "Reference to fdmQuantoHelper")>] 
+        ([<ExcelArgument(Name="fdmQuantoHelper",Description = "FdmBlackScholesMesher")>] 
          fdmQuantoHelper : obj)
-        ([<ExcelArgument(Name="spotAdjustment",Description = "Reference to spotAdjustment")>] 
+        ([<ExcelArgument(Name="spotAdjustment",Description = "FdmBlackScholesMesher")>] 
          spotAdjustment : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module FdmBlackScholesMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesMesher_dminus", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "Reference to FdmBlackScholesMesher")>] 
+        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "FdmBlackScholesMesher")>] 
          fdmblackscholesmesher : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,11 +184,11 @@ module FdmBlackScholesMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesMesher_dplus", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "Reference to FdmBlackScholesMesher")>] 
+        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "FdmBlackScholesMesher")>] 
          fdmblackscholesmesher : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,11 +226,11 @@ module FdmBlackScholesMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesMesher_location", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "Reference to FdmBlackScholesMesher")>] 
+        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "FdmBlackScholesMesher")>] 
          fdmblackscholesmesher : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "int")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,9 +268,9 @@ module FdmBlackScholesMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesMesher_locations", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "Reference to FdmBlackScholesMesher")>] 
+        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "FdmBlackScholesMesher")>] 
          fdmblackscholesmesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -304,9 +304,9 @@ module FdmBlackScholesMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesMesher_size", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "Reference to FdmBlackScholesMesher")>] 
+        ([<ExcelArgument(Name="FdmBlackScholesMesher",Description = "FdmBlackScholesMesher")>] 
          fdmblackscholesmesher : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -337,9 +337,9 @@ module FdmBlackScholesMesherFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBlackScholesMesher_Range", Description="Create a range of FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmBlackScholesMesher")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

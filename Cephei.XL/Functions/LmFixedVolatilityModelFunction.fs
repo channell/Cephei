@@ -39,11 +39,11 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmFixedVolatilityModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="volatilities",Description = "Reference to volatilities")>] 
+        ([<ExcelArgument(Name="volatilities",Description = "Vector")>] 
          volatilities : obj)
-        ([<ExcelArgument(Name="startTimes",Description = "Reference to startTimes")>] 
+        ([<ExcelArgument(Name="startTimes",Description = "double")>] 
          startTimes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,15 +82,15 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel_volatility", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "Reference to LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "LmFixedVolatilityModel")>] 
          lmfixedvolatilitymodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,13 +136,13 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel_volatility1", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "Reference to LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "LmFixedVolatilityModel")>] 
          lmfixedvolatilitymodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,17 +184,17 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel_integratedVariance", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_integratedVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "Reference to LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "LmFixedVolatilityModel")>] 
          lmfixedvolatilitymodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Helper.Range.fromModelList")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,9 +244,9 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel_parameters", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "Reference to LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "LmFixedVolatilityModel")>] 
          lmfixedvolatilitymodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,11 +280,11 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel_setParams", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "Reference to LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "LmFixedVolatilityModel")>] 
          lmfixedvolatilitymodel : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Parameter")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,9 +322,9 @@ module LmFixedVolatilityModelFunction =
     *)
     [<ExcelFunction(Name="_LmFixedVolatilityModel_size", Description="Create a LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "Reference to LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="LmFixedVolatilityModel",Description = "LmFixedVolatilityModel")>] 
          lmfixedvolatilitymodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -355,9 +355,9 @@ module LmFixedVolatilityModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LmFixedVolatilityModel_Range", Description="Create a range of LmFixedVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmFixedVolatilityModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LmFixedVolatilityModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

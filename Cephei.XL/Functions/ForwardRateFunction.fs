@@ -39,13 +39,13 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_discountImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_forwardImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,17 +135,17 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_guess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -195,11 +195,11 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_initialDate", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,11 +237,11 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_initialValue", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "YieldTermStructure")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -279,9 +279,9 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_maxIterations", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -315,17 +315,17 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_maxValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -375,17 +375,17 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_minValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "InterpolatedCurve")>] 
          c : obj)
-        ([<ExcelArgument(Name="validData",Description = "Reference to validData")>] 
+        ([<ExcelArgument(Name="validData",Description = "bool")>] 
          validData : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "int")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,15 +435,15 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_updateGuess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="data",Description = "Reference to data")>] 
+        ([<ExcelArgument(Name="data",Description = "double")>] 
          data : obj)
-        ([<ExcelArgument(Name="forward",Description = "Reference to forward")>] 
+        ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -489,13 +489,13 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_zeroYieldImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardRate",Description = "Reference to ForwardRate")>] 
+        ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "Interpolation")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -534,9 +534,9 @@ module ForwardRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardRate_Range", Description="Create a range of ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardRate")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

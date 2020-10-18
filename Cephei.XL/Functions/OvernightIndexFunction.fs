@@ -39,11 +39,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_clone", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,19 +81,19 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="familyName",Description = "Reference to familyName")>] 
+        ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="currency",Description = "Reference to currency")>] 
+        ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
-        ([<ExcelArgument(Name="fixingCalendar",Description = "Reference to fixingCalendar")>] 
+        ([<ExcelArgument(Name="fixingCalendar",Description = "Calendar")>] 
          fixingCalendar : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+        ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_businessDayConvention", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_endOfMonth", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,15 +220,15 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_forecastFixing1", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="d1",Description = "Reference to d1")>] 
+        ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
-        ([<ExcelArgument(Name="d2",Description = "Reference to d2")>] 
+        ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_forecastFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_forwardingTermStructure", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -352,11 +352,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_maturityDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_currency", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_dayCounter", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_familyName", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,13 +502,13 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_fixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,9 +550,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_fixingCalendar", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -586,11 +586,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_fixingDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+        ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -628,9 +628,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_fixingDays", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,11 +664,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_isValidFixingDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,9 +706,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_name", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -742,11 +742,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_pastFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -784,9 +784,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_tenor", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -820,9 +820,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_update", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -856,11 +856,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_valueDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+        ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -898,15 +898,15 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_addFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -952,15 +952,15 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_addFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1006,13 +1006,13 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_addFixings1", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+        ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1054,9 +1054,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_allowsNativeFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1090,9 +1090,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_clearFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1126,11 +1126,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_registerWith", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1168,9 +1168,9 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_timeSeries", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1204,11 +1204,11 @@ module OvernightIndexFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndex_unregisterWith", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="OvernightIndex",Description = "Reference to OvernightIndex")>] 
+        ([<ExcelArgument(Name="OvernightIndex",Description = "OvernightIndex")>] 
          overnightindex : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1243,9 +1243,9 @@ module OvernightIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OvernightIndex_Range", Description="Create a range of OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the OvernightIndex")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

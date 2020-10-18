@@ -39,21 +39,21 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface3", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="optionTenors",Description = "Reference to optionTenors")>] 
+        ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="vols",Description = "Reference to vols")>] 
+        ([<ExcelArgument(Name="vols",Description = "Matrix")>] 
          vols : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "CapFloorTermVolSurface")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,21 +112,21 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDate",Description = "Reference to settlementDate")>] 
+        ([<ExcelArgument(Name="settlementDate",Description = "Date")>] 
          settlementDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="optionTenors",Description = "Reference to optionTenors")>] 
+        ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="vols",Description = "Reference to vols")>] 
+        ([<ExcelArgument(Name="vols",Description = "Matrix")>] 
          vols : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "CapFloorTermVolSurface")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,21 +185,21 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface1", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDate",Description = "Reference to settlementDate")>] 
+        ([<ExcelArgument(Name="settlementDate",Description = "Date")>] 
          settlementDate : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="optionTenors",Description = "Reference to optionTenors")>] 
+        ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="vols",Description = "Reference to vols")>] 
+        ([<ExcelArgument(Name="vols",Description = "Quote")>] 
          vols : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "CapFloorTermVolSurface")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,21 +259,21 @@ module CapFloorTermVolSurfaceFunction =
     (*!!vol
     [<ExcelFunction(Name="_CapFloorTermVolSurface3", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="settlementDays",Description = "Reference to settlementDays")>] 
+        ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Reference to calendar")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "Reference to bdc")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
          bdc : obj)
-        ([<ExcelArgument(Name="optionTenors",Description = "Reference to optionTenors")>] 
+        ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
-        ([<ExcelArgument(Name="strikes",Description = "Reference to strikes")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="vols",Description = "Reference to vols")>] 
+        ([<ExcelArgument(Name="vols",Description = "Quote")>] 
          vols : obj)
-        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+        ([<ExcelArgument(Name="dc",Description = "CapFloorTermVolSurface")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,9 +333,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_maxDate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -369,9 +369,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_maxStrike", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -405,9 +405,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_minStrike", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -441,9 +441,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_optionDates", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -477,9 +477,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_optionTenors", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionTenors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -513,9 +513,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_optionTimes", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -549,9 +549,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_strikes", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_strikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -585,9 +585,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_update", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -621,15 +621,15 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="length",Description = "Reference to length")>] 
+        ([<ExcelArgument(Name="length",Description = "Period")>] 
          length : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -675,15 +675,15 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility1", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -729,15 +729,15 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility2", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+        ([<ExcelArgument(Name="End",Description = "Date")>] 
          End : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -783,9 +783,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_businessDayConvention", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -819,11 +819,11 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_optionDateFromTenor", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -861,9 +861,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_calendar", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -897,9 +897,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_dayCounter", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -933,9 +933,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_maxTime", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -969,9 +969,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_referenceDate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1005,9 +1005,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_settlementDays", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1041,11 +1041,11 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_timeFromReference", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1083,9 +1083,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_allowsExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1119,11 +1119,11 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_disableExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1161,11 +1161,11 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_enableExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1203,9 +1203,9 @@ module CapFloorTermVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_CapFloorTermVolSurface_extrapolate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "Reference to CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="CapFloorTermVolSurface",Description = "CapFloorTermVolSurface")>] 
          capfloortermvolsurface : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1236,9 +1236,9 @@ module CapFloorTermVolSurfaceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CapFloorTermVolSurface_Range", Description="Create a range of CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

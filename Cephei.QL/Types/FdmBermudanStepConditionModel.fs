@@ -52,7 +52,8 @@ type FdmBermudanStepConditionModel
 (*
     Functions
 *)
-    let _FdmBermudanStepCondition                  = cell (fun () -> new FdmBermudanStepCondition (exerciseDates.Value, referenceDate.Value, dayCounter.Value, mesher.Value, calculator.Value))
+    let mutable
+        _FdmBermudanStepCondition                  = cell (fun () -> new FdmBermudanStepCondition (exerciseDates.Value, referenceDate.Value, dayCounter.Value, mesher.Value, calculator.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmBermudanStepCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmBermudanStepCondition.Value)
@@ -62,13 +63,14 @@ type FdmBermudanStepConditionModel
     casting 
 *)
     internal new () = new FdmBermudanStepConditionModel(null,null,null,null,null)
-    member internal this.Inject v = _FdmBermudanStepCondition.Value <- v
+    member internal this.Inject v = _FdmBermudanStepCondition <- v
     static member Cast (p : ICell<FdmBermudanStepCondition>) = 
         if p :? FdmBermudanStepConditionModel then 
             p :?> FdmBermudanStepConditionModel
         else
             let o = new FdmBermudanStepConditionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

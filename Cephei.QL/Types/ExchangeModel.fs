@@ -41,7 +41,8 @@ type ExchangeModel
 (*
     Functions
 *)
-    let _Exchange                                  = cell (fun () -> new Exchange ())
+    let mutable
+        _Exchange                                  = cell (fun () -> new Exchange ())
     let _isBusinessDay                             (date : ICell<Date>)   
                                                    = cell (fun () -> _Exchange.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Exchange.Value.name())
@@ -50,13 +51,14 @@ type ExchangeModel
     casting 
 *)
     
-    member internal this.Inject v = _Exchange.Value <- v
+    member internal this.Inject v = _Exchange <- v
     static member Cast (p : ICell<Exchange>) = 
         if p :? ExchangeModel then 
             p :?> ExchangeModel
         else
             let o = new ExchangeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 (* 

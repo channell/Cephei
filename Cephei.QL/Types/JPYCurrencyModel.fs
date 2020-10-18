@@ -41,7 +41,8 @@ type JPYCurrencyModel
 (*
     Functions
 *)
-    let _JPYCurrency                               = cell (fun () -> new JPYCurrency ())
+    let mutable
+        _JPYCurrency                               = cell (fun () -> new JPYCurrency ())
     let _code                                      = triv (fun () -> _JPYCurrency.Value.code)
     let _empty                                     = triv (fun () -> _JPYCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type JPYCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _JPYCurrency.Value <- v
+    member internal this.Inject v = _JPYCurrency <- v
     static member Cast (p : ICell<JPYCurrency>) = 
         if p :? JPYCurrencyModel then 
             p :?> JPYCurrencyModel
         else
             let o = new JPYCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

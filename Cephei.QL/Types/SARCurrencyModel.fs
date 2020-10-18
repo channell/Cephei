@@ -41,7 +41,8 @@ type SARCurrencyModel
 (*
     Functions
 *)
-    let _SARCurrency                               = cell (fun () -> new SARCurrency ())
+    let mutable
+        _SARCurrency                               = cell (fun () -> new SARCurrency ())
     let _code                                      = triv (fun () -> _SARCurrency.Value.code)
     let _empty                                     = triv (fun () -> _SARCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type SARCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _SARCurrency.Value <- v
+    member internal this.Inject v = _SARCurrency <- v
     static member Cast (p : ICell<SARCurrency>) = 
         if p :? SARCurrencyModel then 
             p :?> SARCurrencyModel
         else
             let o = new SARCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

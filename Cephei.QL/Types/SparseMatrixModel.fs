@@ -44,7 +44,8 @@ type SparseMatrixModel
 (*
     Functions
 *)
-    let _SparseMatrix                              = cell (fun () -> new SparseMatrix (lhs.Value))
+    let mutable
+        _SparseMatrix                              = cell (fun () -> new SparseMatrix (lhs.Value))
     let _Clear                                     = triv (fun () -> _SparseMatrix.Value.Clear()
                                                                      _SparseMatrix.Value)
     let _columns                                   = triv (fun () -> _SparseMatrix.Value.columns())
@@ -73,13 +74,14 @@ type SparseMatrixModel
     casting 
 *)
     internal new () = new SparseMatrixModel(null)
-    member internal this.Inject v = _SparseMatrix.Value <- v
+    member internal this.Inject v = _SparseMatrix <- v
     static member Cast (p : ICell<SparseMatrix>) = 
         if p :? SparseMatrixModel then 
             p :?> SparseMatrixModel
         else
             let o = new SparseMatrixModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -126,7 +128,8 @@ type SparseMatrixModel1
 (*
     Functions
 *)
-    let _SparseMatrix                              = cell (fun () -> new SparseMatrix (rows.Value, columns.Value))
+    let mutable
+        _SparseMatrix                              = cell (fun () -> new SparseMatrix (rows.Value, columns.Value))
     let _Clear                                     = triv (fun () -> _SparseMatrix.Value.Clear()
                                                                      _SparseMatrix.Value)
     let _columns                                   = triv (fun () -> _SparseMatrix.Value.columns())
@@ -155,13 +158,14 @@ type SparseMatrixModel1
     casting 
 *)
     internal new () = new SparseMatrixModel1(null,null)
-    member internal this.Inject v = _SparseMatrix.Value <- v
+    member internal this.Inject v = _SparseMatrix <- v
     static member Cast (p : ICell<SparseMatrix>) = 
         if p :? SparseMatrixModel1 then 
             p :?> SparseMatrixModel1
         else
             let o = new SparseMatrixModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -204,7 +208,8 @@ type SparseMatrixModel2
 (*
     Functions
 *)
-    let _SparseMatrix                              = cell (fun () -> new SparseMatrix ())
+    let mutable
+        _SparseMatrix                              = cell (fun () -> new SparseMatrix ())
     let _Clear                                     = triv (fun () -> _SparseMatrix.Value.Clear()
                                                                      _SparseMatrix.Value)
     let _columns                                   = triv (fun () -> _SparseMatrix.Value.columns())
@@ -233,13 +238,14 @@ type SparseMatrixModel2
     casting 
 *)
     
-    member internal this.Inject v = _SparseMatrix.Value <- v
+    member internal this.Inject v = _SparseMatrix <- v
     static member Cast (p : ICell<SparseMatrix>) = 
         if p :? SparseMatrixModel2 then 
             p :?> SparseMatrixModel2
         else
             let o = new SparseMatrixModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

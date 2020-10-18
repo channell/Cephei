@@ -48,7 +48,8 @@ type DiscretizedOptionModel
 (*
     Functions
 *)
-    let _DiscretizedOption                         = cell (fun () -> new DiscretizedOption (underlying.Value, exerciseType.Value, exerciseTimes.Value))
+    let mutable
+        _DiscretizedOption                         = cell (fun () -> new DiscretizedOption (underlying.Value, exerciseType.Value, exerciseTimes.Value))
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedOption.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedOption.Value.reset(size.Value)
@@ -83,13 +84,14 @@ type DiscretizedOptionModel
     casting 
 *)
     internal new () = new DiscretizedOptionModel(null,null,null)
-    member internal this.Inject v = _DiscretizedOption.Value <- v
+    member internal this.Inject v = _DiscretizedOption <- v
     static member Cast (p : ICell<DiscretizedOption>) = 
         if p :? DiscretizedOptionModel then 
             p :?> DiscretizedOptionModel
         else
             let o = new DiscretizedOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

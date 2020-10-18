@@ -39,7 +39,7 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PTECurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_code", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_empty", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_Equals", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_format", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_fractionsPerUnit", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_fractionSymbol", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_name", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_numericCode", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_rounding", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_symbol", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_ToString", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module PTECurrencyFunction =
     *)
     [<ExcelFunction(Name="_PTECurrency_triangulationCurrency", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PTECurrency",Description = "Reference to PTECurrency")>] 
+        ([<ExcelArgument(Name="PTECurrency",Description = "PTECurrency")>] 
          ptecurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module PTECurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PTECurrency_Range", Description="Create a range of PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PTECurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

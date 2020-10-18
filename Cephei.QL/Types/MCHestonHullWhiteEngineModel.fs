@@ -60,7 +60,8 @@ type MCHestonHullWhiteEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : u
 (*
     Functions
 *)
-    let _MCHestonHullWhiteEngine                   = cell (fun () -> new MCHestonHullWhiteEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+    let mutable
+        _MCHestonHullWhiteEngine                   = cell (fun () -> new MCHestonHullWhiteEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
     do this.Bind(_MCHestonHullWhiteEngine)
 
 (* 

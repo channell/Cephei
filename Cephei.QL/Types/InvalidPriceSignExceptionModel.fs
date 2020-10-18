@@ -41,19 +41,21 @@ type InvalidPriceSignExceptionModel
 (*
     Functions
 *)
-    let _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException ())
+    let mutable
+        _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException ())
     do this.Bind(_InvalidPriceSignException)
 (* 
     casting 
 *)
     
-    member internal this.Inject v = _InvalidPriceSignException.Value <- v
+    member internal this.Inject v = _InvalidPriceSignException <- v
     static member Cast (p : ICell<InvalidPriceSignException>) = 
         if p :? InvalidPriceSignExceptionModel then 
             p :?> InvalidPriceSignExceptionModel
         else
             let o = new InvalidPriceSignExceptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -77,19 +79,21 @@ type InvalidPriceSignExceptionModel1
 (*
     Functions
 *)
-    let _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value))
+    let mutable
+        _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value))
     do this.Bind(_InvalidPriceSignException)
 (* 
     casting 
 *)
     internal new () = new InvalidPriceSignExceptionModel1(null)
-    member internal this.Inject v = _InvalidPriceSignException.Value <- v
+    member internal this.Inject v = _InvalidPriceSignException <- v
     static member Cast (p : ICell<InvalidPriceSignException>) = 
         if p :? InvalidPriceSignExceptionModel1 then 
             p :?> InvalidPriceSignExceptionModel1
         else
             let o = new InvalidPriceSignExceptionModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -116,19 +120,21 @@ type InvalidPriceSignExceptionModel2
 (*
     Functions
 *)
-    let _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value, inner.Value))
+    let mutable
+        _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value, inner.Value))
     do this.Bind(_InvalidPriceSignException)
 (* 
     casting 
 *)
     internal new () = new InvalidPriceSignExceptionModel2(null,null)
-    member internal this.Inject v = _InvalidPriceSignException.Value <- v
+    member internal this.Inject v = _InvalidPriceSignException <- v
     static member Cast (p : ICell<InvalidPriceSignException>) = 
         if p :? InvalidPriceSignExceptionModel2 then 
             p :?> InvalidPriceSignExceptionModel2
         else
             let o = new InvalidPriceSignExceptionModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

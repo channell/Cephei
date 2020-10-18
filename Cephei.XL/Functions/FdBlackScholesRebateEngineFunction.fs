@@ -40,21 +40,21 @@ module FdBlackScholesRebateEngineFunction =
     *)
     [<ExcelFunction(Name="_FdBlackScholesRebateEngine", Description="Create a FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesRebateEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdBlackScholesRebateEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "Reference to tGrid")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "FdBlackScholesRebateEngine")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "Reference to xGrid")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "FdBlackScholesRebateEngine")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "Reference to dampingSteps")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "FdBlackScholesRebateEngine")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "Reference to schemeDesc")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdBlackScholesRebateEngine")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "Reference to localVol")>] 
+        ([<ExcelArgument(Name="localVol",Description = "FdBlackScholesRebateEngine")>] 
          localVol : obj)
-        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "Reference to illegalLocalVolOverwrite")>] 
+        ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -110,9 +110,9 @@ module FdBlackScholesRebateEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdBlackScholesRebateEngine_Range", Description="Create a range of FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesRebateEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

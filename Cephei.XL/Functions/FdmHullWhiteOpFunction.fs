@@ -40,13 +40,13 @@ module FdmHullWhiteOpFunction =
     (* duplicate add fucntion
     [<ExcelFunction(Name="_FdmHullWhiteOp_add", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -89,11 +89,11 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_apply", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,13 +131,13 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_apply_direction", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_apply_direction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,11 +179,11 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_apply_mixed", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_apply_mixed
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,11 +221,11 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_applyTo", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "Vector")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -263,9 +263,9 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_Clone", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmHullWhiteOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -299,13 +299,13 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FdmHullWhiteOp")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+        ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
-        ([<ExcelArgument(Name="model",Description = "Reference to model")>] 
+        ([<ExcelArgument(Name="model",Description = "HullWhite")>] 
          model : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -348,11 +348,11 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_identity", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+        ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -390,9 +390,9 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_isTimeDependent", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -426,13 +426,13 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_multiply", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="D",Description = "Reference to D")>] 
+        ([<ExcelArgument(Name="D",Description = "IOperator")>] 
          D : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -474,13 +474,13 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_preconditioner", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_preconditioner
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -522,13 +522,13 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_setTime", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="t1",Description = "Reference to t1")>] 
+        ([<ExcelArgument(Name="t1",Description = "double")>] 
          t1 : obj)
-        ([<ExcelArgument(Name="t2",Description = "Reference to t2")>] 
+        ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -570,11 +570,11 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_setTime1", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_setTime1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -612,9 +612,9 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_size", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -648,15 +648,15 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_solve_splitting", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_solve_splitting
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+        ([<ExcelArgument(Name="direction",Description = "int")>] 
          direction : obj)
-        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+        ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "double")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -702,11 +702,11 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_solveFor", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+        ([<ExcelArgument(Name="rhs",Description = "Vector")>] 
          rhs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -744,13 +744,13 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_subtract", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
-        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+        ([<ExcelArgument(Name="A",Description = "IOperator")>] 
          A : obj)
-        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+        ([<ExcelArgument(Name="B",Description = "IOperator")>] 
          B : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -792,9 +792,9 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_toMatrixDecomp", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_toMatrixDecomp
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -828,9 +828,9 @@ module FdmHullWhiteOpFunction =
     *)
     [<ExcelFunction(Name="_FdmHullWhiteOp_toMatrix", Description="Create a FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "Reference to FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="FdmHullWhiteOp",Description = "FdmHullWhiteOp")>] 
          fdmhullwhiteop : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -861,9 +861,9 @@ module FdmHullWhiteOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmHullWhiteOp_Range", Description="Create a range of FdmHullWhiteOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FdmHullWhiteOp")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -40,9 +40,9 @@ module LinearLeastSquaresRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_coefficients", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_coefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "Reference to LinearLeastSquaresRegression")>] 
+        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -78,9 +78,9 @@ module LinearLeastSquaresRegressionFunction =
     (*!! ommited 
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_error", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_error
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "Reference to LinearLeastSquaresRegression")>] 
+        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -115,13 +115,13 @@ module LinearLeastSquaresRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearLeastSquaresRegression", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LinearLeastSquaresRegression")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+        ([<ExcelArgument(Name="y",Description = "double")>] 
          y : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "double,double")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,9 +165,9 @@ module LinearLeastSquaresRegressionFunction =
     (*!! ommited 
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_residuals", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_residuals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "Reference to LinearLeastSquaresRegression")>] 
+        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -203,9 +203,9 @@ module LinearLeastSquaresRegressionFunction =
     (*!! omitted
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_standardErrors", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_standardErrors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "Reference to LinearLeastSquaresRegression")>] 
+        ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -237,9 +237,9 @@ module LinearLeastSquaresRegressionFunction =
             *)
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_Range", Description="Create a range of LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LinearLeastSquaresRegression")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

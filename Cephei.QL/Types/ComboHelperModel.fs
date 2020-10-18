@@ -48,7 +48,8 @@ type ComboHelperModel
 (*
     Functions
 *)
-    let _ComboHelper                               = cell (fun () -> new ComboHelper (quadraticHelper.Value, convMonoHelper.Value, quadraticity.Value))
+    let mutable
+        _ComboHelper                               = cell (fun () -> new ComboHelper (quadraticHelper.Value, convMonoHelper.Value, quadraticity.Value))
     let _fNext                                     = triv (fun () -> _ComboHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
                                                    = triv (fun () -> _ComboHelper.Value.primitive(x.Value))
@@ -59,13 +60,14 @@ type ComboHelperModel
     casting 
 *)
     internal new () = new ComboHelperModel(null,null,null)
-    member internal this.Inject v = _ComboHelper.Value <- v
+    member internal this.Inject v = _ComboHelper <- v
     static member Cast (p : ICell<ComboHelper>) = 
         if p :? ComboHelperModel then 
             p :?> ComboHelperModel
         else
             let o = new ComboHelperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

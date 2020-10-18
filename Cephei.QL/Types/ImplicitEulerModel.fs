@@ -46,7 +46,8 @@ type ImplicitEulerModel<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _ImplicitEuler                             = cell (fun () -> new ImplicitEuler<'Operator> (L.Value, bcs.Value))
+    let mutable
+        _ImplicitEuler                             = cell (fun () -> new ImplicitEuler<'Operator> (L.Value, bcs.Value))
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ImplicitEuler.Value.setStep(dt.Value)
                                                                      _ImplicitEuler.Value)
@@ -78,7 +79,8 @@ type ImplicitEulerModel1<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _ImplicitEuler                             = cell (fun () -> new ImplicitEuler<'Operator> ())
+    let mutable
+        _ImplicitEuler                             = cell (fun () -> new ImplicitEuler<'Operator> ())
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ImplicitEuler.Value.setStep(dt.Value)
                                                                      _ImplicitEuler.Value)

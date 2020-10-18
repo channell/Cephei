@@ -46,7 +46,8 @@ type Trbdf2Model<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _Trbdf2                                    = cell (fun () -> new Trbdf2<'Operator> (L.Value, bcs.Value))
+    let mutable
+        _Trbdf2                                    = cell (fun () -> new Trbdf2<'Operator> (L.Value, bcs.Value))
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _Trbdf2.Value.setStep(dt.Value)
                                                                      _Trbdf2.Value)
@@ -78,7 +79,8 @@ type Trbdf2Model1<'Operator when 'Operator :> IOperator>
 (*
     Functions
 *)
-    let _Trbdf2                                    = cell (fun () -> new Trbdf2<'Operator> ())
+    let mutable
+        _Trbdf2                                    = cell (fun () -> new Trbdf2<'Operator> ())
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _Trbdf2.Value.setStep(dt.Value)
                                                                      _Trbdf2.Value)

@@ -46,7 +46,8 @@ type FdmMesherCompositeModel
 (*
     Functions
 *)
-    let _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (layout.Value, mesher.Value))
+    let mutable
+        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (layout.Value, mesher.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -62,13 +63,14 @@ type FdmMesherCompositeModel
     casting 
 *)
     internal new () = new FdmMesherCompositeModel(null,null)
-    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    member internal this.Inject v = _FdmMesherComposite <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel then 
             p :?> FdmMesherCompositeModel
         else
             let o = new FdmMesherCompositeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -104,7 +106,8 @@ type FdmMesherCompositeModel1
 (*
     Functions
 *)
-    let _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (mesher.Value))
+    let mutable
+        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (mesher.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -120,13 +123,14 @@ type FdmMesherCompositeModel1
     casting 
 *)
     internal new () = new FdmMesherCompositeModel1(null)
-    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    member internal this.Inject v = _FdmMesherComposite <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel1 then 
             p :?> FdmMesherCompositeModel1
         else
             let o = new FdmMesherCompositeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -167,7 +171,8 @@ type FdmMesherCompositeModel2
 (*
     Functions
 *)
-    let _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value, m4.Value))
+    let mutable
+        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value, m4.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -183,13 +188,14 @@ type FdmMesherCompositeModel2
     casting 
 *)
     internal new () = new FdmMesherCompositeModel2(null,null,null,null)
-    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    member internal this.Inject v = _FdmMesherComposite <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel2 then 
             p :?> FdmMesherCompositeModel2
         else
             let o = new FdmMesherCompositeModel2 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -227,7 +233,8 @@ type FdmMesherCompositeModel3
 (*
     Functions
 *)
-    let _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (mesher.Value))
+    let mutable
+        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (mesher.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -243,13 +250,14 @@ type FdmMesherCompositeModel3
     casting 
 *)
     internal new () = new FdmMesherCompositeModel3(null)
-    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    member internal this.Inject v = _FdmMesherComposite <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel3 then 
             p :?> FdmMesherCompositeModel3
         else
             let o = new FdmMesherCompositeModel3 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -286,7 +294,8 @@ type FdmMesherCompositeModel4
 (*
     Functions
 *)
-    let _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value))
+    let mutable
+        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -302,13 +311,14 @@ type FdmMesherCompositeModel4
     casting 
 *)
     internal new () = new FdmMesherCompositeModel4(null,null)
-    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    member internal this.Inject v = _FdmMesherComposite <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel4 then 
             p :?> FdmMesherCompositeModel4
         else
             let o = new FdmMesherCompositeModel4 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -348,7 +358,8 @@ type FdmMesherCompositeModel5
 (*
     Functions
 *)
-    let _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value))
+    let mutable
+        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
                                                    = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
@@ -364,13 +375,14 @@ type FdmMesherCompositeModel5
     casting 
 *)
     internal new () = new FdmMesherCompositeModel5(null,null,null)
-    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    member internal this.Inject v = _FdmMesherComposite <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel5 then 
             p :?> FdmMesherCompositeModel5
         else
             let o = new FdmMesherCompositeModel5 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

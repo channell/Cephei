@@ -46,7 +46,8 @@ type AtmSmileSectionModel
 (*
     Functions
 *)
-    let _AtmSmileSection                           = cell (fun () -> new AtmSmileSection (source.Value, atm.Value))
+    let mutable
+        _AtmSmileSection                           = cell (fun () -> new AtmSmileSection (source.Value, atm.Value))
     let _atmLevel                                  = triv (fun () -> _AtmSmileSection.Value.atmLevel())
     let _dayCounter                                = triv (fun () -> _AtmSmileSection.Value.dayCounter())
     let _exerciseDate                              = triv (fun () -> _AtmSmileSection.Value.exerciseDate())
@@ -77,13 +78,14 @@ type AtmSmileSectionModel
     casting 
 *)
     internal new () = new AtmSmileSectionModel(null,null)
-    member internal this.Inject v = _AtmSmileSection.Value <- v
+    member internal this.Inject v = _AtmSmileSection <- v
     static member Cast (p : ICell<AtmSmileSection>) = 
         if p :? AtmSmileSectionModel then 
             p :?> AtmSmileSectionModel
         else
             let o = new AtmSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -40,15 +40,15 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardPerformanceVanillaEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="getEngine",Description = "Reference to getEngine")>] 
+        ([<ExcelArgument(Name="getEngine",Description = "ForwardVanillaEngine.GetOriginalEngine")>] 
          getEngine : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -96,11 +96,11 @@ module ForwardPerformanceVanillaEngineFunction =
     (*!! ommitted
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_GetOriginalEngine", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_GetOriginalEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "IPricingEngine")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "Reference to ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
-        ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
+        ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -139,11 +139,11 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_registerWith", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "Reference to ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -181,9 +181,9 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_reset", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "Reference to ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,11 +217,11 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_unregisterWith", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "Reference to ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -259,9 +259,9 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_update", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "Reference to ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module ForwardPerformanceVanillaEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_Range", Description="Create a range of ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module SymmetricSchurDecompositionFunction =
     *)
     [<ExcelFunction(Name="_SymmetricSchurDecomposition_eigenvalues", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_eigenvalues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SymmetricSchurDecomposition",Description = "Reference to SymmetricSchurDecomposition")>] 
+        ([<ExcelArgument(Name="SymmetricSchurDecomposition",Description = "SymmetricSchurDecomposition")>] 
          symmetricschurdecomposition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module SymmetricSchurDecompositionFunction =
     *)
     [<ExcelFunction(Name="_SymmetricSchurDecomposition_eigenvectors", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_eigenvectors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="SymmetricSchurDecomposition",Description = "Reference to SymmetricSchurDecomposition")>] 
+        ([<ExcelArgument(Name="SymmetricSchurDecomposition",Description = "SymmetricSchurDecomposition")>] 
          symmetricschurdecomposition : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module SymmetricSchurDecompositionFunction =
     *)
     [<ExcelFunction(Name="_SymmetricSchurDecomposition", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "SymmetricSchurDecomposition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="s",Description = "Reference to s")>] 
+        ([<ExcelArgument(Name="s",Description = "Matrix")>] 
          s : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -145,9 +145,9 @@ module SymmetricSchurDecompositionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SymmetricSchurDecomposition_Range", Description="Create a range of SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the SymmetricSchurDecomposition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

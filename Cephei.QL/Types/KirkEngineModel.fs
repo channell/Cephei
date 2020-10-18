@@ -48,19 +48,21 @@ type KirkEngineModel
 (*
     Functions
 *)
-    let _KirkEngine                                = cell (fun () -> new KirkEngine (process1.Value, process2.Value, correlation.Value))
+    let mutable
+        _KirkEngine                                = cell (fun () -> new KirkEngine (process1.Value, process2.Value, correlation.Value))
     do this.Bind(_KirkEngine)
 (* 
     casting 
 *)
     internal new () = new KirkEngineModel(null,null,null)
-    member internal this.Inject v = _KirkEngine.Value <- v
+    member internal this.Inject v = _KirkEngine <- v
     static member Cast (p : ICell<KirkEngine>) = 
         if p :? KirkEngineModel then 
             p :?> KirkEngineModel
         else
             let o = new KirkEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

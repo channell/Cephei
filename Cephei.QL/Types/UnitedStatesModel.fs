@@ -98,7 +98,8 @@ type UnitedStatesModel
 (*
     Functions
 *)
-    let _UnitedStates                              = cell (fun () -> new UnitedStates (m.Value))
+    let mutable
+        _UnitedStates                              = cell (fun () -> new UnitedStates (m.Value))
     let _addedHolidays                             = triv (fun () -> _UnitedStates.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _UnitedStates.Value.addHoliday(d.Value)
@@ -135,13 +136,14 @@ type UnitedStatesModel
     casting 
 *)
     internal new () = new UnitedStatesModel(null)
-    member internal this.Inject v = _UnitedStates.Value <- v
+    member internal this.Inject v = _UnitedStates <- v
     static member Cast (p : ICell<UnitedStates>) = 
         if p :? UnitedStatesModel then 
             p :?> UnitedStatesModel
         else
             let o = new UnitedStatesModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -246,7 +248,8 @@ type UnitedStatesModel1
 (*
     Functions
 *)
-    let _UnitedStates                              = cell (fun () -> new UnitedStates ())
+    let mutable
+        _UnitedStates                              = cell (fun () -> new UnitedStates ())
     let _addedHolidays                             = triv (fun () -> _UnitedStates.Value.addedHolidays)
     let _addHoliday                                (d : ICell<Date>)   
                                                    = triv (fun () -> _UnitedStates.Value.addHoliday(d.Value)
@@ -283,13 +286,14 @@ type UnitedStatesModel1
     casting 
 *)
     
-    member internal this.Inject v = _UnitedStates.Value <- v
+    member internal this.Inject v = _UnitedStates <- v
     static member Cast (p : ICell<UnitedStates>) = 
         if p :? UnitedStatesModel1 then 
             p :?> UnitedStatesModel1
         else
             let o = new UnitedStatesModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

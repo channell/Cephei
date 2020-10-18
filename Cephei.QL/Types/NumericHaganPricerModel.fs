@@ -56,7 +56,8 @@ type NumericHaganPricerModel
 (*
     Functions
 *)
-    let _NumericHaganPricer                        = cell (fun () -> new NumericHaganPricer (swaptionVol.Value, modelOfYieldCurve.Value, meanReversion.Value, lowerLimit.Value, upperLimit.Value, precision.Value, hardUpperLimit.Value))
+    let mutable
+        _NumericHaganPricer                        = cell (fun () -> new NumericHaganPricer (swaptionVol.Value, modelOfYieldCurve.Value, meanReversion.Value, lowerLimit.Value, upperLimit.Value, precision.Value, hardUpperLimit.Value))
     let _integrate                                 (a : ICell<double>) (b : ICell<double>) (integrand : ICell<NumericHaganPricer.ConundrumIntegrand>)   
                                                    = triv (fun () -> _NumericHaganPricer.Value.integrate(a.Value, b.Value, integrand.Value))
     let _refineIntegration                         (integralValue : ICell<double>) (integrand : ICell<NumericHaganPricer.ConundrumIntegrand>)   
@@ -99,13 +100,14 @@ type NumericHaganPricerModel
     casting 
 *)
     internal new () = new NumericHaganPricerModel(null,null,null,null,null,null,null)
-    member internal this.Inject v = _NumericHaganPricer.Value <- v
+    member internal this.Inject v = _NumericHaganPricer <- v
     static member Cast (p : ICell<NumericHaganPricer>) = 
         if p :? NumericHaganPricerModel then 
             p :?> NumericHaganPricerModel
         else
             let o = new NumericHaganPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

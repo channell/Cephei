@@ -41,7 +41,8 @@ type SEKCurrencyModel
 (*
     Functions
 *)
-    let _SEKCurrency                               = cell (fun () -> new SEKCurrency ())
+    let mutable
+        _SEKCurrency                               = cell (fun () -> new SEKCurrency ())
     let _code                                      = triv (fun () -> _SEKCurrency.Value.code)
     let _empty                                     = triv (fun () -> _SEKCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type SEKCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _SEKCurrency.Value <- v
+    member internal this.Inject v = _SEKCurrency <- v
     static member Cast (p : ICell<SEKCurrency>) = 
         if p :? SEKCurrencyModel then 
             p :?> SEKCurrencyModel
         else
             let o = new SEKCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

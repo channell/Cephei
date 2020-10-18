@@ -48,7 +48,8 @@ type DiscretizedSwapModel
 (*
     Functions
 *)
-    let _DiscretizedSwap                           = cell (fun () -> new DiscretizedSwap (args.Value, referenceDate.Value, dayCounter.Value))
+    let mutable
+        _DiscretizedSwap                           = cell (fun () -> new DiscretizedSwap (args.Value, referenceDate.Value, dayCounter.Value))
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedSwap.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedSwap.Value.reset(size.Value)
@@ -83,13 +84,14 @@ type DiscretizedSwapModel
     casting 
 *)
     internal new () = new DiscretizedSwapModel(null,null,null)
-    member internal this.Inject v = _DiscretizedSwap.Value <- v
+    member internal this.Inject v = _DiscretizedSwap <- v
     static member Cast (p : ICell<DiscretizedSwap>) = 
         if p :? DiscretizedSwapModel then 
             p :?> DiscretizedSwapModel
         else
             let o = new DiscretizedSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_calendar", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_dayCounter", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -111,9 +111,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolCurve")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="curve",Description = "Reference to curve")>] 
+        ([<ExcelArgument(Name="curve",Description = "BlackVarianceCurve")>] 
          curve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,9 +148,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_maxDate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_maxStrike", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_minStrike", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_referenceDate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,15 +292,15 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_localVol", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_localVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -346,15 +346,15 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_localVol1", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_localVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="underlyingLevel",Description = "Reference to underlyingLevel")>] 
+        ([<ExcelArgument(Name="underlyingLevel",Description = "double")>] 
          underlyingLevel : obj)
-        ([<ExcelArgument(Name="extrapolate",Description = "Reference to extrapolate")>] 
+        ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_businessDayConvention", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,11 +436,11 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_optionDateFromTenor", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
-        ([<ExcelArgument(Name="p",Description = "Reference to p")>] 
+        ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -478,9 +478,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_maxTime", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -514,9 +514,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_settlementDays", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -550,11 +550,11 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_timeFromReference", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,9 +592,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_update", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -628,9 +628,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_allowsExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,11 +664,11 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_disableExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -706,11 +706,11 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_enableExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "bool")>] 
          b : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -748,9 +748,9 @@ module LocalVolCurveFunction =
     *)
     [<ExcelFunction(Name="_LocalVolCurve_extrapolate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LocalVolCurve",Description = "Reference to LocalVolCurve")>] 
+        ([<ExcelArgument(Name="LocalVolCurve",Description = "LocalVolCurve")>] 
          localvolcurve : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -781,9 +781,9 @@ module LocalVolCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LocalVolCurve_Range", Description="Create a range of LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LocalVolCurve")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

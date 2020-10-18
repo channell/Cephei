@@ -39,9 +39,9 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_date", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "simple_event")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="simple_event",Description = "Reference to simple_event")>] 
+        ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,9 +75,9 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "simple_event")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+        ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -112,11 +112,11 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_accept", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="simple_event",Description = "Reference to simple_event")>] 
+        ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,13 +154,13 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_hasOccurred", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="simple_event",Description = "Reference to simple_event")>] 
+        ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -202,11 +202,11 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_registerWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="simple_event",Description = "Reference to simple_event")>] 
+        ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,11 +244,11 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_unregisterWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="simple_event",Description = "Reference to simple_event")>] 
+        ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -283,9 +283,9 @@ module simple_eventFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_simple_event_Range", Description="Create a range of simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the simple_event")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -50,7 +50,8 @@ type HundsdorferSchemeModel
 (*
     Functions
 *)
-    let _HundsdorferScheme                         = cell (fun () -> new HundsdorferScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
+    let mutable
+        _HundsdorferScheme                         = cell (fun () -> new HundsdorferScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _HundsdorferScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -64,13 +65,14 @@ type HundsdorferSchemeModel
     casting 
 *)
     internal new () = new HundsdorferSchemeModel(null,null,null,null)
-    member internal this.Inject v = _HundsdorferScheme.Value <- v
+    member internal this.Inject v = _HundsdorferScheme <- v
     static member Cast (p : ICell<HundsdorferScheme>) = 
         if p :? HundsdorferSchemeModel then 
             p :?> HundsdorferSchemeModel
         else
             let o = new HundsdorferSchemeModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -101,7 +103,8 @@ type HundsdorferSchemeModel1
 (*
     Functions
 *)
-    let _HundsdorferScheme                         = cell (fun () -> new HundsdorferScheme ())
+    let mutable
+        _HundsdorferScheme                         = cell (fun () -> new HundsdorferScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
                                                    = triv (fun () -> _HundsdorferScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
@@ -115,13 +118,14 @@ type HundsdorferSchemeModel1
     casting 
 *)
     
-    member internal this.Inject v = _HundsdorferScheme.Value <- v
+    member internal this.Inject v = _HundsdorferScheme <- v
     static member Cast (p : ICell<HundsdorferScheme>) = 
         if p :? HundsdorferSchemeModel1 then 
             p :?> HundsdorferSchemeModel1
         else
             let o = new HundsdorferSchemeModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

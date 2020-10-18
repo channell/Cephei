@@ -44,7 +44,8 @@ type GenericGaussianStatisticsModel<'Stat when 'Stat :> IGeneralStatistics and '
 (*
     Functions
 *)
-    let _GenericGaussianStatistics                 = cell (fun () -> new GenericGaussianStatistics<'Stat> (s.Value))
+    let mutable
+        _GenericGaussianStatistics                 = cell (fun () -> new GenericGaussianStatistics<'Stat> (s.Value))
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _GenericGaussianStatistics.Value.add(value.Value, weight.Value)
                                                                      _GenericGaussianStatistics.Value)
@@ -142,7 +143,8 @@ type GenericGaussianStatisticsModel1<'Stat when 'Stat :> IGeneralStatistics and 
 (*
     Functions
 *)
-    let _GenericGaussianStatistics                 = cell (fun () -> new GenericGaussianStatistics<'Stat> ())
+    let mutable
+        _GenericGaussianStatistics                 = cell (fun () -> new GenericGaussianStatistics<'Stat> ())
     let _add                                       (value : ICell<double>) (weight : ICell<double>)   
                                                    = triv (fun () -> _GenericGaussianStatistics.Value.add(value.Value, weight.Value)
                                                                      _GenericGaussianStatistics.Value)

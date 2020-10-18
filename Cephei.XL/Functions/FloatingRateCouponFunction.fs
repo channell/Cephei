@@ -39,11 +39,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accruedAmount", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,9 +81,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_adjustedFixing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,9 +117,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_amount", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -153,9 +153,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_convexityAdjustment", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -189,9 +189,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_dayCounter", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -225,33 +225,33 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_factory", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "Reference to isInArrears")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "CashFlow")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -333,9 +333,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_fixingDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -369,9 +369,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_fixingDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -405,7 +405,7 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon1", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,31 +436,31 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="paymentDate",Description = "Reference to paymentDate")>] 
+        ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="nominal",Description = "Reference to nominal")>] 
+        ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+        ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
-        ([<ExcelArgument(Name="endDate",Description = "Reference to endDate")>] 
+        ([<ExcelArgument(Name="endDate",Description = "Date")>] 
          endDate : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "Reference to fixingDays")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="index",Description = "Reference to index")>] 
+        ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "Reference to gearing")>] 
+        ([<ExcelArgument(Name="gearing",Description = "FloatingRateCoupon")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+        ([<ExcelArgument(Name="spread",Description = "FloatingRateCoupon")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "Reference to refPeriodStart")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "FloatingRateCoupon")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "Reference to refPeriodEnd")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "FloatingRateCoupon")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "Reference to dayCounter")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "FloatingRateCoupon")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "Reference to isInArrears")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "FloatingRateCoupon")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -539,9 +539,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_gearing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -575,9 +575,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_index", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -611,9 +611,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_indexFixing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -647,9 +647,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_isInArrears", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -683,11 +683,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_price", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="yts",Description = "Reference to yts")>] 
+        ([<ExcelArgument(Name="yts",Description = "YieldTermStructure")>] 
          yts : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -725,9 +725,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_pricer", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -761,9 +761,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_rate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -797,11 +797,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_setPricer", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="pricer",Description = "Reference to pricer")>] 
+        ([<ExcelArgument(Name="pricer",Description = "FloatingRateCouponPricer")>] 
          pricer : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -839,9 +839,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_spread", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -875,9 +875,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_update", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -911,9 +911,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accrualDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -947,9 +947,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accrualEndDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -983,9 +983,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accrualPeriod", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1019,9 +1019,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accrualStartDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1055,11 +1055,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accruedDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1097,11 +1097,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accruedPeriod", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1139,9 +1139,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_date", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1175,9 +1175,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_exCouponDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1211,9 +1211,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_nominal", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1247,9 +1247,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_referencePeriodEnd", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1283,9 +1283,9 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_referencePeriodStart", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1319,11 +1319,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_CompareTo", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "CashFlow")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1361,11 +1361,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_Equals", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="cf",Description = "Reference to cf")>] 
+        ([<ExcelArgument(Name="cf",Description = "Object")>] 
          cf : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1403,13 +1403,13 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_hasOccurred", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
-        ([<ExcelArgument(Name="includeRefDate",Description = "Reference to includeRefDate")>] 
+        ([<ExcelArgument(Name="includeRefDate",Description = "bool")>] 
          includeRefDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1451,11 +1451,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_tradingExCoupon", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="refDate",Description = "Reference to refDate")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1493,11 +1493,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_accept", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+        ([<ExcelArgument(Name="v",Description = "IAcyclicVisitor")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1535,11 +1535,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_registerWith", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1577,11 +1577,11 @@ module FloatingRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FloatingRateCoupon_unregisterWith", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "Reference to FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="FloatingRateCoupon",Description = "FloatingRateCoupon")>] 
          floatingratecoupon : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1616,9 +1616,9 @@ module FloatingRateCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FloatingRateCoupon_Range", Description="Create a range of FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

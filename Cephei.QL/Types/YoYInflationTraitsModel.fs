@@ -41,7 +41,8 @@ type YoYInflationTraitsModel
 (*
     Functions
 *)
-    let _YoYInflationTraits                        = cell (fun () -> new YoYInflationTraits ())
+    let mutable
+        _YoYInflationTraits                        = cell (fun () -> new YoYInflationTraits ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _YoYInflationTraits.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type YoYInflationTraitsModel
     casting 
 *)
     
-    member internal this.Inject v = _YoYInflationTraits.Value <- v
+    member internal this.Inject v = _YoYInflationTraits <- v
     static member Cast (p : ICell<YoYInflationTraits>) = 
         if p :? YoYInflationTraitsModel then 
             p :?> YoYInflationTraitsModel
         else
             let o = new YoYInflationTraitsModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

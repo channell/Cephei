@@ -39,7 +39,7 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PENCurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_code", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_empty", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_Equals", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_format", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_fractionsPerUnit", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_fractionSymbol", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_name", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_numericCode", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_rounding", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_symbol", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_ToString", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module PENCurrencyFunction =
     *)
     [<ExcelFunction(Name="_PENCurrency_triangulationCurrency", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PENCurrency",Description = "Reference to PENCurrency")>] 
+        ([<ExcelArgument(Name="PENCurrency",Description = "PENCurrency")>] 
          pencurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module PENCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PENCurrency_Range", Description="Create a range of PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PENCurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

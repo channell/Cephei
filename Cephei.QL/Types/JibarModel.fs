@@ -46,7 +46,8 @@ type JibarModel
 (*
     Functions
 *)
-    let _Jibar                                     = cell (fun () -> new Jibar (tenor.Value, h.Value))
+    let mutable
+        _Jibar                                     = cell (fun () -> new Jibar (tenor.Value, h.Value))
     let _businessDayConvention                     = triv (fun () -> _Jibar.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Jibar.Value.clone(forwarding.Value))
@@ -101,13 +102,14 @@ type JibarModel
     casting 
 *)
     internal new () = new JibarModel(null,null)
-    member internal this.Inject v = _Jibar.Value <- v
+    member internal this.Inject v = _Jibar <- v
     static member Cast (p : ICell<Jibar>) = 
         if p :? JibarModel then 
             p :?> JibarModel
         else
             let o = new JibarModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -175,7 +177,8 @@ type JibarModel1
 (*
     Functions
 *)
-    let _Jibar                                     = cell (fun () -> new Jibar (tenor.Value))
+    let mutable
+        _Jibar                                     = cell (fun () -> new Jibar (tenor.Value))
     let _businessDayConvention                     = triv (fun () -> _Jibar.Value.businessDayConvention())
     let _clone                                     (forwarding : ICell<Handle<YieldTermStructure>>)   
                                                    = triv (fun () -> _Jibar.Value.clone(forwarding.Value))
@@ -230,13 +233,14 @@ type JibarModel1
     casting 
 *)
     internal new () = new JibarModel1(null)
-    member internal this.Inject v = _Jibar.Value <- v
+    member internal this.Inject v = _Jibar <- v
     static member Cast (p : ICell<Jibar>) = 
         if p :? JibarModel1 then 
             p :?> JibarModel1
         else
             let o = new JibarModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

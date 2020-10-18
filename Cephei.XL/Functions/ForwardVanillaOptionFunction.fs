@@ -39,19 +39,19 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardVanillaOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="moneyness",Description = "Reference to moneyness")>] 
+        ([<ExcelArgument(Name="moneyness",Description = "double")>] 
          moneyness : obj)
-        ([<ExcelArgument(Name="resetDate",Description = "Reference to resetDate")>] 
+        ([<ExcelArgument(Name="resetDate",Description = "Date")>] 
          resetDate : obj)
-        ([<ExcelArgument(Name="payoff",Description = "Reference to payoff")>] 
+        ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="exercise",Description = "Reference to exercise")>] 
+        ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_delta", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,9 +142,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_deltaForward", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,9 +178,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_dividendRho", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,9 +214,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_elasticity", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,9 +250,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_gamma", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,9 +286,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_isExpired", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,9 +322,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_itmCashProbability", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -358,9 +358,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_rho", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -394,9 +394,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_strikeSensitivity", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,9 +430,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_theta", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -466,9 +466,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_thetaPerDay", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -502,9 +502,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_vega", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -538,9 +538,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_exercise", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -574,9 +574,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_payoff", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -610,9 +610,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_CASH", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -646,9 +646,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_errorEstimate", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -682,9 +682,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_NPV", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -718,11 +718,11 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_result", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -760,11 +760,11 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_setPricingEngine", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -802,9 +802,9 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_valuationDate", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "Reference to ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -835,9 +835,9 @@ module ForwardVanillaOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardVanillaOption_Range", Description="Create a range of ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

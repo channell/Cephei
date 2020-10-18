@@ -41,7 +41,8 @@ type FdmSolverDescModel
 (*
     Functions
 *)
-    let _FdmSolverDesc                             = cell (fun () -> new FdmSolverDesc ())
+    let mutable
+        _FdmSolverDesc                             = cell (fun () -> new FdmSolverDesc ())
     let _bcSet                                     = triv (fun () -> _FdmSolverDesc.Value.bcSet)
     let _calculator                                = triv (fun () -> _FdmSolverDesc.Value.calculator)
     let _condition                                 = triv (fun () -> _FdmSolverDesc.Value.condition)
@@ -54,13 +55,14 @@ type FdmSolverDescModel
     casting 
 *)
     
-    member internal this.Inject v = _FdmSolverDesc.Value <- v
+    member internal this.Inject v = _FdmSolverDesc <- v
     static member Cast (p : ICell<FdmSolverDesc>) = 
         if p :? FdmSolverDescModel then 
             p :?> FdmSolverDescModel
         else
             let o = new FdmSolverDescModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,13 +39,13 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_diffusion", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricBrownianMotionProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -87,13 +87,13 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_drift", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricBrownianMotionProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,13 +135,13 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricBrownianMotionProcess")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="initialValue",Description = "Reference to initialValue")>] 
+        ([<ExcelArgument(Name="initialValue",Description = "double")>] 
          initialValue : obj)
-        ([<ExcelArgument(Name="mue",Description = "Reference to mue")>] 
+        ([<ExcelArgument(Name="mue",Description = "double")>] 
          mue : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_x0", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,13 +220,13 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_apply1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_apply1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "Vector")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,13 +268,13 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_apply", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dx",Description = "Reference to dx")>] 
+        ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,17 +316,17 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_evolve", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "Vector")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,17 +376,17 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_evolve1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_evolve1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
-        ([<ExcelArgument(Name="dw",Description = "Reference to dw")>] 
+        ([<ExcelArgument(Name="dw",Description = "double")>] 
          dw : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,15 +436,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_expectation", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -490,15 +490,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_expectation1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_expectation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -544,9 +544,9 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_initialValues", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -580,9 +580,9 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_size", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,15 +616,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_stdDeviation", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -670,15 +670,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_stdDeviation1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_stdDeviation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -724,15 +724,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_variance", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,15 +778,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_variance1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_variance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "double")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -832,15 +832,15 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_covariance", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="t0",Description = "Reference to t0")>] 
+        ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Reference to x0")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="dt",Description = "Reference to dt")>] 
+        ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -886,9 +886,9 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_factors", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -922,11 +922,11 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_registerWith", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -964,11 +964,11 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_time", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1006,11 +1006,11 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_unregisterWith", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1048,9 +1048,9 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_update", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "Reference to GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1081,9 +1081,9 @@ module GeometricBrownianMotionProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_Range", Description="Create a range of GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -48,7 +48,8 @@ type RendistatoCalculatorModel
 (*
     Functions
 *)
-    let _RendistatoCalculator                      = cell (fun () -> new RendistatoCalculator (basket.Value, euriborIndex.Value, discountCurve.Value))
+    let mutable
+        _RendistatoCalculator                      = cell (fun () -> new RendistatoCalculator (basket.Value, euriborIndex.Value, discountCurve.Value))
     let _duration                                  = triv (fun () -> _RendistatoCalculator.Value.duration())
     let _durations                                 = triv (fun () -> _RendistatoCalculator.Value.durations())
     let _equivalentSwap                            = triv (fun () -> _RendistatoCalculator.Value.equivalentSwap())
@@ -68,13 +69,14 @@ type RendistatoCalculatorModel
     casting 
 *)
     internal new () = new RendistatoCalculatorModel(null,null,null)
-    member internal this.Inject v = _RendistatoCalculator.Value <- v
+    member internal this.Inject v = _RendistatoCalculator <- v
     static member Cast (p : ICell<RendistatoCalculator>) = 
         if p :? RendistatoCalculatorModel then 
             p :?> RendistatoCalculatorModel
         else
             let o = new RendistatoCalculatorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -70,7 +70,8 @@ type CreditDefaultSwapModel
 (*
     Functions
 *)
-    let _CreditDefaultSwap                         = cell (fun () -> withEngine pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, spread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
+    let mutable
+        _CreditDefaultSwap                         = cell (fun () -> withEngine pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, spread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
     let _accrualRebateNPV                          = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).accrualRebateNPV())
     let _conventionalSpread                        (conventionalRecovery : ICell<double>) (discountCurve : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (model : ICell<PricingModel>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).conventionalSpread(conventionalRecovery.Value, discountCurve.Value, dayCounter.Value, model.Value))
@@ -108,13 +109,14 @@ type CreditDefaultSwapModel
     casting 
 *)
     internal new () = new CreditDefaultSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CreditDefaultSwap.Value <- v
+    member internal this.Inject v = _CreditDefaultSwap <- v
     static member Cast (p : ICell<CreditDefaultSwap>) = 
         if p :? CreditDefaultSwapModel then 
             p :?> CreditDefaultSwapModel
         else
             let o = new CreditDefaultSwapModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -213,7 +215,8 @@ type CreditDefaultSwapModel1
 (*
     Functions
 *)
-    let _CreditDefaultSwap                         = cell (fun () -> withEngine pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, upfront.Value, runningSpread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, upfrontDate.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
+    let mutable
+        _CreditDefaultSwap                         = cell (fun () -> withEngine pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, upfront.Value, runningSpread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, upfrontDate.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
     let _accrualRebateNPV                          = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).accrualRebateNPV())
     let _conventionalSpread                        (conventionalRecovery : ICell<double>) (discountCurve : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (model : ICell<PricingModel>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).conventionalSpread(conventionalRecovery.Value, discountCurve.Value, dayCounter.Value, model.Value))
@@ -251,13 +254,14 @@ type CreditDefaultSwapModel1
     casting 
 *)
     internal new () = new CreditDefaultSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CreditDefaultSwap.Value <- v
+    member internal this.Inject v = _CreditDefaultSwap <- v
     static member Cast (p : ICell<CreditDefaultSwap>) = 
         if p :? CreditDefaultSwapModel1 then 
             p :?> CreditDefaultSwapModel1
         else
             let o = new CreditDefaultSwapModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

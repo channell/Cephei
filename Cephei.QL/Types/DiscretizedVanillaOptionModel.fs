@@ -48,7 +48,8 @@ type DiscretizedVanillaOptionModel
 (*
     Functions
 *)
-    let _DiscretizedVanillaOption                  = cell (fun () -> new DiscretizedVanillaOption (args.Value, Process.Value, grid.Value))
+    let mutable
+        _DiscretizedVanillaOption                  = cell (fun () -> new DiscretizedVanillaOption (args.Value, Process.Value, grid.Value))
     let _mandatoryTimes                            = triv (fun () -> _DiscretizedVanillaOption.Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
                                                    = triv (fun () -> _DiscretizedVanillaOption.Value.reset(size.Value)
@@ -83,13 +84,14 @@ type DiscretizedVanillaOptionModel
     casting 
 *)
     internal new () = new DiscretizedVanillaOptionModel(null,null,null)
-    member internal this.Inject v = _DiscretizedVanillaOption.Value <- v
+    member internal this.Inject v = _DiscretizedVanillaOption <- v
     static member Cast (p : ICell<DiscretizedVanillaOption>) = 
         if p :? DiscretizedVanillaOptionModel then 
             p :?> DiscretizedVanillaOptionModel
         else
             let o = new DiscretizedVanillaOptionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

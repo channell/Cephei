@@ -50,7 +50,8 @@ type SABRWrapperModel
 (*
     Functions
 *)
-    let _SABRWrapper                               = cell (fun () -> new SABRWrapper (t.Value, forward.Value, param.Value, addParams.Value))
+    let mutable
+        _SABRWrapper                               = cell (fun () -> new SABRWrapper (t.Value, forward.Value, param.Value, addParams.Value))
     let _volatility                                (x : ICell<double>)   
                                                    = triv (fun () -> _SABRWrapper.Value.volatility(x.Value))
     do this.Bind(_SABRWrapper)
@@ -58,13 +59,14 @@ type SABRWrapperModel
     casting 
 *)
     internal new () = new SABRWrapperModel(null,null,null,null)
-    member internal this.Inject v = _SABRWrapper.Value <- v
+    member internal this.Inject v = _SABRWrapper <- v
     static member Cast (p : ICell<SABRWrapper>) = 
         if p :? SABRWrapperModel then 
             p :?> SABRWrapperModel
         else
             let o = new SABRWrapperModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

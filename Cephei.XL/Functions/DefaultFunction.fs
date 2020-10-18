@@ -39,19 +39,19 @@ module DefaultFunction =
     *)
     [<ExcelFunction(Name="_Default_integrate", Description="Create a Default",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Default_integrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Default",Description = "Reference to Default")>] 
+        ([<ExcelArgument(Name="Default",Description = "Default")>] 
          defaulT : obj)
-        ([<ExcelArgument(Name="f",Description = "Reference to f")>] 
+        ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="I",Description = "Reference to I")>] 
+        ([<ExcelArgument(Name="I",Description = "double")>] 
          I : obj)
-        ([<ExcelArgument(Name="N",Description = "Reference to N")>] 
+        ([<ExcelArgument(Name="N",Description = "int")>] 
          N : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -105,9 +105,9 @@ module DefaultFunction =
     *)
     [<ExcelFunction(Name="_Default_nbEvalutions", Description="Create a Default",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Default_nbEvalutions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Default",Description = "Reference to Default")>] 
+        ([<ExcelArgument(Name="Default",Description = "Default")>] 
          defaulT : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -138,9 +138,9 @@ module DefaultFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Default_Range", Description="Create a range of Default",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Default_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Default")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

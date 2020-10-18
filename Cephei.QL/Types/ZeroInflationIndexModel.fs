@@ -58,7 +58,8 @@ type ZeroInflationIndexModel
 (*
     Functions
 *)
-    let _ZeroInflationIndex                        = cell (fun () -> new ZeroInflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, frequency.Value, availabilityLag.Value, currency.Value, ts.Value))
+    let mutable
+        _ZeroInflationIndex                        = cell (fun () -> new ZeroInflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, frequency.Value, availabilityLag.Value, currency.Value, ts.Value))
     let _clone                                     (h : ICell<Handle<ZeroInflationTermStructure>>)   
                                                    = triv (fun () -> _ZeroInflationIndex.Value.clone(h.Value))
     let _fixing                                    (aFixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
@@ -101,13 +102,14 @@ type ZeroInflationIndexModel
     casting 
 *)
     internal new () = new ZeroInflationIndexModel(null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _ZeroInflationIndex.Value <- v
+    member internal this.Inject v = _ZeroInflationIndex <- v
     static member Cast (p : ICell<ZeroInflationIndex>) = 
         if p :? ZeroInflationIndexModel then 
             p :?> ZeroInflationIndexModel
         else
             let o = new ZeroInflationIndexModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

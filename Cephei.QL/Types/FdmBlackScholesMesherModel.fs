@@ -66,7 +66,8 @@ type FdmBlackScholesMesherModel
 (*
     Functions
 *)
-    let _FdmBlackScholesMesher                     = cell (fun () -> new FdmBlackScholesMesher (size.Value, Process.Value, maturity.Value, strike.Value, xMinConstraint.Value, xMaxConstraint.Value, eps.Value, scaleFactor.Value, cPoint.Value, dividendSchedule.Value, fdmQuantoHelper.Value, spotAdjustment.Value))
+    let mutable
+        _FdmBlackScholesMesher                     = cell (fun () -> new FdmBlackScholesMesher (size.Value, Process.Value, maturity.Value, strike.Value, xMinConstraint.Value, xMaxConstraint.Value, eps.Value, scaleFactor.Value, cPoint.Value, dividendSchedule.Value, fdmQuantoHelper.Value, spotAdjustment.Value))
     let _dminus                                    (index : ICell<int>)   
                                                    = triv (fun () -> _FdmBlackScholesMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
@@ -80,13 +81,14 @@ type FdmBlackScholesMesherModel
     casting 
 *)
     internal new () = new FdmBlackScholesMesherModel(null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _FdmBlackScholesMesher.Value <- v
+    member internal this.Inject v = _FdmBlackScholesMesher <- v
     static member Cast (p : ICell<FdmBlackScholesMesher>) = 
         if p :? FdmBlackScholesMesherModel then 
             p :?> FdmBlackScholesMesherModel
         else
             let o = new FdmBlackScholesMesherModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

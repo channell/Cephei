@@ -46,7 +46,8 @@ type SpreadedSmileSectionModel
 (*
     Functions
 *)
-    let _SpreadedSmileSection                      = cell (fun () -> new SpreadedSmileSection (underlyingSection.Value, spread.Value))
+    let mutable
+        _SpreadedSmileSection                      = cell (fun () -> new SpreadedSmileSection (underlyingSection.Value, spread.Value))
     let _atmLevel                                  = triv (fun () -> _SpreadedSmileSection.Value.atmLevel())
     let _dayCounter                                = triv (fun () -> _SpreadedSmileSection.Value.dayCounter())
     let _exerciseDate                              = triv (fun () -> _SpreadedSmileSection.Value.exerciseDate())
@@ -77,13 +78,14 @@ type SpreadedSmileSectionModel
     casting 
 *)
     internal new () = new SpreadedSmileSectionModel(null,null)
-    member internal this.Inject v = _SpreadedSmileSection.Value <- v
+    member internal this.Inject v = _SpreadedSmileSection <- v
     static member Cast (p : ICell<SpreadedSmileSection>) = 
         if p :? SpreadedSmileSectionModel then 
             p :?> SpreadedSmileSectionModel
         else
             let o = new SpreadedSmileSectionModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

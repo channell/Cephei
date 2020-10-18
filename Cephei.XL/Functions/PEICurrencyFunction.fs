@@ -39,7 +39,7 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "PEICurrency")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,9 +70,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_code", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,9 +106,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_empty", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -142,11 +142,11 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_Equals", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,9 +184,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_format", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -220,9 +220,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_fractionsPerUnit", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_fractionSymbol", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -292,9 +292,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_name", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -328,9 +328,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_numericCode", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -364,9 +364,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_rounding", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -400,9 +400,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_symbol", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -436,9 +436,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_ToString", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -472,9 +472,9 @@ module PEICurrencyFunction =
     *)
     [<ExcelFunction(Name="_PEICurrency_triangulationCurrency", Description="Create a PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="PEICurrency",Description = "Reference to PEICurrency")>] 
+        ([<ExcelArgument(Name="PEICurrency",Description = "PEICurrency")>] 
          peicurrency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -505,9 +505,9 @@ module PEICurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PEICurrency_Range", Description="Create a range of PEICurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PEICurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the PEICurrency")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type SurvivalProbabilityModel
 (*
     Functions
 *)
-    let _SurvivalProbability                       = cell (fun () -> new SurvivalProbability ())
+    let mutable
+        _SurvivalProbability                       = cell (fun () -> new SurvivalProbability ())
     let _discountImpl                              (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _SurvivalProbability.Value.discountImpl(i.Value, t.Value))
     let _forwardImpl                               (i : ICell<Interpolation>) (t : ICell<double>)   
@@ -67,13 +68,14 @@ type SurvivalProbabilityModel
     casting 
 *)
     
-    member internal this.Inject v = _SurvivalProbability.Value <- v
+    member internal this.Inject v = _SurvivalProbability <- v
     static member Cast (p : ICell<SurvivalProbability>) = 
         if p :? SurvivalProbabilityModel then 
             p :?> SurvivalProbabilityModel
         else
             let o = new SurvivalProbabilityModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,17 +39,17 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_integratedVariance", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_integratedVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmExtLinearExponentialVolModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "Reference to LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "LmExtLinearExponentialVolModel")>] 
          lmextlinearexponentialvolmodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="j",Description = "Reference to j")>] 
+        ([<ExcelArgument(Name="j",Description = "int")>] 
          j : obj)
-        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+        ([<ExcelArgument(Name="u",Description = "double")>] 
          u : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "LmExtLinearExponentialVolModel")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -99,17 +99,17 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "LmExtLinearExponentialVolModel")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="fixingTimes",Description = "Reference to fixingTimes")>] 
+        ([<ExcelArgument(Name="fixingTimes",Description = "double")>] 
          fixingTimes : obj)
-        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+        ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+        ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "Reference to c")>] 
+        ([<ExcelArgument(Name="c",Description = "double")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+        ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,13 +160,13 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_volatility1", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "Reference to LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "LmExtLinearExponentialVolModel")>] 
          lmextlinearexponentialvolmodel : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,15 +208,15 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_volatility", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "Reference to LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "LmExtLinearExponentialVolModel")>] 
          lmextlinearexponentialvolmodel : obj)
-        ([<ExcelArgument(Name="i",Description = "Reference to i")>] 
+        ([<ExcelArgument(Name="i",Description = "int")>] 
          i : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "Helper.Range.fromModelList")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -262,9 +262,9 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_parameters", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "Reference to LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "LmExtLinearExponentialVolModel")>] 
          lmextlinearexponentialvolmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,11 +298,11 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_setParams", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "Reference to LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "LmExtLinearExponentialVolModel")>] 
          lmextlinearexponentialvolmodel : obj)
-        ([<ExcelArgument(Name="arguments",Description = "Reference to arguments")>] 
+        ([<ExcelArgument(Name="arguments",Description = "Parameter")>] 
          arguments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,9 +340,9 @@ module LmExtLinearExponentialVolModelFunction =
     *)
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_size", Description="Create a LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "Reference to LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="LmExtLinearExponentialVolModel",Description = "LmExtLinearExponentialVolModel")>] 
          lmextlinearexponentialvolmodel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -373,9 +373,9 @@ module LmExtLinearExponentialVolModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LmExtLinearExponentialVolModel_Range", Description="Create a range of LmExtLinearExponentialVolModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmExtLinearExponentialVolModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the LmExtLinearExponentialVolModel")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

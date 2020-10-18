@@ -41,7 +41,8 @@ type NoConstraintModel
 (*
     Functions
 *)
-    let _NoConstraint                              = cell (fun () -> new NoConstraint ())
+    let mutable
+        _NoConstraint                              = cell (fun () -> new NoConstraint ())
     let _empty                                     = triv (fun () -> _NoConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _NoConstraint.Value.lowerBound(parameters.Value))
@@ -56,13 +57,14 @@ type NoConstraintModel
     casting 
 *)
     
-    member internal this.Inject v = _NoConstraint.Value <- v
+    member internal this.Inject v = _NoConstraint <- v
     static member Cast (p : ICell<NoConstraint>) = 
         if p :? NoConstraintModel then 
             p :?> NoConstraintModel
         else
             let o = new NoConstraintModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

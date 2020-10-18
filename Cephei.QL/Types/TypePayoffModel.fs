@@ -44,7 +44,8 @@ type TypePayoffModel
 (*
     Functions
 *)
-    let _TypePayoff                                = cell (fun () -> new TypePayoff (Type.Value))
+    let mutable
+        _TypePayoff                                = cell (fun () -> new TypePayoff (Type.Value))
     let _description                               = triv (fun () -> _TypePayoff.Value.description())
     let _optionType                                = triv (fun () -> _TypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
@@ -58,13 +59,14 @@ type TypePayoffModel
     casting 
 *)
     internal new () = new TypePayoffModel(null)
-    member internal this.Inject v = _TypePayoff.Value <- v
+    member internal this.Inject v = _TypePayoff <- v
     static member Cast (p : ICell<TypePayoff>) = 
         if p :? TypePayoffModel then 
             p :?> TypePayoffModel
         else
             let o = new TypePayoffModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

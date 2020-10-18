@@ -39,13 +39,13 @@ module ProportionalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_ProportionalNotionalRisk", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "ProportionalNotionalRisk")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="paymentOffset",Description = "Reference to paymentOffset")>] 
+        ([<ExcelArgument(Name="paymentOffset",Description = "EventPaymentOffset")>] 
          paymentOffset : obj)
-        ([<ExcelArgument(Name="attachement",Description = "Reference to attachement")>] 
+        ([<ExcelArgument(Name="attachement",Description = "double")>] 
          attachement : obj)
-        ([<ExcelArgument(Name="exhaustion",Description = "Reference to exhaustion")>] 
+        ([<ExcelArgument(Name="exhaustion",Description = "double")>] 
          exhaustion : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,13 +88,13 @@ module ProportionalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_ProportionalNotionalRisk_updatePath", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_updatePath
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ProportionalNotionalRisk",Description = "Reference to ProportionalNotionalRisk")>] 
+        ([<ExcelArgument(Name="ProportionalNotionalRisk",Description = "ProportionalNotionalRisk")>] 
          proportionalnotionalrisk : obj)
-        ([<ExcelArgument(Name="events",Description = "Reference to events")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
          events : obj)
-        ([<ExcelArgument(Name="path",Description = "Reference to path")>] 
+        ([<ExcelArgument(Name="path",Description = "NotionalPath")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -133,9 +133,9 @@ module ProportionalNotionalRiskFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ProportionalNotionalRisk_Range", Description="Create a range of ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the ProportionalNotionalRisk")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

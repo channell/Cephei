@@ -54,7 +54,8 @@ type BiasedBarrierPathPricerModel
 (*
     Functions
 *)
-    let _BiasedBarrierPathPricer                   = cell (fun () -> new BiasedBarrierPathPricer (barrierType.Value, barrier.Value, rebate.Value, Type.Value, strike.Value, discounts.Value))
+    let mutable
+        _BiasedBarrierPathPricer                   = cell (fun () -> new BiasedBarrierPathPricer (barrierType.Value, barrier.Value, rebate.Value, Type.Value, strike.Value, discounts.Value))
     let _value                                     (path : ICell<IPath>)   
                                                    = triv (fun () -> _BiasedBarrierPathPricer.Value.value(path.Value))
     do this.Bind(_BiasedBarrierPathPricer)
@@ -62,13 +63,14 @@ type BiasedBarrierPathPricerModel
     casting 
 *)
     internal new () = new BiasedBarrierPathPricerModel(null,null,null,null,null,null)
-    member internal this.Inject v = _BiasedBarrierPathPricer.Value <- v
+    member internal this.Inject v = _BiasedBarrierPathPricer <- v
     static member Cast (p : ICell<BiasedBarrierPathPricer>) = 
         if p :? BiasedBarrierPathPricerModel then 
             p :?> BiasedBarrierPathPricerModel
         else
             let o = new BiasedBarrierPathPricerModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

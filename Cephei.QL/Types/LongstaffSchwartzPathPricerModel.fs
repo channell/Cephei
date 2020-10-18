@@ -48,7 +48,8 @@ type LongstaffSchwartzPathPricerModel<'PathType when 'PathType :> IPath>
 (*
     Functions
 *)
-    let _LongstaffSchwartzPathPricer               = cell (fun () -> new LongstaffSchwartzPathPricer<'PathType> (times.Value, pathPricer.Value, termStructure.Value))
+    let mutable
+        _LongstaffSchwartzPathPricer               = cell (fun () -> new LongstaffSchwartzPathPricer<'PathType> (times.Value, pathPricer.Value, termStructure.Value))
     let _calibrate                                 = triv (fun () -> _LongstaffSchwartzPathPricer.Value.calibrate()
                                                                      _LongstaffSchwartzPathPricer.Value)
     let _value                                     (path : ICell<'PathType>)   

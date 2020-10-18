@@ -39,9 +39,9 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_isValid", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Quote",Description = "Reference to Quote")>] 
+        ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,11 +75,11 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_registerWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Quote",Description = "Reference to Quote")>] 
+        ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,11 +117,11 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_unregisterWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Quote",Description = "Reference to Quote")>] 
+        ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
-        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+        ([<ExcelArgument(Name="handler",Description = "Callback")>] 
          handler : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -159,9 +159,9 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_value", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Quote",Description = "Reference to Quote")>] 
+        ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,9 +192,9 @@ module QuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Quote_Range", Description="Create a range of Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Quote")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,8 @@ type DefaultModel
 (*
     Functions
 *)
-    let _Default                                   = cell (fun () -> new Default ())
+    let mutable
+        _Default                                   = cell (fun () -> new Default ())
     let _integrate                                 (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>) (I : ICell<double>) (N : ICell<int>)   
                                                    = triv (fun () -> _Default.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
     let _nbEvalutions                              = triv (fun () -> _Default.Value.nbEvalutions())
@@ -50,13 +51,14 @@ type DefaultModel
     casting 
 *)
     
-    member internal this.Inject v = _Default.Value <- v
+    member internal this.Inject v = _Default <- v
     static member Cast (p : ICell<Default>) = 
         if p :? DefaultModel then 
             p :?> DefaultModel
         else
             let o = new DefaultModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type StrippedOptionletAdapterModel
 (*
     Functions
 *)
-    let _StrippedOptionletAdapter                  = cell (fun () -> new StrippedOptionletAdapter (s.Value))
+    let mutable
+        _StrippedOptionletAdapter                  = cell (fun () -> new StrippedOptionletAdapter (s.Value))
     let _displacement                              = triv (fun () -> _StrippedOptionletAdapter.Value.displacement())
     let _maxDate                                   = triv (fun () -> _StrippedOptionletAdapter.Value.maxDate())
     let _maxStrike                                 = triv (fun () -> _StrippedOptionletAdapter.Value.maxStrike())
@@ -93,13 +94,14 @@ type StrippedOptionletAdapterModel
     casting 
 *)
     internal new () = new StrippedOptionletAdapterModel(null)
-    member internal this.Inject v = _StrippedOptionletAdapter.Value <- v
+    member internal this.Inject v = _StrippedOptionletAdapter <- v
     static member Cast (p : ICell<StrippedOptionletAdapter>) = 
         if p :? StrippedOptionletAdapterModel then 
             p :?> StrippedOptionletAdapterModel
         else
             let o = new StrippedOptionletAdapterModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

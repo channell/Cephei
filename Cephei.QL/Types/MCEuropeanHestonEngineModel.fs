@@ -58,7 +58,8 @@ type MCEuropeanHestonEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : un
 (*
     Functions
 *)
-    let _MCEuropeanHestonEngine                    = cell (fun () -> new MCEuropeanHestonEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+    let mutable
+        _MCEuropeanHestonEngine                    = cell (fun () -> new MCEuropeanHestonEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
     do this.Bind(_MCEuropeanHestonEngine)
 
 (* 

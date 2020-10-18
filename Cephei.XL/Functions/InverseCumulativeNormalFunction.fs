@@ -39,11 +39,11 @@ module InverseCumulativeNormalFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeNormal1", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativeNormal")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="average",Description = "Reference to average")>] 
+        ([<ExcelArgument(Name="average",Description = "double")>] 
          average : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Reference to sigma")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double")>] 
          sigma : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,7 +82,7 @@ module InverseCumulativeNormalFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeNormal", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativeNormal")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,11 +113,11 @@ module InverseCumulativeNormalFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeNormal_value", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="InverseCumulativeNormal",Description = "Reference to InverseCumulativeNormal")>] 
+        ([<ExcelArgument(Name="InverseCumulativeNormal",Description = "InverseCumulativeNormal")>] 
          inversecumulativenormal : obj)
-        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+        ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -152,9 +152,9 @@ module InverseCumulativeNormalFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseCumulativeNormal_Range", Description="Create a range of InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the InverseCumulativeNormal")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

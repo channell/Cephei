@@ -48,7 +48,8 @@ type CeilingTruncationModel
 (*
     Functions
 *)
-    let _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value, digit.Value))
+    let mutable
+        _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value, digit.Value))
     let _Digit                                     = triv (fun () -> _CeilingTruncation.Value.Digit)
     let _getType                                   = triv (fun () -> _CeilingTruncation.Value.getType)
     let _Precision                                 = triv (fun () -> _CeilingTruncation.Value.Precision)
@@ -59,13 +60,14 @@ type CeilingTruncationModel
     casting 
 *)
     internal new () = new CeilingTruncationModel(null,null)
-    member internal this.Inject v = _CeilingTruncation.Value <- v
+    member internal this.Inject v = _CeilingTruncation <- v
     static member Cast (p : ICell<CeilingTruncation>) = 
         if p :? CeilingTruncationModel then 
             p :?> CeilingTruncationModel
         else
             let o = new CeilingTruncationModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -98,7 +100,8 @@ type CeilingTruncationModel1
 (*
     Functions
 *)
-    let _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value))
+    let mutable
+        _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value))
     let _Digit                                     = triv (fun () -> _CeilingTruncation.Value.Digit)
     let _getType                                   = triv (fun () -> _CeilingTruncation.Value.getType)
     let _Precision                                 = triv (fun () -> _CeilingTruncation.Value.Precision)
@@ -109,13 +112,14 @@ type CeilingTruncationModel1
     casting 
 *)
     internal new () = new CeilingTruncationModel1(null)
-    member internal this.Inject v = _CeilingTruncation.Value <- v
+    member internal this.Inject v = _CeilingTruncation <- v
     static member Cast (p : ICell<CeilingTruncation>) = 
         if p :? CeilingTruncationModel1 then 
             p :?> CeilingTruncationModel1
         else
             let o = new CeilingTruncationModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -44,7 +44,8 @@ type JamshidianSwaptionEngineModel
 (*
     Functions
 *)
-    let _JamshidianSwaptionEngine                  = cell (fun () -> new JamshidianSwaptionEngine (model.Value))
+    let mutable
+        _JamshidianSwaptionEngine                  = cell (fun () -> new JamshidianSwaptionEngine (model.Value))
     let _setModel                                  (model : ICell<Handle<OneFactorAffineModel>>)   
                                                    = triv (fun () -> _JamshidianSwaptionEngine.Value.setModel(model.Value)
                                                                      _JamshidianSwaptionEngine.Value)
@@ -63,13 +64,14 @@ type JamshidianSwaptionEngineModel
     casting 
 *)
     internal new () = new JamshidianSwaptionEngineModel(null)
-    member internal this.Inject v = _JamshidianSwaptionEngine.Value <- v
+    member internal this.Inject v = _JamshidianSwaptionEngine <- v
     static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
         if p :? JamshidianSwaptionEngineModel then 
             p :?> JamshidianSwaptionEngineModel
         else
             let o = new JamshidianSwaptionEngineModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
@@ -104,7 +106,8 @@ type JamshidianSwaptionEngineModel1
 (*
     Functions
 *)
-    let _JamshidianSwaptionEngine                  = cell (fun () -> new JamshidianSwaptionEngine (model.Value, termStructure.Value))
+    let mutable
+        _JamshidianSwaptionEngine                  = cell (fun () -> new JamshidianSwaptionEngine (model.Value, termStructure.Value))
     let _setModel                                  (model : ICell<Handle<OneFactorAffineModel>>)   
                                                    = triv (fun () -> _JamshidianSwaptionEngine.Value.setModel(model.Value)
                                                                      _JamshidianSwaptionEngine.Value)
@@ -123,13 +126,14 @@ type JamshidianSwaptionEngineModel1
     casting 
 *)
     internal new () = new JamshidianSwaptionEngineModel1(null,null)
-    member internal this.Inject v = _JamshidianSwaptionEngine.Value <- v
+    member internal this.Inject v = _JamshidianSwaptionEngine <- v
     static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
         if p :? JamshidianSwaptionEngineModel1 then 
             p :?> JamshidianSwaptionEngineModel1
         else
             let o = new JamshidianSwaptionEngineModel1 ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

@@ -39,9 +39,9 @@ module AmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_AmericanCondition1", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="intrinsicValues",Description = "Reference to intrinsicValues")>] 
+        ([<ExcelArgument(Name="intrinsicValues",Description = "Vector")>] 
          intrinsicValues : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,11 +76,11 @@ module AmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_AmericanCondition", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanCondition")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Reference to Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
          Type : obj)
-        ([<ExcelArgument(Name="strike",Description = "Reference to strike")>] 
+        ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,13 +119,13 @@ module AmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_AmericanCondition_applyTo", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="AmericanCondition",Description = "Reference to AmericanCondition")>] 
+        ([<ExcelArgument(Name="AmericanCondition",Description = "AmericanCondition")>] 
          americancondition : obj)
-        ([<ExcelArgument(Name="o",Description = "Reference to o")>] 
+        ([<ExcelArgument(Name="o",Description = "Object")>] 
          o : obj)
-        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+        ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -164,9 +164,9 @@ module AmericanConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanCondition_Range", Description="Create a range of AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the AmericanCondition")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

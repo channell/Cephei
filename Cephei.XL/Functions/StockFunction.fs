@@ -39,9 +39,9 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_isExpired", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Stock")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -75,13 +75,13 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Stock")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="quote",Description = "Reference to quote")>] 
+        ([<ExcelArgument(Name="quote",Description = "Quote")>] 
          quote : obj)
-        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+        ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
-        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,9 +124,9 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_CASH", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,9 +160,9 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_errorEstimate", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,9 +196,9 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_NPV", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,11 +232,11 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_result", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
-        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+        ([<ExcelArgument(Name="tag",Description = "string")>] 
          tag : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,11 +274,11 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_setPricingEngine", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
-        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+        ([<ExcelArgument(Name="e",Description = "IPricingEngine")>] 
          e : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,9 +316,9 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_valuationDate", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Stock",Description = "Reference to Stock")>] 
+        ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -349,9 +349,9 @@ module StockFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Stock_Range", Description="Create a range of Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Identifer for the Stock")>] 
+        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
          values : obj[,])
          =
 

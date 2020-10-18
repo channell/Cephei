@@ -72,7 +72,8 @@ type CPICapFloorModel
 (*
     Functions
 *)
-    let _CPICapFloor                               = cell (fun () -> withEngine pricingEngine (new CPICapFloor (Type.Value, nominal.Value, startDate.Value, baseCPI.Value, maturity.Value, fixCalendar.Value, fixConvention.Value, payCalendar.Value, payConvention.Value, strike.Value, infIndex.Value, observationLag.Value, observationInterpolation.Value)))
+    let mutable
+        _CPICapFloor                               = cell (fun () -> withEngine pricingEngine (new CPICapFloor (Type.Value, nominal.Value, startDate.Value, baseCPI.Value, maturity.Value, fixCalendar.Value, fixConvention.Value, payCalendar.Value, payConvention.Value, strike.Value, infIndex.Value, observationLag.Value, observationInterpolation.Value)))
     let _fixingDate                                = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).fixingDate())
     let _inflationIndex                            = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).inflationIndex())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).isExpired())
@@ -95,13 +96,14 @@ type CPICapFloorModel
     casting 
 *)
     internal new () = new CPICapFloorModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-    member internal this.Inject v = _CPICapFloor.Value <- v
+    member internal this.Inject v = _CPICapFloor <- v
     static member Cast (p : ICell<CPICapFloor>) = 
         if p :? CPICapFloorModel then 
             p :?> CPICapFloorModel
         else
             let o = new CPICapFloorModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 

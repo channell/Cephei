@@ -41,7 +41,8 @@ type SKKCurrencyModel
 (*
     Functions
 *)
-    let _SKKCurrency                               = cell (fun () -> new SKKCurrency ())
+    let mutable
+        _SKKCurrency                               = cell (fun () -> new SKKCurrency ())
     let _code                                      = triv (fun () -> _SKKCurrency.Value.code)
     let _empty                                     = triv (fun () -> _SKKCurrency.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
@@ -60,13 +61,14 @@ type SKKCurrencyModel
     casting 
 *)
     
-    member internal this.Inject v = _SKKCurrency.Value <- v
+    member internal this.Inject v = _SKKCurrency <- v
     static member Cast (p : ICell<SKKCurrency>) = 
         if p :? SKKCurrencyModel then 
             p :?> SKKCurrencyModel
         else
             let o = new SKKCurrencyModel ()
-            o.Inject p.Value
+            o.Inject p
+            o.Bind p
             o
                             
 
