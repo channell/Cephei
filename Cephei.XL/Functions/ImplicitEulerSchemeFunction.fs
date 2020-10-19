@@ -101,7 +101,7 @@ module ImplicitEulerSchemeFunction =
          bcSet : obj)
         ([<ExcelArgument(Name="relTol",Description = "ImplicitEulerScheme")>] 
          relTol : obj)
-        ([<ExcelArgument(Name="solverType",Description = "ImplicitEulerScheme.SolverType")>] 
+        ([<ExcelArgument(Name="solverType",Description = "ImplicitEulerScheme.SolverType: BiCGstab, GMRES")>] 
          solverType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

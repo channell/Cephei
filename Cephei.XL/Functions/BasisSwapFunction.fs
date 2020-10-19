@@ -41,7 +41,7 @@ module BasisSwapFunction =
     let BasisSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "BasisSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "BasisSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -61,7 +61,7 @@ module BasisSwapFunction =
          spread2 : obj)
         ([<ExcelArgument(Name="float2DayCount",Description = "DayCounter")>] 
          float2DayCount : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -150,7 +150,7 @@ module BasisSwapFunction =
     let BasisSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "BasisSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "BasisSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)

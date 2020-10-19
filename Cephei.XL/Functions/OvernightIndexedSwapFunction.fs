@@ -365,7 +365,7 @@ module OvernightIndexedSwapFunction =
     let OvernightIndexedSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "OvernightIndexedSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "OvernightIndexedSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -450,7 +450,7 @@ module OvernightIndexedSwapFunction =
     let OvernightIndexedSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "OvernightIndexedSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "OvernightIndexedSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="fixedNominal",Description = "double")>] 
          fixedNominal : obj)

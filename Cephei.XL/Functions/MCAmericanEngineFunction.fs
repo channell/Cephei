@@ -62,7 +62,7 @@ module MCAmericanEngineFunction =
          seed : obj)
         ([<ExcelArgument(Name="polynomOrder",Description = "int")>] 
          polynomOrder : obj)
-        ([<ExcelArgument(Name="polynomType",Description = "LsmBasisSystem.PolynomType")>] 
+        ([<ExcelArgument(Name="polynomType",Description = "LsmBasisSystem.PolynomType: Monomial, Laguerre, Hermite, Hyperbolic, Legendre, Chebyshev, Chebyshev2th")>] 
          polynomType : obj)
         ([<ExcelArgument(Name="nCalibrationSamples",Description = "int")>] 
          nCalibrationSamples : obj)

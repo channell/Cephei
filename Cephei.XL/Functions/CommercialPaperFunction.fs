@@ -41,7 +41,7 @@ module CommercialPaperFunction =
     let CommercialPaper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "CommercialPaper")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -53,7 +53,7 @@ module CommercialPaperFunction =
          fixedDayCount : obj)
         ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)

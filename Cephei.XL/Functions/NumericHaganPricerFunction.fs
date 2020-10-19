@@ -98,7 +98,7 @@ module NumericHaganPricerFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="swaptionVol",Description = "SwaptionVolatilityStructure")>] 
          swaptionVol : obj)
-        ([<ExcelArgument(Name="modelOfYieldCurve",Description = "GFunctionFactory.YieldCurveModel")>] 
+        ([<ExcelArgument(Name="modelOfYieldCurve",Description = "GFunctionFactory.YieldCurveModel: Standard, ExactYield, ParallelShifts, NonParallelShifts")>] 
          modelOfYieldCurve : obj)
         ([<ExcelArgument(Name="meanReversion",Description = "Quote")>] 
          meanReversion : obj)

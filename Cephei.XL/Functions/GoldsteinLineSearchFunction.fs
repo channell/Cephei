@@ -100,7 +100,7 @@ module GoldsteinLineSearchFunction =
          goldsteinlinesearch : obj)
         ([<ExcelArgument(Name="P",Description = "Problem")>] 
          P : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria")>] 
          endCriteria : obj)

@@ -41,7 +41,7 @@ module DividendBarrierOptionFunction =
     let DividendBarrierOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "DividendBarrierOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type: DownIn, UpIn, DownOut, UpOut, NULL")>] 
          barrierType : obj)
         ([<ExcelArgument(Name="barrier",Description = "double")>] 
          barrier : obj)

@@ -155,15 +155,15 @@ module CubicInterpolationFunction =
          size : obj)
         ([<ExcelArgument(Name="yBegin",Description = "double")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox: Spline, SplineOM1, SplineOM2, FourthOrder, Parabolic, FritschButland, Akima, Kruger, Harmonic")>] 
          da : obj)
         ([<ExcelArgument(Name="monotonic",Description = "bool")>] 
          monotonic : obj)
-        ([<ExcelArgument(Name="leftCond",Description = "CubicInterpolation.BoundaryCondition")>] 
+        ([<ExcelArgument(Name="leftCond",Description = "CubicInterpolation.BoundaryCondition: NotAKnot, FirstDerivative, SecondDerivative, Periodic, Lagrange")>] 
          leftCond : obj)
         ([<ExcelArgument(Name="leftConditionValue",Description = "double")>] 
          leftConditionValue : obj)
-        ([<ExcelArgument(Name="rightCond",Description = "CubicInterpolation.BoundaryCondition")>] 
+        ([<ExcelArgument(Name="rightCond",Description = "CubicInterpolation.BoundaryCondition: NotAKnot, FirstDerivative, SecondDerivative, Periodic, Lagrange")>] 
          rightCond : obj)
         ([<ExcelArgument(Name="rightConditionValue",Description = "double")>] 
          rightConditionValue : obj)

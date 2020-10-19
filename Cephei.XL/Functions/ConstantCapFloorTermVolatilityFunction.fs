@@ -45,7 +45,7 @@ module ConstantCapFloorTermVolatilityFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
@@ -106,7 +106,7 @@ module ConstantCapFloorTermVolatilityFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="volatility",Description = "double")>] 
          volatility : obj)
@@ -167,7 +167,7 @@ module ConstantCapFloorTermVolatilityFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)
@@ -228,7 +228,7 @@ module ConstantCapFloorTermVolatilityFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="volatility",Description = "Quote")>] 
          volatility : obj)

@@ -54,7 +54,7 @@ module RussiaFunction =
     let Russia_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Russia")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m",Description = "Russia.Market")>] 
+        ([<ExcelArgument(Name="m",Description = "Russia.Market: Settlement, MOEX")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -204,7 +204,7 @@ module RussiaFunction =
          russia : obj)
         ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -254,9 +254,9 @@ module RussiaFunction =
          d : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit: Days, Weeks, Months, Years")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -320,7 +320,7 @@ module RussiaFunction =
          d : obj)
         ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)

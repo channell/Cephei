@@ -72,7 +72,7 @@ module Thirty360Function =
     let Thirty360_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Thirty360")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c",Description = "Thirty360.Thirty360Convention")>] 
+        ([<ExcelArgument(Name="c",Description = "Thirty360.Thirty360Convention: USA, BondBasis, European, EurobondBasis, Italian")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

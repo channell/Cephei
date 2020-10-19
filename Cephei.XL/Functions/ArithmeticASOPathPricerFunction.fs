@@ -41,7 +41,7 @@ module ArithmeticASOPathPricerFunction =
     let ArithmeticASOPathPricer_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticASOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -84,7 +84,7 @@ module ArithmeticASOPathPricerFunction =
     let ArithmeticASOPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticASOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -133,7 +133,7 @@ module ArithmeticASOPathPricerFunction =
     let ArithmeticASOPathPricer_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "ArithmeticASOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)

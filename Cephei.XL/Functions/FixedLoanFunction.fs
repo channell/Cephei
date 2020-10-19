@@ -77,7 +77,7 @@ module FixedLoanFunction =
     let FixedLoan_create
         ([<ExcelArgument(Name="Mnemonic",Description = "FixedLoan")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -89,7 +89,7 @@ module FixedLoanFunction =
          fixedDayCount : obj)
         ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)

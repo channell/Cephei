@@ -91,7 +91,7 @@ module CPIBondHelperFunction =
          observationLag : obj)
         ([<ExcelArgument(Name="cpiIndex",Description = "ZeroInflationIndex")>] 
          cpiIndex : obj)
-        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType")>] 
+        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType: AsIndex, Flat, Linear")>] 
          observationInterpolation : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)

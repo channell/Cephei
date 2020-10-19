@@ -41,9 +41,9 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     let BlackDeltaPremiumAdjustedSolverClass_create
         ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaPremiumAdjustedSolverClass")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ot",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="ot",Description = "Option.Type: Put, Call")>] 
          ot : obj)
-        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType")>] 
+        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType: Spot, Fwd, PaSpot, PaFwd")>] 
          dt : obj)
         ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)

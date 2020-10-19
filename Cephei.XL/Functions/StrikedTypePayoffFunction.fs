@@ -150,7 +150,7 @@ module StrikedTypePayoffFunction =
     let StrikedTypePayoff_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "StrikedTypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

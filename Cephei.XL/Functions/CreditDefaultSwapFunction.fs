@@ -245,7 +245,7 @@ module CreditDefaultSwapFunction =
     let CreditDefaultSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "CreditDefaultSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="side",Description = "Protection.Side")>] 
+        ([<ExcelArgument(Name="side",Description = "Protection.Side: Buyer, Seller")>] 
          side : obj)
         ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
@@ -255,7 +255,7 @@ module CreditDefaultSwapFunction =
          runningSpread : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
@@ -372,7 +372,7 @@ module CreditDefaultSwapFunction =
     let CreditDefaultSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "CreditDefaultSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="side",Description = "Protection.Side")>] 
+        ([<ExcelArgument(Name="side",Description = "Protection.Side: Buyer, Seller")>] 
          side : obj)
         ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
@@ -380,7 +380,7 @@ module CreditDefaultSwapFunction =
          spread : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)

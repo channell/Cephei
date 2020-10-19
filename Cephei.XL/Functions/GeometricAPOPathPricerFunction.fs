@@ -41,7 +41,7 @@ module GeometricAPOPathPricerFunction =
     let GeometricAPOPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "GeometricAPOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
@@ -90,7 +90,7 @@ module GeometricAPOPathPricerFunction =
     let GeometricAPOPathPricer_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "GeometricAPOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
@@ -151,7 +151,7 @@ module GeometricAPOPathPricerFunction =
     let GeometricAPOPathPricer_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "GeometricAPOPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

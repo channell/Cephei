@@ -113,7 +113,7 @@ module TypePayoffFunction =
     let TypePayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "TypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

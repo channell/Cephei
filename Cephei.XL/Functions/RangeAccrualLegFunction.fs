@@ -458,7 +458,7 @@ module RangeAccrualLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -542,7 +542,7 @@ module RangeAccrualLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualLeg",Description = "RangeAccrualLeg")>] 
          rangeaccrualleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

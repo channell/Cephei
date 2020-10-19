@@ -1090,7 +1090,7 @@ module PiecewiseZeroInflationCurveFunction =
          baseZeroRate : obj)
         ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
@@ -1169,7 +1169,7 @@ module PiecewiseZeroInflationCurveFunction =
          baseZeroRate : obj)
         ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
@@ -1244,7 +1244,7 @@ module PiecewiseZeroInflationCurveFunction =
          baseZeroRate : obj)
         ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)

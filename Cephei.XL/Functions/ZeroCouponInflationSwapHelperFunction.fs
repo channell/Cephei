@@ -127,7 +127,7 @@ module ZeroCouponInflationSwapHelperFunction =
          maturity : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)

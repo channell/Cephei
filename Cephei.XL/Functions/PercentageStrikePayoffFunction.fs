@@ -77,7 +77,7 @@ module PercentageStrikePayoffFunction =
     let PercentageStrikePayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "PercentageStrikePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="moneyness",Description = "double")>] 
          moneyness : obj)

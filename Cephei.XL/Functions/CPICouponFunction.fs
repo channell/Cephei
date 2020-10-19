@@ -129,7 +129,7 @@ module CPICouponFunction =
          index : obj)
         ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType")>] 
+        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType: AsIndex, Flat, Linear")>] 
          observationInterpolation : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)

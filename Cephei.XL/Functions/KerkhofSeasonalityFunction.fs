@@ -388,7 +388,7 @@ module KerkhofSeasonalityFunction =
          kerkhofseasonality : obj)
         ([<ExcelArgument(Name="seasonalityBaseDate",Description = "Date")>] 
          seasonalityBaseDate : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="seasonalityFactors",Description = "double")>] 
          seasonalityFactors : obj)

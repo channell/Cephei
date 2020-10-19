@@ -185,7 +185,7 @@ module FdmSchemeDescFunction =
     let FdmSchemeDesc_create
         ([<ExcelArgument(Name="Mnemonic",Description = "FdmSchemeDesc")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "FdmSchemeDesc.FdmSchemeType")>] 
+        ([<ExcelArgument(Name="Type",Description = "FdmSchemeDesc.FdmSchemeType: HundsdorferType, DouglasType, CraigSneydType, ModifiedCraigSneydType, ImplicitEulerType, ExplicitEulerType, MethodOfLinesType, TrBDF2Type, CrankNicolsonType")>] 
          Type : obj)
         ([<ExcelArgument(Name="theta",Description = "double")>] 
          theta : obj)

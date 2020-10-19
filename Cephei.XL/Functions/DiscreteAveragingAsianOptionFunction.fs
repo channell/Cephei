@@ -41,7 +41,7 @@ module DiscreteAveragingAsianOptionFunction =
     let DiscreteAveragingAsianOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "DiscreteAveragingAsianOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="averageType",Description = "Average.Type")>] 
+        ([<ExcelArgument(Name="averageType",Description = "Average.Type: Arithmetic, Geometric, NULL")>] 
          averageType : obj)
         ([<ExcelArgument(Name="runningAccumulator",Description = "double")>] 
          runningAccumulator : obj)

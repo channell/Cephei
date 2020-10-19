@@ -485,7 +485,7 @@ module SwapIndexFunction =
          calendar : obj)
         ([<ExcelArgument(Name="fixedLegTenor",Description = "Period")>] 
          fixedLegTenor : obj)
-        ([<ExcelArgument(Name="fixedLegConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixedLegConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixedLegConvention : obj)
         ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)
@@ -601,7 +601,7 @@ module SwapIndexFunction =
          calendar : obj)
         ([<ExcelArgument(Name="fixedLegTenor",Description = "Period")>] 
          fixedLegTenor : obj)
-        ([<ExcelArgument(Name="fixedLegConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixedLegConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixedLegConvention : obj)
         ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)

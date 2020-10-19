@@ -455,7 +455,7 @@ module YoYInflationCapFloorFunction =
     let YoYInflationCapFloor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "CapFloorType")>] 
+        ([<ExcelArgument(Name="Type",Description = "CapFloorType: Collar, Cap, Floor")>] 
          Type : obj)
         ([<ExcelArgument(Name="yoyLeg",Description = "CashFlow")>] 
          yoyLeg : obj)
@@ -516,7 +516,7 @@ module YoYInflationCapFloorFunction =
     let YoYInflationCapFloor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "CapFloorType")>] 
+        ([<ExcelArgument(Name="Type",Description = "CapFloorType: Collar, Cap, Floor")>] 
          Type : obj)
         ([<ExcelArgument(Name="yoyLeg",Description = "CashFlow")>] 
          yoyLeg : obj)

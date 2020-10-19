@@ -1564,9 +1564,9 @@ module PiecewiseYieldCurveFunction =
          p : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
@@ -1636,9 +1636,9 @@ module PiecewiseYieldCurveFunction =
          d2 : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
@@ -1706,9 +1706,9 @@ module PiecewiseYieldCurveFunction =
          t1 : obj)
         ([<ExcelArgument(Name="t2",Description = "double")>] 
          t2 : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
@@ -1880,9 +1880,9 @@ module PiecewiseYieldCurveFunction =
          d : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)
@@ -1944,9 +1944,9 @@ module PiecewiseYieldCurveFunction =
          piecewiseyieldcurve : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="extrapolate",Description = "bool")>] 
          extrapolate : obj)

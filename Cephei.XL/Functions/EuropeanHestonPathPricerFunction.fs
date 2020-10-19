@@ -41,7 +41,7 @@ module EuropeanHestonPathPricerFunction =
     let EuropeanHestonPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "EuropeanHestonPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

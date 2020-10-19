@@ -614,7 +614,7 @@ module DigitalIborLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type: Long, Short")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -656,7 +656,7 @@ module DigitalIborLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type: Long, Short")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -782,7 +782,7 @@ module DigitalIborLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalIborLeg",Description = "DigitalIborLeg")>] 
          digitaliborleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

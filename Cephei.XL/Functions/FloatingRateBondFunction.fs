@@ -51,7 +51,7 @@ module FloatingRateBondFunction =
          index : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
@@ -221,7 +221,7 @@ module FloatingRateBondFunction =
          index : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
@@ -346,7 +346,7 @@ module FloatingRateBondFunction =
          startDate : obj)
         ([<ExcelArgument(Name="maturityDate",Description = "Date")>] 
          maturityDate : obj)
-        ([<ExcelArgument(Name="couponFrequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="couponFrequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          couponFrequency : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -354,9 +354,9 @@ module FloatingRateBondFunction =
          index : obj)
         ([<ExcelArgument(Name="accrualDayCounter",Description = "DayCounter")>] 
          accrualDayCounter : obj)
-        ([<ExcelArgument(Name="accrualConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="accrualConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          accrualConvention : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
@@ -376,7 +376,7 @@ module FloatingRateBondFunction =
          issueDate : obj)
         ([<ExcelArgument(Name="stubDate",Description = "Date")>] 
          stubDate : obj)
-        ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule")>] 
+        ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule: Backward, Forward, Zero, ThirdWednesday, Twentieth, TwentiethIMM, OldCDS, CDS, CDS2015")>] 
          rule : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -663,9 +663,9 @@ module FloatingRateBondFunction =
          Yield : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -729,9 +729,9 @@ module FloatingRateBondFunction =
          Yield : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -1491,9 +1491,9 @@ module FloatingRateBondFunction =
          cleanPrice : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -1567,9 +1567,9 @@ module FloatingRateBondFunction =
          floatingratebond : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)

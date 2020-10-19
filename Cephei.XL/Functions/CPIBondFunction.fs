@@ -89,7 +89,7 @@ module CPIBondFunction =
          observationLag : obj)
         ([<ExcelArgument(Name="cpiIndex",Description = "ZeroInflationIndex")>] 
          cpiIndex : obj)
-        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType")>] 
+        ([<ExcelArgument(Name="observationInterpolation",Description = "InterpolationType: AsIndex, Flat, Linear")>] 
          observationInterpolation : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -594,9 +594,9 @@ module CPIBondFunction =
          Yield : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -660,9 +660,9 @@ module CPIBondFunction =
          Yield : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -1422,9 +1422,9 @@ module CPIBondFunction =
          cleanPrice : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -1498,9 +1498,9 @@ module CPIBondFunction =
          cpibond : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)

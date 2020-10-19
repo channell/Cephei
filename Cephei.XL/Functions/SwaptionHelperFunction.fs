@@ -213,13 +213,13 @@ module SwaptionHelperFunction =
          floatingLegDayCounter : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType: RelativePriceError, PriceError, ImpliedVolError")>] 
          errorType : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         ([<ExcelArgument(Name="nominal",Description = "SwaptionHelper")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "SwaptionHelper")>] 
          shift : obj)
@@ -334,13 +334,13 @@ module SwaptionHelperFunction =
          floatingLegDayCounter : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType: RelativePriceError, PriceError, ImpliedVolError")>] 
          errorType : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         ([<ExcelArgument(Name="nominal",Description = "SwaptionHelper")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "SwaptionHelper")>] 
          shift : obj)
@@ -455,13 +455,13 @@ module SwaptionHelperFunction =
          floatingLegDayCounter : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
-        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType: RelativePriceError, PriceError, ImpliedVolError")>] 
          errorType : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
         ([<ExcelArgument(Name="nominal",Description = "SwaptionHelper")>] 
          nominal : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "SwaptionHelper")>] 
          shift : obj)

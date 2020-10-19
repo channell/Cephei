@@ -509,7 +509,7 @@ module YearOnYearInflationSwapFunction =
     let YearOnYearInflationSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "YearOnYearInflationSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "YearOnYearInflationSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "YearOnYearInflationSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)

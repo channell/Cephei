@@ -133,9 +133,9 @@ module MixedLinearCubicFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="behavior",Description = "Behavior")>] 
+        ([<ExcelArgument(Name="behavior",Description = "Behavior: ShareRanges, SplitRanges")>] 
          behavior : obj)
-        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox: Spline, SplineOM1, SplineOM2, FourthOrder, Parabolic, FritschButland, Akima, Kruger, Harmonic")>] 
          da : obj)
         ([<ExcelArgument(Name="monotonic",Description = "MixedLinearCubic")>] 
          monotonic : obj)

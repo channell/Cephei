@@ -222,7 +222,7 @@ module CPILegFunction =
          period : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -530,7 +530,7 @@ module CPILegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CPILeg",Description = "CPILeg")>] 
          cpileg : obj)
-        ([<ExcelArgument(Name="interp",Description = "InterpolationType")>] 
+        ([<ExcelArgument(Name="interp",Description = "InterpolationType: AsIndex, Flat, Linear")>] 
          interp : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -866,7 +866,7 @@ module CPILegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CPILeg",Description = "CPILeg")>] 
          cpileg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

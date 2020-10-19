@@ -49,7 +49,7 @@ module NumericalDifferentiationFunction =
          stepSize : obj)
         ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="scheme",Description = "NumericalDifferentiation.Scheme")>] 
+        ([<ExcelArgument(Name="scheme",Description = "NumericalDifferentiation.Scheme: Central, Backward, Forward")>] 
          scheme : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

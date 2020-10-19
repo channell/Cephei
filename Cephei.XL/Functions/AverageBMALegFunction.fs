@@ -416,7 +416,7 @@ module AverageBMALegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMALeg",Description = "AverageBMALeg")>] 
          averagebmaleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

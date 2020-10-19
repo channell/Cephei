@@ -83,7 +83,7 @@ module CapFloorFunction =
     let CapFloor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "CapFloorType")>] 
+        ([<ExcelArgument(Name="Type",Description = "CapFloorType: Collar, Cap, Floor")>] 
          Type : obj)
         ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
          floatingLeg : obj)
@@ -150,7 +150,7 @@ module CapFloorFunction =
     let CapFloor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "CapFloorType")>] 
+        ([<ExcelArgument(Name="Type",Description = "CapFloorType: Collar, Cap, Floor")>] 
          Type : obj)
         ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
          floatingLeg : obj)
@@ -371,7 +371,7 @@ module CapFloorFunction =
          minVol : obj)
         ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)

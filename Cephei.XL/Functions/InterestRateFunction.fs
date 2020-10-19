@@ -321,9 +321,9 @@ module InterestRateFunction =
          interestrate : obj)
         ([<ExcelArgument(Name="resultDC",Description = "DayCounter")>] 
          resultDC : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="d1",Description = "Date")>] 
          d1 : obj)
@@ -397,9 +397,9 @@ module InterestRateFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
@@ -489,9 +489,9 @@ module InterestRateFunction =
          r : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

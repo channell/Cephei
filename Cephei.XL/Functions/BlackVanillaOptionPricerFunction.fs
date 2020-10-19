@@ -100,7 +100,7 @@ module BlackVanillaOptionPricerFunction =
          blackvanillaoptionpricer : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="optionType",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="optionType",Description = "Option.Type: Put, Call")>] 
          optionType : obj)
         ([<ExcelArgument(Name="deflator",Description = "double")>] 
          deflator : obj)

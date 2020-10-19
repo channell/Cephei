@@ -270,7 +270,7 @@ module PeriodFunction =
     let Period_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="f",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="f",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          f : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -309,7 +309,7 @@ module PeriodFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="u",Description = "TimeUnit")>] 
+        ([<ExcelArgument(Name="u",Description = "TimeUnit: Days, Weeks, Months, Years")>] 
          u : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

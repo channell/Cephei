@@ -244,7 +244,7 @@ module DateFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "int")>] 
          d : obj)
-        ([<ExcelArgument(Name="m",Description = "Month")>] 
+        ([<ExcelArgument(Name="m",Description = "Month: January, February, March, April, May, June, July, August, September, October, November, December, Jan, Feb, Mar, Apr, Jun, Jul, Aug, Sep, Oct, Nov, Dec")>] 
          m : obj)
         ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)

@@ -110,7 +110,7 @@ module Black76SpecFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

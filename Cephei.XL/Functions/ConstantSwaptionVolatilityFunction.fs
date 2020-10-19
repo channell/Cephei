@@ -45,13 +45,13 @@ module ConstantSwaptionVolatilityFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double")>] 
          shift : obj)
@@ -118,13 +118,13 @@ module ConstantSwaptionVolatilityFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double")>] 
          shift : obj)
@@ -191,13 +191,13 @@ module ConstantSwaptionVolatilityFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double")>] 
          shift : obj)
@@ -264,13 +264,13 @@ module ConstantSwaptionVolatilityFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double")>] 
          shift : obj)

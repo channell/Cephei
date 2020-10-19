@@ -43,7 +43,7 @@ module BlackDeltaCalculatorFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
-        ([<ExcelArgument(Name="atmT",Description = "DeltaVolQuote.AtmType")>] 
+        ([<ExcelArgument(Name="atmT",Description = "DeltaVolQuote.AtmType: AtmNull, AtmSpot, AtmFwd, AtmDeltaNeutral, AtmVegaMax, AtmGammaMax, AtmPutCall50")>] 
          atmT : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -83,9 +83,9 @@ module BlackDeltaCalculatorFunction =
     let BlackDeltaCalculator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaCalculator")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ot",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="ot",Description = "Option.Type: Put, Call")>] 
          ot : obj)
-        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType")>] 
+        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType: Spot, Fwd, PaSpot, PaFwd")>] 
          dt : obj)
         ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
@@ -362,7 +362,7 @@ module BlackDeltaCalculatorFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
-        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType")>] 
+        ([<ExcelArgument(Name="dt",Description = "DeltaVolQuote.DeltaType: Spot, Fwd, PaSpot, PaFwd")>] 
          dt : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -404,7 +404,7 @@ module BlackDeltaCalculatorFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
-        ([<ExcelArgument(Name="ot",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="ot",Description = "Option.Type: Put, Call")>] 
          ot : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

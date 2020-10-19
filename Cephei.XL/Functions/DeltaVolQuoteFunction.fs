@@ -153,11 +153,11 @@ module DeltaVolQuoteFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="deltaType",Description = "DeltaVolQuote.DeltaType")>] 
+        ([<ExcelArgument(Name="deltaType",Description = "DeltaVolQuote.DeltaType: Spot, Fwd, PaSpot, PaFwd")>] 
          deltaType : obj)
         ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="atmType",Description = "DeltaVolQuote.AtmType")>] 
+        ([<ExcelArgument(Name="atmType",Description = "DeltaVolQuote.AtmType: AtmNull, AtmSpot, AtmFwd, AtmDeltaNeutral, AtmVegaMax, AtmGammaMax, AtmPutCall50")>] 
          atmType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -212,7 +212,7 @@ module DeltaVolQuoteFunction =
          vol : obj)
         ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="deltaType",Description = "DeltaVolQuote.DeltaType")>] 
+        ([<ExcelArgument(Name="deltaType",Description = "DeltaVolQuote.DeltaType: Spot, Fwd, PaSpot, PaFwd")>] 
          deltaType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

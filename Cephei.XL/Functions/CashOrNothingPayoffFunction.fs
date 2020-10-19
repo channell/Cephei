@@ -41,7 +41,7 @@ module CashOrNothingPayoffFunction =
     let CashOrNothingPayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "CashOrNothingPayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

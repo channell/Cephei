@@ -49,7 +49,7 @@ module BasisSwapHelperFunction =
          swapTenor : obj)
         ([<ExcelArgument(Name="settlementCalendar",Description = "Calendar")>] 
          settlementCalendar : obj)
-        ([<ExcelArgument(Name="rollConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="rollConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          rollConvention : obj)
         ([<ExcelArgument(Name="shortIndex",Description = "IborIndex")>] 
          shortIndex : obj)

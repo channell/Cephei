@@ -77,7 +77,7 @@ module FloatingLoanFunction =
     let FloatingLoan_create
         ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLoan")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Loan.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -89,7 +89,7 @@ module FloatingLoanFunction =
          floatingDayCount : obj)
         ([<ExcelArgument(Name="principalSchedule",Description = "Schedule")>] 
          principalSchedule : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)

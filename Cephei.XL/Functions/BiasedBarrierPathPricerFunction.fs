@@ -41,13 +41,13 @@ module BiasedBarrierPathPricerFunction =
     let BiasedBarrierPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "BiasedBarrierPathPricer")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type")>] 
+        ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type: DownIn, UpIn, DownOut, UpOut, NULL")>] 
          barrierType : obj)
         ([<ExcelArgument(Name="barrier",Description = "double")>] 
          barrier : obj)
         ([<ExcelArgument(Name="rebate",Description = "double")>] 
          rebate : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

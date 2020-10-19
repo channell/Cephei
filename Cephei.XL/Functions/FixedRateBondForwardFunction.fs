@@ -82,7 +82,7 @@ module FixedRateBondForwardFunction =
          valueDate : obj)
         ([<ExcelArgument(Name="maturityDate",Description = "Date")>] 
          maturityDate : obj)
-        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type: Long, Short")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
@@ -92,7 +92,7 @@ module FixedRateBondForwardFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="businessDayConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="businessDayConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          businessDayConvention : obj)
         ([<ExcelArgument(Name="fixedCouponBond",Description = "FixedRateBond")>] 
          fixedCouponBond : obj)
@@ -345,7 +345,7 @@ module FixedRateBondForwardFunction =
          forwardValue : obj)
         ([<ExcelArgument(Name="settlementDate",Description = "Date")>] 
          settlementDate : obj)
-        ([<ExcelArgument(Name="compoundingConvention",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="compoundingConvention",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          compoundingConvention : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)

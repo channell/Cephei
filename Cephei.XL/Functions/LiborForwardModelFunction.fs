@@ -139,7 +139,7 @@ module LiborForwardModelFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="LiborForwardModel",Description = "LiborForwardModel")>] 
          liborforwardmodel : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

@@ -91,7 +91,7 @@ module SobolBrownianGeneratorFactoryFunction =
     let SobolBrownianGeneratorFactory_create
         ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGeneratorFactory")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering")>] 
+        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering: Factors, Steps, Diagonal")>] 
          ordering : obj)
         ([<ExcelArgument(Name="seed",Description = "SobolBrownianGeneratorFactory")>] 
          seed : obj)

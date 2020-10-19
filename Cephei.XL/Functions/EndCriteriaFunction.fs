@@ -45,7 +45,7 @@ module EndCriteriaFunction =
          endcriteria : obj)
         ([<ExcelArgument(Name="iteration",Description = "int")>] 
          iteration : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -95,7 +95,7 @@ module EndCriteriaFunction =
          f : obj)
         ([<ExcelArgument(Name="positiveOptimization",Description = "bool")>] 
          positiveOptimization : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -151,7 +151,7 @@ module EndCriteriaFunction =
          fxNew : obj)
         ([<ExcelArgument(Name="statStateIterations",Description = "int")>] 
          statStateIterations : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -211,7 +211,7 @@ module EndCriteriaFunction =
          xNew : obj)
         ([<ExcelArgument(Name="statStateIterations",Description = "int")>] 
          statStateIterations : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,7 +267,7 @@ module EndCriteriaFunction =
          endcriteria : obj)
         ([<ExcelArgument(Name="gradientNorm",Description = "double")>] 
          gradientNorm : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -568,7 +568,7 @@ module EndCriteriaFunction =
          fnew : obj)
         ([<ExcelArgument(Name="normgnew",Description = "double")>] 
          normgnew : obj)
-        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type")>] 
+        ([<ExcelArgument(Name="ecType",Description = "EndCriteria.Type: None, MaxIterations, StationaryPoint, StationaryFunctionValue, StationaryFunctionAccuracy, ZeroGradientNorm, Unknown")>] 
          ecType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

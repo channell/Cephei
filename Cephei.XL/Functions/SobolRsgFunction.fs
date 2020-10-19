@@ -283,7 +283,7 @@ module SobolRsgFunction =
          dimensionality : obj)
         ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
-        ([<ExcelArgument(Name="directionIntegers",Description = "SobolRsg.DirectionIntegers")>] 
+        ([<ExcelArgument(Name="directionIntegers",Description = "SobolRsg.DirectionIntegers: Unit, Jaeckel, SobolLevitan, SobolLevitanLemieux, JoeKuoD5, JoeKuoD6, JoeKuoD7, Kuo, Kuo2, Kuo3")>] 
          directionIntegers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

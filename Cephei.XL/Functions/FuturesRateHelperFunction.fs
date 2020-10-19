@@ -85,7 +85,7 @@ module FuturesRateHelperFunction =
          i : obj)
         ([<ExcelArgument(Name="convAdj",Description = "FuturesRateHelper")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -146,7 +146,7 @@ module FuturesRateHelperFunction =
          i : obj)
         ([<ExcelArgument(Name="convAdj",Description = "Quote")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -209,7 +209,7 @@ module FuturesRateHelperFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="convAdj",Description = "FuturesRateHelper")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -276,7 +276,7 @@ module FuturesRateHelperFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="convAdj",Description = "Quote")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,7 +341,7 @@ module FuturesRateHelperFunction =
          lengthInMonths : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -349,7 +349,7 @@ module FuturesRateHelperFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="convexityAdjustment",Description = "FuturesRateHelper")>] 
          convexityAdjustment : obj)
-        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -426,7 +426,7 @@ module FuturesRateHelperFunction =
          lengthInMonths : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -434,7 +434,7 @@ module FuturesRateHelperFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="convAdj",Description = "Quote")>] 
          convAdj : obj)
-        ([<ExcelArgument(Name="Type",Description = "Futures.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

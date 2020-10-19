@@ -689,7 +689,7 @@ module ZeroCouponInflationSwapFunction =
     let ZeroCouponInflationSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "ZeroCouponInflationSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "ZeroCouponInflationSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "ZeroCouponInflationSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -699,7 +699,7 @@ module ZeroCouponInflationSwapFunction =
          maturity : obj)
         ([<ExcelArgument(Name="fixCalendar",Description = "Calendar")>] 
          fixCalendar : obj)
-        ([<ExcelArgument(Name="fixConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixConvention : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
@@ -713,7 +713,7 @@ module ZeroCouponInflationSwapFunction =
          adjustInfObsDates : obj)
         ([<ExcelArgument(Name="infCalendar",Description = "ZeroCouponInflationSwap")>] 
          infCalendar : obj)
-        ([<ExcelArgument(Name="infConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="infConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          infConvention : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)

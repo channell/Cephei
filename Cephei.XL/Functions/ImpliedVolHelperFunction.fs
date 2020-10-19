@@ -91,7 +91,7 @@ module ImpliedVolHelperFunction =
          targetValue : obj)
         ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

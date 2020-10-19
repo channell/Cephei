@@ -93,7 +93,7 @@ module SwaptionFunction =
          minVol : obj)
         ([<ExcelArgument(Name="maxVol",Description = "Swaption")>] 
          maxVol : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)

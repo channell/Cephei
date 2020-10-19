@@ -177,7 +177,7 @@ module YoYInflationIndexFunction =
          interpolated : obj)
         ([<ExcelArgument(Name="ratio",Description = "bool")>] 
          ratio : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="availabilityLag",Description = "Period")>] 
          availabilityLag : obj)

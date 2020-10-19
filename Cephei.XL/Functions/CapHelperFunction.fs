@@ -131,7 +131,7 @@ module CapHelperFunction =
          volatility : obj)
         ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="fixedLegFrequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="fixedLegFrequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          fixedLegFrequency : obj)
         ([<ExcelArgument(Name="fixedLegDayCounter",Description = "DayCounter")>] 
          fixedLegDayCounter : obj)

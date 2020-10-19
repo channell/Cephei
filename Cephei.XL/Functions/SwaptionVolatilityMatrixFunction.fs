@@ -283,7 +283,7 @@ module SwaptionVolatilityMatrixFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -295,7 +295,7 @@ module SwaptionVolatilityMatrixFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="flatExtrapolation",Description = "SwaptionVolatilityMatrix")>] 
          flatExtrapolation : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shifts",Description = "SwaptionVolatilityMatrix")>] 
          shifts : obj)
@@ -370,7 +370,7 @@ module SwaptionVolatilityMatrixFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -382,7 +382,7 @@ module SwaptionVolatilityMatrixFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="flatExtrapolation",Description = "SwaptionVolatilityMatrix")>] 
          flatExtrapolation : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shifts",Description = "SwaptionVolatilityMatrix")>] 
          shifts : obj)
@@ -461,7 +461,7 @@ module SwaptionVolatilityMatrixFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -473,7 +473,7 @@ module SwaptionVolatilityMatrixFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="flatExtrapolation",Description = "SwaptionVolatilityMatrix")>] 
          flatExtrapolation : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shifts",Description = "SwaptionVolatilityMatrix")>] 
          shifts : obj)
@@ -560,7 +560,7 @@ module SwaptionVolatilityMatrixFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="flatExtrapolation",Description = "SwaptionVolatilityMatrix")>] 
          flatExtrapolation : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shifts",Description = "SwaptionVolatilityMatrix")>] 
          shifts : obj)
@@ -629,7 +629,7 @@ module SwaptionVolatilityMatrixFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -641,7 +641,7 @@ module SwaptionVolatilityMatrixFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="flatExtrapolation",Description = "SwaptionVolatilityMatrix")>] 
          flatExtrapolation : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shifts",Description = "SwaptionVolatilityMatrix")>] 
          shifts : obj)

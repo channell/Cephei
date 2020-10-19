@@ -41,7 +41,7 @@ module ContinuousAveragingAsianOptionFunction =
     let ContinuousAveragingAsianOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "ContinuousAveragingAsianOption")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="averageType",Description = "Average.Type")>] 
+        ([<ExcelArgument(Name="averageType",Description = "Average.Type: Arithmetic, Geometric, NULL")>] 
          averageType : obj)
         ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)

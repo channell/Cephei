@@ -44,7 +44,7 @@ module HestonExpansionEngineFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="formula",Description = "HestonExpansionEngine.HestonExpansionFormula")>] 
+        ([<ExcelArgument(Name="formula",Description = "HestonExpansionEngine.HestonExpansionFormula: LPP2, LPP3, Forde")>] 
          formula : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

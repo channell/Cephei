@@ -149,7 +149,7 @@ module BMASwapFunction =
     let BMASwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "BMASwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "BMASwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "BMASwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)

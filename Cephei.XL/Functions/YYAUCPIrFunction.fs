@@ -41,7 +41,7 @@ module YYAUCPIrFunction =
     let YYAUCPIr_create
         ([<ExcelArgument(Name="Mnemonic",Description = "YYAUCPIr")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="revised",Description = "bool")>] 
          revised : obj)
@@ -90,7 +90,7 @@ module YYAUCPIrFunction =
     let YYAUCPIr_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "YYAUCPIr")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="revised",Description = "bool")>] 
          revised : obj)

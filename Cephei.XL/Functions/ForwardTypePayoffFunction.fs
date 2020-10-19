@@ -113,7 +113,7 @@ module ForwardTypePayoffFunction =
     let ForwardTypePayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "ForwardTypePayoff")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type: Long, Short")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

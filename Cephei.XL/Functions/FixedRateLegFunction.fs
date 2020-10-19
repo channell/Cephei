@@ -120,9 +120,9 @@ module FixedRateLegFunction =
          couponRates : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -228,7 +228,7 @@ module FixedRateLegFunction =
          couponRate : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -282,9 +282,9 @@ module FixedRateLegFunction =
          couponRate : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          freq : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -342,7 +342,7 @@ module FixedRateLegFunction =
          couponRates : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="comp",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          comp : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -528,7 +528,7 @@ module FixedRateLegFunction =
          period : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "FixedRateLeg")>] 
          endOfMonth : obj)
@@ -794,7 +794,7 @@ module FixedRateLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateLeg",Description = "FixedRateLeg")>] 
          fixedrateleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

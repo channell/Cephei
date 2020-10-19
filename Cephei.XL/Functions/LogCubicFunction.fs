@@ -131,15 +131,15 @@ module LogCubicFunction =
     let LogCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "LogCubic")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox: Spline, SplineOM1, SplineOM2, FourthOrder, Parabolic, FritschButland, Akima, Kruger, Harmonic")>] 
          da : obj)
         ([<ExcelArgument(Name="monotonic",Description = "bool")>] 
          monotonic : obj)
-        ([<ExcelArgument(Name="leftCondition",Description = "CubicInterpolation.BoundaryCondition")>] 
+        ([<ExcelArgument(Name="leftCondition",Description = "CubicInterpolation.BoundaryCondition: NotAKnot, FirstDerivative, SecondDerivative, Periodic, Lagrange")>] 
          leftCondition : obj)
         ([<ExcelArgument(Name="leftConditionValue",Description = "double")>] 
          leftConditionValue : obj)
-        ([<ExcelArgument(Name="rightCondition",Description = "CubicInterpolation.BoundaryCondition")>] 
+        ([<ExcelArgument(Name="rightCondition",Description = "CubicInterpolation.BoundaryCondition: NotAKnot, FirstDerivative, SecondDerivative, Periodic, Lagrange")>] 
          rightCondition : obj)
         ([<ExcelArgument(Name="rightConditionValue",Description = "double")>] 
          rightConditionValue : obj)

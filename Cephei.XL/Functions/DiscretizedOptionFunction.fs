@@ -43,7 +43,7 @@ module DiscretizedOptionFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="underlying",Description = "DiscretizedAsset")>] 
          underlying : obj)
-        ([<ExcelArgument(Name="exerciseType",Description = "Exercise.Type")>] 
+        ([<ExcelArgument(Name="exerciseType",Description = "Exercise.Type: American, Bermudan, European")>] 
          exerciseType : obj)
         ([<ExcelArgument(Name="exerciseTimes",Description = "double")>] 
          exerciseTimes : obj)

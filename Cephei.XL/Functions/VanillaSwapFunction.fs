@@ -653,7 +653,7 @@ module VanillaSwapFunction =
     let VanillaSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -671,7 +671,7 @@ module VanillaSwapFunction =
          spread : obj)
         ([<ExcelArgument(Name="floatingDayCount",Description = "DayCounter")>] 
          floatingDayCount : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)

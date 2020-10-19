@@ -100,7 +100,7 @@ module JointCalendarFunction =
          c1 : obj)
         ([<ExcelArgument(Name="c2",Description = "Calendar")>] 
          c2 : obj)
-        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule")>] 
+        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule: JoinHolidays, JoinBusinessDays")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -200,7 +200,7 @@ module JointCalendarFunction =
          c2 : obj)
         ([<ExcelArgument(Name="c3",Description = "Calendar")>] 
          c3 : obj)
-        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule")>] 
+        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule: JoinHolidays, JoinBusinessDays")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,7 +257,7 @@ module JointCalendarFunction =
          c3 : obj)
         ([<ExcelArgument(Name="c4",Description = "Calendar")>] 
          c4 : obj)
-        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule")>] 
+        ([<ExcelArgument(Name="r",Description = "JointCalendar.JointCalendarRule: JoinHolidays, JoinBusinessDays")>] 
          r : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -435,7 +435,7 @@ module JointCalendarFunction =
          jointcalendar : obj)
         ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -485,9 +485,9 @@ module JointCalendarFunction =
          d : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit: Days, Weeks, Months, Years")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -551,7 +551,7 @@ module JointCalendarFunction =
          d : obj)
         ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)

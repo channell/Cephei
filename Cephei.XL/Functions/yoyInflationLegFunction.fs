@@ -680,7 +680,7 @@ module yoyInflationLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

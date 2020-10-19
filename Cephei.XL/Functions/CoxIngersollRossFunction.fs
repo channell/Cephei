@@ -98,7 +98,7 @@ module CoxIngersollRossFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CoxIngersollRoss",Description = "CoxIngersollRoss")>] 
          coxingersollross : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

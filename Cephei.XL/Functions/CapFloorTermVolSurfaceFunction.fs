@@ -45,7 +45,7 @@ module CapFloorTermVolSurfaceFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -118,7 +118,7 @@ module CapFloorTermVolSurfaceFunction =
          settlementDate : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -191,7 +191,7 @@ module CapFloorTermVolSurfaceFunction =
          settlementDate : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)
@@ -265,7 +265,7 @@ module CapFloorTermVolSurfaceFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="optionTenors",Description = "Period")>] 
          optionTenors : obj)

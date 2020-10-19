@@ -47,13 +47,13 @@ module ConstantYoYOptionletVolatilityFunction =
          settlementDays : obj)
         ([<ExcelArgument(Name="cal",Description = "Calendar")>] 
          cal : obj)
-        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bdc",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bdc : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
         ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)

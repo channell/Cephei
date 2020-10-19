@@ -72,7 +72,7 @@ module ActualActualFunction =
     let ActualActual_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "ActualActual")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c",Description = "ActualActual.Convention")>] 
+        ([<ExcelArgument(Name="c",Description = "ActualActual.Convention: ISMA, Bond, ISDA, Historical, Actual365, AFB, Euro")>] 
          c : obj)
         ([<ExcelArgument(Name="schedule",Description = "ActualActual")>] 
          schedule : obj)

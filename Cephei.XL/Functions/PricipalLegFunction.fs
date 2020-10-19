@@ -206,7 +206,7 @@ module PricipalLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="PricipalLeg",Description = "PricipalLeg")>] 
          pricipalleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

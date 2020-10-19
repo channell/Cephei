@@ -85,7 +85,7 @@ module FlatSmileSectionFunction =
          dc : obj)
         ([<ExcelArgument(Name="atmLevel",Description = "double")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "FlatSmileSection")>] 
          shift : obj)
@@ -154,7 +154,7 @@ module FlatSmileSectionFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="atmLevel",Description = "double")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "FlatSmileSection")>] 
          shift : obj)
@@ -383,7 +383,7 @@ module FlatSmileSectionFunction =
          flatsmilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -515,7 +515,7 @@ module FlatSmileSectionFunction =
          flatsmilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -767,7 +767,7 @@ module FlatSmileSectionFunction =
          flatsmilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          volatilityType : obj)
         ([<ExcelArgument(Name="shift",Description = "Helper.Range.fromModelList")>] 
          shift : obj)

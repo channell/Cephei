@@ -824,7 +824,7 @@ module CmsLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

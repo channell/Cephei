@@ -233,9 +233,9 @@ module SwapRateHelperFunction =
          tenor : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="fixedFrequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="fixedFrequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          fixedFrequency : obj)
-        ([<ExcelArgument(Name="fixedConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixedConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixedConvention : obj)
         ([<ExcelArgument(Name="fixedDayCount",Description = "DayCounter")>] 
          fixedDayCount : obj)
@@ -342,9 +342,9 @@ module SwapRateHelperFunction =
          tenor : obj)
         ([<ExcelArgument(Name="calendar",Description = "Calendar")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="fixedFrequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="fixedFrequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          fixedFrequency : obj)
-        ([<ExcelArgument(Name="fixedConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixedConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixedConvention : obj)
         ([<ExcelArgument(Name="fixedDayCount",Description = "DayCounter")>] 
          fixedDayCount : obj)

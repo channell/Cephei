@@ -137,7 +137,7 @@ module GermanyFunction =
     let Germany_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Germany")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="m",Description = "Germany.Market")>] 
+        ([<ExcelArgument(Name="m",Description = "Germany.Market: Settlement, FrankfurtStockExchange, Xetra, Eurex, Euwax")>] 
          m : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,7 +256,7 @@ module GermanyFunction =
          germany : obj)
         ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -306,9 +306,9 @@ module GermanyFunction =
          d : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit: Days, Weeks, Months, Years")>] 
          unit : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -372,7 +372,7 @@ module GermanyFunction =
          d : obj)
         ([<ExcelArgument(Name="p",Description = "Period")>] 
          p : obj)
-        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="c",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          c : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)

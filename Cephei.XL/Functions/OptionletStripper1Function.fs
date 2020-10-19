@@ -161,7 +161,7 @@ module OptionletStripper1Function =
          maxIter : obj)
         ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="displacement",Description = "OptionletStripper1")>] 
          displacement : obj)

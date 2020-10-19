@@ -119,7 +119,7 @@ module ExerciseFunction =
     let Exercise_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Exercise.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Exercise.Type: American, Bermudan, European")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

@@ -43,7 +43,7 @@ module CallabilityFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="price",Description = "Callability.Price")>] 
          price : obj)
-        ([<ExcelArgument(Name="Type",Description = "Callability.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Callability.Type: Call, Put")>] 
          Type : obj)
         ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)

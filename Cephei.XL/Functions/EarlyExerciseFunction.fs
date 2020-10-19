@@ -41,7 +41,7 @@ module EarlyExerciseFunction =
     let EarlyExercise_create
         ([<ExcelArgument(Name="Mnemonic",Description = "EarlyExercise")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Exercise.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Exercise.Type: American, Bermudan, European")>] 
          Type : obj)
         ([<ExcelArgument(Name="payoffAtExpiry",Description = "bool")>] 
          payoffAtExpiry : obj)

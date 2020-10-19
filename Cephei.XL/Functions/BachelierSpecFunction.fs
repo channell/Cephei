@@ -110,7 +110,7 @@ module BachelierSpecFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierSpec",Description = "BachelierSpec")>] 
          bachelierspec : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

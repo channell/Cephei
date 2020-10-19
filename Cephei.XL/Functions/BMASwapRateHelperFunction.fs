@@ -51,7 +51,7 @@ module BMASwapRateHelperFunction =
          calendar : obj)
         ([<ExcelArgument(Name="bmaPeriod",Description = "Period")>] 
          bmaPeriod : obj)
-        ([<ExcelArgument(Name="bmaConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="bmaConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          bmaConvention : obj)
         ([<ExcelArgument(Name="bmaDayCount",Description = "DayCounter")>] 
          bmaDayCount : obj)

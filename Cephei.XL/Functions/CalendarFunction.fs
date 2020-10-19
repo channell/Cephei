@@ -173,7 +173,7 @@ module CalendarFunction =
          d : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="unit",Description = "TimeUnit")>] 
+        ([<ExcelArgument(Name="unit",Description = "TimeUnit: Days, Weeks, Months, Years")>] 
          unit : obj)
         ([<ExcelArgument(Name="c",Description = "Calendar")>] 
          c : obj)

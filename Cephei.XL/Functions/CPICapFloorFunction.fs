@@ -41,7 +41,7 @@ module CPICapFloorFunction =
     let CPICapFloor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "CPICapFloor")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -53,11 +53,11 @@ module CPICapFloorFunction =
          maturity : obj)
         ([<ExcelArgument(Name="fixCalendar",Description = "Calendar")>] 
          fixCalendar : obj)
-        ([<ExcelArgument(Name="fixConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixConvention : obj)
         ([<ExcelArgument(Name="payCalendar",Description = "Calendar")>] 
          payCalendar : obj)
-        ([<ExcelArgument(Name="payConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="payConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          payConvention : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

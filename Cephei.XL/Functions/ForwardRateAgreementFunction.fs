@@ -82,7 +82,7 @@ module ForwardRateAgreementFunction =
          valueDate : obj)
         ([<ExcelArgument(Name="maturityDate",Description = "Date")>] 
          maturityDate : obj)
-        ([<ExcelArgument(Name="Type",Description = "Position.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Position.Type: Long, Short")>] 
          Type : obj)
         ([<ExcelArgument(Name="strikeForwardRate",Description = "double")>] 
          strikeForwardRate : obj)
@@ -357,7 +357,7 @@ module ForwardRateAgreementFunction =
          forwardValue : obj)
         ([<ExcelArgument(Name="settlementDate",Description = "Date")>] 
          settlementDate : obj)
-        ([<ExcelArgument(Name="compoundingConvention",Description = "Compounding")>] 
+        ([<ExcelArgument(Name="compoundingConvention",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          compoundingConvention : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)

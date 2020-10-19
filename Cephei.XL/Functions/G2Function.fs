@@ -199,7 +199,7 @@ module G2Function =
          mnemonic : string)
         ([<ExcelArgument(Name="G2",Description = "G2")>] 
          g2 : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

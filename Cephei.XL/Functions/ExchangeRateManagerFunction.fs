@@ -179,7 +179,7 @@ module ExchangeRateManagerFunction =
          target : obj)
         ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
-        ([<ExcelArgument(Name="Type",Description = "ExchangeRate.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "ExchangeRate.Type: Direct, Derived")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

@@ -49,17 +49,17 @@ module MixedLinearCubicInterpolationFunction =
          yBegin : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="behavior",Description = "Behavior")>] 
+        ([<ExcelArgument(Name="behavior",Description = "Behavior: ShareRanges, SplitRanges")>] 
          behavior : obj)
-        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox")>] 
+        ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox: Spline, SplineOM1, SplineOM2, FourthOrder, Parabolic, FritschButland, Akima, Kruger, Harmonic")>] 
          da : obj)
         ([<ExcelArgument(Name="monotonic",Description = "bool")>] 
          monotonic : obj)
-        ([<ExcelArgument(Name="leftC",Description = "CubicInterpolation.BoundaryCondition")>] 
+        ([<ExcelArgument(Name="leftC",Description = "CubicInterpolation.BoundaryCondition: NotAKnot, FirstDerivative, SecondDerivative, Periodic, Lagrange")>] 
          leftC : obj)
         ([<ExcelArgument(Name="leftConditionValue",Description = "double")>] 
          leftConditionValue : obj)
-        ([<ExcelArgument(Name="rightC",Description = "CubicInterpolation.BoundaryCondition")>] 
+        ([<ExcelArgument(Name="rightC",Description = "CubicInterpolation.BoundaryCondition: NotAKnot, FirstDerivative, SecondDerivative, Periodic, Lagrange")>] 
          rightC : obj)
         ([<ExcelArgument(Name="rightConditionValue",Description = "double")>] 
          rightConditionValue : obj)

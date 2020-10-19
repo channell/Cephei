@@ -113,7 +113,7 @@ module CPISwapFunction =
     let CPISwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "CPISwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "CPISwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "CPISwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -125,7 +125,7 @@ module CPISwapFunction =
          floatDayCount : obj)
         ([<ExcelArgument(Name="floatSchedule",Description = "Schedule")>] 
          floatSchedule : obj)
-        ([<ExcelArgument(Name="floatPaymentRoll",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="floatPaymentRoll",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          floatPaymentRoll : obj)
         ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
@@ -139,7 +139,7 @@ module CPISwapFunction =
          fixedDayCount : obj)
         ([<ExcelArgument(Name="fixedSchedule",Description = "Schedule")>] 
          fixedSchedule : obj)
-        ([<ExcelArgument(Name="fixedPaymentRoll",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="fixedPaymentRoll",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          fixedPaymentRoll : obj)
         ([<ExcelArgument(Name="observationLag",Description = "Period")>] 
          observationLag : obj)

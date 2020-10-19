@@ -290,7 +290,7 @@ module OvernightLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

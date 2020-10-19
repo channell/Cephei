@@ -305,7 +305,7 @@ module InterpolatedSmileSectionFunction =
          interpolator : obj)
         ([<ExcelArgument(Name="dc",Description = "InterpolatedSmileSection")>] 
          dc : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
          shift : obj)
@@ -384,7 +384,7 @@ module InterpolatedSmileSectionFunction =
          interpolator : obj)
         ([<ExcelArgument(Name="dc",Description = "InterpolatedSmileSection")>] 
          dc : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
          shift : obj)
@@ -465,7 +465,7 @@ module InterpolatedSmileSectionFunction =
          interpolator : obj)
         ([<ExcelArgument(Name="referenceDate",Description = "InterpolatedSmileSection")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
          shift : obj)
@@ -1105,7 +1105,7 @@ module InterpolatedSmileSectionFunction =
          interpolatedsmilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -1237,7 +1237,7 @@ module InterpolatedSmileSectionFunction =
          interpolatedsmilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -1453,7 +1453,7 @@ module InterpolatedSmileSectionFunction =
          interpolatedsmilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          volatilityType : obj)
         ([<ExcelArgument(Name="shift",Description = "Helper.Range.fromModelList")>] 
          shift : obj)

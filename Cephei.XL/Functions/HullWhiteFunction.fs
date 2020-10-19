@@ -43,7 +43,7 @@ module HullWhiteFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)

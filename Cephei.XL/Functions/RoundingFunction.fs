@@ -193,7 +193,7 @@ module RoundingFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
-        ([<ExcelArgument(Name="Type",Description = "Rounding.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Rounding.Type: None, Up, Down, Closest, Floor, Ceiling")>] 
          Type : obj)
         ([<ExcelArgument(Name="digit",Description = "int")>] 
          digit : obj)
@@ -279,7 +279,7 @@ module RoundingFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
-        ([<ExcelArgument(Name="Type",Description = "Rounding.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Rounding.Type: None, Up, Down, Closest, Floor, Ceiling")>] 
          Type : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

@@ -824,7 +824,7 @@ module CmsSpreadLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

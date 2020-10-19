@@ -824,7 +824,7 @@ module IborLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          convention : obj)
         = 
         if not (Model.IsInFunctionWizard()) then

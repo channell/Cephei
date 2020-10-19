@@ -231,7 +231,7 @@ module SobolBrownianGeneratorFunction =
          factors : obj)
         ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering")>] 
+        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering: Factors, Steps, Diagonal")>] 
          ordering : obj)
         ([<ExcelArgument(Name="seed",Description = "SobolBrownianGenerator")>] 
          seed : obj)

@@ -585,9 +585,9 @@ module ScheduleFunction =
          calendar : obj)
         ([<ExcelArgument(Name="convention",Description = "Schedule")>] 
          convention : obj)
-        ([<ExcelArgument(Name="terminationDateConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="terminationDateConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          terminationDateConvention : obj)
-        ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule")>] 
+        ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule: Backward, Forward, Zero, ThirdWednesday, Twentieth, TwentiethIMM, OldCDS, CDS, CDS2015")>] 
          rule : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
@@ -703,11 +703,11 @@ module ScheduleFunction =
          calendar : obj)
         ([<ExcelArgument(Name="convention",Description = "Schedule")>] 
          convention : obj)
-        ([<ExcelArgument(Name="terminationDateConvention",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="terminationDateConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          terminationDateConvention : obj)
         ([<ExcelArgument(Name="tenor",Description = "Schedule")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule")>] 
+        ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule: Backward, Forward, Zero, ThirdWednesday, Twentieth, TwentiethIMM, OldCDS, CDS, CDS2015")>] 
          rule : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)

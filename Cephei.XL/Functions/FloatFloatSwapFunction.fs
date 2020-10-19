@@ -185,7 +185,7 @@ module FloatFloatSwapFunction =
     let FloatFloatSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "FloatFloatSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal1",Description = "double")>] 
          nominal1 : obj)
@@ -223,9 +223,9 @@ module FloatFloatSwapFunction =
          cappedRate2 : obj)
         ([<ExcelArgument(Name="flooredRate2",Description = "FloatFloatSwap")>] 
          flooredRate2 : obj)
-        ([<ExcelArgument(Name="paymentConvention1",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention1",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention1 : obj)
-        ([<ExcelArgument(Name="paymentConvention2",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention2",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention2 : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -354,7 +354,7 @@ module FloatFloatSwapFunction =
     let FloatFloatSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "FloatFloatSwap")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "VanillaSwap.Type: Receiver, Payer")>] 
          Type : obj)
         ([<ExcelArgument(Name="nominal1",Description = "double")>] 
          nominal1 : obj)
@@ -392,9 +392,9 @@ module FloatFloatSwapFunction =
          cappedRate2 : obj)
         ([<ExcelArgument(Name="flooredRate2",Description = "double")>] 
          flooredRate2 : obj)
-        ([<ExcelArgument(Name="paymentConvention1",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention1",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention1 : obj)
-        ([<ExcelArgument(Name="paymentConvention2",Description = "BusinessDayConvention")>] 
+        ([<ExcelArgument(Name="paymentConvention2",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          paymentConvention2 : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)

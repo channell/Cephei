@@ -332,7 +332,7 @@ module InflationIndexFunction =
          revised : obj)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
-        ([<ExcelArgument(Name="frequency",Description = "Frequency")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
         ([<ExcelArgument(Name="availabilitiyLag",Description = "Period")>] 
          availabilitiyLag : obj)

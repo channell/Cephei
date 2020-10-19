@@ -304,7 +304,7 @@ module CollarFunction =
          minVol : obj)
         ([<ExcelArgument(Name="maxVol",Description = "double")>] 
          maxVol : obj)
-        ([<ExcelArgument(Name="Type",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
         ([<ExcelArgument(Name="displacement",Description = "double")>] 
          displacement : obj)

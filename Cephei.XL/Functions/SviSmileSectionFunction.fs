@@ -383,7 +383,7 @@ module SviSmileSectionFunction =
          svismilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -515,7 +515,7 @@ module SviSmileSectionFunction =
          svismilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="Type",Description = "Option.Type")>] 
+        ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -767,7 +767,7 @@ module SviSmileSectionFunction =
          svismilesection : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          volatilityType : obj)
         ([<ExcelArgument(Name="shift",Description = "double")>] 
          shift : obj)
