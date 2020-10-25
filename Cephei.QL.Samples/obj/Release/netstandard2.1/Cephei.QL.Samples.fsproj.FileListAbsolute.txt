@@ -1,0 +1,3 @@
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Samples\obj\Release\netstandard2.1\Cephei.QL.Samples.fsprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Samples\obj\Release\netstandard2.1\Cephei.QL.Samples.AssemblyInfoInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Samples\obj\Release\netstandard2.1\Cephei.QL.Samples.AssemblyInfo.fs

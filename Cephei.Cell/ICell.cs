@@ -158,6 +158,12 @@ namespace Cephei.Cell
         public static bool Lazy = true;
 
         /// <summary>
+        /// Number of time to retry an error recieved by an observer.
+        /// Needed for complex dependancy update through Excel
+        /// </summary>
+        public static int ErrorRetry = 3;
+
+        /// <summary>
         /// The current stack of cell being profiled. normally this stack will be empty.
         /// including a null item for safe peek
         /// </summary>

@@ -9,6 +9,7 @@ open System.Collections.Generic
 open System.Collections
 open System
 open System.Threading
+open System.Threading.Tasks
 
 module public  Model =
 
@@ -125,12 +126,18 @@ module public  Model =
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
-      
+        let respec () =
+            Thread.Sleep (2000)
+            xlInterface.ModelRTD (spec.mnemonic + "/1") (spec.hash.ToString()) |> ignore
+
         _state.Value.Rtd.[spec.mnemonic] <- spec
-        let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString())
+        let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString()) 
         if xlv = null then 
             add spec.mnemonic |> ignore
             spec.mnemonic :> obj
+        elif xlv :? string && (xlv :?> string).StartsWith("#") then
+            Task.Run respec |> ignore
+            xlv
         else
             xlv
     // Register and get the value of a single obj

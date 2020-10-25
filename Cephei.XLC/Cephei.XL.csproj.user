@@ -3,12 +3,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
-    <StartArguments>"Cephei.XLC-AddIn64.xll"</StartArguments>
+    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
-    <StartArguments>"Cephei.XLC-AddIn64.xll"</StartArguments>
+    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
   </PropertyGroup>
 </Project>

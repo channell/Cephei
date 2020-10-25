@@ -35,6 +35,10 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     <OutputPath>..\bin\Debug\</OutputPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net48|AnyCPU'">
+    <OutputPath>..\bin\release\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="FSharp.Core" Version="4.7.2" />
     <PackageReference Include="ILGPU" Version="0.9.1" />

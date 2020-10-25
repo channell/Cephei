@@ -50,7 +50,7 @@ module GBPCurrencyFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GBPCurrency>) l
 
-                let source () = Helper.sourceFold "Fun.GBPCurrency ()" 
+                let source () = Helper.sourceFold "Fun.GBPCurrency " 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]

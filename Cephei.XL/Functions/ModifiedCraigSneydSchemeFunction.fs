@@ -159,7 +159,7 @@ module ModifiedCraigSneydSchemeFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ModifiedCraigSneydScheme>) l
 
-                let source () = Helper.sourceFold "Fun.ModifiedCraigSneydScheme ()" 
+                let source () = Helper.sourceFold "Fun.ModifiedCraigSneydScheme " 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]

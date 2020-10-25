@@ -1,0 +1,4 @@
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Release\net48\Cephei.Cell.csprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Release\net48\Cephei.Cell.AssemblyInfoInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Release\net48\Cephei.Cell.AssemblyInfo.cs
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Release\net48\Cephei.Cell.csproj.CoreCompileInputs.cache

@@ -21,7 +21,7 @@ type ExcelStub (f : string -> string-> obj[,] -> unit) =
 
     interface IExcelInterace with
         member this.IsInFunctionWizard () = false
-        member this.ModelRTD  (mnemonic : string) (hashcode : string) = null :> obj    
+        member this.ModelRTD  (mnemonic : string) (hashcode : string)  = null :> obj    
         member this.ValueRTD  (mnemonic : string) (layout : string) = null :> obj
 
     interface IValueRTD with 

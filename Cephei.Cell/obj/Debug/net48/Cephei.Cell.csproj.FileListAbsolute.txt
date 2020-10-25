@@ -1,4 +1,3 @@
-C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.AssemblyInfoInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.AssemblyInfo.cs
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.csproj.CoreCompileInputs.cache
@@ -7,3 +6,4 @@ C:\Users\steve\source\repos\Cephei2\bin\Debug\net48\Cephei.Cell.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.csproj.CopyComplete
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.pdb
+C:\Users\steve\source\repos\cephei2\Cephei.Cell\obj\Debug\net48\Cephei.Cell.csprojAssemblyReference.cache

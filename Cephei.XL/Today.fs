@@ -10,7 +10,7 @@ open System.Collections
 open System
 
 type Clock (tick : float) as this = 
-    inherit Cell<DateTime> (DateTime.Now)
+    inherit CellFast<DateTime> (DateTime.Now)
 
     let _timer = new System.Timers.Timer (tick);
 
@@ -23,7 +23,7 @@ type Clock (tick : float) as this =
         _timer.Start ()
 
 type Today () as this = 
-    inherit Cell<DateTime> (DateTime.Today)
+    inherit CellFast<DateTime> (DateTime.Today)
 
     let _timer = new System.Timers.Timer (60000.0);
     let mutable _date = DateTime.Today;
@@ -51,6 +51,7 @@ module Today =
             ; source =  (fun () -> "cell " + value.ToString())
             ; hash = 0
             } |> ignore 
+        Model.add "Clock"            
         Model.value "Clock"
 
     [<ExcelFunction(Name="_Today", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
@@ -61,6 +62,6 @@ module Today =
             ; creator = fun (current : ICell) -> new Today() :> ICell
             ; subscriber = Helper.subscriber format
             ; source =  (fun () -> "(value DateTime.Today)")
-            ; hash = 0 
+            ; hash = 0
             } 
 

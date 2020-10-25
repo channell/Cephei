@@ -49,7 +49,7 @@ module Helper =
                 let c = c.Value
                 if c :? ICell<'T> then
                     { cell = c :?> ICell<'T>
-                    ; source = s
+                    ; source = "_" + s
                     }
                 elif typeof<'T> = typeof<Date> then 
                     if o :? ICell<double> then
@@ -69,17 +69,17 @@ module Helper =
                         }
                     else
                         { cell = c :?> ICell<'T>
-                        ; source = s
+                        ; source = "_" + s
                         }
                 elif c :? ICell<DateTime> then 
                     let d = c :?> ICell<DateTime>
                     if typeof<'T> = typeof<int> then
                         { cell = withMnemonic c.Mnemonic (triv (fun () -> (Convert.ToInt32(d.Value.ToOADate()) :> obj) :?> 'T))
-                        ; source =  "(triv (fun () -> " + s + ".ToOADate()))"
+                        ; source =  "(triv (fun () -> int (" + s + "Value.ToOADate())))"
                         }
                     else
                         { cell = withMnemonic c.Mnemonic (triv (fun () -> ((d.Value.ToOADate()) :> obj) :?> 'T))
-                        ; source =  "(triv (fun () -> " + s + ".ToOADate()))"
+                        ; source =  "(triv (fun () -> " + s + "Value.ToOADate()))"
                         }
                 elif typeof<'T>.IsEnum then
                     let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
@@ -208,16 +208,34 @@ module Helper =
     let kv (k:'k) (v:'v) = new System.Collections.Generic.KeyValuePair<'k,'v>(k,v)
 
     let sourceFold s (cs : string array) = 
-        cs |> Array.fold (fun a y -> a + " " + if y.StartsWith("(") then y elif y.StartsWith("+") then ("_" + y.Substring(1)) elif y.StartsWith("-") then ("_" + y.Substring(1)) else ("_" + y)) s
+        match cs with 
+        | [||]  -> "()"
+        | _     -> cs |> Array.fold (fun a y -> a + " " + if y.StartsWith("(") then y elif y.StartsWith("+") then (y.Substring(1)) elif y.StartsWith("-") then (y.Substring(1)) else y) s
 
     let sourceFoldArray (cs : string array) = 
         "[|" + (cs |> Array.fold (fun a y -> a + ";" + y) "").Substring(1) + "|]"
 
     let hashFold (cs : ICell array) = 
-        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.HasFunction || y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
+        let folder h (y : ICell) = 
+            if y.HasFunction || y.Mnemonic = null then 
+                if y.Box.ToString().StartsWith("..") then 
+                    (h <<< 4) ^^^ y.Box.GetHashCode()
+                else
+                    (h <<< 4) ^^^ y.Box.GetHashCode()
+            else 
+                (h <<< 4) ^^^ y.Mnemonic.GetHashCode()
+        cs |> Array.fold folder 0
 
     let hashFold2 (cs : ICell<'t> array) = 
-        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.HasFunction || y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
+        let folder h (y : ICell<'t>) = 
+            if y.HasFunction || y.Mnemonic = null then 
+                if y.Box.ToString().StartsWith("..") then 
+                    (h <<< 4) ^^^ y.Box.GetHashCode()
+                else
+                    (h <<< 4) ^^^ y.Box.GetHashCode()
+            else 
+                (h <<< 4) ^^^ y.Mnemonic.GetHashCode()
+        cs |> Array.fold folder 0
 
     module Range =
         let toArray (o : obj[,]) : obj array =

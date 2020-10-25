@@ -417,7 +417,7 @@ module SobolRsgFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
 
-                let source () = Helper.sourceFold "Fun.SobolRsg1 ()" 
+                let source () = Helper.sourceFold "Fun.SobolRsg1 " 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]

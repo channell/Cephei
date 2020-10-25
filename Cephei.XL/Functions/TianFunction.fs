@@ -164,7 +164,7 @@ module TianFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tian>) l
 
-                let source () = Helper.sourceFold "Fun.Tian1 ()" 
+                let source () = Helper.sourceFold "Fun.Tian1 " 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]

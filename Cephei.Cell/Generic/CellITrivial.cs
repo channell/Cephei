@@ -123,6 +123,7 @@ namespace Cephei.Cell.Generic
                 var c = (ICell<T>)source;
                 var f = _func;
                 _func = c.Function;
+                Parent = c.Parent;
                 c.Function = f;
             }
             if (source != this) source.Dispose();

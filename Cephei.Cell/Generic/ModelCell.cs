@@ -95,6 +95,7 @@ namespace Cephei.Cell.Generic
         {
             if (source != this)
             {
+                Parent = model.Parent;
                 if (source is ICellModel sm)
                     _cell.Merge(sm.Cell, model);
                 else

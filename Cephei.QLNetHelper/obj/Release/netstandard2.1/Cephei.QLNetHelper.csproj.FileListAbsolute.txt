@@ -1,0 +1,4 @@
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.1\Cephei.QLNetHelper.csprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.1\Cephei.QLNetHelper.AssemblyInfoInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.1\Cephei.QLNetHelper.AssemblyInfo.cs
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.1\Cephei.QLNetHelper.csproj.CoreCompileInputs.cache

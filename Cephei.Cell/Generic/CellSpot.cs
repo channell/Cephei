@@ -409,6 +409,7 @@ namespace Cephei.Cell.Generic
                 var f = _func;
                 _func = c.Function;
                 c.Function = f;
+                Parent = c.Parent;
                 _state = (int)CellState.Dirty;
             }
             RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
@@ -425,19 +426,16 @@ namespace Cephei.Cell.Generic
         #region observable
         public IDisposable Subscribe(IObserver<T> observer)
         {
-            Task.Run(() => Value);
             return new CellObserver<T>(this, observer);
         }
 
         public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
         {
-            Task.Run(() => Value);
             return new SessionObserver<T>(this, observer);
         }
 
         public IDisposable Subscribe(IObserver<Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>> observer)
         {
-            Task.Run(() => Value);
             return new TraceObserver<T>(this, observer);
         }
         #endregion

@@ -27,7 +27,7 @@ namespace Cephei.Cell
             switch (eventType)
             {
                 case CellEvent.Calculate:
-                    _target.OnNext((ICell)sender);
+                    _target.OnNext((ICell)root);
                     break;
 
                 case CellEvent.Delete:
@@ -37,7 +37,7 @@ namespace Cephei.Cell
                 case CellEvent.Error:
                     try
                     {
-                        _target.OnNext((ICell)sender);
+                        _target.OnNext((ICell)root);
                     }
                     catch (Exception e)
                     {
@@ -68,7 +68,7 @@ namespace Cephei.Cell
 
         private void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
-            var c = sender as Generic.ICell<T>;
+            var c = root as Generic.ICell<T>;
             if (c != null)
             {
                 switch (eventType)
@@ -123,8 +123,8 @@ namespace Cephei.Cell
                 case CellEvent.Calculate:
                     var lastsession = Session.Current;
                     Session.Current = session;
-                    ICell c = ((ICell)sender).Parent;
-                    string n = ((ICell)sender).Mnemonic;
+                    ICell c = ((ICell)root).Parent;
+                    string n = ((ICell)root).Mnemonic;
                     while (c != null)
                     {
                         n = c.Mnemonic + "|" + n;
@@ -187,13 +187,13 @@ namespace Cephei.Cell
                 case CellEvent.JoinSession:
                 case CellEvent.Link:
                 case CellEvent.Calculate:
-                    _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)sender, epoch));
+                    _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)root, epoch));
                     break;
 
                 case CellEvent.Error:
                     try
                     {
-                        _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)sender, epoch));
+                        _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)root, epoch));
                     }
                     catch (Exception e)
                     {

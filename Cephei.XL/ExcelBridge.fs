@@ -16,11 +16,9 @@ type ModelRTD ()  =
     let _topicIndex             = new ConcurrentDictionary<string, ExcelRtdServer.Topic list>()
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
-        
-        let mnemonic = topicInfo.[0]
-        let hc = topicInfo.[1]
 
-        System.Diagnostics.Debug.Print ("ModelRTD ConnectData " + mnemonic + " " + hc);
+        let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
+        let hc = topicInfo.[1]
 
         let dispatch () : unit = 
             _topics.[topic] <- mnemonic
@@ -100,7 +98,7 @@ type ValueRTD ()  =
             with
             | e -> topic.UpdateValue ("#" + e.Message)
         Task.Run (dispatch) |> ignore
-        mnemonic :> obj
+        "..." + mnemonic :> obj
 
     override this.DisconnectData (topic : ExcelRtdServer.Topic) =
         

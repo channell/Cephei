@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="codegen.fsx" />
+    <Compile Include="generatedbond.fs" />
     <None Include="enums.fsx" />
     <None Include="recomment.fsx" />
     <None Include="mutable.fsx" />
