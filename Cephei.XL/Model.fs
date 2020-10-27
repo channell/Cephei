@@ -332,9 +332,9 @@ module public  Model =
             String.Format ("
     [<ExcelFunction(Name=\"__{0}_{1}\", Description=\"Create a {2}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the value\")>] 
+        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the Cell\")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name=\"{0}\",Description = \"Reference to {0}\")>] 
+        ([<ExcelArgument(Name=\"{0}\",Description = \"{2}\")>] 
          {1} : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -361,7 +361,7 @@ module public  Model =
 
         let excelProperties = 
             cells |>
-            Array.filter (fun (c,s) -> not (c.Mnemonic.StartsWith("-"))) |>
+            Array.filter (fun (c,s) -> not (c.Mnemonic.StartsWith("-") || c.Mnemonic.StartsWith("+"))) |>
             Array.map (fun (c,s) -> formatProperty name c.Mnemonic (c.Box.GetType().ToString())) |>
             Array.fold (fun a y -> a + y) ""
 
